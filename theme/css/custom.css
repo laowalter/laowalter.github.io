@@ -1,0 +1,22 @@
+.file{
+    background-color: #eee8d5;
+    border-radius: 3px 3px 0 0;
+    color: #657b83;
+    font-size: 70%;
+    line-height: 1.2;
+    vertical-align: baseline;
+    _vertical-align: bottom;
+}
+
+.file_type{
+	display: inline;
+	padding: .2em .6em .3em;
+	font-size: 55%;
+	font-weight: 700;
+    color: #BB3A3A;
+	line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: .25em;
+}
