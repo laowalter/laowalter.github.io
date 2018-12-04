@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Walter" name="author">
+<meta content="Walter" name="copyright">
+<meta content="article" property="og:type">
+<meta content="summary" name="twitter:card"/>
+<meta content="vim, tech, " name="keywords">
+<meta content="VIM " property="og:title"/>
+<meta content="./vim.html" property="og:url"/>
+<meta content='使用技巧 文件编码 :set fenc=gbk :set fenc=utf-8 DOS UNIX 转换 set ff=unix Swap character xp Xp Global Replace, $ says “put vim in last-line mode”. :1,$s/George Bush/Barack Obama/g :1,$s/td align="CENTER"/td/g Delete blank lines in vim (empty lines), use this vim …' property="og:description"/>
+<meta content="Just MEMO" property="og:site_name"/>
+<meta content="Walter" property="og:article:author"/>
+<meta content="2016-02-29T10:28:24+08:00" property="og:article:published_time"/>
+<meta content="2016-02-29T10:28:24+08:00" property=""/>
+<meta content="VIM " name="twitter:title"/>
+<meta content='使用技巧 文件编码 :set fenc=gbk :set fenc=utf-8 DOS UNIX 转换 set ff=unix Swap character xp Xp Global Replace, $ says “put vim in last-line mode”. :1,$s/George Bush/Barack Obama/g :1,$s/td align="CENTER"/td/g Delete blank lines in vim (empty lines), use this vim …' name="twitter:description"/>
+<title>VIM  · Just MEMO
+</title>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet"/>
+<link href="./theme/css/pygments.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="./theme/tipuesearch/tipuesearch.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="./theme/css/elegant.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="./theme/css/custom.css" media="screen" rel="stylesheet" type="text/css"/>
+</meta></meta></meta></meta></head>
+<body>
+<div id="content-sans-footer">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="./"><span class="site-name">Just MEMO</span></a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right top-menu">
+<li><a href=".">Home</a></li>
+<li><a href="./categories.html">Categories</a></li>
+<li><a href="./tags.html">Tags</a></li>
+<li><a href="./archives.html">Archives</a></li>
+<li><form action="./search.html" class="navbar-search" onsubmit="return validateForm(this.elements['q'].value);"> <input class="search-query" id="tipue_search_input" name="q" placeholder="Search" type="text"/></form></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1"></div>
+<div class="span10">
+<article>
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1><a href="./vim.html"> <span class="caps">VIM</span> </a></h1>
+</header>
+</div>
+<div class="row-fluid">
+<div class="span2 table-of-content">
+<nav>
+<h4>Contents</h4>
+<div id="toc"><ul><li><a class="toc-href" href="#" title='&lt;span class="caps"&gt;VIM&lt;/span&gt;'><span class="caps">VIM</span></a><ul><li><a class="toc-href" href="#shi yong ji qiao" title="使用技巧">使用技巧</a></li><li><a class="toc-href" href="#in stall vim" title="In stall Vim">In stall Vim</a></li><li><a class="toc-href" href="#plugin installation" title="Plugin Installation">Plugin Installation</a></li><li><a class="toc-href" href="#set guifont and size" title="set GuiFont and Size">set GuiFont and Size</a></li><li><a class="toc-href" href="#install fonts" title="Install Fonts">Install Fonts</a></li><li><a class="toc-href" href="#perl" title="Perl">Perl</a></li><li><a class="toc-href" href="#about youcompleteme (ycm)" title="About Youcompleteme (YCM)">About Youcompleteme (YCM)</a></li></ul></li></ul></div>
+</nav>
+</div>
+<div class="span8 article-content">
+<h2 id="shi yong ji qiao"><a href="http://vim.wikia.com/wiki/Category:VimTip"> 使用技巧 </a></h2>
+<ul>
+<li> 文件编码 </li>
+</ul>
+<div class="highlight"><pre><span></span>:set <span class="nv">fenc</span><span class="o">=</span>gbk
+:set <span class="nv">fenc</span><span class="o">=</span>utf-8
+</pre></div>
+<ul>
+<li><span class="caps">DOS</span> <span class="caps">UNIX</span>  转换 </li>
+</ul>
+<div class="highlight"><pre><span></span><span class="nb">set</span> <span class="nv">ff</span><span class="o">=</span>unix
+</pre></div>
+<ul>
+<li>Swap character </li>
+</ul>
+<div class="highlight"><pre><span></span>xp
+Xp
+</pre></div>
+<ul>
+<li>Global Replace,  <code>$</code> says “put vim in last-line mode”.</li>
+</ul>
+<div class="highlight"><pre><span></span>:1,<span class="nv">$s</span>/George Bush/Barack Obama/g 
+:1,<span class="nv">$s</span>/td <span class="nv">align</span><span class="o">=</span><span class="s2">"CENTER"</span>/td/g
+</pre></div>
+<ul>
+<li>Delete blank lines in vim (empty lines), use this vim command in “last line mode”</li>
+</ul>
+<div class="highlight"><pre><span></span>:g/^$/d
+</pre></div>
+<ul>
+<li>
+<p> 折叠快捷键 </p>
+<ul>
+<li>zc  折叠，只折叠最外层的折叠 </li>
+<li>zC  对所在范围内所有嵌套的折叠点进行折叠，包括嵌套的所有折叠 .</li>
+<li>zo  展开折叠，只展开最外层的折叠 .</li>
+<li>zO  对所在范围内所有嵌套的折叠点展开，包括嵌套折叠 .</li>
+<li>[z  到当前打开的折叠的开始处。</li>
+<li>]z  到当前打开的折叠的末尾处。</li>
+<li>zj  向下移动。到达下一个折叠的开始处。关闭的折叠也被计入。</li>
+<li>zk  向上移动到前一折叠的结束处。关闭的折叠也被 </li>
+<li>zd 删除 (delete) 在光标下的折叠。仅当 ‘foldmethod’ 设为 “manual” 或 “marker”  时有效。</li>
+<li>zD 循环删除 (Delete)  光标下的折叠，即嵌套删除折叠。</li>
+<li> 仅当 ‘foldmethod’ 设为 “manual” 或 “marker”  时有效。</li>
+<li>zE 除去 (Eliminate)  窗口里 “ 所有 ” 的折叠。</li>
+<li> 仅当 ‘foldmethod’ 设为 “manual” 或 “marker”  时有效。</li>
+<li>zfap  将光标移到段落内，然后按 zfap，就可以自动对整个段落添加折叠标签 </li>
+<li>zr  假定你已经创建了若干折叠，而现在需要阅览全部文本。你可以移到每个折叠处，并键入 ”zo”。若要做得更快，可以用这个命令 :zr</li>
+<li>zm 这将折叠更多 (M-ore)。你可以重复 “zr” 和 “zm” 来打开和关闭若干层嵌套的折叠，不然得一个一个的用 zc 来折叠 .  如果你有一个嵌套了好几层深的折叠，你可以用这个命令把它们全部打开 :</li>
+<li>zR  这将减少折叠直至一个也不剩。而用下面这个命令你可以关闭所有的折叠 :</li>
+<li>zM  这将增加折叠，直至所有的折叠都关闭了。</li>
+<li> 你可以用 |zn| 命令快速禁止折叠功能。然后 |zN| 恢复原来的折叠。|zi|  切换于两者之间。</li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.cnblogs.com/wangkangluo1/archive/2012/04/12/2444952.html">vim 常用快捷键   二 </a></p>
+</li>
+</ul>
+<h2 id="in stall vim">In stall Vim</h2>
+<div class="highlight"><pre><span></span>brew install macvim --with-python3
+brew link macvim
+brew linkapps macvim
+</pre></div>
+<h2 id="plugin installation">Plugin Installation</h2>
+<ol>
+<li>Install to ~/.vim/autoload/pathogen.vim. Or copy and paste:</li>
+</ol>
+<div class="highlight"><pre><span></span>mkdir -p ~/.vim/autoload ~/.vim/bundle <span class="o">&amp;&amp;</span> <span class="se">\</span>
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+</pre></div>
+<ol>
+<li>Install Vundle</li>
+</ol>
+<div class="highlight"><pre><span></span>git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+</pre></div>
+<ol>
+<li>Runtime Path Manipulation</li>
+</ol>
+<p><code>~/.vimrc</code></p>
+<div class="highlight"><pre><span></span><span class="nb">set</span> nocompatible
+filetype off
+<span class="nb">set</span>  <span class="nv">rtp</span><span class="o">+=</span>~/.vim/bundle/vundle/
+call vundle#begin<span class="o">()</span>
+
+Bundle <span class="s1">'Lokaltog/powerline'</span>, <span class="o">{</span><span class="s1">'rtp'</span>: <span class="s1">'powerline/bindings/vim/'</span><span class="o">}</span>
+Bundle <span class="s1">'gmarik/vundle'</span>
+Bundle <span class="s1">'tpope/vim-surround'</span>
+Bundle <span class="s1">'jiangmiao/auto-pairs'</span>
+<span class="s2">" Bundle 'Lokaltog/vim-powerline'</span>
+<span class="s2">Bundle 'bling/vim-airline'</span>
+<span class="s2">Bundle 'perl-support.vim'</span>
+<span class="s2">Bundle 'Lokaltog/vim-easymotion'</span>
+<span class="s2">Bundle 'desert256.vim'</span>
+<span class="s2">Bundle 'solarized'</span>
+<span class="s2">Bundle 'PHP-correct-Indenting'</span>
+<span class="s2">Bundle 'mattn/emmet-vim'</span>
+<span class="s2">Bundle 'php.vim-html-enhanced'</span>
+<span class="s2">Bundle 'OmniCppComplete'</span>
+<span class="s2">Bundle 'Railscasts-Theme-GUIand256color'</span>
+<span class="s2">Plugin 'Javascript-Indentation'</span>
+<span class="s2">Plugin 'Enhanced-Javascript-syntax'</span>
+<span class="s2">Plugin 'jmcantrell/vim-virtualenv'</span>
+<span class="s2">Plugin 'klen/python-mode'</span>
+<span class="s2">call vundle#end()</span>
+
+<span class="s2">"</span> Powerline setup
+<span class="nb">set</span> <span class="nv">guifont</span><span class="o">=</span>DejaVu<span class="se">\ </span>Sans<span class="se">\ </span>Mono<span class="se">\ </span><span class="k">for</span><span class="se">\ </span>Powerline<span class="se">\ </span><span class="m">9</span>
+<span class="nb">set</span> <span class="nv">laststatus</span><span class="o">=</span><span class="m">2</span>
+<span class="nb">set</span> <span class="nv">t_Co</span><span class="o">=</span><span class="m">256</span>
+
+<span class="nb">let</span> g:Powerline_symbols<span class="o">=</span><span class="s1">'unicode'</span>
+
+<span class="s2">" Perl_Perltidy in Perl-support</span>
+<span class="s2">let g:Perl_Perltidy  = 'on'</span>
+
+<span class="s2">"</span><span class="nb">set</span> file encoding
+<span class="nb">set</span> <span class="nv">fileencodings</span><span class="o">=</span>utf-8,gb2312,gbk,gb18030 
+
+<span class="s2">" Python-mode</span>
+
+<span class="s2">"</span> Maximum line length
+<span class="nb">let</span> g:pymode_options_max_line_length <span class="o">=</span> <span class="m">120</span>
+
+<span class="s2">" Auto check on save</span>
+<span class="s2">let g:pymode_lint_write = 1</span>
+
+<span class="s2">"</span> syntax highlighting
+<span class="nb">let</span> g:pymode_syntax <span class="o">=</span> <span class="m">1</span>
+<span class="nb">let</span> g:pymode_syntax_all <span class="o">=</span> <span class="m">1</span>
+<span class="nb">let</span> g:pymode_syntax_indent_errors <span class="o">=</span> g:pymode_syntax_all
+<span class="nb">let</span> g:pymode_syntax_space_errors <span class="o">=</span> g:pymode_syntax_all
+
+<span class="s2">" Don't autofold code</span>
+<span class="s2">let g:pymode_folding = 0</span>
+
+<span class="s2">set cursorline</span>
+<span class="s2">set number</span>
+<span class="s2">syntax enable</span>
+<span class="s2">set background=dark</span>
+<span class="s2">colorscheme solarized</span>
+
+<span class="s2">set tabstop=4 shiftwidth=4 expandtab</span>
+
+<span class="s2">colorscheme railscasts</span>
+
+<span class="s2">filetype plugin indent on</span>
+<span class="s2">syntax on</span>
+
+<span class="s2">inoremap &lt;C-e&gt; &lt;Esc&gt;A</span>
+<span class="s2">inoremap &lt;C-a&gt; &lt;Esc&gt;I </span>
+</pre></div>
+<h2 id="set guifont and size">set GuiFont and Size</h2>
+<p>.gvimrc</p>
+<div class="highlight"><pre><span></span>set guifont=TerminusTTF:h22
+</pre></div>
+<h2 id="install fonts">Install Fonts</h2>
+<p>Terminus <span class="caps">TTF</span></p>
+<p>(https://files.ax86.net/terminus-ttf)[https://files.ax86.net/terminus-ttf]</p>
+<h2 id="perl">Perl</h2>
+<ul>
+<li>For perlbrew in vim:</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">~</span><span class="sr">/.vim/</span>bundle<span class="sr">/perl-support.vim/</span>plugin/perl<span class="p">-</span>support.<span class="k">vim</span>
+<span class="m">162</span>   <span class="k">let</span> s:Perl_Perl                 <span class="p">=</span> system<span class="p">(</span><span class="s2">"/usr/bin/which perl"</span><span class="p">)</span>
+<span class="m">163</span>   <span class="k">let</span> s:Perl_Perl                 <span class="p">=</span> substitute<span class="p">(</span>s:Perl_Perl<span class="p">,</span> <span class="s1">'\n$'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+</pre></div>
+<h2 id="about youcompleteme (ycm)">About Youcompleteme (<span class="caps">YCM</span>)</h2>
+<ul>
+<li>.vimrc</li>
+</ul>
+<div class="highlight"><pre><span></span>Plugin 'Valloric/YouCompleteMe'
+</pre></div>
+<p>Then BundleInstall</p>
+<ul>
+<li>Install ncurses</li>
+</ul>
+<div class="highlight"><pre><span></span>touch /etc/portage/package.use/ncurses
+<span class="nb">echo</span> <span class="s2">"sys-libs/ncurses tinfo"</span> &gt; /etc/portage/package.use/ncurses
+emerge sys-libs/ncurses:5
+</pre></div>
+<ul>
+<li>compile</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> .vim/bundle/YouCompleteMe/
+./install --all
+</pre></div>
+<p>Ignore <strong><span class="caps">ERROR</span>: msbuild or xbuild is required to build Omnisharp.</strong>  这是给 .net 用的。</p>
+<hr/>
+</div>
+<section>
+<div class="span2" style="float:right;font-size:0.9em;">
+<h4>Published</h4>
+<time datetime="2016-02-29T10:28:24+08:00" pubdate="pubdate">Feb 29, 2016</time>
+<h4>Last Updated</h4>
+<time datetime="2016-02-29T10:28:24+08:00">Feb 29, 2016</time>
+<h4>Category</h4>
+<a class="category-link" href="./categories.html#tech-ref">tech</a>
+<h4>Tags</h4>
+<ul class="list-of-tags tags-in-article">
+<li><a href="./tags.html#vim-ref">vim
+                    <span>1</span>
+</a></li>
+</ul>
+<h4>Contact</h4>
+<a class="sidebar-social-links" href="https://slashdot.org/" target="_blank" title="My IT新闻Slashdot Profile">
+<i class="fa fa-it新闻slashdot sidebar-social-links"></i></a>
+</div>
+</section>
+</div>
+</article>
+</div>
+<div class="span1"></div>
+</div>
+</div>
+<div id="push"></div>
+</div>
+<footer>
+<div id="footer">
+<ul class="footer-content">
+<li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+</ul>
+</div>
+</footer> <script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+</body>
+<!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Walter" name="author">
+<meta content="Walter" name="copyright">
+<meta content="article" property="og:type">
+<meta content="summary" name="twitter:card"/>
+<meta content="mac, virtualbox, git, tech, automator, tech, " name="keywords">
+<meta content="Mac Operations " property="og:title"/>
+<meta content="./mac-operations.html" property="og:url"/>
+<meta content="1. Mac Operation create bootable mac usb In Application Download High Sierra apps Format usb stick with mac external file system In terminal: sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install\ macOS\ High\ Sierra.app brew install with proxy export ALL_PROXY=127 …" property="og:description"/>
+<meta content="Just MEMO" property="og:site_name"/>
+<meta content="Walter" property="og:article:author"/>
+<meta content="2016-02-29T09:52:41+08:00" property="og:article:published_time"/>
+<meta content="2016-09-26T12:43:00+08:00" property=""/>
+<meta content="Mac Operations " name="twitter:title"/>
+<meta content="1. Mac Operation create bootable mac usb In Application Download High Sierra apps Format usb stick with mac external file system In terminal: sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install\ macOS\ High\ Sierra.app brew install with proxy export ALL_PROXY=127 …" name="twitter:description"/>
+<title>Mac Operations  · Just MEMO
+</title>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet"/>
+<link href="./theme/css/pygments.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="./theme/tipuesearch/tipuesearch.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="./theme/css/elegant.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="./theme/css/custom.css" media="screen" rel="stylesheet" type="text/css"/>
+</meta></meta></meta></meta></head>
+<body>
+<div id="content-sans-footer">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="./"><span class="site-name">Just MEMO</span></a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right top-menu">
+<li><a href=".">Home</a></li>
+<li><a href="./categories.html">Categories</a></li>
+<li><a href="./tags.html">Tags</a></li>
+<li><a href="./archives.html">Archives</a></li>
+<li><form action="./search.html" class="navbar-search" onsubmit="return validateForm(this.elements['q'].value);"> <input class="search-query" id="tipue_search_input" name="q" placeholder="Search" type="text"/></form></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1"></div>
+<div class="span10">
+<article>
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1><a href="./mac-operations.html"> Mac Operations  </a></h1>
+</header>
+</div>
+<div class="row-fluid">
+<div class="span2 table-of-content">
+<nav>
+<h4>Contents</h4>
+<div id="toc"><ul><li><a class="toc-href" href="#" title="Mac Operations">Mac Operations</a><ul><li><a class="toc-href" href="#create bootable mac usb" title="create bootable mac usb">create bootable mac usb</a></li><li><a class="toc-href" href="#brew install with proxy" title="brew install with proxy">brew install with proxy</a></li><li><a class="toc-href" href="#set hostname" title="set HostName">set HostName</a></li><li><a class="toc-href" href="#find and replace in command line" title="find and replace in command line">find and replace in command line</a></li><li><a class="toc-href" href="#cron" title="Cron">Cron</a></li><li><a class="toc-href" href="#virtual box" title="Virtual Box">Virtual Box</a></li><li><a class="toc-href" href="#create git server" title="Create git server">Create git server</a><ul><li><a class="toc-href" href="#server computer:" title="Server Computer:">Server Computer:</a></li><li><a class="toc-href" href="#client computer" title="Client Computer">Client Computer</a></li></ul></li><li><a class="toc-href" href="#mac change keyboard map_1" title="Mac change keyboard map">Mac change keyboard map</a></li><li><a class="toc-href" href="#webserver" title="Webserver">Webserver</a><ul><li><a class="toc-href" href="#qi dong ben ji webfu wu qi , gen di zhi /library/webserver/documents" title="启动本机web服务器, 根地址/Library/WebServer/Documents">启动本机web服务器, 根地址/Library/WebServer/Documents</a></li><li><a class="toc-href" href="#jian li  username.conf, usernameshi yong hu zhang hao" title="建立 username.conf, username是用户账号">建立 username.conf, username是用户账号</a></li><li><a class="toc-href" href="#da kai /etc/apache2/httpd.conf" title="打开/etc/apache2/httpd.conf">打开/etc/apache2/httpd.conf</a></li><li><a class="toc-href" href="#da kai  /etc/apache2/extra/httpd-userdir.conf" title="打开 /etc/apache2/extra/httpd-userdir.conf">打开 /etc/apache2/extra/httpd-userdir.conf</a></li><li><a class="toc-href" href="#qi dong apache" title="启动apache">启动apache</a></li></ul></li></ul></li></ul></div>
+</nav>
+</div>
+<div class="span8 article-content">
+<h1>1. Mac Operation</h1>
+<h2 id="create bootable mac usb">create bootable mac usb</h2>
+<ol>
+<li>In Application Download High Sierra apps</li>
+<li>Format usb stick with mac external file system</li>
+<li>In terminal:</li>
+</ol>
+<div class="highlight"><pre><span></span>sudo /Applications/Install<span class="se">\ </span>macOS<span class="se">\ </span>High<span class="se">\ </span>Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install<span class="se">\ </span>macOS<span class="se">\ </span>High<span class="se">\ </span>Sierra.app
+</pre></div>
+<h2 id="brew install with proxy">brew install with proxy</h2>
+<div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ALL_PROXY</span><span class="o">=</span><span class="m">127</span>.0.0.1:8087
+brew install chromedriver
+</pre></div>
+<h2 id="set hostname">set HostName</h2>
+<ol>
+<li>set /etc/hosts</li>
+<li>set hostname</li>
+</ol>
+<div class="highlight"><pre><span></span>    sudo scutil --set ComputerName newname
+    sudo scutil --set LocalHostName newname
+    sudo scutil --set HostName newname
+    dscacheutil -flushcache
+</pre></div>
+<h2 id="find and replace in command line">find and replace in command line</h2>
+<ul>
+<li>replace</li>
+</ul>
+<div class="highlight"><pre><span></span>    find ./ -type f -print0<span class="p">|</span>xargs -0 sed -ie <span class="s1">'s/{% asset_img /![Alt Text]({static}\/images\/108class\//g'</span>
+</pre></div>
+<div class="highlight"><pre><span></span>    find ./ -type f -print0<span class="p">|</span>xargs -0 sed -ie <span class="s1">'s/^---$//g'</span>
+</pre></div>
+<div class="highlight"><pre><span></span>    find . -name <span class="s1">'*.md'</span> -type f -exec sed -i <span class="s1">''</span> -e  <span class="s1">'s/\\n//'</span> <span class="o">{}</span> <span class="se">\;</span>
+</pre></div>
+<div class="highlight"><pre><span></span>    find . -name <span class="s1">'*.css'</span> -type f -exec sed -i <span class="s1">''</span> -e  <span class="s1">'s/googleapis/useso/'</span> <span class="o">{}</span> <span class="se">\;</span>
+</pre></div>
+<ul>
+<li>delete</li>
+</ul>
+<div class="highlight"><pre><span></span>    find . -name <span class="s1">'*md'</span> -type f -exec sed -i <span class="s1">''</span> -e  <span class="s1">'/^$/d'</span> <span class="o">{}</span> <span class="se">\;</span>
+</pre></div>
+<h1>2. Autostart</h1>
+<ul>
+<li>/Library/LaunchDaemons/com.localhost.hexo.plist<ul>
+<li>Check script error with plutil</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span>    plutil -lint /Library/LaunchDaemons/com.localhost.hexo.plist
+</pre></div>
+<div class="highlight"><pre><span></span>* Set up log to /var/log/system.log
+</pre></div>
+<h2 id="cron">Cron</h2>
+<ul>
+<li>command</li>
+</ul>
+<p><code> 注意 :</code> crontab 在用户环境中不能够直接用 crontab -e 编辑，因为无法保存。</p>
+<div class="highlight"><pre><span></span>    ~ su -
+    <span class="c1"># root # crontab -u walter -e</span>
+</pre></div>
+<p><img alt="Alt Text" class="img-fluid" src="./images/tech/crontab.gif"/></p>
+<ul>
+<li>MacMini <code>cron file for walter</code></li>
+</ul>
+<div class="highlight"><pre><span></span>    <span class="m">15</span> <span class="m">09</span> * * <span class="m">1</span>-5 walter /usr/bin/afplay ~/.stocknotice/alert915.m4a
+    <span class="m">30</span> <span class="m">11</span> * * <span class="m">1</span>-5 walter /usr/bin/afplay ~/.stocknotice/closeram.m4a
+    <span class="m">55</span> <span class="m">12</span> * * <span class="m">1</span>-5 walter /usr/bin/afplay ~/.stocknotice/openpm.m4a
+    <span class="m">00</span> <span class="m">15</span> * * <span class="m">1</span>-5 walter /usr/bin/afplay ~/.stocknotice/closepm.m4a
+</pre></div>
+<ul>
+<li> 关于 virtualenv python 的演示 </li>
+</ul>
+<div class="highlight"><pre><span></span>    <span class="c1">#!/bin/bash</span>
+    <span class="nb">export</span> <span class="nv">LC_ALL</span><span class="o">=</span>zh_CN.UTF-8
+    <span class="nb">export</span> <span class="nv">LANG</span><span class="o">=</span>zh_CN.UTF-8
+    <span class="nv">PATH</span><span class="o">=</span>/bin:/usr/sbin:/usr/bin
+    <span class="nv">PATH</span><span class="o">=</span>~/.bin:/usr/local/bin:/usr/local/mysql/bin:<span class="nv">$PATH</span>
+
+    <span class="nb">source</span> ~/.bin/quanta.sh
+    <span class="nb">cd</span> ~/quanta/strategy/small_mkval/
+    <span class="c1"># ~/.virtualenvs/quanta/bin/python data_prepare.py</span>
+    python data_prepare.py
+</pre></div>
+<ul>
+<li>spyder</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">WORKON_HOME</span><span class="o">=</span>~/.virtualenvs
+<span class="nb">source</span> ~/.virtualenvs/quanta/bin/activate
+python ~/bin/spyder/bootstrap.py  &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+</pre></div>
+<h2 id="virtual box">Virtual Box</h2>
+<ul>
+<li>
+<p>Set Virtual Box resolution for  Mac or Linux</p>
+<ul>
+<li>One Screen</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span>~$ VBoxManage controlvm <span class="s2">"Name of Virtual Machine"</span> setvideomodehint <span class="m">1920</span> <span class="m">1080</span> <span class="m">32</span>
+</pre></div>
+<div class="highlight"><pre><span></span>- Multiscreen​
+
+    Add second monitor first in the setting menu of Virutal Box, The First screen number is 0 and the second is 1.​ ps Stock is the virtual machine name. then, ​
+</pre></div>
+<div class="highlight"><pre><span></span>~$ VBoxManage controlvm Stock setvideomodehint <span class="m">2560</span> <span class="m">1440</span> <span class="m">32</span>​ <span class="m">0</span>
+~$ VBoxManage controlvm Stock setvideomodehint <span class="m">1920</span> <span class="m">1080</span> <span class="m">32</span>​ <span class="m">1</span>
+</pre></div>
+<h2 id="create git server">Create git server</h2>
+<h3 id="server computer:">Server Computer:</h3>
+<ol>
+<li>Add a new user: git</li>
+</ol>
+<div class="highlight"><pre><span></span>        $ create a new user named <span class="s1">'git'</span>
+        $ <span class="nb">enable</span> web sharing
+        $ git config receive.denyCurrentBranch updateInstead
+</pre></div>
+<ol>
+<li>Initialise a git directory</li>
+</ol>
+<div class="highlight"><pre><span></span>        $ mkdir something.git
+        $ <span class="nb">cd</span> something.git
+        $ git init --bare
+</pre></div>
+<h3 id="client computer">Client Computer</h3>
+<div class="highlight"><pre><span></span>    $ git clone ssh://localhost/~/something.git
+</pre></div>
+<p>Or: git is the username </p>
+<div class="highlight"><pre><span></span>    $ git clone ssh://git@localhost/~/something.git
+</pre></div>
+<p>First push:</p>
+<div class="highlight"><pre><span></span>    $ git push origin master
+</pre></div>
+<h2 id="mac change keyboard map_1">Mac change keyboard map</h2>
+<p>Key replace Application name:  <code>Karabiner</code></p>
+<h2 id="webserver">Webserver</h2>
+<p>(http://digitalshore.io/local-web-development-environment-apache-osx-10-11-el-capitan/)[http://digitalshore.io/local-web-development-environment-apache-osx-10-11-el-capitan/]</p>
+<h3 id="qi dong ben ji webfu wu qi , gen di zhi /library/webserver/documents"> 启动本机 web 服务器 ,  根地址 /Library/WebServer/Documents</h3>
+<div class="highlight"><pre><span></span>sudo apachectl start
+sudo apachectl stop
+sudo apachectl restart
+</pre></div>
+<h3 id="jian li  username.conf, usernameshi yong hu zhang hao"> 建立 username.conf, username 是用户账号 </h3>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> /etc/apache2/users
+sudo vi username.conf
+</pre></div>
+<div class="highlight"><pre><span></span><span class="nt">&lt;Directory</span> <span class="err">"/Users/username/Sites/"</span><span class="nt">&gt;</span>
+    AllowOverride All
+    Options Indexes MultiViews FollowSymLinks
+    Require all granted
+<span class="nt">&lt;/Directory&gt;</span>
+</pre></div>
+<p>username.conf 的 Permissions  应该是：</p>
+<div class="highlight"><pre><span></span>sudo chmod <span class="m">644</span> username.conf
+ls -l username.conf
+-rw-r--r-- root wheel <span class="m">298</span> Jun <span class="m">28</span> <span class="m">16</span>:47 username.conf
+</pre></div>
+<h3 id="da kai /etc/apache2/httpd.conf"> 打开 /etc/apache2/httpd.conf</h3>
+<div class="highlight"><pre><span></span>LoadModule authz_core_module libexec/apache2/mod_authz_core.so
+LoadModule authz_host_module libexec/apache2/mod_authz_host.so
+LoadModule userdir_module libexec/apache2/mod_userdir.so
+LoadModule include_module libexec/apache2/mod_include.so
+LoadModule rewrite_module libexec/apache2/mod_rewrite.so
+LoadModule php5_module libexec/apache2/libphp5.so
+Include /private/etc/apache2/extra/httpd-userdir.conf
+</pre></div>
+<h3 id="da kai  /etc/apache2/extra/httpd-userdir.conf"> 打开  /etc/apache2/extra/httpd-userdir.conf</h3>
+<p>uncomment the following:</p>
+<div class="highlight"><pre><span></span>Include /private/etc/apache2/users/*.conf
+</pre></div>
+<h3 id="qi dong apache"> 启动 apache</h3>
+<div class="highlight"><pre><span></span>mkdir ~/Sites
+sudo apachectl restart
+</pre></div>
+<hr/>
+<section>
+<h2>Related Posts</h2>
+<ul class="related-posts-list">
+<li><a href="./git.html" title="Git">Git</a></li>
+<li><a href="./mountwindow.html" title="MountWindow">MountWindow</a></li>
+<li><a href="./devices.html" title="Devices">Devices</a></li>
+<li><a href="./mac-mini-gentoo-linux-single-boot-with-kernel-stub-installation.html" title="Mac-mini Gentoo Linux Single Boot with Kernel Stub Installation">Mac-mini Gentoo Linux Single Boot with Kernel Stub Installation</a></li>
+<li><a href="./cron.html" title="Cron">Cron</a></li>
+</ul>
+<hr/>
+</section>
+</div>
+<section>
+<div class="span2" style="float:right;font-size:0.9em;">
+<h4>Published</h4>
+<time datetime="2016-02-29T09:52:41+08:00" pubdate="pubdate">Feb 29, 2016</time>
+<h4>Last Updated</h4>
+<time datetime="2016-09-26T12:43:00+08:00">Sep 26, 2016</time>
+<h4>Category</h4>
+<a class="category-link" href="./categories.html#tech-ref">tech</a>
+<h4>Tags</h4>
+<ul class="list-of-tags tags-in-article">
+<li><a href="./tags.html#automator-ref">automator
+                    <span>1</span>
+</a></li>
+<li><a href="./tags.html#git-ref">git
+                    <span>2</span>
+</a></li>
+<li><a href="./tags.html#mac-ref">mac
+                    <span>2</span>
+</a></li>
+<li><a href="./tags.html#tech-ref">tech
+                    <span>15</span>
+</a></li>
+<li><a href="./tags.html#virtualbox-ref">virtualbox
+                    <span>1</span>
+</a></li>
+</ul>
+<h4>Contact</h4>
+<a class="sidebar-social-links" href="https://slashdot.org/" target="_blank" title="My IT新闻Slashdot Profile">
+<i class="fa fa-it新闻slashdot sidebar-social-links"></i></a>
+</div>
+</section>
+</div>
+</article>
+</div>
+<div class="span1"></div>
+</div>
+</div>
+<div id="push"></div>
+</div>
+<footer>
+<div id="footer">
+<ul class="footer-content">
+<li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+</ul>
+</div>
+</footer> <script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+</body>
+<!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>

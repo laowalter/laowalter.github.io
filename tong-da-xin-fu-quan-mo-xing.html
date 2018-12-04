@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Walter" name="author">
+<meta content="Walter" name="copyright">
+<meta content="article" property="og:type">
+<meta content="summary" name="twitter:card"/>
+<meta content="stock, stock, " name="keywords">
+<meta content="通达信复权模型 " property="og:title"/>
+<meta content="./tong-da-xin-fu-quan-mo-xing.html" property="og:url"/>
+<meta content="通达信复权模型是建立在 ” 股东财富不变 ” 的原则上的。 交易所依据 ” 股东财富不变 ” 原则制定除权除息报价计算公式 , 目前沪深交易所除权除息报价的基本公式如下 ( 在具体操作中可能会有所变动 ): 除权 ( 息 ) 报价＝[( 前收盘价 - 现金红利 )＋配 ( 新 ) 股价格 × 流通股份变动比例 ]÷(1＋流通股份变动比例 ) 通达信复权分为向前复权和向后复权 : 向前复权 , 就是保持现有价位不变 , 将以前的价格缩减 , 将除权前的 K 线向下平移 , 使图形吻合 , 保持股价走势的连续性。 向后复权 , 就是保持先前的价格不变 , 而将以后的价格增加。上面的例子采用的就是向后复权。 两者最明显的区别在于向前复权的当前周期报价和 K 线显示价格完全一致 , 而向后复权的报价大多低于 K 线显示价格。例如 , 某只股票当前价格 10 元 , 在这之前曾经每 10 股送 10 股 , 前者除权后的价格仍是 10 元 …" property="og:description"/>
+<meta content="Just MEMO" property="og:site_name"/>
+<meta content="Walter" property="og:article:author"/>
+<meta content="2017-10-25T13:03:34+08:00" property="og:article:published_time"/>
+<meta content="2017-10-25T13:03:34+08:00" property=""/>
+<meta content="通达信复权模型 " name="twitter:title"/>
+<meta content="通达信复权模型是建立在 ” 股东财富不变 ” 的原则上的。 交易所依据 ” 股东财富不变 ” 原则制定除权除息报价计算公式 , 目前沪深交易所除权除息报价的基本公式如下 ( 在具体操作中可能会有所变动 ): 除权 ( 息 ) 报价＝[( 前收盘价 - 现金红利 )＋配 ( 新 ) 股价格 × 流通股份变动比例 ]÷(1＋流通股份变动比例 ) 通达信复权分为向前复权和向后复权 : 向前复权 , 就是保持现有价位不变 , 将以前的价格缩减 , 将除权前的 K 线向下平移 , 使图形吻合 , 保持股价走势的连续性。 向后复权 , 就是保持先前的价格不变 , 而将以后的价格增加。上面的例子采用的就是向后复权。 两者最明显的区别在于向前复权的当前周期报价和 K 线显示价格完全一致 , 而向后复权的报价大多低于 K 线显示价格。例如 , 某只股票当前价格 10 元 , 在这之前曾经每 10 股送 10 股 , 前者除权后的价格仍是 10 元 …" name="twitter:description"/>
+<title>通达信复权模型  · Just MEMO
+</title>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet"/>
+<link href="./theme/css/pygments.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="./theme/tipuesearch/tipuesearch.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="./theme/css/elegant.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="./theme/css/custom.css" media="screen" rel="stylesheet" type="text/css"/>
+</meta></meta></meta></meta></head>
+<body>
+<div id="content-sans-footer">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="./"><span class="site-name">Just MEMO</span></a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right top-menu">
+<li><a href=".">Home</a></li>
+<li><a href="./categories.html">Categories</a></li>
+<li><a href="./tags.html">Tags</a></li>
+<li><a href="./archives.html">Archives</a></li>
+<li><form action="./search.html" class="navbar-search" onsubmit="return validateForm(this.elements['q'].value);"> <input class="search-query" id="tipue_search_input" name="q" placeholder="Search" type="text"/></form></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1"></div>
+<div class="span10">
+<article>
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1><a href="./tong-da-xin-fu-quan-mo-xing.html"> 通达信复权模型  </a></h1>
+</header>
+</div>
+<div class="row-fluid">
+<div class="span2 table-of-content">
+<nav>
+<h4>Contents</h4>
+<div id="toc"><ul><li><a class="toc-href" href="#" title="通达信复权模型">通达信复权模型</a><ul><li><a class="toc-href" href="#tong da xin fu quan suan fa :" title="通达信复权算法:">通达信复权算法:</a><ul><li><a class="toc-href" href="#yi , chu quan chu xi de gai nian" title="一、除权除息的概念">一、除权除息的概念</a></li><li><a class="toc-href" href="#er , fu quan de gai nian" title="二、复权的概念">二、复权的概念</a></li><li><a class="toc-href" href="#san , xiang qian fu quan he xiang hou fu quan" title="三、向前复权和向后复权">三、向前复权和向后复权</a></li><li><a class="toc-href" href="#si , zi dong fu quan he jing que fu quan" title="四、自动复权和精确复权">四、自动复权和精确复权</a></li></ul></li></ul></li></ul></div>
+</nav>
+</div>
+<div class="span8 article-content">
+<p> 通达信复权模型是建立在 ” 股东财富不变 ” 的原则上的。</p>
+<p> 交易所依据 ” 股东财富不变 ” 原则制定除权除息报价计算公式 , 目前沪深交易所除权除息报价的基本公式如下 ( 在具体操作中可能会有所变动 ):  除权 ( 息 ) 报价＝[( 前收盘价 - 现金红利 )＋配 ( 新 ) 股价格 × 流通股份变动比例 ]÷(1＋流通股份变动比例 )</p>
+<p> 通达信复权分为向前复权和向后复权 :
+向前复权 , 就是保持现有价位不变 , 将以前的价格缩减 , 将除权前的 K 线向下平移 , 使图形吻合 , 保持股价走势的连续性。
+向后复权 , 就是保持先前的价格不变 , 而将以后的价格增加。上面的例子采用的就是向后复权。  两者最明显的区别在于向前复权的当前周期报价和 K 线显示价格完全一致 , 而向后复权的报价大多低于 K 线显示价格。例如 , 某只股票当前价格 10 元 , 在这之前曾经每 10 股送 10 股 , 前者除权后的价格仍是 10 元 , 后者则为 20 元。</p>
+<p> 复权是根据上市公司的权益分派、公积金转增股本、配股等情况和交易所的除权报价方案精确计算复权价格。其计算公式 :</p>
+<p> 前复权 : 复权后价格＝[( 复权前价格 - 现金红利 )＋配 ( 新 ) 股价格 × 流通股份变动比例 ]÷(1＋流通股份变动比例 )  后复权 : 复权后价格＝复权前价格 ×(1＋流通股份变动比例 )- 配 ( 新 ) 股价格 × 流通股份变动比例＋现金红利 </p>
+<p> 通达信网上交易客户端的复权 K 线范围是所有从服务器端取得的数据 , 如果将分析股票的所有数据 ( 从上市第一天开始 ) 取到了本地 , 则复权是基于所有数据的 ( 数据的多少对后复权的当前价格有很大影响 )。</p>
+<h2 id="tong da xin fu quan suan fa :"> 通达信复权算法 :</h2>
+<h3 id="yi , chu quan chu xi de gai nian"> 一、除权除息的概念 </h3>
+<p> 上市证券发生权益分派、公积金转增股本、配股等情况 , 交易所会在股权 ( 债权 ) 登记日 (B 股为最后交易日 ) 次一交易日对该证券作除权除息处理。
+除权除息的基本思想就是 ” 股东财富不变 ” 原则 , 意即分红事项不应影响股东财富总额 , 这是符合基本财务原理的。依据此原则 , 交易所在除权前后提供具有权威性的参照价格 , 作为证券交易的价格基准即除权除息报价。
+在除权除息日交易所公布的前收盘是除权除息报价而非上一交易日收盘价 , 当日的涨跌幅以除权除息报价为基准计算 , 所以能够真实反映股民相对于上一交易日的盈亏状况。
+交易所依据 ” 股东财富不变 ” 原则制定除权除息报价计算公式 , 目前沪深交易所除权除息报价的基本公式如下 ( 在具体操作中可能会有所变动 ):  除权 ( 息 ) 报价＝[( 前收盘价 - 现金红利 )＋配 ( 新 ) 股价格 × 流通股份变动比例 ]÷(1＋流通股份变动比例 )</p>
+<h3 id="er , fu quan de gai nian"> 二、复权的概念 </h3>
+<p> 除权、除息之后 , 股价随之产生了变化 , 往往在股价走势图上出现向下的跳空缺口 , 但股东的实际资产并没有变化。如 :10 元的股票 ,10 送 10 之后除权报 价为 5 元 , 但实际还是相当于 10 元。这种情况可能会影响部分投资者的正确判断 , 看似这个价位很低 , 但有可能是一个历史高位 , 在股票分析软件中还会影响到技 术指标的准确性。
+所谓复权就是对股价和成交量进行权息修复 , 按照股票的实际涨跌绘制股价走势图 , 并把成交量调整为相同的股本口径。例如某股票除权前日流通盘为 5000 万股 , 价格为 10 元 , 成交量为 500 万股 , 换手率为 10%,10 送 10 之后除权报价为 5 元 , 流通盘为 1 亿股 , 除权当日走出填权行情 , 收盘于 5.5 元 , 上涨 10%, 成交量为 1000 万股 , 换手率也是 10%( 和前一交易日相比具有同样的成交量水平 )。复权处理后股价为 11 元 , 相对于前一日的 10 元上涨了  10%, 成交量为 500 万股 , 这样在股价走势图上真实反映了股价涨跌 , 同时成交量在除权前后也具有可比性。</p>
+<h3 id="san , xiang qian fu quan he xiang hou fu quan"> 三、向前复权和向后复权 </h3>
+<p> 向前复权 , 就是保持现有价位不变 , 将以前的价格缩减 , 将除权前的 K 线向下平移 , 使图形吻合 , 保持股价走势的连续性。
+向后复权 , 就是保持先前的价格不变 , 而将以后的价格增加。上面的例子采用的就是向后复权。  两者最明显的区别在于向前复权的当前周期报价和 K 线显示价格完全一致 , 而向后复权的报价大多低于 K 线显示价格。例如 , 某只股票当前价格 10 元 , 在这之前曾经每 10 股送 10 股 , 前者除权后的价格仍是 10 元 , 后者则为 20 元。</p>
+<h3 id="si , zi dong fu quan he jing que fu quan"> 四、自动复权和精确复权 </h3>
+<p> 所谓自动除权 , 指股票软件自动确定当日是否有除权发生 , 根据今日收到的昨收盘和上一交易日的收盘价对比 , 若二者不等 , 则能肯定今天有除权 , 进而推算送配方案 , 进行复权处理。这种方法有很多问题 , 不能做到准确复权。  精确复权是根据上市公司的权益分派、公积金转增股本、配股等情况和交易所的除权报价方案精确计算复权价格。精确复权的计算公式 :</p>
+<p> 前复权 : 复权后价格＝[( 复权前价格 - 现金红利 )＋配 ( 新 ) 股价格 × 流通股份变动比例 ]÷(1＋流通股份变动比例 )  后复权 : 复权后价格＝复权前价格 ×(1＋流通股份变动比例 )- 配 ( 新 ) 股价格 × 流通股份变动比例＋现金红利 </p>
+<hr/>
+<section>
+<h2>Related Posts</h2>
+<ul class="related-posts-list">
+<li><a href="./zi-xuan-gu.html" title="自选股">自选股</a></li>
+<li><a href="./te-shu-xing-tai-vfan-ben-zou.html" title="特殊形态(V反、奔走)">特殊形态(V反、奔走)</a></li>
+<li><a href="./da-xiao-ji-bie-zhong-die-de-li-jie-he-cao-zuo-si-lu.html" title="大小级别重叠的理解和操作思路">大小级别重叠的理解和操作思路</a></li>
+<li><a href="./ji-bie.html" title="级别">级别</a></li>
+<li><a href="./economic-data.html" title="Economic Data">Economic Data</a></li>
+</ul>
+<hr/>
+</section>
+</div>
+<section>
+<div class="span2" style="float:right;font-size:0.9em;">
+<h4>Published</h4>
+<time datetime="2017-10-25T13:03:34+08:00" pubdate="pubdate">Oct 25, 2017</time>
+<h4>Last Updated</h4>
+<time datetime="2017-10-25T13:03:34+08:00">Oct 25, 2017</time>
+<h4>Category</h4>
+<a class="category-link" href="./categories.html#stock-ref">stock</a>
+<h4>Tags</h4>
+<ul class="list-of-tags tags-in-article">
+<li><a href="./tags.html#stock-ref">stock
+                    <span>140</span>
+</a></li>
+</ul>
+<h4>Contact</h4>
+<a class="sidebar-social-links" href="https://slashdot.org/" target="_blank" title="My IT新闻Slashdot Profile">
+<i class="fa fa-it新闻slashdot sidebar-social-links"></i></a>
+</div>
+</section>
+</div>
+</article>
+</div>
+<div class="span1"></div>
+</div>
+</div>
+<div id="push"></div>
+</div>
+<footer>
+<div id="footer">
+<ul class="footer-content">
+<li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+</ul>
+</div>
+</footer> <script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+</body>
+<!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>

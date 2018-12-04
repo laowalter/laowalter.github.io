@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Walter" name="author">
+<meta content="Walter" name="copyright">
+<meta content="article" property="og:type">
+<meta content="summary" name="twitter:card"/>
+<meta content="python, mongodb, pandas, tech, " name="keywords">
+<meta content="Python_tips " property="og:title"/>
+<meta content="./python_tips.html" property="og:url"/>
+<meta content="Read special excel like xml Excel Address import pandas as pd dfs = pd.read_html('swclass.xls', flavor='html5lib') df = pd.DataFrame(dfs[0]) df.columns = df.iloc[0] df = df[1:] df_agg = df.groupby(' 行业名称 ').agg(lambda x: ','.join(x)) df_agg = df_agg.reset_index() df_agg[df_agg[' 行业名称 ']==' 电子 '][' 股票代码 '].tolist() add …" property="og:description"/>
+<meta content="Just MEMO" property="og:site_name"/>
+<meta content="Walter" property="og:article:author"/>
+<meta content="2018-09-25T08:44:25+08:00" property="og:article:published_time"/>
+<meta content="2018-09-25T08:44:25+08:00" property=""/>
+<meta content="Python_tips " name="twitter:title"/>
+<meta content="Read special excel like xml Excel Address import pandas as pd dfs = pd.read_html('swclass.xls', flavor='html5lib') df = pd.DataFrame(dfs[0]) df.columns = df.iloc[0] df = df[1:] df_agg = df.groupby(' 行业名称 ').agg(lambda x: ','.join(x)) df_agg = df_agg.reset_index() df_agg[df_agg[' 行业名称 ']==' 电子 '][' 股票代码 '].tolist() add …" name="twitter:description"/>
+<title>Python_tips  · Just MEMO
+</title>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet"/>
+<link href="./theme/css/pygments.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="./theme/tipuesearch/tipuesearch.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="./theme/css/elegant.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="./theme/css/custom.css" media="screen" rel="stylesheet" type="text/css"/>
+</meta></meta></meta></meta></head>
+<body>
+<div id="content-sans-footer">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="./"><span class="site-name">Just MEMO</span></a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right top-menu">
+<li><a href=".">Home</a></li>
+<li><a href="./categories.html">Categories</a></li>
+<li><a href="./tags.html">Tags</a></li>
+<li><a href="./archives.html">Archives</a></li>
+<li><form action="./search.html" class="navbar-search" onsubmit="return validateForm(this.elements['q'].value);"> <input class="search-query" id="tipue_search_input" name="q" placeholder="Search" type="text"/></form></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1"></div>
+<div class="span10">
+<article>
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1><a href="./python_tips.html"> Python_tips  </a></h1>
+</header>
+</div>
+<div class="row-fluid">
+<div class="span2 table-of-content">
+<nav>
+<h4>Contents</h4>
+<div id="toc"><ul><li><a class="toc-href" href="#" title="Python_tips">Python_tips</a><ul><li><a class="toc-href" href="#read special excel like xml" title="Read special excel like xml">Read special excel like xml</a></li><li><a class="toc-href" href="#add color text output in teminal" title="add color text output in teminal">add color text output in teminal</a></li><li><a class="toc-href" href="#trading date list" title="trading date list">trading date list</a></li><li><a class="toc-href" href="#print full dataframe" title="print full dataframe">print full dataframe</a></li><li><a class="toc-href" href="#command line input" title="Command Line input">Command Line input</a></li><li><a class="toc-href" href="#date" title="Date">Date</a></li><li><a class="toc-href" href="#log" title="Log">Log</a></li><li><a class="toc-href" href="#mongodb" title="Mongodb">Mongodb</a></li><li><a class="toc-href" href="#pandas and monogodb" title="Pandas and Monogodb">Pandas and Monogodb</a><ul><li><a class="toc-href" href="#read from monogodb get pandas" title="Read from Monogodb get Pandas">Read from Monogodb get Pandas</a></li><li><a class="toc-href" href="#write pandas to mongodb" title="Write Pandas to Mongodb">Write Pandas to Mongodb</a></li></ul></li><li><a class="toc-href" href="#query by date_1" title="Query by date">Query by date</a></li><li><a class="toc-href" href="#pandas" title="Pandas">Pandas</a></li><li><a class="toc-href" href="#matplotlib" title="Matplotlib">Matplotlib</a></li><li><a class="toc-href" href="#webscrawler" title="webscrawler">webscrawler</a></li></ul></li></ul></div>
+</nav>
+</div>
+<div class="span8 article-content">
+<h2 id="read special excel like xml">Read special excel like xml</h2>
+<p><a href="http://www.swsindex.com/idx0530.aspx">Excel Address</a></p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">'swclass.xls'</span><span class="p">,</span> <span class="n">flavor</span><span class="o">=</span><span class="s1">'html5lib'</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dfs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+<span class="n">df_agg</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">' 行业名称 '</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">df_agg</span>  <span class="o">=</span> <span class="n">df_agg</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">df_agg</span><span class="p">[</span><span class="n">df_agg</span><span class="p">[</span><span class="s1">' 行业名称 '</span><span class="p">]</span><span class="o">==</span><span class="s1">' 电子 '</span><span class="p">][</span><span class="s1">' 股票代码 '</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</pre></div>
+<h2 id="add color text output in teminal">add color text output in teminal</h2>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[1;32;40m Bright Green  </span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[0;37;40m Normal text</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[2;37;40m Underlined text</span><span class="se">\033</span><span class="s2">[0;37;40m </span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[1;37;40m Bright Colour</span><span class="se">\033</span><span class="s2">[0;37;40m </span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[3;37;40m Negative Colour</span><span class="se">\033</span><span class="s2">[0;37;40m </span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[5;37;40m Negative Colour</span><span class="se">\033</span><span class="s2">[0;37;40m</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+<p>The above <span class="caps">ANSI</span> escape code will set the text colour to bright green. The format is;</p>
+<p>\033[  Escape code, this is always the same</p>
+<p>1 = Style, 1 for normal.</p>
+<p>32 = Text colour, 32 for bright green.</p>
+<p>40m = Background colour, 40 is for black.</p>
+<p>This table shows some of the available formats;</p>
+<p>
+<div class="justtable">
+<table>
+<thead>
+<tr>
+<th>Text color</th>
+<th>Code</th>
+<th>Text style</th>
+<th>Code</th>
+<th>Background color</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Black 30</td>
+<td>No effect</td>
+<td>0</td>
+<td>Black</td>
+<td>40</td>
+</tr>
+<tr>
+<td>Red</td>
+<td>31</td>
+<td>Bold</td>
+<td>1</td>
+<td>Red</td>
+<td>41</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>32</td>
+<td>Underline</td>
+<td>2</td>
+<td>Green</td>
+<td>42</td>
+</tr>
+<tr>
+<td>Yellow</td>
+<td>33</td>
+<td>Negative1</td>
+<td>3</td>
+<td>Yellow</td>
+<td>43</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>34</td>
+<td>Negative2</td>
+<td>5</td>
+<td>Blue</td>
+<td>44</td>
+</tr>
+<tr>
+<td>Purple</td>
+<td>35</td>
+<td>Purple</td>
+<td>45</td>
+</tr>
+<tr>
+<td>Cyan</td>
+<td>36</td>
+<td>Cyan</td>
+<td>46</td>
+</tr>
+<tr>
+<td>White</td>
+<td>37</td>
+<td>White</td>
+<td>47</td>
+</tr>
+</tbody>
+</table>
+</div></p>
+<h2 id="trading date list">trading date list</h2>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mylib.holiday_setting</span> <span class="kn">import</span> <span class="n">holiday</span>
+
+<span class="k">def</span> <span class="nf">trading_datelist</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    date 是需要计算的最后日期 , datetime.datetime，</span>
+<span class="sd">    num 是从 date 开始，包括 date，向前 num 个交易日 </span>
+<span class="sd">    返回从指定 date 的前 num 个交易日的 datetime 日期对象的 List</span>
+<span class="sd">    '''</span>
+    <span class="n">day_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">count</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">isoweekday</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span> <span class="ow">or</span> <span class="p">(</span><span class="n">date</span> <span class="ow">in</span> <span class="n">holiday</span><span class="p">):</span>
+            <span class="n">date</span> <span class="o">=</span> <span class="n">date</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">day_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+        <span class="n">date</span> <span class="o">=</span> <span class="n">date</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">day_list</span>
+</pre></div>
+<h2 id="print full dataframe">print full dataframe</h2>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_full</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.max_rows'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">reset_option</span><span class="p">(</span><span class="s1">'display.max_rows'</span><span class="p">)</span>
+</pre></div>
+<h2 id="command line input">Command Line input</h2>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_input</span><span class="p">():</span>
+    <span class="c1"># 获得命令行的输入参数 </span>
+    <span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">)</span>
+
+    <span class="n">switch</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">' 指定日期在内的 N 个交易日的每笔价格的线性回归图。'</span><span class="p">)</span>
+    <span class="n">switch</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">'--date'</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">'date'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">today</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">' 交易日的最后日期，格式："2016-03-25"，缺省为 “ 今日 ”'</span><span class="p">)</span>
+    <span class="n">switch</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">'--num'</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">'num'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">' 交易日的数量，缺省为 1，即 “ 当日 ”'</span><span class="p">)</span>
+    <span class="n">switch</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">'--code'</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">'code'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">' 股票代码 '</span><span class="p">)</span>
+    <span class="n">switch</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">'--realtime'</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">'realtime'</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">'store_true'</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">' 从实时接口中取数据 '</span><span class="p">)</span>
+    <span class="n">switch</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">'--no-realtime'</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">'realtime'</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">'store_false'</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">' 从历史接口中取数据 '</span><span class="p">)</span>
+    <span class="n">switch</span><span class="o">.</span><span class="n">set_defaults</span><span class="p">(</span><span class="n">realtime</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="n">args</span> <span class="o">=</span> <span class="n">switch</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">args</span>
+</pre></div>
+<h2 id="date">Date</h2>
+<ul>
+<li>
+<p>parse date string to datetime object</p>
+<p><code>python
+import dateutil.parser
+day = dateutil.parser.parse("Thu Sep 25 10:36:28 BRST 2003")</code></p>
+</li>
+<li>
+<p> 只得到今天日期的 datetime 对象，不要时分秒的部分 </p>
+<p><code>python
+date = dateutil.parser.parse(datetime.datetime.today().strftime('%Y-%m-%d'))</code></p>
+</li>
+<li>
+<p>datetime to string</p>
+<p><code>python
+import datetime
+datetime.datetime.today().strftime('%Y-%m-%d')</code></p>
+</li>
+</ul>
+<h2 id="log">Log</h2>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> 
+                <span class="n">format</span><span class="o">=</span><span class="s1">'</span><span class="si">%(asctime)s</span><span class="s1"> </span><span class="si">%(static)s</span><span class="s1">[line:</span><span class="si">%(lineno)d</span><span class="s1">] </span><span class="si">%(levelname)s</span><span class="s1"> </span><span class="si">%(message)s</span><span class="s1">'</span><span class="p">,</span>
+                <span class="n">datefmt</span><span class="o">=</span><span class="s1">'%a, </span><span class="si">%d</span><span class="s1"> %b %Y %H:%M:%S'</span><span class="p">,</span> 
+                <span class="n">static</span><span class="o">=</span><span class="s1">'test.log'</span><span class="p">,</span>
+                <span class="n">filemode</span><span class="o">=</span><span class="s1">'w'</span><span class="p">)</span>
+
+<span class="c1"># 定义一个 StreamHandler，将 INFO 级别或更高的日志信息打印到标准错误，并将其添加到当前的日志处理对象 #</span>
+<span class="n">console</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
+<span class="n">console</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s1">'</span><span class="si">%(name)-12s</span><span class="s1">: </span><span class="si">%(levelname)-8s</span><span class="s1"> </span><span class="si">%(message)s</span><span class="s1">'</span><span class="p">)</span>
+<span class="n">console</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">console</span><span class="p">)</span>
+
+<span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">'This is debug message'</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">'This is info message'</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">'This is warning message'</span><span class="p">)</span>
+</pre></div>
+<h2 id="mongodb">Mongodb</h2>
+<ul>
+<li>
+<p>insert mongodb’s native date</p>
+<p><code>python
+date_format {'date': datetime.datetime(2009, 11, 10, 10, 45)}</code>
+or 
+<code>python
+datetime.strptime(date_string, format)</code>
+* <code>update_one</code>(filter, update, upsert=False, bypass_document_validation=False)</p>
+<p><code>python
+import pymongo as py
+client = py.MongoClient("localhost", 27017)
+db = client.test
+collection = db.table
+mydict = {'name':'Lucy', 'sex':'female','job':'nurse'}
+collection.insert_one(mydict)
+mydict = {'name':'walter', 'sex':'male','job':'trader'}
+collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code></p>
+</li>
+<li>
+<p><code>update_many</code>(filter, update, upsert=False, bypass_document_validation=False)¶</p>
+</li>
+<li>
+<p>select fields</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span>    <span class="n">conn</span> <span class="o">=</span> <span class="n">Querymongodb2</span><span class="p">(</span><span class="s1">'stock'</span><span class="p">,</span> <span class="s1">'stockbasics'</span><span class="p">)</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'code'</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'pe'</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'_id'</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">get_list_fields</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">fields</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cursor</span><span class="p">))</span>
+</pre></div>
+<ul>
+<li> 查询结果 cursor 是 dict，生成 df</li>
+</ul>
+<div class="highlight"><pre><span></span>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cursor</span><span class="p">))</span>
+</pre></div>
+<h2 id="pandas and monogodb">Pandas and Monogodb</h2>
+<h3 id="read from monogodb get pandas">Read from Monogodb get Pandas</h3>
+<ul>
+<li>
+<p> 读行情数据 </p>
+<ul>
+<li>Querymongodb</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">querymongodb</span> <span class="kn">import</span> <span class="n">Querymongodb</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">Querymongodb</span><span class="p">(</span><span class="n">db</span> <span class="o">=</span> <span class="s1">'stock'</span><span class="p">,</span> <span class="n">collection</span> <span class="o">=</span> <span class="s1">'indexes'</span><span class="p">,</span> 
+                        <span class="n">code</span> <span class="o">=</span> <span class="s1">'000001'</span><span class="p">,</span>
+                        <span class="n">start</span> <span class="o">=</span> <span class="s1">'2015-10-1T0:0:0.000Z'</span><span class="p">,</span>
+                        <span class="n">end</span> <span class="o">=</span> <span class="s1">'2016-1-12T0:0:0.00Z'</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">get_df</span><span class="p">()</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">date</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'date'</span><span class="p">,</span> <span class="s1">'Open'</span><span class="p">,</span> <span class="s1">'High'</span><span class="p">,</span> <span class="s1">'Low'</span><span class="p">,</span> <span class="s1">'Close'</span><span class="p">]]</span>
+</pre></div>
+<div class="highlight"><pre><span></span>* Querymongodb2
+</pre></div>
+<div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">mylib.querymongodb2</span> <span class="kn">import</span> <span class="n">Querymongodb2</span>
+    <span class="n">db</span> <span class="o">=</span> <span class="s1">'stock'</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="s1">'stockbasics'</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">Querymongodb2</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">table</span><span class="p">)</span>
+</pre></div>
+<ul>
+<li> 自写 query 读数据返回 DataFrame</li>
+</ul>
+<div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">querymongodb2</span> <span class="kn">import</span> <span class="n">Querymongodb2</span>
+
+    <span class="c1"># 读入所有股票今天和昨天的数据，找出涨幅 </span>
+    <span class="n">table</span> <span class="o">=</span> <span class="s1">'hist'</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">Querymongodb2</span><span class="p">(</span><span class="n">db</span> <span class="o">=</span> <span class="s1">'stock'</span><span class="p">,</span> <span class="n">collection</span> <span class="o">=</span> <span class="n">table</span><span class="p">)</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'date'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'$gte'</span><span class="p">:</span> <span class="n">start</span><span class="p">}}</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">get_df_by_query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+<h3 id="write pandas to mongodb">Write Pandas to Mongodb</h3>
+<div class="highlight"><pre><span></span>    <span class="n">client</span> <span class="o">=</span> <span class="n">py</span><span class="o">.</span><span class="n">MongoClient</span><span class="p">(</span><span class="s2">"localhost"</span><span class="p">,</span> <span class="mi">27017</span><span class="p">)</span>
+    <span class="n">db</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">stock</span>
+    <span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">classify</span>
+    <span class="c1"># 删除全部原数据库内容 </span>
+    <span class="n">collection</span><span class="o">.</span><span class="n">delete_many</span><span class="p">({})</span>
+    <span class="n">records</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">area</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">'records'</span><span class="p">,</span>     <span class="n">date_format</span><span class="o">=</span><span class="s1">'iso'</span><span class="p">))</span>
+    <span class="n">collection</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">records</span><span class="p">)</span>
+</pre></div>
+<h2 id="query by date_1">Query by date</h2>
+<ul>
+<li>example 1</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">db</span><span class="o">.</span><span class="n">getCollection</span><span class="p">(</span><span class="s1">'histfq'</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">'date'</span><span class="p">:</span> <span class="p">{</span><span class="err">$</span><span class="n">gte</span><span class="p">:</span> <span class="n">ISODate</span><span class="p">(</span><span class="s1">'2016-03-21 00:00:00.000Z'</span><span class="p">)}})</span>
+</pre></div>
+<ul>
+<li>example 2</li>
+</ul>
+<div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">datetime</span>
+    <span class="kn">from</span> <span class="nn">querymongodb2</span> <span class="kn">import</span> <span class="n">Querymongodb2</span>
+    <span class="c1"># 读入所有股票今天和昨天的数据，找出涨幅 </span>
+    <span class="n">table</span> <span class="o">=</span> <span class="s1">'histfq'</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">Querymongodb2</span><span class="p">(</span><span class="n">db</span> <span class="o">=</span> <span class="s1">'stock'</span><span class="p">,</span> <span class="n">collection</span> <span class="o">=</span> <span class="n">table</span><span class="p">)</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'date'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'$gte'</span><span class="p">:</span> <span class="n">start</span><span class="p">}}</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">get_df_by_query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+<h2 id="pandas">Pandas</h2>
+<ul>
+<li>rename a DataFrame column name</li>
+</ul>
+<div class="highlight"><pre><span></span>    <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'close'</span> <span class="p">:</span> <span class="s1">'today'</span><span class="p">},</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+</pre></div>
+<ul>
+<li>remove a column from DataFrame</li>
+</ul>
+<div class="highlight"><pre><span></span>    <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'code'</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+</pre></div>
+<ul>
+<li>remove Nan or None and duplicates</li>
+</ul>
+<div class="highlight"><pre><span></span>    <span class="n">concept</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">concept</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+</pre></div>
+<ul>
+<li>create a dataframe</li>
+</ul>
+<div class="highlight"><pre><span></span>    <span class="n">conceptFrame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="n">index</span> <span class="o">=</span> <span class="n">concept</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                           <span class="n">columns</span> <span class="o">=</span> <span class="n">today</span><span class="p">)</span>  <span class="c1"># 1st row as the column names</span>
+</pre></div>
+<h2 id="matplotlib">Matplotlib</h2>
+<ul>
+<li> 显示中文 </li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plotbars</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+    <span class="n">font</span> <span class="o">=</span> <span class="n">FontProperties</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="sa">r</span><span class="s2">"/Library/Fonts/simsun.ttc"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>  <span class="n">size 可不用指定 </span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s1">'bar'</span><span class="p">,</span> <span class="n">rot</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="c1">#labels = [label.decode("utf-8") for label in df.index.values]</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">fontproperties</span><span class="o">=</span><span class="n">font</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span> <span class="o">-</span><span class="mi">45</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+<ul>
+<li> 显示中文 (Gentoo)</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="kn">as</span> <span class="nn">mpl</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'Agg'</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'font.sans-serif'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="s1">'SimHei'</span><span class="p">]</span>
+</pre></div>
+<ul>
+<li> 显示中文 (Mac)<ul>
+<li>install pyqt</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span>pip install pyqt
+</pre></div>
+<div class="highlight"><pre><span></span>* ~/.matplotlib/matplotlibrc
+</pre></div>
+<div class="highlight"><pre><span></span>    backend: Qt5Agg
+    font.sans-serif : STHeiti
+</pre></div>
+<ul>
+<li> 测试支持中文字体 </li>
+</ul>
+<div class="highlight"><pre><span></span><span class="ch">#! /usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">from</span> <span class="nn">matplotlib.font_manager</span> <span class="kn">import</span> <span class="n">FontManager</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+
+<span class="n">fm</span> <span class="o">=</span> <span class="n">FontManager</span><span class="p">()</span>
+<span class="n">mat_fonts</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fm</span><span class="o">.</span><span class="n">ttflist</span><span class="p">)</span>
+<span class="c1">#print(mat_fonts)</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="s1">'fc-list :lang=zh -f "%{family}</span><span class="se">\n</span><span class="s1">"'</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="c1">#print( '*' * 10, ' 系统可用的中文字体 ', '*' * 10)</span>
+<span class="c1">#print (output)</span>
+<span class="n">zh_fonts</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">output</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">))</span>
+<span class="n">available</span> <span class="o">=</span> <span class="n">mat_fonts</span> <span class="o">&amp;</span> <span class="n">zh_fonts</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">'*'</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">' 可用的字体 '</span><span class="p">,</span> <span class="s1">'*'</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">available</span><span class="p">:</span>
+     <span class="k">print</span> <span class="p">(</span><span class="n">f</span><span class="p">)</span> 
+</pre></div>
+<h2 id="webscrawler">webscrawler</h2>
+<ul>
+<li>bs4 beautifulsoup</li>
+</ul>
+<div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">requests</span>
+    <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+    <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+        <span class="s1">' 指数历史行情的地址，是按照季度和年份的组合获得的。'</span>
+        <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1999</span><span class="p">,</span><span class="mi">2017</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">quater</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+
+            <span class="n">baseUrl</span> <span class="o">=</span> <span class="s1">'http://vip.stock.finance.sina.com.cn/corp/go.php/vMS_MarketHistory/stockid/000001/'</span>
+                <span class="n">subUrl</span> <span class="o">=</span> <span class="s1">'year='</span> <span class="o">+</span> <span class="s1">'</span><span class="si">%i</span><span class="s1">'</span><span class="o">%</span><span class="n">year</span><span class="o">+</span> <span class="s1">'&amp;jidu='</span> <span class="o">+</span> <span class="s1">'</span><span class="si">%i</span><span class="s1">'</span><span class="o">%</span><span class="n">quater</span>
+
+                <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">baseUrl</span><span class="o">+</span><span class="n">subUrl</span> <span class="p">)</span>
+                <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">'lxml'</span> <span class="p">)</span>
+
+                <span class="c1"># 对应行情的 table 的属性是 id'＝FundHoldSharesTable</span>
+                <span class="c1"># 首先判断能否获得 table</span>
+                <span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'table'</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">'id'</span><span class="p">:</span><span class="s1">'FundHoldSharesTable'</span><span class="p">})</span>
+                <span class="k">if</span> <span class="n">table</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">display</span> <span class="o">=</span> <span class="s1">'</span><span class="si">%s</span><span class="s1"> 年－</span><span class="si">%s</span><span class="s1"> 季度：没有找到数据表！'</span> <span class="o">%</span> <span class="p">(</span><span class="s1">'</span><span class="si">%i</span><span class="s1">'</span><span class="o">%</span><span class="n">year</span><span class="p">,</span> <span class="s1">'</span><span class="si">%i</span><span class="s1">'</span><span class="o">%</span><span class="n">quater</span><span class="p">)</span>
+                    <span class="k">print</span> <span class="p">(</span><span class="n">display</span><span class="p">)</span>
+
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">df</span> <span class="o">=</span> <span class="n">parse_gen_index_df</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+                    <span class="n">df</span><span class="p">[</span><span class="s1">'code'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'000001'</span>
+                    <span class="n">save</span> <span class="o">=</span> <span class="n">Df2mongo</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">'localhost'</span><span class="p">,</span> <span class="s1">'stock'</span><span class="p">,</span> <span class="s1">'indexes'</span><span class="p">)</span>
+                    <span class="n">save</span><span class="o">.</span><span class="n">store2db</span><span class="p">()</span>
+                    <span class="n">display</span> <span class="o">=</span>  <span class="s1">'</span><span class="si">%s</span><span class="s1"> 年－</span><span class="si">%s</span><span class="s1"> 季度：数据表已经入库！'</span> <span class="o">%</span> <span class="p">(</span><span class="s1">'</span><span class="si">%i</span><span class="s1">'</span><span class="o">%</span><span class="n">year</span><span class="p">,</span> <span class="s1">'</span><span class="si">%i</span><span class="s1">'</span><span class="o">%</span><span class="n">quater</span><span class="p">)</span>
+                    <span class="k">print</span> <span class="p">(</span><span class="n">display</span><span class="p">)</span>
+</pre></div>
+<ul>
+<li>
+<p>Some Resourses for javascript in webscrawler</p>
+<p><a href="https://impythonist.wordpress.com/2015/01/06/ultimate-guide-for-scraping-javascript-rendered-web-pages/">https://impythonist.wordpress.com/2015/01/06/ultimate-guide-for-scraping-javascript-rendered-web-pages/</a></p>
+</li>
+</ul>
+<hr/>
+<section>
+<h2>Related Posts</h2>
+<ul class="related-posts-list">
+<li><a href="./quanta-program.html" title="Quanta Program">Quanta Program</a></li>
+<li><a href="./build-python-env-in-mac.html" title="Build python ENV in Mac">Build python ENV in Mac</a></li>
+<li><a href="./matplotlib.html" title="Matplotlib">Matplotlib</a></li>
+<li><a href="./bokeh.html" title="Bokeh">Bokeh</a></li>
+<li><a href="./jupyter.html" title="Jupyter">Jupyter</a></li>
+</ul>
+<hr/>
+</section>
+</div>
+<section>
+<div class="span2" style="float:right;font-size:0.9em;">
+<h4>Published</h4>
+<time datetime="2018-09-25T08:44:25+08:00" pubdate="pubdate">Sep 25, 2018</time>
+<h4>Last Updated</h4>
+<time datetime="2018-09-25T08:44:25+08:00">Sep 25, 2018</time>
+<h4>Category</h4>
+<a class="category-link" href="./categories.html#tech-ref">tech</a>
+<h4>Tags</h4>
+<ul class="list-of-tags tags-in-article">
+<li><a href="./tags.html#mongodb-ref">mongodb
+                    <span>2</span>
+</a></li>
+<li><a href="./tags.html#pandas-ref">pandas
+                    <span>3</span>
+</a></li>
+<li><a href="./tags.html#python-ref">python
+                    <span>7</span>
+</a></li>
+</ul>
+<h4>Contact</h4>
+<a class="sidebar-social-links" href="https://slashdot.org/" target="_blank" title="My IT新闻Slashdot Profile">
+<i class="fa fa-it新闻slashdot sidebar-social-links"></i></a>
+</div>
+</section>
+</div>
+</article>
+</div>
+<div class="span1"></div>
+</div>
+</div>
+<div id="push"></div>
+</div>
+<footer>
+<div id="footer">
+<ul class="footer-content">
+<li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+</ul>
+</div>
+</footer> <script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+</body>
+<!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>

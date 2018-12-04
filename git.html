@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Walter" name="author">
+<meta content="Walter" name="copyright">
+<meta content="article" property="og:type">
+<meta content="summary" name="twitter:card"/>
+<meta content="git, tech, " name="keywords">
+<meta content="Git " property="og:title"/>
+<meta content="./git.html" property="og:url"/>
+<meta content="Use Git 删除 branch git push origin --delete gh-pages # 删除远程库中的分支 gh-pages git branch -D gh-pages # 删除本地分支 gh-pages 不同的 git client 出现冲突，无法 pull git fetch --all # 从远程仓库中下载最新的内容，但是不在本地合并 git reset --hard origin/master # 重置 master，--hard 指全部文件 删除 branch git branch -d the_local_brach # 删除本地的 git push origin: the_remote_branch # 删除远程的 git …" property="og:description"/>
+<meta content="Just MEMO" property="og:site_name"/>
+<meta content="Walter" property="og:article:author"/>
+<meta content="2016-09-29T10:06:20+08:00" property="og:article:published_time"/>
+<meta content="2016-09-29T10:06:20+08:00" property=""/>
+<meta content="Git " name="twitter:title"/>
+<meta content="Use Git 删除 branch git push origin --delete gh-pages # 删除远程库中的分支 gh-pages git branch -D gh-pages # 删除本地分支 gh-pages 不同的 git client 出现冲突，无法 pull git fetch --all # 从远程仓库中下载最新的内容，但是不在本地合并 git reset --hard origin/master # 重置 master，--hard 指全部文件 删除 branch git branch -d the_local_brach # 删除本地的 git push origin: the_remote_branch # 删除远程的 git …" name="twitter:description"/>
+<title>Git  · Just MEMO
+</title>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet"/>
+<link href="./theme/css/pygments.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="./theme/tipuesearch/tipuesearch.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="./theme/css/elegant.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="./theme/css/custom.css" media="screen" rel="stylesheet" type="text/css"/>
+</meta></meta></meta></meta></head>
+<body>
+<div id="content-sans-footer">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="./"><span class="site-name">Just MEMO</span></a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right top-menu">
+<li><a href=".">Home</a></li>
+<li><a href="./categories.html">Categories</a></li>
+<li><a href="./tags.html">Tags</a></li>
+<li><a href="./archives.html">Archives</a></li>
+<li><form action="./search.html" class="navbar-search" onsubmit="return validateForm(this.elements['q'].value);"> <input class="search-query" id="tipue_search_input" name="q" placeholder="Search" type="text"/></form></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1"></div>
+<div class="span10">
+<article>
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1><a href="./git.html"> Git  </a></h1>
+</header>
+</div>
+<div class="row-fluid">
+<div class="span2 table-of-content">
+<nav>
+<h4>Contents</h4>
+<div id="toc"><ul><li><a class="toc-href" href="#" title="Git">Git</a><ul><li><a class="toc-href" href="#use git" title="Use Git">Use Git</a></li><li><a class="toc-href" href="#about github" title="About Github">About Github</a><ul><li><a class="toc-href" href="#generate ssh key" title="Generate ssh key">Generate ssh key</a></li><li><a class="toc-href" href="#copy cat result of id_ras.pub to github site" title="Copy cat result of id_ras.pub to Github Site">Copy cat result of id_ras.pub to Github Site</a></li><li><a class="toc-href" href="#clone with ssh" title="Clone with ssh">Clone with ssh</a></li></ul></li><li><a class="toc-href" href="#problems:_1" title="Problems:">Problems:</a></li><li><a class="toc-href" href="#install git on mac" title="Install Git on Mac">Install Git on Mac</a><ul><li><a class="toc-href" href="#server computer:" title="Server Computer:">Server Computer:</a></li><li><a class="toc-href" href="#client computer" title="Client Computer">Client Computer</a><ul><li><a class="toc-href" href="#new repo" title="new repo">new repo</a></li><li><a class="toc-href" href="#clone an existed repo" title="clone an existed repo">clone an existed repo</a></li></ul></li></ul></li><li><a class="toc-href" href="#bi jiao qing xi de gitshi yong shuo ming_2" title="比较清晰的git使用说明">比较清晰的git使用说明</a></li><li><a class="toc-href" href="#git on github" title="Git on Github">Git on Github</a><ul><li><a class="toc-href" href="#official help on ssh key" title="Official Help on SSH key">Official Help on SSH key</a></li><li><a class="toc-href" href="#step 1" title="Step 1">Step 1</a></li><li><a class="toc-href" href="#step 2" title="Step 2">Step 2</a></li><li><a class="toc-href" href="#step 3" title="Step 3">Step 3</a></li></ul></li></ul></li></ul></div>
+</nav>
+</div>
+<div class="span8 article-content">
+<h2 id="use git">Use Git</h2>
+<ul>
+<li> 删除 branch</li>
+</ul>
+<div class="highlight"><pre><span></span>git push origin --delete gh-pages  <span class="c1"># 删除远程库中的分支 gh-pages</span>
+git branch -D gh-pages <span class="c1"># 删除本地分支 gh-pages</span>
+</pre></div>
+<ul>
+<li> 不同的 git client 出现冲突，无法 pull</li>
+</ul>
+<div class="highlight"><pre><span></span>git fetch --all  <span class="c1"># 从远程仓库中下载最新的内容，但是不在本地合并 </span>
+git reset --hard origin/master <span class="c1"># 重置 master，--hard 指全部文件 </span>
+</pre></div>
+<ul>
+<li> 删除 branch</li>
+</ul>
+<div class="highlight"><pre><span></span>git branch -d the_local_brach  <span class="c1"># 删除本地的 </span>
+git push origin: the_remote_branch <span class="c1"># 删除远程的 </span>
+git push origin --delete the_remote_branch <span class="c1"># 删除远程的 </span>
+</pre></div>
+<h2 id="about github">About Github</h2>
+<h3 id="generate ssh key">Generate ssh key</h3>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> ~/.ssh
+ssh-keygen -t rsa -C <span class="s2">"your@email.com"</span>
+cat ~/.ssh/id_rsa.pub
+</pre></div>
+<h3 id="copy cat result of id_ras.pub to github site">Copy cat result of id_ras.pub to Github Site</h3>
+<h3 id="clone with ssh">Clone with ssh</h3>
+<div class="highlight"><pre><span></span>ssh -T git@github
+git clone git://github.com/Laowalter/project.git ./
+</pre></div>
+<h2 id="problems:_1">Problems:</h2>
+<ol>
+<li>Ask password phrase again and again</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="nb">eval</span> <span class="sb">`</span>ssh-agent -s<span class="sb">`</span>
+ssh-add
+</pre></div>
+<h2 id="install git on mac">Install Git on Mac</h2>
+<h3 id="server computer:">Server Computer:</h3>
+<ol>
+<li>Add a new user: git<ul>
+<li>(1) Create a new user named “git”</li>
+<li>(2) Evennable web sharing</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><pre><span></span>    git config receive.denyCurrentBranch updateInstead
+</pre></div>
+<ol>
+<li>Initialise a git directory</li>
+</ol>
+<div class="highlight"><pre><span></span>mkdir something.git
+<span class="nb">cd</span> something.git
+git init --bare
+</pre></div>
+<h3 id="client computer">Client Computer</h3>
+<h4 id="new repo">new repo</h4>
+<div class="highlight"><pre><span></span>mkdir repo <span class="o">&amp;&amp;</span> <span class="nb">cd</span> repo
+git remote add origin ssh://git@localhost/~/something.git
+git add .
+git commit -m <span class="s1">'initial commit'</span>
+git push origin master
+</pre></div>
+<h4 id="clone an existed repo">clone an existed repo</h4>
+<div class="highlight"><pre><span></span>git clone ssh://git@192.168.0.199/~/quanta.git
+</pre></div>
+<h2 id="bi jiao qing xi de gitshi yong shuo ming_2"> 比较清晰的 git 使用说明 </h2>
+<ul>
+<li>
+<p><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging</a></p>
+</li>
+<li>
+<p> 中文手册 <a href="https://git-scm.com/book/zh/v2">https://git-scm.com/book/zh/v2</a></p>
+</li>
+</ul>
+<h2 id="git on github">Git on Github</h2>
+<h3 id="official help on ssh key">Official Help on <span class="caps">SSH</span> key</h3>
+<p><a href="https://help.github.com/articles/generating-an-ssh-key/"><span class="caps">SSH</span> key</a></p>
+<p>Deploying a subfolder to GitHub Pages
+Sometimes you want to have a subdirectory on the master branch be the root directory of a repository’s gh-pages branch. This is useful for things like sites developed with Yeoman, or if you have a Jekyll site contained in the master branch alongside the rest of your code.</p>
+<p>For the sake of this example, let’s pretend the subfolder containing your site is named <code>dist</code>.</p>
+<h3 id="step 1">Step 1</h3>
+<p>Remove the <code>dist</code> directory from the project’s .gitignore file (it’s ignored by default by Yeoman).</p>
+<h3 id="step 2">Step 2</h3>
+<p>Make sure git knows about your subtree (the subfolder with your site).</p>
+<div class="highlight"><pre><span></span>git add dist <span class="o">&amp;&amp;</span> git commit -m <span class="s2">"Initial dist subtree commit"</span>
+</pre></div>
+<h3 id="step 3">Step 3</h3>
+<p>Use subtree push to send it to the gh-pages branch on GitHub.</p>
+<div class="highlight"><pre><span></span>git subtree push --prefix dist origin gh-pages
+</pre></div>
+<hr/>
+<section>
+<h2>Related Posts</h2>
+<ul class="related-posts-list">
+<li><a href="./mac-operations.html" title="Mac Operations">Mac Operations</a></li>
+</ul>
+<hr/>
+</section>
+</div>
+<section>
+<div class="span2" style="float:right;font-size:0.9em;">
+<h4>Published</h4>
+<time datetime="2016-09-29T10:06:20+08:00" pubdate="pubdate">Sep 29, 2016</time>
+<h4>Last Updated</h4>
+<time datetime="2016-09-29T10:06:20+08:00">Sep 29, 2016</time>
+<h4>Category</h4>
+<a class="category-link" href="./categories.html#tech-ref">tech</a>
+<h4>Tags</h4>
+<ul class="list-of-tags tags-in-article">
+<li><a href="./tags.html#git-ref">git
+                    <span>2</span>
+</a></li>
+</ul>
+<h4>Contact</h4>
+<a class="sidebar-social-links" href="https://slashdot.org/" target="_blank" title="My IT新闻Slashdot Profile">
+<i class="fa fa-it新闻slashdot sidebar-social-links"></i></a>
+</div>
+</section>
+</div>
+</article>
+</div>
+<div class="span1"></div>
+</div>
+</div>
+<div id="push"></div>
+</div>
+<footer>
+<div id="footer">
+<ul class="footer-content">
+<li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+</ul>
+</div>
+</footer> <script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+</body>
+<!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>

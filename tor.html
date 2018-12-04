@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Walter" name="author">
+<meta content="Walter" name="copyright">
+<meta content="article" property="og:type">
+<meta content="summary" name="twitter:card"/>
+<meta content=", tech, " name="keywords">
+<meta content="Tor " property="og:title"/>
+<meta content="./tor.html" property="og:url"/>
+<meta content="Install tor sudo emerge -avq tor Intall meek git clone https://git.torproject.org/pluggable-transports/meek.git 这里需要了解的一点是 meek-client 是基于 Tor 的一个库写的，在代码中也可以看到工程的头部引用了 Tor 的一个 go 库。 因此直接进入目录里编译的话会报错。 解决方案是让 go 拉取 Tor 的对应库： cd meek go get git.torproject.org/pluggable-transports/goptlib.git 编译 meek-client cd meek-cilent go build sudo …" property="og:description"/>
+<meta content="Just MEMO" property="og:site_name"/>
+<meta content="Walter" property="og:article:author"/>
+<meta content="2018-04-13T10:36:08+08:00" property="og:article:published_time"/>
+<meta content="2018-04-13T10:36:08+08:00" property=""/>
+<meta content="Tor " name="twitter:title"/>
+<meta content="Install tor sudo emerge -avq tor Intall meek git clone https://git.torproject.org/pluggable-transports/meek.git 这里需要了解的一点是 meek-client 是基于 Tor 的一个库写的，在代码中也可以看到工程的头部引用了 Tor 的一个 go 库。 因此直接进入目录里编译的话会报错。 解决方案是让 go 拉取 Tor 的对应库： cd meek go get git.torproject.org/pluggable-transports/goptlib.git 编译 meek-client cd meek-cilent go build sudo …" name="twitter:description"/>
+<title>Tor  · Just MEMO
+</title>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet"/>
+<link href="./theme/css/pygments.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="./theme/tipuesearch/tipuesearch.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="./theme/css/elegant.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="./theme/css/custom.css" media="screen" rel="stylesheet" type="text/css"/>
+</meta></meta></meta></meta></head>
+<body>
+<div id="content-sans-footer">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="./"><span class="site-name">Just MEMO</span></a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right top-menu">
+<li><a href=".">Home</a></li>
+<li><a href="./categories.html">Categories</a></li>
+<li><a href="./tags.html">Tags</a></li>
+<li><a href="./archives.html">Archives</a></li>
+<li><form action="./search.html" class="navbar-search" onsubmit="return validateForm(this.elements['q'].value);"> <input class="search-query" id="tipue_search_input" name="q" placeholder="Search" type="text"/></form></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1"></div>
+<div class="span10">
+<article>
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1><a href="./tor.html"> Tor  </a></h1>
+</header>
+</div>
+<div class="row-fluid">
+<div class="span2 table-of-content">
+<nav>
+<h4>Contents</h4>
+<div id="toc"><ul><li><a class="toc-href" href="#" title="Tor">Tor</a><ul><li><a class="toc-href" href="#install tor" title="Install tor">Install tor</a><ul><li><a class="toc-href" href="#intall meek" title="Intall meek">Intall meek</a></li></ul></li><li><a class="toc-href" href="#config_1" title="Config">Config</a></li><li><a class="toc-href" href="#generate tor hash password" title="Generate tor hash password">Generate tor hash password</a><ul><li><a class="toc-href" href="#nyx monitor" title="Nyx monitor">Nyx monitor</a></li></ul></li><li><a class="toc-href" href="#coding for reset tor_1" title="Coding for reset tor">Coding for reset tor</a><ul><li><a class="toc-href" href="#python" title="python">python</a></li></ul></li><li><a class="toc-href" href="#explain of meek config in torrc_1" title="Explain of meek config in torrc">Explain of meek config in torrc</a><ul><li><a class="toc-href" href="#meek yuan li" title="Meek 原理">Meek 原理</a></li><li><a class="toc-href" href="#guan yu pei zhi wen jian" title="关于配置文件">关于配置文件</a></li><li><a class="toc-href" href="#zhao dao zui xin de meek-server" title="找到最新的meek-server">找到最新的meek-server</a></li><li><a class="toc-href" href='#zhao dao "front="de yu ming' title="找到“front=”的域名">找到“front=”的域名</a></li><li><a class="toc-href" href="#ru he cha zhao yu ming de zi yu ming" title="如何查找域名的子域名">如何查找域名的子域名</a></li></ul></li><li><a class="toc-href" href="#pei zhi http proxy_1" title="配置http proxy">配置http proxy</a><ul><li><a class="toc-href" href="#install" title="Install">Install</a></li><li><a class="toc-href" href="#config_2" title="Config">Config</a></li></ul></li></ul></li></ul></div>
+</nav>
+</div>
+<div class="span8 article-content">
+<h2 id="install tor">Install tor</h2>
+<div class="highlight"><pre><span></span>sudo emerge -avq tor
+</pre></div>
+<h3 id="intall meek"><a href="http://allinfa.com/linux-tor-meek.html">Intall meek</a></h3>
+<div class="highlight"><pre><span></span>git clone https://git.torproject.org/pluggable-transports/meek.git
+</pre></div>
+<p> 这里需要了解的一点是 meek-client 是基于 Tor 的一个库写的，在代码中也可以看到工程的头部引用了 Tor 的一个 go 库。 因此直接进入目录里编译的话会报错。  解决方案是让 go 拉取 Tor 的对应库：</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> meek
+go get git.torproject.org/pluggable-transports/goptlib.git
+</pre></div>
+<p> 编译 meek-client</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> meek-cilent
+go build
+sudo cp meek-client /usr/bin/
+</pre></div>
+<h2 id="config_1">Config</h2>
+<p>/etc/tor/torrc</p>
+<div class="highlight"><pre><span></span>User tor
+PIDFile /var/run/tor/tor.pid
+DataDirectory   /var/lib/tor/data
+Log warn syslog
+
+<span class="c1">###### Socket Proxy Port ######</span>
+SOCKSPort <span class="m">192</span>.168.0.199:9050
+SOCKSPolicy accept <span class="m">192</span>.168.0.0/24
+
+<span class="c1">###### Http Proxy Port #####</span>
+HTTPTunnelPort <span class="m">192</span>.168.0.199:9060 OnionTrafficOnly
+
+
+<span class="c1">###### Nyx Monitor #######</span>
+ControlPort <span class="m">9051</span>
+HashedControlPassword <span class="m">16</span>:64D63491C3E1077E609BA395D0C68765D60044EDF9DRB5BE909284DAA9
+
+<span class="c1">##### DarkNet Server #####</span>
+HiddenServiceDir /var/lib/tor/hidden_service/
+HiddenServicePort <span class="m">4444</span> <span class="m">127</span>.0.0.1:8000
+
+<span class="c1">###### Meek #######</span>
+UseBridges <span class="m">1</span>
+ClientTransportPlugin meek <span class="nb">exec</span>  /usr/bin/meek-client
+Bridge meek <span class="m">0</span>.0.2.0:1 <span class="nv">url</span><span class="o">=</span>https://meek.azureedge.net/ <span class="nv">front</span><span class="o">=</span>ajax.aspnetcdn.com
+Bridge meek <span class="m">0</span>.0.2.0:2 <span class="nv">url</span><span class="o">=</span>https://d2cly7j4zqgua7.cloudfront.net/ <span class="nv">front</span><span class="o">=</span>a0.awsstatic.com
+</pre></div>
+<h2 id="generate tor hash password">Generate tor hash password</h2>
+<p>copy the following result to file /etc/tor/torrc</p>
+<div class="highlight"><pre><span></span>tor --hash-password mypassword
+</pre></div>
+<h3 id="nyx monitor">Nyx monitor</h3>
+<div class="highlight"><pre><span></span>sudo emerge -avq nyx
+</pre></div>
+<h2 id="coding for reset tor_1">Coding for reset tor</h2>
+<h3 id="python">python</h3>
+<div class="highlight"><pre><span></span>from stem import Signal
+from stem.control import Controller
+with Controller.from_port<span class="o">(</span><span class="nv">port</span> <span class="o">=</span> <span class="m">9051</span><span class="o">)</span> as controller:
+  controller.authenticate<span class="o">(</span><span class="s1">'password ofr 9051'</span><span class="o">)</span>
+    controller.signal<span class="o">(</span>Signal.NEWNYM<span class="o">)</span>
+</pre></div>
+<h2 id="explain of meek config in torrc_1">Explain of meek config in torrc</h2>
+<h3 id="meek yuan li">Meek  原理 </h3>
+<p> 简单来说 MEEK 插件的原理就是客户端先与云平台（<span class="caps">GAE</span>，amazon，Azure）连接，看上去是访问云平台（front domain），实际上是以云平台作为中介访问 MEEK server 再连接 Tor 中继形成 Tor 电路的。这些云平台很多公司都要使用，所以审查者不敢随意封杀。</p>
+<p> 但如果审查者还就是什么都不管，把云平台给屏蔽了呢？比如说天朝 GFW 就直接把 GAE 给完全屏蔽了，直接使得 MEEK-google 失效。我也看到有些人反映其他两个 MEEK 插件在有些地方也连不上了，这时候又应该怎么做呢？</p>
+<p> 屏蔽云平台最常用的方法就是 DNS 污染了，这时可以试着把本地连接的 DNS 服务器设置为国外的 DNS 服务器。</p>
+<h3 id="guan yu pei zhi wen jian"> 关于配置文件 </h3>
+<div class="highlight"><pre><span></span>meek 0.0.2.0:1 url=https://meek-reflect.appspot.com/ front=www.google.com
+meek 0.0.2.0:2 url=https://d2zfqthxsdq309.cloudfront.net/ front=a0.awsstatic.com
+meek 0.0.2.0:3 url=https://az668014.vo.msecnd.net/ front=ajax.aspnetcdn.com
+</pre></div>
+<ol>
+<li>meek 表示传输名，不能省略也不能改动；后面的 0.0.2.0:1 可以修改为任何值（除了 0.0.0.x 之外，因为这是 Tor 内部默认使用的地址）；</li>
+<li>“url=https://az668014.vo.msecnd.net/ ” 是 MEEK server 的域名，GFW 封锁它也没有意义；</li>
+<li><strong>front=ajax.aspnetcdn.com</strong> 是云平台的域名（front domain），一旦被 GFW 封锁，MEEK 插件就会失效。</li>
+</ol>
+<h3 id="zhao dao zui xin de meek-server"> 找到最新的 meek-server</h3>
+<p>Mac <span class="caps">OS</span>  中先安装 tor-browser</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> /Applications/TorBrowser.app
+grep -ri <span class="m">0</span>.0.2.0 *
+</pre></div>
+<p> 可以找到有关部分 <span style="color:red;">Contents/Resources/distribution/preferences/extension-overrides.js</span>:pref(“extensions.torlauncher.default_bridge.meek-amazon.1”, “<span style="color:red;">meek 0.0.2.0:2 <span class="caps">B9E7141C594AF25699E0079C1F0146F409495296</span> url=https://d2cly7j4zqgua7.cloudfront.net/ front=a0.awsstatic.com</span>“);</p>
+<h3 id='zhao dao "front="de yu ming'> 找到 “front=” 的域名 </h3>
+<p> 让 MEEK 插件复活的关键就在于要把默认的 front domain 修改成未被屏蔽的域名。例如在 google 被屏蔽了，但有一些 google 服务并没有被屏蔽，例如被各大网站广泛使用的 Google Analytics 和 DoubleClick ads，可以试着把 front domain 换成对应的 front=ssl.google-analytics.com 或 front=www.doubleclick.net，或者还可以寻找其他的 google 服务的域名。还有就是 hosts 修改可用的 google <span class="caps">IP</span>，或者像 goagent 一样上传。</p>
+<p><span class="caps">MEEK</span>-amazon 也是类似的修改方法，<a href="http://www.alexa.com/siteinfo/cloudfront.net">http://www.alexa.com/siteinfo/cloudfront.net</a>  这里有一堆可用的域名 </p>
+<p><span class="caps">MEEK</span>-azure 也一样，可以搜索一些属于 Azure CDN 的子域名，例如 front=officeimg.vo.msecnd.net</p>
+<h3 id="ru he cha zhao yu ming de zi yu ming"> 如何查找域名的子域名 </h3>
+<p> 最简单的方法，比如 google 中用搜索 <code>site: fool.com</code>，就可以搜索到 fool.com 大部分的子域名。</p>
+<h2 id="pei zhi http proxy_1"> 配置 http proxy</h2>
+<h3 id="install">Install</h3>
+<div class="highlight"><pre><span></span>emerge -avq net-proxy/privoxy
+</pre></div>
+<h3 id="config_2">Config</h3>
+<div class="highlight"><pre><span></span>listen-address  <span class="m">192</span>.168.0.199:9051
+forward-socks5t   /               <span class="m">192</span>.168.0.199:9050 .
+</pre></div>
+<hr/>
+</div>
+<section>
+<div class="span2" style="float:right;font-size:0.9em;">
+<h4>Published</h4>
+<time datetime="2018-04-13T10:36:08+08:00" pubdate="pubdate">Apr 13, 2018</time>
+<h4>Last Updated</h4>
+<time datetime="2018-04-13T10:36:08+08:00">Apr 13, 2018</time>
+<h4>Category</h4>
+<a class="category-link" href="./categories.html#tech-ref">tech</a>
+<h4>Contact</h4>
+<a class="sidebar-social-links" href="https://slashdot.org/" target="_blank" title="My IT新闻Slashdot Profile">
+<i class="fa fa-it新闻slashdot sidebar-social-links"></i></a>
+</div>
+</section>
+</div>
+</article>
+</div>
+<div class="span1"></div>
+</div>
+</div>
+<div id="push"></div>
+</div>
+<footer>
+<div id="footer">
+<ul class="footer-content">
+<li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+</ul>
+</div>
+</footer> <script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+</body>
+<!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>

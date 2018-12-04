@@ -1,0 +1,88 @@
+/* walter added */
+/* change the body background color */
+body {
+    background-color: #DCDCDC;
+}
+
+
+/* ----- */
+
+.walter_comment{
+    font-size: 80%;
+}
+
+.gray_background{
+    background-color: green;
+}
+
+.lightcyan_background{
+    background-color: lightcyan;
+}
+
+table, th, td {
+   border: 1px solid black;
+   margin: 10px 10px 10px 10px;
+   padding: 10px 10px 10px 10px;
+}
+
+.page-header {
+    color: red;
+}
+/* walter added */
+/* Styles for Figures & Images */
+img {
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    padding: 4px;
+    float: left;
+    margin: 1em 1em 1em 0;
+    box-shadow: 4px 4px 4px 0px rgba(128, 128, 128, 0.5);
+}
+img.align-right {
+    float: right;
+    margin: 1em 0 1em 1em;
+}
+
+.figure {
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    padding: 4px;
+    float: left;
+    margin: 0 1em 1em 0;
+    box-shadow: 4px 4px 4px 0px rgba(128, 128, 128, 0.5);
+}
+
+.figure.align-right {
+    float: right;
+    margin: 0 0 1em 1em;
+}
+
+.figure.align-left {
+   margin: 0 0 1em 1em;
+   float: left;
+}
+
+.figure img {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    float: left;
+}
+
+.figure p.caption {
+    margin: 0;
+    font-size: 80%;
+    padding: 4px;
+    float: left;
+    text-align: left;
+}
+
+.figure div.legend {
+    padding: 4px;
+    font-size: 80%;
+    color: #aaa;
+    font-style: italic;
+    float: left;
+}
