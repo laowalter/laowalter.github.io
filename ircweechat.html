@@ -12,13 +12,13 @@
 <meta content=", tech, " name="keywords">
 <meta content="IRC/Weechat " property="og:title"/>
 <meta content="./ircweechat.html" property="og:url"/>
-<meta content='Weechat 安装 目前Weechat所有的script都能支持python2, 官方加以暂时都编译为python2。 $ cat /etc/portage/package.use/weechat net-irc/weechat python_single_target_python2_7 -python_single_target_python3_6 OTR [ebuild N ] dev-python/pycrypto-2.6.1-r2 USE="gmp -doc -test" PYTHON_TARGETS="python2_7 python3_6 -python3_4 -python3_5" [ebuild N ] dev-python/potr-1.0.1 PYTHON_TARGETS="python2_7 python3_6 -python3_4 -python3_5" then /script install otr.py Some command 设置缺省的 nickname …' property="og:description"/>
+<meta content='Weechat 安装 目前Weechat所有的script都能支持python2, 官方加以暂时都编译为python2。 $ cat /etc/portage/package.use/weechat net-irc/weechat python_single_target_python2_7 -python_single_target_python3_6 OTR (1) Install OTR [ebuild N ] dev-python/pycrypto-2.6.1-r2 USE="gmp -doc -test" PYTHON_TARGETS="python2_7 python3_6 -python3_4 -python3_5" [ebuild N ] dev-python/potr-1.0.1 PYTHON_TARGETS="python2_7 python3_6 -python3_4 -python3_5" (2) 在weechat中安装 otr.py /script install …' property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2018-11-10T09:15:44+08:00" property="og:article:published_time"/>
 <meta content="2018-11-10T09:15:44+08:00" property=""/>
 <meta content="IRC/Weechat " name="twitter:title"/>
-<meta content='Weechat 安装 目前Weechat所有的script都能支持python2, 官方加以暂时都编译为python2。 $ cat /etc/portage/package.use/weechat net-irc/weechat python_single_target_python2_7 -python_single_target_python3_6 OTR [ebuild N ] dev-python/pycrypto-2.6.1-r2 USE="gmp -doc -test" PYTHON_TARGETS="python2_7 python3_6 -python3_4 -python3_5" [ebuild N ] dev-python/potr-1.0.1 PYTHON_TARGETS="python2_7 python3_6 -python3_4 -python3_5" then /script install otr.py Some command 设置缺省的 nickname …' name="twitter:description"/>
+<meta content='Weechat 安装 目前Weechat所有的script都能支持python2, 官方加以暂时都编译为python2。 $ cat /etc/portage/package.use/weechat net-irc/weechat python_single_target_python2_7 -python_single_target_python3_6 OTR (1) Install OTR [ebuild N ] dev-python/pycrypto-2.6.1-r2 USE="gmp -doc -test" PYTHON_TARGETS="python2_7 python3_6 -python3_4 -python3_5" [ebuild N ] dev-python/potr-1.0.1 PYTHON_TARGETS="python2_7 python3_6 -python3_4 -python3_5" (2) 在weechat中安装 otr.py /script install …' name="twitter:description"/>
 <title>IRC/Weechat  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -65,7 +65,7 @@
 <div class="span2 table-of-content">
 <nav>
 <h4>Contents</h4>
-<div id="toc"><ul><li><a class="toc-href" href="#" title='&lt;span class="caps"&gt;IRC&lt;/span&gt;/Weechat'><span class="caps">IRC</span>/Weechat</a><ul><li><a class="toc-href" href="#weechat" title="Weechat">Weechat</a><ul><li><a class="toc-href" href="#an zhuang" title="安装">安装</a></li><li><a class="toc-href" href="#some command" title="Some command">Some command</a></li></ul></li></ul></li></ul></div>
+<div id="toc"><ul><li><a class="toc-href" href="#" title='&lt;span class="caps"&gt;IRC&lt;/span&gt;/Weechat'><span class="caps">IRC</span>/Weechat</a><ul><li><a class="toc-href" href="#weechat" title="Weechat">Weechat</a><ul><li><a class="toc-href" href="#an zhuang" title="安装">安装</a></li><li><a class="toc-href" href="#shi yong" title="使用">使用</a></li></ul></li></ul></li></ul></div>
 </nav>
 </div>
 <div class="span8 article-content">
@@ -80,13 +80,18 @@ net-irc/weechat  python_single_target_python2_7 -python_single_target_python3_6
 <ul>
 <li><span class="caps">OTR</span></li>
 </ul>
+<p>(1) Install <span class="caps">OTR</span></p>
 <div class="highlight"><pre><span></span><span class="o">[</span>ebuild  N    <span class="o">]</span> dev-python/pycrypto-2.6.1-r2  <span class="nv">USE</span><span class="o">=</span><span class="s2">"gmp -doc -test"</span> <span class="nv">PYTHON_TARGETS</span><span class="o">=</span><span class="s2">"python2_7 python3_6 -python3_4 -python3_5"</span>
 <span class="o">[</span>ebuild  N    <span class="o">]</span> dev-python/potr-1.0.1  <span class="nv">PYTHON_TARGETS</span><span class="o">=</span><span class="s2">"python2_7 python3_6 -python3_4 -python3_5"</span>
 </pre></div>
-<p>then</p>
-<div class="highlight"><pre><span></span>/script install otr.py
+<p>(2) 在weechat中安装 otr.py</p>
+<div class="highlight"><pre><span></span>/script install ort.py
 </pre></div>
-<h3 id="some command">Some command</h3>
+<p>Use <span class="caps">OTR</span></p>
+<div class="highlight"><pre><span></span>/q somebody
+/otr start
+</pre></div>
+<h3 id="shi yong">使用</h3>
 <ul>
 <li>设置缺省的 nickname</li>
 </ul>
@@ -100,20 +105,19 @@ net-irc/weechat  python_single_target_python2_7 -python_single_target_python3_6
 /close
 </pre></div>
 <ul>
-<li>连接irc服务器<ul>
-<li>自动连接 freenode </li>
+<li>连接irc服务器</li>
 </ul>
-</li>
-</ul>
-<div class="highlight"><pre><span></span>/set irc.server.freenode.autoconnect on
+<div class="highlight"><pre><span></span>/set irc.server.freenode.autoconnect on <span class="c1"># 自动连接 freenode </span>
 /set irc.server.freenode.command <span class="s2">"/msg nickserv identify xxxxxxx"</span>
 </pre></div>
-<div class="highlight"><pre><span></span>* 删除 irc server
-</pre></div>
+<ul>
+<li>删除 irc server</li>
+</ul>
 <div class="highlight"><pre><span></span>/unset irc.server.freenode.nicks
 </pre></div>
-<div class="highlight"><pre><span></span>* `SSL` 强制
-</pre></div>
+<ul>
+<li><code>SSL</code> 强制</li>
+</ul>
 <div class="highlight"><pre><span></span>/set irc.server.freenode.addresses <span class="s2">"chat.freenode.net/7000"</span>
 /set irc.server.freenode.ssl on
 </pre></div>
@@ -125,19 +129,6 @@ net-irc/weechat  python_single_target_python2_7 -python_single_target_python3_6
 /window splitv <span class="m">33</span>
 /window splith 
 /window merge
-</pre></div>
-<ul>
-<li><span class="caps">OTR</span><ul>
-<li>Install <span class="caps">OTR</span></li>
-</ul>
-</li>
-</ul>
-<div class="highlight"><pre><span></span>/script install ort.py
-</pre></div>
-<div class="highlight"><pre><span></span>* Use OTR
-</pre></div>
-<div class="highlight"><pre><span></span>/q somebody
-/otr start
 </pre></div>
 <hr/>
 </div>
