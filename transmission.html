@@ -12,13 +12,13 @@
 <meta content=", tech, " name="keywords">
 <meta content="Transmission " property="og:title"/>
 <meta content="./transmission.html" property="og:url"/>
-<meta content='Notice BE SURE to stop transmission daemon first before change the follow setting. /var/lib/transmission/config/settings.json if disable ipv6 set “bind-address-ipv6”: “fe80::” { "alt-speed-down": 50, "alt-speed-enabled": false, "alt-speed-time-begin": 540, "alt-speed-time-day": 127, "alt-speed-time-enabled": false, "alt-speed-time-end": 1020, "alt-speed-up": 50, "bind-address-ipv4": "0.0.0.0", "bind-address-ipv6": "::", "blocklist-enabled": false, "blocklist-url": "http://www …' property="og:description"/>
+<meta content='Notice BE SURE to stop transmission daemon first before change the follow setting. if disable ipv6 set “bind-address-ipv6”: “fe80::” FILE:/var/lib/transmission/config/settings.json { "alt-speed-down": 50, "alt-speed-enabled": false, "alt-speed-time-begin": 540, "alt-speed-time-day": 127, "alt-speed-time-enabled": false, "alt-speed-time-end": 1020, "alt-speed-up": 50, "bind-address-ipv4": "0.0.0.0", "bind-address-ipv6": "::", "blocklist-enabled": false, "blocklist-url": "http …' property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2017-11-24T19:57:30+08:00" property="og:article:published_time"/>
 <meta content="2017-11-24T19:57:30+08:00" property=""/>
 <meta content="Transmission " name="twitter:title"/>
-<meta content='Notice BE SURE to stop transmission daemon first before change the follow setting. /var/lib/transmission/config/settings.json if disable ipv6 set “bind-address-ipv6”: “fe80::” { "alt-speed-down": 50, "alt-speed-enabled": false, "alt-speed-time-begin": 540, "alt-speed-time-day": 127, "alt-speed-time-enabled": false, "alt-speed-time-end": 1020, "alt-speed-up": 50, "bind-address-ipv4": "0.0.0.0", "bind-address-ipv6": "::", "blocklist-enabled": false, "blocklist-url": "http://www …' name="twitter:description"/>
+<meta content='Notice BE SURE to stop transmission daemon first before change the follow setting. if disable ipv6 set “bind-address-ipv6”: “fe80::” FILE:/var/lib/transmission/config/settings.json { "alt-speed-down": 50, "alt-speed-enabled": false, "alt-speed-time-begin": 540, "alt-speed-time-day": 127, "alt-speed-time-enabled": false, "alt-speed-time-end": 1020, "alt-speed-up": 50, "bind-address-ipv4": "0.0.0.0", "bind-address-ipv6": "::", "blocklist-enabled": false, "blocklist-url": "http …' name="twitter:description"/>
 <title>Transmission  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -62,84 +62,78 @@
 </header>
 </div>
 <div class="row-fluid">
-<div class="span2 table-of-content">
-<nav>
-<h4>Contents</h4>
-<div id="toc"><ul><li><a class="toc-href" href="#" title="Transmission">Transmission</a><ul><li><a class="toc-href" href="#/var/lib/transmission/config/settings.json" title="/var/lib/transmission/config/settings.json">/var/lib/transmission/config/settings.json</a></li></ul></li></ul></div>
-</nav>
-</div>
-<div class="span8 article-content">
+<div class="span8 offset2 article-content">
 <p><code>Notice</code></p>
 <p><span class="caps">BE</span> <span class="caps">SURE</span> to stop transmission daemon first before change the follow setting.</p>
-<h3 id="/var/lib/transmission/config/settings.json">/var/lib/transmission/config/settings.json</h3>
 <p><strong> if disable ipv6 set  “bind-address-ipv6”: “fe80::” </strong></p>
-<div class="highlight"><pre><span></span><span class="o">{</span>
-    <span class="s2">"alt-speed-down"</span>: <span class="m">50</span>,
-    <span class="s2">"alt-speed-enabled"</span>: false,
-    <span class="s2">"alt-speed-time-begin"</span>: <span class="m">540</span>,
-    <span class="s2">"alt-speed-time-day"</span>: <span class="m">127</span>,
-    <span class="s2">"alt-speed-time-enabled"</span>: false,
-    <span class="s2">"alt-speed-time-end"</span>: <span class="m">1020</span>,
-    <span class="s2">"alt-speed-up"</span>: <span class="m">50</span>,
-    <span class="s2">"bind-address-ipv4"</span>: <span class="s2">"0.0.0.0"</span>,
-    <span class="s2">"bind-address-ipv6"</span>: <span class="s2">"::"</span>,
-    <span class="s2">"blocklist-enabled"</span>: false,
-    <span class="s2">"blocklist-url"</span>: <span class="s2">"http://www.example.com/blocklist"</span>,
-    <span class="s2">"cache-size-mb"</span>: <span class="m">4</span>,
-    <span class="s2">"dht-enabled"</span>: true,
-    <span class="s2">"download-dir"</span>: <span class="s2">"/data/downloads/torrents/"</span>,
-    <span class="s2">"download-queue-enabled"</span>: true,
-    <span class="s2">"download-queue-size"</span>: <span class="m">5</span>,
-    <span class="s2">"encryption"</span>: <span class="m">1</span>,
-    <span class="s2">"idle-seeding-limit"</span>: <span class="m">30</span>,
-    <span class="s2">"idle-seeding-limit-enabled"</span>: false,
-    <span class="s2">"incomplete-dir"</span>: <span class="s2">"/data/downloads/torrents/incomplete"</span>,
-    <span class="s2">"incomplete-dir-enabled"</span>: false,
-    <span class="s2">"lpd-enabled"</span>: false,
-    <span class="s2">"message-level"</span>: <span class="m">2</span>,
-    <span class="s2">"peer-congestion-algorithm"</span>: <span class="s2">""</span>,
-    <span class="s2">"peer-id-ttl-hours"</span>: <span class="m">6</span>,
-    <span class="s2">"peer-limit-global"</span>: <span class="m">200</span>,
-    <span class="s2">"peer-limit-per-torrent"</span>: <span class="m">50</span>,
-    <span class="s2">"peer-port"</span>: <span class="m">51413</span>,
-    <span class="s2">"peer-port-random-high"</span>: <span class="m">65535</span>,
-    <span class="s2">"peer-port-random-low"</span>: <span class="m">49152</span>,
-    <span class="s2">"peer-port-random-on-start"</span>: false,
-    <span class="s2">"peer-socket-tos"</span>: <span class="s2">"default"</span>,
-    <span class="s2">"pex-enabled"</span>: true,
-    <span class="s2">"pidfile"</span>: <span class="s2">"/var/run/transmission/transmission.pid"</span>,
-    <span class="s2">"port-forwarding-enabled"</span>: true,
-    <span class="s2">"preallocation"</span>: <span class="m">1</span>,
-    <span class="s2">"prefetch-enabled"</span>: true,
-    <span class="s2">"queue-stalled-enabled"</span>: true,
-    <span class="s2">"queue-stalled-minutes"</span>: <span class="m">30</span>,
-    <span class="s2">"ratio-limit"</span>: <span class="m">2</span>,
-    <span class="s2">"ratio-limit-enabled"</span>: false,
-    <span class="s2">"rename-partial-files"</span>: true,
-    <span class="s2">"rpc-authentication-required"</span>: false,
-    <span class="s2">"rpc-bind-address"</span>: <span class="s2">"0.0.0.0"</span>,
-    <span class="s2">"rpc-enabled"</span>: true,
-    <span class="s2">"rpc-password"</span>: <span class="s2">"{0e297507488854e5e744c47447fe5e0690ae740fXG4YERW3"</span>,
-    <span class="s2">"rpc-port"</span>: <span class="m">9091</span>,
-    <span class="s2">"rpc-url"</span>: <span class="s2">"/transmission/"</span>,
-    <span class="s2">"rpc-username"</span>: <span class="s2">""</span>,
-    <span class="s2">"rpc-whitelist"</span>: <span class="s2">"127.0.0.1, 192.168.*.*"</span>,
-    <span class="s2">"rpc-whitelist-enabled"</span>: true,
-    <span class="s2">"scrape-paused-torrents-enabled"</span>: true,
-    <span class="s2">"script-torrent-done-enabled"</span>: false,
-    <span class="s2">"script-torrent-done-static"</span>: <span class="s2">""</span>,
-    <span class="s2">"seed-queue-enabled"</span>: false,
-    <span class="s2">"seed-queue-size"</span>: <span class="m">10</span>,
-    <span class="s2">"speed-limit-down"</span>: <span class="m">1000</span>,
-    <span class="s2">"speed-limit-down-enabled"</span>: true,
-    <span class="s2">"speed-limit-up"</span>: <span class="m">20</span>,
-    <span class="s2">"speed-limit-up-enabled"</span>: true,
-    <span class="s2">"start-added-torrents"</span>: true,
-    <span class="s2">"trash-original-torrent-files"</span>: false,
-    <span class="s2">"umask"</span>: <span class="m">18</span>,
-    <span class="s2">"upload-slots-per-torrent"</span>: <span class="m">14</span>,
-    <span class="s2">"utp-enabled"</span>: <span class="nb">true</span>
-<span class="o">}</span>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/var/lib/transmission/config/settings.json</div>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s">"alt-speed-down"</span><span class="o">:</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="s">"alt-speed-enabled"</span><span class="o">:</span> <span class="nb">false</span><span class="p">,</span>
+    <span class="s">"alt-speed-time-begin"</span><span class="o">:</span> <span class="mi">540</span><span class="p">,</span>
+    <span class="s">"alt-speed-time-day"</span><span class="o">:</span> <span class="mi">127</span><span class="p">,</span>
+    <span class="s">"alt-speed-time-enabled"</span><span class="o">:</span> <span class="nb">false</span><span class="p">,</span>
+    <span class="s">"alt-speed-time-end"</span><span class="o">:</span> <span class="mi">1020</span><span class="p">,</span>
+    <span class="s">"alt-speed-up"</span><span class="o">:</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="s">"bind-address-ipv4"</span><span class="o">:</span> <span class="s">"0.0.0.0"</span><span class="p">,</span>
+    <span class="s">"bind-address-ipv6"</span><span class="o">:</span> <span class="s">"::"</span><span class="p">,</span>
+    <span class="s">"blocklist-enabled"</span><span class="o">:</span> <span class="nb">false</span><span class="p">,</span>
+    <span class="s">"blocklist-url"</span><span class="o">:</span> <span class="s">"http://www.example.com/blocklist"</span><span class="p">,</span>
+    <span class="s">"cache-size-mb"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s">"dht-enabled"</span><span class="o">:</span> <span class="nb">true</span><span class="p">,</span>
+    <span class="s">"download-dir"</span><span class="o">:</span> <span class="s">"/data/downloads/torrents/"</span><span class="p">,</span>
+    <span class="s">"download-queue-enabled"</span><span class="o">:</span> <span class="nb">true</span><span class="p">,</span>
+    <span class="s">"download-queue-size"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s">"encryption"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">"idle-seeding-limit"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s">"idle-seeding-limit-enabled"</span><span class="o">:</span> <span class="nb">false</span><span class="p">,</span>
+    <span class="s">"incomplete-dir"</span><span class="o">:</span> <span class="s">"/data/downloads/torrents/incomplete"</span><span class="p">,</span>
+    <span class="s">"incomplete-dir-enabled"</span><span class="o">:</span> <span class="nb">false</span><span class="p">,</span>
+    <span class="s">"lpd-enabled"</span><span class="o">:</span> <span class="nb">false</span><span class="p">,</span>
+    <span class="s">"message-level"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s">"peer-congestion-algorithm"</span><span class="o">:</span> <span class="s">""</span><span class="p">,</span>
+    <span class="s">"peer-id-ttl-hours"</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="s">"peer-limit-global"</span><span class="o">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="s">"peer-limit-per-torrent"</span><span class="o">:</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="s">"peer-port"</span><span class="o">:</span> <span class="mi">51413</span><span class="p">,</span>
+    <span class="s">"peer-port-random-high"</span><span class="o">:</span> <span class="mi">65535</span><span class="p">,</span>
+    <span class="s">"peer-port-random-low"</span><span class="o">:</span> <span class="mi">49152</span><span class="p">,</span>
+    <span class="s">"peer-port-random-on-start"</span><span class="o">:</span> <span class="nb">false</span><span class="p">,</span>
+    <span class="s">"peer-socket-tos"</span><span class="o">:</span> <span class="s">"default"</span><span class="p">,</span>
+    <span class="s">"pex-enabled"</span><span class="o">:</span> <span class="nb">true</span><span class="p">,</span>
+    <span class="s">"pidfile"</span><span class="o">:</span> <span class="s">"/var/run/transmission/transmission.pid"</span><span class="p">,</span>
+    <span class="s">"port-forwarding-enabled"</span><span class="o">:</span> <span class="nb">true</span><span class="p">,</span>
+    <span class="s">"preallocation"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">"prefetch-enabled"</span><span class="o">:</span> <span class="nb">true</span><span class="p">,</span>
+    <span class="s">"queue-stalled-enabled"</span><span class="o">:</span> <span class="nb">true</span><span class="p">,</span>
+    <span class="s">"queue-stalled-minutes"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s">"ratio-limit"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s">"ratio-limit-enabled"</span><span class="o">:</span> <span class="nb">false</span><span class="p">,</span>
+    <span class="s">"rename-partial-files"</span><span class="o">:</span> <span class="nb">true</span><span class="p">,</span>
+    <span class="s">"rpc-authentication-required"</span><span class="o">:</span> <span class="nb">false</span><span class="p">,</span>
+    <span class="s">"rpc-bind-address"</span><span class="o">:</span> <span class="s">"0.0.0.0"</span><span class="p">,</span>
+    <span class="s">"rpc-enabled"</span><span class="o">:</span> <span class="nb">true</span><span class="p">,</span>
+    <span class="s">"rpc-password"</span><span class="o">:</span> <span class="s">"{0e297507488854e5e744c47447fe5e0690ae740fXG4YERW3"</span><span class="p">,</span>
+    <span class="s">"rpc-port"</span><span class="o">:</span> <span class="mi">9091</span><span class="p">,</span>
+    <span class="s">"rpc-url"</span><span class="o">:</span> <span class="s">"/transmission/"</span><span class="p">,</span>
+    <span class="s">"rpc-username"</span><span class="o">:</span> <span class="s">""</span><span class="p">,</span>
+    <span class="s">"rpc-whitelist"</span><span class="o">:</span> <span class="s">"127.0.0.1, 192.168.*.*"</span><span class="p">,</span>
+    <span class="s">"rpc-whitelist-enabled"</span><span class="o">:</span> <span class="nb">true</span><span class="p">,</span>
+    <span class="s">"scrape-paused-torrents-enabled"</span><span class="o">:</span> <span class="nb">true</span><span class="p">,</span>
+    <span class="s">"script-torrent-done-enabled"</span><span class="o">:</span> <span class="nb">false</span><span class="p">,</span>
+    <span class="s">"script-torrent-done-static"</span><span class="o">:</span> <span class="s">""</span><span class="p">,</span>
+    <span class="s">"seed-queue-enabled"</span><span class="o">:</span> <span class="nb">false</span><span class="p">,</span>
+    <span class="s">"seed-queue-size"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s">"speed-limit-down"</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="s">"speed-limit-down-enabled"</span><span class="o">:</span> <span class="nb">true</span><span class="p">,</span>
+    <span class="s">"speed-limit-up"</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s">"speed-limit-up-enabled"</span><span class="o">:</span> <span class="nb">true</span><span class="p">,</span>
+    <span class="s">"start-added-torrents"</span><span class="o">:</span> <span class="nb">true</span><span class="p">,</span>
+    <span class="s">"trash-original-torrent-files"</span><span class="o">:</span> <span class="nb">false</span><span class="p">,</span>
+    <span class="s">"umask"</span><span class="o">:</span> <span class="mi">18</span><span class="p">,</span>
+    <span class="s">"upload-slots-per-torrent"</span><span class="o">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s">"utp-enabled"</span><span class="o">:</span> <span class="nb">true</span>
+<span class="p">}</span>
 </pre></div>
 <hr/>
 </div>

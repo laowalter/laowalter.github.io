@@ -9,7 +9,7 @@
 }
 
 .file_type{
-	display: inline;
+/*	display: inline;
 	padding: .2em .6em .3em;
 	font-size: 55%;
 	font-weight: 700;
@@ -19,4 +19,5 @@
 	white-space: nowrap;
 	vertical-align: baseline;
 	border-radius: .25em;
+*/
 }

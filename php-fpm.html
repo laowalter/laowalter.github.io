@@ -71,19 +71,19 @@
 <div class="span8 article-content">
 <h2 id="install /upgrade php-fpm">Install /Upgrade php-fpm</h2>
 <h3 id="config /etc/php/fpm-php7.2/fpm.d/www.conf">Config /etc/php/fpm-php7.2/fpm.d/www.conf</h3>
-<div class="file"><span class="file_label" style="margin-right: .5em;">FILE:</span>/etc/php/fpm-php7.2/fpm.d/www.conf</div>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/php/fpm-php7.2/fpm.d/www.conf</div>
 <div class="highlight"><pre><span></span>  <span class="nv">listen</span> <span class="o">=</span> /run/php-fpm.socket
   listen.owner <span class="o">=</span> nginx
   listen.group <span class="o">=</span> nginx
   listen.mode <span class="o">=</span> <span class="m">0660</span>
 </pre></div>
 <h3 id="adjust upload limited">Adjust upload limited</h3>
-<div class="file"><span class="file_label" style="margin-right: .5em;">FILE:</span>/etc/php/fpm-php7.2/php.ini</div>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/php/fpm-php7.2/php.ini</div>
 <div class="highlight"><pre><span></span><span class="nv">upload_tmp_dir</span> <span class="o">=</span> /tmp
 <span class="nv">upload_max_filesize</span> <span class="o">=</span> 20M
 </pre></div>
 <h3 id="/etc/ngnix/nginx.conf">/etc/ngnix/nginx.conf</h3>
-<div class="file"><span class="file_label" style="margin-right: .5em;">FILE:</span>/etc/ngnix/nginx.conf</div>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/ngnix/nginx.conf</div>
 <div class="highlight"><pre><span></span>client_max_body_size 20M<span class="p">;</span>
 client_body_buffer_size 128k<span class="p">;</span>
 </pre></div>
@@ -92,7 +92,7 @@ client_body_buffer_size 128k<span class="p">;</span>
 rc-update add php-fpm default
 </pre></div>
 <h2 id="setup php-fpm in nginx">Setup php-fpm in nginx</h2>
-<div class="file"><span class="file_label" style="margin-right: .5em;">FILE:</span>/etc/ngnix/nginx.conf</div>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/ngnix/nginx.conf</div>
 <div class="highlight"><pre><span></span><span class="k">server</span> <span class="p">{</span>
     <span class="kn">listen</span> <span class="n">0.0.0.0</span><span class="p">:</span><span class="mi">7001</span><span class="p">;</span>
     <span class="kn">server_name</span> <span class="s">pannel</span><span class="p">;</span>
