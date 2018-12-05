@@ -12,13 +12,13 @@
 <meta content=", tech, " name="keywords">
 <meta content="IRC/Weechat " property="og:title"/>
 <meta content="./ircweechat.html" property="og:url"/>
-<meta content='Weechat 安装 目前 Weechat 所有的 script 都能支持 python2, 官方加以暂时都编译为 python2。 $ cat /etc/portage/package.use/weechat net-irc/weechat python_single_target_python2_7 -python_single_target_python3_6 OTR [ebuild N ] dev-python/pycrypto-2.6.1-r2 USE="gmp -doc -test" PYTHON_TARGETS="python2_7 python3_6 -python3_4 -python3_5" [ebuild N ] dev-python/potr-1.0.1 PYTHON_TARGETS="python2_7 python3_6 -python3_4 -python3_5" then /script install …' property="og:description"/>
+<meta content='Weechat 安装 目前Weechat所有的script都能支持python2, 官方加以暂时都编译为python2。 $ cat /etc/portage/package.use/weechat net-irc/weechat python_single_target_python2_7 -python_single_target_python3_6 OTR [ebuild N ] dev-python/pycrypto-2.6.1-r2 USE="gmp -doc -test" PYTHON_TARGETS="python2_7 python3_6 -python3_4 -python3_5" [ebuild N ] dev-python/potr-1.0.1 PYTHON_TARGETS="python2_7 python3_6 -python3_4 -python3_5" then /script install otr.py Some command 设置缺省的 nickname …' property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2018-11-10T09:15:44+08:00" property="og:article:published_time"/>
 <meta content="2018-11-10T09:15:44+08:00" property=""/>
 <meta content="IRC/Weechat " name="twitter:title"/>
-<meta content='Weechat 安装 目前 Weechat 所有的 script 都能支持 python2, 官方加以暂时都编译为 python2。 $ cat /etc/portage/package.use/weechat net-irc/weechat python_single_target_python2_7 -python_single_target_python3_6 OTR [ebuild N ] dev-python/pycrypto-2.6.1-r2 USE="gmp -doc -test" PYTHON_TARGETS="python2_7 python3_6 -python3_4 -python3_5" [ebuild N ] dev-python/potr-1.0.1 PYTHON_TARGETS="python2_7 python3_6 -python3_4 -python3_5" then /script install …' name="twitter:description"/>
+<meta content='Weechat 安装 目前Weechat所有的script都能支持python2, 官方加以暂时都编译为python2。 $ cat /etc/portage/package.use/weechat net-irc/weechat python_single_target_python2_7 -python_single_target_python3_6 OTR [ebuild N ] dev-python/pycrypto-2.6.1-r2 USE="gmp -doc -test" PYTHON_TARGETS="python2_7 python3_6 -python3_4 -python3_5" [ebuild N ] dev-python/potr-1.0.1 PYTHON_TARGETS="python2_7 python3_6 -python3_4 -python3_5" then /script install otr.py Some command 设置缺省的 nickname …' name="twitter:description"/>
 <title>IRC/Weechat  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -70,9 +70,9 @@
 </div>
 <div class="span8 article-content">
 <h2 id="weechat">Weechat</h2>
-<h3 id="an zhuang"> 安装 </h3>
+<h3 id="an zhuang">安装</h3>
 <ul>
-<li> 目前 Weechat 所有的 script 都能支持 python2,  官方加以暂时都编译为 python2。</li>
+<li>目前Weechat所有的script都能支持python2, 官方加以暂时都编译为python2。</li>
 </ul>
 <div class="highlight"><pre><span></span>$ cat /etc/portage/package.use/weechat
 net-irc/weechat  python_single_target_python2_7 -python_single_target_python3_6
@@ -88,64 +88,57 @@ net-irc/weechat  python_single_target_python2_7 -python_single_target_python3_6
 </pre></div>
 <h3 id="some command">Some command</h3>
 <ul>
-<li> 设置缺省的  nickname</li>
+<li>设置缺省的 nickname</li>
 </ul>
 <div class="highlight"><pre><span></span>/set irc.server_default.nicks comma,separated,list,of,nicks
 /set irc.server.<span class="o">[</span>SERVER_NAME<span class="o">]</span>.nicks somename
 </pre></div>
 <ul>
-<li> 连接 freenode/ 关闭 </li>
+<li>连接freenode/关闭</li>
 </ul>
 <div class="highlight"><pre><span></span>/connect freenode
-
 /close
 </pre></div>
 <ul>
-<li>
-<p> 连接 irc 服务器 </p>
-<ul>
-<li>
-<p> 自动连接  freenode </p>
-<p><span class="dquo">“</span>`bash
-/set irc.server.freenode.autoconnect on</p>
-<p>/set irc.server.freenode.command “/msg nickserv identify xxxxxxx”
-“`
-    * 删除 irc server</p>
-<p><code>bash
-/unset irc.server.freenode.nicks</code></p>
-</li>
-<li>
-<p><code>SSL</code> 强制 </p>
-<p><code>bash
-/set irc.server.freenode.addresses "chat.freenode.net/7000"
-/set irc.server.freenode.ssl on</code></p>
-</li>
+<li>连接irc服务器<ul>
+<li>自动连接 freenode </li>
 </ul>
 </li>
-<li>
-<p>Windows  管理 </p>
-<p><code>bash
-/buffer
+</ul>
+<div class="highlight"><pre><span></span>/set irc.server.freenode.autoconnect on
+/set irc.server.freenode.command <span class="s2">"/msg nickserv identify xxxxxxx"</span>
+</pre></div>
+<div class="highlight"><pre><span></span>* 删除 irc server
+</pre></div>
+<div class="highlight"><pre><span></span>/unset irc.server.freenode.nicks
+</pre></div>
+<div class="highlight"><pre><span></span>* `SSL` 强制
+</pre></div>
+<div class="highlight"><pre><span></span>/set irc.server.freenode.addresses <span class="s2">"chat.freenode.net/7000"</span>
+/set irc.server.freenode.ssl on
+</pre></div>
+<ul>
+<li>Windows 管理</li>
+</ul>
+<div class="highlight"><pre><span></span>/buffer
 /window
-/window splitv 33
+/window splitv <span class="m">33</span>
 /window splith 
-/window merge</code></p>
-</li>
-<li>
-<p><span class="caps">OTR</span></p>
+/window merge
+</pre></div>
 <ul>
-<li>
-<p>Install <span class="caps">OTR</span></p>
-<p><code>bash
-/script install ort.py</code>
-    * Use <span class="caps">OTR</span>
-<code>bas
-/q somebody
-/otr start</code></p>
-</li>
+<li><span class="caps">OTR</span><ul>
+<li>Install <span class="caps">OTR</span></li>
 </ul>
 </li>
 </ul>
+<div class="highlight"><pre><span></span>/script install ort.py
+</pre></div>
+<div class="highlight"><pre><span></span>* Use OTR
+</pre></div>
+<div class="highlight"><pre><span></span>/q somebody
+/otr start
+</pre></div>
 <hr/>
 </div>
 <section>

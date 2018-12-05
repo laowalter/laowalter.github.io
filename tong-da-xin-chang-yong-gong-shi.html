@@ -12,13 +12,13 @@
 <meta content=", stock, " name="keywords">
 <meta content="通达信常用公式 " property="og:title"/>
 <meta content="./tong-da-xin-chang-yong-gong-shi.html" property="og:url"/>
-<meta content="通达信 m4(MACD) 公式 参数 最小 最大 缺省 SHORT 2 200 12, LONG 2 200 26 MID 2 200 9 ISARROW 0 1 1 {SHORT 2,200,12;LONG 2,200,26;MID 2,200,9；ISARROW 0,1,1} DIFF:=EMA(CLOSE*100,SHORT)-EMA(CLOSE*100,LONG); DEA …" property="og:description"/>
+<meta content="通达信m4(MACD)公式 参数 最小 最大 缺省 SHORT 2 200 12, LONG 2 200 26 MID 2 200 9 ISARROW 0 1 1 {SHORT 2,200,12;LONG 2,200,26;MID 2,200,9；ISARROW 0,1,1} DIFF:=EMA(CLOSE*100,SHORT)-EMA(CLOSE*100,LONG); DEA:=EMA …" property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2018-03-23T10:44:12+08:00" property="og:article:published_time"/>
 <meta content="2018-03-23T10:44:12+08:00" property=""/>
 <meta content="通达信常用公式 " name="twitter:title"/>
-<meta content="通达信 m4(MACD) 公式 参数 最小 最大 缺省 SHORT 2 200 12, LONG 2 200 26 MID 2 200 9 ISARROW 0 1 1 {SHORT 2,200,12;LONG 2,200,26;MID 2,200,9；ISARROW 0,1,1} DIFF:=EMA(CLOSE*100,SHORT)-EMA(CLOSE*100,LONG); DEA …" name="twitter:description"/>
+<meta content="通达信m4(MACD)公式 参数 最小 最大 缺省 SHORT 2 200 12, LONG 2 200 26 MID 2 200 9 ISARROW 0 1 1 {SHORT 2,200,12;LONG 2,200,26;MID 2,200,9；ISARROW 0,1,1} DIFF:=EMA(CLOSE*100,SHORT)-EMA(CLOSE*100,LONG); DEA:=EMA …" name="twitter:description"/>
 <title>通达信常用公式  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -64,17 +64,17 @@
 <div class="row-fluid">
 <div class="span8 offset2 article-content">
 <ul>
-<li> 通达信 m4(<span class="caps">MACD</span>) 公式 </li>
+<li>通达信m4(<span class="caps">MACD</span>)公式</li>
 </ul>
 <p>
 <div class="justtable">
 <table>
 <thead>
 <tr>
-<th>参数 </th>
-<th> 最小 </th>
-<th> 最大 </th>
-<th> 缺省</th>
+<th>参数</th>
+<th>最小</th>
+<th>最大</th>
+<th>缺省</th>
 </tr>
 </thead>
 <tbody>
@@ -112,7 +112,7 @@ MACD2:<span class="o">=(</span>DIFF - DEA<span class="o">)</span>*2<span class="
 DIF:DIFF<span class="p">;</span>
 DEF:DEA<span class="p">;</span>
 MACD:MACD2,NODRAW<span class="p">;</span>
-获利比 :WINNER<span class="o">(</span>C<span class="o">)</span>,NODRAW<span class="p">;</span>
+获利比:WINNER<span class="o">(</span>C<span class="o">)</span>,NODRAW<span class="p">;</span>
 STICKLINE<span class="o">((</span>MACD2&gt;<span class="o">=</span><span class="m">0</span><span class="o">)</span>,0,MACD2,0,1<span class="o">)</span>,COLORRED<span class="p">;</span>
 STICKLINE<span class="o">(((</span>MACD2&gt;<span class="o">=</span><span class="m">0</span><span class="o">)</span> AND <span class="o">(</span>MACD2 &lt; REF<span class="o">(</span>MACD2,1<span class="o">)))</span>,0,MACD2,0,0<span class="o">)</span>,COLORWHITE<span class="p">;</span>
 STICKLINE<span class="o">((</span>MACD2&lt;<span class="m">0</span><span class="o">)</span>,0,MACD2,0,0<span class="o">)</span>,COLORGREEN<span class="p">;</span>
@@ -125,8 +125,8 @@ A2:<span class="o">=</span>REF<span class="o">(</span>A1,1<span class="o">)</spa
 A3:<span class="o">=</span>A1*A2<span class="p">;</span>
 A4:<span class="o">=</span>BARSLAST<span class="o">(</span>A3&lt;<span class="m">0</span><span class="o">)</span><span class="p">;</span>
 A5:<span class="o">=</span>A4+1<span class="p">;</span>
-累计面积 :SUM<span class="o">(</span>MACD2,A5<span class="o">)</span>,NODRAW<span class="p">;</span>
-平均力度 :SUM<span class="o">(</span>MACD2,A5<span class="o">)</span>/A5,NODRAW<span class="p">;</span>
+累计面积:SUM<span class="o">(</span>MACD2,A5<span class="o">)</span>,NODRAW<span class="p">;</span>
+平均力度:SUM<span class="o">(</span>MACD2,A5<span class="o">)</span>/A5,NODRAW<span class="p">;</span>
 <span class="m">0</span>,DOTLINE<span class="p">;</span>
 
 BV:<span class="o">=</span>SUM<span class="o">(</span>MACD2,0<span class="o">)</span><span class="p">;</span>
@@ -134,57 +134,57 @@ BA:<span class="o">=</span>IF<span class="o">(</span>MAX<span class="o">(</span>
 BC:<span class="o">=</span>BARSLAST<span class="o">(</span>BA<span class="o">)</span>+1<span class="p">;</span>
 SMACD:<span class="o">=</span>BV-REF<span class="o">(</span>BV,BC<span class="o">)</span><span class="p">;</span>
 VAR3:<span class="o">=</span>IF<span class="o">(</span>MACD2&gt;0,HHV<span class="o">(</span>ABS<span class="o">(</span>MACD2<span class="o">)</span>,BC<span class="o">)</span>,LLV<span class="o">(</span>MACD2,BC<span class="o">))</span><span class="p">;</span>
-VAR4:<span class="o">=(</span>MACD2<span class="o">)</span>/20<span class="p">;</span><span class="o">{</span> 图形比例缩小 1/20, 可修改 <span class="o">}</span>
+VAR4:<span class="o">=(</span>MACD2<span class="o">)</span>/20<span class="p">;</span><span class="o">{</span>图形比例缩小1/20,可修改<span class="o">}</span>
 
-DRAWNUMBER<span class="o">(</span>REF<span class="o">(</span>VAR4,1<span class="o">)</span>&gt;0 AND VAR4&lt;<span class="o">=</span><span class="m">0</span> ,REF<span class="o">(</span>VAR3,1<span class="o">)</span>,REF<span class="o">(</span> 累计面积 ,1<span class="o">))</span>,COLORMAGENTA<span class="p">;</span>
-DRAWNUMBER<span class="o">(</span>REF<span class="o">(</span>VAR4,1<span class="o">)</span>&lt;<span class="m">0</span> AND VAR4&gt;<span class="o">=</span><span class="m">0</span> ,REF<span class="o">(</span>VAR3,1<span class="o">)</span>,REF<span class="o">(</span>ABS<span class="o">(</span> 累计面积 <span class="o">)</span>,1<span class="o">))</span>,COLORGREEN<span class="p">;</span>
-DRAWNUMBER<span class="o">(</span>ISLASTBAR AND VAR4&lt;<span class="m">0</span>,REF<span class="o">(</span>VAR3,1<span class="o">)</span>,ABS<span class="o">(</span> 累计面积 <span class="o">))</span>,COLORMAGENTA<span class="p">;</span>
-DRAWNUMBER<span class="o">(</span>ISLASTBAR AND VAR4&gt;0,REF<span class="o">(</span>VAR3,1<span class="o">)</span>, 累计面积 <span class="o">)</span>,COLORGREEN<span class="p">;</span>
+DRAWNUMBER<span class="o">(</span>REF<span class="o">(</span>VAR4,1<span class="o">)</span>&gt;0 AND VAR4&lt;<span class="o">=</span><span class="m">0</span> ,REF<span class="o">(</span>VAR3,1<span class="o">)</span>,REF<span class="o">(</span>累计面积,1<span class="o">))</span>,COLORMAGENTA<span class="p">;</span>
+DRAWNUMBER<span class="o">(</span>REF<span class="o">(</span>VAR4,1<span class="o">)</span>&lt;<span class="m">0</span> AND VAR4&gt;<span class="o">=</span><span class="m">0</span> ,REF<span class="o">(</span>VAR3,1<span class="o">)</span>,REF<span class="o">(</span>ABS<span class="o">(</span>累计面积<span class="o">)</span>,1<span class="o">))</span>,COLORGREEN<span class="p">;</span>
+DRAWNUMBER<span class="o">(</span>ISLASTBAR AND VAR4&lt;<span class="m">0</span>,REF<span class="o">(</span>VAR3,1<span class="o">)</span>,ABS<span class="o">(</span>累计面积<span class="o">))</span>,COLORMAGENTA<span class="p">;</span>
+DRAWNUMBER<span class="o">(</span>ISLASTBAR AND VAR4&gt;0,REF<span class="o">(</span>VAR3,1<span class="o">)</span>,累计面积<span class="o">)</span>,COLORGREEN<span class="p">;</span>
 </pre></div>
 <ul>
-<li> 通达信短线利器   盘中异动预警公式 </li>
+<li>通达信短线利器 盘中异动预警公式</li>
 </ul>
-<p>{ 股海网提供：www.guhai.com.cn}</p>
+<p>{股海网提供：www.guhai.com.cn}</p>
 <div class="highlight"><pre><span></span>* 最初
 </pre></div>
-<div class="highlight"><pre><span></span> 现价 :<span class="o">=</span>DYNAINFO<span class="o">(</span><span class="m">7</span><span class="o">)</span><span class="p">;</span>
-均价 :<span class="o">=</span>DYNAINFO<span class="o">(</span><span class="m">11</span><span class="o">)</span>+<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">11</span><span class="o">)</span>*0.021<span class="o">)</span><span class="p">;</span>
-条件 1:<span class="o">=</span>IF<span class="o">(</span> 现价 &gt; 均价 ,1,0<span class="o">)</span><span class="p">;</span>
-条件 2:<span class="o">=</span>IF<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">17</span><span class="o">)</span>&gt;5,1,0<span class="o">)</span><span class="p">;</span>
-条件 3:<span class="o">=</span>IF<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">14</span><span class="o">)</span>&lt;<span class="m">0</span>.05,1,0<span class="o">)</span><span class="p">;</span>
-买入 :<span class="o">(</span><span class="nv"> 条件 1</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>AND<span class="o">(</span><span class="nv"> 条件 2</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>AND<span class="o">(</span><span class="nv"> 条件 3</span><span class="o">=</span><span class="m">1</span><span class="o">)</span><span class="p">;</span>
+<div class="highlight"><pre><span></span>现价:<span class="o">=</span>DYNAINFO<span class="o">(</span><span class="m">7</span><span class="o">)</span><span class="p">;</span>
+均价:<span class="o">=</span>DYNAINFO<span class="o">(</span><span class="m">11</span><span class="o">)</span>+<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">11</span><span class="o">)</span>*0.021<span class="o">)</span><span class="p">;</span>
+条件1:<span class="o">=</span>IF<span class="o">(</span>现价&gt;均价,1,0<span class="o">)</span><span class="p">;</span>
+条件2:<span class="o">=</span>IF<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">17</span><span class="o">)</span>&gt;5,1,0<span class="o">)</span><span class="p">;</span>
+条件3:<span class="o">=</span>IF<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">14</span><span class="o">)</span>&lt;<span class="m">0</span>.05,1,0<span class="o">)</span><span class="p">;</span>
+买入:<span class="o">(</span><span class="nv">条件1</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>AND<span class="o">(</span><span class="nv">条件2</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>AND<span class="o">(</span><span class="nv">条件3</span><span class="o">=</span><span class="m">1</span><span class="o">)</span><span class="p">;</span>
 </pre></div>
 <div class="highlight"><pre><span></span>* 加入了限制条件减少没有操作意义的信号：
 </pre></div>
-<div class="highlight"><pre><span></span><span class="o">(</span> 现价 :<span class="o">=</span>DYNAINFO<span class="o">(</span><span class="m">7</span><span class="o">)</span><span class="p">;</span>
-均价 :<span class="o">=</span>DYNAINFO<span class="o">(</span><span class="m">11</span><span class="o">)</span>+<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">11</span><span class="o">)</span>*0.021<span class="o">)</span><span class="p">;</span>
-条件 1:<span class="o">=</span>IF<span class="o">(</span> 现价 &gt; 均价 ,1,0<span class="o">)</span><span class="p">;</span>
-条件 2:<span class="o">=</span>IF<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">17</span><span class="o">)</span>&gt;5,1,0<span class="o">)</span><span class="p">;</span>
-条件 3:<span class="o">=</span>IF<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">14</span><span class="o">)</span>&lt;<span class="m">0</span>.05,1,0<span class="o">)</span><span class="p">;</span>
-条件 4:<span class="o">=</span>IF<span class="o">(</span>SUM<span class="o">(</span>VOL,3<span class="o">)</span>&lt;CAPITAL*0.25,1,0<span class="o">)</span><span class="p">;</span>
-条件 5:<span class="o">=</span>IF<span class="o">(</span>SUM<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">14</span><span class="o">)</span>,3<span class="o">)</span>&lt;<span class="m">0</span>.25,1,0<span class="o">)</span><span class="p">;</span>
-买入 :<span class="o">(</span><span class="nv"> 条件 1</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>AND<span class="o">(</span><span class="nv"> 条件 2</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>AND<span class="o">(</span><span class="nv"> 条件 3</span><span class="o">=</span><span class="m">1</span><span class="o">)</span><span class="p">;</span><span class="o">)</span>
+<div class="highlight"><pre><span></span><span class="o">(</span>现价:<span class="o">=</span>DYNAINFO<span class="o">(</span><span class="m">7</span><span class="o">)</span><span class="p">;</span>
+均价:<span class="o">=</span>DYNAINFO<span class="o">(</span><span class="m">11</span><span class="o">)</span>+<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">11</span><span class="o">)</span>*0.021<span class="o">)</span><span class="p">;</span>
+条件1:<span class="o">=</span>IF<span class="o">(</span>现价&gt;均价,1,0<span class="o">)</span><span class="p">;</span>
+条件2:<span class="o">=</span>IF<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">17</span><span class="o">)</span>&gt;5,1,0<span class="o">)</span><span class="p">;</span>
+条件3:<span class="o">=</span>IF<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">14</span><span class="o">)</span>&lt;<span class="m">0</span>.05,1,0<span class="o">)</span><span class="p">;</span>
+条件4:<span class="o">=</span>IF<span class="o">(</span>SUM<span class="o">(</span>VOL,3<span class="o">)</span>&lt;CAPITAL*0.25,1,0<span class="o">)</span><span class="p">;</span>
+条件5:<span class="o">=</span>IF<span class="o">(</span>SUM<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">14</span><span class="o">)</span>,3<span class="o">)</span>&lt;<span class="m">0</span>.25,1,0<span class="o">)</span><span class="p">;</span>
+买入:<span class="o">(</span><span class="nv">条件1</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>AND<span class="o">(</span><span class="nv">条件2</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>AND<span class="o">(</span><span class="nv">条件3</span><span class="o">=</span><span class="m">1</span><span class="o">)</span><span class="p">;</span><span class="o">)</span>
 </pre></div>
 <div class="highlight"><pre><span></span>* 午盘追踪
 </pre></div>
-<div class="highlight"><pre><span></span> 现价 :<span class="o">=</span>DYNAINFO<span class="o">(</span><span class="m">7</span><span class="o">)</span><span class="p">;</span>
-均价 :<span class="o">=</span>DYNAINFO<span class="o">(</span><span class="m">11</span><span class="o">)</span>+<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">11</span><span class="o">)</span>*0.021<span class="o">)</span><span class="p">;</span>
-条件 1:<span class="o">=</span>IF<span class="o">(</span> 现价 &gt; 均价 ,1,0<span class="o">)</span><span class="p">;</span>
-条件 2:<span class="o">=</span>IF<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">17</span><span class="o">)</span>&gt;2,1,0<span class="o">)</span><span class="p">;</span>
-条件 3:<span class="o">=</span>IF<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">14</span><span class="o">)</span>&gt;0.05,1,0<span class="o">)</span><span class="p">;</span>
-买入 :<span class="o">(</span><span class="nv"> 条件 1</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>AND<span class="o">(</span><span class="nv"> 条件 2</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>AND<span class="o">(</span><span class="nv"> 条件 3</span><span class="o">=</span><span class="m">1</span><span class="o">)</span><span class="p">;</span>
+<div class="highlight"><pre><span></span>现价:<span class="o">=</span>DYNAINFO<span class="o">(</span><span class="m">7</span><span class="o">)</span><span class="p">;</span>
+均价:<span class="o">=</span>DYNAINFO<span class="o">(</span><span class="m">11</span><span class="o">)</span>+<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">11</span><span class="o">)</span>*0.021<span class="o">)</span><span class="p">;</span>
+条件1:<span class="o">=</span>IF<span class="o">(</span>现价&gt;均价,1,0<span class="o">)</span><span class="p">;</span>
+条件2:<span class="o">=</span>IF<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">17</span><span class="o">)</span>&gt;2,1,0<span class="o">)</span><span class="p">;</span>
+条件3:<span class="o">=</span>IF<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">14</span><span class="o">)</span>&gt;0.05,1,0<span class="o">)</span><span class="p">;</span>
+买入:<span class="o">(</span><span class="nv">条件1</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>AND<span class="o">(</span><span class="nv">条件2</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>AND<span class="o">(</span><span class="nv">条件3</span><span class="o">=</span><span class="m">1</span><span class="o">)</span><span class="p">;</span>
 </pre></div>
-<div class="highlight"><pre><span></span>｛现价 :<span class="o">=</span>DYNAINFO<span class="o">(</span><span class="m">7</span><span class="o">)</span><span class="p">;</span>
-均价 :<span class="o">=</span>DYNAINFO<span class="o">(</span><span class="m">11</span><span class="o">)</span>+<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">11</span><span class="o">)</span>*0.021<span class="o">)</span><span class="p">;</span>
-条件 1:<span class="o">=</span>IF<span class="o">(</span> 现价 &gt; 均价 ,1,0<span class="o">)</span><span class="p">;</span>
-条件 2:<span class="o">=</span>IF<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">17</span><span class="o">)</span>&gt;2,1,0<span class="o">)</span><span class="p">;</span>
-条件 3:<span class="o">=</span>IF<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">14</span><span class="o">)</span>&gt;0.05,1,0<span class="o">)</span><span class="p">;</span>
-条件 4:<span class="o">=</span>IF<span class="o">(</span>SUM<span class="o">(</span>VOL,3<span class="o">)</span>&lt;CAPITAL*0.25,1,0<span class="o">)</span><span class="p">;</span>
-条件 5:<span class="o">=</span>IF<span class="o">(</span>SUM<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">14</span><span class="o">)</span>,3<span class="o">)</span>&lt;<span class="m">0</span>.25,1,0<span class="o">)</span><span class="p">;</span>
-买入 :<span class="o">(</span><span class="nv"> 条件 1</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>AND<span class="o">(</span><span class="nv"> 条件 2</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>AND<span class="o">(</span><span class="nv"> 条件 3</span><span class="o">=</span><span class="m">1</span> AND <span class="nv"> 条件 4</span><span class="o">=</span><span class="m">1</span> AND <span class="nv"> 条件 5</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>｝
+<div class="highlight"><pre><span></span>｛现价:<span class="o">=</span>DYNAINFO<span class="o">(</span><span class="m">7</span><span class="o">)</span><span class="p">;</span>
+均价:<span class="o">=</span>DYNAINFO<span class="o">(</span><span class="m">11</span><span class="o">)</span>+<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">11</span><span class="o">)</span>*0.021<span class="o">)</span><span class="p">;</span>
+条件1:<span class="o">=</span>IF<span class="o">(</span>现价&gt;均价,1,0<span class="o">)</span><span class="p">;</span>
+条件2:<span class="o">=</span>IF<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">17</span><span class="o">)</span>&gt;2,1,0<span class="o">)</span><span class="p">;</span>
+条件3:<span class="o">=</span>IF<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">14</span><span class="o">)</span>&gt;0.05,1,0<span class="o">)</span><span class="p">;</span>
+条件4:<span class="o">=</span>IF<span class="o">(</span>SUM<span class="o">(</span>VOL,3<span class="o">)</span>&lt;CAPITAL*0.25,1,0<span class="o">)</span><span class="p">;</span>
+条件5:<span class="o">=</span>IF<span class="o">(</span>SUM<span class="o">(</span>DYNAINFO<span class="o">(</span><span class="m">14</span><span class="o">)</span>,3<span class="o">)</span>&lt;<span class="m">0</span>.25,1,0<span class="o">)</span><span class="p">;</span>
+买入:<span class="o">(</span><span class="nv">条件1</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>AND<span class="o">(</span><span class="nv">条件2</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>AND<span class="o">(</span><span class="nv">条件3</span><span class="o">=</span><span class="m">1</span> AND <span class="nv">条件4</span><span class="o">=</span><span class="m">1</span> AND <span class="nv">条件5</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>｝
 </pre></div>
-<p> 实时盘中预警指标，所有的牛股都从异动开始。好好品味这两个指标会有意象不到的效果。</p>
-<p>（看好些同学都在问用法，我就再详细的介绍一下。现价跟均价偏离 2.1％，盘中股价突然拉升。上午量比在 5％以上，下午在 2％以上，阶段性放量。涨幅上午在 5％以内，下午在 5％以上这样跟有操作意义。前期缩量突然量比放出，其他指标已进入底部状态，可快速跟进。前期有过一段涨升，进过几天的快速缩量下跌，股价回落到重要的支撑线上，又开始放量，可以快速跟进。还有很多状况可以自己慢慢体味。）　</p>
+<p>实时盘中预警指标，所有的牛股都从异动开始。好好品味这两个指标会有意象不到的效果。</p>
+<p>（看好些同学都在问用法，我就再详细的介绍一下。现价跟均价偏离2.1％，盘中股价突然拉升。上午量比在5％以上，下午在2％以上，阶段性放量。涨幅上午在5％以内，下午在5％以上这样跟有操作意义。前期缩量突然量比放出，其他指标已进入底部状态，可快速跟进。前期有过一段涨升，进过几天的快速缩量下跌，股价回落到重要的支撑线上，又开始放量，可以快速跟进。还有很多状况可以自己慢慢体味。）　</p>
 <hr/>
 </div>
 <section>

@@ -12,13 +12,13 @@
 <meta content="Tech, tech, " name="keywords">
 <meta content="Ssh " property="og:title"/>
 <meta content="./ssh.html" property="og:url"/>
-<meta content='ssh agent .bashrc 关于 ssh 部分 # SSH agent if [ ! -S ~/.ssh/ssh_auth_sock ]; then eval `ssh-agent` ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock fi export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock ssh-add -l &gt; /dev/null || ssh-add Putty 第一步运行 PuttyGen 第二步把上面的 ssh rsa 拷贝到远程机器账户的 远程机器 ~/.ssh/authorized_keys 第三步 pageant Right Click，add key 选择私匙 设置每次开机自动运行 pageant，并自动 …' property="og:description"/>
+<meta content='ssh agent .bashrc 关于ssh部分 # SSH agent if [ ! -S ~/.ssh/ssh_auth_sock ]; then eval `ssh-agent` ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock fi export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock ssh-add -l &gt; /dev/null || ssh-add Putty 第一步运行PuttyGen 第二步把上面的ssh rsa 拷贝到远程机器账户的 远程机器 ~/.ssh/authorized_keys 第三步pageant Right Click，add key 选择私匙 设置每次开机自动运行pageant，并自动add key create shortcut “C:\Program Files …' property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2017-10-13T18:22:24+08:00" property="og:article:published_time"/>
 <meta content="2017-10-13T18:22:24+08:00" property=""/>
 <meta content="Ssh " name="twitter:title"/>
-<meta content='ssh agent .bashrc 关于 ssh 部分 # SSH agent if [ ! -S ~/.ssh/ssh_auth_sock ]; then eval `ssh-agent` ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock fi export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock ssh-add -l &gt; /dev/null || ssh-add Putty 第一步运行 PuttyGen 第二步把上面的 ssh rsa 拷贝到远程机器账户的 远程机器 ~/.ssh/authorized_keys 第三步 pageant Right Click，add key 选择私匙 设置每次开机自动运行 pageant，并自动 …' name="twitter:description"/>
+<meta content='ssh agent .bashrc 关于ssh部分 # SSH agent if [ ! -S ~/.ssh/ssh_auth_sock ]; then eval `ssh-agent` ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock fi export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock ssh-add -l &gt; /dev/null || ssh-add Putty 第一步运行PuttyGen 第二步把上面的ssh rsa 拷贝到远程机器账户的 远程机器 ~/.ssh/authorized_keys 第三步pageant Right Click，add key 选择私匙 设置每次开机自动运行pageant，并自动add key create shortcut “C:\Program Files …' name="twitter:description"/>
 <title>Ssh  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -70,7 +70,7 @@
 </div>
 <div class="span8 article-content">
 <h2 id="ssh agent">ssh agent</h2>
-<h3 id=".bashrc guan yu sshbu fen">.bashrc  关于 ssh 部分 </h3>
+<h3 id=".bashrc guan yu sshbu fen">.bashrc 关于ssh部分</h3>
 <div class="highlight"><pre><span></span><span class="c1"># SSH agent</span>
 <span class="k">if</span> <span class="o">[</span> ! -S ~/.ssh/ssh_auth_sock <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
   <span class="nb">eval</span> <span class="sb">`</span>ssh-agent<span class="sb">`</span>
@@ -81,22 +81,22 @@ ssh-add -l &gt; /dev/null <span class="o">||</span> ssh-add
 </pre></div>
 <h2 id="putty_1">Putty</h2>
 <ul>
-<li> 第一步运行 PuttyGen</li>
+<li>第一步运行PuttyGen</li>
 </ul>
 <p><img alt="Putty" class="img-fluid" src="./images/tech/putty-windows-1.png"/></p>
 <ul>
-<li> 第二步把上面的 ssh rsa  拷贝到远程机器账户的 </li>
+<li>第二步把上面的ssh rsa 拷贝到远程机器账户的</li>
 </ul>
-<p> 远程机器  ~/.ssh/authorized_keys</p>
+<p>远程机器 ~/.ssh/authorized_keys</p>
 <p><img alt="Putty" class="img-fluid" src="./images/tech/putty-windows-2.png"/></p>
 <ul>
-<li> 第三步 pageant Right Click，add key  选择私匙 </li>
+<li>第三步pageant Right Click，add key 选择私匙</li>
 </ul>
 <p><img alt="Putty" class="img-fluid" src="./images/tech/putty-windows-3.png"/></p>
 <ul>
-<li> 设置每次开机自动运行 pageant，并自动 add key<ul>
+<li>设置每次开机自动运行pageant，并自动add key<ul>
 <li>create shortcut “C:\Program Files (x86)\PuTTY\pageant.exe” “D:\putty\my-isa.ppk”</li>
-<li> 通过 Run “shell:startup”  加载上面的 shortcut。</li>
+<li>通过 Run “shell:startup” 加载上面的shortcut。</li>
 </ul>
 </li>
 </ul>

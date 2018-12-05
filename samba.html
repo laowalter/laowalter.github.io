@@ -69,7 +69,7 @@
 </nav>
 </div>
 <div class="span8 article-content">
-<h3 id="pei zhi wen jian  smb.conf"> 配置文件  smb.conf</h3>
+<h3 id="pei zhi wen jian  smb.conf">配置文件 smb.conf</h3>
 <div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/samba/smb.conf</div>
 <div class="highlight"><pre><span></span><span class="o">[</span>global<span class="o">]</span>
    <span class="nv">workgroup</span> <span class="o">=</span> home
@@ -110,7 +110,7 @@
    write <span class="nv">list</span> <span class="o">=</span> @staff
    create <span class="nv">mask</span> <span class="o">=</span> <span class="m">0644</span>
    directory <span class="nv">mask</span> <span class="o">=</span> <span class="m">0755</span>
-   force <span class="nv">user</span> <span class="o">=</span> %U  <span class="p">;</span> Cups 的 pdf-printer 的打印目录在这个 public 之下，所以加入用户权限。
+   force <span class="nv">user</span> <span class="o">=</span> %U  <span class="p">;</span> Cups的pdf-printer的打印目录在这个public之下，所以加入用户权限。
 
 <span class="o">[</span>downloads<span class="o">]</span>
    <span class="nv">comment</span> <span class="o">=</span> Downloads
@@ -123,35 +123,35 @@
    guest <span class="nv">ok</span> <span class="o">=</span> yes
    force <span class="nv">user</span> <span class="o">=</span> %U
 </pre></div>
-<h3 id="te bie shuo ming :"> 特别说明：</h3>
+<h3 id="te bie shuo ming :">特别说明：</h3>
 <ul>
-<li>testparm  用于检查 smb.conf 的语法是否正确。</li>
+<li>testparm 用于检查smb.conf的语法是否正确。</li>
 <li>
-<p> 关于掩码 </p>
+<p>关于掩码</p>
 <ul>
 <li>
 <p>create mode </p>
-<p> 这个配置定义新创建文件的属性。Samba 在新建文件时，会把 dos 文件的权限映射成对应的 unix 权限，在映射后所得的权限，会与这个参数所定义的值进行与操作。然后再和下面的 force create mode 进行或操作，这样就得到最终 linux 下的文件权限。</p>
+<p>这个配置定义新创建文件的属性。Samba在新建文件时，会把dos文件的权限映射成对应的unix权限，在映射后所得的权限，会与这个参数所定义的值进行与操作。然后再和下面的force create mode进行或操作，这样就得到最终linux下的文件权限。</p>
 </li>
 <li>
 <p>force create mode </p>
-<p> 见上面的描述。相当于此参数所设置的权限位一定会出现在文件属性中。</p>
+<p>见上面的描述。相当于此参数所设置的权限位一定会出现在文件属性中。</p>
 </li>
 <li>
 <p>directory mode </p>
-<p> 这个配置与 create mode 参数类似，只是它是应用在新创建的目录上。Samba 在新建目录时，会把 dos–&gt;linux 映射后的文件属性，与此参数所定义的值相与，再和 force directory mode 相或，然后按这个值去设置目录属性。</p>
+<p>这个配置与create mode参数类似，只是它是应用在新创建的目录上。Samba在新建目录时，会把dos–&gt;linux映射后的文件属性，与此参数所定义的值相与，再和force directory mode相或，然后按这个值去设置目录属性。</p>
 </li>
 <li>
 <p>force directory mode </p>
-<p> 见上面的描述。相当于此参数中所设置的权限位一定会出现在目录的属性中。
-说明一点，上面的 create mode 和 create mask 参数是同义词，用哪个都可以；而 directory mode 和 directory mask 参数是相同的。</p>
+<p>见上面的描述。相当于此参数中所设置的权限位一定会出现在目录的属性中。
+说明一点，上面的create mode和create mask参数是同义词，用哪个都可以；而directory mode和directory mask参数是相同的。</p>
 </li>
 </ul>
 </li>
 </ul>
-<p> 当发现 Samba 中新建的目录 / 文件权限不正确，例如无法访问某个目录、无法更改文件，就需要检查上面几个值的设置。</p>
-<p> 另外需要说明的是，上面几个配置项，会和 security mask、force security mode、directory security mask、force directory security mode 这几个配置项相互作用。这几个带 ”security” 的配置项会影响 Windows <span class="caps">NT</span>/2000 的 ACL 功能，一般我们不需要设置。</p>
-<h3 id="&lt;&lt;samba shou ce &gt;&gt;"><a href="https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html">《Samba  手册》</a></h3>
+<p>当发现Samba中新建的目录/文件权限不正确，例如无法访问某个目录、无法更改文件，就需要检查上面几个值的设置。</p>
+<p>另外需要说明的是，上面几个配置项，会和security mask、force security mode、directory security mask、force directory security mode这几个配置项相互作用。这几个带”security”的配置项会影响Windows <span class="caps">NT</span>/2000的ACL功能，一般我们不需要设置。</p>
+<h3 id="&lt;&lt;samba shou ce &gt;&gt;"><a href="https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html">《Samba 手册》</a></h3>
 <hr/>
 </div>
 <section>

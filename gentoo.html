@@ -12,13 +12,13 @@
 <meta content="tech, tech, " name="keywords">
 <meta content="Gentoo " property="og:title"/>
 <meta content="./gentoo.html" property="og:url"/>
-<meta content='Auto run 自动执行 / 启动执行 /etc/local.d/ipforward.start #!/bin/bash # for hostapd /sbin/iptables -t nat -A POSTROUTING --source 192.168.6.0/24 -j SNAT --to 192.168.0.199 必须是可执行文件 chmod +x /etc/local.d/ipforward.start 执行 /etc/init.d/local restart Emerge ACCEPT_KEYWORDS="~amd64" emerge …' property="og:description"/>
+<meta content='Auto run 自动执行/启动执行 /etc/local.d/ipforward.start #!/bin/bash # for hostapd /sbin/iptables -t nat -A POSTROUTING --source 192.168.6.0/24 -j SNAT --to 192.168.0.199 必须是可执行文件 chmod +x /etc/local.d/ipforward.start 执行 /etc/init.d/local restart Emerge ACCEPT_KEYWORDS="~amd64" emerge …' property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2016-11-29T18:05:14+08:00" property="og:article:published_time"/>
 <meta content="2016-11-29T18:05:14+08:00" property=""/>
 <meta content="Gentoo " name="twitter:title"/>
-<meta content='Auto run 自动执行 / 启动执行 /etc/local.d/ipforward.start #!/bin/bash # for hostapd /sbin/iptables -t nat -A POSTROUTING --source 192.168.6.0/24 -j SNAT --to 192.168.0.199 必须是可执行文件 chmod +x /etc/local.d/ipforward.start 执行 /etc/init.d/local restart Emerge ACCEPT_KEYWORDS="~amd64" emerge …' name="twitter:description"/>
+<meta content='Auto run 自动执行/启动执行 /etc/local.d/ipforward.start #!/bin/bash # for hostapd /sbin/iptables -t nat -A POSTROUTING --source 192.168.6.0/24 -j SNAT --to 192.168.0.199 必须是可执行文件 chmod +x /etc/local.d/ipforward.start 执行 /etc/init.d/local restart Emerge ACCEPT_KEYWORDS="~amd64" emerge …' name="twitter:description"/>
 <title>Gentoo  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -69,28 +69,28 @@
 </nav>
 </div>
 <div class="span8 article-content">
-<h2 id="auto run zi dong zhi xing /qi dong zhi xing">Auto run  自动执行 / 启动执行 </h2>
+<h2 id="auto run zi dong zhi xing /qi dong zhi xing">Auto run 自动执行/启动执行</h2>
 <h3 id="/etc/local.d/ipforward.start">/etc/local.d/ipforward.start</h3>
 <div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1"># for hostapd</span>
 /sbin/iptables -t nat -A POSTROUTING --source <span class="m">192</span>.168.6.0/24 -j SNAT --to <span class="m">192</span>.168.0.199
 </pre></div>
-<p><strong> 必须是可执行文件 </strong></p>
+<p><strong>必须是可执行文件</strong></p>
 <div class="highlight"><pre><span></span>chmod +x /etc/local.d/ipforward.start
 </pre></div>
-<h3 id="zhi xing  /etc/init.d/local restart"> 执行 /etc/init.d/local restart</h3>
+<h3 id="zhi xing  /etc/init.d/local restart">执行 /etc/init.d/local restart</h3>
 <h2 id="emerge_1">Emerge</h2>
 <div class="highlight"><pre><span></span><span class="nv">ACCEPT_KEYWORDS</span><span class="o">=</span><span class="s2">"~amd64"</span> emerge Something
 </pre></div>
 <h2 id="cron">Cron</h2>
 <div class="highlight"><pre><span></span>emerge -avq sys-process/dcron
-sudo usermod -a -G cron someuser  <span class="c1"># 为 someuser 用户增加 cron 功能 </span>
+sudo usermod -a -G cron someuser  <span class="c1"># 为someuser用户增加cron功能</span>
 </pre></div>
-<h2 id="rename back to net.eth0 net.wlan0 gai ming wang luo jie kou">Rename back to net.eth0 net.wlan0  改名网络接口 </h2>
+<h2 id="rename back to net.eth0 net.wlan0 gai ming wang luo jie kou">Rename back to net.eth0 net.wlan0 改名网络接口</h2>
 <p>create a file /etc/udev/rules.d/10-rename-network.rules with the content:</p>
 <div class="highlight"><pre><span></span><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">"net"</span>, <span class="nv">ACTION</span><span class="o">==</span><span class="s2">"add"</span>, ATTR<span class="o">{</span>address<span class="o">}==</span><span class="s2">"ff:ff:ff:ff:ff:ff"</span>, <span class="nv">NAME</span><span class="o">=</span><span class="s2">"eth0"</span>
 </pre></div>
-<p> 举例：</p>
+<p>举例：</p>
 <div class="highlight"><pre><span></span><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">"net"</span>, <span class="nv">ACTION</span><span class="o">==</span><span class="s2">"add"</span>, ATTR<span class="o">{</span>address<span class="o">}==</span><span class="s2">"a8:22:66:1e:0a:bf"</span>, <span class="nv">NAME</span><span class="o">=</span><span class="s2">"eth0"</span>
 <span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">"net"</span>, <span class="nv">ACTION</span><span class="o">==</span><span class="s2">"add"</span>, ATTR<span class="o">{</span>address<span class="o">}==</span><span class="s2">"00:e1:4c:36:42:0e"</span>, <span class="nv">NAME</span><span class="o">=</span><span class="s2">"eth1"</span>
 <span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">"net"</span>, <span class="nv">ACTION</span><span class="o">==</span><span class="s2">"add"</span>, ATTR<span class="o">{</span>address<span class="o">}==</span><span class="s2">"20:c9:dc:92:92:6d"</span>, <span class="nv">NAME</span><span class="o">=</span><span class="s2">"wlan0"</span>

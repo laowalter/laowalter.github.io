@@ -95,21 +95,21 @@ axes.unicode_minus  : False
 <div class="highlight"><pre><span></span>    $ brew install ta-lib
     $ pip install TA-Lib
 </pre></div>
-<h3 id="shi yong :"> 使用：</h3>
+<h3 id="shi yong :">使用：</h3>
 <ul>
 <li><a href="http://mrjbq7.github.io/ta-lib/doc_index.html">Documents: http://mrjbq7.github.io/ta-lib/doc_index.html</a></li>
-<li><span class="caps">TA</span>-Lib MA_Type  参数类型的意义 </li>
+<li><span class="caps">TA</span>-Lib MA_Type 参数类型的意义</li>
 </ul>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">talib</span>
 <span class="kn">from</span> <span class="nn">talib</span> <span class="kn">import</span> <span class="n">MA_Type</span>
 
 <span class="n">MA_Type</span><span class="p">:</span> <span class="mi">0</span><span class="o">=</span><span class="n">SMA</span><span class="p">,</span> <span class="mi">1</span><span class="o">=</span><span class="n">EMA</span><span class="p">,</span> <span class="mi">2</span><span class="o">=</span><span class="n">WMA</span><span class="p">,</span> <span class="mi">3</span><span class="o">=</span><span class="n">DEMA</span><span class="p">,</span> <span class="mi">4</span><span class="o">=</span><span class="n">TEMA</span><span class="p">,</span> <span class="mi">5</span><span class="o">=</span><span class="n">TRIMA</span><span class="p">,</span> <span class="mi">6</span><span class="o">=</span><span class="n">KAMA</span><span class="p">,</span> <span class="mi">7</span><span class="o">=</span><span class="n">MAMA</span><span class="p">,</span> <span class="mi">8</span><span class="o">=</span><span class="n">T3</span> <span class="p">(</span><span class="n">Default</span><span class="o">=</span><span class="n">SMA</span><span class="p">)</span>
 </pre></div>
-<p> 移动平均（英语：moving average，<span class="caps">MA</span>），又称 “ 移动平均线 ” 简称均线，是技术分析中一种分析时间序列数据的工具。最常见的是利用股价、回报或交易量等变数计算出移动平均。  移动平均可抚平短期波动，反映出长期趋势或周期。数学上，移动平均可视为一种卷积。</p>
-<p> 简单移动平均（英语：simple moving average，<span class="caps">SMA</span>）是某变数之前 n 个数值的未作加权算术平均。例如，收市价的 10 日简单移动平均指之前 10 日收市价的平均数。：</p>
-<p> 当计算连续的数值，一个新的数值加入，同时一个旧数值剔出，所以无需每次都重新逐个数值加起来。  在技术分析中，不同的市场对常用天数（n 值）有不同的需求，例如：某些市场普遍的 n 值为 10 日、40 日、200 日；有些则是 5 日、10 日、20 日、60 日、120 日、240 日，视乎分析时期长短而定。投资者冀从移动平均线的图表中分辨出支持位或阻力位。</p>
-<p> 加权移动平均（英语：weighted moving average，<span class="caps">WMA</span>）指计算平均值时将个别数据乘以不同数值，在技术分析中，n 日 WMA 的最近期一个数值乘以 n、次近的乘以 n-1，如此类推，一直到 0：</p>
-<p> 指数移动平均（英语：exponential moving average，EMA 或 EWMA）是以指数式递减加权的移动平均。各数值的加权影响力随时间而指数式递减，越近期的数据加权影响力越重，但较旧的数据也给予一定的加权值 </p>
+<p>移动平均（英语：moving average，<span class="caps">MA</span>），又称“移动平均线”简称均线，是技术分析中一种分析时间序列数据的工具。最常见的是利用股价、回报或交易量等变数计算出移动平均。 移动平均可抚平短期波动，反映出长期趋势或周期。数学上，移动平均可视为一种卷积。</p>
+<p>简单移动平均（英语：simple moving average，<span class="caps">SMA</span>）是某变数之前n个数值的未作加权算术平均。例如，收市价的10日简单移动平均指之前10日收市价的平均数。：</p>
+<p>当计算连续的数值，一个新的数值加入，同时一个旧数值剔出，所以无需每次都重新逐个数值加起来。 在技术分析中，不同的市场对常用天数（n值）有不同的需求，例如：某些市场普遍的n值为10日、40日、200日；有些则是5日、10日、20日、60日、120日、240日，视乎分析时期长短而定。投资者冀从移动平均线的图表中分辨出支持位或阻力位。</p>
+<p>加权移动平均（英语：weighted moving average，<span class="caps">WMA</span>）指计算平均值时将个别数据乘以不同数值，在技术分析中，n日WMA的最近期一个数值乘以n、次近的乘以n-1，如此类推，一直到0：</p>
+<p>指数移动平均（英语：exponential moving average，EMA或EWMA）是以指数式递减加权的移动平均。各数值的加权影响力随时间而指数式递减，越近期的数据加权影响力越重，但较旧的数据也给予一定的加权值</p>
 <h2 id="statsmodels_1">Statsmodels</h2>
 <div class="highlight"><pre><span></span>    $ pip install statsmodels
 </pre></div>

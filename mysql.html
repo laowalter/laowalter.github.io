@@ -12,13 +12,13 @@
 <meta content=", tech, " name="keywords">
 <meta content="MySQL " property="og:title"/>
 <meta content="./mysql.html" property="og:url"/>
-<meta content="MySQL 基本操作 增加用户，并赋予权限 创建本机用户 stock@localhost，不能从其他机器访问 , 即使 grant all privileges 也没用 create user 'stock'@'localhost' identified by 'my_pass'; grant all privileges on *.* to 'stock'@'localhost' with grant option; flush privileges; 创建用户 stock@%，可以在任何机器访问此数据库 create user 'stock'%' identified by 'my_pass'; grant all privileges on *.* to 'stock'@'%' with grant option …" property="og:description"/>
+<meta content="MySQL基本操作 增加用户，并赋予权限 创建本机用户stock@localhost，不能从其他机器访问,即使grant all privileges 也没用 create user 'stock'@'localhost' identified by 'my_pass'; grant all privileges on *.* to 'stock'@'localhost' with grant option; flush privileges; 创建用户stock@%，可以在任何机器访问此数据库 create user 'stock'%' identified by 'my_pass'; grant all privileges on *.* to 'stock'@'%' with grant option; flush privileges; 赋予个别用户特别权限 mysql …" property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2018-04-12T11:21:57+08:00" property="og:article:published_time"/>
 <meta content="2018-04-12T11:21:57+08:00" property=""/>
 <meta content="MySQL " name="twitter:title"/>
-<meta content="MySQL 基本操作 增加用户，并赋予权限 创建本机用户 stock@localhost，不能从其他机器访问 , 即使 grant all privileges 也没用 create user 'stock'@'localhost' identified by 'my_pass'; grant all privileges on *.* to 'stock'@'localhost' with grant option; flush privileges; 创建用户 stock@%，可以在任何机器访问此数据库 create user 'stock'%' identified by 'my_pass'; grant all privileges on *.* to 'stock'@'%' with grant option …" name="twitter:description"/>
+<meta content="MySQL基本操作 增加用户，并赋予权限 创建本机用户stock@localhost，不能从其他机器访问,即使grant all privileges 也没用 create user 'stock'@'localhost' identified by 'my_pass'; grant all privileges on *.* to 'stock'@'localhost' with grant option; flush privileges; 创建用户stock@%，可以在任何机器访问此数据库 create user 'stock'%' identified by 'my_pass'; grant all privileges on *.* to 'stock'@'%' with grant option; flush privileges; 赋予个别用户特别权限 mysql …" name="twitter:description"/>
 <title>MySQL  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -69,23 +69,23 @@
 </nav>
 </div>
 <div class="span8 article-content">
-<h2 id="mysqlji ben cao zuo">MySQL 基本操作 </h2>
-<h3 id="zeng jia yong hu ,bing fu yu quan xian"> 增加用户，并赋予权限 </h3>
+<h2 id="mysqlji ben cao zuo">MySQL基本操作</h2>
+<h3 id="zeng jia yong hu ,bing fu yu quan xian">增加用户，并赋予权限</h3>
 <ol>
-<li> 创建本机用户 stock@localhost，不能从其他机器访问 ,<code> 即使 grant all privileges 也没用 </code></li>
+<li>创建本机用户stock@localhost，不能从其他机器访问,<code>即使grant all privileges 也没用</code></li>
 </ol>
 <div class="highlight"><pre><span></span>create user <span class="s1">'stock'</span>@<span class="s1">'localhost'</span> identified by <span class="s1">'my_pass'</span><span class="p">;</span>
 grant all privileges on *.* to <span class="s1">'stock'</span>@<span class="s1">'localhost'</span> with grant option<span class="p">;</span>
 flush privileges<span class="p">;</span>
 </pre></div>
 <ol>
-<li> 创建用户 stock@%，可以在任何机器访问此数据库 </li>
+<li>创建用户stock@%，可以在任何机器访问此数据库</li>
 </ol>
 <div class="highlight"><pre><span></span>create user <span class="s1">'stock'</span>%<span class="s1">' identified by '</span>my_pass<span class="s1">';</span>
 <span class="s1">grant all privileges on *.* to '</span>stock<span class="s1">'@'</span>%<span class="err">'</span> with grant option<span class="p">;</span>
 flush privileges<span class="p">;</span>
 </pre></div>
-<h3 id="fu yu ge bie yong hu te bie quan xian"><a href="https://dev.mysql.com/doc/refman/5.7/en/adding-users.html"> 赋予个别用户特别权限 </a></h3>
+<h3 id="fu yu ge bie yong hu te bie quan xian"><a href="https://dev.mysql.com/doc/refman/5.7/en/adding-users.html">赋予个别用户特别权限</a></h3>
 <div class="highlight"><pre><span></span>mysql&gt; CREATE USER <span class="s1">'custom'</span>@<span class="s1">'localhost'</span> IDENTIFIED BY <span class="s1">'password'</span><span class="p">;</span>
 mysql&gt; GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP
     -&gt;     ON bankaccount.*
@@ -99,7 +99,7 @@ mysql&gt; GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP
     -&gt;     ON customer.*
     -&gt;     TO <span class="s1">'custom'</span>@<span class="s1">'%.example.com'</span><span class="p">;</span>
 </pre></div>
-<h2 id="pythonyu mysqljie kou_1">Python 与 MySQL 接口 </h2>
+<h2 id="pythonyu mysqljie kou_1">Python与MySQL接口</h2>
 <div class="highlight"><pre><span></span>pip install mysql-connector-python
 </pre></div>
 <p><a href="https://dev.mysql.com/doc/connector-python/en/connector-python-example-connecting.html">Tutorial of Mysql Official Site</a></p>

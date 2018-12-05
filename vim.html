@@ -69,15 +69,15 @@
 </nav>
 </div>
 <div class="span8 article-content">
-<h2 id="shi yong ji qiao"><a href="http://vim.wikia.com/wiki/Category:VimTip"> 使用技巧 </a></h2>
+<h2 id="shi yong ji qiao"><a href="http://vim.wikia.com/wiki/Category:VimTip">使用技巧</a></h2>
 <ul>
-<li> 文件编码 </li>
+<li>文件编码</li>
 </ul>
 <div class="highlight"><pre><span></span>:set <span class="nv">fenc</span><span class="o">=</span>gbk
 :set <span class="nv">fenc</span><span class="o">=</span>utf-8
 </pre></div>
 <ul>
-<li><span class="caps">DOS</span> <span class="caps">UNIX</span>  转换 </li>
+<li><span class="caps">DOS</span> <span class="caps">UNIX</span> 转换</li>
 </ul>
 <div class="highlight"><pre><span></span><span class="nb">set</span> <span class="nv">ff</span><span class="o">=</span>unix
 </pre></div>
@@ -100,31 +100,31 @@ Xp
 </pre></div>
 <ul>
 <li>
-<p> 折叠快捷键 </p>
+<p>折叠快捷键</p>
 <ul>
-<li>zc  折叠，只折叠最外层的折叠 </li>
-<li>zC  对所在范围内所有嵌套的折叠点进行折叠，包括嵌套的所有折叠 .</li>
-<li>zo  展开折叠，只展开最外层的折叠 .</li>
-<li>zO  对所在范围内所有嵌套的折叠点展开，包括嵌套折叠 .</li>
-<li>[z  到当前打开的折叠的开始处。</li>
-<li>]z  到当前打开的折叠的末尾处。</li>
-<li>zj  向下移动。到达下一个折叠的开始处。关闭的折叠也被计入。</li>
-<li>zk  向上移动到前一折叠的结束处。关闭的折叠也被 </li>
-<li>zd 删除 (delete) 在光标下的折叠。仅当 ‘foldmethod’ 设为 “manual” 或 “marker”  时有效。</li>
-<li>zD 循环删除 (Delete)  光标下的折叠，即嵌套删除折叠。</li>
-<li> 仅当 ‘foldmethod’ 设为 “manual” 或 “marker”  时有效。</li>
-<li>zE 除去 (Eliminate)  窗口里 “ 所有 ” 的折叠。</li>
-<li> 仅当 ‘foldmethod’ 设为 “manual” 或 “marker”  时有效。</li>
-<li>zfap  将光标移到段落内，然后按 zfap，就可以自动对整个段落添加折叠标签 </li>
-<li>zr  假定你已经创建了若干折叠，而现在需要阅览全部文本。你可以移到每个折叠处，并键入 ”zo”。若要做得更快，可以用这个命令 :zr</li>
-<li>zm 这将折叠更多 (M-ore)。你可以重复 “zr” 和 “zm” 来打开和关闭若干层嵌套的折叠，不然得一个一个的用 zc 来折叠 .  如果你有一个嵌套了好几层深的折叠，你可以用这个命令把它们全部打开 :</li>
-<li>zR  这将减少折叠直至一个也不剩。而用下面这个命令你可以关闭所有的折叠 :</li>
-<li>zM  这将增加折叠，直至所有的折叠都关闭了。</li>
-<li> 你可以用 |zn| 命令快速禁止折叠功能。然后 |zN| 恢复原来的折叠。|zi|  切换于两者之间。</li>
+<li>zc 折叠，只折叠最外层的折叠</li>
+<li>zC 对所在范围内所有嵌套的折叠点进行折叠，包括嵌套的所有折叠.</li>
+<li>zo 展开折叠，只展开最外层的折叠.</li>
+<li>zO 对所在范围内所有嵌套的折叠点展开，包括嵌套折叠.</li>
+<li>[z 到当前打开的折叠的开始处。</li>
+<li>]z 到当前打开的折叠的末尾处。</li>
+<li>zj 向下移动。到达下一个折叠的开始处。关闭的折叠也被计入。</li>
+<li>zk 向上移动到前一折叠的结束处。关闭的折叠也被</li>
+<li>zd 删除 (delete) 在光标下的折叠。仅当 ‘foldmethod’ 设为 “manual” 或 “marker” 时有效。</li>
+<li>zD 循环删除 (Delete) 光标下的折叠，即嵌套删除折叠。</li>
+<li>仅当 ‘foldmethod’ 设为 “manual” 或 “marker” 时有效。</li>
+<li>zE 除去 (Eliminate) 窗口里“所有”的折叠。</li>
+<li>仅当 ‘foldmethod’ 设为 “manual” 或 “marker” 时有效。</li>
+<li>zfap 将光标移到段落内，然后按zfap，就可以自动对整个段落添加折叠标签</li>
+<li>zr 假定你已经创建了若干折叠，而现在需要阅览全部文本。你可以移到每个折叠处，并键入”zo”。若要做得更快，可以用这个命令:zr</li>
+<li>zm 这将折叠更多 (M-ore)。你可以重复 “zr” 和 “zm” 来打开和关闭若干层嵌套的折叠，不然得一个一个的用zc来折叠. 如果你有一个嵌套了好几层深的折叠，你可以用这个命令把它们全部打开:</li>
+<li>zR 这将减少折叠直至一个也不剩。而用下面这个命令你可以关闭所有的折叠:</li>
+<li>zM 这将增加折叠，直至所有的折叠都关闭了。</li>
+<li>你可以用 |zn| 命令快速禁止折叠功能。然后 |zN| 恢复原来的折叠。|zi| 切换于两者之间。</li>
 </ul>
 </li>
 <li>
-<p><a href="https://www.cnblogs.com/wangkangluo1/archive/2012/04/12/2444952.html">vim 常用快捷键   二 </a></p>
+<p><a href="https://www.cnblogs.com/wangkangluo1/archive/2012/04/12/2444952.html">vim 常用快捷键 二</a></p>
 </li>
 </ul>
 <h2 id="in stall vim">In stall Vim</h2>
@@ -256,7 +256,7 @@ emerge sys-libs/ncurses:5
 <div class="highlight"><pre><span></span><span class="nb">cd</span> .vim/bundle/YouCompleteMe/
 ./install --all
 </pre></div>
-<p>Ignore <strong><span class="caps">ERROR</span>: msbuild or xbuild is required to build Omnisharp.</strong>  这是给 .net 用的。</p>
+<p>Ignore <strong><span class="caps">ERROR</span>: msbuild or xbuild is required to build Omnisharp.</strong> 这是给.net用的。</p>
 <hr/>
 </div>
 <section>

@@ -12,13 +12,13 @@
 <meta content="python, mongodb, pandas, tech, " name="keywords">
 <meta content="Python_tips " property="og:title"/>
 <meta content="./python_tips.html" property="og:url"/>
-<meta content="Read special excel like xml Excel Address import pandas as pd dfs = pd.read_html('swclass.xls', flavor='html5lib') df = pd.DataFrame(dfs[0]) df.columns = df.iloc[0] df = df[1:] df_agg = df.groupby(' 行业名称 ').agg(lambda x: ','.join(x)) df_agg = df_agg.reset_index() df_agg[df_agg[' 行业名称 ']==' 电子 '][' 股票代码 '].tolist() add …" property="og:description"/>
+<meta content="Read special excel like xml Excel Address import pandas as pd dfs = pd.read_html('swclass.xls', flavor='html5lib') df = pd.DataFrame(dfs[0]) df.columns = df.iloc[0] df = df[1:] df_agg = df.groupby('行业名称').agg(lambda x: ','.join(x)) df_agg = df_agg.reset_index() df_agg[df_agg['行业名称']=='电子']['股票代码'].tolist() add …" property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2018-09-25T08:44:25+08:00" property="og:article:published_time"/>
 <meta content="2018-09-25T08:44:25+08:00" property=""/>
 <meta content="Python_tips " name="twitter:title"/>
-<meta content="Read special excel like xml Excel Address import pandas as pd dfs = pd.read_html('swclass.xls', flavor='html5lib') df = pd.DataFrame(dfs[0]) df.columns = df.iloc[0] df = df[1:] df_agg = df.groupby(' 行业名称 ').agg(lambda x: ','.join(x)) df_agg = df_agg.reset_index() df_agg[df_agg[' 行业名称 ']==' 电子 '][' 股票代码 '].tolist() add …" name="twitter:description"/>
+<meta content="Read special excel like xml Excel Address import pandas as pd dfs = pd.read_html('swclass.xls', flavor='html5lib') df = pd.DataFrame(dfs[0]) df.columns = df.iloc[0] df = df[1:] df_agg = df.groupby('行业名称').agg(lambda x: ','.join(x)) df_agg = df_agg.reset_index() df_agg[df_agg['行业名称']=='电子']['股票代码'].tolist() add …" name="twitter:description"/>
 <title>Python_tips  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -77,9 +77,9 @@
 <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 
-<span class="n">df_agg</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">' 行业名称 '</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">df_agg</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'行业名称'</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="n">df_agg</span>  <span class="o">=</span> <span class="n">df_agg</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="n">df_agg</span><span class="p">[</span><span class="n">df_agg</span><span class="p">[</span><span class="s1">' 行业名称 '</span><span class="p">]</span><span class="o">==</span><span class="s1">' 电子 '</span><span class="p">][</span><span class="s1">' 股票代码 '</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">df_agg</span><span class="p">[</span><span class="n">df_agg</span><span class="p">[</span><span class="s1">'行业名称'</span><span class="p">]</span><span class="o">==</span><span class="s1">'电子'</span><span class="p">][</span><span class="s1">'股票代码'</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 </pre></div>
 <h2 id="add color text output in teminal">add color text output in teminal</h2>
 <div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[1;32;40m Bright Green  </span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
@@ -174,9 +174,9 @@
 
 <span class="k">def</span> <span class="nf">trading_datelist</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
     <span class="sd">'''</span>
-<span class="sd">    date 是需要计算的最后日期 , datetime.datetime，</span>
-<span class="sd">    num 是从 date 开始，包括 date，向前 num 个交易日 </span>
-<span class="sd">    返回从指定 date 的前 num 个交易日的 datetime 日期对象的 List</span>
+<span class="sd">    date 是需要计算的最后日期, datetime.datetime，</span>
+<span class="sd">    num 是从date开始，包括date，向前num个交易日</span>
+<span class="sd">    返回从指定date的前num个交易日的datetime日期对象的List</span>
 <span class="sd">    '''</span>
     <span class="n">day_list</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">count</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
@@ -194,20 +194,20 @@
 </pre></div>
 <h2 id="command line input">Command Line input</h2>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_input</span><span class="p">():</span>
-    <span class="c1"># 获得命令行的输入参数 </span>
+    <span class="c1"># 获得命令行的输入参数</span>
     <span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">)</span>
 
-    <span class="n">switch</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">' 指定日期在内的 N 个交易日的每笔价格的线性回归图。'</span><span class="p">)</span>
+    <span class="n">switch</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">'指定日期在内的N个交易日的每笔价格的线性回归图。'</span><span class="p">)</span>
     <span class="n">switch</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">'--date'</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">'date'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">today</span><span class="p">,</span>
-                        <span class="n">help</span><span class="o">=</span><span class="s1">' 交易日的最后日期，格式："2016-03-25"，缺省为 “ 今日 ”'</span><span class="p">)</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">'交易日的最后日期，格式："2016-03-25"，缺省为“今日”'</span><span class="p">)</span>
     <span class="n">switch</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">'--num'</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">'num'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-                        <span class="n">help</span><span class="o">=</span><span class="s1">' 交易日的数量，缺省为 1，即 “ 当日 ”'</span><span class="p">)</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">'交易日的数量，缺省为 1，即“当日”'</span><span class="p">)</span>
     <span class="n">switch</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">'--code'</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">'code'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-                        <span class="n">help</span><span class="o">=</span><span class="s1">' 股票代码 '</span><span class="p">)</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">'股票代码'</span><span class="p">)</span>
     <span class="n">switch</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">'--realtime'</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">'realtime'</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">'store_true'</span><span class="p">,</span>
-                        <span class="n">help</span><span class="o">=</span><span class="s1">' 从实时接口中取数据 '</span><span class="p">)</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">'从实时接口中取数据'</span><span class="p">)</span>
     <span class="n">switch</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">'--no-realtime'</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">'realtime'</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">'store_false'</span><span class="p">,</span>
-                        <span class="n">help</span><span class="o">=</span><span class="s1">' 从历史接口中取数据 '</span><span class="p">)</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">'从历史接口中取数据'</span><span class="p">)</span>
     <span class="n">switch</span><span class="o">.</span><span class="n">set_defaults</span><span class="p">(</span><span class="n">realtime</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
     <span class="n">args</span> <span class="o">=</span> <span class="n">switch</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
@@ -222,7 +222,7 @@ import dateutil.parser
 day = dateutil.parser.parse("Thu Sep 25 10:36:28 BRST 2003")</code></p>
 </li>
 <li>
-<p> 只得到今天日期的 datetime 对象，不要时分秒的部分 </p>
+<p>只得到今天日期的datetime对象，不要时分秒的部分</p>
 <p><code>python
 date = dateutil.parser.parse(datetime.datetime.today().strftime('%Y-%m-%d'))</code></p>
 </li>
@@ -242,7 +242,7 @@ datetime.datetime.today().strftime('%Y-%m-%d')</code></p>
                 <span class="n">static</span><span class="o">=</span><span class="s1">'test.log'</span><span class="p">,</span>
                 <span class="n">filemode</span><span class="o">=</span><span class="s1">'w'</span><span class="p">)</span>
 
-<span class="c1"># 定义一个 StreamHandler，将 INFO 级别或更高的日志信息打印到标准错误，并将其添加到当前的日志处理对象 #</span>
+<span class="c1">#定义一个StreamHandler，将INFO级别或更高的日志信息打印到标准错误，并将其添加到当前的日志处理对象#</span>
 <span class="n">console</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
 <span class="n">console</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
 <span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s1">'</span><span class="si">%(name)-12s</span><span class="s1">: </span><span class="si">%(levelname)-8s</span><span class="s1"> </span><span class="si">%(message)s</span><span class="s1">'</span><span class="p">)</span>
@@ -287,7 +287,7 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
     <span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cursor</span><span class="p">))</span>
 </pre></div>
 <ul>
-<li> 查询结果 cursor 是 dict，生成 df</li>
+<li>查询结果cursor是dict，生成df</li>
 </ul>
 <div class="highlight"><pre><span></span>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cursor</span><span class="p">))</span>
 </pre></div>
@@ -295,7 +295,7 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
 <h3 id="read from monogodb get pandas">Read from Monogodb get Pandas</h3>
 <ul>
 <li>
-<p> 读行情数据 </p>
+<p>读行情数据</p>
 <ul>
 <li>Querymongodb</li>
 </ul>
@@ -319,11 +319,11 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
     <span class="n">conn</span> <span class="o">=</span> <span class="n">Querymongodb2</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">table</span><span class="p">)</span>
 </pre></div>
 <ul>
-<li> 自写 query 读数据返回 DataFrame</li>
+<li>自写query读数据返回DataFrame</li>
 </ul>
 <div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">querymongodb2</span> <span class="kn">import</span> <span class="n">Querymongodb2</span>
 
-    <span class="c1"># 读入所有股票今天和昨天的数据，找出涨幅 </span>
+    <span class="c1"># 读入所有股票今天和昨天的数据，找出涨幅</span>
     <span class="n">table</span> <span class="o">=</span> <span class="s1">'hist'</span>
     <span class="n">conn</span> <span class="o">=</span> <span class="n">Querymongodb2</span><span class="p">(</span><span class="n">db</span> <span class="o">=</span> <span class="s1">'stock'</span><span class="p">,</span> <span class="n">collection</span> <span class="o">=</span> <span class="n">table</span><span class="p">)</span>
     <span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
@@ -334,7 +334,7 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
 <div class="highlight"><pre><span></span>    <span class="n">client</span> <span class="o">=</span> <span class="n">py</span><span class="o">.</span><span class="n">MongoClient</span><span class="p">(</span><span class="s2">"localhost"</span><span class="p">,</span> <span class="mi">27017</span><span class="p">)</span>
     <span class="n">db</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">stock</span>
     <span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">classify</span>
-    <span class="c1"># 删除全部原数据库内容 </span>
+    <span class="c1">#删除全部原数据库内容</span>
     <span class="n">collection</span><span class="o">.</span><span class="n">delete_many</span><span class="p">({})</span>
     <span class="n">records</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">area</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">'records'</span><span class="p">,</span>     <span class="n">date_format</span><span class="o">=</span><span class="s1">'iso'</span><span class="p">))</span>
     <span class="n">collection</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">records</span><span class="p">)</span>
@@ -350,7 +350,7 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
 </ul>
 <div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">datetime</span>
     <span class="kn">from</span> <span class="nn">querymongodb2</span> <span class="kn">import</span> <span class="n">Querymongodb2</span>
-    <span class="c1"># 读入所有股票今天和昨天的数据，找出涨幅 </span>
+    <span class="c1">#读入所有股票今天和昨天的数据，找出涨幅</span>
     <span class="n">table</span> <span class="o">=</span> <span class="s1">'histfq'</span>
     <span class="n">conn</span> <span class="o">=</span> <span class="n">Querymongodb2</span><span class="p">(</span><span class="n">db</span> <span class="o">=</span> <span class="s1">'stock'</span><span class="p">,</span> <span class="n">collection</span> <span class="o">=</span> <span class="n">table</span><span class="p">)</span>
     <span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
@@ -382,12 +382,12 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
 </pre></div>
 <h2 id="matplotlib">Matplotlib</h2>
 <ul>
-<li> 显示中文 </li>
+<li>显示中文</li>
 </ul>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plotbars</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
 
     <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
-    <span class="n">font</span> <span class="o">=</span> <span class="n">FontProperties</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="sa">r</span><span class="s2">"/Library/Fonts/simsun.ttc"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>  <span class="n">size 可不用指定 </span>
+    <span class="n">font</span> <span class="o">=</span> <span class="n">FontProperties</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="sa">r</span><span class="s2">"/Library/Fonts/simsun.ttc"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>  <span class="n">size可不用指定</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s1">'bar'</span><span class="p">,</span> <span class="n">rot</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
     <span class="c1">#labels = [label.decode("utf-8") for label in df.index.values]</span>
     <span class="n">labels</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
@@ -396,7 +396,7 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 <ul>
-<li> 显示中文 (Gentoo)</li>
+<li>显示中文(Gentoo)</li>
 </ul>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="kn">as</span> <span class="nn">mpl</span>
 <span class="n">mpl</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'Agg'</span><span class="p">)</span>
@@ -404,7 +404,7 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'font.sans-serif'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="s1">'SimHei'</span><span class="p">]</span>
 </pre></div>
 <ul>
-<li> 显示中文 (Mac)<ul>
+<li>显示中文(Mac)<ul>
 <li>install pyqt</li>
 </ul>
 </li>
@@ -417,7 +417,7 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
     font.sans-serif : STHeiti
 </pre></div>
 <ul>
-<li> 测试支持中文字体 </li>
+<li>测试支持中文字体</li>
 </ul>
 <div class="highlight"><pre><span></span><span class="ch">#! /usr/bin/env python</span>
 <span class="c1"># -*- coding: utf-8 -*-</span>
@@ -428,11 +428,11 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
 <span class="n">mat_fonts</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fm</span><span class="o">.</span><span class="n">ttflist</span><span class="p">)</span>
 <span class="c1">#print(mat_fonts)</span>
 <span class="n">output</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="s1">'fc-list :lang=zh -f "%{family}</span><span class="se">\n</span><span class="s1">"'</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="c1">#print( '*' * 10, ' 系统可用的中文字体 ', '*' * 10)</span>
+<span class="c1">#print( '*' * 10, '系统可用的中文字体', '*' * 10)</span>
 <span class="c1">#print (output)</span>
 <span class="n">zh_fonts</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">output</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">))</span>
 <span class="n">available</span> <span class="o">=</span> <span class="n">mat_fonts</span> <span class="o">&amp;</span> <span class="n">zh_fonts</span>
-<span class="k">print</span> <span class="p">(</span><span class="s1">'*'</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">' 可用的字体 '</span><span class="p">,</span> <span class="s1">'*'</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">'*'</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">'可用的字体'</span><span class="p">,</span> <span class="s1">'*'</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">available</span><span class="p">:</span>
      <span class="k">print</span> <span class="p">(</span><span class="n">f</span><span class="p">)</span> 
 </pre></div>
@@ -444,7 +444,7 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
     <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
     <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-        <span class="s1">' 指数历史行情的地址，是按照季度和年份的组合获得的。'</span>
+        <span class="s1">'指数历史行情的地址，是按照季度和年份的组合获得的。'</span>
         <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1999</span><span class="p">,</span><span class="mi">2017</span><span class="p">):</span>
             <span class="k">for</span> <span class="n">quater</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
 
@@ -454,11 +454,11 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
                 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="n">baseUrl</span><span class="o">+</span><span class="n">subUrl</span> <span class="p">)</span>
                 <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">'lxml'</span> <span class="p">)</span>
 
-                <span class="c1"># 对应行情的 table 的属性是 id'＝FundHoldSharesTable</span>
-                <span class="c1"># 首先判断能否获得 table</span>
+                <span class="c1">#对应行情的table的属性是id'＝FundHoldSharesTable</span>
+                <span class="c1">#首先判断能否获得table</span>
                 <span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'table'</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">'id'</span><span class="p">:</span><span class="s1">'FundHoldSharesTable'</span><span class="p">})</span>
                 <span class="k">if</span> <span class="n">table</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-                    <span class="n">display</span> <span class="o">=</span> <span class="s1">'</span><span class="si">%s</span><span class="s1"> 年－</span><span class="si">%s</span><span class="s1"> 季度：没有找到数据表！'</span> <span class="o">%</span> <span class="p">(</span><span class="s1">'</span><span class="si">%i</span><span class="s1">'</span><span class="o">%</span><span class="n">year</span><span class="p">,</span> <span class="s1">'</span><span class="si">%i</span><span class="s1">'</span><span class="o">%</span><span class="n">quater</span><span class="p">)</span>
+                    <span class="n">display</span> <span class="o">=</span> <span class="s1">'</span><span class="si">%s</span><span class="s1">年－</span><span class="si">%s</span><span class="s1">季度：没有找到数据表！'</span> <span class="o">%</span> <span class="p">(</span><span class="s1">'</span><span class="si">%i</span><span class="s1">'</span><span class="o">%</span><span class="n">year</span><span class="p">,</span> <span class="s1">'</span><span class="si">%i</span><span class="s1">'</span><span class="o">%</span><span class="n">quater</span><span class="p">)</span>
                     <span class="k">print</span> <span class="p">(</span><span class="n">display</span><span class="p">)</span>
 
                 <span class="k">else</span><span class="p">:</span>
@@ -466,7 +466,7 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
                     <span class="n">df</span><span class="p">[</span><span class="s1">'code'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'000001'</span>
                     <span class="n">save</span> <span class="o">=</span> <span class="n">Df2mongo</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">'localhost'</span><span class="p">,</span> <span class="s1">'stock'</span><span class="p">,</span> <span class="s1">'indexes'</span><span class="p">)</span>
                     <span class="n">save</span><span class="o">.</span><span class="n">store2db</span><span class="p">()</span>
-                    <span class="n">display</span> <span class="o">=</span>  <span class="s1">'</span><span class="si">%s</span><span class="s1"> 年－</span><span class="si">%s</span><span class="s1"> 季度：数据表已经入库！'</span> <span class="o">%</span> <span class="p">(</span><span class="s1">'</span><span class="si">%i</span><span class="s1">'</span><span class="o">%</span><span class="n">year</span><span class="p">,</span> <span class="s1">'</span><span class="si">%i</span><span class="s1">'</span><span class="o">%</span><span class="n">quater</span><span class="p">)</span>
+                    <span class="n">display</span> <span class="o">=</span>  <span class="s1">'</span><span class="si">%s</span><span class="s1">年－</span><span class="si">%s</span><span class="s1">季度：数据表已经入库！'</span> <span class="o">%</span> <span class="p">(</span><span class="s1">'</span><span class="si">%i</span><span class="s1">'</span><span class="o">%</span><span class="n">year</span><span class="p">,</span> <span class="s1">'</span><span class="si">%i</span><span class="s1">'</span><span class="o">%</span><span class="n">quater</span><span class="p">)</span>
                     <span class="k">print</span> <span class="p">(</span><span class="n">display</span><span class="p">)</span>
 </pre></div>
 <ul>

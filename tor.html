@@ -12,13 +12,13 @@
 <meta content=", tech, " name="keywords">
 <meta content="Tor " property="og:title"/>
 <meta content="./tor.html" property="og:url"/>
-<meta content="Install tor sudo emerge -avq tor Intall meek git clone https://git.torproject.org/pluggable-transports/meek.git 这里需要了解的一点是 meek-client 是基于 Tor 的一个库写的，在代码中也可以看到工程的头部引用了 Tor 的一个 go 库。 因此直接进入目录里编译的话会报错。 解决方案是让 go 拉取 Tor 的对应库： cd meek go get git.torproject.org/pluggable-transports/goptlib.git 编译 meek-client cd meek-cilent go build sudo …" property="og:description"/>
+<meta content="Install tor sudo emerge -avq tor Intall meek git clone https://git.torproject.org/pluggable-transports/meek.git 这里需要了解的一点是meek-client是基于Tor的一个库写的，在代码中也可以看到工程的头部引用了Tor的一个go库。 因此直接进入目录里编译的话会报错。 解决方案是让go拉取Tor的对应库： cd meek go get git.torproject.org/pluggable-transports/goptlib.git 编译meek-client cd meek-cilent go build sudo cp meek-client /usr/bin/ Config FILE:/etc/tor/torrc User tor PIDFile /var …" property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2018-04-13T10:36:08+08:00" property="og:article:published_time"/>
 <meta content="2018-04-13T10:36:08+08:00" property=""/>
 <meta content="Tor " name="twitter:title"/>
-<meta content="Install tor sudo emerge -avq tor Intall meek git clone https://git.torproject.org/pluggable-transports/meek.git 这里需要了解的一点是 meek-client 是基于 Tor 的一个库写的，在代码中也可以看到工程的头部引用了 Tor 的一个 go 库。 因此直接进入目录里编译的话会报错。 解决方案是让 go 拉取 Tor 的对应库： cd meek go get git.torproject.org/pluggable-transports/goptlib.git 编译 meek-client cd meek-cilent go build sudo …" name="twitter:description"/>
+<meta content="Install tor sudo emerge -avq tor Intall meek git clone https://git.torproject.org/pluggable-transports/meek.git 这里需要了解的一点是meek-client是基于Tor的一个库写的，在代码中也可以看到工程的头部引用了Tor的一个go库。 因此直接进入目录里编译的话会报错。 解决方案是让go拉取Tor的对应库： cd meek go get git.torproject.org/pluggable-transports/goptlib.git 编译meek-client cd meek-cilent go build sudo cp meek-client /usr/bin/ Config FILE:/etc/tor/torrc User tor PIDFile /var …" name="twitter:description"/>
 <title>Tor  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -75,11 +75,11 @@
 <h3 id="intall meek"><a href="http://allinfa.com/linux-tor-meek.html">Intall meek</a></h3>
 <div class="highlight"><pre><span></span>git clone https://git.torproject.org/pluggable-transports/meek.git
 </pre></div>
-<p> 这里需要了解的一点是 meek-client 是基于 Tor 的一个库写的，在代码中也可以看到工程的头部引用了 Tor 的一个 go 库。 因此直接进入目录里编译的话会报错。  解决方案是让 go 拉取 Tor 的对应库：</p>
+<p>这里需要了解的一点是meek-client是基于Tor的一个库写的，在代码中也可以看到工程的头部引用了Tor的一个go库。 因此直接进入目录里编译的话会报错。 解决方案是让go拉取Tor的对应库：</p>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> meek
 go get git.torproject.org/pluggable-transports/goptlib.git
 </pre></div>
-<p> 编译 meek-client</p>
+<p>编译meek-client</p>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> meek-cilent
 go build
 sudo cp meek-client /usr/bin/
@@ -129,34 +129,34 @@ with Controller.from_port<span class="o">(</span><span class="nv">port</span> <s
     controller.signal<span class="o">(</span>Signal.NEWNYM<span class="o">)</span>
 </pre></div>
 <h2 id="explain of meek config in torrc_1">Explain of meek config in torrc</h2>
-<h3 id="meek yuan li">Meek  原理 </h3>
-<p> 简单来说 MEEK 插件的原理就是客户端先与云平台（<span class="caps">GAE</span>，amazon，Azure）连接，看上去是访问云平台（front domain），实际上是以云平台作为中介访问 MEEK server 再连接 Tor 中继形成 Tor 电路的。这些云平台很多公司都要使用，所以审查者不敢随意封杀。</p>
-<p> 但如果审查者还就是什么都不管，把云平台给屏蔽了呢？比如说天朝 GFW 就直接把 GAE 给完全屏蔽了，直接使得 MEEK-google 失效。我也看到有些人反映其他两个 MEEK 插件在有些地方也连不上了，这时候又应该怎么做呢？</p>
-<p> 屏蔽云平台最常用的方法就是 DNS 污染了，这时可以试着把本地连接的 DNS 服务器设置为国外的 DNS 服务器。</p>
-<h3 id="guan yu pei zhi wen jian"> 关于配置文件 </h3>
+<h3 id="meek yuan li">Meek 原理</h3>
+<p>简单来说MEEK插件的原理就是客户端先与云平台（<span class="caps">GAE</span>，amazon，Azure）连接，看上去是访问云平台（front domain），实际上是以云平台作为中介访问MEEK server再连接Tor中继形成Tor电路的。这些云平台很多公司都要使用，所以审查者不敢随意封杀。</p>
+<p>但如果审查者还就是什么都不管，把云平台给屏蔽了呢？比如说天朝GFW就直接把GAE给完全屏蔽了，直接使得MEEK-google失效。我也看到有些人反映其他两个MEEK插件在有些地方也连不上了，这时候又应该怎么做呢？</p>
+<p>屏蔽云平台最常用的方法就是DNS污染了，这时可以试着把本地连接的DNS服务器设置为国外的DNS服务器。</p>
+<h3 id="guan yu pei zhi wen jian">关于配置文件</h3>
 <div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/tor/torrc</div>
 <div class="highlight"><pre><span></span>meek 0.0.2.0:1 url=https://meek-reflect.appspot.com/ front=www.google.com
 meek 0.0.2.0:2 url=https://d2zfqthxsdq309.cloudfront.net/ front=a0.awsstatic.com
 meek 0.0.2.0:3 url=https://az668014.vo.msecnd.net/ front=ajax.aspnetcdn.com
 </pre></div>
 <ol>
-<li>meek 表示传输名，不能省略也不能改动；后面的 0.0.2.0:1 可以修改为任何值（除了 0.0.0.x 之外，因为这是 Tor 内部默认使用的地址）；</li>
-<li>“url=https://az668014.vo.msecnd.net/ ” 是 MEEK server 的域名，GFW 封锁它也没有意义；</li>
-<li><strong>front=ajax.aspnetcdn.com</strong> 是云平台的域名（front domain），一旦被 GFW 封锁，MEEK 插件就会失效。</li>
+<li>meek表示传输名，不能省略也不能改动；后面的0.0.2.0:1可以修改为任何值（除了0.0.0.x之外，因为这是Tor内部默认使用的地址）；</li>
+<li>“url=https://az668014.vo.msecnd.net/ ”是MEEK server的域名，GFW封锁它也没有意义；</li>
+<li><strong>front=ajax.aspnetcdn.com</strong>是云平台的域名（front domain），一旦被GFW封锁，MEEK插件就会失效。</li>
 </ol>
-<h3 id="zhao dao zui xin de meek-server"> 找到最新的 meek-server</h3>
-<p>Mac <span class="caps">OS</span>  中先安装 tor-browser</p>
+<h3 id="zhao dao zui xin de meek-server">找到最新的meek-server</h3>
+<p>Mac <span class="caps">OS</span> 中先安装tor-browser</p>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> /Applications/TorBrowser.app
 grep -ri <span class="m">0</span>.0.2.0 *
 </pre></div>
-<p> 可以找到有关部分 <span style="color:red;">Contents/Resources/distribution/preferences/extension-overrides.js</span>:pref(“extensions.torlauncher.default_bridge.meek-amazon.1”, “<span style="color:red;">meek 0.0.2.0:2 <span class="caps">B9E7141C594AF25699E0079C1F0146F409495296</span> url=https://d2cly7j4zqgua7.cloudfront.net/ front=a0.awsstatic.com</span>“);</p>
-<h3 id='zhao dao "front="de yu ming'> 找到 “front=” 的域名 </h3>
-<p> 让 MEEK 插件复活的关键就在于要把默认的 front domain 修改成未被屏蔽的域名。例如在 google 被屏蔽了，但有一些 google 服务并没有被屏蔽，例如被各大网站广泛使用的 Google Analytics 和 DoubleClick ads，可以试着把 front domain 换成对应的 front=ssl.google-analytics.com 或 front=www.doubleclick.net，或者还可以寻找其他的 google 服务的域名。还有就是 hosts 修改可用的 google <span class="caps">IP</span>，或者像 goagent 一样上传。</p>
-<p><span class="caps">MEEK</span>-amazon 也是类似的修改方法，<a href="http://www.alexa.com/siteinfo/cloudfront.net">http://www.alexa.com/siteinfo/cloudfront.net</a>  这里有一堆可用的域名 </p>
-<p><span class="caps">MEEK</span>-azure 也一样，可以搜索一些属于 Azure CDN 的子域名，例如 front=officeimg.vo.msecnd.net</p>
-<h3 id="ru he cha zhao yu ming de zi yu ming"> 如何查找域名的子域名 </h3>
-<p> 最简单的方法，比如 google 中用搜索 <code>site: fool.com</code>，就可以搜索到 fool.com 大部分的子域名。</p>
-<h2 id="pei zhi http proxy_1"> 配置 http proxy</h2>
+<p>可以找到有关部分 <span style="color:red;">Contents/Resources/distribution/preferences/extension-overrides.js</span>:pref(“extensions.torlauncher.default_bridge.meek-amazon.1”, “<span style="color:red;">meek 0.0.2.0:2 <span class="caps">B9E7141C594AF25699E0079C1F0146F409495296</span> url=https://d2cly7j4zqgua7.cloudfront.net/ front=a0.awsstatic.com</span>“);</p>
+<h3 id='zhao dao "front="de yu ming'>找到“front=”的域名</h3>
+<p>让MEEK插件复活的关键就在于要把默认的front domain修改成未被屏蔽的域名。例如在google被屏蔽了，但有一些google服务并没有被屏蔽，例如被各大网站广泛使用的Google Analytics和DoubleClick ads，可以试着把front domain换成对应的front=ssl.google-analytics.com或front=www.doubleclick.net，或者还可以寻找其他的google服务的域名。还有就是hosts修改可用的google <span class="caps">IP</span>，或者像goagent一样上传。</p>
+<p><span class="caps">MEEK</span>-amazon也是类似的修改方法，<a href="http://www.alexa.com/siteinfo/cloudfront.net">http://www.alexa.com/siteinfo/cloudfront.net</a> 这里有一堆可用的域名</p>
+<p><span class="caps">MEEK</span>-azure也一样，可以搜索一些属于Azure CDN的子域名，例如front=officeimg.vo.msecnd.net</p>
+<h3 id="ru he cha zhao yu ming de zi yu ming">如何查找域名的子域名</h3>
+<p>最简单的方法，比如google中用搜索 <code>site: fool.com</code>，就可以搜索到fool.com大部分的子域名。</p>
+<h2 id="pei zhi http proxy_1">配置http proxy</h2>
 <h3 id="install">Install</h3>
 <div class="highlight"><pre><span></span>emerge -avq net-proxy/privoxy
 </pre></div>

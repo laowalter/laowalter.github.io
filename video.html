@@ -12,13 +12,13 @@
 <meta content=", tech, " name="keywords">
 <meta content="Video " property="og:title"/>
 <meta content="./video.html" property="og:url"/>
-<meta content="Video Combine Combine multiple flvs into one emerge -avq mplayer mencoder -forceidx -of lavf -oac pcm -ovc copy -o film.flv 1.flv 2.flv 3.flv 4.flv 5.flv 6.flv 7.flv 8.flv 9.flv Video Downloader youtube youtube 音频和视频很多是分开的，ffmpeg 用来将音频和视频合并。 emerge -avq ffmpeg 安装 …" property="og:description"/>
+<meta content="Video Combine Combine multiple flvs into one emerge -avq mplayer mencoder -forceidx -of lavf -oac pcm -ovc copy -o film.flv 1.flv 2.flv 3.flv 4.flv 5.flv 6.flv 7.flv 8.flv 9.flv Video Downloader youtube youtube音频和视频很多是分开的，ffmpeg用来将音频和视频合并。 emerge -avq ffmpeg 安装youtube-dl . ~/.bin/python3 …" property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2018-02-10T13:55:13+08:00" property="og:article:published_time"/>
 <meta content="2018-02-10T13:55:13+08:00" property=""/>
 <meta content="Video " name="twitter:title"/>
-<meta content="Video Combine Combine multiple flvs into one emerge -avq mplayer mencoder -forceidx -of lavf -oac pcm -ovc copy -o film.flv 1.flv 2.flv 3.flv 4.flv 5.flv 6.flv 7.flv 8.flv 9.flv Video Downloader youtube youtube 音频和视频很多是分开的，ffmpeg 用来将音频和视频合并。 emerge -avq ffmpeg 安装 …" name="twitter:description"/>
+<meta content="Video Combine Combine multiple flvs into one emerge -avq mplayer mencoder -forceidx -of lavf -oac pcm -ovc copy -o film.flv 1.flv 2.flv 3.flv 4.flv 5.flv 6.flv 7.flv 8.flv 9.flv Video Downloader youtube youtube音频和视频很多是分开的，ffmpeg用来将音频和视频合并。 emerge -avq ffmpeg 安装youtube-dl . ~/.bin/python3 …" name="twitter:description"/>
 <title>Video  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -76,14 +76,14 @@ mencoder -forceidx -of lavf -oac pcm -ovc copy -o film.flv <span class="m">1</sp
 </pre></div>
 <h2 id="video downloader_1">Video Downloader</h2>
 <h3 id="youtube">youtube</h3>
-<p>youtube 音频和视频很多是分开的，ffmpeg 用来将音频和视频合并。</p>
+<p>youtube音频和视频很多是分开的，ffmpeg用来将音频和视频合并。</p>
 <div class="highlight"><pre><span></span>emerge -avq ffmpeg
 </pre></div>
-<p> 安装 youtube-dl</p>
-<div class="highlight"><pre><span></span>. ~/.bin/python3.sh <span class="c1"># 启动 env</span>
+<p>安装youtube-dl</p>
+<div class="highlight"><pre><span></span>. ~/.bin/python3.sh <span class="c1">#启动env</span>
 pip install youtube-dl
 </pre></div>
-<p> 配置文件  ~/.config/youtube-dl/config</p>
+<p>配置文件 ~/.config/youtube-dl/config</p>
 <div class="highlight"><pre><span></span><span class="c1"># Do not copy the mtime</span>
 --no-mtime
 
@@ -103,9 +103,9 @@ pip install youtube-dl
 <span class="c1"># Force resume of partially downloaded files</span>
 --continue
 </pre></div>
-<h3 id="shi yong youtube-dl"> 使用 youtube-dl</h3>
+<h3 id="shi yong youtube-dl">使用youtube-dl</h3>
 <ul>
-<li> 列出视频可下载的文件 </li>
+<li>列出视频可下载的文件</li>
 </ul>
 <div class="highlight"><pre><span></span><span class="m">0</span> ✓ <span class="o">(</span>Python3<span class="o">)</span>walter@mini ~/tmp $ youtube-dl -F  https://www.youtube.com/watch?v<span class="o">=</span>Y2yxoUHAGQ
 <span class="o">[</span>youtube<span class="o">]</span> Y2yxoIUHAGQ: Downloading webpage
@@ -132,7 +132,7 @@ format code  extension  resolution note
 <span class="m">18</span>           mp4        640x360    medium , avc1.42001E, mp4a.40.2@ 96k <span class="o">(</span>best<span class="o">)</span>
 </pre></div>
 <ul>
-<li> 下载 </li>
+<li>下载</li>
 </ul>
 <div class="highlight"><pre><span></span>youtube-dl -f135+140 https://www.youtube.com/watch?v<span class="o">=</span>Y2yxoUHAGQ
 </pre></div>

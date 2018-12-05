@@ -12,13 +12,13 @@
 <meta content=", tech, " name="keywords">
 <meta content="Gentoo-X " property="og:title"/>
 <meta content="./gentoo-x.html" property="og:url"/>
-<meta content='Xorg 最小安装 检测显卡： #dmesg | grep video #lspci | grep -i VGA 查看电脑的显卡，为装显卡驱动做准备 设置 /etc/portage/make.conf 文件中两个重要的变量： （对鼠标和键盘的支持） INPUT_DEVICE="evdev" （对 nVidia 显卡） VIDEO_CARDS="nvidia" （或，对 ATI Radeon 显卡） VIDEO_CARDS="fglrx" （或，对 VMware 虚拟机显卡） VIDEO_CARDS="vmware" 安装 xorg-server # emerge -pv xorg-server # echo "x11-base/xorg-server udev" &gt;&gt; /etc/portage …' property="og:description"/>
+<meta content='Xorg 最小安装 检测显卡： #dmesg | grep video #lspci | grep -i VGA 查看电脑的显卡，为装显卡驱动做准备 设置/etc/portage/make.conf文件中两个重要的变量： （对鼠标和键盘的支持） INPUT_DEVICE="evdev" （对nVidia显卡） VIDEO_CARDS="nvidia" （或，对ATI Radeon显卡） VIDEO_CARDS="fglrx" （或，对VMware虚拟机显卡） VIDEO_CARDS="vmware" 安装xorg-server # emerge -pv xorg-server # echo "x11-base/xorg-server udev" &gt;&gt; /etc/portage/package.use # emerge xorg-server 初始化环境变量 # env-update # source /etc …' property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2018-01-07T17:39:15+08:00" property="og:article:published_time"/>
 <meta content="2018-01-07T17:39:15+08:00" property=""/>
 <meta content="Gentoo-X " name="twitter:title"/>
-<meta content='Xorg 最小安装 检测显卡： #dmesg | grep video #lspci | grep -i VGA 查看电脑的显卡，为装显卡驱动做准备 设置 /etc/portage/make.conf 文件中两个重要的变量： （对鼠标和键盘的支持） INPUT_DEVICE="evdev" （对 nVidia 显卡） VIDEO_CARDS="nvidia" （或，对 ATI Radeon 显卡） VIDEO_CARDS="fglrx" （或，对 VMware 虚拟机显卡） VIDEO_CARDS="vmware" 安装 xorg-server # emerge -pv xorg-server # echo "x11-base/xorg-server udev" &gt;&gt; /etc/portage …' name="twitter:description"/>
+<meta content='Xorg 最小安装 检测显卡： #dmesg | grep video #lspci | grep -i VGA 查看电脑的显卡，为装显卡驱动做准备 设置/etc/portage/make.conf文件中两个重要的变量： （对鼠标和键盘的支持） INPUT_DEVICE="evdev" （对nVidia显卡） VIDEO_CARDS="nvidia" （或，对ATI Radeon显卡） VIDEO_CARDS="fglrx" （或，对VMware虚拟机显卡） VIDEO_CARDS="vmware" 安装xorg-server # emerge -pv xorg-server # echo "x11-base/xorg-server udev" &gt;&gt; /etc/portage/package.use # emerge xorg-server 初始化环境变量 # env-update # source /etc …' name="twitter:description"/>
 <title>Gentoo-X  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -69,55 +69,55 @@
 </nav>
 </div>
 <div class="span8 article-content">
-<h2 id="xorg zui xiao an zhuang">Xorg  最小安装 </h2>
+<h2 id="xorg zui xiao an zhuang">Xorg 最小安装</h2>
 <ol>
-<li> 检测显卡：</li>
+<li>检测显卡：</li>
 </ol>
 <div class="highlight"><pre><span></span><span class="c1">#dmesg | grep video</span>
 <span class="c1">#lspci  | grep -i VGA</span>
 </pre></div>
 <ol>
-<li> 查看电脑的显卡，为装显卡驱动做准备 </li>
+<li>查看电脑的显卡，为装显卡驱动做准备</li>
 </ol>
-<div class="highlight"><pre><span></span> 设置 /etc/portage/make.conf 文件中两个重要的变量：
+<div class="highlight"><pre><span></span>设置/etc/portage/make.conf文件中两个重要的变量：
 
 （对鼠标和键盘的支持）
 <span class="nv">INPUT_DEVICE</span><span class="o">=</span><span class="s2">"evdev"</span>
 
-（对 nVidia 显卡）
+（对nVidia显卡）
 <span class="nv">VIDEO_CARDS</span><span class="o">=</span><span class="s2">"nvidia"</span>
 
-（或，对 ATI Radeon 显卡）
+（或，对ATI Radeon显卡）
 <span class="nv">VIDEO_CARDS</span><span class="o">=</span><span class="s2">"fglrx"</span>
 
-（或，对 VMware 虚拟机显卡）
+（或，对VMware虚拟机显卡）
 <span class="nv">VIDEO_CARDS</span><span class="o">=</span><span class="s2">"vmware"</span>
 </pre></div>
 <ol>
-<li> 安装 xorg-server</li>
+<li>安装xorg-server</li>
 </ol>
 <div class="highlight"><pre><span></span><span class="c1"># emerge -pv xorg-server</span>
 <span class="c1"># echo "x11-base/xorg-server udev" &gt;&gt; /etc/portage/package.use</span>
 <span class="c1"># emerge xorg-server</span>
 </pre></div>
 <ol>
-<li> 初始化环境变量 </li>
+<li>初始化环境变量</li>
 </ol>
 <div class="highlight"><pre><span></span><span class="c1"># env-update</span>
 <span class="c1"># source /etc/profile</span>
 </pre></div>
 <ol>
-<li> 使用 startx： 测试 X，安装 twm xterm</li>
+<li>使用startx： 测试X，安装twm xterm</li>
 </ol>
 <div class="highlight"><pre><span></span><span class="c1"># emerge twm</span>
 <span class="c1"># emerge xterm</span>
 <span class="c1"># startx</span>
 </pre></div>
-<p> 测试成功，卸载 twm xterm</p>
+<p>测试成功，卸载twm xterm</p>
 <div class="highlight"><pre><span></span>emerge --unmerge twm xterm
 </pre></div>
-<p> 注意事项
-现在比较新的版本的 Xorg 使用 evdev 替换了 keyboard 和 mouse ，确保 udev 标记在安装 xorg-server 时被启用：# echo “x11-base/xorg-server udev” &gt;&gt; /etc/portage/package.use</p>
+<p>注意事项
+现在比较新的版本的Xorg使用 evdev 替换了 keyboard 和 mouse ，确保 udev 标记在安装 xorg-server 时被启用：# echo “x11-base/xorg-server udev” &gt;&gt; /etc/portage/package.use</p>
 <hr/>
 </div>
 <section>

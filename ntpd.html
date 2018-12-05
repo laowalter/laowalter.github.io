@@ -12,13 +12,13 @@
 <meta content=", tech, " name="keywords">
 <meta content="Ntpd " property="og:title"/>
 <meta content="./ntpd.html" property="og:url"/>
-<meta content="openntpd 不被 widnows 支持，所以用 ntp 比较通用。 Install ntp 如果启动 ntpd，就不需要 ntp-client。 sudo emerge -avq net-misc/ntp sudo rc-service ntpd start sudo rc-update add ntpd default /etc/conf.d/ntpd “-4” 强制使用 ipv4，这样就不会使用 ipv6 了。ntpd 启动后，会试图使用所有可用网络。 NTPD_OPTS='-4 -g' /etc/ntpd.conf # DHCP clients can append …" property="og:description"/>
+<meta content="openntpd 不被widnows支持，所以用ntp比较通用。 Install ntp 如果启动ntpd，就不需要ntp-client。 sudo emerge -avq net-misc/ntp sudo rc-service ntpd start sudo rc-update add ntpd default /etc/conf.d/ntpd “-4”强制使用ipv4，这样就不会使用ipv6了。ntpd启动后，会试图使用所有可用网络。 NTPD_OPTS='-4 -g' /etc/ntpd.conf # DHCP clients can append or replace NTP configuration files. # You should consult your DHCP …" property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2018-03-30T13:02:05+08:00" property="og:article:published_time"/>
 <meta content="2018-03-30T13:02:05+08:00" property=""/>
 <meta content="Ntpd " name="twitter:title"/>
-<meta content="openntpd 不被 widnows 支持，所以用 ntp 比较通用。 Install ntp 如果启动 ntpd，就不需要 ntp-client。 sudo emerge -avq net-misc/ntp sudo rc-service ntpd start sudo rc-update add ntpd default /etc/conf.d/ntpd “-4” 强制使用 ipv4，这样就不会使用 ipv6 了。ntpd 启动后，会试图使用所有可用网络。 NTPD_OPTS='-4 -g' /etc/ntpd.conf # DHCP clients can append …" name="twitter:description"/>
+<meta content="openntpd 不被widnows支持，所以用ntp比较通用。 Install ntp 如果启动ntpd，就不需要ntp-client。 sudo emerge -avq net-misc/ntp sudo rc-service ntpd start sudo rc-update add ntpd default /etc/conf.d/ntpd “-4”强制使用ipv4，这样就不会使用ipv6了。ntpd启动后，会试图使用所有可用网络。 NTPD_OPTS='-4 -g' /etc/ntpd.conf # DHCP clients can append or replace NTP configuration files. # You should consult your DHCP …" name="twitter:description"/>
 <title>Ntpd  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -69,15 +69,15 @@
 </nav>
 </div>
 <div class="span8 article-content">
-<p>openntpd  不被 widnows 支持，所以用 ntp 比较通用。</p>
+<p>openntpd 不被widnows支持，所以用ntp比较通用。</p>
 <h3 id="install ntp">Install ntp</h3>
-<p> 如果启动 ntpd，就不需要 ntp-client。</p>
+<p>如果启动ntpd，就不需要ntp-client。</p>
 <div class="highlight"><pre><span></span>sudo emerge -avq net-misc/ntp
 sudo rc-service ntpd start
 sudo rc-update add ntpd default
 </pre></div>
 <h3 id="/etc/conf.d/ntpd">/etc/conf.d/ntpd</h3>
-<p><span class="dquo">“</span>-4” 强制使用 ipv4，这样就不会使用 ipv6 了。ntpd 启动后，会试图使用所有可用网络。</p>
+<p><span class="dquo">“</span>-4”强制使用ipv4，这样就不会使用ipv6了。ntpd启动后，会试图使用所有可用网络。</p>
 <div class="highlight"><pre><span></span><span class="nv">NTPD_OPTS</span><span class="o">=</span><span class="s1">'-4 -g'</span>
 </pre></div>
 <h3 id="/etc/ntpd.conf">/etc/ntpd.conf</h3>

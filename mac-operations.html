@@ -124,7 +124,7 @@ brew install chromedriver
 <ul>
 <li>command</li>
 </ul>
-<p><code> 注意 :</code> crontab 在用户环境中不能够直接用 crontab -e 编辑，因为无法保存。</p>
+<p><code>注意:</code> crontab 在用户环境中不能够直接用crontab -e编辑，因为无法保存。</p>
 <div class="highlight"><pre><span></span>    ~ su -
     <span class="c1"># root # crontab -u walter -e</span>
 </pre></div>
@@ -138,7 +138,7 @@ brew install chromedriver
     <span class="m">00</span> <span class="m">15</span> * * <span class="m">1</span>-5 walter /usr/bin/afplay ~/.stocknotice/closepm.m4a
 </pre></div>
 <ul>
-<li> 关于 virtualenv python 的演示 </li>
+<li>关于virtualenv python的演示</li>
 </ul>
 <div class="highlight"><pre><span></span>    <span class="c1">#!/bin/bash</span>
     <span class="nb">export</span> <span class="nv">LC_ALL</span><span class="o">=</span>zh_CN.UTF-8
@@ -205,12 +205,12 @@ python ~/bin/spyder/bootstrap.py  &gt; /dev/null <span class="m">2</span>&gt;<sp
 <p>Key replace Application name:  <code>Karabiner</code></p>
 <h2 id="webserver">Webserver</h2>
 <p>(http://digitalshore.io/local-web-development-environment-apache-osx-10-11-el-capitan/)[http://digitalshore.io/local-web-development-environment-apache-osx-10-11-el-capitan/]</p>
-<h3 id="qi dong ben ji webfu wu qi , gen di zhi /library/webserver/documents"> 启动本机 web 服务器 ,  根地址 /Library/WebServer/Documents</h3>
+<h3 id="qi dong ben ji webfu wu qi , gen di zhi /library/webserver/documents">启动本机web服务器, 根地址/Library/WebServer/Documents</h3>
 <div class="highlight"><pre><span></span>sudo apachectl start
 sudo apachectl stop
 sudo apachectl restart
 </pre></div>
-<h3 id="jian li  username.conf, usernameshi yong hu zhang hao"> 建立 username.conf, username 是用户账号 </h3>
+<h3 id="jian li  username.conf, usernameshi yong hu zhang hao">建立 username.conf, username是用户账号</h3>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> /etc/apache2/users
 sudo vi username.conf
 </pre></div>
@@ -220,12 +220,12 @@ sudo vi username.conf
     Require all granted
 <span class="nt">&lt;/Directory&gt;</span>
 </pre></div>
-<p>username.conf 的 Permissions  应该是：</p>
+<p>username.conf 的Permissions 应该是：</p>
 <div class="highlight"><pre><span></span>sudo chmod <span class="m">644</span> username.conf
 ls -l username.conf
 -rw-r--r-- root wheel <span class="m">298</span> Jun <span class="m">28</span> <span class="m">16</span>:47 username.conf
 </pre></div>
-<h3 id="da kai /etc/apache2/httpd.conf"> 打开 /etc/apache2/httpd.conf</h3>
+<h3 id="da kai /etc/apache2/httpd.conf">打开/etc/apache2/httpd.conf</h3>
 <div class="highlight"><pre><span></span>LoadModule authz_core_module libexec/apache2/mod_authz_core.so
 LoadModule authz_host_module libexec/apache2/mod_authz_host.so
 LoadModule userdir_module libexec/apache2/mod_userdir.so
@@ -234,11 +234,11 @@ LoadModule rewrite_module libexec/apache2/mod_rewrite.so
 LoadModule php5_module libexec/apache2/libphp5.so
 Include /private/etc/apache2/extra/httpd-userdir.conf
 </pre></div>
-<h3 id="da kai  /etc/apache2/extra/httpd-userdir.conf"> 打开  /etc/apache2/extra/httpd-userdir.conf</h3>
+<h3 id="da kai  /etc/apache2/extra/httpd-userdir.conf">打开 /etc/apache2/extra/httpd-userdir.conf</h3>
 <p>uncomment the following:</p>
 <div class="highlight"><pre><span></span>Include /private/etc/apache2/users/*.conf
 </pre></div>
-<h3 id="qi dong apache"> 启动 apache</h3>
+<h3 id="qi dong apache">启动apache</h3>
 <div class="highlight"><pre><span></span>mkdir ~/Sites
 sudo apachectl restart
 </pre></div>

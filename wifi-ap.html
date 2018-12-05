@@ -176,7 +176,7 @@ emerge -avq net-misc/dhcp
 <ul>
 <li>Configure /etc/dhcp/dhcpd.conf</li>
 </ul>
-<p><strong> 特别说明 </strong>，因为加入本地 DNS 服务器，所有要在本地 DNS 服务器的 name.conf 中，把 192.168.6.0/24 加入 acl “trusted”.  负责无法解析。</p>
+<p><strong>特别说明</strong>，因为加入本地DNS服务器，所有要在本地DNS服务器的name.conf中，把192.168.6.0/24加入acl “trusted”. 负责无法解析。</p>
 <div class="highlight"><pre><span></span>subnet <span class="m">192</span>.168.6.0 netmask <span class="m">255</span>.255.255.0 <span class="o">{</span>
   interface wlan0<span class="p">;</span>
   range <span class="m">192</span>.168.6.20 <span class="m">192</span>.168.6.30<span class="p">;</span>
@@ -203,7 +203,7 @@ sudo ifconfig wifi <span class="m">192</span>.168.6.1/24
 <span class="nv">wpa_supplicant_wlan0</span><span class="o">=</span><span class="s2">"-Dnl80211 -d -f /var/log/wpa_supplicant.log"</span>
 </pre></div>
 <h4 id="add route">Add route</h4>
-<p> 假设 192.168.0.199 wired to the Internet</p>
+<p>假设192.168.0.199 wired to the Internet</p>
 <div class="highlight"><pre><span></span>sudo <span class="nb">echo</span> <span class="m">1</span> &gt; /proc/sys/net/ipv4/ip_forward
 sudo iptables -t nat -A POSTROUTING --source <span class="m">192</span>.168.6.0/24 -j SNAT --to <span class="m">192</span>.168.0.199
 sudo /etc/init.d/iptables save

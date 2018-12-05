@@ -280,8 +280,8 @@ ghome.  IN      NS      ns.ghome.
 iptables -A INPUT -p udp --dport <span class="m">53</span> -j ACCEPT
 iptables -A INPUT -p tcp --dport <span class="m">53</span> -j ACCEPT
 </pre></div>
-<h3 id="te bie shuo ming"> 特别说明 </h3>
-<p> 如过有其他 NAT 的网段 ( 如 :192.168.6.0/24), 加入这一行 192.168.6.0/24;  到 trusted。</p>
+<h3 id="te bie shuo ming">特别说明</h3>
+<p>如过有其他NAT的网段(如:192.168.6.0/24), 加入这一行 192.168.6.0/24; 到trusted。</p>
 <div class="highlight"><pre><span></span>acl <span class="s2">"trusted"</span> <span class="o">{</span>
     <span class="m">127</span>.0.0.0/8<span class="p">;</span>
     ::1/128<span class="p">;</span>

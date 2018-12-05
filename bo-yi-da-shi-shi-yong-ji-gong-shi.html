@@ -12,13 +12,13 @@
 <meta content=", futures, " name="keywords">
 <meta content="博易大师使用及公式 " property="og:title"/>
 <meta content="./bo-yi-da-shi-shi-yong-ji-gong-shi.html" property="og:url"/>
-<meta content="公式 m9 （MACD 变色 \ 面积公式） NO 参数名 类型 缺省值 最小值 最大值 步长 1 SHORT 数值型 12 2 200 0 2 LONG 数值型 26 2 200 0 3 MID 数值型 9 2 200 0 4 ISARROW 数值型 1 0 1 0 DIFF:=EMA(CLOSE,SHORT)-EMA(CLOSE,LONG); DEA:=EMA(DIFF …" property="og:description"/>
+<meta content="公式 m9 （MACD 变色\面积公式） NO 参数名 类型 缺省值 最小值 最大值 步长 1 SHORT 数值型 12 2 200 0 2 LONG 数值型 26 2 200 0 3 MID 数值型 9 2 200 0 4 ISARROW 数值型 1 0 1 0 DIFF:=EMA(CLOSE,SHORT)-EMA(CLOSE,LONG); DEA:=EMA(DIFF …" property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2018-09-26T09:32:03+08:00" property="og:article:published_time"/>
 <meta content="2018-09-26T09:32:03+08:00" property=""/>
 <meta content="博易大师使用及公式 " name="twitter:title"/>
-<meta content="公式 m9 （MACD 变色 \ 面积公式） NO 参数名 类型 缺省值 最小值 最大值 步长 1 SHORT 数值型 12 2 200 0 2 LONG 数值型 26 2 200 0 3 MID 数值型 9 2 200 0 4 ISARROW 数值型 1 0 1 0 DIFF:=EMA(CLOSE,SHORT)-EMA(CLOSE,LONG); DEA:=EMA(DIFF …" name="twitter:description"/>
+<meta content="公式 m9 （MACD 变色\面积公式） NO 参数名 类型 缺省值 最小值 最大值 步长 1 SHORT 数值型 12 2 200 0 2 LONG 数值型 26 2 200 0 3 MID 数值型 9 2 200 0 4 ISARROW 数值型 1 0 1 0 DIFF:=EMA(CLOSE,SHORT)-EMA(CLOSE,LONG); DEA:=EMA(DIFF …" name="twitter:description"/>
 <title>博易大师使用及公式  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -69,27 +69,27 @@
 </nav>
 </div>
 <div class="span8 article-content">
-<h2 id="gong shi"> 公式 </h2>
-<h3 id="m9 (macd bian se \mian ji gong shi )">m9 （<span class="caps">MACD</span>  变色 \ 面积公式）</h3>
+<h2 id="gong shi">公式</h2>
+<h3 id="m9 (macd bian se \mian ji gong shi )">m9 （<span class="caps">MACD</span> 变色\面积公式）</h3>
 <p>
 <div class="justtable">
 <table>
 <thead>
 <tr>
 <th><span class="caps">NO</span></th>
-<th> 参数名 </th>
-<th> 类型 </th>
-<th> 缺省值 </th>
-<th> 最小值 </th>
-<th> 最大值 </th>
-<th> 步长</th>
+<th>参数名</th>
+<th>类型</th>
+<th>缺省值</th>
+<th>最小值</th>
+<th>最大值</th>
+<th>步长</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>1</td>
 <td><span class="caps">SHORT</span></td>
-<td> 数值型 </td>
+<td>数值型</td>
 <td>12</td>
 <td>2</td>
 <td>200</td>
@@ -98,7 +98,7 @@
 <tr>
 <td>2</td>
 <td><span class="caps">LONG</span></td>
-<td> 数值型 </td>
+<td>数值型</td>
 <td>26</td>
 <td>2</td>
 <td>200</td>
@@ -107,7 +107,7 @@
 <tr>
 <td>3</td>
 <td><span class="caps">MID</span></td>
-<td> 数值型 </td>
+<td>数值型</td>
 <td>9</td>
 <td>2</td>
 <td>200</td>
@@ -116,7 +116,7 @@
 <tr>
 <td>4</td>
 <td><span class="caps">ISARROW</span></td>
-<td> 数值型 </td>
+<td>数值型</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -131,7 +131,7 @@ MACD2:<span class="o">=(</span>DIFF - DEA<span class="o">)</span>*2<span class="
 DIF:DIFF<span class="p">;</span>
 DEF:DEA<span class="p">;</span>
 
-获利比 :WINNER<span class="o">(</span>C<span class="o">)</span>,NODRAW<span class="p">;</span>
+获利比:WINNER<span class="o">(</span>C<span class="o">)</span>,NODRAW<span class="p">;</span>
 STICKLINE<span class="o">((</span>MACD2&gt;<span class="o">=</span><span class="m">0</span><span class="o">)</span>,0,MACD2,0,1<span class="o">)</span>,COLORRED<span class="p">;</span>
 STICKLINE<span class="o">(((</span>MACD2&gt;<span class="o">=</span><span class="m">0</span><span class="o">)</span> AND <span class="o">(</span>MACD2 &lt; REF<span class="o">(</span>MACD2,1<span class="o">)))</span>,0,MACD2,0,0<span class="o">)</span>,COLORWHITE<span class="p">;</span>
 STICKLINE<span class="o">((</span>MACD2&lt;<span class="m">0</span><span class="o">)</span>,0,MACD2,0,0<span class="o">)</span>,COLORGREEN<span class="p">;</span>
@@ -140,26 +140,26 @@ STICKLINE<span class="o">(((</span>MACD2&lt;<span class="m">0</span><span class=
 A1:<span class="o">=</span>IF<span class="o">(</span>MACD2&gt;0,1,-1<span class="o">)</span><span class="p">;</span>
 A2:<span class="o">=</span>REF<span class="o">(</span>A1,1<span class="o">)</span><span class="p">;</span>
 A3:<span class="o">=</span>A1*A2<span class="p">;</span>
-A4:<span class="o">=</span>BARSLAST<span class="o">(</span>A3&lt;<span class="m">0</span><span class="o">)</span><span class="p">;</span><span class="o">{</span>MACD 发生变化，从红到绿，或者从绿到红 <span class="o">}</span>
+A4:<span class="o">=</span>BARSLAST<span class="o">(</span>A3&lt;<span class="m">0</span><span class="o">)</span><span class="p">;</span><span class="o">{</span>MACD发生变化，从红到绿，或者从绿到红<span class="o">}</span>
 A5:<span class="o">=</span>A4+1<span class="p">;</span>
-累计面积 :SUM<span class="o">(</span>MACD2,A5<span class="o">)</span>,NODRAW<span class="p">;</span>
-平均力度 :SUM<span class="o">(</span>MACD2,A5<span class="o">)</span>/A5,NODRAW<span class="p">;</span>
+累计面积:SUM<span class="o">(</span>MACD2,A5<span class="o">)</span>,NODRAW<span class="p">;</span>
+平均力度:SUM<span class="o">(</span>MACD2,A5<span class="o">)</span>/A5,NODRAW<span class="p">;</span>
 
-BV:<span class="o">=</span>SUM<span class="o">(</span>MACD2,0<span class="o">)</span><span class="p">;</span> <span class="o">{</span>0 表示从第一个有效的 MACD2 开始求和 <span class="o">}</span>
+BV:<span class="o">=</span>SUM<span class="o">(</span>MACD2,0<span class="o">)</span><span class="p">;</span> <span class="o">{</span>0表示从第一个有效的MACD2开始求和<span class="o">}</span>
 BA:<span class="o">=</span>IF<span class="o">(</span>MAX<span class="o">(</span>BV,REF<span class="o">(</span>BV,2<span class="o">))</span>&lt;REF<span class="o">(</span>BV,1<span class="o">)</span> OR MIN<span class="o">(</span>BV,REF<span class="o">(</span>BV,2<span class="o">))</span>&gt;REF<span class="o">(</span>BV,1<span class="o">)</span>,1,0<span class="o">)</span><span class="p">;</span>
 BC:<span class="o">=</span>BARSLAST<span class="o">(</span>BA<span class="o">)</span>+1<span class="p">;</span>
 SMACD:<span class="o">=</span>BV-REF<span class="o">(</span>BV,BC<span class="o">)</span><span class="p">;</span>
 VAR3:<span class="o">=</span>IF<span class="o">(</span>MACD2&gt;0,HHV<span class="o">(</span>ABS<span class="o">(</span>MACD2<span class="o">)</span>,BC<span class="o">)</span>,LLV<span class="o">(</span>MACD2,BC<span class="o">))</span><span class="p">;</span>
-VAR4:<span class="o">=(</span>MACD2<span class="o">)</span>/1<span class="p">;</span><span class="o">{</span> 图形比例缩小 1/20, 可修改 <span class="o">}</span>
+VAR4:<span class="o">=(</span>MACD2<span class="o">)</span>/1<span class="p">;</span><span class="o">{</span>图形比例缩小1/20,可修改<span class="o">}</span>
 
-<span class="o">{</span><span class="m">0</span>.9 是文字的垂直位置在最长的 macd 线的比例 <span class="o">}</span>
-DRAWNUMBER<span class="o">(</span>REF<span class="o">(</span>VAR4,1<span class="o">)</span>&gt;0 AND VAR4&lt;<span class="o">=</span><span class="m">0</span>,REF<span class="o">(</span>VAR3,1<span class="o">)</span>*0.9,REF<span class="o">(</span> 累计面积 ,1<span class="o">)</span>,2<span class="o">)</span>,COLORMAGENTA<span class="p">;</span>
-DRAWNUMBER<span class="o">(</span>REF<span class="o">(</span>VAR4,1<span class="o">)</span>&lt;<span class="m">0</span> AND VAR4&gt;<span class="o">=</span><span class="m">0</span>,REF<span class="o">(</span>VAR3,1<span class="o">)</span>*0.9,REF<span class="o">(</span>ABS<span class="o">(</span> 累计面积 <span class="o">)</span>,1<span class="o">)</span>,2<span class="o">)</span>,COLORGREEN<span class="p">;</span>
-DRAWNUMBER<span class="o">(</span>ISLASTBAR AND VAR4&lt;<span class="m">0</span>,REF<span class="o">(</span>VAR3,1<span class="o">)</span>*0.9,ABS<span class="o">(</span> 累计面积 <span class="o">)</span>,2<span class="o">)</span>,COLORMAGENTA<span class="p">;</span>
-DRAWNUMBER<span class="o">(</span>ISLASTBAR AND VAR4&gt;0,REF<span class="o">(</span>VAR3,1<span class="o">)</span>*0.9, 累计面积 ,2<span class="o">)</span>,COLORGREEN<span class="p">;</span>
+<span class="o">{</span><span class="m">0</span>.9是文字的垂直位置在最长的macd线的比例<span class="o">}</span>
+DRAWNUMBER<span class="o">(</span>REF<span class="o">(</span>VAR4,1<span class="o">)</span>&gt;0 AND VAR4&lt;<span class="o">=</span><span class="m">0</span>,REF<span class="o">(</span>VAR3,1<span class="o">)</span>*0.9,REF<span class="o">(</span>累计面积,1<span class="o">)</span>,2<span class="o">)</span>,COLORMAGENTA<span class="p">;</span>
+DRAWNUMBER<span class="o">(</span>REF<span class="o">(</span>VAR4,1<span class="o">)</span>&lt;<span class="m">0</span> AND VAR4&gt;<span class="o">=</span><span class="m">0</span>,REF<span class="o">(</span>VAR3,1<span class="o">)</span>*0.9,REF<span class="o">(</span>ABS<span class="o">(</span>累计面积<span class="o">)</span>,1<span class="o">)</span>,2<span class="o">)</span>,COLORGREEN<span class="p">;</span>
+DRAWNUMBER<span class="o">(</span>ISLASTBAR AND VAR4&lt;<span class="m">0</span>,REF<span class="o">(</span>VAR3,1<span class="o">)</span>*0.9,ABS<span class="o">(</span>累计面积<span class="o">)</span>,2<span class="o">)</span>,COLORMAGENTA<span class="p">;</span>
+DRAWNUMBER<span class="o">(</span>ISLASTBAR AND VAR4&gt;0,REF<span class="o">(</span>VAR3,1<span class="o">)</span>*0.9,累计面积,2<span class="o">)</span>,COLORGREEN<span class="p">;</span>
 
-前 MACD:REF<span class="o">(</span>MACD2,1<span class="o">)</span>,NODRAW<span class="p">;</span>
-现 MACD:MACD2,NODRAW,COLORRED<span class="p">;</span>
+前MACD:REF<span class="o">(</span>MACD2,1<span class="o">)</span>,NODRAW<span class="p">;</span>
+现MACD:MACD2,NODRAW,COLORRED<span class="p">;</span>
 </pre></div>
 <hr/>
 </div>

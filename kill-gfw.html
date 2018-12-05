@@ -12,13 +12,13 @@
 <meta content="tech, tech, " name="keywords">
 <meta content="Kill-GFW " property="og:title"/>
 <meta content="./kill-gfw.html" property="og:url"/>
-<meta content="XX-Net tools https://github.com/XX-net/XX-Net https://github.com/yangyangwithgnu/hardseed 3.13.0 以上版本升级 启动之前远程打开管理功能 (0.0.0.0:8085)，并打开 0.0.0.0 的 8087 端口 data/launcher/config.yaml 的 module： 修改 allow_remote_connect: 1 增加 control_ip: 0.0.0.0 data/launcher …" property="og:description"/>
+<meta content='XX-Net tools https://github.com/XX-net/XX-Net https://github.com/yangyangwithgnu/hardseed 3.13.0 以上版本升级 启动之前远程打开管理功能(0.0.0.0:8085)，并打开0.0.0.0的8087端口 data/launcher/config.yaml的module： 修改allow_remote_connect: 1 增加control_ip: 0.0.0.0 data/launcher/config.json { "listen_ip": "0.0.0.0" } 启动 …' property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2017-05-14T16:28:06+08:00" property="og:article:published_time"/>
 <meta content="2018-11-24T16:28:06+08:00" property=""/>
 <meta content="Kill-GFW " name="twitter:title"/>
-<meta content="XX-Net tools https://github.com/XX-net/XX-Net https://github.com/yangyangwithgnu/hardseed 3.13.0 以上版本升级 启动之前远程打开管理功能 (0.0.0.0:8085)，并打开 0.0.0.0 的 8087 端口 data/launcher/config.yaml 的 module： 修改 allow_remote_connect: 1 增加 control_ip: 0.0.0.0 data/launcher …" name="twitter:description"/>
+<meta content='XX-Net tools https://github.com/XX-net/XX-Net https://github.com/yangyangwithgnu/hardseed 3.13.0 以上版本升级 启动之前远程打开管理功能(0.0.0.0:8085)，并打开0.0.0.0的8087端口 data/launcher/config.yaml的module： 修改allow_remote_connect: 1 增加control_ip: 0.0.0.0 data/launcher/config.json { "listen_ip": "0.0.0.0" } 启动 …' name="twitter:description"/>
 <title>Kill-GFW  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -74,16 +74,16 @@
 <li>https://github.com/<span class="caps">XX</span>-net/<span class="caps">XX</span>-Net</li>
 <li>https://github.com/yangyangwithgnu/hardseed</li>
 </ul>
-<h3 id="3.13.0 yi shang ban ben sheng ji">3.13.0  以上版本升级 </h3>
+<h3 id="3.13.0 yi shang ban ben sheng ji">3.13.0 以上版本升级</h3>
 <ul>
 <li>
-<p> 启动之前远程打开管理功能 (0.0.0.0:8085)，并打开 0.0.0.0 的 8087 端口 </p>
+<p>启动之前远程打开管理功能(0.0.0.0:8085)，并打开0.0.0.0的8087端口</p>
 <ol>
 <li>
-<p>data/launcher/config.yaml 的 module：</p>
+<p>data/launcher/config.yaml的module：</p>
 <ul>
-<li> 修改 allow_remote_connect: 1</li>
-<li> 增加 control_ip: 0.0.0.0</li>
+<li>修改allow_remote_connect: 1</li>
+<li>增加control_ip: 0.0.0.0</li>
 </ul>
 </li>
 <li>
@@ -97,15 +97,15 @@
 <span class="p">}</span>
 </pre></div>
 <ul>
-<li> 启动  xx-net</li>
+<li>启动 xx-net</li>
 </ul>
 <div class="highlight"><pre><span></span>./start --noauth_local_webserver
 </pre></div>
 <ul>
-<li> 部署 <ol>
-<li> 在远端打开  http://10.0.0.1:8085</li>
-<li> 点击部署 (Deploy Server)</li>
-<li> 在 2 项中，找到类似下面内容 ,  给与授权。</li>
+<li>部署<ol>
+<li>在远端打开 http://10.0.0.1:8085</li>
+<li>点击部署(Deploy Server)</li>
+<li>在 2 项中，找到类似下面内容, 给与授权。</li>
 </ol>
 </li>
 </ul>
@@ -118,8 +118,8 @@ application with the command-line parameter
 
 --noauth_local_webserver
 </pre></div>
-<h3 id="guan yu pei zhi wen jian de zhong yao shuo ming"><a href="https://github.com/XX-net/XX-Net/wiki/GoAgent-Config-file"> 关于配置文件的重要说明 </a></h3>
-<h3 id="upgrade xx-net(sheng ji xx-net)">Upgrade <span class="caps">XX</span>-Net（升级 xx-net）</h3>
+<h3 id="guan yu pei zhi wen jian de zhong yao shuo ming"><a href="https://github.com/XX-net/XX-Net/wiki/GoAgent-Config-file">关于配置文件的重要说明</a></h3>
+<h3 id="upgrade xx-net(sheng ji xx-net)">Upgrade <span class="caps">XX</span>-Net（升级xx-net）</h3>
 <div class="highlight"><pre><span></span>su <span class="c1"># su to root </span>
 su xx-net from root su to xx-net
 <span class="nb">cd</span> .xx-net
@@ -152,7 +152,7 @@ git reset --hard origin/master
 <h3 id="xx-net script in mac"><span class="caps">XX</span>-Net script in Mac</h3>
 <div class="highlight"><pre><span></span>    /Volumes/Home/Walter/breakGW/XX-Net/start.command &gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
 </pre></div>
-<h3 id="zai xhttp://www.jiaoyizhe.com/forum-16-1.htmlx-net/data/gae_proxychuang jian config.json (current, dan shi wei neng yan zheng qi you xiao xing )"> 在 xhttp://www.jiaoyizhe.com/forum-16-1.htmlx-net/data/gae_proxy 创建 config.json (current,  但是未能验证其有效性 )</h3>
+<h3 id="zai xhttp://www.jiaoyizhe.com/forum-16-1.htmlx-net/data/gae_proxychuang jian config.json (current, dan shi wei neng yan zheng qi you xiao xing )">在xhttp://www.jiaoyizhe.com/forum-16-1.htmlx-net/data/gae_proxy创建config.json (current, 但是未能验证其有效性)</h3>
 <div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="nt">"max_scan_ip_thread_num"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
   <span class="nt">"GAE_APPIDS"</span><span class="p">:</span> <span class="p">[</span>
@@ -185,7 +185,7 @@ git reset --hard origin/master
   <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
-<h3 id="zai xx-net/data/gae_proxychuang jian manual.ini (old)"> 在 xx-net/data/gae_proxy 创建 manual.ini (old)</h3>
+<h3 id="zai xx-net/data/gae_proxychuang jian manual.ini (old)">在xx-net/data/gae_proxy创建manual.ini (old)</h3>
 <div class="highlight"><pre><span></span><span class="k">[pac]</span>
 <span class="na">enable</span> <span class="o">=</span> <span class="s">1</span>
 <span class="na">ip</span> <span class="o">=</span> <span class="s">0.0.0.0</span>

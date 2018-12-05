@@ -12,13 +12,13 @@
 <meta content="tech, stock, quanta, tech, " name="keywords">
 <meta content="VNPY安装和使用 " property="og:title"/>
 <meta content="./vnpyan-zhuang-he-shi-yong.html" property="og:url"/>
-<meta content="安装 VNPY 安装 python 2 and virtualenv (1) python2 brew install python then ~/.bashrc PATH=/usr/local/bin::$PATH then 退出，在重新进入 iterm2 (2) virtualenv pip install virtualenv ### 建立 virtualenvs ```bash mkdir .virtualenvs cd .virtualenvs virtualenv -p python vnpy export WORKON_HOME=~/.virtualenvs source ~/.virtualenvs/vnpy/bin/activate pip install virtualenvwrapper …" property="og:description"/>
+<meta content="安装VNPY 安装python 2 and virtualenv (1) python2 brew install python then ~/.bashrc PATH=/usr/local/bin::$PATH then 退出，在重新进入 iterm2 (2) virtualenv pip install virtualenv ### 建立virtualenvs ```bash mkdir .virtualenvs cd .virtualenvs virtualenv -p python vnpy export WORKON_HOME=~/.virtualenvs source ~/.virtualenvs/vnpy/bin/activate pip install virtualenvwrapper source ~/.virtualenvs/vnpy …" property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2016-09-01T08:32:00+08:00" property="og:article:published_time"/>
 <meta content="2016-09-01T08:32:00+08:00" property=""/>
 <meta content="VNPY安装和使用 " name="twitter:title"/>
-<meta content="安装 VNPY 安装 python 2 and virtualenv (1) python2 brew install python then ~/.bashrc PATH=/usr/local/bin::$PATH then 退出，在重新进入 iterm2 (2) virtualenv pip install virtualenv ### 建立 virtualenvs ```bash mkdir .virtualenvs cd .virtualenvs virtualenv -p python vnpy export WORKON_HOME=~/.virtualenvs source ~/.virtualenvs/vnpy/bin/activate pip install virtualenvwrapper …" name="twitter:description"/>
+<meta content="安装VNPY 安装python 2 and virtualenv (1) python2 brew install python then ~/.bashrc PATH=/usr/local/bin::$PATH then 退出，在重新进入 iterm2 (2) virtualenv pip install virtualenv ### 建立virtualenvs ```bash mkdir .virtualenvs cd .virtualenvs virtualenv -p python vnpy export WORKON_HOME=~/.virtualenvs source ~/.virtualenvs/vnpy/bin/activate pip install virtualenvwrapper source ~/.virtualenvs/vnpy …" name="twitter:description"/>
 <title>VNPY安装和使用  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -69,19 +69,19 @@
 </nav>
 </div>
 <div class="span8 article-content">
-<h2 id="an zhuang vnpy"> 安装 VNPY</h2>
-<h3 id="an zhuang python 2 and virtualenv"> 安装 python 2 and virtualenv</h3>
+<h2 id="an zhuang vnpy">安装VNPY</h2>
+<h3 id="an zhuang python 2 and virtualenv">安装python 2 and virtualenv</h3>
 <p>(1) python2</p>
 <div class="highlight"><pre><span></span>brew install python
 </pre></div>
 <p>then ~/.bashrc</p>
 <div class="highlight"><pre><span></span><span class="nv">PATH</span><span class="o">=</span>/usr/local/bin::<span class="nv">$PATH</span>
 </pre></div>
-<p>then 退出，在重新进入  iterm2</p>
+<p>then 退出，在重新进入 iterm2</p>
 <p>(2) virtualenv</p>
 <div class="highlight"><pre><span></span>pip install virtualenv
 
-<span class="c1">### 建立 virtualenvs</span>
+<span class="c1">### 建立virtualenvs</span>
 
 <span class="sb">```</span>bash
 mkdir .virtualenvs
@@ -149,25 +149,25 @@ set_prompt <span class="o">()</span> <span class="o">{</span>
 
 <span class="nv">PROMPT_COMMAND</span><span class="o">=</span><span class="s1">'set_prompt'</span>
 </pre></div>
-<h3 id="qi dong  tui chu  vnpy huan jing"> 启动 退出 vnpy  环境 </h3>
+<h3 id="qi dong  tui chu  vnpy huan jing">启动 退出 vnpy 环境</h3>
 <div class="highlight"><pre><span></span><span class="nb">source</span> .bin/start_vnpy.sh
 <span class="nb">exit</span>
 </pre></div>
-<h3 id="an zhuang vnpyyuan cheng xu"> 安装 VNPY 源程序 </h3>
-<h3 id="an zhuang xu yao de ku"> 安装需要的库 </h3>
+<h3 id="an zhuang vnpyyuan cheng xu">安装VNPY源程序</h3>
+<h3 id="an zhuang xu yao de ku">安装需要的库</h3>
 <div class="highlight"><pre><span></span>brew install pyqt
 brew install sip
 </pre></div>
-<p> 因为建立 vnpy 时， sip 和 pyqt 的数据包没有被 copy 过去，所以需要自己链接 </p>
+<p>因为建立vnpy时， sip和pyqt的数据包没有被copy过去，所以需要自己链接</p>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> ~/.virtualenvs/vnpy/lib/python2.7
 ln -s /usr/local/lib/python2.7/site-packages/PyQt4 .
 ln -s /usr/local/lib/python2.7/site-packages/sip* .
 </pre></div>
-<h3 id="jin ru vnpyhuan jing an zhuang qi ta ruan jian bao"> 进入 vnpy 环境安装其他软件包 </h3>
+<h3 id="jin ru vnpyhuan jing an zhuang qi ta ruan jian bao">进入vnpy环境安装其他软件包</h3>
 <div class="highlight"><pre><span></span><span class="nb">source</span> ~/.bin/vnpy
 pip install pymongo qdarkstyle psutil
 </pre></div>
-<h3 id="an zhuang qi ta xu yao de"> 安装其他需要的 </h3>
+<h3 id="an zhuang qi ta xu yao de">安装其他需要的</h3>
 <div class="highlight"><pre><span></span>brew install boost boost-python
 brew install cmake
 </pre></div>
