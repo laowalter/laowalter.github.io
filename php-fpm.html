@@ -12,13 +12,13 @@
 <meta content="tech php nginx, tech, " name="keywords">
 <meta content="php-fpm " property="og:title"/>
 <meta content="./php-fpm.html" property="og:url"/>
-<meta content="Install /Upgrade php-fpm Config /etc/php/fpm-php7.2/fpm.d/www.conf listen = /run/php-fpm.socket listen.owner = nginx listen.group = nginx listen.mode = 0660 Adjust upload limited /etc/php/fpm-php7.2/php.ini upload_tmp_dir = /tmp upload_max_filesize = 20M /etc/ngnix/nginx.conf client_max_body_size 20M; client_body_buffer_size 128k; Add php-fpm to default …" property="og:description"/>
+<meta content="Install /Upgrade php-fpm Config /etc/php/fpm-php7.2/fpm.d/www.conf FILE:/etc/php/fpm-php7.2/fpm.d/www.conf listen = /run/php-fpm.socket listen.owner = nginx listen.group = nginx listen.mode = 0660 Adjust upload limited FILE:/etc/php/fpm-php7.2/php.ini upload_tmp_dir = /tmp upload_max_filesize = 20M /etc/ngnix …" property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2018-12-02T11:45:29+08:00" property="og:article:published_time"/>
 <meta content="2018-12-02T11:45:29+08:00" property=""/>
 <meta content="php-fpm " name="twitter:title"/>
-<meta content="Install /Upgrade php-fpm Config /etc/php/fpm-php7.2/fpm.d/www.conf listen = /run/php-fpm.socket listen.owner = nginx listen.group = nginx listen.mode = 0660 Adjust upload limited /etc/php/fpm-php7.2/php.ini upload_tmp_dir = /tmp upload_max_filesize = 20M /etc/ngnix/nginx.conf client_max_body_size 20M; client_body_buffer_size 128k; Add php-fpm to default …" name="twitter:description"/>
+<meta content="Install /Upgrade php-fpm Config /etc/php/fpm-php7.2/fpm.d/www.conf FILE:/etc/php/fpm-php7.2/fpm.d/www.conf listen = /run/php-fpm.socket listen.owner = nginx listen.group = nginx listen.mode = 0660 Adjust upload limited FILE:/etc/php/fpm-php7.2/php.ini upload_tmp_dir = /tmp upload_max_filesize = 20M /etc/ngnix …" name="twitter:description"/>
 <title>php-fpm  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -65,23 +65,25 @@
 <div class="span2 table-of-content">
 <nav>
 <h4>Contents</h4>
-<div id="toc"><ul><li><a class="toc-href" href="#" title="php-fpm">php-fpm</a><ul><li><a class="toc-href" href="#install /upgrade php-fpm" title="Install /Upgrade php-fpm">Install /Upgrade php-fpm</a></li><li><a class="toc-href" href="#config /etc/php/fpm-php7.2/fpm.d/www.conf" title="Config /etc/php/fpm-php7.2/fpm.d/www.conf">Config /etc/php/fpm-php7.2/fpm.d/www.conf</a></li><li><a class="toc-href" href="#adjust upload limited" title="Adjust upload limited">Adjust upload limited</a><ul><li><a class="toc-href" href="#/etc/php/fpm-php7.2/php.ini" title="/etc/php/fpm-php7.2/php.ini">/etc/php/fpm-php7.2/php.ini</a></li><li><a class="toc-href" href="#/etc/ngnix/nginx.conf" title="/etc/ngnix/nginx.conf">/etc/ngnix/nginx.conf</a></li></ul></li><li><a class="toc-href" href="#add php-fpm to default service_1" title="Add php-fpm to default service">Add php-fpm to default service</a></li><li><a class="toc-href" href="#setup php-fpm in nginx" title="Setup php-fpm in nginx">Setup php-fpm in nginx</a></li></ul></li></ul></div>
+<div id="toc"><ul><li><a class="toc-href" href="#" title="php-fpm">php-fpm</a><ul><li><a class="toc-href" href="#install /upgrade php-fpm" title="Install /Upgrade php-fpm">Install /Upgrade php-fpm</a><ul><li><a class="toc-href" href="#config /etc/php/fpm-php7.2/fpm.d/www.conf" title="Config /etc/php/fpm-php7.2/fpm.d/www.conf">Config /etc/php/fpm-php7.2/fpm.d/www.conf</a></li><li><a class="toc-href" href="#adjust upload limited" title="Adjust upload limited">Adjust upload limited</a></li><li><a class="toc-href" href="#/etc/ngnix/nginx.conf" title="/etc/ngnix/nginx.conf">/etc/ngnix/nginx.conf</a></li></ul></li><li><a class="toc-href" href="#add php-fpm to default service_1" title="Add php-fpm to default service">Add php-fpm to default service</a></li><li><a class="toc-href" href="#setup php-fpm in nginx" title="Setup php-fpm in nginx">Setup php-fpm in nginx</a></li></ul></li></ul></div>
 </nav>
 </div>
 <div class="span8 article-content">
 <h2 id="install /upgrade php-fpm">Install /Upgrade php-fpm</h2>
-<h2 id="config /etc/php/fpm-php7.2/fpm.d/www.conf">Config /etc/php/fpm-php7.2/fpm.d/www.conf</h2>
+<h3 id="config /etc/php/fpm-php7.2/fpm.d/www.conf">Config /etc/php/fpm-php7.2/fpm.d/www.conf</h3>
+<div class="file"><span class="file_label" style="margin-right: .5em;">FILE:</span>/etc/php/fpm-php7.2/fpm.d/www.conf</div>
 <div class="highlight"><pre><span></span>  <span class="nv">listen</span> <span class="o">=</span> /run/php-fpm.socket
   listen.owner <span class="o">=</span> nginx
   listen.group <span class="o">=</span> nginx
   listen.mode <span class="o">=</span> <span class="m">0660</span>
 </pre></div>
-<h2 id="adjust upload limited">Adjust upload limited</h2>
-<h3 id="/etc/php/fpm-php7.2/php.ini">/etc/php/fpm-php7.2/php.ini</h3>
+<h3 id="adjust upload limited">Adjust upload limited</h3>
+<div class="file"><span class="file_label" style="margin-right: .5em;">FILE:</span>/etc/php/fpm-php7.2/php.ini</div>
 <div class="highlight"><pre><span></span><span class="nv">upload_tmp_dir</span> <span class="o">=</span> /tmp
 <span class="nv">upload_max_filesize</span> <span class="o">=</span> 20M
 </pre></div>
 <h3 id="/etc/ngnix/nginx.conf">/etc/ngnix/nginx.conf</h3>
+<div class="file"><span class="file_label" style="margin-right: .5em;">FILE:</span>/etc/ngnix/nginx.conf</div>
 <div class="highlight"><pre><span></span>client_max_body_size 20M<span class="p">;</span>
 client_body_buffer_size 128k<span class="p">;</span>
 </pre></div>
@@ -90,6 +92,7 @@ client_body_buffer_size 128k<span class="p">;</span>
 rc-update add php-fpm default
 </pre></div>
 <h2 id="setup php-fpm in nginx">Setup php-fpm in nginx</h2>
+<div class="file"><span class="file_label" style="margin-right: .5em;">FILE:</span>/etc/ngnix/nginx.conf</div>
 <div class="highlight"><pre><span></span><span class="k">server</span> <span class="p">{</span>
     <span class="kn">listen</span> <span class="n">0.0.0.0</span><span class="p">:</span><span class="mi">7001</span><span class="p">;</span>
     <span class="kn">server_name</span> <span class="s">pannel</span><span class="p">;</span>

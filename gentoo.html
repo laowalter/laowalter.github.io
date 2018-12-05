@@ -138,9 +138,9 @@ make <span class="o">&amp;&amp;</span> make modules_install <span class="p">&amp
 <div class="highlight"><pre><span></span>GRUB_CMDLINE_LINUX_DEFAULT="rootfstype=ext4"
 </pre></div>
 <h4 id="change default boot time">change default boot time</h4>
-<div class="highlight"><pre><span></span>/ecc/defult/grub
+<div class="file"><span class="file_label" style="margin-right: .5em;">FILE:</span>/etc/defult/grub</div>
+<div class="highlight"><pre><span></span><span class="nv">GRUB_TIMEOUT</span><span class="o">=</span><span class="m">2</span>
 </pre></div>
-<p>GRUB_TIMEOUT=2</p>
 <h3 id="generate grub.cfg based on /etc/default/grub_1">generate grub.cfg based on /etc/default/grub</h3>
 <div class="highlight"><pre><span></span>grub-mkconfig -o /boot/grub/grub.cfg
 </pre></div>
