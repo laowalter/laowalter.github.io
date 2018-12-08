@@ -12,13 +12,13 @@
 <meta content="tech, windows, tech, " name="keywords">
 <meta content="Windows 10 " property="og:title"/>
 <meta content="./windows-10.html" property="og:url"/>
-<meta content="系统启动相关 主板进入BIOS 开机 按ESC 进入 选择启动盘 开机 按F7 Windows10 active info 备份激活信息 备份Windows10系统激活码 在运行中输入regedit命令，打开注册表编辑器，复制\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\ 粘贴到注册表的地址栏中； BackupProductKeyDefaul的键值就是激活码 备份激活数据 Copy C:\Windows\System32\spp\store\2.0 整个目录 还原方法： 安装完成系统后。打开“服务”，找到Software Protection服务，如果该服务正在运行，请将其暂停（右键单击）。 复制备份的2.0文件夹中的cache文件夹、data.dat文件（隐藏文件 …" property="og:description"/>
+<meta content="1.0 系统启动相关 主板进入BIOS 开机 按ESC 进入 选择启动盘 开机 按F7 1.1 Windows10 active info 1.1 备份激活信息 1.1.1 备份Windows10系统激活码 在运行中输入regedit命令，打开注册表编辑器，复制\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\ 粘贴到注册表的地址栏中； BackupProductKeyDefaul的键值就是激活码 1.1.2 备份激活数据 Copy C:\Windows\System32\spp\store\2.0 整个目录 1.2 …" property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2016-12-09T22:02:20+08:00" property="og:article:published_time"/>
 <meta content="2016-12-09T22:02:20+08:00" property=""/>
 <meta content="Windows 10 " name="twitter:title"/>
-<meta content="系统启动相关 主板进入BIOS 开机 按ESC 进入 选择启动盘 开机 按F7 Windows10 active info 备份激活信息 备份Windows10系统激活码 在运行中输入regedit命令，打开注册表编辑器，复制\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\ 粘贴到注册表的地址栏中； BackupProductKeyDefaul的键值就是激活码 备份激活数据 Copy C:\Windows\System32\spp\store\2.0 整个目录 还原方法： 安装完成系统后。打开“服务”，找到Software Protection服务，如果该服务正在运行，请将其暂停（右键单击）。 复制备份的2.0文件夹中的cache文件夹、data.dat文件（隐藏文件 …" name="twitter:description"/>
+<meta content="1.0 系统启动相关 主板进入BIOS 开机 按ESC 进入 选择启动盘 开机 按F7 1.1 Windows10 active info 1.1 备份激活信息 1.1.1 备份Windows10系统激活码 在运行中输入regedit命令，打开注册表编辑器，复制\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\ 粘贴到注册表的地址栏中； BackupProductKeyDefaul的键值就是激活码 1.1.2 备份激活数据 Copy C:\Windows\System32\spp\store\2.0 整个目录 1.2 …" name="twitter:description"/>
 <title>Windows 10  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -69,7 +69,7 @@
 </nav>
 </div>
 <div class="span8 article-content">
-<h2 id="xi tong qi dong xiang guan">系统启动相关</h2>
+<h2 id="xi tong qi dong xiang guan">1.0 系统启动相关</h2>
 <ul>
 <li>
 <p>主板进入BIOS</p>
@@ -80,18 +80,18 @@
 <p>开机 按F7</p>
 </li>
 </ul>
-<h2 id="windows10 active info">Windows10 active info</h2>
-<h3 id="bei fen ji huo xin xi">备份激活信息</h3>
-<h4 id="bei fen windows10xi tong ji huo ma">备份Windows10系统激活码</h4>
+<h2 id="windows10 active info">1.1 Windows10 active info</h2>
+<h3 id="bei fen ji huo xin xi">1.1 备份激活信息</h3>
+<h4 id="bei fen windows10xi tong ji huo ma">1.1.1 备份Windows10系统激活码</h4>
 <ul>
 <li>在运行中输入regedit命令，打开注册表编辑器，复制\HKEY_LOCAL_MACHINE\<span class="caps">SOFTWARE</span>\Microsoft\Windows <span class="caps">NT</span>\CurrentVersion\SoftwareProtectionPlatform\ 粘贴到注册表的地址栏中；</li>
 <li>BackupProductKeyDefaul的键值就是激活码</li>
 </ul>
-<h4 id="bei fen ji huo shu ju">备份激活数据</h4>
+<h4 id="bei fen ji huo shu ju">1.1.2 备份激活数据</h4>
 <ul>
 <li>Copy C:\Windows\System32\spp\store\2.0 整个目录</li>
 </ul>
-<h3 id="huan yuan fang fa :_1">还原方法：</h3>
+<h3 id="huan yuan fang fa :_1">1.2 还原方法：</h3>
 <ol>
 <li>安装完成系统后。打开“服务”，找到Software Protection服务，如果该服务正在运行，请将其暂停（右键单击）。</li>
 <li>复制备份的2.0文件夹中的cache文件夹、data.dat文件（隐藏文件）以及tokens.dat文件到C:WindowsSystem32sppstore2.0中覆盖其中的同名文件。</li>
@@ -104,7 +104,7 @@ slmgr.vbs -ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx</code></p>
 <p>接着输入命令 slmgr -ato ，回车运行。如果还未显示激活，或水印还在尝试重启系统。</p>
 </li>
 </ol>
-<h2 id="setup time sync interval_1">Setup Time sync interval</h2>
+<h2 id="setup time sync interval_1">2.0 Setup Time sync interval</h2>
 <ul>
 <li>run regedit</li>
 </ul>
@@ -113,16 +113,16 @@ slmgr.vbs -ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx</code></p>
 <ul>
 <li>改变 <code>SpecialPollInterval</code> 的值。</li>
 </ul>
-<h2 id="stop service:">Stop service:</h2>
+<h2 id="stop service:">2.1 Stop service:</h2>
 <ol>
 <li>Superfetch</li>
 <li>Connected User Experience and Telemetry</li>
 <li>Windows Search</li>
 </ol>
-<h2 id="stop in settings">Stop in Settings</h2>
+<h2 id="stop in settings">2.2 Stop in Settings</h2>
 <p>在<code>通知</code>设置中关闭下列：</p>
 <p>在使用windows时获取提示、技巧和建议 （关闭）</p>
-<h2 id="keyborad">Keyborad</h2>
+<h2 id="keyborad">2.3 Keyborad</h2>
 <ol>
 <li>
 <p>苹果键盘在Windows 10(64bit)的使用：AutoHotKey</p>
@@ -241,11 +241,11 @@ Lwin <span class="p">&amp;</span> Tab::AltTab
 <span class="p">;</span> minimize windows
 <span class="c1">#m::WinMinimize,a</span>
 </pre></div>
-<h2 id="autorun">Autorun</h2>
+<h2 id="autorun">2.4 Autorun</h2>
 <p>选择运行</p>
 <div class="highlight"><pre><span></span>运行：shell:startup
 </pre></div>
-<h2 id="firefox not security connection">Firefox not security connection</h2>
+<h2 id="firefox not security connection">2.5 Firefox not security connection</h2>
 <p>Under about:config <span class="caps">CREATE</span> a boolean value security.enterprise_roots.enabled and set it to true</p>
 <hr/>
 <section>

@@ -12,13 +12,13 @@
 <meta content="mac, tech, " name="keywords">
 <meta content="Mac-mini Gentoo Linux Single Boot with Kernel Stub Installation " property="og:title"/>
 <meta content="./mac-mini-gentoo-linux-single-boot-with-kernel-stub-installation.html" property="og:url"/>
-<meta content="Mac Mini(late 2012) Install Gentoo Linux(single boot, kernel stub) USB Download admin iso Create Linux bootable usb stick Partiton (GPT must) Device Mount Point Filesystem Description /dev/sda1 not mounted (bootloader) BIOS boot partition /dev/sda2 /boot/efi fat32 EFI System Partition (ESP) where the EFI files will …" property="og:description"/>
+<meta content="Mac Mini(late 2012) Install Gentoo Linux(single boot, kernel stub) USB Download admin iso Create Linux bootable usb stick Partiton (GPT must) Device, Mount Point,Filesystem,Description /dev/sda1,not mounted,(bootloader),BIOS boot partition /dev/sda2,/boot/efi,fat32,EFI System Partition (ESP) where the EFI files will …" property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2017-11-09T10:02:58+08:00" property="og:article:published_time"/>
 <meta content="2017-11-09T10:02:58+08:00" property=""/>
 <meta content="Mac-mini Gentoo Linux Single Boot with Kernel Stub Installation " name="twitter:title"/>
-<meta content="Mac Mini(late 2012) Install Gentoo Linux(single boot, kernel stub) USB Download admin iso Create Linux bootable usb stick Partiton (GPT must) Device Mount Point Filesystem Description /dev/sda1 not mounted (bootloader) BIOS boot partition /dev/sda2 /boot/efi fat32 EFI System Partition (ESP) where the EFI files will …" name="twitter:description"/>
+<meta content="Mac Mini(late 2012) Install Gentoo Linux(single boot, kernel stub) USB Download admin iso Create Linux bootable usb stick Partiton (GPT must) Device, Mount Point,Filesystem,Description /dev/sda1,not mounted,(bootloader),BIOS boot partition /dev/sda2,/boot/efi,fat32,EFI System Partition (ESP) where the EFI files will …" name="twitter:description"/>
 <title>Mac-mini Gentoo Linux Single Boot with Kernel Stub Installation  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -81,30 +81,18 @@
 <table>
 <thead>
 <tr>
-<th>Device</th>
-<th> Mount Point</th>
-<th>Filesystem</th>
-<th>Description</th>
+<th>Device, Mount Point,Filesystem,Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>/dev/sda1</td>
-<td>not mounted</td>
-<td>(bootloader)</td>
-<td><span class="caps">BIOS</span> boot partition</td>
+<td>/dev/sda1,not mounted,(bootloader),<span class="caps">BIOS</span> boot partition</td>
 </tr>
 <tr>
-<td>/dev/sda2</td>
-<td>/boot/efi</td>
-<td>fat32</td>
-<td><span class="caps">EFI</span> System Partition (<span class="caps">ESP</span>) where the <span class="caps">EFI</span> files will be held to boot into the bootloader 0xEE</td>
+<td>/dev/sda2,/boot/efi,fat32,<span class="caps">EFI</span> System Partition (<span class="caps">ESP</span>) where the <span class="caps">EFI</span> files will be held to boot into the bootloader 0xEE</td>
 </tr>
 <tr>
-<td>/dev/sda3</td>
-<td>/</td>
-<td>ext4</td>
-<td>root partition for your system</td>
+<td>/dev/sda3,/,ext4,root partition for your system</td>
 </tr>
 </tbody>
 </table>
@@ -315,7 +303,7 @@ emerge -avq hfsprogs
 <div class="highlight"><pre><span></span>sudo fsck.hfsplus -f /dev/sdXY
 </pre></div>
 <h4 id="network">network</h4>
-<h5>1. Ethernet</h5>
+<h5>Ethernet</h5>
 <ol>
 <li>find the netcard</li>
 </ol>
@@ -327,7 +315,7 @@ emerge -avq hfsprogs
 <div class="highlight"><pre><span></span><span class="nv">config_enp1s0f0</span><span class="o">=</span><span class="s2">"192.168.0.199 netmask 255.255.255.0 brd 192.168.0.255"</span>
 <span class="nv">routes_enp1s0f0</span><span class="o">=</span><span class="s2">"default via 192.168.0.1"</span>
 </pre></div>
-<h5>2. Wireless (b43)</h5>
+<h5>Wireless (b43)</h5>
 <div class="highlight"><pre><span></span>emerge -avq sys-firmware/b43-firmware
 </pre></div>
 <h3 id="upgrade kernel_1">Upgrade Kernel</h3>

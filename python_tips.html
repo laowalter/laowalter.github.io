@@ -12,13 +12,13 @@
 <meta content="python, mongodb, pandas, tech, " name="keywords">
 <meta content="Python_tips " property="og:title"/>
 <meta content="./python_tips.html" property="og:url"/>
-<meta content="Read special excel like xml Excel Address import pandas as pd dfs = pd.read_html('swclass.xls', flavor='html5lib') df = pd.DataFrame(dfs[0]) df.columns = df.iloc[0] df = df[1:] df_agg = df.groupby('行业名称').agg(lambda x: ','.join(x)) df_agg = df_agg.reset_index() df_agg[df_agg['行业名称']=='电子']['股票代码'].tolist() add …" property="og:description"/>
+<meta content="1.0 Read special excel like xml Excel Address import pandas as pd dfs = pd.read_html('swclass.xls', flavor='html5lib') df = pd.DataFrame(dfs[0]) df.columns = df.iloc[0] df = df[1:] df_agg = df.groupby('行业名称').agg(lambda x: ','.join(x)) df_agg = df_agg.reset_index() df_agg[df_agg['行业名称']=='电子']['股票代码' …" property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2018-09-25T08:44:25+08:00" property="og:article:published_time"/>
 <meta content="2018-09-25T08:44:25+08:00" property=""/>
 <meta content="Python_tips " name="twitter:title"/>
-<meta content="Read special excel like xml Excel Address import pandas as pd dfs = pd.read_html('swclass.xls', flavor='html5lib') df = pd.DataFrame(dfs[0]) df.columns = df.iloc[0] df = df[1:] df_agg = df.groupby('行业名称').agg(lambda x: ','.join(x)) df_agg = df_agg.reset_index() df_agg[df_agg['行业名称']=='电子']['股票代码'].tolist() add …" name="twitter:description"/>
+<meta content="1.0 Read special excel like xml Excel Address import pandas as pd dfs = pd.read_html('swclass.xls', flavor='html5lib') df = pd.DataFrame(dfs[0]) df.columns = df.iloc[0] df = df[1:] df_agg = df.groupby('行业名称').agg(lambda x: ','.join(x)) df_agg = df_agg.reset_index() df_agg[df_agg['行业名称']=='电子']['股票代码' …" name="twitter:description"/>
 <title>Python_tips  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -69,7 +69,7 @@
 </nav>
 </div>
 <div class="span8 article-content">
-<h2 id="read special excel like xml">Read special excel like xml</h2>
+<h2 id="read special excel like xml">1.0 Read special excel like xml</h2>
 <p><a href="http://www.swsindex.com/idx0530.aspx">Excel Address</a></p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="n">dfs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">'swclass.xls'</span><span class="p">,</span> <span class="n">flavor</span><span class="o">=</span><span class="s1">'html5lib'</span><span class="p">)</span>
@@ -81,7 +81,7 @@
 <span class="n">df_agg</span>  <span class="o">=</span> <span class="n">df_agg</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">df_agg</span><span class="p">[</span><span class="n">df_agg</span><span class="p">[</span><span class="s1">'行业名称'</span><span class="p">]</span><span class="o">==</span><span class="s1">'电子'</span><span class="p">][</span><span class="s1">'股票代码'</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 </pre></div>
-<h2 id="add color text output in teminal">add color text output in teminal</h2>
+<h2 id="add color text output in teminal">1.1 add color text output in teminal</h2>
 <div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[1;32;40m Bright Green  </span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[0;37;40m Normal text</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[2;37;40m Underlined text</span><span class="se">\033</span><span class="s2">[0;37;40m </span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
@@ -100,76 +100,38 @@
 <table>
 <thead>
 <tr>
-<th>Text color</th>
-<th>Code</th>
-<th>Text style</th>
-<th>Code</th>
-<th>Background color</th>
-<th>Code</th>
+<th>Text color,Code,Text style,Code,Background color,Code</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Black 30</td>
-<td>No effect</td>
-<td>0</td>
-<td>Black</td>
-<td>40</td>
+<td>Black 30,No effect,0,Black,40</td>
 </tr>
 <tr>
-<td>Red</td>
-<td>31</td>
-<td>Bold</td>
-<td>1</td>
-<td>Red</td>
-<td>41</td>
+<td>Red,31,Bold,1,Red,41</td>
 </tr>
 <tr>
-<td>Green</td>
-<td>32</td>
-<td>Underline</td>
-<td>2</td>
-<td>Green</td>
-<td>42</td>
+<td>Green,32,Underline,2,Green,42</td>
 </tr>
 <tr>
-<td>Yellow</td>
-<td>33</td>
-<td>Negative1</td>
-<td>3</td>
-<td>Yellow</td>
-<td>43</td>
+<td>Yellow,33,Negative1,3,Yellow,43</td>
 </tr>
 <tr>
-<td>Blue</td>
-<td>34</td>
-<td>Negative2</td>
-<td>5</td>
-<td>Blue</td>
-<td>44</td>
+<td>Blue,34,Negative2,5,Blue,44</td>
 </tr>
 <tr>
-<td>Purple</td>
-<td>35</td>
-<td>Purple</td>
-<td>45</td>
+<td>Purple,35,Purple,45</td>
 </tr>
 <tr>
-<td>Cyan</td>
-<td>36</td>
-<td>Cyan</td>
-<td>46</td>
+<td>Cyan,36,Cyan,46</td>
 </tr>
 <tr>
-<td>White</td>
-<td>37</td>
-<td>White</td>
-<td>47</td>
+<td>White,37,White,47</td>
 </tr>
 </tbody>
 </table>
 </div></p>
-<h2 id="trading date list">trading date list</h2>
+<h2 id="trading date list">1.2 trading date list</h2>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mylib.holiday_setting</span> <span class="kn">import</span> <span class="n">holiday</span>
 
 <span class="k">def</span> <span class="nf">trading_datelist</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
@@ -186,13 +148,13 @@
         <span class="n">date</span> <span class="o">=</span> <span class="n">date</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">day_list</span>
 </pre></div>
-<h2 id="print full dataframe">print full dataframe</h2>
+<h2 id="print full dataframe">1.3 print full dataframe</h2>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_full</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.max_rows'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
     <span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
     <span class="n">pd</span><span class="o">.</span><span class="n">reset_option</span><span class="p">(</span><span class="s1">'display.max_rows'</span><span class="p">)</span>
 </pre></div>
-<h2 id="command line input">Command Line input</h2>
+<h2 id="command line input">1.4 Command Line input</h2>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_input</span><span class="p">():</span>
     <span class="c1"># 获得命令行的输入参数</span>
     <span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">)</span>
@@ -213,7 +175,7 @@
     <span class="n">args</span> <span class="o">=</span> <span class="n">switch</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">args</span>
 </pre></div>
-<h2 id="date">Date</h2>
+<h2 id="date">1.5 Date</h2>
 <ul>
 <li>
 <p>parse date string to datetime object</p>
@@ -233,7 +195,7 @@ import datetime
 datetime.datetime.today().strftime('%Y-%m-%d')</code></p>
 </li>
 </ul>
-<h2 id="log">Log</h2>
+<h2 id="log">1.6 Log</h2>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
 
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> 
@@ -253,7 +215,7 @@ datetime.datetime.today().strftime('%Y-%m-%d')</code></p>
 <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">'This is info message'</span><span class="p">)</span>
 <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">'This is warning message'</span><span class="p">)</span>
 </pre></div>
-<h2 id="mongodb">Mongodb</h2>
+<h2 id="mongodb">1.7 Mongodb</h2>
 <ul>
 <li>
 <p>insert mongodb’s native date</p>
@@ -291,8 +253,8 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
 </ul>
 <div class="highlight"><pre><span></span>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cursor</span><span class="p">))</span>
 </pre></div>
-<h2 id="pandas and monogodb">Pandas and Monogodb</h2>
-<h3 id="read from monogodb get pandas">Read from Monogodb get Pandas</h3>
+<h2 id="pandas and monogodb">1.8 Pandas and Monogodb</h2>
+<h3 id="read from monogodb get pandas">1.1 Read from Monogodb get Pandas</h3>
 <ul>
 <li>
 <p>读行情数据</p>
@@ -330,7 +292,7 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
     <span class="n">query</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'date'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'$gte'</span><span class="p">:</span> <span class="n">start</span><span class="p">}}</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">get_df_by_query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 </pre></div>
-<h3 id="write pandas to mongodb">Write Pandas to Mongodb</h3>
+<h3 id="write pandas to mongodb">1.2 Write Pandas to Mongodb</h3>
 <div class="highlight"><pre><span></span>    <span class="n">client</span> <span class="o">=</span> <span class="n">py</span><span class="o">.</span><span class="n">MongoClient</span><span class="p">(</span><span class="s2">"localhost"</span><span class="p">,</span> <span class="mi">27017</span><span class="p">)</span>
     <span class="n">db</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">stock</span>
     <span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">classify</span>
@@ -339,7 +301,7 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
     <span class="n">records</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">area</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">'records'</span><span class="p">,</span>     <span class="n">date_format</span><span class="o">=</span><span class="s1">'iso'</span><span class="p">))</span>
     <span class="n">collection</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">records</span><span class="p">)</span>
 </pre></div>
-<h2 id="query by date_1">Query by date</h2>
+<h2 id="query by date_1">2.0 Query by date</h2>
 <ul>
 <li>example 1</li>
 </ul>
@@ -357,7 +319,7 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
     <span class="n">query</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'date'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'$gte'</span><span class="p">:</span> <span class="n">start</span><span class="p">}}</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">get_df_by_query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 </pre></div>
-<h2 id="pandas">Pandas</h2>
+<h2 id="pandas">2.1 Pandas</h2>
 <ul>
 <li>rename a DataFrame column name</li>
 </ul>
@@ -380,7 +342,7 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
                            <span class="n">index</span> <span class="o">=</span> <span class="n">concept</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
                            <span class="n">columns</span> <span class="o">=</span> <span class="n">today</span><span class="p">)</span>  <span class="c1"># 1st row as the column names</span>
 </pre></div>
-<h2 id="matplotlib">Matplotlib</h2>
+<h2 id="matplotlib">2.2 Matplotlib</h2>
 <ul>
 <li>显示中文</li>
 </ul>
@@ -436,7 +398,7 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
 <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">available</span><span class="p">:</span>
      <span class="k">print</span> <span class="p">(</span><span class="n">f</span><span class="p">)</span> 
 </pre></div>
-<h2 id="webscrawler">webscrawler</h2>
+<h2 id="webscrawler">2.3 webscrawler</h2>
 <ul>
 <li>bs4 beautifulsoup</li>
 </ul>
