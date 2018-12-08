@@ -12,13 +12,13 @@
 <meta content=", tech, " name="keywords">
 <meta content="Tor " property="og:title"/>
 <meta content="./tor.html" property="og:url"/>
-<meta content="Install tor sudo emerge -avq tor Intall meek git clone https://git.torproject.org/pluggable-transports/meek.git 这里需要了解的一点是meek-client是基于Tor的一个库写的，在代码中也可以看到工程的头部引用了Tor的一个go库。 因此直接进入目录里编译的话会报错。 解决方案是让go拉取Tor的对应库： cd meek go get git.torproject.org/pluggable-transports/goptlib.git 编译meek-client cd meek-cilent go build sudo cp meek-client /usr/bin/ Config FILE: /etc/tor/torrc User tor PIDFile /var …" property="og:description"/>
+<meta content="Install tor sudo emerge -avq tor Intall meek git clone https://git.torproject.org/pluggable-transports/meek.git 这里需要了解的一点是meek-client是基于Tor的一个库写的，在代码中也可以看到工程的头部引用了Tor的一个go库。 因此直接进入目录里编译的话会报错。 解决方案是让go拉取Tor的对应库： cd meek go get git.torproject.org/pluggable-transports/goptlib.git 编译meek-client cd meek-cilent go build sudo cp meek-client /usr/bin/ Config FILE:/etc/tor/torrc User tor PIDFile /var …" property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2018-04-13T10:36:08+08:00" property="og:article:published_time"/>
 <meta content="2018-04-13T10:36:08+08:00" property=""/>
 <meta content="Tor " name="twitter:title"/>
-<meta content="Install tor sudo emerge -avq tor Intall meek git clone https://git.torproject.org/pluggable-transports/meek.git 这里需要了解的一点是meek-client是基于Tor的一个库写的，在代码中也可以看到工程的头部引用了Tor的一个go库。 因此直接进入目录里编译的话会报错。 解决方案是让go拉取Tor的对应库： cd meek go get git.torproject.org/pluggable-transports/goptlib.git 编译meek-client cd meek-cilent go build sudo cp meek-client /usr/bin/ Config FILE: /etc/tor/torrc User tor PIDFile /var …" name="twitter:description"/>
+<meta content="Install tor sudo emerge -avq tor Intall meek git clone https://git.torproject.org/pluggable-transports/meek.git 这里需要了解的一点是meek-client是基于Tor的一个库写的，在代码中也可以看到工程的头部引用了Tor的一个go库。 因此直接进入目录里编译的话会报错。 解决方案是让go拉取Tor的对应库： cd meek go get git.torproject.org/pluggable-transports/goptlib.git 编译meek-client cd meek-cilent go build sudo cp meek-client /usr/bin/ Config FILE:/etc/tor/torrc User tor PIDFile /var …" name="twitter:description"/>
 <title>Tor  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -85,7 +85,7 @@ go build
 sudo cp meek-client /usr/bin/
 </pre></div>
 <h2 id="config_1">Config</h2>
-<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/tor/torrc</div>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/tor/torrc</div>
 <div class="highlight"><pre><span></span>User tor
 PIDFile /var/run/tor/tor.pid
 DataDirectory   /var/lib/tor/data
@@ -134,7 +134,7 @@ with Controller.from_port<span class="o">(</span><span class="nv">port</span> <s
 <p>但如果审查者还就是什么都不管，把云平台给屏蔽了呢？比如说天朝GFW就直接把GAE给完全屏蔽了，直接使得MEEK-google失效。我也看到有些人反映其他两个MEEK插件在有些地方也连不上了，这时候又应该怎么做呢？</p>
 <p>屏蔽云平台最常用的方法就是DNS污染了，这时可以试着把本地连接的DNS服务器设置为国外的DNS服务器。</p>
 <h3 id="guan yu pei zhi wen jian">关于配置文件</h3>
-<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/tor/torrc</div>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/tor/torrc</div>
 <div class="highlight"><pre><span></span>meek 0.0.2.0:1 url=https://meek-reflect.appspot.com/ front=www.google.com
 meek 0.0.2.0:2 url=https://d2zfqthxsdq309.cloudfront.net/ front=a0.awsstatic.com
 meek 0.0.2.0:3 url=https://az668014.vo.msecnd.net/ front=ajax.aspnetcdn.com
@@ -161,7 +161,7 @@ grep -ri <span class="m">0</span>.0.2.0 *
 <div class="highlight"><pre><span></span>emerge -avq net-proxy/privoxy
 </pre></div>
 <h3 id="config_2">Config</h3>
-<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/privoxy/config</div>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/privoxy/config</div>
 <div class="highlight"><pre><span></span>listen-address  <span class="m">192</span>.168.0.199:9051
 forward-socks5t   /               <span class="m">192</span>.168.0.199:9050 .
 </pre></div>
