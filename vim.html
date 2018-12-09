@@ -16,6 +16,7 @@
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2016-02-29T10:28:24+08:00" property="og:article:published_time"/>
+<meta content="2016-02-29T10:28:24+08:00" property="og:article:modified_time"/>
 <meta content="VIM " name="twitter:title"/>
 <meta content='使用技巧 文件编码 :set fenc=gbk :set fenc=utf-8 DOS UNIX 转换 set ff=unix Swap character xp Xp Global Replace, $ says “put vim in last-line mode”. :1,$s/George Bush/Barack Obama/g :1,$s/td align="CENTER"/td/g Delete blank lines in vim (empty lines), use this vim …' name="twitter:description"/>
 <title>VIM  · Just MEMO
@@ -146,7 +147,7 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 <ol>
 <li>Runtime Path Manipulation</li>
 </ol>
-<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>~/.vimrc</div>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> ~/.vimrc</div>
 <div class="highlight"><pre><span></span><span class="nb">set</span> nocompatible
 filetype off
 <span class="nb">set</span>  <span class="nv">rtp</span><span class="o">+=</span>~/.vim/bundle/vundle/
@@ -220,7 +221,7 @@ Bundle <span class="s1">'jiangmiao/auto-pairs'</span>
 <span class="s2">inoremap &lt;C-a&gt; &lt;Esc&gt;I </span>
 </pre></div>
 <h2 id="set guifont and size">set GuiFont and Size</h2>
-<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>.gvimrc</div>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> .gvimrc</div>
 <div class="highlight"><pre><span></span><span class="k">set</span> <span class="nb">guifont</span><span class="p">=</span>TerminusTTF:h22
 </pre></div>
 <h2 id="install fonts">Install Fonts</h2>
@@ -230,7 +231,7 @@ Bundle <span class="s1">'jiangmiao/auto-pairs'</span>
 <ul>
 <li>For perlbrew in vim:</li>
 </ul>
-<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>~/.vim/bundle/perl-support.vim/plugin/perl-support.vim</div>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> ~/.vim/bundle/perl-support.vim/plugin/perl-support.vim</div>
 <div class="highlight"><pre><span></span><span class="m">162</span>   <span class="k">let</span> s:Perl_Perl                 <span class="p">=</span> system<span class="p">(</span><span class="s2">"/usr/bin/which perl"</span><span class="p">)</span>
 <span class="m">163</span>   <span class="k">let</span> s:Perl_Perl                 <span class="p">=</span> substitute<span class="p">(</span>s:Perl_Perl<span class="p">,</span> <span class="s1">'\n$'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
 </pre></div>
@@ -238,7 +239,7 @@ Bundle <span class="s1">'jiangmiao/auto-pairs'</span>
 <ul>
 <li>.vimrc</li>
 </ul>
-<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>~/.vimrc</div>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> ~/.vimrc</div>
 <div class="highlight"><pre><span></span><span class="n">Plugin</span> <span class="s">'Valloric/YouCompleteMe'</span>
 </pre></div>
 <p>Then BundleInstall</p>
@@ -262,6 +263,8 @@ emerge sys-libs/ncurses:5
 <div class="span2" style="float:right;font-size:0.9em;">
 <h4>Published</h4>
 <time datetime="2016-02-29T10:28:24+08:00" pubdate="pubdate">Feb 29, 2016</time>
+<h4>Last Updated</h4>
+<time datetime="2016-02-29T10:28:24+08:00">Feb 29, 2016</time>
 <h4>Category</h4>
 <a class="category-link" href="./categories.html#tech-ref">tech</a>
 <h4>Tags</h4>
@@ -286,7 +289,7 @@ emerge sys-libs/ncurses:5
 <footer>
 <div id="footer">
 <ul class="footer-content">
-<li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+<li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="https://github.com/Pelican-Elegant/elegant/" title="Theme Elegant Home Page">Elegant</a></li>
 </ul>
 </div>
 </footer> <script src="http://code.jquery.com/jquery.min.js"></script>
@@ -299,5 +302,5 @@ emerge sys-libs/ncurses:5
         </script>
 </body>
 <!-- Theme: Elegant built for Pelican
-    License : http://oncrashreboot.com/pelican-elegant -->
+    License : MIT -->
 </html>

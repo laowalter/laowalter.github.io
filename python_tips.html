@@ -16,6 +16,7 @@
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2018-09-25T08:44:25+08:00" property="og:article:published_time"/>
+<meta content="2018-09-25T08:44:25+08:00" property="og:article:modified_time"/>
 <meta content="Python_tips " name="twitter:title"/>
 <meta content="1.0 Read special excel like xml Excel Address import pandas as pd dfs = pd.read_html('swclass.xls', flavor='html5lib') df = pd.DataFrame(dfs[0]) df.columns = df.iloc[0] df = df[1:] df_agg = df.groupby('行业名称').agg(lambda x: ','.join(x)) df_agg = df_agg.reset_index() df_agg[df_agg['行业名称']=='电子']['股票代码' …" name="twitter:description"/>
 <title>Python_tips  · Just MEMO
@@ -64,7 +65,7 @@
 <div class="span2 table-of-content">
 <nav>
 <h4>Contents</h4>
-<div id="toc"><ul><li><a class="toc-href" href="#" title="Python_tips">Python_tips</a><ul><li><a class="toc-href" href="#1.0 read special excel like xml" title="1.0 Read special excel like xml">1.0 Read special excel like xml</a></li><li><a class="toc-href" href="#1.1 add color text output in teminal" title="1.1 add color text output in teminal">1.1 add color text output in teminal</a></li><li><a class="toc-href" href="#1.2 trading date list" title="1.2 trading date list">1.2 trading date list</a></li><li><a class="toc-href" href="#1.3 print full dataframe" title="1.3 print full dataframe">1.3 print full dataframe</a></li><li><a class="toc-href" href="#1.4 command line input" title="1.4 Command Line input">1.4 Command Line input</a></li><li><a class="toc-href" href="#1.5 date" title="1.5 Date">1.5 Date</a></li><li><a class="toc-href" href="#1.6 log" title="1.6 Log">1.6 Log</a></li><li><a class="toc-href" href="#1.7 mongodb" title="1.7 Mongodb">1.7 Mongodb</a></li><li><a class="toc-href" href="#1.8 pandas and monogodb" title="1.8 Pandas and Monogodb">1.8 Pandas and Monogodb</a><ul><li><a class="toc-href" href="#1.1 read from monogodb get pandas" title="1.1 Read from Monogodb get Pandas">1.1 Read from Monogodb get Pandas</a></li><li><a class="toc-href" href="#1.2 write pandas to mongodb" title="1.2 Write Pandas to Mongodb">1.2 Write Pandas to Mongodb</a></li></ul></li><li><a class="toc-href" href="#2.0 query by date_1" title="2.0 Query by date">2.0 Query by date</a></li><li><a class="toc-href" href="#2.1 pandas" title="2.1 Pandas">2.1 Pandas</a></li><li><a class="toc-href" href="#2.2 matplotlib" title="2.2 Matplotlib">2.2 Matplotlib</a></li><li><a class="toc-href" href="#2.3 webscrawler" title="2.3 webscrawler">2.3 webscrawler</a></li></ul></li></ul></div>
+<div id="toc"><ul><li><a class="toc-href" href="#" title="Python_tips">Python_tips</a><ul><li><a class="toc-href" href="#1.0 read special excel like xml" title="1.0 Read special excel like xml">1.0 Read special excel like xml</a></li><li><a class="toc-href" href="#2.0 add color text output in teminal" title="2.0 add color text output in teminal">2.0 add color text output in teminal</a></li><li><a class="toc-href" href="#3.0 trading date list" title="3.0 trading date list">3.0 trading date list</a></li><li><a class="toc-href" href="#4.0 print full dataframe" title="4.0 print full dataframe">4.0 print full dataframe</a></li><li><a class="toc-href" href="#5.0 command line input" title="5.0 Command Line input">5.0 Command Line input</a></li><li><a class="toc-href" href="#6.0 date" title="6.0 Date">6.0 Date</a></li><li><a class="toc-href" href="#7.0 log" title="7.0 Log">7.0 Log</a></li><li><a class="toc-href" href="#8.0 mongodb" title="8.0 Mongodb">8.0 Mongodb</a></li><li><a class="toc-href" href="#9.0 pandas and monogodb" title="9.0 Pandas and Monogodb">9.0 Pandas and Monogodb</a><ul><li><a class="toc-href" href="#9.1 read from monogodb get pandas" title="9.1 Read from Monogodb get Pandas">9.1 Read from Monogodb get Pandas</a></li><li><a class="toc-href" href="#9.2 write pandas to mongodb" title="9.2 Write Pandas to Mongodb">9.2 Write Pandas to Mongodb</a></li></ul></li><li><a class="toc-href" href="#10.0 query by date_1" title="10.0 Query by date">10.0 Query by date</a></li><li><a class="toc-href" href="#11.0 pandas" title="11.0 Pandas">11.0 Pandas</a></li><li><a class="toc-href" href="#12.0 matplotlib" title="12.0 Matplotlib">12.0 Matplotlib</a></li><li><a class="toc-href" href="#13.0 webscrawler" title="13.0 webscrawler">13.0 webscrawler</a></li></ul></li></ul></div>
 </nav>
 </div>
 <div class="span8 article-content">
@@ -80,7 +81,7 @@
 <span class="n">df_agg</span>  <span class="o">=</span> <span class="n">df_agg</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">df_agg</span><span class="p">[</span><span class="n">df_agg</span><span class="p">[</span><span class="s1">'行业名称'</span><span class="p">]</span><span class="o">==</span><span class="s1">'电子'</span><span class="p">][</span><span class="s1">'股票代码'</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 </pre></div>
-<h2 id="1.1 add color text output in teminal">1.1 add color text output in teminal</h2>
+<h2 id="2.0 add color text output in teminal">2.0 add color text output in teminal</h2>
 <div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[1;32;40m Bright Green  </span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[0;37;40m Normal text</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[2;37;40m Underlined text</span><span class="se">\033</span><span class="s2">[0;37;40m </span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
@@ -130,7 +131,7 @@
 </tbody>
 </table>
 </div></p>
-<h2 id="1.2 trading date list">1.2 trading date list</h2>
+<h2 id="3.0 trading date list">3.0 trading date list</h2>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mylib.holiday_setting</span> <span class="kn">import</span> <span class="n">holiday</span>
 
 <span class="k">def</span> <span class="nf">trading_datelist</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
@@ -147,13 +148,13 @@
         <span class="n">date</span> <span class="o">=</span> <span class="n">date</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">day_list</span>
 </pre></div>
-<h2 id="1.3 print full dataframe">1.3 print full dataframe</h2>
+<h2 id="4.0 print full dataframe">4.0 print full dataframe</h2>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_full</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.max_rows'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
     <span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
     <span class="n">pd</span><span class="o">.</span><span class="n">reset_option</span><span class="p">(</span><span class="s1">'display.max_rows'</span><span class="p">)</span>
 </pre></div>
-<h2 id="1.4 command line input">1.4 Command Line input</h2>
+<h2 id="5.0 command line input">5.0 Command Line input</h2>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_input</span><span class="p">():</span>
     <span class="c1"># 获得命令行的输入参数</span>
     <span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">)</span>
@@ -174,7 +175,7 @@
     <span class="n">args</span> <span class="o">=</span> <span class="n">switch</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">args</span>
 </pre></div>
-<h2 id="1.5 date">1.5 Date</h2>
+<h2 id="6.0 date">6.0 Date</h2>
 <ul>
 <li>
 <p>parse date string to datetime object</p>
@@ -194,7 +195,7 @@ import datetime
 datetime.datetime.today().strftime('%Y-%m-%d')</code></p>
 </li>
 </ul>
-<h2 id="1.6 log">1.6 Log</h2>
+<h2 id="7.0 log">7.0 Log</h2>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
 
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> 
@@ -214,7 +215,7 @@ datetime.datetime.today().strftime('%Y-%m-%d')</code></p>
 <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">'This is info message'</span><span class="p">)</span>
 <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">'This is warning message'</span><span class="p">)</span>
 </pre></div>
-<h2 id="1.7 mongodb">1.7 Mongodb</h2>
+<h2 id="8.0 mongodb">8.0 Mongodb</h2>
 <ul>
 <li>
 <p>insert mongodb’s native date</p>
@@ -252,8 +253,8 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
 </ul>
 <div class="highlight"><pre><span></span>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cursor</span><span class="p">))</span>
 </pre></div>
-<h2 id="1.8 pandas and monogodb">1.8 Pandas and Monogodb</h2>
-<h3 id="1.1 read from monogodb get pandas">1.1 Read from Monogodb get Pandas</h3>
+<h2 id="9.0 pandas and monogodb">9.0 Pandas and Monogodb</h2>
+<h3 id="9.1 read from monogodb get pandas">9.1 Read from Monogodb get Pandas</h3>
 <ul>
 <li>
 <p>读行情数据</p>
@@ -291,7 +292,7 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
     <span class="n">query</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'date'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'$gte'</span><span class="p">:</span> <span class="n">start</span><span class="p">}}</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">get_df_by_query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 </pre></div>
-<h3 id="1.2 write pandas to mongodb">1.2 Write Pandas to Mongodb</h3>
+<h3 id="9.2 write pandas to mongodb">9.2 Write Pandas to Mongodb</h3>
 <div class="highlight"><pre><span></span>    <span class="n">client</span> <span class="o">=</span> <span class="n">py</span><span class="o">.</span><span class="n">MongoClient</span><span class="p">(</span><span class="s2">"localhost"</span><span class="p">,</span> <span class="mi">27017</span><span class="p">)</span>
     <span class="n">db</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">stock</span>
     <span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">classify</span>
@@ -300,7 +301,7 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
     <span class="n">records</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">area</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">'records'</span><span class="p">,</span>     <span class="n">date_format</span><span class="o">=</span><span class="s1">'iso'</span><span class="p">))</span>
     <span class="n">collection</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">records</span><span class="p">)</span>
 </pre></div>
-<h2 id="2.0 query by date_1">2.0 Query by date</h2>
+<h2 id="10.0 query by date_1">10.0 Query by date</h2>
 <ul>
 <li>example 1</li>
 </ul>
@@ -318,7 +319,7 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
     <span class="n">query</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'date'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'$gte'</span><span class="p">:</span> <span class="n">start</span><span class="p">}}</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">get_df_by_query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 </pre></div>
-<h2 id="2.1 pandas">2.1 Pandas</h2>
+<h2 id="11.0 pandas">11.0 Pandas</h2>
 <ul>
 <li>rename a DataFrame column name</li>
 </ul>
@@ -341,7 +342,7 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
                            <span class="n">index</span> <span class="o">=</span> <span class="n">concept</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
                            <span class="n">columns</span> <span class="o">=</span> <span class="n">today</span><span class="p">)</span>  <span class="c1"># 1st row as the column names</span>
 </pre></div>
-<h2 id="2.2 matplotlib">2.2 Matplotlib</h2>
+<h2 id="12.0 matplotlib">12.0 Matplotlib</h2>
 <ul>
 <li>显示中文</li>
 </ul>
@@ -397,7 +398,7 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
 <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">available</span><span class="p">:</span>
      <span class="k">print</span> <span class="p">(</span><span class="n">f</span><span class="p">)</span> 
 </pre></div>
-<h2 id="2.3 webscrawler">2.3 webscrawler</h2>
+<h2 id="13.0 webscrawler">13.0 webscrawler</h2>
 <ul>
 <li>bs4 beautifulsoup</li>
 </ul>
@@ -453,6 +454,8 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
 <div class="span2" style="float:right;font-size:0.9em;">
 <h4>Published</h4>
 <time datetime="2018-09-25T08:44:25+08:00" pubdate="pubdate">Sep 25, 2018</time>
+<h4>Last Updated</h4>
+<time datetime="2018-09-25T08:44:25+08:00">Sep 25, 2018</time>
 <h4>Category</h4>
 <a class="category-link" href="./categories.html#tech-ref">tech</a>
 <h4>Tags</h4>
@@ -483,7 +486,7 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
 <footer>
 <div id="footer">
 <ul class="footer-content">
-<li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+<li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="https://github.com/Pelican-Elegant/elegant/" title="Theme Elegant Home Page">Elegant</a></li>
 </ul>
 </div>
 </footer> <script src="http://code.jquery.com/jquery.min.js"></script>
@@ -496,5 +499,5 @@ collection.update_one({'name': 'walter'},{"$set":mydict}, upsert = True)</code><
         </script>
 </body>
 <!-- Theme: Elegant built for Pelican
-    License : http://oncrashreboot.com/pelican-elegant -->
+    License : MIT -->
 </html>

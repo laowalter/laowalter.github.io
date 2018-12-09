@@ -121,7 +121,7 @@ pre {
     word-wrap: normal;
 }
 td.code .highlight pre {
-    border-radius: 0 0 3px 3px;
+    border-radius: 0 3px 3px 0;
 }
 td.code {
     width: 100%;
@@ -133,7 +133,6 @@ td.code {
 }
 div.highlight {
     margin-bottom: 20px;
-    border-radius: 0 0 3px 3px;
 }
 /* Tags */
 .list-of-tags {

@@ -16,7 +16,7 @@
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2018-04-12T11:21:57+08:00" property="og:article:published_time"/>
-<meta content="2018-04-12T11:21:57+08:00" property=""/>
+<meta content="2018-04-12T11:21:57+08:00" property="og:article:modified_time"/>
 <meta content="MySQL " name="twitter:title"/>
 <meta content="MySQL基本操作 增加用户，并赋予权限 创建本机用户stock@localhost，不能从其他机器访问,即使grant all privileges 也没用 create user 'stock'@'localhost' identified by 'my_pass'; grant all privileges on *.* to 'stock'@'localhost' with grant option; flush privileges; 创建用户stock@%，可以在任何机器访问此数据库 create user 'stock'%' identified by 'my_pass'; grant all privileges on *.* to 'stock'@'%' with grant option; flush privileges; 赋予个别用户特别权限 mysql …" name="twitter:description"/>
 <title>MySQL  · Just MEMO
@@ -129,7 +129,7 @@ mysql&gt; GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP
 <footer>
 <div id="footer">
 <ul class="footer-content">
-<li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+<li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="https://github.com/Pelican-Elegant/elegant/" title="Theme Elegant Home Page">Elegant</a></li>
 </ul>
 </div>
 </footer> <script src="http://code.jquery.com/jquery.min.js"></script>
@@ -142,5 +142,5 @@ mysql&gt; GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP
         </script>
 </body>
 <!-- Theme: Elegant built for Pelican
-    License : http://oncrashreboot.com/pelican-elegant -->
+    License : MIT -->
 </html>

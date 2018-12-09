@@ -16,7 +16,7 @@
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2016-11-29T18:05:14+08:00" property="og:article:published_time"/>
-<meta content="2016-11-29T18:05:14+08:00" property=""/>
+<meta content="2016-11-29T18:05:14+08:00" property="og:article:modified_time"/>
 <meta content="Gentoo " name="twitter:title"/>
 <meta content='Auto run 自动执行/启动执行 /etc/local.d/ipforward.start #!/bin/bash # for hostapd /sbin/iptables -t nat -A POSTROUTING --source 192.168.6.0/24 -j SNAT --to 192.168.0.199 必须是可执行文件 chmod +x /etc/local.d/ipforward.start 执行 /etc/init.d/local restart Emerge ACCEPT_KEYWORDS="~amd64" emerge …' name="twitter:description"/>
 <title>Gentoo  · Just MEMO
@@ -138,7 +138,7 @@ make <span class="o">&amp;&amp;</span> make modules_install <span class="p">&amp
 <div class="highlight"><pre><span></span>GRUB_CMDLINE_LINUX_DEFAULT="rootfstype=ext4"
 </pre></div>
 <h4 id="change default boot time">change default boot time</h4>
-<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/defult/grub</div>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/defult/grub</div>
 <div class="highlight"><pre><span></span><span class="nv">GRUB_TIMEOUT</span><span class="o">=</span><span class="m">2</span>
 </pre></div>
 <h3 id="generate grub.cfg based on /etc/default/grub_1">generate grub.cfg based on /etc/default/grub</h3>
@@ -203,7 +203,7 @@ reboot
 <footer>
 <div id="footer">
 <ul class="footer-content">
-<li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+<li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="https://github.com/Pelican-Elegant/elegant/" title="Theme Elegant Home Page">Elegant</a></li>
 </ul>
 </div>
 </footer> <script src="http://code.jquery.com/jquery.min.js"></script>
@@ -216,5 +216,5 @@ reboot
         </script>
 </body>
 <!-- Theme: Elegant built for Pelican
-    License : http://oncrashreboot.com/pelican-elegant -->
+    License : MIT -->
 </html>

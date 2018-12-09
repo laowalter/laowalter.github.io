@@ -12,13 +12,13 @@
 <meta content="linux print, tech, " name="keywords">
 <meta content="Printer " property="og:title"/>
 <meta content="./printer.html" property="og:url"/>
-<meta content="CUPS 打印机设置 安装软件 cups emerge -avq cups 允许远程配置 FILE:/etc/cups/cupsd.conf &lt;Location /&gt; Order allow,deny Allow localhost Allow from 192.168.0.* &lt;/Location&gt; &lt;Location /admin&gt; Order allow,deny Allow localhost Allow from 192.168.0.* &lt;/Location&gt; &lt;Location /admin/conf&gt; Allow localhost Allow from 192.168.0.* AuthType Default …" property="og:description"/>
+<meta content="1.0 CUPS 打印机设置 1.1 安装软件 cups emerge -avq cups 1.2 允许远程配置 FILE: /etc/cups/cupsd.conf &lt;Location /&gt; Order allow,deny Allow localhost Allow from 192.168.0.* &lt;/Location&gt; &lt;Location /admin&gt; Order allow,deny Allow localhost Allow from 192.168.0.* &lt;/Location&gt; &lt;Location /admin/conf&gt; Allow localhost Allow …" property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2017-11-22T23:45:16+08:00" property="og:article:published_time"/>
-<meta content="2017-11-22T23:45:16+08:00" property=""/>
+<meta content="2017-11-22T23:45:16+08:00" property="og:article:modified_time"/>
 <meta content="Printer " name="twitter:title"/>
-<meta content="CUPS 打印机设置 安装软件 cups emerge -avq cups 允许远程配置 FILE:/etc/cups/cupsd.conf &lt;Location /&gt; Order allow,deny Allow localhost Allow from 192.168.0.* &lt;/Location&gt; &lt;Location /admin&gt; Order allow,deny Allow localhost Allow from 192.168.0.* &lt;/Location&gt; &lt;Location /admin/conf&gt; Allow localhost Allow from 192.168.0.* AuthType Default …" name="twitter:description"/>
+<meta content="1.0 CUPS 打印机设置 1.1 安装软件 cups emerge -avq cups 1.2 允许远程配置 FILE: /etc/cups/cupsd.conf &lt;Location /&gt; Order allow,deny Allow localhost Allow from 192.168.0.* &lt;/Location&gt; &lt;Location /admin&gt; Order allow,deny Allow localhost Allow from 192.168.0.* &lt;/Location&gt; &lt;Location /admin/conf&gt; Allow localhost Allow …" name="twitter:description"/>
 <title>Printer  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -65,16 +65,16 @@
 <div class="span2 table-of-content">
 <nav>
 <h4>Contents</h4>
-<div id="toc"><ul><li><a class="toc-href" href="#" title="Printer">Printer</a><ul><li><a class="toc-href" href="#cups da yin ji she zhi" title="CUPS 打印机设置">CUPS 打印机设置</a><ul><li><a class="toc-href" href="#an zhuang ruan jian  cups" title="安装软件 cups">安装软件 cups</a></li><li><a class="toc-href" href="#yun xu yuan cheng pei zhi" title="允许远程配置">允许远程配置</a></li><li><a class="toc-href" href="#yuan cheng tong guo liu lan qi" title="远程通过浏览器">远程通过浏览器</a></li><li><a class="toc-href" href="#she zhi ming ling xing" title="设置命令行">设置命令行</a></li></ul></li><li><a class="toc-href" href="#cups-pdf an zhuang yu she zhi_1" title="CUPS-PDF 安装与设置">CUPS-PDF 安装与设置</a><ul><li><a class="toc-href" href="#an zhuang ruan jian da kai  ppds use" title="安装软件打开 ppds use">安装软件打开 ppds use</a></li><li><a class="toc-href" href="#tong guo 631duan kou tian jia da yin ji shi xuan ze shang mian de  ppd" title="通过631端口添加打印机时选择上面的 ppd">通过631端口添加打印机时选择上面的 ppd</a></li><li><a class="toc-href" href="#windows10ke hu duan" title="Windows10客户端">Windows10客户端</a></li></ul></li><li><a class="toc-href" href="#lpr lp ming ling xing da yin ji she zhi_1" title="lpr lp 命令行打印机设置">lpr lp 命令行打印机设置</a></li></ul></li></ul></div>
+<div id="toc"><ul><li><a class="toc-href" href="#" title="Printer">Printer</a><ul><li><a class="toc-href" href="#1.0 cups da yin ji she zhi" title="1.0 CUPS 打印机设置">1.0 CUPS 打印机设置</a><ul><li><a class="toc-href" href="#1.1 an zhuang ruan jian  cups" title="1.1 安装软件 cups">1.1 安装软件 cups</a></li><li><a class="toc-href" href="#1.2 yun xu yuan cheng pei zhi" title="1.2 允许远程配置">1.2 允许远程配置</a></li><li><a class="toc-href" href="#1.3 yuan cheng tong guo liu lan qi" title="1.3 远程通过浏览器">1.3 远程通过浏览器</a></li><li><a class="toc-href" href="#1.4 she zhi ming ling xing" title="1.4 设置命令行">1.4 设置命令行</a></li></ul></li><li><a class="toc-href" href="#2.0 cups-pdf an zhuang yu she zhi_1" title="2.0 CUPS-PDF 安装与设置">2.0 CUPS-PDF 安装与设置</a><ul><li><a class="toc-href" href="#2.1 an zhuang ruan jian da kai  ppds use" title="2.1 安装软件打开 ppds use">2.1 安装软件打开 ppds use</a></li><li><a class="toc-href" href="#2.2 tong guo 631duan kou tian jia da yin ji shi xuan ze shang mian de  ppd" title="2.2 通过631端口添加打印机时选择上面的 ppd">2.2 通过631端口添加打印机时选择上面的 ppd</a></li><li><a class="toc-href" href="#2.3 windows10ke hu duan" title="2.3 Windows10客户端">2.3 Windows10客户端</a></li></ul></li><li><a class="toc-href" href="#3.0 lpr lp ming ling xing da yin ji she zhi_1" title="3.0 lpr lp 命令行打印机设置">3.0 lpr lp 命令行打印机设置</a></li></ul></li></ul></div>
 </nav>
 </div>
 <div class="span8 article-content">
-<h2 id="cups da yin ji she zhi"><span class="caps">CUPS</span> 打印机设置</h2>
-<h3 id="an zhuang ruan jian  cups">安装软件 cups</h3>
+<h2 id="1.0 cups da yin ji she zhi">1.0 <span class="caps">CUPS</span> 打印机设置</h2>
+<h3 id="1.1 an zhuang ruan jian  cups">1.1 安装软件 cups</h3>
 <div class="highlight"><pre><span></span>emerge -avq cups
 </pre></div>
-<h3 id="yun xu yuan cheng pei zhi">允许远程配置</h3>
-<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/cups/cupsd.conf</div>
+<h3 id="1.2 yun xu yuan cheng pei zhi">1.2 允许远程配置</h3>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/cups/cupsd.conf</div>
 <div class="highlight"><pre><span></span>&lt;Location /&gt;
   Order allow,deny
   Allow localhost
@@ -98,30 +98,30 @@
   Order allow,deny
 &lt;/Location&gt;
 </pre></div>
-<h3 id="yuan cheng tong guo liu lan qi">远程通过浏览器</h3>
+<h3 id="1.3 yuan cheng tong guo liu lan qi">1.3 远程通过浏览器</h3>
 <div class="highlight"><pre><span></span>添加打印机：http://192.168.0.3:631
 找到Admin，使用root登录，然后用find printer。
 </pre></div>
-<h3 id="she zhi ming ling xing">设置命令行</h3>
+<h3 id="1.4 she zhi ming ling xing">1.4 设置命令行</h3>
 <div class="highlight"><pre><span></span>lpstat -p -d  <span class="c1">#列出打印机名称(hp-printer)</span>
 lpoptions -d hp-printer <span class="c1"># 设置缺省的打印机为hp-printer</span>
 lpstat -p -d  <span class="c1">#列出打印机名称(hp-printer)</span>
 </pre></div>
-<h2 id="cups-pdf an zhuang yu she zhi_1"><span class="caps">CUPS</span>-<span class="caps">PDF</span> 安装与设置</h2>
-<h3 id="an zhuang ruan jian da kai  ppds use">安装软件打开 ppds use</h3>
+<h2 id="2.0 cups-pdf an zhuang yu she zhi_1">2.0 <span class="caps">CUPS</span>-<span class="caps">PDF</span> 安装与设置</h2>
+<h3 id="2.1 an zhuang ruan jian da kai  ppds use">2.1 安装软件打开 ppds use</h3>
 <div class="highlight"><pre><span></span>emerge -avq cups-pdf
 </pre></div>
 <p>这样会安装一个打印机驱动/usr/share/cups/model/<span class="caps">CUPS</span>-PDF_opt.ppd</p>
-<h3 id="tong guo 631duan kou tian jia da yin ji shi xuan ze shang mian de  ppd">通过631端口添加打印机时选择上面的 ppd</h3>
+<h3 id="2.2 tong guo 631duan kou tian jia da yin ji shi xuan ze shang mian de  ppd">2.2 通过631端口添加打印机时选择上面的 ppd</h3>
 <ul>
 <li>Default name: Virtual <span class="caps">PDF</span> Printer</li>
 <li>Printer Type: Generic <span class="caps">CUPS</span>-<span class="caps">PDF</span> Printer (w/ options) (color)</li>
 <li>Change output directory: /etc/cups/cups-pdf.conf</li>
 </ul>
-<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/cups/cups-pdf.conf</div>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/cups/cups-pdf.conf</div>
 <div class="highlight"><pre><span></span>Out /data/share/public/pdf_printed
 </pre></div>
-<h3 id="windows10ke hu duan">Windows10客户端</h3>
+<h3 id="2.3 windows10ke hu duan">2.3 Windows10客户端</h3>
 <ol>
 <li>
 <p>添加打印机：</p>
@@ -131,12 +131,12 @@ lpstat -p -d  <span class="c1">#列出打印机名称(hp-printer)</span>
 <p>选择打印机型号：<span class="caps">HP</span> Color LaserJet 4550 <span class="caps">PS</span> Class Driver （选择其他的打的是空白页面)</p>
 </li>
 </ol>
-<h2 id="lpr lp ming ling xing da yin ji she zhi_1">lpr lp 命令行打印机设置</h2>
+<h2 id="3.0 lpr lp ming ling xing da yin ji she zhi_1">3.0 lpr lp 命令行打印机设置</h2>
 <ul>
 <li>检查/etc/printcap</li>
 </ul>
 <p>通过cups的设置，在/etc/printcap 被自动生成：</p>
-<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/printcap</div>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/printcap</div>
 <div class="highlight"><pre><span></span><span class="c1"># This file was automatically generated by cupsd(8) from the</span>
 <span class="c1"># /etc/cups/printers.conf file.  All changes to this file</span>
 <span class="c1"># will be lost.</span>
@@ -192,7 +192,7 @@ paps --font<span class="o">=</span><span class="s2">"WenQuanYi Zen Hei Sharp 2"<
 <footer>
 <div id="footer">
 <ul class="footer-content">
-<li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+<li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="https://github.com/Pelican-Elegant/elegant/" title="Theme Elegant Home Page">Elegant</a></li>
 </ul>
 </div>
 </footer> <script src="http://code.jquery.com/jquery.min.js"></script>
@@ -205,5 +205,5 @@ paps --font<span class="o">=</span><span class="s2">"WenQuanYi Zen Hei Sharp 2"<
         </script>
 </body>
 <!-- Theme: Elegant built for Pelican
-    License : http://oncrashreboot.com/pelican-elegant -->
+    License : MIT -->
 </html>

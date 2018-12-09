@@ -16,7 +16,7 @@
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2017-10-25T13:03:34+08:00" property="og:article:published_time"/>
-<meta content="2017-10-25T13:03:34+08:00" property=""/>
+<meta content="2017-10-25T13:03:34+08:00" property="og:article:modified_time"/>
 <meta content="通达信复权模型 " name="twitter:title"/>
 <meta content="通达信复权模型是建立在”股东财富不变”的原则上的。 交易所依据”股东财富不变”原则制定除权除息报价计算公式,目前沪深交易所除权除息报价的基本公式如下(在具体操作中可能会有所变动): 除权(息)报价＝[(前收盘价-现金红利)＋配(新)股价格×流通股份变动比例]÷(1＋流通股份变动比例) 通达信复权分为向前复权和向后复权: 向前复权,就是保持现有价位不变,将以前的价格缩减,将除权前的K线向下平移,使图形吻合,保持股价走势的连续性。 向后复权,就是保持先前的价格不变,而将以后的价格增加。上面的例子采用的就是向后复权。 两者最明显的区别在于向前复权的当前周期报价和K线显示价格完全一致,而向后复权的报价大多低于K线显示价格。例如,某只股票当前价格10元,在这之前曾经每10股送10股,前者除权后的价格仍是10元,后者则为20元。 复权是根据上市公司的权益分派、公积金转增股本、配股等情况和交易所的除权报价方案精确计算复权价格。其计算公式: 前复权:复权后价格＝[(复权前价格-现金红利)＋配(新)股价格×流通股份变动比例]÷(1＋流通股份变动比例) 后复权 …" name="twitter:description"/>
 <title>通达信复权模型  · Just MEMO
@@ -135,7 +135,7 @@
 <footer>
 <div id="footer">
 <ul class="footer-content">
-<li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+<li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="https://github.com/Pelican-Elegant/elegant/" title="Theme Elegant Home Page">Elegant</a></li>
 </ul>
 </div>
 </footer> <script src="http://code.jquery.com/jquery.min.js"></script>
@@ -148,5 +148,5 @@
         </script>
 </body>
 <!-- Theme: Elegant built for Pelican
-    License : http://oncrashreboot.com/pelican-elegant -->
+    License : MIT -->
 </html>

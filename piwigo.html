@@ -12,13 +12,13 @@
 <meta content=", tech, " name="keywords">
 <meta content="Piwigo " property="og:title"/>
 <meta content="./piwigo.html" property="og:url"/>
-<meta content="Use Piwigo 注意事项 所有的图片文件都放在 piwigo/upload/ 的目录中。 Installation config Nginx to support /etc/nginx/nginx.conf include /etc/nginx/conf.d/*.conf; /etc/nginx/conf.d/piwigo.conf server { listen 0.0.0.0:3128; server_name photo; #root /var/www/localhost/; root /var/www/localhost/htdocs/piwigo; location ~ \.php$ { try_files …" property="og:description"/>
+<meta content="1.0 Use Piwigo 注意事项 所有的图片文件都放在 piwigo/upload/ 的目录中。 2.0 Installation 2.1 config Nginx to support FILE: /etc/nginx/nginx.conf include /etc/nginx/conf.d/*.conf; FILE: /etc/nginx/conf.d/piwigo.conf server { listen 0.0.0.0:3128; server_name photo; #root /var/www/localhost/; root …" property="og:description"/>
 <meta content="Just MEMO" property="og:site_name"/>
 <meta content="Walter" property="og:article:author"/>
 <meta content="2018-01-21T15:21:16+08:00" property="og:article:published_time"/>
-<meta content="2018-01-21T15:21:16+08:00" property=""/>
+<meta content="2018-01-21T15:21:16+08:00" property="og:article:modified_time"/>
 <meta content="Piwigo " name="twitter:title"/>
-<meta content="Use Piwigo 注意事项 所有的图片文件都放在 piwigo/upload/ 的目录中。 Installation config Nginx to support /etc/nginx/nginx.conf include /etc/nginx/conf.d/*.conf; /etc/nginx/conf.d/piwigo.conf server { listen 0.0.0.0:3128; server_name photo; #root /var/www/localhost/; root /var/www/localhost/htdocs/piwigo; location ~ \.php$ { try_files …" name="twitter:description"/>
+<meta content="1.0 Use Piwigo 注意事项 所有的图片文件都放在 piwigo/upload/ 的目录中。 2.0 Installation 2.1 config Nginx to support FILE: /etc/nginx/nginx.conf include /etc/nginx/conf.d/*.conf; FILE: /etc/nginx/conf.d/piwigo.conf server { listen 0.0.0.0:3128; server_name photo; #root /var/www/localhost/; root …" name="twitter:description"/>
 <title>Piwigo  · Just MEMO
 </title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -65,24 +65,18 @@
 <div class="span2 table-of-content">
 <nav>
 <h4>Contents</h4>
-<div id="toc"><ul><li><a class="toc-href" href="#" title="Piwigo">Piwigo</a><ul><li><a class="toc-href" href="#use piwigo zhu yi shi xiang" title="Use Piwigo 注意事项">Use Piwigo 注意事项</a></li><li><a class="toc-href" href="#installation" title="Installation">Installation</a><ul><li><a class="toc-href" href="#config nginx to support" title="config Nginx to support">config Nginx to support</a></li><li><a class="toc-href" href="#install php-fm" title="Install php-fm">Install php-fm</a></li><li><a class="toc-href" href="#create mysql database for piwigo" title="create  mysql database for piwigo">create  mysql database for piwigo</a></li><li><a class="toc-href" href="#install piwigo" title="install piwigo">install piwigo</a></li></ul></li></ul></li></ul></div>
+<div id="toc"><ul><li><a class="toc-href" href="#" title="Piwigo">Piwigo</a><ul><li><a class="toc-href" href="#1.0 use piwigo zhu yi shi xiang" title="1.0 Use Piwigo 注意事项">1.0 Use Piwigo 注意事项</a></li><li><a class="toc-href" href="#2.0 installation" title="2.0 Installation">2.0 Installation</a><ul><li><a class="toc-href" href="#2.1 config nginx to support" title="2.1 config Nginx to support">2.1 config Nginx to support</a></li><li><a class="toc-href" href="#2.2 install php-fm" title="2.2 Install php-fm">2.2 Install php-fm</a><ul><li><a class="toc-href" href="#2.2.1 config www.conf" title="2.2.1 config www.conf">2.2.1 config www.conf</a></li><li><a class="toc-href" href="#2.2.2 adjust upload limited" title="2.2.2 adjust upload limited">2.2.2 adjust upload limited</a></li><li><a class="toc-href" href="#2.2.3 add php-fpm to default service" title="2.2.3 add php-fpm to default service">2.2.3 add php-fpm to default service</a></li></ul></li><li><a class="toc-href" href="#2.3 create mysql database for piwigo_1" title="2.3 create  mysql database for piwigo">2.3 create  mysql database for piwigo</a></li><li><a class="toc-href" href="#2.4 install piwigo" title="2.4 install piwigo">2.4 install piwigo</a><ul><li><a class="toc-href" href="#2.4.1 install piwigo scripts" title="2.4.1 install piwigo scripts">2.4.1 install piwigo scripts</a></li><li><a class="toc-href" href="#2.4.2 from web browser enter http://piwgo_directory/install.php, following direction." title="2.4.2 from web browser enter http://piwgo_directory/install.php, following direction.">2.4.2 from web browser enter http://piwgo_directory/install.php, following direction.</a></li></ul></li></ul></li></ul></li></ul></div>
 </nav>
 </div>
 <div class="span8 article-content">
-<h2 id="use piwigo zhu yi shi xiang">Use Piwigo 注意事项</h2>
-<ol>
-<li>所有的图片文件都放在 piwigo/upload/ 的目录中。</li>
-</ol>
-<h2 id="installation">Installation</h2>
-<h3 id="config nginx to support">config Nginx to support</h3>
-<ol>
-<li>/etc/nginx/nginx.conf</li>
-</ol>
+<h2 id="1.0 use piwigo zhu yi shi xiang">1.0 Use Piwigo 注意事项</h2>
+<p>所有的图片文件都放在 piwigo/upload/ 的目录中。</p>
+<h2 id="2.0 installation">2.0 Installation</h2>
+<h3 id="2.1 config nginx to support">2.1 config Nginx to support</h3>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/nginx/nginx.conf</div>
 <div class="highlight"><pre><span></span><span class="k">include</span> <span class="n">/etc/nginx/conf.d/*.conf</span>;
 </pre></div>
-<ol>
-<li>/etc/nginx/conf.d/piwigo.conf</li>
-</ol>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/nginx/conf.d/piwigo.conf</div>
 <div class="highlight"><pre><span></span><span class="k">server</span> <span class="p">{</span>
     <span class="kn">listen</span> <span class="n">0.0.0.0</span><span class="p">:</span><span class="mi">3128</span><span class="p">;</span>
     <span class="kn">server_name</span> <span class="s">photo</span><span class="p">;</span>
@@ -97,47 +91,39 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-<h3 id="install php-fm">Install php-fm</h3>
-<div class="highlight"><pre><span></span>1.  config /etc/php/fpm-php7.1/fpm.d/www.conf
-</pre></div>
+<h3 id="2.2 install php-fm">2.2 Install php-fm</h3>
+<h4 id="2.2.1 config www.conf">2.2.1 config www.conf</h4>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/php/fpm-php7.1/fpm.d/www.conf</div>
 <div class="highlight"><pre><span></span>  <span class="nv">listen</span> <span class="o">=</span> /run/php-fpm.socket
   listen.owner <span class="o">=</span> nginx
   listen.group <span class="o">=</span> nginx
   listen.mode <span class="o">=</span> <span class="m">0660</span>
 </pre></div>
-<div class="highlight"><pre><span></span>2. adjust upload limited
-
-(1) /etc/php/fpm-php7.1/php.ini
-</pre></div>
+<h4 id="2.2.2 adjust upload limited">2.2.2 adjust upload limited</h4>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/php/fpm-php7.1/php.ini</div>
 <div class="highlight"><pre><span></span><span class="nv">upload_tmp_dir</span> <span class="o">=</span> /tmp
 <span class="nv">upload_max_filesize</span> <span class="o">=</span> 20M
 </pre></div>
-<div class="highlight"><pre><span></span>(2) /etc/ngnix/nginx.conf
-</pre></div>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/ngnix/nginx.conf</div>
 <div class="highlight"><pre><span></span>client_max_body_size 20M<span class="p">;</span>
 client_body_buffer_size 128k<span class="p">;</span>
 </pre></div>
-<div class="highlight"><pre><span></span>3. add php-fpm to default service
-</pre></div>
+<h4 id="2.2.3 add php-fpm to default service">2.2.3 add php-fpm to default service</h4>
 <div class="highlight"><pre><span></span>sudo  /etc/init.d/php-fpm start
 rc-update add php-fpm default
 </pre></div>
-<h3 id="create mysql database for piwigo">create  mysql database for piwigo</h3>
+<h3 id="2.3 create mysql database for piwigo_1">2.3 create  mysql database for piwigo</h3>
 <div class="highlight"><pre><span></span>mysql&gt; create database photos<span class="p">;</span>
 mysql&gt; create user <span class="s1">'piwigo'</span>@<span class="s1">'localhost'</span> identified by <span class="s1">'abcdef'</span><span class="p">;</span>
 mysql&gt; grant all privileges on photos.* to <span class="s1">'piwigo'</span>@<span class="s1">'localhost'</span><span class="p">;</span>
 mysql&gt; flush privileges<span class="p">;</span>
 </pre></div>
-<h3 id="install piwigo">install piwigo</h3>
-<ol>
-<li>install piwigo scripts</li>
-</ol>
+<h3 id="2.4 install piwigo">2.4 install piwigo</h3>
+<h4 id="2.4.1 install piwigo scripts">2.4.1 install piwigo scripts</h4>
 <div class="highlight"><pre><span></span>su 
 webapp-config -h localhost -d piwigo -I piwigo <span class="m">2</span>.9.2
 </pre></div>
-<ol>
-<li>from web browser enter http://piwgo_directory/install.php, following direction.</li>
-</ol>
+<h4 id="2.4.2 from web browser enter http://piwgo_directory/install.php, following direction.">2.4.2 from web browser enter http://piwgo_directory/install.php, following direction.</h4>
 <hr/>
 </div>
 <section>
@@ -164,7 +150,7 @@ webapp-config -h localhost -d piwigo -I piwigo <span class="m">2</span>.9.2
 <footer>
 <div id="footer">
 <ul class="footer-content">
-<li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+<li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="https://github.com/Pelican-Elegant/elegant/" title="Theme Elegant Home Page">Elegant</a></li>
 </ul>
 </div>
 </footer> <script src="http://code.jquery.com/jquery.min.js"></script>
@@ -177,5 +163,5 @@ webapp-config -h localhost -d piwigo -I piwigo <span class="m">2</span>.9.2
         </script>
 </body>
 <!-- Theme: Elegant built for Pelican
-    License : http://oncrashreboot.com/pelican-elegant -->
+    License : MIT -->
 </html>
