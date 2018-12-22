@@ -1,158 +1,127 @@
 <!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Walter" />
+        <meta name="copyright" content="Walter" />
 
-<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
-<head>
-<title>通达信数据 - Just MEMO</title>
-<!-- Using the latest rendering mode for IE -->
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="./tong-da-xin-shu-ju.html" rel="canonical"/>
-<meta content="Walter" name="author">
-<meta content="通达信,tech" name="keywords">
-<meta content="通达信数据结构解析 通达信自定义指数 相关文件： incon.dat,证监会行业、通达信新行业、申万行业等描述信息 T0002\hq_cache\block.dat,一般板块 T0002\hq_cache\block_gn.dat,概念板块 T0002\hq_cache\block_fg.dat,风格板块 T0002\hq_cache\block_zs.dat,指数板块 T0002\hq_cache\tdxhy.cfg,每个股票对应通达信行业和申万行业 T0002\hq_cache\tdxzs.cfg,板块指数，部分板块的最后一个字段映射到incon.dat的TDXNHY和SWHY T0002\blocknew\blocknew.cfg,自定义板块概要描述文件  行业板块 行业 行业包括三个类别：证监会行业；申万行业 …" name="description">
-<meta content="Just MEMO" property="og:site_name"/>
-<meta content="article" property="og:type"/>
-<meta content="通达信数据" property="og:title"/>
-<meta content="./tong-da-xin-shu-ju.html" property="og:url"/>
-<meta content="通达信数据结构解析 通达信自定义指数 相关文件： incon.dat,证监会行业、通达信新行业、申万行业等描述信息 T0002\hq_cache\block.dat,一般板块 T0002\hq_cache\block_gn.dat,概念板块 T0002\hq_cache\block_fg.dat,风格板块 T0002\hq_cache\block_zs.dat,指数板块 T0002\hq_cache\tdxhy.cfg,每个股票对应通达信行业和申万行业 T0002\hq_cache\tdxzs.cfg,板块指数，部分板块的最后一个字段映射到incon.dat的TDXNHY和SWHY T0002\blocknew\blocknew.cfg,自定义板块概要描述文件  行业板块 行业 行业包括三个类别：证监会行业；申万行业 …" property="og:description"/>
-<meta content="2017-09-05" property="article:published_time"/>
-<meta content="Tech" property="article:section"/>
-<meta content="通达信" property="article:tag"/>
-<meta content="tech" property="article:tag"/>
-<meta content="Walter" property="article:author"/>
-<!-- Bootstrap -->
-<link href="./theme/css/bootstrap.paper.min.css" rel="stylesheet" type="text/css">
-<link href="./theme/css/font-awesome.min.css" rel="stylesheet"/>
-<link href="./theme/css/pygments/default.css" rel="stylesheet"/>
-<link href="./theme/tipuesearch/tipuesearch.css" rel="stylesheet"/>
-<link href="./theme/css/html4css1.css" rel="stylesheet"/>
-<link href="./theme/css/typogrify.css" rel="stylesheet"/>
-<link href="./theme/css/style.css" rel="stylesheet" type="text/css">
-<link href="./static/custom.css" rel="stylesheet"/>
-<link href="./theme/css/shariff/shariff.min.css" rel="stylesheet"/>
-</link></link></meta></meta></meta></head>
-<body>
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-<div class="container">
-<div class="navbar-header">
-<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
-<span class="sr-only">Toggle navigation</span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-<a class="navbar-brand" href="./">
-Just MEMO            </a>
-</div>
-<div class="collapse navbar-collapse navbar-ex1-collapse">
-<ul class="nav navbar-nav">
-<li><a href="/">Home</a></li>
-<li><a href="/archives.html">Archives</a></li>
-<li><a href="/search.html">Search</a></li>
-<li>
-<a href="./category/chan-lun.html">缠论</a>
-</li>
-<li>
-<a href="./category/eco.html">Eco</a>
-</li>
-<li>
-<a href="./category/futstock.html">Fut&amp;stock</a>
-</li>
-<li>
-<a href="./category/life.html">Life</a>
-</li>
-<li>
-<a href="./category/shu-fa.html">书法</a>
-</li>
-<li class="active">
-<a href="./category/tech.html">Tech</a>
-</li>
-</ul>
-<ul class="nav navbar-nav navbar-right">
-<li><span>
-<form action="/search.html" class="navbar-search">
-<input class="search-query" id="tipue_search_input" name="q" placeholder="Search" required="" type="text"/>
-</form></span>
-</li>
-<li><a href="./archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
-</ul>
-</div>
-<!-- /.navbar-collapse -->
-</div>
-</div> <!-- /.navbar -->
-<!-- Banner -->
-<!-- End Banner -->
-<div class="container">
-<div class="row">
-<div class="col-sm-9">
-<section id="content">
-<article>
-<header class="page-header">
-<h1>
-<a href="./tong-da-xin-shu-ju.html" rel="bookmark" title="Permalink to 通达信数据">
-                        通达信数据
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="tech, 通达信, Tech, " />
+
+<meta property="og:title" content="通达信数据 "/>
+<meta property="og:url" content="./tong-da-xin-shu-ju.html" />
+<meta property="og:description" content="通达信数据结构解析 通达信自定义指数 相关文件： incon.dat 证监会行业、通达信新行业、申万行业等描述信息 T0002\hq_cache\block.dat 一般板块 T0002\hq_cache\block_gn.dat 概念板块 T0002\hq_cache\block_fg.dat 风格板块 T0002\hq_cache\block_zs.dat 指数板块 T0002\hq_cache\tdxhy.cfg 每个股票对应通达信行业和申万行业 T0002\hq_cache\tdxzs.cfg 板块指数，部分板块的最后一个字段映射到incon.dat的TDXNHY和SWHY T0002\blocknew\blocknew.cfg 自定义板块概要描述文件 行业板块 行业 行业包括三个类别：证监会行业；申万行业 …" />
+<meta property="og:site_name" content="Just MEMO" />
+<meta property="og:article:author" content="Walter" />
+<meta property="og:article:published_time" content="2017-09-05T18:18:00+08:00" />
+<meta property="og:article:modified_time" content="2017-09-05T18:18:00+08:00" />
+<meta name="twitter:title" content="通达信数据 ">
+<meta name="twitter:description" content="通达信数据结构解析 通达信自定义指数 相关文件： incon.dat 证监会行业、通达信新行业、申万行业等描述信息 T0002\hq_cache\block.dat 一般板块 T0002\hq_cache\block_gn.dat 概念板块 T0002\hq_cache\block_fg.dat 风格板块 T0002\hq_cache\block_zs.dat 指数板块 T0002\hq_cache\tdxhy.cfg 每个股票对应通达信行业和申万行业 T0002\hq_cache\tdxzs.cfg 板块指数，部分板块的最后一个字段映射到incon.dat的TDXNHY和SWHY T0002\blocknew\blocknew.cfg 自定义板块概要描述文件 行业板块 行业 行业包括三个类别：证监会行业；申万行业 …">
+
+        <title>通达信数据  · Just MEMO
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/custom.css" media="screen">
+
+
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                     </a>
-</h1>
-</header>
-<div class="entry-content">
-<div class="panel">
-<div class="panel-body">
-<footer class="post-info">
-<span class="label label-default">Date</span>
-<span class="published">
-<i class="fa fa-calendar"></i><time datetime="2017-09-05T18:18:00+08:00"> 2017-09-05 18:18:00+08:00</time>
-</span>
-<span class="label label-default">Tags</span>
-<a href="./tag/tong-da-xin.html">通达信</a>
-        /
-	<a href="./tag/tech.html">tech</a>
-</footer><!-- /.post-info --> <span class="label label-default">Modified</span>
-<span class="published">
-<i class="fa fa-calendar"></i><time datetime="2017-09-05T18:18:00+08:00">2017-09-05 18:18:00+08:00</time>
-</span>
-</div></div></div></article></section></div></div></div></body></html>
+                    <a class="brand" href="./"><span class=site-name>Just MEMO</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href=".">Home</a></li>
+                            <li ><a href="./categories.html">Categories</a></li>
+                            <li ><a href="./tags.html">Tags</a></li>
+                            <li ><a href="./archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="./search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="./tong-da-xin-shu-ju.html"> 通达信数据  </a></h1>
+    </header>
+</div>
 
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div id="toc"><ul><li><a class="toc-href" href="#tong da xin shu ju jie gou jie xi" title="通达信数据结构解析">通达信数据结构解析</a><ul><li><a class="toc-href" href="#tong da xin zi ding yi zhi shu" title="通达信自定义指数">通达信自定义指数</a></li><li><a class="toc-href" href="#xing ye ban kuai" title="行业板块">行业板块</a></li><li><a class="toc-href" href="#tong da xin zi ding yi ban kuai" title="通达信自定义板块">通达信自定义板块</a></li><li><a class="toc-href" href="#yong hu zi ding yi ban kuai" title="用户自定义板块">用户自定义板块</a></li><li><a class="toc-href" href="#ban kuai lie biao wen jian : *.blk" title="板块列表文件:&nbsp;*.blk">板块列表文件:&nbsp;*.blk</a></li><li><a class="toc-href" href="#tong da xin zi ding yi zhi shu_1" title="通达信自定义指数">通达信自定义指数</a></li><li><a class="toc-href" href="#mei ge gu piao dui ying de shen mo xing ye he tong da xin xing ye" title="每个股票对应的申万行业和通达信行业">每个股票对应的申万行业和通达信行业</a></li></ul></li></ul></div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
 
-<!-- Added by Walter for pelican-toc within a article -->
-<div id="toc"><ul><li><a class="toc-href" href="#tong da xin shu ju jie gou jie xi" title="通达信数据结构解析">通达信数据结构解析</a><ul><li><a class="toc-href" href="#tong da xin zi ding yi zhi shu" title="通达信自定义指数">通达信自定义指数</a></li><li><a class="toc-href" href="#xing ye ban kuai" title="行业板块">行业板块</a></li><li><a class="toc-href" href="#tong da xin zi ding yi ban kuai" title="通达信自定义板块">通达信自定义板块</a></li><li><a class="toc-href" href="#yong hu zi ding yi ban kuai" title="用户自定义板块">用户自定义板块</a></li><li><a class="toc-href" href="#ban kuai lie biao wen jian : *.blk" title="板块列表文件: *.blk">板块列表文件: *.blk</a></li><li><a class="toc-href" href="#tong da xin zi ding yi zhi shu_1" title="通达信自定义指数">通达信自定义指数</a></li><li><a class="toc-href" href="#mei ge gu piao dui ying de shen mo xing ye he tong da xin xing ye" title="每个股票对应的申万行业和通达信行业">每个股票对应的申万行业和通达信行业</a></li></ul></li></ul></div>
-<h2 id="tong da xin shu ju jie gou jie xi">通达信数据结构解析</h2>
+            
+            <h2 id="tong da xin shu ju jie gou jie xi">通达信数据结构解析</h2>
 <h3 id="tong da xin zi ding yi zhi shu">通达信自定义指数</h3>
 <ol>
 <li>相关文件：</li>
 </ol>
 <p>
 <div class="justtable">
-<table>
-<thead>
-<tr>
-<th>incon.dat,证监会行业、通达信新行业、申万行业等描述信息</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>T0002\hq_cache\block.dat,一般板块</td>
-</tr>
-<tr>
-<td>T0002\hq_cache\block_gn.dat,概念板块</td>
-</tr>
-<tr>
-<td>T0002\hq_cache\block_fg.dat,风格板块</td>
-</tr>
-<tr>
-<td>T0002\hq_cache\block_zs.dat,指数板块</td>
-</tr>
-<tr>
-<td>T0002\hq_cache\tdxhy.cfg,每个股票对应通达信行业和申万行业</td>
-</tr>
-<tr>
-<td>T0002\hq_cache\tdxzs.cfg,板块指数，部分板块的最后一个字段映射到incon.dat的TDXNHY和SWHY</td>
-</tr>
-<tr>
-<td>T0002\blocknew\blocknew.cfg,自定义板块概要描述文件 </td>
-</tr>
-</tbody>
-</table>
+    <table>
+        <thead>
+        <tr>
+            <th>incon.dat</th>
+            <th>证监会行业、通达信新行业、申万行业等描述信息</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>T0002\hq_cache\block.dat</td>
+                <td>一般板块</td>
+            </tr>
+            <tr>
+                <td>T0002\hq_cache\block_gn.dat</td>
+                <td>概念板块</td>
+            </tr>
+            <tr>
+                <td>T0002\hq_cache\block_fg.dat</td>
+                <td>风格板块</td>
+            </tr>
+            <tr>
+                <td>T0002\hq_cache\block_zs.dat</td>
+                <td>指数板块</td>
+            </tr>
+            <tr>
+                <td>T0002\hq_cache\tdxhy.cfg</td>
+                <td>每个股票对应通达信行业和申万行业</td>
+            </tr>
+            <tr>
+                <td>T0002\hq_cache\tdxzs.cfg</td>
+                <td>板块指数，部分板块的最后一个字段映射到incon.dat的TDXNHY和SWHY</td>
+            </tr>
+            <tr>
+                <td>T0002\blocknew\blocknew.cfg</td>
+                <td>自定义板块概要描述文件</td>
+            </tr>
+        </tbody>
+    </table>
 </div></p>
 <h3 id="xing ye ban kuai">行业板块</h3>
 <ol>
@@ -212,24 +181,28 @@ Just MEMO            </a>
 <p>通达信定义的板块通过如下四个板块文件描述：</p>
 <p>
 <div class="justtable">
-<table>
-<thead>
-<tr>
-<th>T0002\hq_cache\block.dat,一般板块</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>T0002\hq_cache\block_gn.dat,概念板块</td>
-</tr>
-<tr>
-<td>T0002\hq_cache\block_fg.dat,风格板块</td>
-</tr>
-<tr>
-<td>T0002\hq_cache\block_zs.dat,指数板块 </td>
-</tr>
-</tbody>
-</table>
+    <table>
+        <thead>
+        <tr>
+            <th>T0002\hq_cache\block.dat</th>
+            <th>一般板块</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>T0002\hq_cache\block_gn.dat</td>
+                <td>概念板块</td>
+            </tr>
+            <tr>
+                <td>T0002\hq_cache\block_fg.dat</td>
+                <td>风格板块</td>
+            </tr>
+            <tr>
+                <td>T0002\hq_cache\block_zs.dat</td>
+                <td>指数板块</td>
+            </tr>
+        </tbody>
+    </table>
 </div></p>
 <p>数据格式的C语言描述如下：</p>
 <div class="highlight"><pre><span></span><span class="c1">// 股票板块信息文件头格式，T0002/hq_cache/block.dat block_fg.dat block_gn.dat block_zs.dat</span>
@@ -289,457 +262,292 @@ Just MEMO            </a>
 <p>T0002\blocknew\<span class="caps">ZXG</span>.blk</p>
 <p>
 <div class="justtable">
-<table>
-<thead>
-<tr>
-<th>市场,股票代码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1,999999</td>
-</tr>
-<tr>
-<td>0,399001</td>
-</tr>
-<tr>
-<td>0,399005</td>
-</tr>
-<tr>
-<td>0,399006</td>
-</tr>
-<tr>
-<td>1,000016</td>
-</tr>
-<tr>
-<td>1,000300</td>
-</tr>
-<tr>
-<td>0,399330 </td>
-</tr>
-</tbody>
-</table>
+    <table>
+        <thead>
+        <tr>
+            <th>市场</th>
+            <th>股票代码</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>999999</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>399001</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>399005</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>399006</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>000016</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>000300</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>399330</td>
+            </tr>
+        </tbody>
+    </table>
 </div></p>
 <h3 id="tong da xin zi ding yi zhi shu_1">通达信自定义指数</h3>
 <p>记录在文件T0002\hq_cache\tdxzs.cfg中，每行一条记录，每个记录包含6个字段，字段之间用“,”分隔。字段依次为：</p>
 <p>
 <div class="justtable">
-<table>
-<thead>
-<tr>
-<th>指数名称,指数代码,类别<br/>2-通达信行业板块<br/>3-地区板块<br/>4-概念板块<br/>5-风格板块<br/>8-申万行业,未知字段<br/>(都为1),未知字段<br/>(都为0),行业代码或板块代码<br/>a) 类别为2时对应通达信行业代码<br/>b) 类别为3对应地域编号，与base.dbf中的DY字段对应<br/>c) 类别为4对应概念板块名称<br/>d) 类别为5对应风格板块名称<br/>e) 类别为8对应申万行业代码</th></tr></thead></table></div></p>
-
-
-<tbody>
-<tr>
-<td><p>黑龙江,880201,3,1,0,1</p></td>
-</tr>
-<tr>
-<td>新疆板块,880202,3,1,0,2</td>
-</tr>
-<tr>
-<td>吉林板块,880203,3,1,0,3</td>
-</tr>
-<tr>
-<td>甘肃板块,880204,3,1,0,4</td>
-</tr>
-<tr>
-<td>……</td>
-</tr>
-<tr>
-<td>煤炭,880301,2,1,0,T0101</td>
-</tr>
-<tr>
-<td>煤炭开采,880302,2,1,1,T010101</td>
-</tr>
-<tr>
-<td>焦炭加工,880303,2,1,1,T010102</td>
-</tr>
-<tr>
-<td>电力,880305,2,1,0,T0102</td>
-</tr>
-<tr>
-<td>水力发电,880306,2,1,1,T010201 </td>
-</tr>
-</tbody>
-
-
+    <table>
+        <thead>
+        <tr>
+            <th>指数名称</th>
+            <th>指数代码</th>
+            <th>类别<br/>2-通达信行业板块<br/>3-地区板块<br/>4-概念板块<br/>5-风格板块<br/>8-申万行业</th>
+            <th>未知字段<br/>(都为1)</th>
+            <th>未知字段<br/>(都为0)</th>
+            <th>行业代码或板块代码<br/>a) 类别为2时对应通达信行业代码<br/>b) 类别为3对应地域编号，与base.dbf中的DY字段对应<br/>c) 类别为4对应概念板块名称<br/>d) 类别为5对应风格板块名称<br/>e) 类别为8对应申万行业代码</p></th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><p>黑龙江</td>
+                <td>880201</td>
+                <td>3</td>
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>新疆板块</td>
+                <td>880202</td>
+                <td>3</td>
+                <td>1</td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>吉林板块</td>
+                <td>880203</td>
+                <td>3</td>
+                <td>1</td>
+                <td>0</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>甘肃板块</td>
+                <td>880204</td>
+                <td>3</td>
+                <td>1</td>
+                <td>0</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>……</td>
+            </tr>
+            <tr>
+                <td>煤炭</td>
+                <td>880301</td>
+                <td>2</td>
+                <td>1</td>
+                <td>0</td>
+                <td>T0101</td>
+            </tr>
+            <tr>
+                <td>煤炭开采</td>
+                <td>880302</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>T010101</td>
+            </tr>
+            <tr>
+                <td>焦炭加工</td>
+                <td>880303</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>T010102</td>
+            </tr>
+            <tr>
+                <td>电力</td>
+                <td>880305</td>
+                <td>2</td>
+                <td>1</td>
+                <td>0</td>
+                <td>T0102</td>
+            </tr>
+            <tr>
+                <td>水力发电</td>
+                <td>880306</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>T010201</td>
+            </tr>
+        </tbody>
+    </table>
+</div></p>
 <h3 id="mei ge gu piao dui ying de shen mo xing ye he tong da xin xing ye">每个股票对应的申万行业和通达信行业</h3>
 <p>记录在文件T0002\hq_cache\tdxhy.cfg中：</p>
 <p>
 <div class="justtable">
-<table>
-<thead>
-<tr>
-<th>市场,股票代码,通达信新行业代码,申万行业代码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0,000001,T1001,440101</td>
-</tr>
-<tr>
-<td>0,000002,T110201,430101</td>
-</tr>
-<tr>
-<td>0,000004,T040502,370301</td>
-</tr>
-<tr>
-<td>0,000005,T110202,430101</td>
-</tr>
-<tr>
-<td>0,000006,T110202,430101</td>
-</tr>
-<tr>
-<td>0,000007,T0604,460201</td>
-</tr>
-<tr>
-<td>0,000008,T1301,510101</td>
-</tr>
-<tr>
-<td>0,000009,T110201,430101</td>
-</tr>
-<tr>
-<td>0,000010,T110101,250202</td>
-</tr>
-<tr>
-<td>0,000011,T110202,430101</td>
-</tr>
-<tr>
-<td>0,000012,T020603,250101</td>
-</tr>
-<tr>
-<td>0,000014,T110201,430101 </td>
-</tr>
-</tbody>
-</table>
+    <table>
+        <thead>
+        <tr>
+            <th>市场</th>
+            <th>股票代码</th>
+            <th>通达信新行业代码</th>
+            <th>申万行业代码</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>000001</td>
+                <td>T1001</td>
+                <td>440101</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>000002</td>
+                <td>T110201</td>
+                <td>430101</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>000004</td>
+                <td>T040502</td>
+                <td>370301</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>000005</td>
+                <td>T110202</td>
+                <td>430101</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>000006</td>
+                <td>T110202</td>
+                <td>430101</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>000007</td>
+                <td>T0604</td>
+                <td>460201</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>000008</td>
+                <td>T1301</td>
+                <td>510101</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>000009</td>
+                <td>T110201</td>
+                <td>430101</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>000010</td>
+                <td>T110101</td>
+                <td>250202</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>000011</td>
+                <td>T110202</td>
+                <td>430101</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>000012</td>
+                <td>T020603</td>
+                <td>250101</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>000014</td>
+                <td>T110201</td>
+                <td>430101</td>
+            </tr>
+        </tbody>
+    </table>
 </div></p>
-
-<!-- /.entry-content -->
-<section class="well" id="related-posts">
-<h4>Related Posts:</h4>
-<ul>
-<li><a href="./tong-da-xin-shi-yong.html">通达信使用</a></li>
-<li><a href="./wo-de-tong-da-xin-gong-shi.html">我的通达信公式</a></li>
-<li><a href="./tong-da-xin-gong-shi-shou-ce.html">通达信公式手册</a></li>
-<li><a href="./cron.html">Cron</a></li>
-<li><a href="./devices.html">Devices</a></li>
+            
+            
+            <hr/>
+<section>
+    <h2>Related Posts</h2>
+<ul class="related-posts-list">
+<li><a href="./samba.html" title="Samba">Samba</a></li>
+<li><a href="./xetexlatexxelatex.html" title="Xetex/Latex/Xelatex">Xetex/Latex/Xelatex</a></li>
+<li><a href="./php-fpm.html" title="Php-fpm">Php-fpm</a></li>
+<li><a href="./latex-demos-and-templates.html" title="Latex Demos and Templates">Latex Demos and Templates</a></li>
+<li><a href="./develop-pelican-plugin.html" title="Develop Pelican Plugin">Develop Pelican Plugin</a></li>
 </ul>
+<hr />
 </section>
-<hr/>
-<!-- Shariff Button BEGIN -->
-<div class="shariff" data-orientation="" data-url="./tong-da-xin-shu-ju.html"></div>
-<!-- Shariff Button END -->
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2017-09-05T18:18:00+08:00">Sep 5, 2017</time>
 
+<h4>Last Updated</h4>
+<time datetime="2017-09-05T18:18:00+08:00">Sep 5, 2017</time>
 
-
-<div class="col-sm-3" id="sidebar">
-<aside>
-<section class="well well-sm">
-<ul class="list-group list-group-flush">
-<li class="list-group-item"><a href="./"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-<ul class="list-group list-inline tagcloud" id="tags">
-<li class="list-group-item tag-2">
-<a href="./tag/apache.html">
-                            apache
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/automator.html">
-                            automator
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/bai-du-wang-pan.html">
-                            百度网盘
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/bitcoin-blockchain.html">
-                            bitcoin blockchain
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/cao-zuo.html">
-                            操作
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/chan-lun.html">
-                            缠论
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/chan-lun-108ke.html">
-                            缠论108课
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/chan-lun-stock.html">
-                            缠论stock
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/dns.html">
-                            dns
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/english.html">
-                            english
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/future.html">
-                            future
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/futures.html">
-                            futures
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/gentoo.html">
-                            Gentoo
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/gentoo-wifi.html">
-                            Gentoo wifi
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/git.html">
-                            git
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/hexo.html">
-                            hexo
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/image.html">
-                            image
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/iphone.html">
-                            iphone
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/iptables.html">
-                            iptables
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/life.html">
-                            life
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/linux.html">
-                            linux
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/linux-print.html">
-                            linux print
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/mac.html">
-                            mac
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/matplotlib.html">
-                            matplotlib
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/mongodb.html">
-                            mongodb
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/movies.html">
-                            Movies
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/mysql.html">
-                            mysql
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/network.html">
-                            network
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/nginx.html">
-                            nginx
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/pandas.html">
-                            pandas
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/perl.html">
-                            perl
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/python.html">
-                            python
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/qi-huo.html">
-                            期货
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/quanta.html">
-                            quanta
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/shell.html">
-                            shell
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/shu-fa.html">
-                            书法
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/stock.html">
-                            stock
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/tech.html">
-                            tech
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/tech-php-nginx.html">
-                            tech php nginx
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/tong-da-xin.html">
-                            通达信
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/trading_digest.html">
-                            trading_digest
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/vim.html">
-                            vim
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/virtualbox.html">
-                            virtualbox
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/webserver.html">
-                            webserver
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/windows.html">
-                            windows
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/xiao-lu.html">
-                            效率
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/xiu-xin.html">
-                            修心
-                        </a>
-</li>
-</ul>
-</li>
-<li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-<ul class="list-group" id="social">
-<li class="list-group-item"><a href="https://slashdot.org/"><i class="fa fa-it新闻slashdot-square fa-lg"></i> IT新闻Slashdot</a></li>
-</ul>
-</li>
-<li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-<ul class="list-group" id="links">
-<li class="list-group-item">
-<a href="https://uqer.io/home/" target="_blank">
-                量化平台：优矿
-            </a>
-</li>
-<li class="list-group-item">
-<a href="https://www.joinquant.com/" target="_blank">
-                量化平台：聚宽
-            </a>
-</li>
-<li class="list-group-item">
-<a href="https://slashdot.org/" target="_blank">
-                IT新闻Slashdot
-            </a>
-</li>
-<li class="list-group-item">
-<a href="http://www.solidot.org/" target="_blank">
-                IT新闻Solidot
-            </a>
-</li>
-<li class="list-group-item">
-<a href="https://zhuanlan.zhihu.com/p/25608762" target="_blank">
-                Python资源全汇总
-            </a>
-</li>
-</ul>
-</li>
-</ul>
-</section>
-</aside>
+            <h4>Category</h4>
+            <a class="category-link" href="./categories.html#tech-ref">Tech</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="./tags.html#tech-ref">tech
+                    <span>77</span>
+</a></li>
+                <li><a href="./tags.html#tong-da-xin-ref">通达信
+                    <span>6</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="https://slashdot.org/" title="My IT新闻Slashdot Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-it新闻slashdot sidebar-social-links"></i></a>
+        </div>
+        </section>
 </div>
-
-
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
 <footer>
-<div class="container">
-<hr/>
-<div class="row">
-<div class="col-xs-10">© 2018 Walter
-            · Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
-            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
-            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a> </div>
-<div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="https://github.com/Pelican-Elegant/elegant/" title="Theme Elegant Home Page">Elegant</a></li>
+    </ul>
 </div>
-</div>
-</footer>
-<script src="./theme/js/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="./theme/js/bootstrap.min.js"></script>
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="./theme/js/respond.min.js"></script>
-<!-- add shariff support -->
-<script src="./theme/js/shariff.min.js"></script>
-<script src="./theme/js/jquery.bootstrap-autohidingnavbar.min.js"></script>
-<script>$("div.navbar-fixed-top").autoHidingNavbar();</script>
-<script>
-	$(document).ready(function () {
-  		$("div.navbar-fixed-top").autoHidingNavbar('setDisableAutohide', false );
-	});
-</script>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
 
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : MIT -->
+</html>

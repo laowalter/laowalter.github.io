@@ -111,3 +111,10 @@ img.align-right {
     vertical-align: baseline;
     border-radius: .25em;
 }
+
+figcaption{
+    font-size: 55%;
+    color: #BB3A3A;
+    text-align: center;
+}
+

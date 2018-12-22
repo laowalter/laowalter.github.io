@@ -98,6 +98,7 @@ ul.footer-content li {
 table {
     table-layout: fixed;
     width: 100%;
+    border: 1;
 }
 td {
     vertical-align: top;

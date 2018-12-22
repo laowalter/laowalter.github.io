@@ -1,901 +1,194 @@
 <!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Walter" />
+        <meta name="copyright" content="Walter" />
 
-<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
-<head>
-<title>Articles by Walter - Just MEMO</title>
-<!-- Using the latest rendering mode for IE -->
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Walter" name="author">
-<!-- Open Graph tags -->
-<meta content="Just MEMO" property="og:site_name">
-<meta content="website" property="og:type">
-<meta content="Just MEMO" property="og:title"/>
-<meta content=".." property="og:url"/>
-<meta content="Just MEMO" property="og:description"/>
-<!-- Bootstrap -->
-<link href="../theme/css/bootstrap.paper.min.css" rel="stylesheet" type="text/css"/>
-<link href="../theme/css/font-awesome.min.css" rel="stylesheet"/>
-<link href="../theme/css/pygments/default.css" rel="stylesheet"/>
-<link href="../theme/tipuesearch/tipuesearch.css" rel="stylesheet"/>
-<link href="../theme/css/html4css1.css" rel="stylesheet"/>
-<link href="../theme/css/typogrify.css" rel="stylesheet"/>
-<link href="../theme/css/style.css" rel="stylesheet" type="text/css">
-<link href="../static/custom.css" rel="stylesheet"/>
-<link href="../theme/css/shariff/shariff.min.css" rel="stylesheet"/>
-</link></meta></meta></meta></head>
-<body>
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-<div class="container">
-<div class="navbar-header">
-<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
-<span class="sr-only">Toggle navigation</span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-<a class="navbar-brand" href="../">
-Just MEMO            </a>
-</div>
-<div class="collapse navbar-collapse navbar-ex1-collapse">
-<ul class="nav navbar-nav">
-<li><a href="/">Home</a></li>
-<li><a href="/archives.html">Archives</a></li>
-<li><a href="/search.html">Search</a></li>
-<li>
-<a href="../category/chan-lun.html">缠论</a>
-</li>
-<li>
-<a href="../category/eco.html">Eco</a>
-</li>
-<li>
-<a href="../category/futstock.html">Fut&amp;stock</a>
-</li>
-<li>
-<a href="../category/life.html">Life</a>
-</li>
-<li>
-<a href="../category/shu-fa.html">书法</a>
-</li>
-<li>
-<a href="../category/tech.html">Tech</a>
-</li>
-</ul>
-<ul class="nav navbar-nav navbar-right">
-<li><span>
-<form action="/search.html" class="navbar-search">
-<input class="search-query" id="tipue_search_input" name="q" placeholder="Search" required="" type="text"/>
-</form></span>
-</li>
-<li><a href="../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
-</ul>
-</div>
-<!-- /.navbar-collapse -->
-</div>
-</div> <!-- /.navbar -->
-<!-- Banner -->
-<!-- End Banner -->
-<div class="container">
-<div class="row">
-<div class="col-sm-9">
-<article>
-<h2><a href="../kill-gfw.html">Kill-<span class="caps">GFW</span></a></h2>
-<div class="summary"><h2 id="xx-net tools"><span class="caps">XX</span>-Net tools</h2>
-<ul>
-<li>https://github.com/<span class="caps">XX</span>-net/<span class="caps">XX</span>-Net</li>
-<li>https://github.com/yangyangwithgnu/hardseed</li>
-</ul>
-<h3 id="3.13.0 yi shang ban ben sheng ji">3.13.0 以上版本升级</h3>
-<ul>
-<li>
-<p>启动之前远程打开管理功能(0.0.0.0:8085)，并打开0.0.0.0的8087端口</p>
-<ol>
-<li>
-<p>data/launcher/config.yaml的module：</p>
-<ul>
-<li>修改allow_remote_connect: 1</li>
-<li>增加control_ip: 0.0.0.0</li>
-</ul>
-</li>
-<li>
-<p>data/launcher/config.json</p>
-</li>
-</ol>
-</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">"listen_ip"</span><span class="p">:</span> <span class="s2">"0.0.0.0"</span>
-<span class="p">}</span>
-</pre></div>
-<ul>
-<li>启动 …</li></ul>
-<a class="btn btn-default btn-xs" href="../kill-gfw.html">more ...</a>
-</div>
-</article>
-<hr/>
-<article>
-<h2><a href="../wifi-bridge.html">Wifi-Bridge</a></h2>
-<div class="summary"><h2 id="description">Description</h2>
-<ol>
-<li>The device(Mac mini) has a wired(<code>eth0</code>) interface and a wifi(<code>wlan0</code>) interface;</li>
-<li><code>eth0</code> connected to lan with a static ip address, while<code>wlan0</code> is used as an access point(<code>ap</code>);</li>
-<li>Wireless device, such as iphone will  connected to lan through <code>wlan0</code> by access the <code>ap</code></li>
-</ol>
-<h2 id="package prepare">Package prepare …</h2>
-<a class="btn btn-default btn-xs" href="../wifi-bridge.html">more ...</a>
-</div>
-</article>
-<hr/>
-<article>
-<h2><a href="../mac-mini-gentoo-linux-single-boot-with-kernel-stub-installation.html">Mac-mini Gentoo Linux Single Boot with Kernel Stub Installation</a></h2>
-<div class="summary"><h2 id="mac mini(late 2012) install gentoo linux(single boot, kernel stub)">Mac Mini(late 2012) Install Gentoo Linux(single boot, kernel stub)</h2>
-<h3 id="usb"><span class="caps">USB</span></h3>
-<ol>
-<li>Download <a href="https://www.gentoo.org/downloads/">admin iso</a></li>
-<li><a href="https://business.tutsplus.com/tutorials/how-to-create-a-bootable-ubuntu-usb-drive-for-mac-in-os-x--cms-21253">Create Linux bootable usb stick</a></li>
-</ol>
-<h3 id="partiton (gpt must)">Partiton (<span class="caps">GPT</span> must)</h3>
-<p>
-<div class="justtable">
-<table>
-<thead>
-<tr>
-<th>Device, Mount Point,Filesystem,Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>/dev/sda1,not mounted,(bootloader),<span class="caps">BIOS</span> boot partition</td>
-</tr>
-<tr>
-<td>/dev/sda2,/boot/efi,fat32,<span class="caps">EFI</span> System Partition (<span class="caps">ESP</span>) where the <span class="caps">EFI</span> files will …</td></tr></tbody></table></div></p>
-<a class="btn btn-default btn-xs" href="../mac-mini-gentoo-linux-single-boot-with-kernel-stub-installation.html">more ...</a>
-</div>
-</article>
-<hr/>
-<article>
-<h2><a href="../devices.html">Devices</a></h2>
-<div class="summary"><h2 id="mac mini">Mac mini</h2>
-<h3 id="linux">Linux</h3>
-<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> 设备清单</div>
-<div class="highlight"><pre><span></span>mini
-    description: Lunch Box Computer
-    product: Macmini6,1 <span class="o">(</span>System SKU#<span class="o">)</span>
-    vendor: Apple Inc.
-    version: <span class="m">1</span>.0
-    serial: C07JG233DWYL
-    width: <span class="m">4294967295</span> bits
-    capabilities: smbios-2.4 dmi-2.4 smp vsyscall32
-    configuration: <span class="nv">boot</span><span class="o">=</span>normal <span class="nv">chassis</span><span class="o">=</span>lunchbox <span class="nv">family</span><span class="o">=</span>Macmini <span class="nv">sku</span><span class="o">=</span>System SKU# <span class="nv">uuid</span><span class="o">=</span>DCB7B2B4-68E8-025F-868F-EEAA28F047DF
-  *-core
-       description: Motherboard
-       product: Mac-031AEE4D24BFF0B1 …</pre></div>
-<a class="btn btn-default btn-xs" href="../devices.html">more ...</a>
-</div>
-</article>
-<hr/>
-<article>
-<h2><a href="../mountwindow.html">MountWindow</a></h2>
-<div class="summary"><h2 id="on mac system">On <span class="caps">MAC</span> System</h2>
-<h3 id="keep network drives mounted on mac os x using autofs">Keep Network Drives Mounted on Mac <span class="caps">OS</span> X using Autofs</h3>
-<p><a href="http://blog.grapii.com/2015/06/keep-network-drives-mounted-on-mac-os-x-using-autofs">Copy from</a></p>
-<h4 id="edit /etc/auto_master">Edit /etc/auto_master</h4>
-<p>/mnt/cifs is home of mount point</p>
-<div class="highlight"><pre><span></span># Automounter master map
-#
-+auto_master        # Use directory service
-/net            -hosts      -nobrowse,hidefromfinder,nosuid
-/home           auto_home   -nobrowse,hidefromfinder
-/Network/Servers    -fstab
-/-          -static
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
 
-/mnt/cifs   auto_nas
-</pre></div>
-<h4 id="edit /etc/auto_nas">Edit /etc …</h4>
-<a class="btn btn-default btn-xs" href="../mountwindow.html">more ...</a>
-</div>
-</article>
-<hr/>
-<article>
-<h2><a href="../topo.html">Topo</a></h2>
-<div class="summary"><h3 id="network config">Network config</h3>
-<p>
-<div class="justtable">
-<table>
-<thead>
-<tr>
-<th>192.168.1.1,电信网关 </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>192.168.1.2, Mac-Mini-Linux eth1</td>
-</tr>
-<tr>
-<td>192.168.0.199, Mac-Mini-Linux eth0</td>
-</tr>
-<tr>
-<td>192.168.0.1, 移动网关</td>
-</tr>
-<tr>
-<td>192.168.0.2, lhome 路由器</td>
-</tr>
-<tr>
-<td>192.168.0.5, ghome1 路由器</td>
-</tr>
-<tr>
-<td>192.168.0.9, ghome3 路由器(目前是布法罗路由器)</td>
-</tr>
-<tr>
-<td>192.168.0.131, 扩展点1 </td>
-</tr>
-<tr>
-<td>192.168 …</td></tr></tbody></table></div></p>
-<a class="btn btn-default btn-xs" href="../topo.html">more ...</a>
-</div>
-</article>
-<hr/>
-<article>
-<h2><a href="../tong-da-xin-fu-quan-mo-xing.html">通达信复权模型</a></h2>
-<div class="summary"><p>通达信复权模型是建立在”股东财富不变”的原则上的。</p>
-<p>交易所依据”股东财富不变”原则制定除权除息报价计算公式,目前沪深交易所除权除息报价的基本公式如下(在具体操作中可能会有所变动): 除权(息)报价＝[(前收盘价-现金红利)＋配(新)股价格×流通股份变动比例]÷(1＋流通股份变动比例)</p>
-<p>通达信复权分为向前复权和向后复权:
-向前复权,就是保持现有价位不变,将以前的价格缩减,将除权前的K线向下平移,使图形吻合,保持股价走势的连续性。
-向后复权,就是保持先前的价格不变,而将以后的价格增加。上面的例子采用的就是向后复权。 两者最明显的区别在于向前复权的当前周期报价和K线显示价格完全一致,而向后复权的报价大多低于K线显示价格。例如,某只股票当前价格10元,在这之前曾经每10股送10股,前者除权后的价格仍是10元,后者则为20元。</p>
-<p>复权是根据上市公司的权益分派、公积金转增股本、配股等情况和交易所的除权报价方案精确计算复权价格。其计算公式:</p>
-<p>前复权:复权后价格＝[(复权前价格-现金红利)＋配(新)股价格×流通股份变动比例]÷(1＋流通股份变动比例) 后复权 …</p>
-<a class="btn btn-default btn-xs" href="../tong-da-xin-fu-quan-mo-xing.html">more ...</a>
-</div>
-</article>
-<hr/>
-<article>
-<h2><a href="../ssh.html">Ssh</a></h2>
-<div class="summary"><h2 id="ssh agent">ssh agent</h2>
-<h3 id=".bashrc guan yu sshbu fen">.bashrc 关于ssh部分</h3>
-<div class="highlight"><pre><span></span><span class="c1"># SSH agent</span>
-<span class="k">if</span> <span class="o">[</span> ! -S ~/.ssh/ssh_auth_sock <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="nb">eval</span> <span class="sb">`</span>ssh-agent<span class="sb">`</span>
-  ln -sf <span class="s2">"</span><span class="nv">$SSH_AUTH_SOCK</span><span class="s2">"</span> ~/.ssh/ssh_auth_sock
-<span class="k">fi</span>
-<span class="nb">export</span> <span class="nv">SSH_AUTH_SOCK</span><span class="o">=</span>~/.ssh/ssh_auth_sock
-ssh-add -l &gt; /dev/null <span class="o">||</span> ssh-add
-</pre></div>
-<h2 id="putty_1">Putty</h2>
-<ul>
-<li>第一步运行PuttyGen</li>
-</ul>
-<p><img alt="Putty" class="img-fluid" src="../images/tech/putty-windows-1.png"/></p>
-<ul>
-<li>第二步把上面的ssh rsa 拷贝到远程机器账户的</li>
-</ul>
-<p>远程机器 ~/.ssh/authorized_keys</p>
-<p><img alt="Putty" class="img-fluid" src="../images/tech/putty-windows-2.png"/></p>
-<ul>
-<li>第三步pageant Right Click，add key 选择私匙</li>
-</ul>
-<p><img alt="Putty" class="img-fluid" src="../images/tech/putty-windows-3.png"/></p>
-<ul>
-<li>设置每次开机自动运行pageant，并自动add key<ul>
-<li>create shortcut “C:\Program Files …</li></ul></li></ul>
-<a class="btn btn-default btn-xs" href="../ssh.html">more ...</a>
-</div>
-</article>
-<hr/>
-<article>
-<h2><a href="../bokeh.html">Bokeh</a></h2>
-<div class="summary"><h2 id="bokeh">Bokeh</h2>
-<h3 id="bokeh server for nginx">Bokeh Server for Nginx</h3>
-<div class="highlight"><pre><span></span>bokeh serve --allow-websocket-origin<span class="o">=</span><span class="m">192</span>.168.0.202:8080 a_directory
-</pre></div>
-<ol>
-<li>If add —show will start a local default browser.</li>
-<li>Above 192.168.0.202:8080 is the nginx serice port.</li>
-<li>a_directory must have a file named: <code>main.py</code></li>
-</ol>
-<h3 id="nginx">Nginx</h3>
-<p>/etc/nginx/nginx.conf</p>
-<div class="highlight"><pre><span></span><span class="k">server</span> <span class="p">{</span>
-     <span class="kn">listen</span> <span class="n">192 …</span></pre></div>
-<a class="btn btn-default btn-xs" href="../bokeh.html">more ...</a>
-</div>
-</article>
-<hr/>
-<article>
-<h2><a href="../tong-da-xin-shu-ju.html">通达信数据</a></h2>
-<div class="summary"><h2 id="tong da xin shu ju jie gou jie xi">通达信数据结构解析</h2>
-<h3 id="tong da xin zi ding yi zhi shu">通达信自定义指数</h3>
-<ol>
-<li>相关文件：</li>
-</ol>
-<p>
-<div class="justtable">
-<table>
-<thead>
-<tr>
-<th>incon.dat,证监会行业、通达信新行业、申万行业等描述信息</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>T0002\hq_cache\block.dat,一般板块</td>
-</tr>
-<tr>
-<td>T0002\hq_cache\block_gn.dat,概念板块</td>
-</tr>
-<tr>
-<td>T0002\hq_cache\block_fg.dat,风格板块</td>
-</tr>
-<tr>
-<td>T0002\hq_cache\block_zs.dat,指数板块</td>
-</tr>
-<tr>
-<td>T0002\hq_cache\tdxhy.cfg,每个股票对应通达信行业和申万行业</td>
-</tr>
-<tr>
-<td>T0002\hq_cache\tdxzs.cfg,板块指数，部分板块的最后一个字段映射到incon.dat的TDXNHY和SWHY</td>
-</tr>
-<tr>
-<td>T0002\blocknew\blocknew.cfg,自定义板块概要描述文件 </td>
-</tr>
-</tbody>
-</table>
-</div></p>
-<h3 id="xing ye ban kuai">行业板块</h3>
-<ol>
-<li>
-<p>行业</p>
-<p>行业包括三个类别：证监会行业；申万行业 …</p></li></ol>
-<a class="btn btn-default btn-xs" href="../tong-da-xin-shu-ju.html">more ...</a>
-</div>
-</article>
-<hr/>
-<article>
-<h2><a href="../chan-lun-yi-xie-wen-ti-de-li-jie.html">缠论一些问题的理解</a></h2>
-<div class="summary"><ol>
-<li>特征序列分型合并方向:<ul>
-<li>顶分型：合并方向朝上</li>
-<li>底分型：合并方向朝下</li>
-</ul>
-</li>
-</ol>
-<a class="btn btn-default btn-xs" href="../chan-lun-yi-xie-wen-ti-de-li-jie.html">more ...</a>
-</div>
-</article>
-<hr/>
-<article>
-<h2><a href="../tong-da-xin-shi-yong.html">通达信使用</a></h2>
-<div class="summary"><h3 id="feng ge zhi shu dai ma kuai cha (8808**)">风格指数代码快查(8808**)</h3>
-<p>
-<div class="justtable">
-<table>
-<thead>
-<tr>
-<th>指数名称,操作代码,指数名称,操作代码,指数名称,操作代码,指数名称,操作代码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>基金重仓,880801,QFII重仓,880802,券商重仓,880803</td>
-</tr>
-<tr>
-<td>大盘股,880821,中盘股,880822,小盘股,880823</td>
-</tr>
-<tr>
-<td>低市盈率,880828,中市盈率,880828,高市盈率,880827</td>
-</tr>
-<tr>
-<td>行业龙头,880847,活跃股指,880837</td>
-</tr>
-<tr>
-<td>绩优股,880835,微利股,880834,预计扭亏,880844,业绩预升,880843</td>
-</tr>
-<tr>
-<td>中字头,880853,两年新股,880870</td>
-</tr>
-<tr>
-<td>定增预案,880850,定增获准,880855, 定增实施,880856 …</td></tr></tbody></table></div></p>
-<a class="btn btn-default btn-xs" href="../tong-da-xin-shi-yong.html">more ...</a>
-</div>
-</article>
-<hr/>
-<article>
-<h2><a href="../dailyoperation.html">DailyOperation</a></h2>
-<div class="summary"><h3 id="tong da xin bei fen yu hui fu">通达信备份与回复</h3>
-<p>
-<div class="justtable">
-<table>
-<thead>
-<tr>
-<th>说明,位置/操作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>通达信公式备份的位置,E:\股票\tongdaxin\</td>
-</tr>
-<tr>
-<td>克隆通达信公式,git clone ssh://git@mini/~/tongdaxin.git </td>
-</tr>
-</tbody>
-</table>
-</div></p>
-<a class="btn btn-default btn-xs" href="../dailyoperation.html">more ...</a>
-</div>
-</article>
-<hr/>
-<article>
-<h2><a href="../chan-lun-zong-jie.html">缠论总结</a></h2>
-<div class="summary"><h3 id="guan yu ji bie :">关于级别：</h3>
-<ol>
-<li>
-<p>中枢从大看小，还是从小看大 中枢的定义是指次级别三段走势重叠。缠师在操作角度上看中枢是从小到大，这有实战意义。在一个级别的图中，可以看到本笔之上的两个级别。</p>
-<p>在1F图上，可以直观的看清30F的一笔；</p>
-</li>
-<li>
-<p>操作30F的一笔，从1F图中看更加清晰；</p>
-</li>
-<li>
-<p>级别动态变化处理：</p>
-<ol>
-<li>减半仓，降低成本；</li>
-<li>在二卖出现时清仓；</li>
-<li>再次接入时，用1/4仓，不再加仓；</li>
-</ol>
-</li>
-</ol>
-<p><img alt="Alt Text" class="img-fluid" src="../images/stock/leveldyn1.png"/>
-<img alt="Alt Text" class="img-fluid" src="../images/stock/leveldyn2.png"/></p>
-<h3 id="wei wan cheng zou shi :">未完成走势：</h3>
-<ol>
-<li>在橙色处，走势未完成，而后面没创新高，有可能出现段的结束, 在小于操作级别时，可以减仓。</li>
-<li>2卖其实在很多时候比1卖还好。</li>
-</ol>
-<p><img alt="Alt Text" class="img-fluid" src="../images/stock/unfinished.png"/></p>
-<a class="btn btn-default btn-xs" href="../chan-lun-zong-jie.html">more ...</a>
-</div>
-</article>
-<hr/>
-<article>
-<h2><a href="../shu-fa-da-zi-dian-ping-tai.html">书法大字典平台</a></h2>
-<div class="summary"><h3 id="wei xin gong zhong ping tai an quan mo shi xiao xi ti qian ming ji jia jie mi phpdai ma shi li"><a href="http://www.tk4479.net/muziduoxi/article/details/42024169">微信公众平台安全模式消息体签名及加解密PHP代码示例</a></h3>
-<h3 id="add certs">Add certs</h3>
-<ol>
-<li><a href="https://cloud.tencent.com/product/ssl?lang=en">从腾讯购买SSL证书</a></li>
-<li>上传证书证书
+<meta property="og:title" content="Just MEMO"/>
+<meta name="twitter:title" content="Just MEMO">
+<meta property="og:url" content=".." />
+<meta property="og:site_name" content="Just MEMO" />
+<meta property="og:article:author" content="Walter" />
+        <title>Just MEMO - Articles by Walter</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../theme/css/custom.css" media="screen">
 
-<div class="justtable">
-<table>
-<thead>
-<tr>
-<th>/etc/apache2/ssl/, www.eliglad.com.crt www.eliglad.com.key</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>/etc/apache2/ssl.crt/, bundle.crt </td>
-</tr>
-</tbody>
-</table>
-</div></li>
-<li>在服务器上修改 配置文件 /etc/apache2/apache.conf</li>
-</ol>
-<p>/etc/apache2/sites-available/default-ssl.conf</p>
-<div class="highlight"><pre><span></span>SSLEngine on
-SSLCertificateFile      /etc/apache2/ssl/2_www.eliglad.com.crt
-SSLCertificateKeyFile   /etc/apache2/ssl/3_www.eliglad.com …</pre></div>
-<a class="btn btn-default btn-xs" href="../shu-fa-da-zi-dian-ping-tai.html">more ...</a>
-</div>
-</article>
-<hr/>
-<article>
-<h2><a href="../yi-mai-cao-zuo.html">一买操作</a></h2>
-<div class="summary"><h2 id="yi mai cao zuo">一买操作</h2>
-<ol>
-<li>第一类买卖点是缠论买卖点的核心，第二、三类买卖点都是此级别的第一类买点。</li>
-<li>操作级别上的不同，在大小，应该有所不同定操作级别</li>
-</ol>
-<a class="btn btn-default btn-xs" href="../yi-mai-cao-zuo.html">more ...</a>
-</div>
-</article>
-<hr/>
-<article>
-<h2><a href="../matplotlib.html">Matplotlib</a></h2>
-<div class="summary"><h2 id="matplot chinese font">Matplot chinese font</h2>
-<ol>
-<li>Problem </li>
-</ol>
-<p>/home/walter/.virtualenv/python3/lib/python3.6/site-packages/matplotlib/font_manager.py:1316: UserWarning: findfont: Font family [‘sans-serif’] not found. Falling back to DejaVu Sans
-  (prop.get_family(), self.defaultFamily[fontext]))</p>
-<ol>
-<li>Add Chinese font<ul>
-<li>Add font to system</li>
-</ul>
-</li>
-</ol>
-<div class="highlight"><pre><span></span>cp simhei.ttf /usr/share/fonts/ttfs/
-fc-cache -fv
-    * Add …</pre></div>
-<a class="btn btn-default btn-xs" href="../matplotlib.html">more ...</a>
-</div>
-</article>
-<hr/>
-<article>
-<h2><a href="../nginx.html">nginx</a></h2>
-<div class="summary"><h2 id="nginx on gentoo">Nginx on Gentoo</h2>
-<p>/etc/nginx/nginx.conf</p>
-<div class="highlight"><pre><span></span><span class="k">server</span> <span class="p">{</span>
-    <span class="kn">listen</span> <span class="n">192.168.0.202</span><span class="p">:</span><span class="mi">80</span><span class="p">;</span>
-    <span class="kn">server_name</span> <span class="s">gentoo</span><span class="p">;</span>
-    <span class="kn">charset</span> <span class="s">utf-8</span><span class="p">;</span>
-    <span class="kn">autoindex</span> <span class="no">on</span><span class="p">;</span> <span class="c1">#开启nginx目录浏览功能</span>
-    <span class="kn">autoindex_exact_size</span> <span class="no">off</span><span class="p">;</span> <span class="c1">#文件大小从KB开始显示</span>
-    <span class="kn">autoindex_localtime</span> <span class="no">on</span><span class="p">;</span> <span class="c1">#显示文件修改时间为服务器本地时间</span>
-    <span class="kn">access_log</span> <span class="s">/var/log/nginx/localhost.access_log</span> <span class="s">main</span><span class="p">;</span>
-    <span class="kn">error_log</span> <span class="s">/var/log/nginx/localhost.error_log</span> <span class="s">info</span><span class="p">;</span>
 
-    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
-        <span class="kn">root</span> <span class="s">/home/walter/K</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="k">server</span> <span class="p">{</span>
-    <span class="kn">listen</span> <span class="n">192.168 …</span></pre></div>
-<a class="btn btn-default btn-xs" href="../nginx.html">more ...</a>
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="../"><span class=site-name>Just MEMO</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="..">Home</a></li>
+                            <li ><a href="../categories.html">Categories</a></li>
+                            <li ><a href="../tags.html">Tags</a></li>
+                            <li ><a href="../archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="../search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<div class="row-fluid">
+
+    <div class="row-fluid">
+
+    </div>
+
+    <div class="row-fluid">
+        <div class="span8 offset2">
+            <header>
+            <h1 id="recent-posts">Recent Posts <a id="allposts" href="../archives.html">all posts</a></h1>
+            </header>
+        <div class="recent-posts">
+            <article>
+                <a href="../develop-pelican-plugin.html">Develop Pelican&nbsp;Plugin  </a>
+                <section>
+                    posted in
+                <a href="../categories.html#tech-ref">Tech</a>
+                <div class="recent-posts-time">
+                <time pubdate="pubdate" datetime="2018-12-21T23:23:04+08:00">Fri 21 December 2018</time>
+                </div>
+                </section>
+            </article>
+            <article>
+                <a href="../qi-huo-ri-nei-jiao-yi.html">期货日内交易  </a>
+                <section>
+                    posted in
+                <a href="../categories.html#futstock-ref">Fut&Stock</a>
+                <div class="recent-posts-time">
+                <time pubdate="pubdate" datetime="2018-12-21T15:14:16+08:00">Fri 21 December 2018</time>
+                </div>
+                </section>
+            </article>
+            <article>
+                <a href="../test.html">test  </a>
+                <section>
+                    posted in
+                <a href="../categories.html#misc-ref">misc</a>
+                <div class="recent-posts-time">
+                <time pubdate="pubdate" datetime="2018-12-21T15:14:16+08:00">Fri 21 December 2018</time>
+                </div>
+                </section>
+            </article>
+            <article>
+                <a href="../qi-huo-jiao-yi-ji-ben-xin-xi.html">期货交易基本信息  </a>
+                <section>
+                    posted in
+                <a href="../categories.html#futstock-ref">Fut&Stock</a>
+                <div class="recent-posts-time">
+                <time pubdate="pubdate" datetime="2018-12-20T11:53:37+08:00">Thu 20 December 2018</time>
+                </div>
+                </section>
+            </article>
+            <article>
+                <a href="../latex-demos-and-templates.html">Latex Demos and&nbsp;Templates  </a>
+                <section>
+                    posted in
+                <a href="../categories.html#tech-ref">Tech</a>
+                <div class="recent-posts-time">
+                <time pubdate="pubdate" datetime="2018-12-14T16:16:19+08:00">Fri 14 December 2018</time>
+                </div>
+                </section>
+            </article>
+            <article>
+                <a href="../qi-huo-wen-zhai.html">期货文摘  </a>
+                <section>
+                    posted in
+                <a href="../categories.html#futstock-ref">Fut&Stock</a>
+                <div class="recent-posts-time">
+                <time pubdate="pubdate" datetime="2018-12-11T21:29:20+08:00">Tue 11 December 2018</time>
+                </div>
+                </section>
+            </article>
+            <article>
+                <a href="../shi-yong-shou-ce.html">使用手册  </a>
+                <section>
+                    posted in
+                <a href="../categories.html#life-ref">Life</a>
+                <div class="recent-posts-time">
+                <time pubdate="pubdate" datetime="2018-12-11T10:28:19+08:00">Tue 11 December 2018</time>
+                </div>
+                </section>
+            </article>
+            <article>
+                <a href="../ri-nei-jiao-yi-cheng-gong-jing-yan.html">日内交易成功经验  </a>
+                <section>
+                    posted in
+                <a href="../categories.html#futstock-ref">Fut&Stock</a>
+                <div class="recent-posts-time">
+                <time pubdate="pubdate" datetime="2018-12-05T10:37:33+08:00">Wed 05 December 2018</time>
+                </div>
+                </section>
+            </article>
+            <article>
+                <a href="../php-fpm.html">Php-fpm  </a>
+                <section>
+                    posted in
+                <a href="../categories.html#tech-ref">Tech</a>
+                <div class="recent-posts-time">
+                <time pubdate="pubdate" datetime="2018-12-02T11:45:29+08:00">Sun 02 December 2018</time>
+                </div>
+                </section>
+            </article>
+            <article>
+                <a href="../xetexlatexxelatex.html">Xetex/Latex/Xelatex  </a>
+                <section>
+                    posted in
+                <a href="../categories.html#tech-ref">Tech</a>
+                <div class="recent-posts-time">
+                <time pubdate="pubdate" datetime="2018-11-22T21:44:41+08:00">Thu 22 November 2018</time>
+                </div>
+                </section>
+            </article>
+        </div>
+        </div>
+    </div>
 </div>
-</article>
-<hr/>
-<article>
-<h2><a href="../wo-de-tong-da-xin-gong-shi.html">我的通达信公式</a></h2>
-<div class="summary">
-<a class="btn btn-default btn-xs" href="../wo-de-tong-da-xin-gong-shi.html">more ...</a>
-</div>
-</article>
-<hr/>
-<article>
-<h2><a href="../tong-da-xin-gong-shi-shou-ce.html">通达信公式手册</a></h2>
-<div class="summary"><h2 id="yin yong han shu">引用函数</h2>
-<p>1．<span class="caps">DRAWNULL</span> 无效数</p>
-<p>返回无效数。</p>
-<p>用法： <span class="caps">DRAWNULL</span></p>
-<p>例如：<span class="caps">IF</span>(<span class="caps">CLOSE</span>&gt;<span class="caps">REF</span>(<span class="caps">CLOSE</span>，1)，<span class="caps">CLOSE</span>，<span class="caps">DRAWNULL</span>)表示下跌时分析图上不画线。</p>
-<p>2．<span class="caps">BACKSET</span> 向前赋值</p>
-<p>将当前位置到若干周期前的数据设为1。</p>
-<p>用法：<span class="caps">BACKSET</span>(X，N)若X非0，则将当前位置到N周期前的数值设为1。</p>
-<p>例如：<span class="caps">BACKSET</span>(<span class="caps">CLOSE</span>&gt;<span class="caps">OPEN</span>，2)若收阳则将该周期及前一周期数值设为1，否则为0。</p>
-<p>3．<span class="caps">BARSCOUNT</span> 有效数据周期数</p>
-<p>求总的周期数。</p>
-<p>用法：<span class="caps">BARSCOUNT</span>(X)第一个有效数据到当前的天数。</p>
-<p>例如：<span class="caps">BARSCOUNT</span>(<span class="caps">CLOSE</span>)对于日线数据取得上市以来总交易日数，对于分笔成交取得当日成交笔数，对于1分钟线取得当日交易分钟数。</p>
-<p>4．<span class="caps">CURRBARSCOUNT</span> 到最后交易日的周期数 …</p>
-<a class="btn btn-default btn-xs" href="../tong-da-xin-gong-shi-shou-ce.html">more ...</a>
-</div>
-</article>
-<hr/>
-<ul class="pagination">
-<li class="prev"><a href="../author/walter4.html">«</a>
-</li>
-<li class=""><a href="../author/walter.html">1</a></li>
-<li class=""><a href="../author/walter2.html">2</a></li>
-<li class=""><a href="../author/walter3.html">3</a></li>
-<li class=""><a href="../author/walter4.html">4</a></li>
-<li class="active"><a href="../author/walter5.html">5</a></li>
-<li class=""><a href="../author/walter6.html">6</a></li>
-<li class=""><a href="../author/walter7.html">7</a></li>
-<li class=""><a href="../author/walter8.html">8</a></li>
-<li class=""><a href="../author/walter9.html">9</a></li>
-<li class=""><a href="../author/walter10.html">10</a></li>
-<li class=""><a href="../author/walter11.html">11</a></li>
-<li class=""><a href="../author/walter12.html">12</a></li>
-<li class=""><a href="../author/walter13.html">13</a></li>
-<li class="next"><a href="../author/walter6.html">»</a></li>
-</ul>
-</div>
-<div class="col-sm-3" id="sidebar">
-<aside>
-<section class="well well-sm">
-<ul class="list-group list-group-flush">
-<li class="list-group-item"><a href="../"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-<ul class="list-group list-inline tagcloud" id="tags">
-<li class="list-group-item tag-2">
-<a href="../tag/apache.html">
-                            apache
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/automator.html">
-                            automator
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/bai-du-wang-pan.html">
-                            百度网盘
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/bitcoin-blockchain.html">
-                            bitcoin blockchain
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/cao-zuo.html">
-                            操作
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="../tag/chan-lun.html">
-                            缠论
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/chan-lun-108ke.html">
-                            缠论108课
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="../tag/chan-lun-stock.html">
-                            缠论stock
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/dns.html">
-                            dns
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/english.html">
-                            english
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="../tag/future.html">
-                            future
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/futures.html">
-                            futures
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/gentoo.html">
-                            Gentoo
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/gentoo-wifi.html">
-                            Gentoo wifi
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="../tag/git.html">
-                            git
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/hexo.html">
-                            hexo
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/image.html">
-                            image
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/iphone.html">
-                            iphone
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/iptables.html">
-                            iptables
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/life.html">
-                            life
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="../tag/linux.html">
-                            linux
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/linux-print.html">
-                            linux print
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="../tag/mac.html">
-                            mac
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/matplotlib.html">
-                            matplotlib
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="../tag/mongodb.html">
-                            mongodb
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/movies.html">
-                            Movies
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="../tag/mysql.html">
-                            mysql
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/network.html">
-                            network
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/nginx.html">
-                            nginx
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="../tag/pandas.html">
-                            pandas
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="../tag/perl.html">
-                            perl
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="../tag/python.html">
-                            python
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/qi-huo.html">
-                            期货
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="../tag/quanta.html">
-                            quanta
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/shell.html">
-                            shell
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="../tag/shu-fa.html">
-                            书法
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="../tag/stock.html">
-                            stock
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="../tag/tech.html">
-                            tech
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/tech-php-nginx.html">
-                            tech php nginx
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="../tag/tong-da-xin.html">
-                            通达信
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/trading_digest.html">
-                            trading_digest
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/vim.html">
-                            vim
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/virtualbox.html">
-                            virtualbox
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/webserver.html">
-                            webserver
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="../tag/windows.html">
-                            windows
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/xiao-lu.html">
-                            效率
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="../tag/xiu-xin.html">
-                            修心
-                        </a>
-</li>
-</ul>
-</li>
-<li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-<ul class="list-group" id="social">
-<li class="list-group-item"><a href="https://slashdot.org/"><i class="fa fa-it新闻slashdot-square fa-lg"></i> IT新闻Slashdot</a></li>
-</ul>
-</li>
-<li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-<ul class="list-group" id="links">
-<li class="list-group-item">
-<a href="https://uqer.io/home/" target="_blank">
-                量化平台：优矿
-            </a>
-</li>
-<li class="list-group-item">
-<a href="https://www.joinquant.com/" target="_blank">
-                量化平台：聚宽
-            </a>
-</li>
-<li class="list-group-item">
-<a href="https://slashdot.org/" target="_blank">
-                IT新闻Slashdot
-            </a>
-</li>
-<li class="list-group-item">
-<a href="http://www.solidot.org/" target="_blank">
-                IT新闻Solidot
-            </a>
-</li>
-<li class="list-group-item">
-<a href="https://zhuanlan.zhihu.com/p/25608762" target="_blank">
-                Python资源全汇总
-            </a>
-</li>
-</ul>
-</li>
-</ul>
-</section>
-</aside>
-</div>
-</div>
-</div>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
 <footer>
-<div class="container">
-<hr/>
-<div class="row">
-<div class="col-xs-10">© 2018 Walter
-            · Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
-            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
-            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a> </div>
-<div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="https://github.com/Pelican-Elegant/elegant/" title="Theme Elegant Home Page">Elegant</a></li>
+    </ul>
 </div>
-</div>
-</footer>
-<script src="../theme/js/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../theme/js/bootstrap.min.js"></script>
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="../theme/js/respond.min.js"></script>
-<script src="../theme/js/jquery.bootstrap-autohidingnavbar.min.js"></script>
-<script>$("div.navbar-fixed-top").autoHidingNavbar();</script>
-<script>
-	$(document).ready(function () {
-  		$("div.navbar-fixed-top").autoHidingNavbar('setDisableAutohide', false );
-	});
-</script>
-</body>
+</footer>        <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : MIT -->
 </html>

@@ -1,139 +1,137 @@
 <!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Walter" />
+        <meta name="copyright" content="Walter" />
 
-<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
-<head>
-<title>博易大师使用及公式 - Just MEMO</title>
-<!-- Using the latest rendering mode for IE -->
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="./bo-yi-da-shi-shi-yong-ji-gong-shi.html" rel="canonical"/>
-<meta content="Walter" name="author">
-<meta content="1.0 公式 1.1 m9 （MACD 变色\面积公式） NO,参数名,类型,缺省值,最小值,最大值,步长 1,SHORT,数值型,12,2,200,0 2,LONG,数值型,26,2,200,0 3,MID,数值型,9,2,200,0 4,ISARROW,数值型,1,0,1,0  DIFF:=EMA(CLOSE,SHORT)-EMA(CLOSE …" name="description">
-<meta content="Just MEMO" property="og:site_name">
-<meta content="article" property="og:type"/>
-<meta content="博易大师使用及公式" property="og:title"/>
-<meta content="./bo-yi-da-shi-shi-yong-ji-gong-shi.html" property="og:url"/>
-<meta content="1.0 公式 1.1 m9 （MACD 变色\面积公式） NO,参数名,类型,缺省值,最小值,最大值,步长 1,SHORT,数值型,12,2,200,0 2,LONG,数值型,26,2,200,0 3,MID,数值型,9,2,200,0 4,ISARROW,数值型,1,0,1,0  DIFF:=EMA(CLOSE,SHORT)-EMA(CLOSE …" property="og:description"/>
-<meta content="2018-09-26" property="article:published_time"/>
-<meta content="Fut&amp;Stock" property="article:section"/>
-<meta content="Walter" property="article:author"/>
-<!-- Bootstrap -->
-<link href="./theme/css/bootstrap.paper.min.css" rel="stylesheet" type="text/css">
-<link href="./theme/css/font-awesome.min.css" rel="stylesheet"/>
-<link href="./theme/css/pygments/default.css" rel="stylesheet"/>
-<link href="./theme/tipuesearch/tipuesearch.css" rel="stylesheet"/>
-<link href="./theme/css/html4css1.css" rel="stylesheet"/>
-<link href="./theme/css/typogrify.css" rel="stylesheet"/>
-<link href="./theme/css/style.css" rel="stylesheet" type="text/css">
-<link href="./static/custom.css" rel="stylesheet"/>
-<link href="./theme/css/shariff/shariff.min.css" rel="stylesheet"/>
-</link></link></meta></meta></meta></head>
-<body>
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-<div class="container">
-<div class="navbar-header">
-<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
-<span class="sr-only">Toggle navigation</span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-<a class="navbar-brand" href="./">
-Just MEMO            </a>
-</div>
-<div class="collapse navbar-collapse navbar-ex1-collapse">
-<ul class="nav navbar-nav">
-<li><a href="/">Home</a></li>
-<li><a href="/archives.html">Archives</a></li>
-<li><a href="/search.html">Search</a></li>
-<li>
-<a href="./category/chan-lun.html">缠论</a>
-</li>
-<li>
-<a href="./category/eco.html">Eco</a>
-</li>
-<li class="active">
-<a href="./category/futstock.html">Fut&amp;stock</a>
-</li>
-<li>
-<a href="./category/life.html">Life</a>
-</li>
-<li>
-<a href="./category/shu-fa.html">书法</a>
-</li>
-<li>
-<a href="./category/tech.html">Tech</a>
-</li>
-</ul>
-<ul class="nav navbar-nav navbar-right">
-<li><span>
-<form action="/search.html" class="navbar-search">
-<input class="search-query" id="tipue_search_input" name="q" placeholder="Search" required="" type="text"/>
-</form></span>
-</li>
-<li><a href="./archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
-</ul>
-</div>
-<!-- /.navbar-collapse -->
-</div>
-</div> <!-- /.navbar -->
-<!-- Banner -->
-<!-- End Banner -->
-<div class="container">
-<div class="row">
-<div class="col-sm-9">
-<section id="content">
-<article>
-<header class="page-header">
-<h1>
-<a href="./bo-yi-da-shi-shi-yong-ji-gong-shi.html" rel="bookmark" title="Permalink to 博易大师使用及公式">
-                        博易大师使用及公式
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="futures, Fut&Stock, " />
+
+<meta property="og:title" content="博易大师使用及公式 "/>
+<meta property="og:url" content="./bo-yi-da-shi-shi-yong-ji-gong-shi.html" />
+<meta property="og:description" content="1.0 公式 1.1 m9 （MACD 变色\面积公式） NO 参数名 类型 缺省值 最小值 最大值 步长 1 SHORT 数值型 12 2 200 0 2 LONG 数值型 26 2 200 0 3 MID 数值型 9 2 200 0 4 ISARROW 数值型 1 0 1 0 DIFF:=EMA(CLOSE,SHORT)-EMA(CLOSE …" />
+<meta property="og:site_name" content="Just MEMO" />
+<meta property="og:article:author" content="Walter" />
+<meta property="og:article:published_time" content="2018-09-26T09:32:03+08:00" />
+<meta property="og:article:modified_time" content="2018-09-26T09:32:03+08:00" />
+<meta name="twitter:title" content="博易大师使用及公式 ">
+<meta name="twitter:description" content="1.0 公式 1.1 m9 （MACD 变色\面积公式） NO 参数名 类型 缺省值 最小值 最大值 步长 1 SHORT 数值型 12 2 200 0 2 LONG 数值型 26 2 200 0 3 MID 数值型 9 2 200 0 4 ISARROW 数值型 1 0 1 0 DIFF:=EMA(CLOSE,SHORT)-EMA(CLOSE …">
+
+        <title>博易大师使用及公式  · Just MEMO
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/custom.css" media="screen">
+
+
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                     </a>
-</h1>
-</header>
-<div class="entry-content">
-<div class="panel">
-<div class="panel-body">
-<footer class="post-info">
-<span class="label label-default">Date</span>
-<span class="published">
-<i class="fa fa-calendar"></i><time datetime="2018-09-26T09:32:03+08:00"> 2018-09-26 09:32:03+08:00</time>
-</span>
-</footer><!-- /.post-info --> <span class="label label-default">Modified</span>
-<span class="published">
-<i class="fa fa-calendar"></i><time datetime="2018-09-26T09:32:03+08:00">2018-09-26 09:32:03+08:00</time>
-</span>
-</div></div></div></article></section></div></div></div></body></html>
+                    <a class="brand" href="./"><span class=site-name>Just MEMO</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href=".">Home</a></li>
+                            <li ><a href="./categories.html">Categories</a></li>
+                            <li ><a href="./tags.html">Tags</a></li>
+                            <li ><a href="./archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="./search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="./bo-yi-da-shi-shi-yong-ji-gong-shi.html"> 博易大师使用及公式  </a></h1>
+    </header>
+</div>
 
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div id="toc"><ul><li><a class="toc-href" href="#gong shi" title="公式">公式</a><ul><li><a class="toc-href" href="#m9 (macd bian se \mian ji gong shi )" title="m9 （MACD&nbsp;变色\面积公式）">m9 （MACD&nbsp;变色\面积公式）</a></li></ul></li></ul></div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
 
-<!-- Added by Walter for pelican-toc within a article -->
-<div id="toc"><ul><li><a class="toc-href" href="#gong shi" title="公式">公式</a><ul><li><a class="toc-href" href="#m9 (macd bian se \mian ji gong shi )" title="m9 （MACD 变色\面积公式）">m9 （MACD 变色\面积公式）</a></li></ul></li></ul></div>
-<h2 id="gong shi">1.0 公式</h2>
+            
+            <h2 id="gong shi">1.0 公式</h2>
 <h3 id="m9 (macd bian se \mian ji gong shi )">1.1 m9 （<span class="caps">MACD</span> 变色\面积公式）</h3>
 <p>
 <div class="justtable">
-<table>
-<thead>
-<tr>
-<th><span class="caps">NO</span>,参数名,类型,缺省值,最小值,最大值,步长</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1,<span class="caps">SHORT</span>,数值型,12,2,200,0</td>
-</tr>
-<tr>
-<td>2,<span class="caps">LONG</span>,数值型,26,2,200,0</td>
-</tr>
-<tr>
-<td>3,<span class="caps">MID</span>,数值型,9,2,200,0</td>
-</tr>
-<tr>
-<td>4,<span class="caps">ISARROW</span>,数值型,1,0,1,0 </td>
-</tr>
-</tbody>
-</table>
+    <table>
+        <thead>
+        <tr>
+            <th><span class="caps">NO</span></th>
+            <th>参数名</th>
+            <th>类型</th>
+            <th>缺省值</th>
+            <th>最小值</th>
+            <th>最大值</th>
+            <th>步长</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><span class="caps">SHORT</span></td>
+                <td>数值型</td>
+                <td>12</td>
+                <td>2</td>
+                <td>200</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><span class="caps">LONG</span></td>
+                <td>数值型</td>
+                <td>26</td>
+                <td>2</td>
+                <td>200</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><span class="caps">MID</span></td>
+                <td>数值型</td>
+                <td>9</td>
+                <td>2</td>
+                <td>200</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><span class="caps">ISARROW</span></td>
+                <td>数值型</td>
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
 </div></p>
 <div class="highlight"><pre><span></span>DIFF:<span class="o">=</span>EMA<span class="o">(</span>CLOSE,SHORT<span class="o">)</span>-EMA<span class="o">(</span>CLOSE,LONG<span class="o">)</span><span class="p">;</span>
 DEA:<span class="o">=</span>EMA<span class="o">(</span>DIFF,MID<span class="o">)</span><span class="p">;</span>
@@ -171,322 +169,67 @@ DRAWNUMBER<span class="o">(</span>ISLASTBAR AND VAR4&gt;0,REF<span class="o">(</
 前MACD:REF<span class="o">(</span>MACD2,1<span class="o">)</span>,NODRAW<span class="p">;</span>
 现MACD:MACD2,NODRAW,COLORRED<span class="p">;</span>
 </pre></div>
-
-<!-- /.entry-content -->
-<hr/>
-<!-- Shariff Button BEGIN -->
-<div class="shariff" data-orientation="" data-url="./bo-yi-da-shi-shi-yong-ji-gong-shi.html"></div>
-<!-- Shariff Button END -->
-
-
-
-<div class="col-sm-3" id="sidebar">
-<aside>
-<section class="well well-sm">
-<ul class="list-group list-group-flush">
-<li class="list-group-item"><a href="./"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-<ul class="list-group list-inline tagcloud" id="tags">
-<li class="list-group-item tag-2">
-<a href="./tag/apache.html">
-                            apache
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/automator.html">
-                            automator
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/bai-du-wang-pan.html">
-                            百度网盘
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/bitcoin-blockchain.html">
-                            bitcoin blockchain
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/cao-zuo.html">
-                            操作
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/chan-lun.html">
-                            缠论
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/chan-lun-108ke.html">
-                            缠论108课
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/chan-lun-stock.html">
-                            缠论stock
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/dns.html">
-                            dns
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/english.html">
-                            english
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/future.html">
-                            future
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/futures.html">
-                            futures
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/gentoo.html">
-                            Gentoo
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/gentoo-wifi.html">
-                            Gentoo wifi
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/git.html">
-                            git
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/hexo.html">
-                            hexo
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/image.html">
-                            image
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/iphone.html">
-                            iphone
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/iptables.html">
-                            iptables
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/life.html">
-                            life
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/linux.html">
-                            linux
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/linux-print.html">
-                            linux print
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/mac.html">
-                            mac
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/matplotlib.html">
-                            matplotlib
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/mongodb.html">
-                            mongodb
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/movies.html">
-                            Movies
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/mysql.html">
-                            mysql
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/network.html">
-                            network
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/nginx.html">
-                            nginx
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/pandas.html">
-                            pandas
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/perl.html">
-                            perl
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/python.html">
-                            python
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/qi-huo.html">
-                            期货
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/quanta.html">
-                            quanta
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/shell.html">
-                            shell
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/shu-fa.html">
-                            书法
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/stock.html">
-                            stock
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/tech.html">
-                            tech
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/tech-php-nginx.html">
-                            tech php nginx
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/tong-da-xin.html">
-                            通达信
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/trading_digest.html">
-                            trading_digest
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/vim.html">
-                            vim
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/virtualbox.html">
-                            virtualbox
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/webserver.html">
-                            webserver
-                        </a>
-</li>
-<li class="list-group-item tag-1">
-<a href="./tag/windows.html">
-                            windows
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/xiao-lu.html">
-                            效率
-                        </a>
-</li>
-<li class="list-group-item tag-2">
-<a href="./tag/xiu-xin.html">
-                            修心
-                        </a>
-</li>
+            
+            
+            <hr/>
+<section>
+    <h2>Related Posts</h2>
+<ul class="related-posts-list">
+<li><a href="./ri-nei-jiao-yi-cheng-gong-jing-yan.html" title="日内交易成功经验">日内交易成功经验</a></li>
+<li><a href="./qi-huo-wen-zhai.html" title="期货文摘">期货文摘</a></li>
+<li><a href="./qi-huo-jiao-yi-ji-ben-xin-xi.html" title="期货交易基本信息">期货交易基本信息</a></li>
+<li><a href="./qi-huo-ri-nei-jiao-yi.html" title="期货日内交易">期货日内交易</a></li>
+<li><a href="./test.html" title="test">test</a></li>
 </ul>
-</li>
-<li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-<ul class="list-group" id="social">
-<li class="list-group-item"><a href="https://slashdot.org/"><i class="fa fa-it新闻slashdot-square fa-lg"></i> IT新闻Slashdot</a></li>
-</ul>
-</li>
-<li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-<ul class="list-group" id="links">
-<li class="list-group-item">
-<a href="https://uqer.io/home/" target="_blank">
-                量化平台：优矿
-            </a>
-</li>
-<li class="list-group-item">
-<a href="https://www.joinquant.com/" target="_blank">
-                量化平台：聚宽
-            </a>
-</li>
-<li class="list-group-item">
-<a href="https://slashdot.org/" target="_blank">
-                IT新闻Slashdot
-            </a>
-</li>
-<li class="list-group-item">
-<a href="http://www.solidot.org/" target="_blank">
-                IT新闻Solidot
-            </a>
-</li>
-<li class="list-group-item">
-<a href="https://zhuanlan.zhihu.com/p/25608762" target="_blank">
-                Python资源全汇总
-            </a>
-</li>
-</ul>
-</li>
-</ul>
+<hr />
 </section>
-</aside>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2018-09-26T09:32:03+08:00">Sep 26, 2018</time>
+
+<h4>Last Updated</h4>
+<time datetime="2018-09-26T09:32:03+08:00">Sep 26, 2018</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="./categories.html#futstock-ref">Fut&Stock</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="./tags.html#futures-ref">futures
+                    <span>12</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="https://slashdot.org/" title="My IT新闻Slashdot Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-it新闻slashdot sidebar-social-links"></i></a>
+        </div>
+        </section>
 </div>
-
-
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
 <footer>
-<div class="container">
-<hr/>
-<div class="row">
-<div class="col-xs-10">© 2018 Walter
-            · Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
-            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
-            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a> </div>
-<div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="https://github.com/Pelican-Elegant/elegant/" title="Theme Elegant Home Page">Elegant</a></li>
+    </ul>
 </div>
-</div>
-</footer>
-<script src="./theme/js/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="./theme/js/bootstrap.min.js"></script>
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="./theme/js/respond.min.js"></script>
-<!-- add shariff support -->
-<script src="./theme/js/shariff.min.js"></script>
-<script src="./theme/js/jquery.bootstrap-autohidingnavbar.min.js"></script>
-<script>$("div.navbar-fixed-top").autoHidingNavbar();</script>
-<script>
-	$(document).ready(function () {
-  		$("div.navbar-fixed-top").autoHidingNavbar('setDisableAutohide', false );
-	});
-</script>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
 
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : MIT -->
+</html>
