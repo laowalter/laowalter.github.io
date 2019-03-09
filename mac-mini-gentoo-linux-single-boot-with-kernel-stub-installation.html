@@ -85,38 +85,67 @@
 </ol>
 <h3 id="partiton (gpt must)">Partiton (<span class="caps">GPT</span> must)</h3>
 <p>
-<div class="justtable">
-    <table>
-        <thead>
+<table class="table table-hover">
+    
+    
+    <thead>
+    <tr>
+        
+        
+        <th>Device</th>
+        
+        <th> Mount Point</th>
+        
+        <th>Filesystem</th>
+        
+        <th>Description</th>
+        
+    </tr>
+    </thead>
+    
+    <tbody>
+        
         <tr>
-            <th>Device</th>
-            <th> Mount Point</th>
-            <th>Filesystem</th>
-            <th>Description</th>
+            
+            
+            <td>/dev/sda1</td>
+            
+            <td>not mounted</td>
+            
+            <td>(bootloader)</td>
+            
+            <td><span class="caps">BIOS</span> boot partition</td>
+            
         </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>/dev/sda1</td>
-                <td>not mounted</td>
-                <td>(bootloader)</td>
-                <td><span class="caps">BIOS</span> boot partition</td>
-            </tr>
-            <tr>
-                <td>/dev/sda2</td>
-                <td>/boot/efi</td>
-                <td>fat32</td>
-                <td><span class="caps">EFI</span> System Partition (<span class="caps">ESP</span>) where the <span class="caps">EFI</span> files will be held to boot into the bootloader 0xEE</td>
-            </tr>
-            <tr>
-                <td>/dev/sda3</td>
-                <td>/</td>
-                <td>ext4</td>
-                <td>root partition for your system</td>
-            </tr>
-        </tbody>
-    </table>
-</div></p>
+        
+        <tr>
+            
+            
+            <td>/dev/sda2</td>
+            
+            <td>/boot/efi</td>
+            
+            <td>fat32</td>
+            
+            <td><span class="caps">EFI</span> System Partition (<span class="caps">ESP</span>) where the <span class="caps">EFI</span> files will be held to boot into the bootloader 0xEE</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>/dev/sda3</td>
+            
+            <td>/</td>
+            
+            <td>ext4</td>
+            
+            <td>root partition for your system</td>
+            
+        </tr>
+        
+    </tbody>
+</table></p>
 <h4 id="list partition">list partition</h4>
 <div class="highlight"><pre><span></span>$ parted
 <span class="o">(</span>parted<span class="o">)</span> print devices
@@ -5052,10 +5081,10 @@ cp arch/x86/boot/bzImage /boot/efi/boot/bzimage.efi
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
 <li><a href="./mac-operations.html" title="Mac Operations">Mac Operations</a></li>
-<li><a href="./xetexlatexxelatex.html" title="Xetex/Latex/Xelatex">Xetex/Latex/Xelatex</a></li>
-<li><a href="./php-fpm.html" title="Php-fpm">Php-fpm</a></li>
-<li><a href="./latex-demos-and-templates.html" title="Latex Demos and Templates">Latex Demos and Templates</a></li>
-<li><a href="./develop-pelican-plugin.html" title="Develop Pelican Plugin">Develop Pelican Plugin</a></li>
+<li><a href="./vlc-bo-fang-qi.html" title="VLC 播放器">VLC 播放器</a></li>
+<li><a href="./fvwm.html" title="FVWM">FVWM</a></li>
+<li><a href="./mi-ma-sheng-cheng-cheng-xu.html" title="密码生成程序">密码生成程序</a></li>
+<li><a href="./linux-bluetooth-lan-ya.html" title="Linux Bluetooth / 蓝牙">Linux Bluetooth / 蓝牙</a></li>
 </ul>
 <hr />
 </section>
@@ -5076,7 +5105,7 @@ cp arch/x86/boot/bzImage /boot/efi/boot/bzimage.efi
                     <span>2</span>
 </a></li>
                 <li><a href="./tags.html#tech-ref">tech
-                    <span>77</span>
+                    <span>81</span>
 </a></li>
             </ul>
 <h4>Contact</h4>

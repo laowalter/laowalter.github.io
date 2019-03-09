@@ -14,13 +14,13 @@
 
 <meta property="og:title" content="Piwigo "/>
 <meta property="og:url" content="./piwigo.html" />
-<meta property="og:description" content="1.0 Use Piwigo 注意事项 所有的图片文件都放在 piwigo/upload/ 的目录中。 2.0 Installation 2.1 config Nginx to support FILE:/etc/nginx/nginx.conf include /etc/nginx/conf.d/*.conf; FILE:/etc/nginx/conf.d/piwigo.conf server { listen 0.0.0.0:3128; server_name photo; #root /var/www/localhost/; root …" />
+<meta property="og:description" content="1.0 Use Piwigo 注意事项 所有的图片文件都放在 piwigo/upload/ 的目录中。 2.0 Installation 2.1 config Nginx to support FILE: /etc/nginx/nginx.conf include /etc/nginx/conf.d/*.conf; FILE: /etc/nginx/conf.d/piwigo.conf server { listen 0.0.0.0:3128; server_name photo; #root /var/www/localhost/; root …" />
 <meta property="og:site_name" content="Just MEMO" />
 <meta property="og:article:author" content="Walter" />
 <meta property="og:article:published_time" content="2018-01-21T15:21:16+08:00" />
 <meta property="og:article:modified_time" content="2018-01-21T15:21:16+08:00" />
 <meta name="twitter:title" content="Piwigo ">
-<meta name="twitter:description" content="1.0 Use Piwigo 注意事项 所有的图片文件都放在 piwigo/upload/ 的目录中。 2.0 Installation 2.1 config Nginx to support FILE:/etc/nginx/nginx.conf include /etc/nginx/conf.d/*.conf; FILE:/etc/nginx/conf.d/piwigo.conf server { listen 0.0.0.0:3128; server_name photo; #root /var/www/localhost/; root …">
+<meta name="twitter:description" content="1.0 Use Piwigo 注意事项 所有的图片文件都放在 piwigo/upload/ 的目录中。 2.0 Installation 2.1 config Nginx to support FILE: /etc/nginx/nginx.conf include /etc/nginx/conf.d/*.conf; FILE: /etc/nginx/conf.d/piwigo.conf server { listen 0.0.0.0:3128; server_name photo; #root /var/www/localhost/; root …">
 
         <title>Piwigo  · Just MEMO
 </title>
@@ -71,20 +71,20 @@
     <div class="span2 table-of-content">
         <nav>
         <h4>Contents</h4>
-        <div id="toc"><ul><li><a class="toc-href" href="#use piwigo zhu yi shi xiang" title="Use Piwigo&nbsp;注意事项">Use Piwigo&nbsp;注意事项</a></li><li><a class="toc-href" href="#installation" title="Installation">Installation</a><ul><li><a class="toc-href" href="#config nginx to support" title="config Nginx to&nbsp;support">config Nginx to&nbsp;support</a></li><li><a class="toc-href" href="#install php-fm" title="Install&nbsp;php-fm">Install&nbsp;php-fm</a><ul><li><a class="toc-href" href="#config www.conf" title="config&nbsp;www.conf">config&nbsp;www.conf</a></li><li><a class="toc-href" href="#adjust upload limited" title="adjust upload&nbsp;limited">adjust upload&nbsp;limited</a></li><li><a class="toc-href" href="#add php-fpm to default service" title="add php-fpm to default&nbsp;service">add php-fpm to default&nbsp;service</a></li></ul></li><li><a class="toc-href" href="#create mysql database for piwigo_1" title="create  mysql database for&nbsp;piwigo">create  mysql database for&nbsp;piwigo</a></li><li><a class="toc-href" href="#install piwigo" title="install&nbsp;piwigo">install&nbsp;piwigo</a><ul><li><a class="toc-href" href="#install piwigo scripts" title="install piwigo&nbsp;scripts">install piwigo&nbsp;scripts</a></li><li><a class="toc-href" href="#from web browser enter http://piwgo_directory/install.php, following direction." title="from web browser enter http://piwgo_directory/install.php, following&nbsp;direction.">from web browser enter http://piwgo_directory/install.php, following&nbsp;direction.</a></li></ul></li></ul></li></ul></div>
+        <div id="toc"><ul><li><a class="toc-href" href="#1.0 use piwigo zhu yi shi xiang" title="1.0 Use Piwigo&nbsp;注意事项">1.0 Use Piwigo&nbsp;注意事项</a></li><li><a class="toc-href" href="#2.0 installation" title="2.0 Installation">2.0 Installation</a><ul><li><a class="toc-href" href="#2.1 config nginx to support" title="2.1 config Nginx to&nbsp;support">2.1 config Nginx to&nbsp;support</a></li><li><a class="toc-href" href="#2.2 install php-fm" title="2.2 Install&nbsp;php-fm">2.2 Install&nbsp;php-fm</a><ul><li><a class="toc-href" href="#2.2.1 config www.conf" title="2.2.1 config&nbsp;www.conf">2.2.1 config&nbsp;www.conf</a></li><li><a class="toc-href" href="#2.2.2 adjust upload limited" title="2.2.2 adjust upload&nbsp;limited">2.2.2 adjust upload&nbsp;limited</a></li><li><a class="toc-href" href="#2.2.3 add php-fpm to default service" title="2.2.3 add php-fpm to default&nbsp;service">2.2.3 add php-fpm to default&nbsp;service</a></li></ul></li><li><a class="toc-href" href="#2.3 create mysql database for piwigo_1" title="2.3 create  mysql database for&nbsp;piwigo">2.3 create  mysql database for&nbsp;piwigo</a></li><li><a class="toc-href" href="#2.4 install piwigo" title="2.4 install&nbsp;piwigo">2.4 install&nbsp;piwigo</a><ul><li><a class="toc-href" href="#2.4.1 install piwigo scripts" title="2.4.1 install piwigo&nbsp;scripts">2.4.1 install piwigo&nbsp;scripts</a></li><li><a class="toc-href" href="#2.4.2 from web browser enter http://piwgo_directory/install.php, following direction." title="2.4.2 from web browser enter http://piwgo_directory/install.php, following&nbsp;direction.">2.4.2 from web browser enter http://piwgo_directory/install.php, following&nbsp;direction.</a></li></ul></li></ul></li></ul></div>
         </nav>
     </div>
     <div class="span8 article-content">
 
             
-            <h2 id="use piwigo zhu yi shi xiang">1.0 Use Piwigo 注意事项</h2>
+            <h2 id="1.0 use piwigo zhu yi shi xiang">1.0 Use Piwigo 注意事项</h2>
 <p>所有的图片文件都放在 piwigo/upload/ 的目录中。</p>
-<h2 id="installation">2.0 Installation</h2>
-<h3 id="config nginx to support">2.1 config Nginx to support</h3>
-<div class='file'><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/nginx/nginx.conf</div>
+<h2 id="2.0 installation">2.0 Installation</h2>
+<h3 id="2.1 config nginx to support">2.1 config Nginx to support</h3>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/nginx/nginx.conf</div>
 <div class="highlight"><pre><span></span><span class="k">include</span> <span class="n">/etc/nginx/conf.d/*.conf</span>;
 </pre></div>
-<div class='file'><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/nginx/conf.d/piwigo.conf</div>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/nginx/conf.d/piwigo.conf</div>
 <div class="highlight"><pre><span></span><span class="k">server</span> <span class="p">{</span>
     <span class="kn">listen</span> <span class="n">0.0.0.0</span><span class="p">:</span><span class="mi">3128</span><span class="p">;</span>
     <span class="kn">server_name</span> <span class="s">photo</span><span class="p">;</span>
@@ -99,50 +99,50 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-<h3 id="install php-fm">2.2 Install php-fm</h3>
-<h4 id="config www.conf">2.2.1 config www.conf</h4>
-<div class='file'><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/php/fpm-php7.1/fpm.d/www.conf</div>
+<h3 id="2.2 install php-fm">2.2 Install php-fm</h3>
+<h4 id="2.2.1 config www.conf">2.2.1 config www.conf</h4>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/php/fpm-php7.1/fpm.d/www.conf</div>
 <div class="highlight"><pre><span></span>  <span class="nv">listen</span> <span class="o">=</span> /run/php-fpm.socket
   listen.owner <span class="o">=</span> nginx
   listen.group <span class="o">=</span> nginx
   listen.mode <span class="o">=</span> <span class="m">0660</span>
 </pre></div>
-<h4 id="adjust upload limited">2.2.2 adjust upload limited</h4>
-<div class='file'><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/php/fpm-php7.1/php.ini</div>
+<h4 id="2.2.2 adjust upload limited">2.2.2 adjust upload limited</h4>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/php/fpm-php7.1/php.ini</div>
 <div class="highlight"><pre><span></span><span class="nv">upload_tmp_dir</span> <span class="o">=</span> /tmp
 <span class="nv">upload_max_filesize</span> <span class="o">=</span> 20M
 </pre></div>
-<div class='file'><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/ngnix/nginx.conf</div>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/ngnix/nginx.conf</div>
 <div class="highlight"><pre><span></span>client_max_body_size 20M<span class="p">;</span>
 client_body_buffer_size 128k<span class="p">;</span>
 </pre></div>
-<h4 id="add php-fpm to default service">2.2.3 add php-fpm to default service</h4>
+<h4 id="2.2.3 add php-fpm to default service">2.2.3 add php-fpm to default service</h4>
 <div class="highlight"><pre><span></span>sudo  /etc/init.d/php-fpm start
 rc-update add php-fpm default
 </pre></div>
-<h3 id="create mysql database for piwigo_1">2.3 create  mysql database for piwigo</h3>
+<h3 id="2.3 create mysql database for piwigo_1">2.3 create  mysql database for piwigo</h3>
 <div class="highlight"><pre><span></span>mysql&gt; create database photos<span class="p">;</span>
 mysql&gt; create user <span class="s1">'piwigo'</span>@<span class="s1">'localhost'</span> identified by <span class="s1">'abcdef'</span><span class="p">;</span>
 mysql&gt; grant all privileges on photos.* to <span class="s1">'piwigo'</span>@<span class="s1">'localhost'</span><span class="p">;</span>
 mysql&gt; flush privileges<span class="p">;</span>
 </pre></div>
-<h3 id="install piwigo">2.4 install piwigo</h3>
-<h4 id="install piwigo scripts">2.4.1 install piwigo scripts</h4>
+<h3 id="2.4 install piwigo">2.4 install piwigo</h3>
+<h4 id="2.4.1 install piwigo scripts">2.4.1 install piwigo scripts</h4>
 <div class="highlight"><pre><span></span>su 
 webapp-config -h localhost -d piwigo -I piwigo <span class="m">2</span>.9.2
 </pre></div>
-<h4 id="from web browser enter http://piwgo_directory/install.php, following direction.">2.4.2 from web browser enter http://piwgo_directory/install.php, following direction.</h4>
+<h4 id="2.4.2 from web browser enter http://piwgo_directory/install.php, following direction.">2.4.2 from web browser enter http://piwgo_directory/install.php, following direction.</h4>
             
             
             <hr/>
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
-<li><a href="./samba.html" title="Samba">Samba</a></li>
-<li><a href="./xetexlatexxelatex.html" title="Xetex/Latex/Xelatex">Xetex/Latex/Xelatex</a></li>
-<li><a href="./php-fpm.html" title="Php-fpm">Php-fpm</a></li>
-<li><a href="./latex-demos-and-templates.html" title="Latex Demos and Templates">Latex Demos and Templates</a></li>
 <li><a href="./develop-pelican-plugin.html" title="Develop Pelican Plugin">Develop Pelican Plugin</a></li>
+<li><a href="./vlc-bo-fang-qi.html" title="VLC 播放器">VLC 播放器</a></li>
+<li><a href="./fvwm.html" title="FVWM">FVWM</a></li>
+<li><a href="./mi-ma-sheng-cheng-cheng-xu.html" title="密码生成程序">密码生成程序</a></li>
+<li><a href="./linux-bluetooth-lan-ya.html" title="Linux Bluetooth / 蓝牙">Linux Bluetooth / 蓝牙</a></li>
 </ul>
 <hr />
 </section>
@@ -160,7 +160,7 @@ webapp-config -h localhost -d piwigo -I piwigo <span class="m">2</span>.9.2
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="./tags.html#tech-ref">tech
-                    <span>77</span>
+                    <span>81</span>
 </a></li>
             </ul>
 <h4>Contact</h4>

@@ -71,68 +71,119 @@
     <div class="span2 table-of-content">
         <nav>
         <h4>Contents</h4>
-        <div id="toc"><ul><li><a class="toc-href" href="#gong shi" title="公式">公式</a><ul><li><a class="toc-href" href="#m9 (macd bian se \mian ji gong shi )" title="m9 （MACD&nbsp;变色\面积公式）">m9 （MACD&nbsp;变色\面积公式）</a></li></ul></li></ul></div>
+        <div id="toc"><ul><li><a class="toc-href" href="#1.0 gong shi" title="1.0 公式">1.0 公式</a><ul><li><a class="toc-href" href="#1.1 m9 (macd bian se \mian ji gong shi )" title="1.1 m9 （MACD&nbsp;变色\面积公式）">1.1 m9 （MACD&nbsp;变色\面积公式）</a></li></ul></li></ul></div>
         </nav>
     </div>
     <div class="span8 article-content">
 
             
-            <h2 id="gong shi">1.0 公式</h2>
-<h3 id="m9 (macd bian se \mian ji gong shi )">1.1 m9 （<span class="caps">MACD</span> 变色\面积公式）</h3>
+            <h2 id="1.0 gong shi">1.0 公式</h2>
+<h3 id="1.1 m9 (macd bian se \mian ji gong shi )">1.1 m9 （<span class="caps">MACD</span> 变色\面积公式）</h3>
 <p>
-<div class="justtable">
-    <table>
-        <thead>
+<table class="table table-hover">
+    
+    
+    <thead>
+    <tr>
+        
+        
+        <th><span class="caps">NO</span></th>
+        
+        <th>参数名</th>
+        
+        <th>类型</th>
+        
+        <th>缺省值</th>
+        
+        <th>最小值</th>
+        
+        <th>最大值</th>
+        
+        <th>步长</th>
+        
+    </tr>
+    </thead>
+    
+    <tbody>
+        
         <tr>
-            <th><span class="caps">NO</span></th>
-            <th>参数名</th>
-            <th>类型</th>
-            <th>缺省值</th>
-            <th>最小值</th>
-            <th>最大值</th>
-            <th>步长</th>
+            
+            
+            <td>1</td>
+            
+            <td><span class="caps">SHORT</span></td>
+            
+            <td>数值型</td>
+            
+            <td>12</td>
+            
+            <td>2</td>
+            
+            <td>200</td>
+            
+            <td>0</td>
+            
         </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td><span class="caps">SHORT</span></td>
-                <td>数值型</td>
-                <td>12</td>
-                <td>2</td>
-                <td>200</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td><span class="caps">LONG</span></td>
-                <td>数值型</td>
-                <td>26</td>
-                <td>2</td>
-                <td>200</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td><span class="caps">MID</span></td>
-                <td>数值型</td>
-                <td>9</td>
-                <td>2</td>
-                <td>200</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td><span class="caps">ISARROW</span></td>
-                <td>数值型</td>
-                <td>1</td>
-                <td>0</td>
-                <td>1</td>
-                <td>0</td>
-            </tr>
-        </tbody>
-    </table>
-</div></p>
+        
+        <tr>
+            
+            
+            <td>2</td>
+            
+            <td><span class="caps">LONG</span></td>
+            
+            <td>数值型</td>
+            
+            <td>26</td>
+            
+            <td>2</td>
+            
+            <td>200</td>
+            
+            <td>0</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>3</td>
+            
+            <td><span class="caps">MID</span></td>
+            
+            <td>数值型</td>
+            
+            <td>9</td>
+            
+            <td>2</td>
+            
+            <td>200</td>
+            
+            <td>0</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>4</td>
+            
+            <td><span class="caps">ISARROW</span></td>
+            
+            <td>数值型</td>
+            
+            <td>1</td>
+            
+            <td>0</td>
+            
+            <td>1</td>
+            
+            <td>0</td>
+            
+        </tr>
+        
+    </tbody>
+</table></p>
 <div class="highlight"><pre><span></span>DIFF:<span class="o">=</span>EMA<span class="o">(</span>CLOSE,SHORT<span class="o">)</span>-EMA<span class="o">(</span>CLOSE,LONG<span class="o">)</span><span class="p">;</span>
 DEA:<span class="o">=</span>EMA<span class="o">(</span>DIFF,MID<span class="o">)</span><span class="p">;</span>
 MACD2:<span class="o">=(</span>DIFF - DEA<span class="o">)</span>*2<span class="p">;</span>
@@ -175,11 +226,11 @@ DRAWNUMBER<span class="o">(</span>ISLASTBAR AND VAR4&gt;0,REF<span class="o">(</
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
-<li><a href="./ri-nei-jiao-yi-cheng-gong-jing-yan.html" title="日内交易成功经验">日内交易成功经验</a></li>
 <li><a href="./qi-huo-wen-zhai.html" title="期货文摘">期货文摘</a></li>
 <li><a href="./qi-huo-jiao-yi-ji-ben-xin-xi.html" title="期货交易基本信息">期货交易基本信息</a></li>
 <li><a href="./qi-huo-ri-nei-jiao-yi.html" title="期货日内交易">期货日内交易</a></li>
-<li><a href="./test.html" title="test">test</a></li>
+<li><a href="./qi-huo-jin-ri-fu-pan.html" title="期货今日复盘">期货今日复盘</a></li>
+<li><a href="./wen-hua-gong-shi.html" title="文华公式">文华公式</a></li>
 </ul>
 <hr />
 </section>
@@ -197,7 +248,7 @@ DRAWNUMBER<span class="o">(</span>ISLASTBAR AND VAR4&gt;0,REF<span class="o">(</
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="./tags.html#futures-ref">futures
-                    <span>12</span>
+                    <span>13</span>
 </a></li>
             </ul>
 <h4>Contact</h4>

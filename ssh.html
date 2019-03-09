@@ -14,13 +14,13 @@
 
 <meta property="og:title" content="SSH "/>
 <meta property="og:url" content="./ssh.html" />
-<meta property="og:description" content="SSH agent .bashrc 关于ssh部分 FILE:.bashrc # SSH agent if [ ! -S ~/.ssh/ssh_auth_sock ]; then eval `ssh-agent` ln -sf &#34;$SSH_AUTH_SOCK&#34; ~/.ssh/ssh_auth_sock fi export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock ssh-add -l &gt; /dev/null || ssh-add Putty 第一步运行PuttyGen 第二步把上面的ssh rsa 拷贝到远程机器账户的 远程机器 ~/.ssh/authorized_keys 第三步pageant Right Click，add key 选择私匙 设置每次开机自动运行pageant，并自动add key create shortcut “C …" />
+<meta property="og:description" content="1.0 Linux 1.1 SSH agent .bashrc 关于ssh部分 FILE: .bashrc # SSH agent if [ ! -S ~/.ssh/ssh_auth_sock ]; then eval `ssh-agent` ln -sf &#34;$SSH_AUTH_SOCK&#34; ~/.ssh/ssh_auth_sock fi export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock ssh-add -l &gt; /dev/null || ssh-add 2.0 Windows 2.1 Putty 2.1.1 Putty程序组 2.1.2 第一步运行PuttyGen 2 …" />
 <meta property="og:site_name" content="Just MEMO" />
 <meta property="og:article:author" content="Walter" />
 <meta property="og:article:published_time" content="2017-10-13T18:22:24+08:00" />
 <meta property="og:article:modified_time" content="2017-10-13T18:22:24+08:00" />
 <meta name="twitter:title" content="SSH ">
-<meta name="twitter:description" content="SSH agent .bashrc 关于ssh部分 FILE:.bashrc # SSH agent if [ ! -S ~/.ssh/ssh_auth_sock ]; then eval `ssh-agent` ln -sf &#34;$SSH_AUTH_SOCK&#34; ~/.ssh/ssh_auth_sock fi export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock ssh-add -l &gt; /dev/null || ssh-add Putty 第一步运行PuttyGen 第二步把上面的ssh rsa 拷贝到远程机器账户的 远程机器 ~/.ssh/authorized_keys 第三步pageant Right Click，add key 选择私匙 设置每次开机自动运行pageant，并自动add key create shortcut “C …">
+<meta name="twitter:description" content="1.0 Linux 1.1 SSH agent .bashrc 关于ssh部分 FILE: .bashrc # SSH agent if [ ! -S ~/.ssh/ssh_auth_sock ]; then eval `ssh-agent` ln -sf &#34;$SSH_AUTH_SOCK&#34; ~/.ssh/ssh_auth_sock fi export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock ssh-add -l &gt; /dev/null || ssh-add 2.0 Windows 2.1 Putty 2.1.1 Putty程序组 2.1.2 第一步运行PuttyGen 2 …">
 
         <title>SSH  · Just MEMO
 </title>
@@ -71,15 +71,16 @@
     <div class="span2 table-of-content">
         <nav>
         <h4>Contents</h4>
-        <div id="toc"><ul><li><a class="toc-href" href="#ssh agent" title="SSH&nbsp;agent">SSH&nbsp;agent</a></li><li><a class="toc-href" href="#putty" title="Putty">Putty</a></li></ul></div>
+        <div id="toc"><ul><li><a class="toc-href" href="#1.0 linux" title="1.0 Linux">1.0 Linux</a><ul><li><a class="toc-href" href="#1.1 ssh agent" title="1.1 SSH&nbsp;agent">1.1 SSH&nbsp;agent</a></li></ul></li><li><a class="toc-href" href="#2.0 windows_1" title="2.0 Windows">2.0 Windows</a><ul><li><a class="toc-href" href="#2.1 putty" title="2.1 Putty">2.1 Putty</a><ul><li><a class="toc-href" href="#2.1.1 puttycheng xu zu" title="2.1.1 Putty程序组">2.1.1 Putty程序组</a></li><li><a class="toc-href" href="#2.1.2 di yi bu yun xing puttygen" title="2.1.2 第一步运行PuttyGen">2.1.2 第一步运行PuttyGen</a></li><li><a class="toc-href" href="#2.1.3 she zhi yuan cheng ji qi  ~/.ssh/authorized_keys" title="2.1.3 设置远程机器&nbsp;~/.ssh/authorized_keys">2.1.3 设置远程机器&nbsp;~/.ssh/authorized_keys</a></li><li><a class="toc-href" href="#2.1.4 di san bu pageant right click,add key xuan ze si chi" title="2.1.4 第三步pageant Right Click，add key&nbsp;选择私匙">2.1.4 第三步pageant Right Click，add key&nbsp;选择私匙</a></li><li><a class="toc-href" href="#2.1.5 di si bu puttyshe zhi" title="2.1.5 第四步putty设置">2.1.5 第四步putty设置</a></li><li><a class="toc-href" href="#2.1.6 di wu bu she zhi pageantzi dong qi dong" title="2.1.6 第五步设置pageant自动启动">2.1.6 第五步设置pageant自动启动</a></li></ul></li></ul></li></ul></div>
         </nav>
     </div>
     <div class="span8 article-content">
 
             
-            <h2 id="ssh agent"><span class="caps">SSH</span> agent</h2>
+            <h2 id="1.0 linux">1.0 Linux</h2>
+<h3 id="1.1 ssh agent">1.1 <span class="caps">SSH</span> agent</h3>
 <p>.bashrc 关于ssh部分</p>
-<div class='file'><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>.bashrc</div>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> .bashrc</div>
 <div class="highlight"><pre><span></span><span class="c1"># SSH agent</span>
 <span class="k">if</span> <span class="o">[</span> ! -S ~/.ssh/ssh_auth_sock <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
   <span class="nb">eval</span> <span class="sb">`</span>ssh-agent<span class="sb">`</span>
@@ -88,38 +89,39 @@
 <span class="nb">export</span> <span class="nv">SSH_AUTH_SOCK</span><span class="o">=</span>~/.ssh/ssh_auth_sock
 ssh-add -l &gt; /dev/null <span class="o">||</span> ssh-add
 </pre></div>
-<h2 id="putty">Putty</h2>
+<h2 id="2.0 windows_1">2.0 Windows</h2>
+<h3 id="2.1 putty">2.1 Putty</h3>
+<h4 id="2.1.1 puttycheng xu zu">2.1.1 Putty程序组</h4>
+<p><a href="./images/tech/putty-windows-2.png"><img alt="Putty" class="img-fluid" src="./images/tech/putty-windows-2.png"/></a></p>
+<h4 id="2.1.2 di yi bu yun xing puttygen">2.1.2 第一步运行PuttyGen</h4>
+<p><a href="./images/tech/putty-windows-1.png"><img alt="Putty" class="img-fluid" src="./images/tech/putty-windows-1.png"/></a></p>
+<h4 id="2.1.3 she zhi yuan cheng ji qi  ~/.ssh/authorized_keys">2.1.3 设置远程机器 ~/.ssh/authorized_keys</h4>
+<p>把上面的ssh-rsa（橘黄色高亮部分）拷贝到远程机器账户中的authorized_keys 或者直接用vi把ssh-rsa复制到authorized_keys作为新的一行。</p>
+<h4 id="2.1.4 di san bu pageant right click,add key xuan ze si chi">2.1.4 第三步pageant Right Click，add key 选择私匙</h4>
+<p><a href="./images/tech/putty-windows-3.png"><img alt="Putty" class="img-fluid" src="./images/tech/putty-windows-3.png"/></a></p>
+<h4 id="2.1.5 di si bu puttyshe zhi">2.1.5 第四步putty设置</h4>
+<p><a href="./images/tech/putty-windows-4.png"><img alt="Putty" class="img-fluid" src="./images/tech/putty-windows-4.png"/></a></p>
+<h4 id="2.1.6 di wu bu she zhi pageantzi dong qi dong">2.1.6 第五步设置pageant自动启动</h4>
+<h6>2.1.6.1 自动启动目录</h6>
 <ul>
-<li>第一步运行PuttyGen</li>
+<li>打开启动目录</li>
 </ul>
-<p><img alt="Putty" class="img-fluid" src="./images/tech/putty-windows-1.png"/></p>
+<p><a href="./images/tech/putty-windows-5.png"><img alt="Putty" class="img-fluid" src="./images/tech/putty-windows-5.png"/></a></p>
 <ul>
-<li>第二步把上面的ssh rsa 拷贝到远程机器账户的</li>
+<li>设置pagent.exe 加载 xxx.ppk</li>
 </ul>
-<p>远程机器 ~/.ssh/authorized_keys</p>
-<p><img alt="Putty" class="img-fluid" src="./images/tech/putty-windows-2.png"/></p>
-<ul>
-<li>第三步pageant Right Click，add key 选择私匙</li>
-</ul>
-<p><img alt="Putty" class="img-fluid" src="./images/tech/putty-windows-3.png"/></p>
-<ul>
-<li>设置每次开机自动运行pageant，并自动add key<ul>
-<li>create shortcut “C:\Program Files (x86)\PuTTY\pageant.exe” “D:\putty\my-isa.ppk”</li>
-<li>通过 Run “shell:startup” 加载上面的shortcut。</li>
-</ul>
-</li>
-</ul>
+<p><a href="./images/tech/putty-windows-6.png"><img alt="Putty" class="img-fluid" src="./images/tech/putty-windows-6.png"/></a></p>
             
             
             <hr/>
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
-<li><a href="./samba.html" title="Samba">Samba</a></li>
-<li><a href="./xetexlatexxelatex.html" title="Xetex/Latex/Xelatex">Xetex/Latex/Xelatex</a></li>
-<li><a href="./php-fpm.html" title="Php-fpm">Php-fpm</a></li>
-<li><a href="./latex-demos-and-templates.html" title="Latex Demos and Templates">Latex Demos and Templates</a></li>
 <li><a href="./develop-pelican-plugin.html" title="Develop Pelican Plugin">Develop Pelican Plugin</a></li>
+<li><a href="./vlc-bo-fang-qi.html" title="VLC 播放器">VLC 播放器</a></li>
+<li><a href="./fvwm.html" title="FVWM">FVWM</a></li>
+<li><a href="./mi-ma-sheng-cheng-cheng-xu.html" title="密码生成程序">密码生成程序</a></li>
+<li><a href="./linux-bluetooth-lan-ya.html" title="Linux Bluetooth / 蓝牙">Linux Bluetooth / 蓝牙</a></li>
 </ul>
 <hr />
 </section>
@@ -137,7 +139,7 @@ ssh-add -l &gt; /dev/null <span class="o">||</span> ssh-add
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="./tags.html#tech-ref">tech
-                    <span>77</span>
+                    <span>81</span>
 </a></li>
             </ul>
 <h4>Contact</h4>

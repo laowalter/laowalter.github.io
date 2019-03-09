@@ -83,46 +83,87 @@
 <li>相关文件：</li>
 </ol>
 <p>
-<div class="justtable">
-    <table>
-        <thead>
+<table class="table table-hover">
+    
+    
+    <thead>
+    <tr>
+        
+        
+        <th>incon.dat</th>
+        
+        <th>证监会行业、通达信新行业、申万行业等描述信息</th>
+        
+    </tr>
+    </thead>
+    
+    <tbody>
+        
         <tr>
-            <th>incon.dat</th>
-            <th>证监会行业、通达信新行业、申万行业等描述信息</th>
+            
+            
+            <td>T0002\hq_cache\block.dat</td>
+            
+            <td>一般板块</td>
+            
         </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>T0002\hq_cache\block.dat</td>
-                <td>一般板块</td>
-            </tr>
-            <tr>
-                <td>T0002\hq_cache\block_gn.dat</td>
-                <td>概念板块</td>
-            </tr>
-            <tr>
-                <td>T0002\hq_cache\block_fg.dat</td>
-                <td>风格板块</td>
-            </tr>
-            <tr>
-                <td>T0002\hq_cache\block_zs.dat</td>
-                <td>指数板块</td>
-            </tr>
-            <tr>
-                <td>T0002\hq_cache\tdxhy.cfg</td>
-                <td>每个股票对应通达信行业和申万行业</td>
-            </tr>
-            <tr>
-                <td>T0002\hq_cache\tdxzs.cfg</td>
-                <td>板块指数，部分板块的最后一个字段映射到incon.dat的TDXNHY和SWHY</td>
-            </tr>
-            <tr>
-                <td>T0002\blocknew\blocknew.cfg</td>
-                <td>自定义板块概要描述文件</td>
-            </tr>
-        </tbody>
-    </table>
-</div></p>
+        
+        <tr>
+            
+            
+            <td>T0002\hq_cache\block_gn.dat</td>
+            
+            <td>概念板块</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>T0002\hq_cache\block_fg.dat</td>
+            
+            <td>风格板块</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>T0002\hq_cache\block_zs.dat</td>
+            
+            <td>指数板块</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>T0002\hq_cache\tdxhy.cfg</td>
+            
+            <td>每个股票对应通达信行业和申万行业</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>T0002\hq_cache\tdxzs.cfg</td>
+            
+            <td>板块指数，部分板块的最后一个字段映射到incon.dat的TDXNHY和SWHY</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>T0002\blocknew\blocknew.cfg</td>
+            
+            <td>自定义板块概要描述文件</td>
+            
+        </tr>
+        
+    </tbody>
+</table></p>
 <h3 id="xing ye ban kuai">行业板块</h3>
 <ol>
 <li>
@@ -180,30 +221,51 @@
 <h3 id="tong da xin zi ding yi ban kuai">通达信自定义板块</h3>
 <p>通达信定义的板块通过如下四个板块文件描述：</p>
 <p>
-<div class="justtable">
-    <table>
-        <thead>
+<table class="table table-hover">
+    
+    
+    <thead>
+    <tr>
+        
+        
+        <th>T0002\hq_cache\block.dat</th>
+        
+        <th>一般板块</th>
+        
+    </tr>
+    </thead>
+    
+    <tbody>
+        
         <tr>
-            <th>T0002\hq_cache\block.dat</th>
-            <th>一般板块</th>
+            
+            
+            <td>T0002\hq_cache\block_gn.dat</td>
+            
+            <td>概念板块</td>
+            
         </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>T0002\hq_cache\block_gn.dat</td>
-                <td>概念板块</td>
-            </tr>
-            <tr>
-                <td>T0002\hq_cache\block_fg.dat</td>
-                <td>风格板块</td>
-            </tr>
-            <tr>
-                <td>T0002\hq_cache\block_zs.dat</td>
-                <td>指数板块</td>
-            </tr>
-        </tbody>
-    </table>
-</div></p>
+        
+        <tr>
+            
+            
+            <td>T0002\hq_cache\block_fg.dat</td>
+            
+            <td>风格板块</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>T0002\hq_cache\block_zs.dat</td>
+            
+            <td>指数板块</td>
+            
+        </tr>
+        
+    </tbody>
+</table></p>
 <p>数据格式的C语言描述如下：</p>
 <div class="highlight"><pre><span></span><span class="c1">// 股票板块信息文件头格式，T0002/hq_cache/block.dat block_fg.dat block_gn.dat block_zs.dat</span>
 <span class="k">struct</span> <span class="n">TTDXBlockHeader</span>
@@ -261,240 +323,468 @@
 </ol>
 <p>T0002\blocknew\<span class="caps">ZXG</span>.blk</p>
 <p>
-<div class="justtable">
-    <table>
-        <thead>
+<table class="table table-hover">
+    
+    
+    <thead>
+    <tr>
+        
+        
+        <th>市场</th>
+        
+        <th>股票代码</th>
+        
+    </tr>
+    </thead>
+    
+    <tbody>
+        
         <tr>
-            <th>市场</th>
-            <th>股票代码</th>
+            
+            
+            <td>1</td>
+            
+            <td>999999</td>
+            
         </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>999999</td>
-            </tr>
-            <tr>
-                <td>0</td>
-                <td>399001</td>
-            </tr>
-            <tr>
-                <td>0</td>
-                <td>399005</td>
-            </tr>
-            <tr>
-                <td>0</td>
-                <td>399006</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>000016</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>000300</td>
-            </tr>
-            <tr>
-                <td>0</td>
-                <td>399330</td>
-            </tr>
-        </tbody>
-    </table>
-</div></p>
+        
+        <tr>
+            
+            
+            <td>0</td>
+            
+            <td>399001</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>0</td>
+            
+            <td>399005</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>0</td>
+            
+            <td>399006</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>1</td>
+            
+            <td>000016</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>1</td>
+            
+            <td>000300</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>0</td>
+            
+            <td>399330</td>
+            
+        </tr>
+        
+    </tbody>
+</table></p>
 <h3 id="tong da xin zi ding yi zhi shu_1">通达信自定义指数</h3>
 <p>记录在文件T0002\hq_cache\tdxzs.cfg中，每行一条记录，每个记录包含6个字段，字段之间用“,”分隔。字段依次为：</p>
 <p>
-<div class="justtable">
-    <table>
-        <thead>
+<table class="table table-hover">
+    
+    
+    <thead>
+    <tr>
+        
+        
+        <th>指数名称</th>
+        
+        <th>指数代码</th>
+        
+        <th>类别<br/>2-通达信行业板块<br/>3-地区板块<br/>4-概念板块<br/>5-风格板块<br/>8-申万行业</th>
+        
+        <th>未知字段<br/>(都为1)</th>
+        
+        <th>未知字段<br/>(都为0)</th>
+        
+        <th>行业代码或板块代码<br/>a) 类别为2时对应通达信行业代码<br/>b) 类别为3对应地域编号，与base.dbf中的DY字段对应<br/>c) 类别为4对应概念板块名称<br/>d) 类别为5对应风格板块名称<br/>e) 类别为8对应申万行业代码</p></th>
+        
+    </tr>
+    </thead>
+    
+    <tbody>
+        
         <tr>
-            <th>指数名称</th>
-            <th>指数代码</th>
-            <th>类别<br/>2-通达信行业板块<br/>3-地区板块<br/>4-概念板块<br/>5-风格板块<br/>8-申万行业</th>
-            <th>未知字段<br/>(都为1)</th>
-            <th>未知字段<br/>(都为0)</th>
-            <th>行业代码或板块代码<br/>a) 类别为2时对应通达信行业代码<br/>b) 类别为3对应地域编号，与base.dbf中的DY字段对应<br/>c) 类别为4对应概念板块名称<br/>d) 类别为5对应风格板块名称<br/>e) 类别为8对应申万行业代码</p></th>
+            
+            
+            <td><p>黑龙江</td>
+            
+            <td>880201</td>
+            
+            <td>3</td>
+            
+            <td>1</td>
+            
+            <td>0</td>
+            
+            <td>1</td>
+            
         </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><p>黑龙江</td>
-                <td>880201</td>
-                <td>3</td>
-                <td>1</td>
-                <td>0</td>
-                <td>1</td>
-            </tr>
-            <tr>
-                <td>新疆板块</td>
-                <td>880202</td>
-                <td>3</td>
-                <td>1</td>
-                <td>0</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>吉林板块</td>
-                <td>880203</td>
-                <td>3</td>
-                <td>1</td>
-                <td>0</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>甘肃板块</td>
-                <td>880204</td>
-                <td>3</td>
-                <td>1</td>
-                <td>0</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>……</td>
-            </tr>
-            <tr>
-                <td>煤炭</td>
-                <td>880301</td>
-                <td>2</td>
-                <td>1</td>
-                <td>0</td>
-                <td>T0101</td>
-            </tr>
-            <tr>
-                <td>煤炭开采</td>
-                <td>880302</td>
-                <td>2</td>
-                <td>1</td>
-                <td>1</td>
-                <td>T010101</td>
-            </tr>
-            <tr>
-                <td>焦炭加工</td>
-                <td>880303</td>
-                <td>2</td>
-                <td>1</td>
-                <td>1</td>
-                <td>T010102</td>
-            </tr>
-            <tr>
-                <td>电力</td>
-                <td>880305</td>
-                <td>2</td>
-                <td>1</td>
-                <td>0</td>
-                <td>T0102</td>
-            </tr>
-            <tr>
-                <td>水力发电</td>
-                <td>880306</td>
-                <td>2</td>
-                <td>1</td>
-                <td>1</td>
-                <td>T010201</td>
-            </tr>
-        </tbody>
-    </table>
-</div></p>
+        
+        <tr>
+            
+            
+            <td>新疆板块</td>
+            
+            <td>880202</td>
+            
+            <td>3</td>
+            
+            <td>1</td>
+            
+            <td>0</td>
+            
+            <td>2</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>吉林板块</td>
+            
+            <td>880203</td>
+            
+            <td>3</td>
+            
+            <td>1</td>
+            
+            <td>0</td>
+            
+            <td>3</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>甘肃板块</td>
+            
+            <td>880204</td>
+            
+            <td>3</td>
+            
+            <td>1</td>
+            
+            <td>0</td>
+            
+            <td>4</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>……</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>煤炭</td>
+            
+            <td>880301</td>
+            
+            <td>2</td>
+            
+            <td>1</td>
+            
+            <td>0</td>
+            
+            <td>T0101</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>煤炭开采</td>
+            
+            <td>880302</td>
+            
+            <td>2</td>
+            
+            <td>1</td>
+            
+            <td>1</td>
+            
+            <td>T010101</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>焦炭加工</td>
+            
+            <td>880303</td>
+            
+            <td>2</td>
+            
+            <td>1</td>
+            
+            <td>1</td>
+            
+            <td>T010102</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>电力</td>
+            
+            <td>880305</td>
+            
+            <td>2</td>
+            
+            <td>1</td>
+            
+            <td>0</td>
+            
+            <td>T0102</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>水力发电</td>
+            
+            <td>880306</td>
+            
+            <td>2</td>
+            
+            <td>1</td>
+            
+            <td>1</td>
+            
+            <td>T010201</td>
+            
+        </tr>
+        
+    </tbody>
+</table></p>
 <h3 id="mei ge gu piao dui ying de shen mo xing ye he tong da xin xing ye">每个股票对应的申万行业和通达信行业</h3>
 <p>记录在文件T0002\hq_cache\tdxhy.cfg中：</p>
 <p>
-<div class="justtable">
-    <table>
-        <thead>
+<table class="table table-hover">
+    
+    
+    <thead>
+    <tr>
+        
+        
+        <th>市场</th>
+        
+        <th>股票代码</th>
+        
+        <th>通达信新行业代码</th>
+        
+        <th>申万行业代码</th>
+        
+    </tr>
+    </thead>
+    
+    <tbody>
+        
         <tr>
-            <th>市场</th>
-            <th>股票代码</th>
-            <th>通达信新行业代码</th>
-            <th>申万行业代码</th>
+            
+            
+            <td>0</td>
+            
+            <td>000001</td>
+            
+            <td>T1001</td>
+            
+            <td>440101</td>
+            
         </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>0</td>
-                <td>000001</td>
-                <td>T1001</td>
-                <td>440101</td>
-            </tr>
-            <tr>
-                <td>0</td>
-                <td>000002</td>
-                <td>T110201</td>
-                <td>430101</td>
-            </tr>
-            <tr>
-                <td>0</td>
-                <td>000004</td>
-                <td>T040502</td>
-                <td>370301</td>
-            </tr>
-            <tr>
-                <td>0</td>
-                <td>000005</td>
-                <td>T110202</td>
-                <td>430101</td>
-            </tr>
-            <tr>
-                <td>0</td>
-                <td>000006</td>
-                <td>T110202</td>
-                <td>430101</td>
-            </tr>
-            <tr>
-                <td>0</td>
-                <td>000007</td>
-                <td>T0604</td>
-                <td>460201</td>
-            </tr>
-            <tr>
-                <td>0</td>
-                <td>000008</td>
-                <td>T1301</td>
-                <td>510101</td>
-            </tr>
-            <tr>
-                <td>0</td>
-                <td>000009</td>
-                <td>T110201</td>
-                <td>430101</td>
-            </tr>
-            <tr>
-                <td>0</td>
-                <td>000010</td>
-                <td>T110101</td>
-                <td>250202</td>
-            </tr>
-            <tr>
-                <td>0</td>
-                <td>000011</td>
-                <td>T110202</td>
-                <td>430101</td>
-            </tr>
-            <tr>
-                <td>0</td>
-                <td>000012</td>
-                <td>T020603</td>
-                <td>250101</td>
-            </tr>
-            <tr>
-                <td>0</td>
-                <td>000014</td>
-                <td>T110201</td>
-                <td>430101</td>
-            </tr>
-        </tbody>
-    </table>
-</div></p>
+        
+        <tr>
+            
+            
+            <td>0</td>
+            
+            <td>000002</td>
+            
+            <td>T110201</td>
+            
+            <td>430101</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>0</td>
+            
+            <td>000004</td>
+            
+            <td>T040502</td>
+            
+            <td>370301</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>0</td>
+            
+            <td>000005</td>
+            
+            <td>T110202</td>
+            
+            <td>430101</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>0</td>
+            
+            <td>000006</td>
+            
+            <td>T110202</td>
+            
+            <td>430101</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>0</td>
+            
+            <td>000007</td>
+            
+            <td>T0604</td>
+            
+            <td>460201</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>0</td>
+            
+            <td>000008</td>
+            
+            <td>T1301</td>
+            
+            <td>510101</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>0</td>
+            
+            <td>000009</td>
+            
+            <td>T110201</td>
+            
+            <td>430101</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>0</td>
+            
+            <td>000010</td>
+            
+            <td>T110101</td>
+            
+            <td>250202</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>0</td>
+            
+            <td>000011</td>
+            
+            <td>T110202</td>
+            
+            <td>430101</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>0</td>
+            
+            <td>000012</td>
+            
+            <td>T020603</td>
+            
+            <td>250101</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td>0</td>
+            
+            <td>000014</td>
+            
+            <td>T110201</td>
+            
+            <td>430101</td>
+            
+        </tr>
+        
+    </tbody>
+</table></p>
             
             
             <hr/>
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
-<li><a href="./samba.html" title="Samba">Samba</a></li>
-<li><a href="./xetexlatexxelatex.html" title="Xetex/Latex/Xelatex">Xetex/Latex/Xelatex</a></li>
-<li><a href="./php-fpm.html" title="Php-fpm">Php-fpm</a></li>
-<li><a href="./latex-demos-and-templates.html" title="Latex Demos and Templates">Latex Demos and Templates</a></li>
 <li><a href="./develop-pelican-plugin.html" title="Develop Pelican Plugin">Develop Pelican Plugin</a></li>
+<li><a href="./vlc-bo-fang-qi.html" title="VLC 播放器">VLC 播放器</a></li>
+<li><a href="./fvwm.html" title="FVWM">FVWM</a></li>
+<li><a href="./mi-ma-sheng-cheng-cheng-xu.html" title="密码生成程序">密码生成程序</a></li>
+<li><a href="./linux-bluetooth-lan-ya.html" title="Linux Bluetooth / 蓝牙">Linux Bluetooth / 蓝牙</a></li>
 </ul>
 <hr />
 </section>
@@ -512,7 +802,7 @@
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="./tags.html#tech-ref">tech
-                    <span>77</span>
+                    <span>81</span>
 </a></li>
                 <li><a href="./tags.html#tong-da-xin-ref">通达信
                     <span>6</span>

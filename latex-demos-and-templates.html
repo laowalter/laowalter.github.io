@@ -10,7 +10,7 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="tech, Tech, " />
+<meta name="keywords" content="tech, latex, Tech, " />
 
 <meta property="og:title" content="Latex Demos and Templates "/>
 <meta property="og:url" content="./latex-demos-and-templates.html" />
@@ -71,13 +71,13 @@
     <div class="span2 table-of-content">
         <nav>
         <h4>Contents</h4>
-        <div id="toc"><ul><li><a class="toc-href" href="#chang yong de latexhong bao" title="常用的latex宏包">常用的latex宏包</a></li><li><a class="toc-href" href="#yi xie gong neng" title="一些功能">一些功能</a><ul><li><a class="toc-href" href="#yan se" title="颜色">颜色</a></li></ul></li><li><a class="toc-href" href="#mo ban_1" title="模板">模板</a><ul><li><a class="toc-href" href="#mo ban yi" title="模板一">模板一</a></li></ul></li></ul></div>
+        <div id="toc"><ul><li><a class="toc-href" href="#1.0 chang yong de latexhong bao" title="1.0 常用的latex宏包">1.0 常用的latex宏包</a></li><li><a class="toc-href" href="#2.0 yi xie gong neng" title="2.0 一些功能">2.0 一些功能</a><ul><li><a class="toc-href" href="#2.1 yan se" title="2.1 颜色">2.1 颜色</a></li></ul></li><li><a class="toc-href" href="#3.0 mo ban_1" title="3.0 模板">3.0 模板</a><ul><li><a class="toc-href" href="#3.1 mo ban yi" title="3.1 模板一">3.1 模板一</a></li><li><a class="toc-href" href="#3.2 mo ban er {table)" title="3.2 模板二{table)">3.2 模板二{table)</a></li></ul></li></ul></div>
         </nav>
     </div>
     <div class="span8 article-content">
 
             
-            <h2 id="chang yong de latexhong bao">1.0 常用的latex宏包</h2>
+            <h2 id="1.0 chang yong de latexhong bao">1.0 常用的latex宏包</h2>
 <div class="highlight"><pre><span></span>CJK        中文支持，现不推荐这种方式
 CJKfntef        CJK 下的中文下划线、浪线、加点等标记。xeCJK 沿用
 CJKpunct        CJK 下的中文标点压缩
@@ -150,13 +150,13 @@ tikz        功能最强大的绘图宏包之一
 
 　　顺便推荐一个出非常多含源代码例子的LaTex学习网站：http://www.math.ecnu.edu.cn/~latex/
 </pre></div>
-<h2 id="yi xie gong neng">2.0 一些功能</h2>
-<h3 id="yan se">2.1 颜色</h3>
+<h2 id="2.0 yi xie gong neng">2.0 一些功能</h2>
+<h3 id="2.1 yan se">2.1 颜色</h3>
 <ul>
 <li><a href="https://latexcolor.com/">颜色列表 https://latexcolor.com/</a></li>
 <li>命令使用</li>
 </ul>
-<div class='file'><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>.tex</div>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> .tex</div>
 <div class="highlight"><pre><span></span>-------------preamble-------
 <span class="se">\u</span>sepakage xcolor
 <span class="se">\d</span>efinecolor<span class="o">{</span>ballblue<span class="o">}{</span>rgb<span class="o">}{</span><span class="m">0</span>.13, <span class="m">0</span>.67, <span class="m">0</span>.8<span class="o">}</span>
@@ -167,35 +167,79 @@ or
 
 <span class="se">\t</span>extcolor<span class="o">{</span>red<span class="o">}{</span>the <span class="nb">read</span> text<span class="o">}</span>
 </pre></div>
-<h2 id="mo ban_1">3.0 模板</h2>
-<h3 id="mo ban yi">3.1 模板一</h3>
-<div class='file'><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>模板一</div>
+<h2 id="3.0 mo ban_1">3.0 模板</h2>
+<h3 id="3.1 mo ban yi">3.1 模板一</h3>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> 模板一</div>
 <div class="highlight"><pre><span></span><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
 <span class="k">\usepackage</span><span class="nb">{</span>geometry<span class="nb">}</span>
-<span class="k">\geometry</span><span class="nb">{</span>a4paper,left=2.5cm,right=2.5cm,top=3cm,bottom=1cm<span class="nb">}</span>
+<span class="k">\geometry</span><span class="nb">{</span>b5paper,left=2.5cm,right=2.5cm,top=3cm,bottom=1cm<span class="nb">}</span>
 
-<span class="k">\usepackage</span><span class="nb">{</span>xeCJK<span class="nb">}</span> <span class="c">% 这个包可以指定中文字体。</span>
+<span class="k">\usepackage</span><span class="na">[slantfont,boldfont]</span><span class="nb">{</span>xeCJK<span class="nb">}</span>
+<span class="k">\setCJKmainfont</span><span class="na">[BoldFont=Adobe Heiti Std,ItalicFont=Adobe Kaiti Std]</span><span class="nb">{</span>Adobe Song Std<span class="nb">}</span>
+<span class="c">%\setCJKmainfont[BoldFont=Adobe Heiti Std,ItalicFont=Adobe Kaiti Std]{Adobe Ming Std}</span>
+<span class="k">\setCJKsansfont</span><span class="nb">{</span>Adobe Heiti Std<span class="nb">}</span>
+<span class="c">%\setCJKsansfont{Adobe Fan Heiti Std}</span>
+<span class="k">\setCJKmonofont</span><span class="nb">{</span>Adobe Song Std<span class="nb">}</span>
+
+<span class="c">%\setCJKfamilyfont{song}{Adobe Ming Std}</span>
+<span class="k">\setCJKfamilyfont</span><span class="nb">{</span>song<span class="nb">}{</span>Adobe Song Std<span class="nb">}</span>
 <span class="k">\setCJKfamilyfont</span><span class="nb">{</span>hei<span class="nb">}{</span>Adobe Heiti Std<span class="nb">}</span>
+<span class="c">%\setCJKfamilyfont{hei}{Adobe Fan Heiti Std}</span>
+<span class="k">\setCJKfamilyfont</span><span class="nb">{</span>kai<span class="nb">}{</span>Adobe Kaiti Std<span class="nb">}</span>
+
 <span class="k">\newcommand</span><span class="nb">{</span><span class="k">\hei</span><span class="nb">}{</span><span class="k">\CJKfamily</span><span class="nb">{</span>hei<span class="nb">}}</span>
-<span class="k">\setCJKfamilyfont</span><span class="nb">{</span><span class="k">\song</span><span class="nb">}{</span>Adobe Song Std<span class="nb">}</span>
-<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\song</span><span class="nb">}{</span>Adobe Song Std<span class="nb">}</span>
-<span class="k">\setCJKfamilyfont</span><span class="nb">{</span><span class="k">\kai</span><span class="nb">}{</span>Adobe Kaiti Std R<span class="nb">}</span>
-<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\kai</span><span class="nb">}{</span>Adobe Kaiti Std R<span class="nb">}</span>
-<span class="k">\usepackage</span><span class="nb">{</span>fontspec<span class="nb">}</span>
-<span class="k">\setCJKmainfont</span><span class="nb">{</span><span class="k">\song</span><span class="nb">}</span> 
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\song</span><span class="nb">}{</span><span class="k">\CJKfamily</span><span class="nb">{</span>song<span class="nb">}}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\kai</span><span class="nb">}{</span><span class="k">\CJKfamily</span><span class="nb">{</span>kai<span class="nb">}}</span>
 
 <span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
 <span class="k">\thispagestyle</span><span class="nb">{</span>empty<span class="nb">}</span>
 <span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
-    <span class="k">\hei</span> <span class="nb">{</span><span class="k">\Huge</span> 修心十七条<span class="nb">}</span>
+    <span class="k">\hei</span><span class="nb">{</span><span class="k">\Huge</span> 修心十七条<span class="nb">}</span>
 <span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
 <span class="k">\hfill</span>
 
 <span class="k">\large\selectfont</span>
 <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
-    <span class="k">\item</span> 當你真誠的時候，你不必須得到真誠，當真誠的時候不用祈求天，自然有感應，因爲當下天就是心。
-    <span class="k">\item</span> 只要赤诚就能感天，就能灵验。
+<span class="k">\item</span> 修心沒有終點，了願了，要再來，來了還要再來，吃苦了，苦而已，唯有隨喜自在才是真自在。
 <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</pre></div>
+<h3 id="3.2 mo ban er {table)">3.2 模板二{table)</h3>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> 模板二(table)</div>
+<div class="highlight"><pre><span></span><span class="k">\usepackage</span><span class="na">[justification=centering]</span><span class="nb">{</span>caption<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="k">\thispagestyle</span><span class="nb">{</span>empty<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+    <span class="k">\hei</span> <span class="nb">{</span><span class="k">\Huge</span> 作息时间表<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+<span class="k">\hfill</span>
+
+<span class="k">\begin</span><span class="nb">{</span>table<span class="nb">}</span>[!hbt]
+<span class="k">\centering</span>
+<span class="k">\large\selectfont</span>
+<span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>|l|l|l|<span class="nb">}</span><span class="k">\hline</span>
+<span class="k">\multicolumn</span><span class="nb">{</span>3<span class="nb">}{</span>|c|<span class="nb">}{</span>上午<span class="nb">}</span><span class="k">\\</span>
+<span class="k">\hline</span>
+<span class="k">\hei</span><span class="nb">{</span>时间<span class="nb">}&amp;</span> <span class="k">\hei</span><span class="nb">{</span>安排<span class="nb">}</span> <span class="nb">&amp;</span> <span class="k">\hei</span><span class="nb">{</span>备注<span class="nb">}</span><span class="k">\\</span>
+<span class="k">\hline</span>
+6:30am-7:00am<span class="nb">&amp;</span>  起床<span class="nb">&amp;</span>   洗漱<span class="k">\\</span>
+<span class="k">\hline</span>
+7:00am-7:30am<span class="nb">&amp;</span>  锻炼<span class="nb">&amp;</span>   易筋经<span class="k">\\</span>
+<span class="k">\hline</span>
+7:30am-8:00am<span class="nb">&amp;</span>  早餐<span class="nb">&amp;</span><span class="k">\\</span>
+<span class="k">\hline</span>
+8:00am-8:15am<span class="nb">&amp;</span>  工作环境准备<span class="nb">&amp;</span>   备水、擦桌子屏幕<span class="k">\\</span>
+<span class="k">\hline</span>
+8:15am-8:55am<span class="nb">&amp;</span>  盘前准备<span class="nb">&amp;</span><span class="k">\\</span>
+<span class="k">\hline</span>
+9:00am-11:30am<span class="nb">&amp;</span> 期货交易<span class="nb">&amp;</span><span class="k">\\</span>
+<span class="k">\hline</span>
+11:30am-12:30pm<span class="nb">&amp;</span>    午餐<span class="nb">&amp;</span><span class="k">\\</span>
+<span class="k">\hline</span>
+<span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>table<span class="nb">}</span>
+
 <span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </pre></div>
             
@@ -204,11 +248,11 @@ or
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
-<li><a href="./ircweechat.html" title="IRC/Weechat">IRC/Weechat</a></li>
-<li><a href="./samba.html" title="Samba">Samba</a></li>
 <li><a href="./xetexlatexxelatex.html" title="Xetex/Latex/Xelatex">Xetex/Latex/Xelatex</a></li>
-<li><a href="./php-fpm.html" title="Php-fpm">Php-fpm</a></li>
-<li><a href="./develop-pelican-plugin.html" title="Develop Pelican Plugin">Develop Pelican Plugin</a></li>
+<li><a href="./vlc-bo-fang-qi.html" title="VLC 播放器">VLC 播放器</a></li>
+<li><a href="./fvwm.html" title="FVWM">FVWM</a></li>
+<li><a href="./mi-ma-sheng-cheng-cheng-xu.html" title="密码生成程序">密码生成程序</a></li>
+<li><a href="./linux-bluetooth-lan-ya.html" title="Linux Bluetooth / 蓝牙">Linux Bluetooth / 蓝牙</a></li>
 </ul>
 <hr />
 </section>
@@ -225,8 +269,11 @@ or
             <a class="category-link" href="./categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
+                <li><a href="./tags.html#latex-ref">latex
+                    <span>2</span>
+</a></li>
                 <li><a href="./tags.html#tech-ref">tech
-                    <span>77</span>
+                    <span>81</span>
 </a></li>
             </ul>
 <h4>Contact</h4>

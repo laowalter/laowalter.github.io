@@ -10,17 +10,17 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="tech, mac, virtualbox, git, automator, Tech, " />
+<meta name="keywords" content="tech, mac, virtualbox, git, Tech, " />
 
 <meta property="og:title" content="Mac Operations "/>
 <meta property="og:url" content="./mac-operations.html" />
-<meta property="og:description" content="Mac Operation create bootable mac usb In Application Download High Sierra apps Format usb stick with mac external file system In terminal: sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install\ macOS\ High\ Sierra.app brew install with proxy export ALL_PROXY=127.0 …" />
+<meta property="og:description" content="1.0 Mac Operation 1.1 create bootable mac usb In Application Download High Sierra apps Format usb stick with mac external file system In terminal: sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install\ macOS\ High\ Sierra.app 1.2 brew install …" />
 <meta property="og:site_name" content="Just MEMO" />
 <meta property="og:article:author" content="Walter" />
 <meta property="og:article:published_time" content="2016-02-29T09:52:41+08:00" />
 <meta property="og:article:modified_time" content="2016-09-26T12:43:00+08:00" />
 <meta name="twitter:title" content="Mac Operations ">
-<meta name="twitter:description" content="Mac Operation create bootable mac usb In Application Download High Sierra apps Format usb stick with mac external file system In terminal: sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install\ macOS\ High\ Sierra.app brew install with proxy export ALL_PROXY=127.0 …">
+<meta name="twitter:description" content="1.0 Mac Operation 1.1 create bootable mac usb In Application Download High Sierra apps Format usb stick with mac external file system In terminal: sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install\ macOS\ High\ Sierra.app 1.2 brew install …">
 
         <title>Mac Operations  · Just MEMO
 </title>
@@ -71,14 +71,14 @@
     <div class="span2 table-of-content">
         <nav>
         <h4>Contents</h4>
-        <div id="toc"><ul><li><a class="toc-href" href="#create bootable mac usb" title="create bootable mac&nbsp;usb">create bootable mac&nbsp;usb</a></li><li><a class="toc-href" href="#brew install with proxy" title="brew install with&nbsp;proxy">brew install with&nbsp;proxy</a></li><li><a class="toc-href" href="#set hostname" title="set&nbsp;HostName">set&nbsp;HostName</a></li><li><a class="toc-href" href="#find and replace in command line" title="find and replace in command&nbsp;line">find and replace in command&nbsp;line</a></li><li><a class="toc-href" href="#cron" title="Cron">Cron</a></li><li><a class="toc-href" href="#virtual box" title="Virtual&nbsp;Box">Virtual&nbsp;Box</a></li><li><a class="toc-href" href="#create git server" title="Create git&nbsp;server">Create git&nbsp;server</a><ul><li><a class="toc-href" href="#server computer:" title="Server&nbsp;Computer:">Server&nbsp;Computer:</a></li><li><a class="toc-href" href="#client computer" title="Client&nbsp;Computer">Client&nbsp;Computer</a></li></ul></li><li><a class="toc-href" href="#mac change keyboard map_1" title="Mac change keyboard&nbsp;map">Mac change keyboard&nbsp;map</a></li><li><a class="toc-href" href="#webserver" title="Webserver">Webserver</a><ul><li><a class="toc-href" href="#qi dong ben ji webfu wu qi , gen di zhi /library/webserver/documents" title="启动本机web服务器,&nbsp;根地址/Library/WebServer/Documents">启动本机web服务器,&nbsp;根地址/Library/WebServer/Documents</a></li><li><a class="toc-href" href="#jian li  username.conf, usernameshi yong hu zhang hao" title="建立 username.conf,&nbsp;username是用户账号">建立 username.conf,&nbsp;username是用户账号</a></li><li><a class="toc-href" href="#da kai /etc/apache2/httpd.conf" title="打开/etc/apache2/httpd.conf">打开/etc/apache2/httpd.conf</a></li><li><a class="toc-href" href="#da kai  /etc/apache2/extra/httpd-userdir.conf" title="打开&nbsp;/etc/apache2/extra/httpd-userdir.conf">打开&nbsp;/etc/apache2/extra/httpd-userdir.conf</a></li><li><a class="toc-href" href="#qi dong apache" title="启动apache">启动apache</a></li></ul></li></ul></div>
+        <div id="toc"><ul><li><a class="toc-href" href="#1.1 create bootable mac usb" title="1.1 create bootable mac&nbsp;usb">1.1 create bootable mac&nbsp;usb</a></li><li><a class="toc-href" href="#1.2 brew install with proxy" title="1.2 brew install with&nbsp;proxy">1.2 brew install with&nbsp;proxy</a></li><li><a class="toc-href" href="#1.3 set hostname" title="1.3 set&nbsp;HostName">1.3 set&nbsp;HostName</a></li><li><a class="toc-href" href="#1.4 find and replace in command line" title="1.4 find and replace in command&nbsp;line">1.4 find and replace in command&nbsp;line</a></li><li><a class="toc-href" href="#2.1 cron" title="2.1 Cron">2.1 Cron</a></li><li><a class="toc-href" href="#2.2 virtual box" title="2.2 Virtual&nbsp;Box">2.2 Virtual&nbsp;Box</a></li><li><a class="toc-href" href="#2.3 create git server" title="2.3 Create git&nbsp;server">2.3 Create git&nbsp;server</a><ul><li><a class="toc-href" href="#2.3.1 server computer:" title="2.3.1 Server&nbsp;Computer:">2.3.1 Server&nbsp;Computer:</a></li><li><a class="toc-href" href="#2.3.2 client computer" title="2.3.2 Client&nbsp;Computer">2.3.2 Client&nbsp;Computer</a></li></ul></li><li><a class="toc-href" href="#2.4 mac change keyboard map_1" title="2.4 Mac change keyboard&nbsp;map">2.4 Mac change keyboard&nbsp;map</a></li><li><a class="toc-href" href="#2.5 webserver" title="2.5 Webserver">2.5 Webserver</a><ul><li><a class="toc-href" href="#2.5.1 qi dong ben ji webfu wu qi , gen di zhi /library/webserver/documents" title="2.5.1 启动本机web服务器,&nbsp;根地址/Library/WebServer/Documents">2.5.1 启动本机web服务器,&nbsp;根地址/Library/WebServer/Documents</a></li><li><a class="toc-href" href="#2.5.2 jian li  username.conf, usernameshi yong hu zhang hao" title="2.5.2 建立 username.conf,&nbsp;username是用户账号">2.5.2 建立 username.conf,&nbsp;username是用户账号</a></li><li><a class="toc-href" href="#2.5.3 da kai /etc/apache2/httpd.conf" title="2.5.3 打开/etc/apache2/httpd.conf">2.5.3 打开/etc/apache2/httpd.conf</a></li><li><a class="toc-href" href="#2.5.4 da kai  /etc/apache2/extra/httpd-userdir.conf" title="2.5.4 打开&nbsp;/etc/apache2/extra/httpd-userdir.conf">2.5.4 打开&nbsp;/etc/apache2/extra/httpd-userdir.conf</a></li><li><a class="toc-href" href="#2.5.5 qi dong apache" title="2.5.5 启动apache">2.5.5 启动apache</a></li></ul></li></ul></div>
         </nav>
     </div>
     <div class="span8 article-content">
 
             
-            <h1>Mac Operation</h1>
-<h2 id="create bootable mac usb">create bootable mac usb</h2>
+            <h1>1.0 Mac Operation</h1>
+<h2 id="1.1 create bootable mac usb">1.1 create bootable mac usb</h2>
 <ol>
 <li>In Application Download High Sierra apps</li>
 <li>Format usb stick with mac external file system</li>
@@ -86,11 +86,11 @@
 </ol>
 <div class="highlight"><pre><span></span>sudo /Applications/Install<span class="se">\ </span>macOS<span class="se">\ </span>High<span class="se">\ </span>Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install<span class="se">\ </span>macOS<span class="se">\ </span>High<span class="se">\ </span>Sierra.app
 </pre></div>
-<h2 id="brew install with proxy">brew install with proxy</h2>
+<h2 id="1.2 brew install with proxy">1.2 brew install with proxy</h2>
 <div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ALL_PROXY</span><span class="o">=</span><span class="m">127</span>.0.0.1:8087
 brew install chromedriver
 </pre></div>
-<h2 id="set hostname">set HostName</h2>
+<h2 id="1.3 set hostname">1.3 set HostName</h2>
 <ol>
 <li>set /etc/hosts</li>
 <li>set hostname</li>
@@ -100,7 +100,7 @@ brew install chromedriver
     sudo scutil --set HostName newname
     dscacheutil -flushcache
 </pre></div>
-<h2 id="find and replace in command line">find and replace in command line</h2>
+<h2 id="1.4 find and replace in command line">1.4 find and replace in command line</h2>
 <ul>
 <li>replace</li>
 </ul>
@@ -117,7 +117,7 @@ brew install chromedriver
 </ul>
 <div class="highlight"><pre><span></span>    find . -name <span class="s1">'*md'</span> -type f -exec sed -i <span class="s1">''</span> -e  <span class="s1">'/^$/d'</span> <span class="o">{}</span> <span class="se">\;</span>
 </pre></div>
-<h1>Autostart</h1>
+<h1>2.0 Autostart</h1>
 <ul>
 <li>/Library/LaunchDaemons/com.localhost.hexo.plist<ul>
 <li>Check script error with plutil</li>
@@ -128,7 +128,7 @@ brew install chromedriver
 </pre></div>
 <div class="highlight"><pre><span></span>* Set up log to /var/log/system.log
 </pre></div>
-<h2 id="cron">Cron</h2>
+<h2 id="2.1 cron">2.1 Cron</h2>
 <ul>
 <li>command</li>
 </ul>
@@ -136,7 +136,7 @@ brew install chromedriver
 <div class="highlight"><pre><span></span>    ~ su -
     <span class="c1"># root # crontab -u walter -e</span>
 </pre></div>
-<p><img alt="Alt Text" class="img-fluid" src="./images/tech/crontab.gif"/></p>
+<p><a href="./images/tech/crontab.gif"><img alt="Alt Text" class="img-fluid" src="./images/tech/crontab.gif"/></a></p>
 <ul>
 <li>MacMini <code>cron file for walter</code></li>
 </ul>
@@ -166,7 +166,7 @@ brew install chromedriver
 <span class="nb">source</span> ~/.virtualenvs/quanta/bin/activate
 python ~/bin/spyder/bootstrap.py  &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
 </pre></div>
-<h2 id="virtual box">Virtual Box</h2>
+<h2 id="2.2 virtual box">2.2 Virtual Box</h2>
 <ul>
 <li>
 <p>Set Virtual Box resolution for  Mac or Linux</p>
@@ -184,8 +184,8 @@ python ~/bin/spyder/bootstrap.py  &gt; /dev/null <span class="m">2</span>&gt;<sp
 <div class="highlight"><pre><span></span>~$ VBoxManage controlvm Stock setvideomodehint <span class="m">2560</span> <span class="m">1440</span> <span class="m">32</span>​ <span class="m">0</span>
 ~$ VBoxManage controlvm Stock setvideomodehint <span class="m">1920</span> <span class="m">1080</span> <span class="m">32</span>​ <span class="m">1</span>
 </pre></div>
-<h2 id="create git server">Create git server</h2>
-<h3 id="server computer:">Server Computer:</h3>
+<h2 id="2.3 create git server">2.3 Create git server</h2>
+<h3 id="2.3.1 server computer:">2.3.1 Server Computer:</h3>
 <ol>
 <li>Add a new user: git</li>
 </ol>
@@ -200,7 +200,7 @@ python ~/bin/spyder/bootstrap.py  &gt; /dev/null <span class="m">2</span>&gt;<sp
         $ <span class="nb">cd</span> something.git
         $ git init --bare
 </pre></div>
-<h3 id="client computer">Client Computer</h3>
+<h3 id="2.3.2 client computer">2.3.2 Client Computer</h3>
 <div class="highlight"><pre><span></span>    $ git clone ssh://localhost/~/something.git
 </pre></div>
 <p>Or: git is the username </p>
@@ -209,16 +209,16 @@ python ~/bin/spyder/bootstrap.py  &gt; /dev/null <span class="m">2</span>&gt;<sp
 <p>First push:</p>
 <div class="highlight"><pre><span></span>    $ git push origin master
 </pre></div>
-<h2 id="mac change keyboard map_1">Mac change keyboard map</h2>
+<h2 id="2.4 mac change keyboard map_1">2.4 Mac change keyboard map</h2>
 <p>Key replace Application name:  <code>Karabiner</code></p>
-<h2 id="webserver">Webserver</h2>
+<h2 id="2.5 webserver">2.5 Webserver</h2>
 <p>(http://digitalshore.io/local-web-development-environment-apache-osx-10-11-el-capitan/)[http://digitalshore.io/local-web-development-environment-apache-osx-10-11-el-capitan/]</p>
-<h3 id="qi dong ben ji webfu wu qi , gen di zhi /library/webserver/documents">启动本机web服务器, 根地址/Library/WebServer/Documents</h3>
+<h3 id="2.5.1 qi dong ben ji webfu wu qi , gen di zhi /library/webserver/documents">2.5.1 启动本机web服务器, 根地址/Library/WebServer/Documents</h3>
 <div class="highlight"><pre><span></span>sudo apachectl start
 sudo apachectl stop
 sudo apachectl restart
 </pre></div>
-<h3 id="jian li  username.conf, usernameshi yong hu zhang hao">建立 username.conf, username是用户账号</h3>
+<h3 id="2.5.2 jian li  username.conf, usernameshi yong hu zhang hao">2.5.2 建立 username.conf, username是用户账号</h3>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> /etc/apache2/users
 sudo vi username.conf
 </pre></div>
@@ -233,7 +233,7 @@ sudo vi username.conf
 ls -l username.conf
 -rw-r--r-- root wheel <span class="m">298</span> Jun <span class="m">28</span> <span class="m">16</span>:47 username.conf
 </pre></div>
-<h3 id="da kai /etc/apache2/httpd.conf">打开/etc/apache2/httpd.conf</h3>
+<h3 id="2.5.3 da kai /etc/apache2/httpd.conf">2.5.3 打开/etc/apache2/httpd.conf</h3>
 <div class="highlight"><pre><span></span>LoadModule authz_core_module libexec/apache2/mod_authz_core.so
 LoadModule authz_host_module libexec/apache2/mod_authz_host.so
 LoadModule userdir_module libexec/apache2/mod_userdir.so
@@ -242,11 +242,11 @@ LoadModule rewrite_module libexec/apache2/mod_rewrite.so
 LoadModule php5_module libexec/apache2/libphp5.so
 Include /private/etc/apache2/extra/httpd-userdir.conf
 </pre></div>
-<h3 id="da kai  /etc/apache2/extra/httpd-userdir.conf">打开 /etc/apache2/extra/httpd-userdir.conf</h3>
+<h3 id="2.5.4 da kai  /etc/apache2/extra/httpd-userdir.conf">2.5.4 打开 /etc/apache2/extra/httpd-userdir.conf</h3>
 <p>uncomment the following:</p>
 <div class="highlight"><pre><span></span>Include /private/etc/apache2/users/*.conf
 </pre></div>
-<h3 id="qi dong apache">启动apache</h3>
+<h3 id="2.5.5 qi dong apache">2.5.5 启动apache</h3>
 <div class="highlight"><pre><span></span>mkdir ~/Sites
 sudo apachectl restart
 </pre></div>
@@ -258,9 +258,9 @@ sudo apachectl restart
 <ul class="related-posts-list">
 <li><a href="./git.html" title="Git">Git</a></li>
 <li><a href="./mac-mini-gentoo-linux-single-boot-with-kernel-stub-installation.html" title="Mac-mini Gentoo Linux Single Boot with Kernel Stub Installation">Mac-mini Gentoo Linux Single Boot with Kernel Stub Installation</a></li>
-<li><a href="./php-fpm.html" title="Php-fpm">Php-fpm</a></li>
-<li><a href="./latex-demos-and-templates.html" title="Latex Demos and Templates">Latex Demos and Templates</a></li>
-<li><a href="./develop-pelican-plugin.html" title="Develop Pelican Plugin">Develop Pelican Plugin</a></li>
+<li><a href="./fvwm.html" title="FVWM">FVWM</a></li>
+<li><a href="./mi-ma-sheng-cheng-cheng-xu.html" title="密码生成程序">密码生成程序</a></li>
+<li><a href="./linux-bluetooth-lan-ya.html" title="Linux Bluetooth / 蓝牙">Linux Bluetooth / 蓝牙</a></li>
 </ul>
 <hr />
 </section>
@@ -277,9 +277,6 @@ sudo apachectl restart
             <a class="category-link" href="./categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="./tags.html#automator-ref">automator
-                    <span>1</span>
-</a></li>
                 <li><a href="./tags.html#git-ref">git
                     <span>2</span>
 </a></li>
@@ -287,7 +284,7 @@ sudo apachectl restart
                     <span>2</span>
 </a></li>
                 <li><a href="./tags.html#tech-ref">tech
-                    <span>77</span>
+                    <span>81</span>
 </a></li>
                 <li><a href="./tags.html#virtualbox-ref">virtualbox
                     <span>1</span>

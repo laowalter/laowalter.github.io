@@ -97,11 +97,15 @@ ul.footer-content li {
 /* Syntax Highlight */
 table {
     table-layout: fixed;
+    /*border-style: solid;*/
     width: 100%;
-    border: 1;
 }
-td {
+td{
     vertical-align: top;
+}
+
+tr{
+    border: 1px solid #006B3C; 
 }
 @media (max-width:979px) {
     .linenos {

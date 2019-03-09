@@ -14,13 +14,13 @@
 
 <meta property="og:title" content="Samba "/>
 <meta property="og:url" content="./samba.html" />
-<meta property="og:description" content="1.0 配置文件 smb.conf FILE:/etc/samba/smb.conf [global] workgroup = home server string = mini server role = standalone server hosts allow = 192.168.0. 192.168.1. 192.168.6. 127. security = user log file = /var/log/samba/log.%m max log size = 50 interfaces = 192.168.0.199 …" />
+<meta property="og:description" content="1.0 配置文件 smb.conf FILE: /etc/samba/smb.conf [global] workgroup = home server string = mini server role = standalone server hosts allow = 192.168.0. 192.168.1. 192.168.6. 127. security = user log file = /var/log/samba/log.%m max log size = 50 interfaces = 192.168.0.199 …" />
 <meta property="og:site_name" content="Just MEMO" />
 <meta property="og:article:author" content="Walter" />
 <meta property="og:article:published_time" content="2018-11-17T10:17:08+08:00" />
 <meta property="og:article:modified_time" content="2018-11-17T10:17:08+08:00" />
 <meta name="twitter:title" content="Samba ">
-<meta name="twitter:description" content="1.0 配置文件 smb.conf FILE:/etc/samba/smb.conf [global] workgroup = home server string = mini server role = standalone server hosts allow = 192.168.0. 192.168.1. 192.168.6. 127. security = user log file = /var/log/samba/log.%m max log size = 50 interfaces = 192.168.0.199 …">
+<meta name="twitter:description" content="1.0 配置文件 smb.conf FILE: /etc/samba/smb.conf [global] workgroup = home server string = mini server role = standalone server hosts allow = 192.168.0. 192.168.1. 192.168.6. 127. security = user log file = /var/log/samba/log.%m max log size = 50 interfaces = 192.168.0.199 …">
 
         <title>Samba  · Just MEMO
 </title>
@@ -71,14 +71,14 @@
     <div class="span2 table-of-content">
         <nav>
         <h4>Contents</h4>
-        <div id="toc"><ul><li><a class="toc-href" href="#pei zhi wen jian  smb.conf" title="配置文件&nbsp;smb.conf">配置文件&nbsp;smb.conf</a></li><li><a class="toc-href" href="#te bie shuo ming :" title="特别说明：">特别说明：</a></li><li><a class="toc-href" href="#&lt;&lt;samba shou ce &gt;&gt;" title="《Samba&nbsp;手册》">《Samba&nbsp;手册》</a></li></ul></div>
+        <div id="toc"><ul><li><a class="toc-href" href="#1.0 pei zhi wen jian  smb.conf" title="1.0 配置文件&nbsp;smb.conf">1.0 配置文件&nbsp;smb.conf</a></li><li><a class="toc-href" href="#2.0 te bie shuo ming :" title="2.0 特别说明：">2.0 特别说明：</a></li><li><a class="toc-href" href="#3.0 &lt;&lt;samba shou ce &gt;&gt;" title="3.0 《Samba&nbsp;手册》">3.0 《Samba&nbsp;手册》</a></li></ul></div>
         </nav>
     </div>
     <div class="span8 article-content">
 
             
-            <h3 id="pei zhi wen jian  smb.conf">1.0 配置文件 smb.conf</h3>
-<div class='file'><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/samba/smb.conf</div>
+            <h3 id="1.0 pei zhi wen jian  smb.conf">1.0 配置文件 smb.conf</h3>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/samba/smb.conf</div>
 <div class="highlight"><pre><span></span><span class="o">[</span>global<span class="o">]</span>
    <span class="nv">workgroup</span> <span class="o">=</span> home
    server <span class="nv">string</span> <span class="o">=</span> mini
@@ -131,7 +131,7 @@
    guest <span class="nv">ok</span> <span class="o">=</span> yes
    force <span class="nv">user</span> <span class="o">=</span> %U
 </pre></div>
-<h3 id="te bie shuo ming :">2.0 特别说明：</h3>
+<h3 id="2.0 te bie shuo ming :">2.0 特别说明：</h3>
 <ul>
 <li>testparm 用于检查smb.conf的语法是否正确。</li>
 <li>
@@ -159,18 +159,18 @@
 </ul>
 <p>当发现Samba中新建的目录/文件权限不正确，例如无法访问某个目录、无法更改文件，就需要检查上面几个值的设置。</p>
 <p>另外需要说明的是，上面几个配置项，会和security mask、force security mode、directory security mask、force directory security mode这几个配置项相互作用。这几个带”security”的配置项会影响Windows <span class="caps">NT</span>/2000的ACL功能，一般我们不需要设置。</p>
-<h3 id="&lt;&lt;samba shou ce &gt;&gt;">3.0 <a href="https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html">《Samba 手册》</a></h3>
+<h3 id="3.0 &lt;&lt;samba shou ce &gt;&gt;">3.0 <a href="https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html">《Samba 手册》</a></h3>
             
             
             <hr/>
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
-<li><a href="./ircweechat.html" title="IRC/Weechat">IRC/Weechat</a></li>
-<li><a href="./xetexlatexxelatex.html" title="Xetex/Latex/Xelatex">Xetex/Latex/Xelatex</a></li>
-<li><a href="./php-fpm.html" title="Php-fpm">Php-fpm</a></li>
-<li><a href="./latex-demos-and-templates.html" title="Latex Demos and Templates">Latex Demos and Templates</a></li>
 <li><a href="./develop-pelican-plugin.html" title="Develop Pelican Plugin">Develop Pelican Plugin</a></li>
+<li><a href="./vlc-bo-fang-qi.html" title="VLC 播放器">VLC 播放器</a></li>
+<li><a href="./fvwm.html" title="FVWM">FVWM</a></li>
+<li><a href="./mi-ma-sheng-cheng-cheng-xu.html" title="密码生成程序">密码生成程序</a></li>
+<li><a href="./linux-bluetooth-lan-ya.html" title="Linux Bluetooth / 蓝牙">Linux Bluetooth / 蓝牙</a></li>
 </ul>
 <hr />
 </section>
@@ -188,7 +188,7 @@
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="./tags.html#tech-ref">tech
-                    <span>77</span>
+                    <span>81</span>
 </a></li>
             </ul>
 <h4>Contact</h4>

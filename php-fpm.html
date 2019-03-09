@@ -14,13 +14,13 @@
 
 <meta property="og:title" content="Php-fpm "/>
 <meta property="og:url" content="./php-fpm.html" />
-<meta property="og:description" content="1.0 Install /Upgrade php-fpm 1.1 Config /etc/php/fpm-php7.2/fpm.d/www.conf FILE:/etc/php/fpm-php7.2/fpm.d/www.conf listen = /run/php-fpm.socket listen.owner = nginx listen.group = nginx listen.mode = 0660 1.2 Adjust upload limited FILE:/etc/php/fpm-php7.2/php.ini …" />
+<meta property="og:description" content="1.0 Install /Upgrade php-fpm 1.1 Config /etc/php/fpm-php7.2/fpm.d/www.conf FILE: /etc/php/fpm-php7.2/fpm.d/www.conf listen = /run/php-fpm.socket listen.owner = nginx listen.group = nginx listen.mode = 0660 1.2 Adjust upload limited FILE: /etc/php/fpm-php7.2/php.ini …" />
 <meta property="og:site_name" content="Just MEMO" />
 <meta property="og:article:author" content="Walter" />
 <meta property="og:article:published_time" content="2018-12-02T11:45:29+08:00" />
 <meta property="og:article:modified_time" content="2018-12-02T11:45:29+08:00" />
 <meta name="twitter:title" content="Php-fpm ">
-<meta name="twitter:description" content="1.0 Install /Upgrade php-fpm 1.1 Config /etc/php/fpm-php7.2/fpm.d/www.conf FILE:/etc/php/fpm-php7.2/fpm.d/www.conf listen = /run/php-fpm.socket listen.owner = nginx listen.group = nginx listen.mode = 0660 1.2 Adjust upload limited FILE:/etc/php/fpm-php7.2/php.ini …">
+<meta name="twitter:description" content="1.0 Install /Upgrade php-fpm 1.1 Config /etc/php/fpm-php7.2/fpm.d/www.conf FILE: /etc/php/fpm-php7.2/fpm.d/www.conf listen = /run/php-fpm.socket listen.owner = nginx listen.group = nginx listen.mode = 0660 1.2 Adjust upload limited FILE: /etc/php/fpm-php7.2/php.ini …">
 
         <title>Php-fpm  · Just MEMO
 </title>
@@ -71,36 +71,36 @@
     <div class="span2 table-of-content">
         <nav>
         <h4>Contents</h4>
-        <div id="toc"><ul><li><a class="toc-href" href="#install /upgrade php-fpm" title="Install /Upgrade&nbsp;php-fpm">Install /Upgrade&nbsp;php-fpm</a><ul><li><a class="toc-href" href="#config /etc/php/fpm-php7.2/fpm.d/www.conf" title="Config&nbsp;/etc/php/fpm-php7.2/fpm.d/www.conf">Config&nbsp;/etc/php/fpm-php7.2/fpm.d/www.conf</a></li><li><a class="toc-href" href="#adjust upload limited" title="Adjust upload&nbsp;limited">Adjust upload&nbsp;limited</a></li><li><a class="toc-href" href="#/etc/ngnix/nginx.conf" title="/etc/ngnix/nginx.conf">/etc/ngnix/nginx.conf</a></li></ul></li><li><a class="toc-href" href="#add php-fpm to default service_1" title="Add php-fpm to default&nbsp;service">Add php-fpm to default&nbsp;service</a></li><li><a class="toc-href" href="#setup php-fpm in nginx" title="Setup php-fpm in&nbsp;nginx">Setup php-fpm in&nbsp;nginx</a></li></ul></div>
+        <div id="toc"><ul><li><a class="toc-href" href="#1.0 install /upgrade php-fpm" title="1.0 Install /Upgrade&nbsp;php-fpm">1.0 Install /Upgrade&nbsp;php-fpm</a><ul><li><a class="toc-href" href="#1.1 config /etc/php/fpm-php7.2/fpm.d/www.conf" title="1.1 Config&nbsp;/etc/php/fpm-php7.2/fpm.d/www.conf">1.1 Config&nbsp;/etc/php/fpm-php7.2/fpm.d/www.conf</a></li><li><a class="toc-href" href="#1.2 adjust upload limited" title="1.2 Adjust upload&nbsp;limited">1.2 Adjust upload&nbsp;limited</a></li><li><a class="toc-href" href="#1.3 /etc/ngnix/nginx.conf" title="1.3 /etc/ngnix/nginx.conf">1.3 /etc/ngnix/nginx.conf</a></li></ul></li><li><a class="toc-href" href="#2.0 add php-fpm to default service_1" title="2.0 Add php-fpm to default&nbsp;service">2.0 Add php-fpm to default&nbsp;service</a></li><li><a class="toc-href" href="#3.0 setup php-fpm in nginx" title="3.0 Setup php-fpm in&nbsp;nginx">3.0 Setup php-fpm in&nbsp;nginx</a></li></ul></div>
         </nav>
     </div>
     <div class="span8 article-content">
 
             
-            <h2 id="install /upgrade php-fpm">1.0 Install /Upgrade php-fpm</h2>
-<h3 id="config /etc/php/fpm-php7.2/fpm.d/www.conf">1.1 Config /etc/php/fpm-php7.2/fpm.d/www.conf</h3>
-<div class='file'><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/php/fpm-php7.2/fpm.d/www.conf</div>
+            <h2 id="1.0 install /upgrade php-fpm">1.0 Install /Upgrade php-fpm</h2>
+<h3 id="1.1 config /etc/php/fpm-php7.2/fpm.d/www.conf">1.1 Config /etc/php/fpm-php7.2/fpm.d/www.conf</h3>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/php/fpm-php7.2/fpm.d/www.conf</div>
 <div class="highlight"><pre><span></span>  <span class="nv">listen</span> <span class="o">=</span> /run/php-fpm.socket
   listen.owner <span class="o">=</span> nginx
   listen.group <span class="o">=</span> nginx
   listen.mode <span class="o">=</span> <span class="m">0660</span>
 </pre></div>
-<h3 id="adjust upload limited">1.2 Adjust upload limited</h3>
-<div class='file'><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/php/fpm-php7.2/php.ini</div>
+<h3 id="1.2 adjust upload limited">1.2 Adjust upload limited</h3>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/php/fpm-php7.2/php.ini</div>
 <div class="highlight"><pre><span></span><span class="nv">upload_tmp_dir</span> <span class="o">=</span> /tmp
 <span class="nv">upload_max_filesize</span> <span class="o">=</span> 20M
 </pre></div>
-<h3 id="/etc/ngnix/nginx.conf">1.3 /etc/ngnix/nginx.conf</h3>
-<div class='file'><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/ngnix/nginx.conf</div>
+<h3 id="1.3 /etc/ngnix/nginx.conf">1.3 /etc/ngnix/nginx.conf</h3>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/ngnix/nginx.conf</div>
 <div class="highlight"><pre><span></span>client_max_body_size 20M<span class="p">;</span>
 client_body_buffer_size 128k<span class="p">;</span>
 </pre></div>
-<h2 id="add php-fpm to default service_1">2.0 Add php-fpm to default service</h2>
+<h2 id="2.0 add php-fpm to default service_1">2.0 Add php-fpm to default service</h2>
 <div class="highlight"><pre><span></span>sudo  /etc/init.d/php-fpm start
 rc-update add php-fpm default
 </pre></div>
-<h2 id="setup php-fpm in nginx">3.0 Setup php-fpm in nginx</h2>
-<div class='file'><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/ngnix/nginx.conf</div>
+<h2 id="3.0 setup php-fpm in nginx">3.0 Setup php-fpm in nginx</h2>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/ngnix/nginx.conf</div>
 <div class="highlight"><pre><span></span><span class="k">server</span> <span class="p">{</span>
     <span class="kn">listen</span> <span class="n">0.0.0.0</span><span class="p">:</span><span class="mi">7001</span><span class="p">;</span>
     <span class="kn">server_name</span> <span class="s">pannel</span><span class="p">;</span>
@@ -125,10 +125,10 @@ rc-update add php-fpm default
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
 <li><a href="./nginx.html" title="nginx">nginx</a></li>
-<li><a href="./samba.html" title="Samba">Samba</a></li>
-<li><a href="./xetexlatexxelatex.html" title="Xetex/Latex/Xelatex">Xetex/Latex/Xelatex</a></li>
-<li><a href="./latex-demos-and-templates.html" title="Latex Demos and Templates">Latex Demos and Templates</a></li>
-<li><a href="./develop-pelican-plugin.html" title="Develop Pelican Plugin">Develop Pelican Plugin</a></li>
+<li><a href="./vlc-bo-fang-qi.html" title="VLC 播放器">VLC 播放器</a></li>
+<li><a href="./fvwm.html" title="FVWM">FVWM</a></li>
+<li><a href="./mi-ma-sheng-cheng-cheng-xu.html" title="密码生成程序">密码生成程序</a></li>
+<li><a href="./linux-bluetooth-lan-ya.html" title="Linux Bluetooth / 蓝牙">Linux Bluetooth / 蓝牙</a></li>
 </ul>
 <hr />
 </section>
@@ -152,7 +152,7 @@ rc-update add php-fpm default
                     <span>1</span>
 </a></li>
                 <li><a href="./tags.html#tech-ref">tech
-                    <span>77</span>
+                    <span>81</span>
 </a></li>
             </ul>
 <h4>Contact</h4>

@@ -14,13 +14,13 @@
 
 <meta property="og:title" content="Video "/>
 <meta property="og:url" content="./video.html" />
-<meta property="og:description" content="Video Combine Combine multiple flvs into one emerge -avq mplayer mencoder -forceidx -of lavf -oac pcm -ovc copy -o film.flv 1.flv 2.flv 3.flv 4.flv 5.flv 6.flv 7.flv 8.flv 9.flv Video Downloader youtube youtube音频和视频很多是分开的，ffmpeg用来将音频和视频合并。 emerge -avq ffmpeg 安装youtube-dl . ~/.bin/python3 …" />
+<meta property="og:description" content="1.0 Video Combine 1.1 Combine multiple flvs into one emerge -avq mplayer mencoder -forceidx -of lavf -oac pcm -ovc copy -o film.flv 1.flv 2.flv 3.flv 4.flv 5.flv 6.flv 7.flv 8.flv 9.flv 1.2 Spit One mp4 into multiple …" />
 <meta property="og:site_name" content="Just MEMO" />
 <meta property="og:article:author" content="Walter" />
 <meta property="og:article:published_time" content="2018-02-10T13:55:13+08:00" />
 <meta property="og:article:modified_time" content="2018-02-10T13:55:13+08:00" />
 <meta name="twitter:title" content="Video ">
-<meta name="twitter:description" content="Video Combine Combine multiple flvs into one emerge -avq mplayer mencoder -forceidx -of lavf -oac pcm -ovc copy -o film.flv 1.flv 2.flv 3.flv 4.flv 5.flv 6.flv 7.flv 8.flv 9.flv Video Downloader youtube youtube音频和视频很多是分开的，ffmpeg用来将音频和视频合并。 emerge -avq ffmpeg 安装youtube-dl . ~/.bin/python3 …">
+<meta name="twitter:description" content="1.0 Video Combine 1.1 Combine multiple flvs into one emerge -avq mplayer mencoder -forceidx -of lavf -oac pcm -ovc copy -o film.flv 1.flv 2.flv 3.flv 4.flv 5.flv 6.flv 7.flv 8.flv 9.flv 1.2 Spit One mp4 into multiple …">
 
         <title>Video  · Just MEMO
 </title>
@@ -71,19 +71,22 @@
     <div class="span2 table-of-content">
         <nav>
         <h4>Contents</h4>
-        <div id="toc"><ul><li><a class="toc-href" href="#video combine" title="Video&nbsp;Combine">Video&nbsp;Combine</a><ul><li><a class="toc-href" href="#combine multiple flvs into one" title="Combine multiple flvs into&nbsp;one">Combine multiple flvs into&nbsp;one</a></li></ul></li><li><a class="toc-href" href="#video downloader_1" title="Video&nbsp;Downloader">Video&nbsp;Downloader</a><ul><li><a class="toc-href" href="#youtube" title="youtube">youtube</a></li><li><a class="toc-href" href="#shi yong youtube-dl" title="使用youtube-dl">使用youtube-dl</a></li></ul></li></ul></div>
+        <div id="toc"><ul><li><a class="toc-href" href="#1.0 video combine" title="1.0 Video&nbsp;Combine">1.0 Video&nbsp;Combine</a><ul><li><a class="toc-href" href="#1.1 combine multiple flvs into one" title="1.1 Combine multiple flvs into&nbsp;one">1.1 Combine multiple flvs into&nbsp;one</a></li><li><a class="toc-href" href="#1.2 spit one mp4 into multiple mp4" title="1.2 Spit One mp4 into multiple&nbsp;mp4">1.2 Spit One mp4 into multiple&nbsp;mp4</a></li></ul></li><li><a class="toc-href" href="#2.0 video downloader_1" title="2.0 Video&nbsp;Downloader">2.0 Video&nbsp;Downloader</a><ul><li><a class="toc-href" href="#2.1 youtube" title="2.1 youtube">2.1 youtube</a></li><li><a class="toc-href" href="#2.2 shi yong youtube-dl" title="2.2 使用youtube-dl">2.2 使用youtube-dl</a></li></ul></li></ul></div>
         </nav>
     </div>
     <div class="span8 article-content">
 
             
-            <h2 id="video combine">Video Combine</h2>
-<h3 id="combine multiple flvs into one">Combine multiple flvs into one</h3>
+            <h2 id="1.0 video combine">1.0 Video Combine</h2>
+<h3 id="1.1 combine multiple flvs into one">1.1 Combine multiple flvs into one</h3>
 <div class="highlight"><pre><span></span>emerge -avq mplayer
 mencoder -forceidx -of lavf -oac pcm -ovc copy -o film.flv <span class="m">1</span>.flv <span class="m">2</span>.flv <span class="m">3</span>.flv <span class="m">4</span>.flv <span class="m">5</span>.flv <span class="m">6</span>.flv <span class="m">7</span>.flv <span class="m">8</span>.flv <span class="m">9</span>.flv
 </pre></div>
-<h2 id="video downloader_1">Video Downloader</h2>
-<h3 id="youtube">youtube</h3>
+<h3 id="1.2 spit one mp4 into multiple mp4">1.2 Spit One mp4 into multiple mp4</h3>
+<div class="highlight"><pre><span></span>ffmpeg -i 5大運動傷害搶先知.mp4 -c copy -map <span class="m">0</span> -segment_time <span class="m">00</span>:01:30 -f segment -f segment output%03d.mp4
+</pre></div>
+<h2 id="2.0 video downloader_1">2.0 Video Downloader</h2>
+<h3 id="2.1 youtube">2.1 youtube</h3>
 <p>youtube音频和视频很多是分开的，ffmpeg用来将音频和视频合并。</p>
 <div class="highlight"><pre><span></span>emerge -avq ffmpeg
 </pre></div>
@@ -111,7 +114,7 @@ pip install youtube-dl
 <span class="c1"># Force resume of partially downloaded files</span>
 --continue
 </pre></div>
-<h3 id="shi yong youtube-dl">使用youtube-dl</h3>
+<h3 id="2.2 shi yong youtube-dl">2.2 使用youtube-dl</h3>
 <ul>
 <li>列出视频可下载的文件</li>
 </ul>
@@ -150,11 +153,11 @@ format code  extension  resolution note
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
-<li><a href="./samba.html" title="Samba">Samba</a></li>
-<li><a href="./xetexlatexxelatex.html" title="Xetex/Latex/Xelatex">Xetex/Latex/Xelatex</a></li>
-<li><a href="./php-fpm.html" title="Php-fpm">Php-fpm</a></li>
-<li><a href="./latex-demos-and-templates.html" title="Latex Demos and Templates">Latex Demos and Templates</a></li>
 <li><a href="./develop-pelican-plugin.html" title="Develop Pelican Plugin">Develop Pelican Plugin</a></li>
+<li><a href="./vlc-bo-fang-qi.html" title="VLC 播放器">VLC 播放器</a></li>
+<li><a href="./fvwm.html" title="FVWM">FVWM</a></li>
+<li><a href="./mi-ma-sheng-cheng-cheng-xu.html" title="密码生成程序">密码生成程序</a></li>
+<li><a href="./linux-bluetooth-lan-ya.html" title="Linux Bluetooth / 蓝牙">Linux Bluetooth / 蓝牙</a></li>
 </ul>
 <hr />
 </section>
@@ -172,7 +175,7 @@ format code  extension  resolution note
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="./tags.html#tech-ref">tech
-                    <span>77</span>
+                    <span>81</span>
 </a></li>
             </ul>
 <h4>Contact</h4>

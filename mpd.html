@@ -71,7 +71,7 @@
     <div class="span2 table-of-content">
         <nav>
         <h4>Contents</h4>
-        <div id="toc"><ul><li><a class="toc-href" href="#install mpd" title="Install&nbsp;mpd">Install&nbsp;mpd</a></li><li><a class="toc-href" href="#/etc/mpd.conf" title="/etc/mpd.conf">/etc/mpd.conf</a></li><li><a class="toc-href" href="#trick" title="Trick">Trick</a></li><li><a class="toc-href" href="#kong zhi volume" title="控制Volume">控制Volume</a></li></ul></div>
+        <div id="toc"><ul><li><a class="toc-href" href="#install mpd" title="Install&nbsp;mpd">Install&nbsp;mpd</a></li><li><a class="toc-href" href="#trick" title="Trick">Trick</a></li><li><a class="toc-href" href="#kong zhi volume" title="控制Volume">控制Volume</a></li><li><a class="toc-href" href="#/etc/mpd.conf" title="/etc/mpd.conf">/etc/mpd.conf</a></li></ul></div>
         </nav>
     </div>
     <div class="span8 article-content">
@@ -85,45 +85,6 @@
      Homepage:            https://www.musicpd.org https://github.com/MusicPlayerDaemon/MPD
      Description:         The Music Player Daemon <span class="o">(</span>mpd<span class="o">)</span>
 </pre></div>
-<h3 id="/etc/mpd.conf">/etc/mpd.conf</h3>
-<div class='file'><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span>/etc/mpd.conf</div>
-<div class="highlight"><pre><span></span><span class="n">music_directory</span>     <span class="s">"/var/lib/mpd/music"</span>
-<span class="n">playlist_directory</span>  <span class="s">"/var/lib/mpd/playlists"</span>
-<span class="n">db_file</span>         <span class="s">"/var/lib/mpd/database"</span>
-<span class="n">log_file</span>        <span class="s">"/var/lib/mpd/log"</span>
-<span class="n">pid_file</span>        <span class="s">"/var/lib/mpd/pid"</span>
-<span class="n">state_file</span>      <span class="s">"/var/lib/mpd/state"</span>
-<span class="n">user</span>            <span class="s">"mpd"</span>
-<span class="n">bind_to_address</span>     <span class="s">"0.0.0.0"</span>
-<span class="n">bind_to_address</span>     <span class="s">"/var/lib/mpd/socket"</span>
-<span class="n">port</span>                <span class="s">"6600"</span>
-<span class="n">log_level</span>           <span class="s">"default"</span>
-<span class="c1">#gapless_mp3_playback           "yes"</span>
-<span class="n">auto_update</span> <span class="s">"yes"</span>
-<span class="c1">#follow_outside_symlinks    "yes"</span>
-<span class="n">follow_inside_symlinks</span>      <span class="s">"yes"</span>
-<span class="c1">#input {</span>
-<span class="c1">#        plugin "curl"</span>
-<span class="c1">#}</span>
-
-<span class="n">audio_output</span> <span class="p">{</span>
-    <span class="n">type</span>        <span class="s">"alsa"</span>
-    <span class="n">name</span>        <span class="s">"Analog  Device"</span>
-    <span class="n">device</span>      <span class="s">"hw:0,0"</span>    <span class="c1"># optional</span>
-    <span class="n">mixer_type</span>      <span class="s">"hardware"</span>  <span class="c1"># optional</span>
-    <span class="n">mixer_index</span> <span class="s">"0"</span>     <span class="c1"># optional</span>
-<span class="p">}</span>
-
-<span class="c1"># For FIBER</span>
-<span class="c1">#audio_output {</span>
-<span class="c1">#   type        "alsa"</span>
-<span class="c1">#   name        "DSD  Device"</span>
-<span class="c1">#   device      "hw:0,1"    # optional</span>
-<span class="c1">#   mixer_type      "hardware"  # optional</span>
-<span class="c1">#   mixer_index "0"     # optional</span>
-<span class="c1">#}</span>
-<span class="n">filesystem_charset</span> <span class="s">"UTF-8"</span>
-</pre></div>
 <h3 id="trick">Trick</h3>
 <div class="highlight"><pre><span></span>chmod <span class="m">775</span> -R /var/lib/mpd/music
 </pre></div>
@@ -134,17 +95,422 @@
 <p>Save</p>
 <div class="highlight"><pre><span></span>sudo alsactl store
 </pre></div>
+<h3 id="/etc/mpd.conf">/etc/mpd.conf</h3>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/mpd.conf</div>
+<div class="highlight"><pre><span></span><span class="c1"># An example configuration file for MPD.</span>
+<span class="c1"># Read the user manual for documentation: http://www.musicpd.org/doc/user/</span>
+
+
+<span class="c1"># Files and directories #######################################################</span>
+<span class="c1">#</span>
+<span class="c1"># This setting controls the top directory which MPD will search to discover the</span>
+<span class="c1"># available audio files and add them to the daemon's online database. This </span>
+<span class="c1"># setting defaults to the XDG directory, otherwise the music directory will be</span>
+<span class="c1"># be disabled and audio files will only be accepted over ipc socket (using</span>
+<span class="c1"># file:// protocol) or streaming files over an accepted protocol.</span>
+<span class="c1">#</span>
+<span class="n">music_directory</span>         <span class="s">"/var/lib/mpd/music"</span>
+<span class="c1">#</span>
+<span class="c1"># This setting sets the MPD internal playlist directory. The purpose of this</span>
+<span class="c1"># directory is storage for playlists created by MPD. The server will use </span>
+<span class="c1"># playlist files not created by the server but only if they are in the MPD</span>
+<span class="c1"># format. This setting defaults to playlist saving being disabled.</span>
+<span class="c1">#</span>
+<span class="n">playlist_directory</span>      <span class="s">"/var/lib/mpd/playlists"</span>
+<span class="c1">#</span>
+<span class="c1"># This setting sets the location of the MPD database. This file is used to</span>
+<span class="c1"># load the database at server start up and store the database while the </span>
+<span class="c1"># server is not up. This setting defaults to disabled which will allow</span>
+<span class="c1"># MPD to accept files over ipc socket (using file:// protocol) or streaming</span>
+<span class="c1"># files over an accepted protocol.</span>
+<span class="c1">#</span>
+<span class="n">db_file</span>         <span class="s">"/var/lib/mpd/database"</span>
+<span class="c1"># </span>
+<span class="c1"># These settings are the locations for the daemon log files for the daemon.</span>
+<span class="c1"># These logs are great for troubleshooting, depending on your log_level</span>
+<span class="c1"># settings.</span>
+<span class="c1">#</span>
+<span class="c1"># The special value "syslog" makes MPD use the local syslog daemon. This</span>
+<span class="c1"># setting defaults to logging to syslog.</span>
+<span class="c1">#</span>
+<span class="n">log_file</span>            <span class="s">"/var/lib/mpd/log"</span>
+<span class="c1">#</span>
+<span class="c1"># This setting sets the location of the file which stores the process ID</span>
+<span class="c1"># for use of mpd --kill and some init scripts. This setting is required when</span>
+<span class="c1"># using the Gentoo init script.</span>
+<span class="c1">#</span>
+<span class="n">pid_file</span>            <span class="s">"/var/lib/mpd/pid"</span>
+<span class="c1">#</span>
+<span class="c1"># This setting sets the location of the file which contains information about</span>
+<span class="c1"># most variables to get MPD back into the same general shape it was in before</span>
+<span class="c1"># it was brought down. This setting is disabled by default and the server </span>
+<span class="c1"># state will be reset on server start up.</span>
+<span class="c1">#</span>
+<span class="n">state_file</span>          <span class="s">"/var/lib/mpd/state"</span>
+<span class="c1">#</span>
+<span class="c1"># The location of the sticker database.  This is a database which</span>
+<span class="c1"># manages dynamic information attached to songs.</span>
+<span class="c1">#</span>
+<span class="c1">#sticker_file           "~/.mpd/sticker.sql"</span>
+<span class="c1">#</span>
+<span class="c1">###############################################################################</span>
+
+
+<span class="c1"># General music daemon options ################################################</span>
+<span class="c1">#</span>
+<span class="c1"># This setting specifies the user that MPD will run as. MPD should never run as</span>
+<span class="c1"># root and you may use this setting to make MPD change its user ID after</span>
+<span class="c1"># initialization. This setting is disabled by default and MPD is run as the</span>
+<span class="c1"># current user.</span>
+<span class="c1">#</span>
+<span class="n">user</span>                <span class="s">"mpd"</span>
+<span class="c1">#</span>
+<span class="c1"># This setting specifies the group that MPD will run as. If not specified</span>
+<span class="c1"># primary group of user specified with "user" setting will be used (if set).</span>
+<span class="c1"># This is useful if MPD needs to be a member of group such as "audio" to</span>
+<span class="c1"># have permission to use sound card.</span>
+<span class="c1">#</span>
+<span class="c1">#group              "nogroup"</span>
+<span class="c1">#</span>
+<span class="c1"># This setting sets the address for the daemon to listen on. Careful attention</span>
+<span class="c1"># should be paid if this is assigned to anything other then the default, any.</span>
+<span class="c1"># This setting can deny access to control of the daemon. Not effective if</span>
+<span class="c1"># systemd socket activiation is in use.</span>
+<span class="c1">#</span>
+<span class="c1"># For network</span>
+<span class="n">bind_to_address</span>     <span class="s">"localhost"</span>
+<span class="c1">#</span>
+<span class="c1"># And for Unix Socket</span>
+<span class="n">bind_to_address</span>     <span class="s">"/var/lib/mpd/socket"</span>
+<span class="c1">#</span>
+<span class="c1"># This setting is the TCP port that is desired for the daemon to get assigned</span>
+<span class="c1"># to.</span>
+<span class="c1">#</span>
+<span class="c1">#port               "6600"</span>
+<span class="c1">#</span>
+<span class="c1"># This setting controls the type of information which is logged. Available </span>
+<span class="c1"># setting arguments are "default", "secure" or "verbose". The "verbose" setting</span>
+<span class="c1"># argument is recommended for troubleshooting, though can quickly stretch</span>
+<span class="c1"># available resources on limited hardware storage.</span>
+<span class="c1">#</span>
+<span class="c1">#log_level          "default"</span>
+<span class="c1">#</span>
+<span class="c1"># Setting "restore_paused" to "yes" puts MPD into pause mode instead</span>
+<span class="c1"># of starting playback after startup.</span>
+<span class="c1">#</span>
+<span class="c1">#restore_paused "no"</span>
+<span class="c1">#</span>
+<span class="c1"># This setting enables MPD to create playlists in a format usable by other</span>
+<span class="c1"># music players.</span>
+<span class="c1">#</span>
+<span class="c1">#save_absolute_paths_in_playlists   "no"</span>
+<span class="c1">#</span>
+<span class="c1"># This setting defines a list of tag types that will be extracted during the</span>
+<span class="c1"># audio file discovery process. The complete list of possible values can be</span>
+<span class="c1"># found in the user manual.</span>
+<span class="c1">#metadata_to_use    "artist,album,title,track,name,genre,date,composer,performer,disc"</span>
+<span class="c1">#</span>
+<span class="c1"># This example just enables the "comment" tag without disabling all</span>
+<span class="c1"># the other supported tags:</span>
+<span class="c1">#metadata_to_use "+comment"</span>
+<span class="c1">#</span>
+<span class="c1"># This setting enables automatic update of MPD's database when files in </span>
+<span class="c1"># music_directory are changed.</span>
+<span class="c1">#</span>
+<span class="c1">#auto_update    "yes"</span>
+<span class="c1">#</span>
+<span class="c1"># Limit the depth of the directories being watched, 0 means only watch</span>
+<span class="c1"># the music directory itself.  There is no limit by default.</span>
+<span class="c1">#</span>
+<span class="c1">#auto_update_depth "3"</span>
+<span class="c1">#</span>
+<span class="c1">###############################################################################</span>
+
+
+<span class="c1"># Symbolic link behavior ######################################################</span>
+<span class="c1">#</span>
+<span class="c1"># If this setting is set to "yes", MPD will discover audio files by following </span>
+<span class="c1"># symbolic links outside of the configured music_directory.</span>
+<span class="c1">#</span>
+<span class="c1">#follow_outside_symlinks    "yes"</span>
+<span class="c1">#</span>
+<span class="c1"># If this setting is set to "yes", MPD will discover audio files by following</span>
+<span class="c1"># symbolic links inside of the configured music_directory.</span>
+<span class="c1">#</span>
+<span class="c1">#follow_inside_symlinks     "yes"</span>
+<span class="c1">#</span>
+<span class="c1">###############################################################################</span>
+
+
+<span class="c1"># Zeroconf / Avahi Service Discovery ##########################################</span>
+<span class="c1">#</span>
+<span class="c1"># If this setting is set to "yes", service information will be published with</span>
+<span class="c1"># Zeroconf / Avahi.</span>
+<span class="c1">#</span>
+<span class="n">zeroconf_enabled</span>        <span class="s">"yes"</span>
+<span class="c1">#</span>
+<span class="c1"># The argument to this setting will be the Zeroconf / Avahi unique name for</span>
+<span class="c1"># this MPD server on the network. %h will be replaced with the hostname.</span>
+<span class="c1">#</span>
+<span class="c1">#zeroconf_name          "Music Player @ %h"</span>
+<span class="c1">#</span>
+<span class="c1">###############################################################################</span>
+
+
+<span class="c1"># Permissions #################################################################</span>
+<span class="c1">#</span>
+<span class="c1"># If this setting is set, MPD will require password authorization. The password</span>
+<span class="c1"># setting can be specified multiple times for different password profiles.</span>
+<span class="c1">#</span>
+<span class="c1">#password                        "password@read,add,control,admin"</span>
+<span class="c1">#</span>
+<span class="c1"># This setting specifies the permissions a user has who has not yet logged in. </span>
+<span class="c1">#</span>
+<span class="c1">#default_permissions             "read,add,control,admin"</span>
+<span class="c1">#</span>
+<span class="c1">###############################################################################</span>
+
+
+<span class="c1"># Database #######################################################################</span>
+<span class="c1">#</span>
+
+<span class="c1">#database {</span>
+<span class="c1">#       plugin "proxy"</span>
+<span class="c1">#       host "other.mpd.host"</span>
+<span class="c1">#       port "6600"</span>
+<span class="c1">#}</span>
+
+<span class="c1"># Input #######################################################################</span>
+<span class="c1">#</span>
+
+<span class="n">input</span> <span class="p">{</span>
+        <span class="n">plugin</span> <span class="s">"curl"</span>
+<span class="c1">#       proxy "proxy.isp.com:8080"</span>
+<span class="c1">#       proxy_user "user"</span>
+<span class="c1">#       proxy_password "password"</span>
+<span class="p">}</span>
+
+<span class="c1">#</span>
+<span class="c1">###############################################################################</span>
+
+<span class="c1"># Audio Output ################################################################</span>
+<span class="c1">#</span>
+<span class="c1"># MPD supports various audio output types, as well as playing through multiple </span>
+<span class="c1"># audio outputs at the same time, through multiple audio_output settings </span>
+<span class="c1"># blocks. Setting this block is optional, though the server will only attempt</span>
+<span class="c1"># autodetection for one sound card.</span>
+<span class="c1">#</span>
+<span class="c1"># An example of an ALSA output:</span>
+<span class="c1"># MAC MINI 自带喇叭播放</span>
+<span class="n">audio_output</span> <span class="p">{</span>
+    <span class="n">type</span>        <span class="s">"alsa"</span>
+    <span class="n">name</span>        <span class="s">"my alsa device"</span>
+    <span class="n">device</span>      <span class="s">"hw:0,0"</span>    <span class="c1"># optional</span>
+    <span class="n">mixer_type</span>      <span class="s">"hardware"</span>  <span class="c1"># optional</span>
+    <span class="n">mixer_device</span>    <span class="s">"default"</span>   <span class="c1"># optional</span>
+    <span class="n">mixer_control</span>   <span class="s">"pcm"</span>       <span class="c1"># optional</span>
+    <span class="n">mixer_index</span> <span class="s">"0"</span>     <span class="c1"># optional</span>
+<span class="p">}</span>
+
+
+<span class="n">audio_output</span> <span class="p">{</span>
+    <span class="n">type</span>        <span class="s">"alsa"</span>
+    <span class="n">name</span>        <span class="s">"bluetooth speaker"</span>
+    <span class="n">device</span>      <span class="s">"bluealsa"</span>  <span class="c1"># optional</span>
+    <span class="n">mixer_type</span>      <span class="s">"software"</span>  <span class="c1"># optional</span>
+    <span class="n">mixer_device</span>    <span class="s">"bluealsa"</span>  <span class="c1"># optional</span>
+    <span class="n">mixer_control</span>   <span class="s">"pcm"</span>       <span class="c1"># optional</span>
+    <span class="n">mixer_index</span> <span class="s">"0"</span>     <span class="c1"># optional</span>
+<span class="p">}</span>
+
+<span class="c1">#</span>
+<span class="c1"># An example of an OSS output:</span>
+<span class="c1">#</span>
+<span class="c1">#audio_output {</span>
+<span class="c1">#   type        "oss"</span>
+<span class="c1">#   name        "My OSS Device"</span>
+<span class="c1">##  device      "/dev/dsp"  # optional</span>
+<span class="c1">##  mixer_type      "hardware"  # optional</span>
+<span class="c1">##  mixer_device    "/dev/mixer"    # optional</span>
+<span class="c1">##  mixer_control   "PCM"       # optional</span>
+<span class="c1">#}</span>
+<span class="c1">#</span>
+<span class="c1"># An example of a shout output (for streaming to Icecast):</span>
+<span class="c1">#</span>
+<span class="c1">#audio_output {</span>
+<span class="c1">#   type        "shout"</span>
+<span class="c1">#   encoder     "vorbis"        # optional</span>
+<span class="c1">#   name        "My Shout Stream"</span>
+<span class="c1">#   host        "localhost"</span>
+<span class="c1">#   port        "8000"</span>
+<span class="c1">#   mount       "/mpd.ogg"</span>
+<span class="c1">#   password    "hackme"</span>
+<span class="c1">#   quality     "5.0"</span>
+<span class="c1">#   bitrate     "128"</span>
+<span class="c1">#   format      "44100:16:1"</span>
+<span class="c1">##  protocol    "icecast2"      # optional</span>
+<span class="c1">##  user        "source"        # optional</span>
+<span class="c1">##  description "My Stream Description" # optional</span>
+<span class="c1">##  url     "http://example.com"    # optional</span>
+<span class="c1">##  genre       "jazz"          # optional</span>
+<span class="c1">##  public      "no"            # optional</span>
+<span class="c1">##  timeout     "2"         # optional</span>
+<span class="c1">##  mixer_type      "software"      # optional</span>
+<span class="c1">#}</span>
+<span class="c1">#</span>
+<span class="c1"># An example of a recorder output:</span>
+<span class="c1">#</span>
+<span class="c1">#audio_output {</span>
+<span class="c1">#   type        "recorder"</span>
+<span class="c1">#   name        "My recorder"</span>
+<span class="c1">#   encoder     "vorbis"        # optional, vorbis or lame</span>
+<span class="c1">#   path        "/var/lib/mpd/recorder/mpd.ogg"</span>
+<span class="c1">##  quality     "5.0"           # do not define if bitrate is defined</span>
+<span class="c1">#   bitrate     "128"           # do not define if quality is defined</span>
+<span class="c1">#   format      "44100:16:1"</span>
+<span class="c1">#}</span>
+<span class="c1">#</span>
+<span class="c1"># An example of a httpd output (built-in HTTP streaming server):</span>
+<span class="c1">#</span>
+<span class="c1">#audio_output {</span>
+<span class="c1">#   type        "httpd"</span>
+<span class="c1">#   name        "My HTTP Stream"</span>
+<span class="c1">#   encoder     "vorbis"        # optional, vorbis or lame</span>
+<span class="c1">#   port        "8000"</span>
+<span class="c1">#   bind_to_address "0.0.0.0"       # optional, IPv4 or IPv6</span>
+<span class="c1">##  quality     "5.0"           # do not define if bitrate is defined</span>
+<span class="c1">#   bitrate     "128"           # do not define if quality is defined</span>
+<span class="c1">#   format      "44100:16:1"</span>
+<span class="c1">#   max_clients "0"         # optional 0=no limit</span>
+<span class="c1">#}</span>
+<span class="c1">#</span>
+<span class="c1"># An example of a pulseaudio output (streaming to a remote pulseaudio server)</span>
+<span class="c1">#</span>
+<span class="c1">#audio_output {</span>
+<span class="c1">#   type        "pulse"</span>
+<span class="c1">#   name        "My Pulse Output"</span>
+<span class="c1">##  server      "remote_server"     # optional</span>
+<span class="c1">##  sink        "remote_server_sink"    # optional</span>
+<span class="c1">#}</span>
+<span class="c1">#</span>
+<span class="c1"># An example of a winmm output (Windows multimedia API).</span>
+<span class="c1">#</span>
+<span class="c1">#audio_output {</span>
+<span class="c1">#   type        "winmm"</span>
+<span class="c1">#   name        "My WinMM output"</span>
+<span class="c1">##  device      "Digital Audio (S/PDIF) (High Definition Audio Device)" # optional</span>
+<span class="c1">#       or</span>
+<span class="c1">##  device      "0"     # optional</span>
+<span class="c1">##  mixer_type  "hardware"  # optional</span>
+<span class="c1">#}</span>
+<span class="c1">#</span>
+<span class="c1"># An example of an openal output.</span>
+<span class="c1">#</span>
+<span class="c1">#audio_output {</span>
+<span class="c1">#   type        "openal"</span>
+<span class="c1">#   name        "My OpenAL output"</span>
+<span class="c1">##  device      "Digital Audio (S/PDIF) (High Definition Audio Device)" # optional</span>
+<span class="c1">#}</span>
+<span class="c1">#</span>
+<span class="c1"># An example of an sndio output.</span>
+<span class="c1">#</span>
+<span class="c1">#audio_output {</span>
+<span class="c1">#   type        "sndio"</span>
+<span class="c1">#   name        "sndio output"</span>
+<span class="c1">#   mixer_type  "hardware"</span>
+<span class="c1">#}</span>
+<span class="c1">#</span>
+<span class="c1"># An example of an OS X output:</span>
+<span class="c1">#</span>
+<span class="c1">#audio_output {</span>
+<span class="c1">#   type        "osx"</span>
+<span class="c1">#   name        "My OS X Device"</span>
+<span class="c1">##  device      "Built-in Output"   # optional</span>
+<span class="c1">##  channel_map      "-1,-1,0,1"    # optional</span>
+<span class="c1">#}</span>
+<span class="c1">#</span>
+<span class="c1">## Example "pipe" output:</span>
+<span class="c1">#</span>
+<span class="c1">#audio_output {</span>
+<span class="c1">#   type        "pipe"</span>
+<span class="c1">#   name        "my pipe"</span>
+<span class="c1">#   command     "aplay -f cd 2&gt;/dev/null"</span>
+<span class="c1">## Or if you're want to use AudioCompress</span>
+<span class="c1">#   command     "AudioCompress -m | aplay -f cd 2&gt;/dev/null"</span>
+<span class="c1">## Or to send raw PCM stream through PCM:</span>
+<span class="c1">#   command     "nc example.org 8765"</span>
+<span class="c1">#   format      "44100:16:2"</span>
+<span class="c1">#}</span>
+<span class="c1">#</span>
+<span class="c1">## An example of a null output (for no audio output):</span>
+<span class="c1">#</span>
+<span class="c1">#audio_output {</span>
+<span class="c1">#   type        "null"</span>
+<span class="c1">#   name        "My Null Output"</span>
+<span class="c1">#   mixer_type      "none"          # optional</span>
+<span class="c1">#}</span>
+<span class="c1">#</span>
+<span class="c1">###############################################################################</span>
+
+
+<span class="c1"># Normalization automatic volume adjustments ##################################</span>
+<span class="c1">#</span>
+<span class="c1"># This setting specifies the type of ReplayGain to use. This setting can have</span>
+<span class="c1"># the argument "off", "album", "track" or "auto". "auto" is a special mode that</span>
+<span class="c1"># chooses between "track" and "album" depending on the current state of</span>
+<span class="c1"># random playback. If random playback is enabled then "track" mode is used.</span>
+<span class="c1"># See &lt;http://www.replaygain.org&gt; for more details about ReplayGain.</span>
+<span class="c1"># This setting is off by default.</span>
+<span class="c1">#</span>
+<span class="c1">#replaygain         "album"</span>
+<span class="c1">#</span>
+<span class="c1"># This setting sets the pre-amp used for files that have ReplayGain tags. By</span>
+<span class="c1"># default this setting is disabled.</span>
+<span class="c1">#</span>
+<span class="c1">#replaygain_preamp      "0"</span>
+<span class="c1">#</span>
+<span class="c1"># This setting sets the pre-amp used for files that do NOT have ReplayGain tags.</span>
+<span class="c1"># By default this setting is disabled.</span>
+<span class="c1">#</span>
+<span class="c1">#replaygain_missing_preamp  "0"</span>
+<span class="c1">#</span>
+<span class="c1"># This setting enables or disables ReplayGain limiting.</span>
+<span class="c1"># MPD calculates actual amplification based on the ReplayGain tags</span>
+<span class="c1"># and replaygain_preamp / replaygain_missing_preamp setting.</span>
+<span class="c1"># If replaygain_limit is enabled MPD will never amplify audio signal</span>
+<span class="c1"># above its original level. If replaygain_limit is disabled such amplification</span>
+<span class="c1"># might occur. By default this setting is enabled.</span>
+<span class="c1">#</span>
+<span class="c1">#replaygain_limit       "yes"</span>
+<span class="c1">#</span>
+<span class="c1"># This setting enables on-the-fly normalization volume adjustment. This will</span>
+<span class="c1"># result in the volume of all playing audio to be adjusted so the output has </span>
+<span class="c1"># equal "loudness". This setting is disabled by default.</span>
+<span class="c1">#</span>
+<span class="c1">#volume_normalization       "no"</span>
+<span class="c1">#</span>
+<span class="c1">###############################################################################</span>
+
+<span class="c1"># Character Encoding ##########################################################</span>
+<span class="c1">#</span>
+<span class="c1"># If file or directory names do not display correctly for your locale then you </span>
+<span class="c1"># may need to modify this setting.</span>
+<span class="c1">#</span>
+<span class="n">filesystem_charset</span> <span class="s">"UTF-8"</span>
+<span class="c1">#</span>
+<span class="c1">###############################################################################</span>
+</pre></div>
             
             
             <hr/>
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
-<li><a href="./samba.html" title="Samba">Samba</a></li>
-<li><a href="./xetexlatexxelatex.html" title="Xetex/Latex/Xelatex">Xetex/Latex/Xelatex</a></li>
-<li><a href="./php-fpm.html" title="Php-fpm">Php-fpm</a></li>
-<li><a href="./latex-demos-and-templates.html" title="Latex Demos and Templates">Latex Demos and Templates</a></li>
 <li><a href="./develop-pelican-plugin.html" title="Develop Pelican Plugin">Develop Pelican Plugin</a></li>
+<li><a href="./vlc-bo-fang-qi.html" title="VLC 播放器">VLC 播放器</a></li>
+<li><a href="./fvwm.html" title="FVWM">FVWM</a></li>
+<li><a href="./mi-ma-sheng-cheng-cheng-xu.html" title="密码生成程序">密码生成程序</a></li>
+<li><a href="./linux-bluetooth-lan-ya.html" title="Linux Bluetooth / 蓝牙">Linux Bluetooth / 蓝牙</a></li>
 </ul>
 <hr />
 </section>
@@ -162,7 +528,7 @@
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="./tags.html#tech-ref">tech
-                    <span>77</span>
+                    <span>81</span>
 </a></li>
             </ul>
 <h4>Contact</h4>

@@ -75,44 +75,80 @@
 <li>通达信m4(<span class="caps">MACD</span>)公式</li>
 </ul>
 <p>
-<div class="justtable">
-    <table>
-        <thead>
+<table class="table table-hover">
+    
+    
+    <thead>
+    <tr>
+        
+        
+        <th>参数</th>
+        
+        <th>最小</th>
+        
+        <th>最大</th>
+        
+        <th>缺省</th>
+        
+    </tr>
+    </thead>
+    
+    <tbody>
+        
         <tr>
-            <th>参数</th>
-            <th>最小</th>
-            <th>最大</th>
-            <th>缺省</th>
+            
+            
+            <td><span class="caps">SHORT</span></td>
+            
+            <td>2</td>
+            
+            <td>200</td>
+            
+            <td>12,</td>
+            
         </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><span class="caps">SHORT</span></td>
-                <td>2</td>
-                <td>200</td>
-                <td>12,</td>
-            </tr>
-            <tr>
-                <td><span class="caps">LONG</span></td>
-                <td>2</td>
-                <td>200</td>
-                <td>26</td>
-            </tr>
-            <tr>
-                <td><span class="caps">MID</span></td>
-                <td>2</td>
-                <td>200</td>
-                <td>9</td>
-            </tr>
-            <tr>
-                <td><span class="caps">ISARROW</span></td>
-                <td>0</td>
-                <td>1</td>
-                <td>1</td>
-            </tr>
-        </tbody>
-    </table>
-</div></p>
+        
+        <tr>
+            
+            
+            <td><span class="caps">LONG</span></td>
+            
+            <td>2</td>
+            
+            <td>200</td>
+            
+            <td>26</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td><span class="caps">MID</span></td>
+            
+            <td>2</td>
+            
+            <td>200</td>
+            
+            <td>9</td>
+            
+        </tr>
+        
+        <tr>
+            
+            
+            <td><span class="caps">ISARROW</span></td>
+            
+            <td>0</td>
+            
+            <td>1</td>
+            
+            <td>1</td>
+            
+        </tr>
+        
+    </tbody>
+</table></p>
 <div class="highlight"><pre><span></span><span class="o">{</span>SHORT <span class="m">2</span>,200,12<span class="p">;</span>LONG <span class="m">2</span>,200,26<span class="p">;</span>MID <span class="m">2</span>,200,9；ISARROW <span class="m">0</span>,1,1<span class="o">}</span>
 DIFF:<span class="o">=</span>EMA<span class="o">(</span>CLOSE*100,SHORT<span class="o">)</span>-EMA<span class="o">(</span>CLOSE*100,LONG<span class="o">)</span><span class="p">;</span>
 DEA:<span class="o">=</span>EMA<span class="o">(</span>DIFF,MID<span class="o">)</span><span class="p">;</span>
