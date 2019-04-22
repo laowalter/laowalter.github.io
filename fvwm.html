@@ -14,13 +14,13 @@
 
 <meta property="og:title" content="FVWM "/>
 <meta property="og:url" content="./fvwm.html" />
-<meta property="og:description" content="1.0 mouse cursor FILE: ~/.Xresources 18 Xcursor.theme: ComixCursors-White 19 Xcursor.size: 64 2.0 Windows Title Bar 等各种中文字体支持 2.1 安装字体 $ emerge -avq media-fonts/wqy-zenhei $ fc-list|grep WenQuanYi /usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc: WenQuanYi Zen Hei:style=Regular /usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc: WenQuanYi Zen Hei …" />
+<meta property="og:description" content="1.0 mouse cursor FILE: ~/.Xresources 18 Xcursor.theme: ComixCursors-White 19 Xcursor.size: 64 2.0 Fvwm console font setup FILE: ~/.Xresources 40 FvwmConsole*VT100*geometry: 40x4 41 FvwmConsole*font: xft:Inconsolata LGC:pixelsize=16 3.0 Windows Title Bar 等各种中文字体支持 3.1 安装字体 $ emerge -avq media-fonts/wqy-zenhei $ fc-list|grep …" />
 <meta property="og:site_name" content="Just MEMO" />
 <meta property="og:article:author" content="Walter" />
 <meta property="og:article:published_time" content="2019-02-22T10:51:44+08:00" />
 <meta property="og:article:modified_time" content="2019-02-22T10:51:44+08:00" />
 <meta name="twitter:title" content="FVWM ">
-<meta name="twitter:description" content="1.0 mouse cursor FILE: ~/.Xresources 18 Xcursor.theme: ComixCursors-White 19 Xcursor.size: 64 2.0 Windows Title Bar 等各种中文字体支持 2.1 安装字体 $ emerge -avq media-fonts/wqy-zenhei $ fc-list|grep WenQuanYi /usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc: WenQuanYi Zen Hei:style=Regular /usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc: WenQuanYi Zen Hei …">
+<meta name="twitter:description" content="1.0 mouse cursor FILE: ~/.Xresources 18 Xcursor.theme: ComixCursors-White 19 Xcursor.size: 64 2.0 Fvwm console font setup FILE: ~/.Xresources 40 FvwmConsole*VT100*geometry: 40x4 41 FvwmConsole*font: xft:Inconsolata LGC:pixelsize=16 3.0 Windows Title Bar 等各种中文字体支持 3.1 安装字体 $ emerge -avq media-fonts/wqy-zenhei $ fc-list|grep …">
 
         <title>FVWM  · Just MEMO
 </title>
@@ -71,7 +71,7 @@
     <div class="span2 table-of-content">
         <nav>
         <h4>Contents</h4>
-        <div id="toc"><ul><li><a class="toc-href" href="#1.0 mouse cursor" title="1.0 mouse&nbsp;cursor">1.0 mouse&nbsp;cursor</a></li><li><a class="toc-href" href="#2.0 windows title bar deng ge chong zhong wen zi ti zhi chi" title="2.0 Windows Title Bar&nbsp;等各种中文字体支持">2.0 Windows Title Bar&nbsp;等各种中文字体支持</a><ul><li><a class="toc-href" href="#2.1 an zhuang zi ti" title="2.1 安装字体">2.1 安装字体</a></li><li><a class="toc-href" href="#2.2 pei zhi fvwmde pei zhi wen jian" title="2.2 配置fvwm的配置文件">2.2 配置fvwm的配置文件</a></li></ul></li></ul></div>
+        <div id="toc"><ul><li><a class="toc-href" href="#1.0 mouse cursor" title="1.0 mouse&nbsp;cursor">1.0 mouse&nbsp;cursor</a></li><li><a class="toc-href" href="#2.0 fvwm console font setup" title="2.0 Fvwm console font&nbsp;setup">2.0 Fvwm console font&nbsp;setup</a></li><li><a class="toc-href" href="#3.0 windows title bar deng ge chong zhong wen zi ti zhi chi" title="3.0 Windows Title Bar&nbsp;等各种中文字体支持">3.0 Windows Title Bar&nbsp;等各种中文字体支持</a><ul><li><a class="toc-href" href="#3.1 an zhuang zi ti" title="3.1 安装字体">3.1 安装字体</a></li><li><a class="toc-href" href="#3.2 pei zhi fvwmde pei zhi wen jian" title="3.2 配置fvwm的配置文件">3.2 配置fvwm的配置文件</a></li></ul></li></ul></div>
         </nav>
     </div>
     <div class="span8 article-content">
@@ -82,15 +82,20 @@
 <div class="highlight"><pre><span></span> <span class="m">18</span> Xcursor.theme: ComixCursors-White
  <span class="m">19</span> Xcursor.size: <span class="m">64</span>
 </pre></div>
-<h3 id="2.0 windows title bar deng ge chong zhong wen zi ti zhi chi">2.0 Windows Title Bar 等各种中文字体支持</h3>
-<h4 id="2.1 an zhuang zi ti">2.1 安装字体</h4>
+<h3 id="2.0 fvwm console font setup">2.0 Fvwm console font setup</h3>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> ~/.Xresources</div>
+<div class="highlight"><pre><span></span> <span class="m">40</span> FvwmConsole*VT100*geometry: 40x4
+ <span class="m">41</span> FvwmConsole*font: xft:Inconsolata LGC:pixelsize<span class="o">=</span><span class="m">16</span>
+</pre></div>
+<h3 id="3.0 windows title bar deng ge chong zhong wen zi ti zhi chi">3.0 Windows Title Bar 等各种中文字体支持</h3>
+<h4 id="3.1 an zhuang zi ti">3.1 安装字体</h4>
 <div class="highlight"><pre><span></span>$ emerge -avq media-fonts/wqy-zenhei
 $ fc-list<span class="p">|</span>grep WenQuanYi
 /usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc: WenQuanYi Zen Hei:style<span class="o">=</span>Regular
 /usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc: WenQuanYi Zen Hei Sharp,文泉驛點陣正黑:style<span class="o">=</span>Regular
 /usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc: WenQuanYi Zen Hei Mono:style<span class="o">=</span>Regular
 </pre></div>
-<h4 id="2.2 pei zhi fvwmde pei zhi wen jian">2.2 配置fvwm的配置文件</h4>
+<h4 id="3.2 pei zhi fvwmde pei zhi wen jian">3.2 配置fvwm的配置文件</h4>
 <div class="highlight"><pre><span></span>将原来的缺省配置：
     Font <span class="s2">"xft:Sans:Bold:size=8:antialias=True"</span>
 全部改为：
@@ -102,11 +107,11 @@ $ fc-list<span class="p">|</span>grep WenQuanYi
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
-<li><a href="./latex-demos-and-templates.html" title="Latex Demos and Templates">Latex Demos and Templates</a></li>
-<li><a href="./develop-pelican-plugin.html" title="Develop Pelican Plugin">Develop Pelican Plugin</a></li>
-<li><a href="./vlc-bo-fang-qi.html" title="VLC 播放器">VLC 播放器</a></li>
-<li><a href="./mi-ma-sheng-cheng-cheng-xu.html" title="密码生成程序">密码生成程序</a></li>
 <li><a href="./linux-bluetooth-lan-ya.html" title="Linux Bluetooth / 蓝牙">Linux Bluetooth / 蓝牙</a></li>
+<li><a href="./ipv6.html" title="IPv6">IPv6</a></li>
+<li><a href="./zhuang-ji.html" title="装机">装机</a></li>
+<li><a href="./ebuild.html" title="Ebuild">Ebuild</a></li>
+<li><a href="./freenas.html" title="Freenas">Freenas</a></li>
 </ul>
 <hr />
 </section>
@@ -124,7 +129,7 @@ $ fc-list<span class="p">|</span>grep WenQuanYi
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="./tags.html#tech-ref">tech
-                    <span>81</span>
+                    <span>85</span>
 </a></li>
             </ul>
 <h4>Contact</h4>

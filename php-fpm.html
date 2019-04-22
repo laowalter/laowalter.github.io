@@ -71,7 +71,7 @@
     <div class="span2 table-of-content">
         <nav>
         <h4>Contents</h4>
-        <div id="toc"><ul><li><a class="toc-href" href="#1.0 install /upgrade php-fpm" title="1.0 Install /Upgrade&nbsp;php-fpm">1.0 Install /Upgrade&nbsp;php-fpm</a><ul><li><a class="toc-href" href="#1.1 config /etc/php/fpm-php7.2/fpm.d/www.conf" title="1.1 Config&nbsp;/etc/php/fpm-php7.2/fpm.d/www.conf">1.1 Config&nbsp;/etc/php/fpm-php7.2/fpm.d/www.conf</a></li><li><a class="toc-href" href="#1.2 adjust upload limited" title="1.2 Adjust upload&nbsp;limited">1.2 Adjust upload&nbsp;limited</a></li><li><a class="toc-href" href="#1.3 /etc/ngnix/nginx.conf" title="1.3 /etc/ngnix/nginx.conf">1.3 /etc/ngnix/nginx.conf</a></li></ul></li><li><a class="toc-href" href="#2.0 add php-fpm to default service_1" title="2.0 Add php-fpm to default&nbsp;service">2.0 Add php-fpm to default&nbsp;service</a></li><li><a class="toc-href" href="#3.0 setup php-fpm in nginx" title="3.0 Setup php-fpm in&nbsp;nginx">3.0 Setup php-fpm in&nbsp;nginx</a></li></ul></div>
+        <div id="toc"><ul><li><a class="toc-href" href="#1.0 install /upgrade php-fpm" title="1.0 Install /Upgrade&nbsp;php-fpm">1.0 Install /Upgrade&nbsp;php-fpm</a><ul><li><a class="toc-href" href="#1.1 config /etc/php/fpm-php7.2/fpm.d/www.conf" title="1.1 Config&nbsp;/etc/php/fpm-php7.2/fpm.d/www.conf">1.1 Config&nbsp;/etc/php/fpm-php7.2/fpm.d/www.conf</a></li><li><a class="toc-href" href="#1.2 adjust upload limited" title="1.2 Adjust upload&nbsp;limited">1.2 Adjust upload&nbsp;limited</a></li><li><a class="toc-href" href="#1.3 /etc/ngnix/nginx.conf" title="1.3 /etc/ngnix/nginx.conf">1.3 /etc/ngnix/nginx.conf</a></li></ul></li><li><a class="toc-href" href="#2.0 add php-fpm to default service_1" title="2.0 Add php-fpm to default&nbsp;service">2.0 Add php-fpm to default&nbsp;service</a></li><li><a class="toc-href" href="#3.0 setup php-fpm in nginx" title="3.0 Setup php-fpm in&nbsp;nginx">3.0 Setup php-fpm in&nbsp;nginx</a><ul><li><a class="toc-href" href="#3.1 jian dan de zhi yong yi ge nginx.confde zuo fa" title="3.1 简单的只用一个nginx.conf的做法">3.1 简单的只用一个nginx.conf的做法</a></li><li><a class="toc-href" href="#3.2 ru guo shi duo ceng ci  nginx pei zhi wei wen jian" title="3.2 如果是多层次 nginx&nbsp;配置为文件">3.2 如果是多层次 nginx&nbsp;配置为文件</a></li></ul></li></ul></div>
         </nav>
     </div>
     <div class="span8 article-content">
@@ -100,6 +100,7 @@ client_body_buffer_size 128k<span class="p">;</span>
 rc-update add php-fpm default
 </pre></div>
 <h2 id="3.0 setup php-fpm in nginx">3.0 Setup php-fpm in nginx</h2>
+<h3 id="3.1 jian dan de zhi yong yi ge nginx.confde zuo fa">3.1 简单的只用一个nginx.conf的做法</h3>
 <div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/ngnix/nginx.conf</div>
 <div class="highlight"><pre><span></span><span class="k">server</span> <span class="p">{</span>
     <span class="kn">listen</span> <span class="n">0.0.0.0</span><span class="p">:</span><span class="mi">7001</span><span class="p">;</span>
@@ -118,17 +119,109 @@ rc-update add php-fpm default
             <span class="kn">fastcgi_pass</span> <span class="s">unix:/run/php-fpm.socket</span><span class="p">;</span>
     <span class="p">}</span>
 </pre></div>
+<h3 id="3.2 ru guo shi duo ceng ci  nginx pei zhi wei wen jian">3.2 如果是多层次 nginx 配置为文件</h3>
+<ul>
+<li>目录结构</li>
+</ul>
+<div class="highlight"><pre><span></span>/etc/nginx
+        <span class="p">|</span>
+        --nginx.conf
+        <span class="p">|</span>
+        --conf.d/
+               <span class="p">|</span>
+               --piwigo.conf
+</pre></div>
+<ul>
+<li>相关文件内容</li>
+</ul>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/nginx/nginx.conf</div>
+<div class="highlight"><pre><span></span>user nginx nginx<span class="p">;</span>
+worker_processes <span class="m">1</span><span class="p">;</span>
+
+error_log /var/log/nginx/error_log info<span class="p">;</span>
+
+events <span class="o">{</span>
+    worker_connections <span class="m">1024</span><span class="p">;</span>
+    use epoll<span class="p">;</span>
+<span class="o">}</span>
+
+http <span class="o">{</span>
+    include /etc/nginx/mime.types<span class="p">;</span>
+    default_type application/octet-stream<span class="p">;</span>
+
+    log_format main
+        <span class="s1">'$remote_addr - $remote_user [$time_local] '</span>
+        <span class="s1">'"$request" $status $bytes_sent '</span>
+        <span class="s1">'"$http_referer" "$http_user_agent" '</span>
+        <span class="s1">'"$gzip_ratio"'</span><span class="p">;</span>
+
+    client_header_timeout 10m<span class="p">;</span>
+    client_body_timeout 10m<span class="p">;</span>
+    send_timeout 10m<span class="p">;</span>
+
+    connection_pool_size <span class="m">256</span><span class="p">;</span>
+    client_header_buffer_size 1k<span class="p">;</span>
+    large_client_header_buffers <span class="m">4</span> 2k<span class="p">;</span>
+    request_pool_size 4k<span class="p">;</span>
+
+    <span class="c1"># piwigo</span>
+    client_max_body_size 20M<span class="p">;</span>
+    client_body_buffer_size 128k<span class="p">;</span>
+
+    gzip off<span class="p">;</span>
+
+    output_buffers <span class="m">1</span> 32k<span class="p">;</span>
+    postpone_output <span class="m">1460</span><span class="p">;</span>
+
+    sendfile on<span class="p">;</span>
+    tcp_nopush on<span class="p">;</span>
+    tcp_nodelay on<span class="p">;</span>
+
+    keepalive_timeout <span class="m">75</span> <span class="m">20</span><span class="p">;</span>
+
+    ignore_invalid_headers on<span class="p">;</span>
+
+    index index.html<span class="p">;</span>
+
+    include /etc/nginx/conf.d/*.conf<span class="p">;</span>
+<span class="o">}</span>
+</pre></div>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/nginx/conf.d/piwigo.conf</div>
+<div class="highlight"><pre><span></span>server <span class="o">{</span>
+    listen <span class="m">0</span>.0.0.0:3128<span class="p">;</span>
+    server_name photo<span class="p">;</span>
+    <span class="c1">#root /var/www/localhost/;</span>
+    root /var/www/localhost/htdocs/piwigo<span class="p">;</span>
+
+    location @rewrite <span class="o">{</span>
+        rewrite ^/picture<span class="o">((</span>/<span class="p">|</span>$<span class="o">)</span>.*<span class="o">)</span>$ /picture.php<span class="nv">$1</span> last<span class="p">;</span>
+        rewrite ^/index<span class="o">((</span>/<span class="p">|</span>$<span class="o">)</span>.*<span class="o">)</span>$ /index.php<span class="nv">$1</span> last<span class="p">;</span>
+        <span class="c1"># The following is needed for batch operations which use i.php</span>
+        rewrite ^/piwigo/i<span class="o">((</span>/<span class="p">|</span>$<span class="o">)</span>.*<span class="o">)</span>$ /piwigo/i.php<span class="nv">$1</span> last<span class="p">;</span>
+    <span class="o">}</span>
+
+    location / <span class="o">{</span>
+            index index.php<span class="p">;</span>
+            try_files <span class="nv">$uri</span> <span class="nv">$uri</span>/ @rewrite<span class="p">;</span>
+<span class="o">}</span>   
+    location ~ <span class="se">\.</span>php$ <span class="o">{</span>
+            try_files <span class="nv">$uri</span> <span class="o">=</span><span class="m">404</span><span class="p">;</span>
+            include /etc/nginx/fastcgi.conf<span class="p">;</span>
+            fastcgi_pass unix:/run/php-fpm.socket<span class="p">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
             
             
             <hr/>
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
-<li><a href="./nginx.html" title="nginx">nginx</a></li>
-<li><a href="./vlc-bo-fang-qi.html" title="VLC 播放器">VLC 播放器</a></li>
-<li><a href="./fvwm.html" title="FVWM">FVWM</a></li>
-<li><a href="./mi-ma-sheng-cheng-cheng-xu.html" title="密码生成程序">密码生成程序</a></li>
-<li><a href="./linux-bluetooth-lan-ya.html" title="Linux Bluetooth / 蓝牙">Linux Bluetooth / 蓝牙</a></li>
+<li><a href="./nginx.html" title="Nginx">Nginx</a></li>
+<li><a href="./ipv6.html" title="IPv6">IPv6</a></li>
+<li><a href="./zhuang-ji.html" title="装机">装机</a></li>
+<li><a href="./ebuild.html" title="Ebuild">Ebuild</a></li>
+<li><a href="./freenas.html" title="Freenas">Freenas</a></li>
 </ul>
 <hr />
 </section>
@@ -152,7 +245,7 @@ rc-update add php-fpm default
                     <span>1</span>
 </a></li>
                 <li><a href="./tags.html#tech-ref">tech
-                    <span>81</span>
+                    <span>85</span>
 </a></li>
             </ul>
 <h4>Contact</h4>

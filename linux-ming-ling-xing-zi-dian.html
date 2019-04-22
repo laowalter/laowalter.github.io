@@ -14,13 +14,13 @@
 
 <meta property="og:title" content="Linux 命令行字典 "/>
 <meta property="og:url" content="./linux-ming-ling-xing-zi-dian.html" />
-<meta property="og:description" content="Install emerge -avq app-text/sdcv To install a dictionary, first create the /usr/share/stardict/dic directory, if it does not exist. After that, unzip the dictionary file and copy that directory to /usr/share/stardict/dic You will need superuser privileges to do this. manual list avaliable dicts $sdcv …" />
+<meta property="og:description" content="1.0 网络字典（推荐） 1.1 Install $ sudo emerge -avq app-i18n/translate-shell 1.2 Config FILE: .translate-shell/init.trans { :tl [&#34;zh-CN&#34;] :user-agent &#34;Mozilla/5.0 (X11; Linux x86_64; rv:33.0) Gecko/20100101 Firefox/63.0&#34; :proxy &#34;http://192.168.0.199:8087&#34; } 1.3 USE trans en:zh good …" />
 <meta property="og:site_name" content="Just MEMO" />
 <meta property="og:article:author" content="Walter" />
 <meta property="og:article:published_time" content="2018-10-13T08:10:51+08:00" />
 <meta property="og:article:modified_time" content="2018-10-13T08:10:51+08:00" />
 <meta name="twitter:title" content="Linux 命令行字典 ">
-<meta name="twitter:description" content="Install emerge -avq app-text/sdcv To install a dictionary, first create the /usr/share/stardict/dic directory, if it does not exist. After that, unzip the dictionary file and copy that directory to /usr/share/stardict/dic You will need superuser privileges to do this. manual list avaliable dicts $sdcv …">
+<meta name="twitter:description" content="1.0 网络字典（推荐） 1.1 Install $ sudo emerge -avq app-i18n/translate-shell 1.2 Config FILE: .translate-shell/init.trans { :tl [&#34;zh-CN&#34;] :user-agent &#34;Mozilla/5.0 (X11; Linux x86_64; rv:33.0) Gecko/20100101 Firefox/63.0&#34; :proxy &#34;http://192.168.0.199:8087&#34; } 1.3 USE trans en:zh good …">
 
         <title>Linux 命令行字典  · Just MEMO
 </title>
@@ -68,10 +68,35 @@
 </div>
 
 <div class="row-fluid">
-        <div class="span8 offset2 article-content">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div id="toc"><ul><li><a class="toc-href" href="#1.0 wang luo zi dian (tui jian )" title="1.0 网络字典（推荐）">1.0 网络字典（推荐）</a><ul><li><a class="toc-href" href="#1.1 install" title="1.1 Install">1.1 Install</a></li><li><a class="toc-href" href="#1.2 config" title="1.2 Config">1.2 Config</a></li><li><a class="toc-href" href="#1.3 use" title="1.3 USE">1.3 USE</a></li></ul></li><li><a class="toc-href" href="#2.0 ben di zhong wen zi dian_1" title="2.0 本地中文字典">2.0 本地中文字典</a></li></ul></div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
 
             
-            <ul>
+            <h3 id="1.0 wang luo zi dian (tui jian )">1.0 网络字典（推荐）</h3>
+<h4 id="1.1 install">1.1 Install</h4>
+<div class="highlight"><pre><span></span>$ sudo emerge -avq app-i18n/translate-shell
+</pre></div>
+<h4 id="1.2 config">1.2 Config</h4>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> .translate-shell/init.trans</div>
+<div class="highlight"><pre><span></span><span class="o">{</span>
+    :tl             <span class="o">[</span><span class="s2">"zh-CN"</span><span class="o">]</span>
+    :user-agent     <span class="s2">"Mozilla/5.0 (X11; Linux x86_64; rv:33.0) Gecko/20100101 Firefox/63.0"</span>
+    :proxy          <span class="s2">"http://192.168.0.199:8087"</span>
+<span class="o">}</span>
+</pre></div>
+<h4 id="1.3 use">1.3 <span class="caps">USE</span></h4>
+<div class="highlight"><pre><span></span>trans en:zh good
+trans good
+trans zh:en 好
+trans -x http://192.168.0.199:8087 good
+</pre></div>
+<h3 id="2.0 ben di zhong wen zi dian_1">2.0 本地中文字典</h3>
+<ul>
 <li>Install</li>
 </ul>
 <div class="highlight"><pre><span></span>emerge -avq app-text/sdcv
@@ -98,11 +123,11 @@
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
-<li><a href="./develop-pelican-plugin.html" title="Develop Pelican Plugin">Develop Pelican Plugin</a></li>
-<li><a href="./vlc-bo-fang-qi.html" title="VLC 播放器">VLC 播放器</a></li>
-<li><a href="./fvwm.html" title="FVWM">FVWM</a></li>
-<li><a href="./mi-ma-sheng-cheng-cheng-xu.html" title="密码生成程序">密码生成程序</a></li>
 <li><a href="./linux-bluetooth-lan-ya.html" title="Linux Bluetooth / 蓝牙">Linux Bluetooth / 蓝牙</a></li>
+<li><a href="./ipv6.html" title="IPv6">IPv6</a></li>
+<li><a href="./zhuang-ji.html" title="装机">装机</a></li>
+<li><a href="./ebuild.html" title="Ebuild">Ebuild</a></li>
+<li><a href="./freenas.html" title="Freenas">Freenas</a></li>
 </ul>
 <hr />
 </section>
@@ -120,7 +145,7 @@
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="./tags.html#tech-ref">tech
-                    <span>81</span>
+                    <span>85</span>
 </a></li>
             </ul>
 <h4>Contact</h4>

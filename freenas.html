@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Walter" />
+        <meta name="copyright" content="Walter" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="tech, Tech, " />
+
+<meta property="og:title" content="Freenas "/>
+<meta property="og:url" content="./freenas.html" />
+<meta property="og:description" content="1.0 Terminal / Console 对普通永户和root此方法都适用 1.1 Step one FILE: ~/.login_conf me:\ :charset=UTF-8:\ :lang=zh_CN.UTF-8: 1.2 Step two cd cp .profile .bash_profile 然后再最后添加如下内容: PS1=&#34;\e[0;32m[\u@\h:\e[m\e[1;33m\w\e[m\e[0;32m]\e[m &#34; case `id -u` in *) PS1 …" />
+<meta property="og:site_name" content="Just MEMO" />
+<meta property="og:article:author" content="Walter" />
+<meta property="og:article:published_time" content="2019-04-17T12:14:17+08:00" />
+<meta property="og:article:modified_time" content="2019-04-17T12:14:17+08:00" />
+<meta name="twitter:title" content="Freenas ">
+<meta name="twitter:description" content="1.0 Terminal / Console 对普通永户和root此方法都适用 1.1 Step one FILE: ~/.login_conf me:\ :charset=UTF-8:\ :lang=zh_CN.UTF-8: 1.2 Step two cd cp .profile .bash_profile 然后再最后添加如下内容: PS1=&#34;\e[0;32m[\u@\h:\e[m\e[1;33m\w\e[m\e[0;32m]\e[m &#34; case `id -u` in *) PS1 …">
+
+        <title>Freenas  · Just MEMO
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/custom.css" media="screen">
+
+
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="./"><span class=site-name>Just MEMO</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href=".">Home</a></li>
+                            <li ><a href="./categories.html">Categories</a></li>
+                            <li ><a href="./tags.html">Tags</a></li>
+                            <li ><a href="./archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="./search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="./freenas.html"> Freenas  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div id="toc"><ul><li><a class="toc-href" href="#1.0 terminal / console" title="1.0 Terminal /&nbsp;Console">1.0 Terminal /&nbsp;Console</a><ul><li><a class="toc-href" href="#1.1 step one" title="1.1 Step&nbsp;one">1.1 Step&nbsp;one</a></li><li><a class="toc-href" href="#1.2 step two" title="1.2 Step&nbsp;two">1.2 Step&nbsp;two</a></li></ul></li><li><a class="toc-href" href="#2.0 jail_1" title="2.0 Jail">2.0 Jail</a><ul><li><a class="toc-href" href="#2.1 errors" title="2.1 Errors">2.1 Errors</a></li><li><a class="toc-href" href="#2.2 jail initialize" title="2.2 Jail&nbsp;initialize">2.2 Jail&nbsp;initialize</a></li><li><a class="toc-href" href="#2.3 piwigo" title="2.3 Piwigo">2.3 Piwigo</a><ul><li><a class="toc-href" href="#2.3.1 php72-fpm" title="2.3.1 php72-fpm">2.3.1 php72-fpm</a></li><li><a class="toc-href" href="#2.3.2 mysql server" title="2.3.2 mysql&nbsp;server">2.3.2 mysql&nbsp;server</a></li></ul></li><li><a class="toc-href" href="#2.4 xx-net_1" title="2.4 xx-net">2.4 xx-net</a></li></ul></li><li><a class="toc-href" href="#3.0 encrypt_1" title="3.0 encrypt">3.0 encrypt</a></li><li><a class="toc-href" href="#4.0 mount" title="4.0 mount">4.0 mount</a><ul><li><a class="toc-href" href="#4.1 from gentoo mount freenas nfs server" title="4.1 From Gentoo mount freenas nfs&nbsp;server">4.1 From Gentoo mount freenas nfs&nbsp;server</a></li></ul></li><li><a class="toc-href" href="#5.0 my freenas crt download_1" title="5.0 My freenas crt&nbsp;download">5.0 My freenas crt&nbsp;download</a></li></ul></div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+
+            
+            <h2 id="1.0 terminal / console">1.0 Terminal / Console</h2>
+<p>对普通永户和root此方法都适用</p>
+<h3 id="1.1 step one">1.1 Step one</h3>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> ~/.login_conf</div>
+<div class="highlight"><pre><span></span>me:<span class="se">\</span>
+        :charset<span class="o">=</span>UTF-8:<span class="se">\</span>
+        :lang<span class="o">=</span>zh_CN.UTF-8:
+</pre></div>
+<h3 id="1.2 step two">1.2 Step two</h3>
+<div class="highlight"><pre><span></span><span class="nb">cd</span>
+cp .profile .bash_profile
+</pre></div>
+<p>然后再最后添加如下内容:</p>
+<div class="highlight"><pre><span></span><span class="nv">PS1</span><span class="o">=</span><span class="s2">"\e[0;32m[\u@\h:\e[m\e[1;33m\w\e[m\e[0;32m]\e[m "</span>
+<span class="k">case</span> <span class="sb">`</span>id -u<span class="sb">`</span> in
+      *<span class="o">)</span> <span class="nv">PS1</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">PS1</span><span class="si">}</span>$<span class="s2"> "</span><span class="p">;;</span>
+<span class="k">esac</span>
+
+<span class="nb">alias</span> <span class="nv">ls</span><span class="o">=</span><span class="s1">'ls -G'</span><span class="p">;</span>
+</pre></div>
+<h2 id="2.0 jail_1">2.0 Jail</h2>
+<h3 id="2.1 errors">2.1 Errors</h3>
+<ul>
+<li>Metadata corrupt after fetch</li>
+</ul>
+<div class="highlight"><pre><span></span> rm -fr /var/db/portsnap/*
+ portsnap fetch
+</pre></div>
+<h3 id="2.2 jail initialize">2.2 Jail initialize</h3>
+<div class="highlight"><pre><span></span>pkg install screen 
+pkg install bash
+add whell acount: adduser
+<span class="nb">enable</span> sshd 
+port fetch
+</pre></div>
+<h3 id="2.3 piwigo">2.3 Piwigo</h3>
+<h4 id="2.3.1 php72-fpm">2.3.1 php72-fpm</h4>
+<ul>
+<li>Config
+%filename: /usr/local/etc/php-fpm.d/www.conf</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">;</span>修改一下内容
+<span class="nv">user</span> <span class="o">=</span> www
+<span class="nv">group</span> <span class="o">=</span> www
+<span class="nv">listen</span> <span class="o">=</span> /var/run/php72-fpm.sock
+listen.owner <span class="o">=</span> www
+listen.group <span class="o">=</span> www
+listen.mode <span class="o">=</span> <span class="m">0660</span>
+</pre></div>
+<ul>
+<li>Nginx</li>
+</ul>
+<div class="highlight"><pre><span></span>server <span class="o">{</span>
+    listen <span class="m">0</span>.0.0.0<span class="p">;</span>
+    server_name piwigo<span class="p">;</span>
+    access_log  /var/log/nginx/access.log<span class="p">;</span>
+    error_log  /var/log/nginx/error.log<span class="p">;</span>
+
+    root /usr/local/www/nginx<span class="p">;</span>
+    <span class="c1">#root /usr/local/www/piwigo;</span>
+    <span class="c1"># php config let nginx talk to php socket</span>
+    location ~ <span class="o">[</span>^/<span class="o">]</span><span class="se">\.</span>php<span class="o">(</span>/<span class="p">|</span>$<span class="o">)</span> <span class="o">{</span>
+        fastcgi_split_path_info ^<span class="o">(</span>.+?<span class="se">\.</span>php<span class="o">)(</span>/.*<span class="o">)</span>$<span class="p">;</span>
+        <span class="k">if</span> <span class="o">(</span>!-f <span class="nv">$document_root$fastcgi_script_name</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="m">404</span><span class="p">;</span>
+        <span class="o">}</span>
+
+        <span class="c1"># Mitigate https://httpoxy.org/ vulnerabilities</span>
+        fastcgi_param HTTP_PROXY <span class="s2">""</span><span class="p">;</span>
+
+        fastcgi_pass unix:/var/run/php72-fpm.sock<span class="p">;</span>
+        fastcgi_index index.php<span class="p">;</span>
+
+        <span class="c1"># include the fastcgi_param setting</span>
+        include fastcgi_params<span class="p">;</span>
+
+        <span class="c1"># SCRIPT_FILENAME parameter is used for PHP FPM determining</span>
+        <span class="c1"># the script name.</span>
+        fastcgi_param  SCRIPT_FILENAME   <span class="nv">$document_root$fastcgi_script_name</span><span class="p">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+<ul>
+<li>Autostart</li>
+</ul>
+<div class="file"><span style="margin-right: .5em; margin-left:0.3em; font-size:80%; font-weight:bold">FILE:</span> /etc/rc.conf</div>
+<div class="highlight"><pre><span></span><span class="nv">php_fpm_enable</span><span class="o">=</span><span class="s2">"YES"</span>
+</pre></div>
+<h4 id="2.3.2 mysql server">2.3.2 mysql server</h4>
+<ul>
+<li>install</li>
+</ul>
+<div class="highlight"><pre><span></span>pkg install mysql56-server
+</pre></div>
+<h3 id="2.4 xx-net_1">2.4 xx-net</h3>
+<div class="highlight"><pre><span></span><span class="c1"># pkg install py27-pip</span>
+<span class="c1">#  pip install cryptography interface</span>
+</pre></div>
+<h2 id="3.0 encrypt_1">3.0 encrypt</h2>
+<h2 id="4.0 mount">4.0 mount</h2>
+<h3 id="4.1 from gentoo mount freenas nfs server">4.1 From Gentoo mount freenas nfs server</h3>
+<div class="highlight"><pre><span></span>emerge -avq nfs-utils
+sudo mount  -t nfs <span class="m">192</span>.168.0.200:/mnt/gnas/500Gphoto /mnt/ntfs -o nolock
+</pre></div>
+<h2 id="5.0 my freenas crt download_1">5.0 My freenas crt download</h2>
+<p><a href="./downloads/tech/gnas.crt">Freenas crt</a></p>
+            
+            
+            <hr/>
+<section>
+    <h2>Related Posts</h2>
+<ul class="related-posts-list">
+<li><a href="./mi-ma-sheng-cheng-cheng-xu.html" title="密码生成程序">密码生成程序</a></li>
+<li><a href="./linux-bluetooth-lan-ya.html" title="Linux Bluetooth / 蓝牙">Linux Bluetooth / 蓝牙</a></li>
+<li><a href="./ipv6.html" title="IPv6">IPv6</a></li>
+<li><a href="./zhuang-ji.html" title="装机">装机</a></li>
+<li><a href="./ebuild.html" title="Ebuild">Ebuild</a></li>
+</ul>
+<hr />
+</section>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2019-04-17T12:14:17+08:00">Apr 17, 2019</time>
+
+<h4>Last Updated</h4>
+<time datetime="2019-04-17T12:14:17+08:00">Apr 17, 2019</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="./categories.html#tech-ref">Tech</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="./tags.html#tech-ref">tech
+                    <span>85</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="https://slashdot.org/" title="My IT新闻Slashdot Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-it新闻slashdot sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="https://github.com/Pelican-Elegant/elegant/" title="Theme Elegant Home Page">Elegant</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : MIT -->
+</html>
