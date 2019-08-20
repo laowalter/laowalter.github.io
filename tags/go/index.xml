@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>go on Just a Memo</title>
-    <link>http://memo.eliglad.com:1313/tags/go/</link>
+    <link>http://memo.eliglad.com/tags/go/</link>
     <description>Recent content in go on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 28 Jun 2019 16:16:18 +0000</lastBuildDate>
     
-	<atom:link href="http://memo.eliglad.com:1313/tags/go/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://memo.eliglad.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Go regex 正则表达式</title>
-      <link>http://memo.eliglad.com:1313/posts/tech/goregex/</link>
+      <link>http://memo.eliglad.com/posts/tech/goregex/</link>
       <pubDate>Fri, 28 Jun 2019 16:16:18 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com:1313/posts/tech/goregex/</guid>
+      <guid>http://memo.eliglad.com/posts/tech/goregex/</guid>
       <description>Golang中的正则表达式(链接) 如下代码使用golang的正则表达式regexp：去除HTML，CSS，SCRIPT代码，仅保留页面文字 package</description>
     </item>
     
     <item>
       <title>goQuery</title>
-      <link>http://memo.eliglad.com:1313/posts/tech/goquery/</link>
+      <link>http://memo.eliglad.com/posts/tech/goquery/</link>
       <pubDate>Fri, 28 Jun 2019 09:36:52 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com:1313/posts/tech/goquery/</guid>
+      <guid>http://memo.eliglad.com/posts/tech/goquery/</guid>
       <description>from https://www.51hint.com/posts/goquery/ 最近研究Go爬虫相关的知识，使用到goquery这个库比较多，尤其是对爬取到的HTML进行选择和查找匹配的内容时，goquery的选择器</description>
     </item>
     
     <item>
       <title>Golang爬虫</title>
-      <link>http://memo.eliglad.com:1313/posts/tech/gowebcrawler/</link>
+      <link>http://memo.eliglad.com/posts/tech/gowebcrawler/</link>
       <pubDate>Wed, 26 Jun 2019 22:12:05 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com:1313/posts/tech/gowebcrawler/</guid>
+      <guid>http://memo.eliglad.com/posts/tech/gowebcrawler/</guid>
       <description>使用Golang+selenium 驱动 chrome headless 模式，再用 goquery 解析html 字符。 首先在服务器上安装最新版本的chrome 和 chromedriver emerge -avq www-cient/google-chrome 下载对应的chro</description>
     </item>
     
     <item>
       <title>Go 环境设置</title>
-      <link>http://memo.eliglad.com:1313/posts/tech/go%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83/</link>
+      <link>http://memo.eliglad.com/posts/tech/go%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83/</link>
       <pubDate>Tue, 21 May 2019 10:32:29 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com:1313/posts/tech/go%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83/</guid>
+      <guid>http://memo.eliglad.com/posts/tech/go%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83/</guid>
       <description>vim-go 安装 解决GoInstallBinaries 安装超时 export http_proxy=192.168.0.199:8128 export https_proxy=192.168.0.199:8128 然后在vim安装 :GoInstallBinaries Go 环境设置 关于GOPATH，有文章建议一个项目使用一个gopa</description>
     </item>
     

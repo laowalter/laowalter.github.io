@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mysql on Just a Memo</title>
-    <link>http://memo.eliglad.com:1313/tags/mysql/</link>
+    <link>http://memo.eliglad.com/tags/mysql/</link>
     <description>Recent content in mysql on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 29 Feb 2016 10:40:40 +0000</lastBuildDate>
     
-	<atom:link href="http://memo.eliglad.com:1313/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://memo.eliglad.com/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>DataBases</title>
-      <link>http://memo.eliglad.com:1313/posts/tech/databases/</link>
+      <link>http://memo.eliglad.com/posts/tech/databases/</link>
       <pubDate>Mon, 29 Feb 2016 10:40:40 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com:1313/posts/tech/databases/</guid>
+      <guid>http://memo.eliglad.com/posts/tech/databases/</guid>
       <description>Mongodb Enter mongo shell mongo 192.168.0.25 Start mongodb  Upgrade
 brew upgrade mongodb brew info mongdb ln -s /usr/local/Cellar/mongodb/3.2.4/bin/* /usr/local/bin/ config: /usr/local/etc/mongod.conf, Dont forget touh /usr/local/var/log/mongodb/mongo.log
   %filename: /usr/local/etc/mongod.conf
@@ -28,10 +28,10 @@ mongod --config /usr/local/etc/mongod.conf Mac autostart
     
     <item>
       <title>Perl</title>
-      <link>http://memo.eliglad.com:1313/posts/tech/perl/</link>
+      <link>http://memo.eliglad.com/posts/tech/perl/</link>
       <pubDate>Mon, 29 Feb 2016 10:20:56 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com:1313/posts/tech/perl/</guid>
+      <guid>http://memo.eliglad.com/posts/tech/perl/</guid>
       <description>Install perlbrew to Gentoo Linux Install to /opt/
 export PERLBREW_ROOT=/opt/perl5 curl -L https://install.perlbrew.pl | bash perlbrew lib create base; Install Perlbrew to Mac OSX \curl -L http://install.perlbrew.pl | bash perlbrew available perlbrew install perl-5.23.3 perlbrew install-cpanm perlbrew lib create base; perlbrew switch perl-5.23.3@base Perl mysql utf8  First of all, make sure your locale is in UTF8
  mysql

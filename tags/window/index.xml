@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>window on Just a Memo</title>
-    <link>http://memo.eliglad.com:1313/tags/window/</link>
+    <link>http://memo.eliglad.com/tags/window/</link>
     <description>Recent content in window on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 09 Dec 2016 22:02:20 +0000</lastBuildDate>
     
-	<atom:link href="http://memo.eliglad.com:1313/tags/window/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://memo.eliglad.com/tags/window/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Windows 10</title>
-      <link>http://memo.eliglad.com:1313/posts/tech/windows10/</link>
+      <link>http://memo.eliglad.com/posts/tech/windows10/</link>
       <pubDate>Fri, 09 Dec 2016 22:02:20 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com:1313/posts/tech/windows10/</guid>
+      <guid>http://memo.eliglad.com/posts/tech/windows10/</guid>
       <description>BlueTooth蓝牙问题 CSR 4.0 USB蓝牙适配器出现偶尔断开的问题。 解决方法：安装 Generic Bluetooth Adapter 选择 Generic Bluetooth Adapter Driver 系统启动相关 主板进入BIOS 开机 按ESC 进</description>
     </item>
     
     <item>
       <title>Win10onMac</title>
-      <link>http://memo.eliglad.com:1313/posts/tech/win10onmac/</link>
+      <link>http://memo.eliglad.com/posts/tech/win10onmac/</link>
       <pubDate>Tue, 30 Aug 2016 15:06:20 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com:1313/posts/tech/win10onmac/</guid>
+      <guid>http://memo.eliglad.com/posts/tech/win10onmac/</guid>
       <description> Partition on Mac mini.  Just only one SSD while install win10 and osx After finish installation, add the second HDD  Notice: other wise, windows 10 can not recognzied the partition.
 Apple bluetooth keyboard. Under Device Manager, find the Broadcom wireless adapter,
  enable the bluetooth collaboration Hold ctrl+w while searhing bluetooth devices.  </description>

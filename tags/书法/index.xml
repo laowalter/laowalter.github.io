@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>书法 on Just a Memo</title>
-    <link>http://memo.eliglad.com:1313/tags/%E4%B9%A6%E6%B3%95/</link>
+    <link>http://memo.eliglad.com/tags/%E4%B9%A6%E6%B3%95/</link>
     <description>Recent content in 书法 on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 19 Mar 2017 20:57:07 +0000</lastBuildDate>
     
-	<atom:link href="http://memo.eliglad.com:1313/tags/%E4%B9%A6%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://memo.eliglad.com/tags/%E4%B9%A6%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>书法大字典平台</title>
-      <link>http://memo.eliglad.com:1313/posts/tech/shufadazidian/</link>
+      <link>http://memo.eliglad.com/posts/tech/shufadazidian/</link>
       <pubDate>Sun, 19 Mar 2017 20:57:07 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com:1313/posts/tech/shufadazidian/</guid>
+      <guid>http://memo.eliglad.com/posts/tech/shufadazidian/</guid>
       <description>书法大字典维护日志 Sun 28 Jul 2019 11:19:03 AM CST 书法字典报警，重启apache，但是发现数据库无法通过 service mysqld start, 后直接在终端上运行 mysqld 后访问正常，就先这样了。 书法</description>
     </item>
     

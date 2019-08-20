@@ -2,50 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python on Just a Memo</title>
-    <link>http://memo.eliglad.com:1313/tags/python/</link>
+    <link>http://memo.eliglad.com/tags/python/</link>
     <description>Recent content in python on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Sep 2018 08:44:25 +0000</lastBuildDate>
     
-	<atom:link href="http://memo.eliglad.com:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://memo.eliglad.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Python_tips</title>
-      <link>http://memo.eliglad.com:1313/posts/tech/python-tips/</link>
+      <link>http://memo.eliglad.com/posts/tech/python-tips/</link>
       <pubDate>Tue, 25 Sep 2018 08:44:25 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com:1313/posts/tech/python-tips/</guid>
+      <guid>http://memo.eliglad.com/posts/tech/python-tips/</guid>
       <description>Read special excel like xml Excel Address import pandas as pd dfs = pd.read_html(&amp;#39;swclass.xls&amp;#39;, flavor=&amp;#39;html5lib&amp;#39;) df = pd.DataFrame(dfs[0]) df.columns = df.iloc[0] df = df[1:] df_agg = df.groupby(&amp;#39;行业名称&amp;#39;).agg(lambda x: &amp;#39;,&amp;#39;.join(x)) df_agg = df_agg.reset_index() df</description>
     </item>
     
     <item>
       <title>Jupyter in Python</title>
-      <link>http://memo.eliglad.com:1313/posts/tech/jupyter_in_python/</link>
+      <link>http://memo.eliglad.com/posts/tech/jupyter_in_python/</link>
       <pubDate>Thu, 07 Dec 2017 15:07:58 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com:1313/posts/tech/jupyter_in_python/</guid>
+      <guid>http://memo.eliglad.com/posts/tech/jupyter_in_python/</guid>
       <description>Install Install package $ pip install jupyter $ jupyter notebook --generate-config Config ~/.jupyter/jupyter_notebook_config.py edit ~/.jupyter/jupyter_notebook_config.py c.NotebookApp.ip = &amp;#39;192.168.0.199&amp;#39;   Start jupyter
 $ jupyter notebook --no-browser [I 16:56:50.226 NotebookApp] Serving notebooks from local directory: /home/walter [I 16:56:50.226 NotebookApp] 0 active kernels [I 16:56:50.226 NotebookApp] The Jupyter Notebook is running at: [I 16:56:50.226 NotebookApp] http://mini:8888/?token=6d97162c599bf9e0010b2bf886be238cdf60cf17b12edb62 [I 16:56:50.226 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).</description>
     </item>
     
     <item>
       <title>Bokeh</title>
-      <link>http://memo.eliglad.com:1313/posts/tech/bokeh/</link>
+      <link>http://memo.eliglad.com/posts/tech/bokeh/</link>
       <pubDate>Wed, 11 Oct 2017 21:52:18 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com:1313/posts/tech/bokeh/</guid>
+      <guid>http://memo.eliglad.com/posts/tech/bokeh/</guid>
       <description> Bokeh Bokeh Server for Nginx bokeh serve --allow-websocket-origin=192.168.0.202:8080 a_directory  If add &amp;ndash;show will start a local default browser. Above 192.168.0.202:8080 is the nginx serice port. a_directory must have a file named: main.py  Nginx /etc/nginx/nginx.conf
 server { listen 192.168.0.202:8080; server_name gentoo; access_log /tmp/bokeh.access.log; error_log /tmp/bokeh.error.log debug; location / { proxy_pass http://127.0.0.1:5006; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection &amp;#34;upgrade&amp;#34;; proxy_http_version 1.1; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header Host $host:$server_port; proxy_buffering off; } }</description>
     </item>
     
     <item>
       <title>Matplotlib</title>
-      <link>http://memo.eliglad.com:1313/posts/tech/matplotlib/</link>
+      <link>http://memo.eliglad.com/posts/tech/matplotlib/</link>
       <pubDate>Thu, 02 Feb 2017 22:00:18 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com:1313/posts/tech/matplotlib/</guid>
+      <guid>http://memo.eliglad.com/posts/tech/matplotlib/</guid>
       <description>Matplot chinese font  Problem  /home/walter/.virtualenv/python3/lib/python3.6/site-packages/matplotlib/font_manager.py:1316: UserWarning: findfont: Font family [&amp;lsquo;sans-serif&amp;rsquo;] not found. Falling back to DejaVu Sans (prop.get_family(), self.defaultFamily[fontext]))
  Add Chinese font
  Add font to system
@@ -57,28 +57,28 @@ or just change ~/.config/matplotlib/matplotlibrc  config mpl.rccParams[&amp;lsqu
     
     <item>
       <title>Quanta Program</title>
-      <link>http://memo.eliglad.com:1313/posts/futstock/quanta-program/</link>
+      <link>http://memo.eliglad.com/posts/futstock/quanta-program/</link>
       <pubDate>Mon, 29 Feb 2016 11:13:01 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com:1313/posts/futstock/quanta-program/</guid>
+      <guid>http://memo.eliglad.com/posts/futstock/quanta-program/</guid>
       <description>toc: true IsOpen (Holiday) #!/usr/bin/env python &amp;quot;&amp;quot;&amp;quot; 股市日历，没费接口 &amp;quot;&amp;quot;&amp;quot; import pandas as pd import tushare as ts ts.set_token(&#39;88888888888888888&#39;) mt = ts.Master() df = mt.TradeCal(exchangeCD=&#39;XSHG&#39;, beginDate=&#39;20150928&#39;, endDate=&#39;20151010&#39;, field=&#39;calendarDate,isOpen,prevTradeDate&#39;) Understandings 1 Notes Call data_handler self.events = queue.Queue() data_handler(self.pairs, self.events, self.csv_dir) 2 debug start from mac.py : HistoricCSVPriceHandler -&amp;gt;(data_handler) =&amp;gt; backtest(`data_handler`) =&amp;gt; price.py(`PriceHandler`) =&amp;gt; _set_up_prices_dict(self) =&amp;gt; prices_dict = { &amp;#39;USDGBP&amp;#39;: {&amp;#39;ask&amp;#39;: None, &amp;#39;bid&amp;#39;: None, &amp;#39;time&amp;#39;:</description>
     </item>
     
     <item>
       <title>Quanta Resources</title>
-      <link>http://memo.eliglad.com:1313/posts/futstock/quanta-resources/</link>
+      <link>http://memo.eliglad.com/posts/futstock/quanta-resources/</link>
       <pubDate>Mon, 29 Feb 2016 11:11:09 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com:1313/posts/futstock/quanta-resources/</guid>
+      <guid>http://memo.eliglad.com/posts/futstock/quanta-resources/</guid>
       <description>toc: true CTP 接口资料 https://www.citicsf.com/download/ctp http://www.sfit.com.cn/5_2_DocumentDown.htm 国内量化交易接口 easytrader 基于python程序 smurfyquant.com 基于同花顺、通达信的客户端 Quanta Resourses: www.reddit.com www.joinquant.com Forex Trading Demo Project Forex Sign in repo in github List Forex Trading Diary #1 - Automated Forex Trading with the OANDA API Forex</description>
     </item>
     
     <item>
       <title>Build python ENV</title>
-      <link>http://memo.eliglad.com:1313/posts/tech/build_python_env/</link>
+      <link>http://memo.eliglad.com/posts/tech/build_python_env/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com:1313/posts/tech/build_python_env/</guid>
+      <guid>http://memo.eliglad.com/posts/tech/build_python_env/</guid>
       <description>Install pypy Notice：This situation is install pypy3 after another virtualenv for python3 has already installed.
 Download tar package from http://pypy.org/ Extract pakage to /opt tar xvf pypy3.3-v5.2.0-alpha1-osx64.tar.bz2 /opt/ Create virtualenv manually Notice: For some reason, can not simplely run &amp;lsquo;virtualenv&amp;rsquo; -p to create one.
 source .bin/quanta.sh # enter a python3 virtualenv already exist, this named &amp;#39;quanta&amp;#39; cd .virtualenv virtualenv -p /opt/pypy3.3-v5.2.0-alpha1-osx64/bin/pypy3 pypy3 # will got some ERRORS, and FORGET IT.</description>

@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>shell on Just a Memo</title>
-    <link>http://memo.eliglad.com:1313/tags/shell/</link>
+    <link>http://memo.eliglad.com/tags/shell/</link>
     <description>Recent content in shell on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Dec 2017 23:30:08 +0000</lastBuildDate>
     
-	<atom:link href="http://memo.eliglad.com:1313/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://memo.eliglad.com/tags/shell/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Bash</title>
-      <link>http://memo.eliglad.com:1313/posts/tech/bash/</link>
+      <link>http://memo.eliglad.com/posts/tech/bash/</link>
       <pubDate>Fri, 01 Dec 2017 23:30:08 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com:1313/posts/tech/bash/</guid>
+      <guid>http://memo.eliglad.com/posts/tech/bash/</guid>
       <description>Linux .bashrc if [[ $- != *i* ]] ; then # Shell is non-interactive. Be done now! return fi # Locale export TERM=xterm-256color export LC_ALL=zh_CN.UTF-8 export LANG=zh_CN.UTF-8 # Perlbrew export PERLBREW_ROOT=/opt/perl5 PATH=$PATH:~/.bin:/opt/perl5/bin # Ssh login need password phrase once if [ ! -S ~/.ssh/ssh_auth_sock ]; then eval `ssh-agent` ln -sf &amp;#34;$SSH_AUTH_SOCK&amp;#34; ~/.ssh/ssh_auth_sock fi export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock ssh-add -l &amp;gt; /dev/null || ssh-add Mac OS .bashrc ######### #Alias # alias ls=&amp;#34;ls -G&amp;#34; alias rm=&amp;#39;rm -i&amp;#39; alias mv=&amp;#39;mv -i&amp;#39; alias cp=&amp;#39;cp -i&amp;#39; alias grep=&amp;#39;grep --color=auto&amp;#39; alias vi=&amp;#39;/usr/local/bin/vim&amp;#39; alias vim=&amp;#39;/usr/local/bin/vim&amp;#39; #enviroment export LC_ALL=zh_CN.</description>
     </item>
     
     <item>
       <title>My_Scripts</title>
-      <link>http://memo.eliglad.com:1313/posts/tech/my_scripts/</link>
+      <link>http://memo.eliglad.com/posts/tech/my_scripts/</link>
       <pubDate>Tue, 21 Nov 2017 10:21:01 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com:1313/posts/tech/my_scripts/</guid>
+      <guid>http://memo.eliglad.com/posts/tech/my_scripts/</guid>
       <description>rysnc cif to local ~/.bin/rysnc_cifs.sh #!/bin/bash sudo umount -f /mnt/cifs/* ||true sudo mount /mnt/cifs/vipdoc if test $? -eq 0; then #sucessfull mount echo &amp;#34;mounted /mnt/cifs/vipdoc&amp;#34; echo &amp;#34;rsync /mnt/cifs/vipdoc to /backup/tdx&amp;#34; rsync -az /mnt/cifs/vipdoc /backup/tdx echo &amp;#34;umount vipdoc&amp;#34; sudo umount /mnt/cifs/vipdoc fi sudo mount /mnt/cifs/hq_cache if test $? -eq 0; then # sucessfull mount echo &amp;#34;mounted /mnt/cifs/hq_cache&amp;#34; echo &amp;#34;rysnc /mnt/cifs/hq_cache to /backup/tdx&amp;#34; rsync -az /mnt/cifs/hq_cache /backup/tdx echo &amp;#34;umount hq_cache&amp;#34; sudo umount</description>
     </item>
     

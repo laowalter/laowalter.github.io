@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>movies on Just a Memo</title>
-    <link>http://memo.eliglad.com:1313/tags/movies/</link>
+    <link>http://memo.eliglad.com/tags/movies/</link>
     <description>Recent content in movies on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 02 Dec 2017 19:01:24 +0000</lastBuildDate>
     
-	<atom:link href="http://memo.eliglad.com:1313/tags/movies/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://memo.eliglad.com/tags/movies/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Movies</title>
-      <link>http://memo.eliglad.com:1313/posts/life/movies/</link>
+      <link>http://memo.eliglad.com/posts/life/movies/</link>
       <pubDate>Sat, 02 Dec 2017 19:01:24 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com:1313/posts/life/movies/</guid>
+      <guid>http://memo.eliglad.com/posts/life/movies/</guid>
       <description>电影排行榜 北美电影排行榜</description>
     </item>
     
