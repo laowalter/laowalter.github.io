@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cheatsheet on Just a Memo</title>
-    <link>//192.168.0.199:1313/tags/cheatsheet/</link>
+    <link>http://memo.eliglad.com:1313/tags/cheatsheet/</link>
     <description>Recent content in cheatsheet on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 18 Aug 2019 10:30:29 +0000</lastBuildDate>
     
-	<atom:link href="//192.168.0.199:1313/tags/cheatsheet/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://memo.eliglad.com:1313/tags/cheatsheet/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo Cheatsheet</title>
-      <link>//192.168.0.199:1313/posts/tech/hugo_cheatsheet/</link>
+      <link>http://memo.eliglad.com:1313/posts/tech/hugo_cheatsheet/</link>
       <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/tech/hugo_cheatsheet/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/tech/hugo_cheatsheet/</guid>
       <description>Hugo markdown format Section number default Section number is set to &amp;ldquo;true&amp;rdquo; add &amp;ldquo;section_number = false&amp;rdquo; to front matter if Dont Not want to add section_number in the content. +++ title = &amp;#34;Hugo Cheatsheet&amp;#34; date = 2019-08-18T10:30:29Z description = &amp;#34;&amp;#34; tags = [&amp;#34;hugo&amp;#34;, &amp;#34;cheatsheet&amp;#34;, &amp;#34;docker&amp;#34;, &amp;#34;blog&amp;#34;] categories = [&amp;#34;tech&amp;#34;] section_number = false +++ Syntax Highlight {{&amp;lt; highlight go &amp;ldquo;linenos=table,hl_lines=8 15-17,linenostart=199&amp;rdquo; &amp;gt;}} // &amp;hellip; code {{&amp;lt; /highlight &amp;gt;}} file format PygmentsCodeFences</description>
     </item>
     
     <item>
       <title>Vim Cheatsheet</title>
-      <link>//192.168.0.199:1313/posts/tech/vim_cheatsheet/</link>
+      <link>http://memo.eliglad.com:1313/posts/tech/vim_cheatsheet/</link>
       <pubDate>Mon, 22 Jul 2019 08:42:27 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/tech/vim_cheatsheet/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/tech/vim_cheatsheet/</guid>
       <description>Vim 全局 :saveas file - 另存为 :close - 关闭当前窗口 K - open man page for word under the cursor H - 移动到当前页面顶部 M - 移动到当前页面中间 L - 移动到当前页面底部 w - 移动到下个单词开</description>
     </item>
     

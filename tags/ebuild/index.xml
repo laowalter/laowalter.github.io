@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ebuild on Just a Memo</title>
-    <link>//192.168.0.199:1313/tags/ebuild/</link>
+    <link>http://memo.eliglad.com:1313/tags/ebuild/</link>
     <description>Recent content in ebuild on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 Mar 2019 17:51:15 +0000</lastBuildDate>
     
-	<atom:link href="//192.168.0.199:1313/tags/ebuild/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://memo.eliglad.com:1313/tags/ebuild/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ebuild</title>
-      <link>//192.168.0.199:1313/posts/tech/ebuild/</link>
+      <link>http://memo.eliglad.com:1313/posts/tech/ebuild/</link>
       <pubDate>Thu, 28 Mar 2019 17:51:15 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/tech/ebuild/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/tech/ebuild/</guid>
       <description>一个简单例子 net-dns/dnsmasq-2.80是官方的，但是不具备regex支持功能，https://github.com/laowa</description>
     </item>
     

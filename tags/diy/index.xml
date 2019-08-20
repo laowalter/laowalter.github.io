@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>diy on Just a Memo</title>
-    <link>//192.168.0.199:1313/tags/diy/</link>
+    <link>http://memo.eliglad.com:1313/tags/diy/</link>
     <description>Recent content in diy on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 19 Feb 2019 22:42:10 +0000</lastBuildDate>
     
-	<atom:link href="//192.168.0.199:1313/tags/diy/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://memo.eliglad.com:1313/tags/diy/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>DIY</title>
-      <link>//192.168.0.199:1313/posts/life/diy/</link>
+      <link>http://memo.eliglad.com:1313/posts/life/diy/</link>
       <pubDate>Tue, 19 Feb 2019 22:42:10 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/life/diy/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/life/diy/</guid>
       <description>Carpenter Work Bench</description>
     </item>
     

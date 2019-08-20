@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Search on Just a Memo</title>
-    <link>//192.168.0.199:1313/tags/search/</link>
+    <link>http://memo.eliglad.com:1313/tags/search/</link>
     <description>Recent content in Search on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 04 Nov 2018 11:36:41 +0000</lastBuildDate>
     
-	<atom:link href="//192.168.0.199:1313/tags/search/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://memo.eliglad.com:1313/tags/search/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Search Engine</title>
-      <link>//192.168.0.199:1313/posts/tech/searchengine/</link>
+      <link>http://memo.eliglad.com:1313/posts/tech/searchengine/</link>
       <pubDate>Sun, 04 Nov 2018 11:36:41 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/tech/searchengine/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/tech/searchengine/</guid>
       <description>pipl Pipl是一款为搜索网络上的人物信息而生的搜索引擎。不同于传统意义上的搜索引擎，Pipl是专为检索“深网”上的信息而设计的。Pipl的爬虫</description>
     </item>
     

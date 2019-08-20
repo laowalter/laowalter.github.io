@@ -2,138 +2,138 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>futures on Just a Memo</title>
-    <link>//192.168.0.199:1313/tags/futures/</link>
+    <link>http://memo.eliglad.com:1313/tags/futures/</link>
     <description>Recent content in futures on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 18 Aug 2019 10:32:08 +0000</lastBuildDate>
     
-	<atom:link href="//192.168.0.199:1313/tags/futures/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://memo.eliglad.com:1313/tags/futures/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Futures Cheatsheet</title>
-      <link>//192.168.0.199:1313/posts/tech/futures-cheatsheet/</link>
+      <link>http://memo.eliglad.com:1313/posts/tech/futures-cheatsheet/</link>
       <pubDate>Sun, 18 Aug 2019 10:32:08 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/tech/futures-cheatsheet/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/tech/futures-cheatsheet/</guid>
       <description>Windows系统键盘 ALT + delete - Del键 LWIN + i - Ins键 LWIN + F12 - 屏幕拷贝 CTRL + ALT + F - 全屏 文化财经期货软件 ALT + r - 隐藏K线 ALT + c - 画线颜色切换 ALT</description>
     </item>
     
     <item>
       <title>期货交易基本信息</title>
-      <link>//192.168.0.199:1313/posts/futstock/%E6%9C%9F%E8%B4%A7%E4%BA%A4%E6%98%93%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF/</link>
+      <link>http://memo.eliglad.com:1313/posts/futstock/%E6%9C%9F%E8%B4%A7%E4%BA%A4%E6%98%93%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF/</link>
       <pubDate>Thu, 14 Mar 2019 11:53:37 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/futstock/%E6%9C%9F%E8%B4%A7%E4%BA%A4%E6%98%93%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/futstock/%E6%9C%9F%E8%B4%A7%E4%BA%A4%E6%98%93%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF/</guid>
       <description>保证金比例/手续费 品种 保证金比例 价格变动/点 手续费(开+平今) 数量/手 最小变动 玉米 9% 10 1.32+0.011 10吨 1元 豆油 11% 20 2.80+0.03 10吨 1元 豆粕 13% 10 1.65+0.02 10吨 1元 菜</description>
     </item>
     
     <item>
       <title>文华公式</title>
-      <link>//192.168.0.199:1313/posts/futstock/%E6%96%87%E5%8D%8E%E5%85%AC%E5%BC%8F/</link>
+      <link>http://memo.eliglad.com:1313/posts/futstock/%E6%96%87%E5%8D%8E%E5%85%AC%E5%BC%8F/</link>
       <pubDate>Sat, 26 Jan 2019 12:00:29 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/futstock/%E6%96%87%E5%8D%8E%E5%85%AC%E5%BC%8F/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/futstock/%E6%96%87%E5%8D%8E%E5%85%AC%E5%BC%8F/</guid>
       <description>挤牌公式 挤牌指标（TTM Squeeze）,来自约翰.F.卡特《驾驭交易》，即两个通道：布林通道和肯特纳通道（Keltner Channel），</description>
     </item>
     
     <item>
       <title>期货今日复盘</title>
-      <link>//192.168.0.199:1313/posts/futstock/%E6%9C%9F%E8%B4%A7%E4%BB%8A%E6%97%A5%E5%A4%8D%E7%9B%98/</link>
+      <link>http://memo.eliglad.com:1313/posts/futstock/%E6%9C%9F%E8%B4%A7%E4%BB%8A%E6%97%A5%E5%A4%8D%E7%9B%98/</link>
       <pubDate>Mon, 21 Jan 2019 15:37:58 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/futstock/%E6%9C%9F%E8%B4%A7%E4%BB%8A%E6%97%A5%E5%A4%8D%E7%9B%98/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/futstock/%E6%9C%9F%E8%B4%A7%E4%BB%8A%E6%97%A5%E5%A4%8D%E7%9B%98/</guid>
       <description>操作逻辑调整：1F CCI在趋势中，会出现背了背的情况。如果是强趋势，做CCI背离必定亏损，因此必须区分是在趋势中还是在横盘中；在趋势中是强趋</description>
     </item>
     
     <item>
       <title>期货日内交易</title>
-      <link>//192.168.0.199:1313/posts/futstock/%E6%9C%9F%E8%B4%A7%E6%97%A5%E5%86%85%E4%BA%A4%E6%98%93/</link>
+      <link>http://memo.eliglad.com:1313/posts/futstock/%E6%9C%9F%E8%B4%A7%E6%97%A5%E5%86%85%E4%BA%A4%E6%98%93/</link>
       <pubDate>Fri, 21 Dec 2018 15:14:16 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/futstock/%E6%9C%9F%E8%B4%A7%E6%97%A5%E5%86%85%E4%BA%A4%E6%98%93/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/futstock/%E6%9C%9F%E8%B4%A7%E6%97%A5%E5%86%85%E4%BA%A4%E6%98%93/</guid>
       <description>技巧 均线判断多空底部 5分钟交易图(观察此时在一分钟不ma5和ma10的相交) 平行线 平行线 盘被是怎么慢慢的不盘被的:均线平行区 平行线 MA5和M</description>
     </item>
     
     <item>
       <title>期货文摘</title>
-      <link>//192.168.0.199:1313/posts/futstock/%E6%9C%9F%E8%B4%A7%E6%96%87%E6%91%98/</link>
+      <link>http://memo.eliglad.com:1313/posts/futstock/%E6%9C%9F%E8%B4%A7%E6%96%87%E6%91%98/</link>
       <pubDate>Tue, 11 Dec 2018 21:29:20 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/futstock/%E6%9C%9F%E8%B4%A7%E6%96%87%E6%91%98/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/futstock/%E6%9C%9F%E8%B4%A7%E6%96%87%E6%91%98/</guid>
       <description>微信公众号：开始聊聊交易 微信公众号：开始聊聊交易 kslljy654 期货交易之所以困难，个人认为难得不在方法，而在于心态。 做期货大概有10年时间了，那个时候一</description>
     </item>
     
     <item>
       <title>日内交易成功经验</title>
-      <link>//192.168.0.199:1313/posts/futstock/%E6%97%A5%E5%86%85%E4%BA%A4%E6%98%93%E6%88%90%E5%8A%9F%E7%BB%8F%E9%AA%8C/</link>
+      <link>http://memo.eliglad.com:1313/posts/futstock/%E6%97%A5%E5%86%85%E4%BA%A4%E6%98%93%E6%88%90%E5%8A%9F%E7%BB%8F%E9%AA%8C/</link>
       <pubDate>Wed, 05 Dec 2018 10:37:33 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/futstock/%E6%97%A5%E5%86%85%E4%BA%A4%E6%98%93%E6%88%90%E5%8A%9F%E7%BB%8F%E9%AA%8C/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/futstock/%E6%97%A5%E5%86%85%E4%BA%A4%E6%98%93%E6%88%90%E5%8A%9F%E7%BB%8F%E9%AA%8C/</guid>
       <description>大成交量标志K线 说明： 根据缠论认为这是第一个15分钟反弹，而且横盘的位置还在15F的顶分型中，有空的可能； 根据15F, 5F成交量4504-4</description>
     </item>
     
     <item>
       <title>农大期货的课程模块</title>
-      <link>//192.168.0.199:1313/posts/futstock/%E5%86%9C%E5%A4%A7%E6%9C%9F%E8%B4%A7%E7%9A%84%E8%AF%BE%E7%A8%8B%E6%A8%A1%E5%9D%97/</link>
+      <link>http://memo.eliglad.com:1313/posts/futstock/%E5%86%9C%E5%A4%A7%E6%9C%9F%E8%B4%A7%E7%9A%84%E8%AF%BE%E7%A8%8B%E6%A8%A1%E5%9D%97/</link>
       <pubDate>Fri, 26 Oct 2018 21:53:39 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/futstock/%E5%86%9C%E5%A4%A7%E6%9C%9F%E8%B4%A7%E7%9A%84%E8%AF%BE%E7%A8%8B%E6%A8%A1%E5%9D%97/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/futstock/%E5%86%9C%E5%A4%A7%E6%9C%9F%E8%B4%A7%E7%9A%84%E8%AF%BE%E7%A8%8B%E6%A8%A1%E5%9D%97/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Economic Data</title>
-      <link>//192.168.0.199:1313/posts/eco/economic/</link>
+      <link>http://memo.eliglad.com:1313/posts/eco/economic/</link>
       <pubDate>Tue, 16 Oct 2018 08:19:00 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/eco/economic/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/eco/economic/</guid>
       <description>世界经济数据 中国经济数据 中国外汇储备 香港外汇储备</description>
     </item>
     
     <item>
       <title>申万期货</title>
-      <link>//192.168.0.199:1313/posts/futstock/%E7%94%B3%E4%B8%87%E6%9C%9F%E8%B4%A7/</link>
+      <link>http://memo.eliglad.com:1313/posts/futstock/%E7%94%B3%E4%B8%87%E6%9C%9F%E8%B4%A7/</link>
       <pubDate>Wed, 26 Sep 2018 11:36:11 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/futstock/%E7%94%B3%E4%B8%87%E6%9C%9F%E8%B4%A7/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/futstock/%E7%94%B3%E4%B8%87%E6%9C%9F%E8%B4%A7/</guid>
       <description>保证金查询 [jtable] 品种,保证金比例,交易所 玉米1901,5.00%(交易所)9.00%(申万),DCE [/jtable] 公司标准手续费 [jtable] 品种,每手量,开仓,当日平</description>
     </item>
     
     <item>
       <title>博易大师使用及公式</title>
-      <link>//192.168.0.199:1313/posts/futstock/%E5%8D%9A%E6%98%93%E5%A4%A7%E5%B8%88%E4%BD%BF%E7%94%A8%E5%8F%8A%E5%85%AC%E5%BC%8F/</link>
+      <link>http://memo.eliglad.com:1313/posts/futstock/%E5%8D%9A%E6%98%93%E5%A4%A7%E5%B8%88%E4%BD%BF%E7%94%A8%E5%8F%8A%E5%85%AC%E5%BC%8F/</link>
       <pubDate>Wed, 26 Sep 2018 09:32:03 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/futstock/%E5%8D%9A%E6%98%93%E5%A4%A7%E5%B8%88%E4%BD%BF%E7%94%A8%E5%8F%8A%E5%85%AC%E5%BC%8F/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/futstock/%E5%8D%9A%E6%98%93%E5%A4%A7%E5%B8%88%E4%BD%BF%E7%94%A8%E5%8F%8A%E5%85%AC%E5%BC%8F/</guid>
       <description>公式 m9 （MACD 变色\面积公式） [jtable] NO,参数名,类型,缺省值,最小值,最大值,步长 1,SHORT,数值型,12,2,200,0 2,LONG,</description>
     </item>
     
     <item>
       <title>浮动止损使用技巧(临时文件)</title>
-      <link>//192.168.0.199:1313/posts/futstock/%E6%B5%AE%E5%8A%A8%E6%AD%A2%E6%8D%9F%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</link>
+      <link>http://memo.eliglad.com:1313/posts/futstock/%E6%B5%AE%E5%8A%A8%E6%AD%A2%E6%8D%9F%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</link>
       <pubDate>Tue, 25 Sep 2018 18:39:06 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/futstock/%E6%B5%AE%E5%8A%A8%E6%AD%A2%E6%8D%9F%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/futstock/%E6%B5%AE%E5%8A%A8%E6%AD%A2%E6%8D%9F%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</guid>
       <description>将交易简单化，除去繁杂且不具正向意义的主观判断，才能将交易融进自身的行为习惯当中，将客观信号的交易方式变成和吃饭睡觉一样自然熟练。 交易的唯一</description>
     </item>
     
     <item>
       <title>江恩理论</title>
-      <link>//192.168.0.199:1313/posts/futstock/%E6%B1%9F%E6%81%A9%E7%90%86%E8%AE%BA/</link>
+      <link>http://memo.eliglad.com:1313/posts/futstock/%E6%B1%9F%E6%81%A9%E7%90%86%E8%AE%BA/</link>
       <pubDate>Sat, 02 Dec 2017 22:00:15 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/futstock/%E6%B1%9F%E6%81%A9%E7%90%86%E8%AE%BA/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/futstock/%E6%B1%9F%E6%81%A9%E7%90%86%E8%AE%BA/</guid>
       <description>原文链接：www.maofou.com/jsfx/Gann Reference: 《江恩华尔街四十五年》 《股票行情的真谛》 第一章 序 言 投资大师——江恩 威廉·江恩（W</description>
     </item>
     
     <item>
       <title>盘口</title>
-      <link>//192.168.0.199:1313/posts/futstock/%E7%9B%98%E5%8F%A3/</link>
+      <link>http://memo.eliglad.com:1313/posts/futstock/%E7%9B%98%E5%8F%A3/</link>
       <pubDate>Thu, 30 Nov 2017 14:23:27 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/futstock/%E7%9B%98%E5%8F%A3/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/futstock/%E7%9B%98%E5%8F%A3/</guid>
       <description>大单挂在盘口的现象 大单托单 下跌开始之初 此时，大单挂在盘口是托单假象，将有较大幅度下跌。 下跌过程中： 此时，大单挂在盘口是托单假象，还将有下跌。</description>
     </item>
     

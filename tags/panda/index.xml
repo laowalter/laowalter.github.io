@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>panda on Just a Memo</title>
-    <link>//192.168.0.199:1313/tags/panda/</link>
+    <link>http://memo.eliglad.com:1313/tags/panda/</link>
     <description>Recent content in panda on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Sep 2018 08:44:25 +0000</lastBuildDate>
     
-	<atom:link href="//192.168.0.199:1313/tags/panda/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://memo.eliglad.com:1313/tags/panda/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Python_tips</title>
-      <link>//192.168.0.199:1313/posts/tech/python-tips/</link>
+      <link>http://memo.eliglad.com:1313/posts/tech/python-tips/</link>
       <pubDate>Tue, 25 Sep 2018 08:44:25 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/tech/python-tips/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/tech/python-tips/</guid>
       <description>Read special excel like xml Excel Address import pandas as pd dfs = pd.read_html(&amp;#39;swclass.xls&amp;#39;, flavor=&amp;#39;html5lib&amp;#39;) df = pd.DataFrame(dfs[0]) df.columns = df.iloc[0] df = df[1:] df_agg = df.groupby(&amp;#39;行业名称&amp;#39;).agg(lambda x: &amp;#39;,&amp;#39;.join(x)) df_agg = df_agg.reset_index() df</description>
     </item>
     
     <item>
       <title>Quanta API</title>
-      <link>//192.168.0.199:1313/posts/tech/quanta_api/</link>
+      <link>http://memo.eliglad.com:1313/posts/tech/quanta_api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/tech/quanta_api/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/tech/quanta_api/</guid>
       <description>查询股票总市值和流通市值 总市值：mktcap 流通市值：nmc import tushare as ts df = ts.get_today_all() df.head() df = ts.get_today_all() code name changepercent trade open high low settlement volume turnoverratio amount per pb mktcap nmc 0 601500 通用股份 10.035 9.43 9.43 9.43 9.43 8.57 24800 0.01418</description>
     </item>
     

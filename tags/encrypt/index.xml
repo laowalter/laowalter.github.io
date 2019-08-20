@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>encrypt on Just a Memo</title>
-    <link>//192.168.0.199:1313/tags/encrypt/</link>
+    <link>http://memo.eliglad.com:1313/tags/encrypt/</link>
     <description>Recent content in encrypt on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 27 Feb 2019 14:04:48 +0000</lastBuildDate>
     
-	<atom:link href="//192.168.0.199:1313/tags/encrypt/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://memo.eliglad.com:1313/tags/encrypt/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>密码生成程序</title>
-      <link>//192.168.0.199:1313/posts/tech/genpasswd/</link>
+      <link>http://memo.eliglad.com:1313/posts/tech/genpasswd/</link>
       <pubDate>Wed, 27 Feb 2019 14:04:48 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/tech/genpasswd/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/tech/genpasswd/</guid>
       <description>Gentoo Wiki 密码生成 Command ranpwd 随机生成密码 mkpasswd 随机生成密码</description>
     </item>
     
     <item>
       <title>GPG</title>
-      <link>//192.168.0.199:1313/posts/tech/gpg/</link>
+      <link>http://memo.eliglad.com:1313/posts/tech/gpg/</link>
       <pubDate>Wed, 13 Dec 2017 22:04:53 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/tech/gpg/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/tech/gpg/</guid>
       <description> GPG setup  .bashrc
 GPG_TTY=$(tty) export GPG_TTY import public key
 gpg --import sone.bin check finger print
@@ -39,19 +39,19 @@ gpg --output doc --decrypt doc.gpg  </description>
     
     <item>
       <title>Encrypt</title>
-      <link>//192.168.0.199:1313/posts/tech/encrypt/</link>
+      <link>http://memo.eliglad.com:1313/posts/tech/encrypt/</link>
       <pubDate>Wed, 29 Nov 2017 22:42:39 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/tech/encrypt/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/tech/encrypt/</guid>
       <description> Encrypt a partiton with dm-crypt Reference  Gentoo dm-crypt wiki  Encrypt files with Gnupg </description>
     </item>
     
     <item>
       <title>Encrypt Filesystem / 加密文件系统</title>
-      <link>//192.168.0.199:1313/posts/tech/encryptfs/</link>
+      <link>http://memo.eliglad.com:1313/posts/tech/encryptfs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//192.168.0.199:1313/posts/tech/encryptfs/</guid>
+      <guid>http://memo.eliglad.com:1313/posts/tech/encryptfs/</guid>
       <description>dm-crypt 加密文件系统镜像 数据包准备 安装 root# emerge -avq sys-fs/lvm2 root# emerge -avq sys-fs/cryptsetup 检查dm-crpyt是否已经加载 $ ls -l /dev/mapper/control # 接下来加载dm-crypt内核模块： $ sudo modprobe dm-crypt # dm</description>
     </item>
     
