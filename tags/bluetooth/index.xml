@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>bluetooth on Just a Memo</title>
-    <link>http://memo.eliglad.com/tags/bluetooth/</link>
+    <link>laowalter.github.io/tags/bluetooth/</link>
     <description>Recent content in bluetooth on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Mar 2019 23:42:48 +0000</lastBuildDate>
     
-	<atom:link href="http://memo.eliglad.com/tags/bluetooth/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="laowalter.github.io/tags/bluetooth/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux Bluetooth / 蓝牙</title>
-      <link>http://memo.eliglad.com/posts/tech/bluetooth/</link>
+      <link>laowalter.github.io/posts/tech/bluetooth/</link>
       <pubDate>Fri, 01 Mar 2019 23:42:48 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/posts/tech/bluetooth/</guid>
+      <guid>laowalter.github.io/posts/tech/bluetooth/</guid>
       <description>文档 * [Gentoo Wiki 蓝牙](https://wiki.gentoo.org/wiki/Bluetooth) * [Gentoo wiki 蓝牙 bluez-alsa](https://wiki.gentoo.org/wiki/Bluetooth_Headset) * [Github blue-alsa 包含使用方法](https</description>
     </item>
     

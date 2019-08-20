@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>blog on Just a Memo</title>
-    <link>http://memo.eliglad.com/tags/blog/</link>
+    <link>laowalter.github.io/tags/blog/</link>
     <description>Recent content in blog on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 18 Aug 2019 10:30:29 +0000</lastBuildDate>
     
-	<atom:link href="http://memo.eliglad.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="laowalter.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo Cheatsheet</title>
-      <link>http://memo.eliglad.com/posts/tech/hugo_cheatsheet/</link>
+      <link>laowalter.github.io/posts/tech/hugo_cheatsheet/</link>
       <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/posts/tech/hugo_cheatsheet/</guid>
-      <description>Hugo markdown format Section number default Section number is set to &amp;ldquo;true&amp;rdquo; add &amp;ldquo;section_number = false&amp;rdquo; to front matter if Dont Not want to add section_number in the content. +++ title = &amp;#34;Hugo Cheatsheet&amp;#34; date = 2019-08-18T10:30:29Z description = &amp;#34;&amp;#34; tags = [&amp;#34;hugo&amp;#34;, &amp;#34;cheatsheet&amp;#34;, &amp;#34;docker&amp;#34;, &amp;#34;blog&amp;#34;] categories = [&amp;#34;tech&amp;#34;] section_number = false +++ Syntax Highlight {{&amp;lt; highlight go &amp;ldquo;linenos=table,hl_lines=8 15-17,linenostart=199&amp;rdquo; &amp;gt;}} // &amp;hellip; code {{&amp;lt; /highlight &amp;gt;}} file format PygmentsCodeFences</description>
+      <guid>laowalter.github.io/posts/tech/hugo_cheatsheet/</guid>
+      <description>Publish to github Generate htmls docker exec -it hugo hugo Find and replace wrong address like &amp;ldquo;:1313&amp;rdquo; $ cd public/ $ grep -ri :1313 * $ sudo find ./ -type f -exec sed -i -e &amp;#39;s/:1313//g&amp;#39; {} \; Hugo markdown format Section number default Section number is set to &amp;ldquo;true&amp;rdquo; add &amp;ldquo;section_number = false&amp;rdquo; to front matter if Dont Not want to add section_number in the content. +++ title =</description>
     </item>
     
     <item>
       <title>Develop Hugo</title>
-      <link>http://memo.eliglad.com/posts/tech/hugo_develop/</link>
+      <link>laowalter.github.io/posts/tech/hugo_develop/</link>
       <pubDate>Thu, 08 Aug 2019 23:29:12 +0800</pubDate>
       
-      <guid>http://memo.eliglad.com/posts/tech/hugo_develop/</guid>
+      <guid>laowalter.github.io/posts/tech/hugo_develop/</guid>
       <description>Youtube Tutorial https://www.youtube.com/watch?v=qtIqKaDlqXo&amp;amp;list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3 有特别帮助的网址 关于整体结构和简单的theme设置 https://www.zeolearn.com/magazine/develop-a-theme-for-hugo 中文网站 https://bwaycer.github.io/hugo_tutorial.hugo/overview/introduction/ 语法高亮的支持 Paginator用法 使用思维导图 Hexo 脑图 Insert javascript into hugo by partial Create custom Shortcodes</description>
     </item>
     
     <item>
       <title>jekyll</title>
-      <link>http://memo.eliglad.com/posts/tech/jekyll/</link>
+      <link>laowalter.github.io/posts/tech/jekyll/</link>
       <pubDate>Sat, 22 Sep 2018 11:53:35 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/posts/tech/jekyll/</guid>
+      <guid>laowalter.github.io/posts/tech/jekyll/</guid>
       <description> Jekyll Install $ sudo emerge -av dev-ruby/rubygems $ gem install bundler jekyll $ echo &amp;#34;export PATH=$PATH:~/.gem/ruby/2.3.0/bin&amp;#34; &amp;gt; ~/.bashrc &amp;#34; $source ~/.bashrc $jekyll new blog $cd blog $bundle install ~/blog/ $bundle exec jekyll serve</description>
     </item>
     
     <item>
       <title>Pelican</title>
-      <link>http://memo.eliglad.com/posts/tech/pelican/</link>
+      <link>laowalter.github.io/posts/tech/pelican/</link>
       <pubDate>Sat, 14 May 2016 19:13:49 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/posts/tech/pelican/</guid>
+      <guid>laowalter.github.io/posts/tech/pelican/</guid>
       <description>Github 阅读文档注意： 使用http://username.github.io/ 作为blog是指 User and Organization Pages sites 使用http://username.git</description>
     </item>
     

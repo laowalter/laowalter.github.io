@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vim on Just a Memo</title>
-    <link>http://memo.eliglad.com/tags/vim/</link>
+    <link>laowalter.github.io/tags/vim/</link>
     <description>Recent content in vim on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 29 Feb 2016 10:28:24 +0000</lastBuildDate>
     
-	<atom:link href="http://memo.eliglad.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="laowalter.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>VIM</title>
-      <link>http://memo.eliglad.com/posts/tech/vim/</link>
+      <link>laowalter.github.io/posts/tech/vim/</link>
       <pubDate>Mon, 29 Feb 2016 10:28:24 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/posts/tech/vim/</guid>
+      <guid>laowalter.github.io/posts/tech/vim/</guid>
       <description>Vim BundleUpdate 之后出现的问题 YcM(YouCompleteMe) server 启动失败 解决办法重新执行install.py cd ~/.vim/bundle/YouCompleteMe ./install.py 使用技巧 文件编码 :set fenc=gbk :set fenc=utf-8 DOS UNIX 转换 set ff=unix Swap character xp Xp Global Replace, $ says &amp;ldquo;put vim in last-line mode&amp;rdquo;. :1,$s/George Bush/Barack Obama/g</description>
     </item>
     

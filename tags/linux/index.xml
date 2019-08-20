@@ -2,58 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux on Just a Memo</title>
-    <link>http://memo.eliglad.com/tags/linux/</link>
+    <link>laowalter.github.io/tags/linux/</link>
     <description>Recent content in linux on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 25 Apr 2019 09:40:45 +0000</lastBuildDate>
     
-	<atom:link href="http://memo.eliglad.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="laowalter.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Patch / Diff 打补丁(not finish)</title>
-      <link>http://memo.eliglad.com/posts/tech/patch/</link>
+      <link>laowalter.github.io/posts/tech/patch/</link>
       <pubDate>Thu, 25 Apr 2019 09:40:45 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/posts/tech/patch/</guid>
+      <guid>laowalter.github.io/posts/tech/patch/</guid>
       <description>说明 单个文件 diff 是用来生成文件之间的*不同之处*。把原始文件放到前面 diff -up origal-file modified file patch 打补丁是要明确指出把区别文件作用于哪个文件。 patch -R</description>
     </item>
     
     <item>
       <title>Adduser to Linux</title>
-      <link>http://memo.eliglad.com/posts/tech/adduser/</link>
+      <link>laowalter.github.io/posts/tech/adduser/</link>
       <pubDate>Wed, 16 May 2018 21:23:57 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/posts/tech/adduser/</guid>
+      <guid>laowalter.github.io/posts/tech/adduser/</guid>
       <description> Add user to linux useradd -m -G users,wheel username passwd username Add user to Samba smbpasswd -a user Add a user to a group usermod -a -G examplegroup exampleusername Convert a user to nologin shell usermod -s /sbin/nologin exampleusername</description>
     </item>
     
     <item>
       <title>Sound driver in Linux</title>
-      <link>http://memo.eliglad.com/posts/tech/sounddriver/</link>
+      <link>laowalter.github.io/posts/tech/sounddriver/</link>
       <pubDate>Thu, 23 Nov 2017 23:41:48 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/posts/tech/sounddriver/</guid>
+      <guid>laowalter.github.io/posts/tech/sounddriver/</guid>
       <description> Mac mini Sound Chip: CONFIG_SND_HDA_CODEC_CIRRUS=y
  es9018 https://volumio.org/forum/es9018k2m-t1218-20.html  </description>
     </item>
     
     <item>
       <title>Cups/Printer</title>
-      <link>http://memo.eliglad.com/posts/tech/cups/</link>
+      <link>laowalter.github.io/posts/tech/cups/</link>
       <pubDate>Wed, 22 Nov 2017 23:45:16 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/posts/tech/cups/</guid>
+      <guid>laowalter.github.io/posts/tech/cups/</guid>
       <description>HP 打印机 这是全面的的私有驱动程序, 包括打印、传真和扫描。 net-print/hplip-plugin net-print/hplip CUPS 打印机设置 安装软件 cups emerge -avq cups 允许远程配置 %filename: /etc/cups/cupsd.conf &amp;lt;Location /&amp;gt; Order allow,deny Allow localhost Allow from 192.168.0.* &amp;lt;/Location&amp;gt; &amp;lt;Location /admin&amp;gt; Order allow,deny Allow localhost Allow from</description>
     </item>
     
     <item>
       <title>Linux_Server</title>
-      <link>http://memo.eliglad.com/posts/tech/linux_server/</link>
+      <link>laowalter.github.io/posts/tech/linux_server/</link>
       <pubDate>Tue, 19 Apr 2016 23:27:55 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/posts/tech/linux_server/</guid>
+      <guid>laowalter.github.io/posts/tech/linux_server/</guid>
       <description> iptables (https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules)  List Chains with number
 sudo iptables -L -n -v --line-numbers Delete Chains
 sudo iptables -D INPUT 7  </description>
@@ -61,19 +61,19 @@ sudo iptables -D INPUT 7  </description>
     
     <item>
       <title>Encrypt Filesystem / 加密文件系统</title>
-      <link>http://memo.eliglad.com/posts/tech/encryptfs/</link>
+      <link>laowalter.github.io/posts/tech/encryptfs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/posts/tech/encryptfs/</guid>
+      <guid>laowalter.github.io/posts/tech/encryptfs/</guid>
       <description>dm-crypt 加密文件系统镜像 数据包准备 安装 root# emerge -avq sys-fs/lvm2 root# emerge -avq sys-fs/cryptsetup 检查dm-crpyt是否已经加载 $ ls -l /dev/mapper/control # 接下来加载dm-crypt内核模块： $ sudo modprobe dm-crypt # dm</description>
     </item>
     
     <item>
       <title>Gentoo_Overlay</title>
-      <link>http://memo.eliglad.com/posts/tech/gentoo_overlay/</link>
+      <link>laowalter.github.io/posts/tech/gentoo_overlay/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/posts/tech/gentoo_overlay/</guid>
+      <guid>laowalter.github.io/posts/tech/gentoo_overlay/</guid>
       <description> Add local overlay  Create directory
 mkdir -p /usr/local/portage/metadata echo &amp;#34;masters = gentoo&amp;#34; &amp;gt; /usr/local/portage/metadata/layout.conf chown -R portage:portage /usr/local/portage/ Modify make.conf
 PORTDIR_OVERLAY=&amp;#34;/usr/local/portage/ ${PORTDIR_OVERLAY}&amp;#34; Add [local] part to /etc/portage/repos.conf/gentoo.conf

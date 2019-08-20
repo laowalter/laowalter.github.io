@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>data on Just a Memo</title>
-    <link>http://memo.eliglad.com/tags/data/</link>
+    <link>laowalter.github.io/tags/data/</link>
     <description>Recent content in data on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 11 Feb 2018 19:45:43 +0000</lastBuildDate>
     
-	<atom:link href="http://memo.eliglad.com/tags/data/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="laowalter.github.io/tags/data/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Pandas CheatSheet</title>
-      <link>http://memo.eliglad.com/posts/tech/pandas_cheatsheet/</link>
+      <link>laowalter.github.io/posts/tech/pandas_cheatsheet/</link>
       <pubDate>Sun, 11 Feb 2018 19:45:43 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/posts/tech/pandas_cheatsheet/</guid>
+      <guid>laowalter.github.io/posts/tech/pandas_cheatsheet/</guid>
       <description>** df : DataFrame ** ** s : Series ** 导入数据 pd.read_csv(static) # 读入csv文件 pd.read_table(static) # From a delimited text file (like TSV) pd.read_excel(static) pd.read_sql(query, connection_object) # 从SQl表或者数据库读入 pd.read_json(json_string) # Reads from a JSON formatted string, URL or file. pd.read_html(url) # Parses an html URL, string or file and extracts</description>
     </item>
     

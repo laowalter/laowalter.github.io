@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>regex on Just a Memo</title>
-    <link>http://memo.eliglad.com/tags/regex/</link>
+    <link>laowalter.github.io/tags/regex/</link>
     <description>Recent content in regex on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 28 Jun 2019 16:16:18 +0000</lastBuildDate>
     
-	<atom:link href="http://memo.eliglad.com/tags/regex/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="laowalter.github.io/tags/regex/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Go regex 正则表达式</title>
-      <link>http://memo.eliglad.com/posts/tech/goregex/</link>
+      <link>laowalter.github.io/posts/tech/goregex/</link>
       <pubDate>Fri, 28 Jun 2019 16:16:18 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/posts/tech/goregex/</guid>
+      <guid>laowalter.github.io/posts/tech/goregex/</guid>
       <description>Golang中的正则表达式(链接) 如下代码使用golang的正则表达式regexp：去除HTML，CSS，SCRIPT代码，仅保留页面文字 package</description>
     </item>
     

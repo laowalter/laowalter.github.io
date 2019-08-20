@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>photo on Just a Memo</title>
-    <link>http://memo.eliglad.com/tags/photo/</link>
+    <link>laowalter.github.io/tags/photo/</link>
     <description>Recent content in photo on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 21 Jan 2018 15:21:16 +0000</lastBuildDate>
     
-	<atom:link href="http://memo.eliglad.com/tags/photo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="laowalter.github.io/tags/photo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Piwigo</title>
-      <link>http://memo.eliglad.com/posts/tech/piwigo/</link>
+      <link>laowalter.github.io/posts/tech/piwigo/</link>
       <pubDate>Sun, 21 Jan 2018 15:21:16 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/posts/tech/piwigo/</guid>
+      <guid>laowalter.github.io/posts/tech/piwigo/</guid>
       <description>Use Piwigo 注意事项 所有的图片文件都放在 piwigo/upload/ 的目录中。 Gentoo Nginx / php-fm php 自2.9.5之后必须打开 mysql use，只打开 mysqli不行。 dev-lang/php curl mysql 安装必要的数据包，给插</description>
     </item>
     

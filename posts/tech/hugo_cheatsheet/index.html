@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="http://memo.eliglad.com/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
 
 </head>
 
@@ -17,16 +17,16 @@
     
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
-    <link href="http://memo.eliglad.comcss/mindmap/kityminder.core.css" rel="stylesheet" type="text/css">
-    <link href="http://memo.eliglad.comcss/mindmap/mindmap.css" rel="stylesheet" type="text/css">
-    <script src="http://memo.eliglad.comjs/mindmap/kity.min.js"></script>
-    <script src="http://memo.eliglad.comjs/mindmap/kityminder.core.min.js"></script>
-    <script src="http://memo.eliglad.comjs/mindmap/mindmap.js"></script>
+    <link href="laowalter.github.iocss/mindmap/kityminder.core.css" rel="stylesheet" type="text/css">
+    <link href="laowalter.github.iocss/mindmap/mindmap.css" rel="stylesheet" type="text/css">
+    <script src="laowalter.github.iojs/mindmap/kity.min.js"></script>
+    <script src="laowalter.github.iojs/mindmap/kityminder.core.min.js"></script>
+    <script src="laowalter.github.iojs/mindmap/mindmap.js"></script>
 	
 
     
     
-    <link href="http://memo.eliglad.comcss/section_number/section_number.css" rel="stylesheet" type="text/css">
+    <link href="laowalter.github.iocss/section_number/section_number.css" rel="stylesheet" type="text/css">
     
 </head>
 
@@ -35,23 +35,24 @@
     <h1>Hugo Cheatsheet</h1>
     <p>Sun Aug 18, 2019</p>
     
-    <a class="tag tag--primary tag--small"   href="http://memo.eliglad.com"><font color="green">Home</font></a>
+    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
     
         
-           <a class="tag tag--primary tag--small" href="http://memo.eliglad.com/tags/hugo">hugo</a>
+           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/hugo">hugo</a>
         
-           <a class="tag tag--primary tag--small" href="http://memo.eliglad.com/tags/cheatsheet">cheatsheet</a>
+           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/cheatsheet">cheatsheet</a>
         
-           <a class="tag tag--primary tag--small" href="http://memo.eliglad.com/tags/docker">docker</a>
+           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/docker">docker</a>
         
-           <a class="tag tag--primary tag--small" href="http://memo.eliglad.com/tags/blog">blog</a>
+           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/blog">blog</a>
         
     
 
     <hr><br>
 <nav id="TableOfContents">
 <ul>
+<li><a href="#publish-to-github">Publish to github</a></li>
 <li><a href="#hugo-markdown-format">Hugo markdown format</a>
 <ul>
 <li><a href="#section-number">Section number</a></li>
@@ -72,6 +73,18 @@
 </ul>
 </nav><article>
     
+
+<h2 id="publish-to-github">Publish to github</h2>
+
+<ol>
+<li><p>Generate htmls</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker exec -it hugo hugo </code></pre></div></li>
+
+<li><p>Find and replace wrong address like &ldquo;:1313&rdquo;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd public/
+$ grep -ri :1313 *
+$ sudo find ./ -type f -exec sed -i -e <span style="color:#e6db74">&#39;s/:1313//g&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></code></pre></div></li>
+</ol>
 
 <h2 id="hugo-markdown-format">Hugo markdown format</h2>
 
@@ -157,7 +170,7 @@ something <br><br>
 <ol>
 <li><p>在jojomi/hugo中, 必须指定 HUGO_THEME=&ldquo;casper-two&rdquo;,否则报错。 而在 config.    toml 中指定 theme = &ldquo;casper-two&rdquo; 不起作用，</p></li>
 
-<li><p>上面的服务启动之后, 目前只能在本地用 localhost:1313, 访问192.168.0.199 并
+<li><p>上面的服务启动之后, 目前只能在本地用 localhost:1313, 访问laowalter.github.io 并
 不正常。可能要使用 .Permalink .RelPermalink .Params.url</p></li>
 
 <li><p><font color="green">-e HUGO_DESTINATION=&ldquo;public&rdquo; </font>使得publish的内容输出到 public 目录之中，这个内容应该可以直接上传到github</p></li>

@@ -2,75 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Just a Memo</title>
-    <link>http://memo.eliglad.com/categories/</link>
+    <link>laowalter.github.io/categories/</link>
     <description>Recent content in Categories on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 18 Aug 2019 10:32:08 +0000</lastBuildDate>
     
-	<atom:link href="http://memo.eliglad.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="laowalter.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>futures</title>
-      <link>http://memo.eliglad.com/categories/futures/</link>
+      <link>laowalter.github.io/categories/futures/</link>
       <pubDate>Sun, 18 Aug 2019 10:32:08 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/categories/futures/</guid>
+      <guid>laowalter.github.io/categories/futures/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tech</title>
-      <link>http://memo.eliglad.com/categories/tech/</link>
+      <link>laowalter.github.io/categories/tech/</link>
       <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/categories/tech/</guid>
+      <guid>laowalter.github.io/categories/tech/</guid>
       <description></description>
     </item>
     
     <item>
       <title>eli</title>
-      <link>http://memo.eliglad.com/categories/eli/</link>
+      <link>laowalter.github.io/categories/eli/</link>
       <pubDate>Mon, 22 Apr 2019 17:40:41 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/categories/eli/</guid>
+      <guid>laowalter.github.io/categories/eli/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fut&amp;Stock</title>
-      <link>http://memo.eliglad.com/categories/futstock/</link>
+      <link>laowalter.github.io/categories/futstock/</link>
       <pubDate>Thu, 14 Mar 2019 11:53:37 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/categories/futstock/</guid>
+      <guid>laowalter.github.io/categories/futstock/</guid>
       <description></description>
     </item>
     
     <item>
       <title>life</title>
-      <link>http://memo.eliglad.com/categories/life/</link>
+      <link>laowalter.github.io/categories/life/</link>
       <pubDate>Fri, 01 Mar 2019 07:18:53 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/categories/life/</guid>
+      <guid>laowalter.github.io/categories/life/</guid>
       <description></description>
     </item>
     
     <item>
       <title>eco</title>
-      <link>http://memo.eliglad.com/categories/eco/</link>
+      <link>laowalter.github.io/categories/eco/</link>
       <pubDate>Tue, 16 Oct 2018 08:19:00 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/categories/eco/</guid>
+      <guid>laowalter.github.io/categories/eco/</guid>
       <description></description>
     </item>
     
     <item>
       <title>chan108</title>
-      <link>http://memo.eliglad.com/categories/chan108/</link>
+      <link>laowalter.github.io/categories/chan108/</link>
       <pubDate>Mon, 12 Jun 2017 21:06:42 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/categories/chan108/</guid>
+      <guid>laowalter.github.io/categories/chan108/</guid>
       <description></description>
     </item>
     

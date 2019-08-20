@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>pelican on Just a Memo</title>
-    <link>http://memo.eliglad.com/tags/pelican/</link>
+    <link>laowalter.github.io/tags/pelican/</link>
     <description>Recent content in pelican on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://memo.eliglad.com/tags/pelican/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="laowalter.github.io/tags/pelican/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Develop Pelican Plugin</title>
-      <link>http://memo.eliglad.com/posts/tech/dev_pelican_plugin/</link>
+      <link>laowalter.github.io/posts/tech/dev_pelican_plugin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/posts/tech/dev_pelican_plugin/</guid>
+      <guid>laowalter.github.io/posts/tech/dev_pelican_plugin/</guid>
       <description>开发或者调试plugin的时候一定要用如下方法： pelican --ignore-cache content 另外一种方法不灵: %filename: pelicanconf.py LOAD_CONTENT_CACHE = False</description>
     </item>
     

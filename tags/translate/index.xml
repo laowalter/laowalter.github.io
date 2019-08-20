@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>translate on Just a Memo</title>
-    <link>http://memo.eliglad.com/tags/translate/</link>
+    <link>laowalter.github.io/tags/translate/</link>
     <description>Recent content in translate on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 13 Oct 2018 08:10:51 +0000</lastBuildDate>
     
-	<atom:link href="http://memo.eliglad.com/tags/translate/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="laowalter.github.io/tags/translate/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux 命令行字典</title>
-      <link>http://memo.eliglad.com/posts/tech/dict/</link>
+      <link>laowalter.github.io/posts/tech/dict/</link>
       <pubDate>Sat, 13 Oct 2018 08:10:51 +0000</pubDate>
       
-      <guid>http://memo.eliglad.com/posts/tech/dict/</guid>
-      <description>网络字典（推荐） Install $ sudo emerge -avq app-i18n/translate-shell Config %filename: .translate-shell/init.trans { :tl [&amp;#34;zh-CN&amp;#34;] :user-agent &amp;#34;Mozilla/5.0 (X11; Linux x86_64; rv:33.0) Gecko/20100101 Firefox/63.0&amp;#34; :proxy &amp;#34;http://192.168.0.199:8087&amp;#34; } USE trans en:zh good trans good trans zh:en 好 trans -x http://192.168.0.199:8087 good 本地中文字典 Install emerge -avq app-text/sdcv To install a dictionary, first create the /usr/share/stardict/dic directory, if it does not exist. After that,</description>
+      <guid>laowalter.github.io/posts/tech/dict/</guid>
+      <description>网络字典（推荐） Install $ sudo emerge -avq app-i18n/translate-shell Config %filename: .translate-shell/init.trans { :tl [&amp;#34;zh-CN&amp;#34;] :user-agent &amp;#34;Mozilla/5.0 (X11; Linux x86_64; rv:33.0) Gecko/20100101 Firefox/63.0&amp;#34; :proxy &amp;#34;http://laowalter.github.io:8087&amp;#34; } USE trans en:zh good trans good trans zh:en 好 trans -x http://laowalter.github.io:8087 good 本地中文字典 Install emerge -avq app-text/sdcv To install a dictionary, first create the /usr/share/stardict/dic directory, if it does not exist. After that,</description>
     </item>
     
   </channel>
