@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -50,11 +50,14 @@
 <h2 id="iptables-https-www-digitalocean-com-community-tutorials-how-to-list-and-delete-iptables-firewall-rules">iptables (<a href="https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules">https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules</a>)</h2>
 
 <ul>
-<li><p>List Chains with number</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo iptables -L -n -v --line-numbers</code></pre></div></li>
-
-<li><p>Delete Chains</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo iptables -D INPUT <span style="color:#ae81ff">7</span></code></pre></div></li>
+<li>List Chains with number
+<code>bash
+sudo iptables -L -n -v --line-numbers
+</code></li>
+<li>Delete Chains
+<code>bash
+sudo iptables -D INPUT 7
+</code></li>
 </ul>
 
 </article>

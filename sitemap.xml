@@ -3,67 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>laowalter.github.io/categories/</loc>
-    <lastmod>2019-08-18T10:32:08+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/categories/futures/</loc>
-    <lastmod>2019-08-18T10:32:08+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/futures/</loc>
-    <lastmod>2019-08-18T10:32:08+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/futures-cheatsheet/</loc>
     <lastmod>2019-08-18T10:32:08+00:00</lastmod>
   </url>
   
   <url>
-    <loc>laowalter.github.io/</loc>
-    <lastmod>2019-08-18T10:32:08+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/posts/</loc>
-    <lastmod>2019-08-18T10:32:08+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/</loc>
-    <lastmod>2019-08-18T10:32:08+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/blog/</loc>
-    <lastmod>2019-08-18T10:30:29+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/cheatsheet/</loc>
-    <lastmod>2019-08-18T10:30:29+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/docker/</loc>
-    <lastmod>2019-08-18T10:30:29+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/hugo/</loc>
-    <lastmod>2019-08-18T10:30:29+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/hugo_cheatsheet/</loc>
-    <lastmod>2019-08-18T10:30:29+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/categories/tech/</loc>
     <lastmod>2019-08-18T10:30:29+00:00</lastmod>
   </url>
   
@@ -78,17 +23,7 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/go/</loc>
-    <lastmod>2019-06-28T16:16:18+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/goregex/</loc>
-    <lastmod>2019-06-28T16:16:18+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/regex/</loc>
     <lastmod>2019-06-28T16:16:18+00:00</lastmod>
   </url>
   
@@ -108,23 +43,8 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/linux/</loc>
-    <lastmod>2019-04-25T09:40:45+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/patch/</loc>
     <lastmod>2019-04-25T09:40:45+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/categories/eli/</loc>
-    <lastmod>2019-04-22T17:40:41+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/eli/</loc>
-    <lastmod>2019-04-22T17:40:41+00:00</lastmod>
   </url>
   
   <url>
@@ -134,11 +54,6 @@
   
   <url>
     <loc>laowalter.github.io/posts/tech/freenas/</loc>
-    <lastmod>2019-04-17T12:14:17+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/nas/</loc>
     <lastmod>2019-04-17T12:14:17+00:00</lastmod>
   </url>
   
@@ -153,28 +68,8 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/ebuild/</loc>
-    <lastmod>2019-03-28T17:51:15+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/gentoo/</loc>
-    <lastmod>2019-03-28T17:51:15+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/%E8%A3%85%E6%9C%BA/</loc>
-    <lastmod>2019-03-26T20:03:53+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/makeup_pc/</loc>
     <lastmod>2019-03-26T20:03:53+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/dns/</loc>
-    <lastmod>2019-03-24T11:29:42+00:00</lastmod>
   </url>
   
   <url>
@@ -188,23 +83,8 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/net/</loc>
-    <lastmod>2019-03-22T13:00:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/download/</loc>
-    <lastmod>2019-03-18T18:01:15+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/mldonkey/</loc>
     <lastmod>2019-03-18T18:01:15+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/categories/futstock/</loc>
-    <lastmod>2019-03-14T11:53:37+00:00</lastmod>
   </url>
   
   <url>
@@ -218,38 +98,13 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/bluetooth/</loc>
-    <lastmod>2019-03-01T23:42:48+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/bluetooth/</loc>
     <lastmod>2019-03-01T23:42:48+00:00</lastmod>
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/appid/</loc>
-    <lastmod>2019-03-01T07:18:53+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/life/appleid/</loc>
     <lastmod>2019-03-01T07:18:53+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/categories/life/</loc>
-    <lastmod>2019-03-01T07:18:53+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/life/</loc>
-    <lastmod>2019-03-01T07:18:53+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/encrypt/</loc>
-    <lastmod>2019-02-27T14:04:48+00:00</lastmod>
   </url>
   
   <url>
@@ -263,22 +118,12 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/x11/</loc>
-    <lastmod>2019-02-22T10:51:44+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/life/japan/</loc>
     <lastmod>2019-02-21T09:42:07+00:00</lastmod>
   </url>
   
   <url>
     <loc>laowalter.github.io/posts/life/diy/</loc>
-    <lastmod>2019-02-19T22:42:10+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/diy/</loc>
     <lastmod>2019-02-19T22:42:10+00:00</lastmod>
   </url>
   
@@ -303,18 +148,8 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/video/</loc>
-    <lastmod>2019-01-02T12:04:48+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/life/daily_schedule/</loc>
     <lastmod>2018-12-27T07:59:50+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/bike/</loc>
-    <lastmod>2018-12-24T20:40:19+00:00</lastmod>
   </url>
   
   <url>
@@ -328,11 +163,6 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/latex/</loc>
-    <lastmod>2018-12-14T16:16:19+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/latex-demos/</loc>
     <lastmod>2018-12-14T16:16:19+00:00</lastmod>
   </url>
@@ -340,11 +170,6 @@
   <url>
     <loc>laowalter.github.io/posts/futstock/%E6%9C%9F%E8%B4%A7%E6%96%87%E6%91%98/</loc>
     <lastmod>2018-12-11T21:29:20+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/manual/</loc>
-    <lastmod>2018-12-11T10:28:19+00:00</lastmod>
   </url>
   
   <url>
@@ -358,16 +183,6 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/nginx/</loc>
-    <lastmod>2018-12-02T11:45:29+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/php/</loc>
-    <lastmod>2018-12-02T11:45:29+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/php-fpm/</loc>
     <lastmod>2018-12-02T11:45:29+00:00</lastmod>
   </url>
@@ -375,16 +190,6 @@
   <url>
     <loc>laowalter.github.io/posts/tech/latex/</loc>
     <lastmod>2018-11-22T21:44:41+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/stock/</loc>
-    <lastmod>2018-11-18T09:35:04+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/%E7%BC%A0%E8%AE%BA/</loc>
-    <lastmod>2018-11-18T09:35:04+00:00</lastmod>
   </url>
   
   <url>
@@ -398,23 +203,8 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/samba/</loc>
-    <lastmod>2018-11-17T10:17:08+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/chat/</loc>
-    <lastmod>2018-11-10T09:15:44+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/irc/</loc>
     <lastmod>2018-11-10T09:15:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/search/</loc>
-    <lastmod>2018-11-04T11:36:41+00:00</lastmod>
   </url>
   
   <url>
@@ -423,32 +213,12 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/browser/</loc>
-    <lastmod>2018-11-04T11:23:50+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/opera/</loc>
     <lastmod>2018-11-04T11:23:50+00:00</lastmod>
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/iphone/</loc>
-    <lastmod>2018-11-04T08:53:42+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/itunes/</loc>
-    <lastmod>2018-11-04T08:53:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/itunes/</loc>
-    <lastmod>2018-11-04T08:53:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/mac/</loc>
     <lastmod>2018-11-04T08:53:42+00:00</lastmod>
   </url>
   
@@ -463,11 +233,6 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/trading_digest/</loc>
-    <lastmod>2018-10-26T21:45:03+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/futstock/%E4%BA%BA%E5%B7%A5%E9%AB%98%E9%A2%91%E4%BA%A4%E6%98%93%E5%BC%BA%E6%89%8B%E7%9A%84%E5%AE%9E%E6%88%98%E6%94%BB%E5%BF%83%E8%AE%A1/</loc>
     <lastmod>2018-10-26T21:45:03+00:00</lastmod>
   </url>
@@ -478,18 +243,8 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/categories/eco/</loc>
-    <lastmod>2018-10-16T08:19:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/eco/economic/</loc>
     <lastmod>2018-10-16T08:19:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/english/</loc>
-    <lastmod>2018-10-15T12:13:33+00:00</lastmod>
   </url>
   
   <url>
@@ -499,11 +254,6 @@
   
   <url>
     <loc>laowalter.github.io/posts/tech/dict/</loc>
-    <lastmod>2018-10-13T08:10:51+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/translate/</loc>
     <lastmod>2018-10-13T08:10:51+00:00</lastmod>
   </url>
   
@@ -530,21 +280,6 @@
   <url>
     <loc>laowalter.github.io/posts/futstock/%E6%B5%AE%E5%8A%A8%E6%AD%A2%E6%8D%9F%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2018-09-25T18:39:06+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/mongodb/</loc>
-    <lastmod>2018-09-25T08:44:25+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/panda/</loc>
-    <lastmod>2018-09-25T08:44:25+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/python/</loc>
-    <lastmod>2018-09-25T08:44:25+00:00</lastmod>
   </url>
   
   <url>
@@ -583,22 +318,12 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/others/</loc>
-    <lastmod>2018-07-16T22:00:26+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/parted/</loc>
     <lastmod>2018-07-16T22:00:26+00:00</lastmod>
   </url>
   
   <url>
     <loc>laowalter.github.io/posts/life/thinking/</loc>
-    <lastmod>2018-07-14T14:32:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/thinking/</loc>
     <lastmod>2018-07-14T14:32:44+00:00</lastmod>
   </url>
   
@@ -613,11 +338,6 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/%E4%BF%AE%E5%BF%83/</loc>
-    <lastmod>2018-05-17T14:52:39+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/adduser/</loc>
     <lastmod>2018-05-16T21:23:57+00:00</lastmod>
   </url>
@@ -628,18 +348,8 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/cron/</loc>
-    <lastmod>2018-05-04T17:58:52+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/futstock/%E8%87%AA%E9%80%89%E8%82%A1/</loc>
     <lastmod>2018-05-01T08:47:34+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/gfw/</loc>
-    <lastmod>2018-04-30T10:07:42+00:00</lastmod>
   </url>
   
   <url>
@@ -653,28 +363,13 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</loc>
-    <lastmod>2018-04-13T15:30:54+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/tor/</loc>
     <lastmod>2018-04-13T10:36:08+00:00</lastmod>
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/db/</loc>
-    <lastmod>2018-04-12T11:21:57+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/mysql/</loc>
     <lastmod>2018-04-12T11:21:57+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/firefox/</loc>
-    <lastmod>2018-04-05T09:30:39+00:00</lastmod>
   </url>
   
   <url>
@@ -698,11 +393,6 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/%E9%80%9A%E8%BE%BE%E4%BF%A1/</loc>
-    <lastmod>2018-03-23T10:44:12+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/futstock/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/</loc>
     <lastmod>2018-03-23T10:44:12+00:00</lastmod>
   </url>
@@ -710,16 +400,6 @@
   <url>
     <loc>laowalter.github.io/posts/tech/network/</loc>
     <lastmod>2018-03-07T15:33:51+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/network/</loc>
-    <lastmod>2018-03-07T15:33:51+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/blockchain/</loc>
-    <lastmod>2018-03-04T12:31:44+00:00</lastmod>
   </url>
   
   <url>
@@ -738,16 +418,6 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/data/</loc>
-    <lastmod>2018-02-11T19:45:43+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/pandas/</loc>
-    <lastmod>2018-02-11T19:45:43+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/pandas_cheatsheet/</loc>
     <lastmod>2018-02-11T19:45:43+00:00</lastmod>
   </url>
@@ -755,11 +425,6 @@
   <url>
     <loc>laowalter.github.io/posts/tech/video/</loc>
     <lastmod>2018-02-10T13:55:13+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/photo/</loc>
-    <lastmod>2018-01-21T15:21:16+00:00</lastmod>
   </url>
   
   <url>
@@ -798,11 +463,6 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/iptables/</loc>
-    <lastmod>2017-12-09T22:42:57+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/iptables_mini_server/</loc>
     <lastmod>2017-12-09T22:42:57+00:00</lastmod>
   </url>
@@ -828,17 +488,7 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/movies/</loc>
-    <lastmod>2017-12-02T19:01:24+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/bash/</loc>
-    <lastmod>2017-12-01T23:30:08+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/shell/</loc>
     <lastmod>2017-12-01T23:30:08+00:00</lastmod>
   </url>
   
@@ -863,11 +513,6 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/media/</loc>
-    <lastmod>2017-11-24T19:53:08+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/mpd/</loc>
     <lastmod>2017-11-24T19:53:08+00:00</lastmod>
   </url>
@@ -883,16 +528,6 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/print/</loc>
-    <lastmod>2017-11-22T23:45:16+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/kernel/</loc>
-    <lastmod>2017-11-21T10:26:07+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/kernel_config/</loc>
     <lastmod>2017-11-21T10:26:07+00:00</lastmod>
   </url>
@@ -900,11 +535,6 @@
   <url>
     <loc>laowalter.github.io/posts/tech/my_scripts/</loc>
     <lastmod>2017-11-21T10:21:01+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/wifi/</loc>
-    <lastmod>2017-11-16T16:55:00+00:00</lastmod>
   </url>
   
   <url>
@@ -953,16 +583,6 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/chan/</loc>
-    <lastmod>2017-06-12T21:06:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/categories/chan108/</loc>
-    <lastmod>2017-06-12T21:06:42+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/chan/%E7%BC%A0%E8%AE%BA%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E7%90%86%E8%A7%A3/</loc>
     <lastmod>2017-06-12T21:06:42+00:00</lastmod>
   </url>
@@ -983,11 +603,6 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/%E4%B9%A6%E6%B3%95/</loc>
-    <lastmod>2017-03-19T20:57:07+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/shufadazidian/</loc>
     <lastmod>2017-03-19T20:57:07+00:00</lastmod>
   </url>
@@ -998,27 +613,12 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/%E6%93%8D%E4%BD%9C/</loc>
-    <lastmod>2017-02-09T12:20:14+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/matplotlib/</loc>
     <lastmod>2017-02-02T22:00:18+00:00</lastmod>
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/matplotlib/</loc>
-    <lastmod>2017-02-02T22:00:18+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/nginx/</loc>
-    <lastmod>2017-02-02T22:00:18+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/webserver/</loc>
     <lastmod>2017-02-02T22:00:18+00:00</lastmod>
   </url>
   
@@ -1033,18 +633,8 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/window/</loc>
-    <lastmod>2016-12-09T22:02:20+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/windows10/</loc>
     <lastmod>2016-12-09T22:02:20+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/image/</loc>
-    <lastmod>2016-12-07T20:14:58+00:00</lastmod>
   </url>
   
   <url>
@@ -1060,16 +650,6 @@
   <url>
     <loc>laowalter.github.io/posts/tech/git/</loc>
     <lastmod>2016-09-29T10:06:20+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/git/</loc>
-    <lastmod>2016-09-29T10:06:20+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/quanta/</loc>
-    <lastmod>2016-09-01T08:32:00+00:00</lastmod>
   </url>
   
   <url>
@@ -1508,22 +1088,12 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/iptable/</loc>
-    <lastmod>2016-04-19T23:27:55+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/linux_server/</loc>
     <lastmod>2016-04-19T23:27:55+00:00</lastmod>
   </url>
   
   <url>
     <loc>laowalter.github.io/posts/tech/hexo/</loc>
-    <lastmod>2016-03-27T19:38:35+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/hexo/</loc>
     <lastmod>2016-03-27T19:38:35+00:00</lastmod>
   </url>
   
@@ -1538,32 +1108,12 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/apache/</loc>
-    <lastmod>2016-02-29T10:40:40+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/databases/</loc>
     <lastmod>2016-02-29T10:40:40+00:00</lastmod>
   </url>
   
   <url>
-    <loc>laowalter.github.io/tags/mysql/</loc>
-    <lastmod>2016-02-29T10:40:40+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/perl/</loc>
-    <lastmod>2016-02-29T10:40:40+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>laowalter.github.io/posts/tech/vim/</loc>
-    <lastmod>2016-02-29T10:28:24+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/vim/</loc>
     <lastmod>2016-02-29T10:28:24+00:00</lastmod>
   </url>
   
@@ -1574,11 +1124,6 @@
   
   <url>
     <loc>laowalter.github.io/posts/tech/mac_operatoins/</loc>
-    <lastmod>2016-02-29T09:52:41+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>laowalter.github.io/tags/virtualbox/</loc>
     <lastmod>2016-02-29T09:52:41+00:00</lastmod>
   </url>
   
@@ -1824,11 +1369,103 @@
   
   <url>
     <loc>laowalter.github.io/about/</loc>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/apache/</loc>
+    <lastmod>2016-02-29T10:40:40+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/appid/</loc>
+    <lastmod>2019-03-01T07:18:53+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/bike/</loc>
+    <lastmod>2018-12-24T20:40:19+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/blockchain/</loc>
+    <lastmod>2018-03-04T12:31:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/blog/</loc>
+    <lastmod>2019-08-18T10:30:29+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/bluetooth/</loc>
+    <lastmod>2019-03-01T23:42:48+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/browser/</loc>
+    <lastmod>2018-11-04T11:23:50+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>laowalter.github.io/posts/tech/build_python_env/</loc>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/chan/</loc>
+    <lastmod>2017-06-12T21:06:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/categories/chan108/</loc>
+    <lastmod>2017-06-12T21:06:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/chat/</loc>
+    <lastmod>2018-11-10T09:15:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/cheatsheet/</loc>
+    <lastmod>2019-08-18T10:30:29+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/cron/</loc>
+    <lastmod>2018-05-04T17:58:52+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/posts/tech/dns_server_config/</loc>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/data/</loc>
+    <lastmod>2018-02-11T19:45:43+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/db/</loc>
+    <lastmod>2018-04-12T11:21:57+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -1840,7 +1477,57 @@
   </url>
   
   <url>
-    <loc>laowalter.github.io/posts/tech/dns_server_config/</loc>
+    <loc>laowalter.github.io/tags/diy/</loc>
+    <lastmod>2019-02-19T22:42:10+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/dns/</loc>
+    <lastmod>2019-03-24T11:29:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/docker/</loc>
+    <lastmod>2019-08-18T10:30:29+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/download/</loc>
+    <lastmod>2019-03-18T18:01:15+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/ebuild/</loc>
+    <lastmod>2019-03-28T17:51:15+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/categories/eco/</loc>
+    <lastmod>2018-10-16T08:19:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/eli/</loc>
+    <lastmod>2019-04-22T17:40:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/categories/eli/</loc>
+    <lastmod>2019-04-22T17:40:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/encrypt/</loc>
+    <lastmod>2019-02-27T14:04:48+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -1848,15 +1535,418 @@
   </url>
   
   <url>
+    <loc>laowalter.github.io/tags/english/</loc>
+    <lastmod>2018-10-15T12:13:33+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/firefox/</loc>
+    <lastmod>2018-04-05T09:30:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/categories/futstock/</loc>
+    <lastmod>2019-03-14T11:53:37+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/futures/</loc>
+    <lastmod>2019-08-18T10:32:08+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/categories/futures/</loc>
+    <lastmod>2019-08-18T10:32:08+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/gentoo/</loc>
+    <lastmod>2019-03-28T17:51:15+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>laowalter.github.io/posts/tech/gentoo_overlay/</loc>
   </url>
   
   <url>
+    <loc>laowalter.github.io/tags/gfw/</loc>
+    <lastmod>2018-04-30T10:07:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/git/</loc>
+    <lastmod>2016-09-29T10:06:20+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/go/</loc>
+    <lastmod>2019-06-28T16:16:18+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/hexo/</loc>
+    <lastmod>2016-03-27T19:38:35+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/hugo/</loc>
+    <lastmod>2019-08-18T10:30:29+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/image/</loc>
+    <lastmod>2016-12-07T20:14:58+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/iphone/</loc>
+    <lastmod>2018-11-04T08:53:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/iptable/</loc>
+    <lastmod>2016-04-19T23:27:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/iptables/</loc>
+    <lastmod>2017-12-09T22:42:57+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/itunes/</loc>
+    <lastmod>2018-11-04T08:53:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/</loc>
+    <lastmod>2019-08-18T10:32:08+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/kernel/</loc>
+    <lastmod>2017-11-21T10:26:07+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/latex/</loc>
+    <lastmod>2018-12-14T16:16:19+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/life/</loc>
+    <lastmod>2019-03-01T07:18:53+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/categories/life/</loc>
+    <lastmod>2019-03-01T07:18:53+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/linux/</loc>
+    <lastmod>2019-04-25T09:40:45+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/mac/</loc>
+    <lastmod>2018-11-04T08:53:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/manual/</loc>
+    <lastmod>2018-12-11T10:28:19+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/matplotlib/</loc>
+    <lastmod>2017-02-02T22:00:18+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/media/</loc>
+    <lastmod>2017-11-24T19:53:08+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/mongodb/</loc>
+    <lastmod>2018-09-25T08:44:25+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/movies/</loc>
+    <lastmod>2017-12-02T19:01:24+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/mysql/</loc>
+    <lastmod>2016-02-29T10:40:40+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/nas/</loc>
+    <lastmod>2019-04-17T12:14:17+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/net/</loc>
+    <lastmod>2019-03-22T13:00:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/network/</loc>
+    <lastmod>2018-03-07T15:33:51+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/nginx/</loc>
+    <lastmod>2018-12-02T11:45:29+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/others/</loc>
+    <lastmod>2018-07-16T22:00:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/panda/</loc>
+    <lastmod>2018-09-25T08:44:25+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/pandas/</loc>
+    <lastmod>2018-02-11T19:45:43+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>laowalter.github.io/tags/pelican/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/perl/</loc>
+    <lastmod>2016-02-29T10:40:40+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/photo/</loc>
+    <lastmod>2018-01-21T15:21:16+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/php/</loc>
+    <lastmod>2018-12-02T11:45:29+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/posts/</loc>
+    <lastmod>2019-08-18T10:32:08+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/print/</loc>
+    <lastmod>2017-11-22T23:45:16+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/python/</loc>
+    <lastmod>2018-09-25T08:44:25+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/quanta/</loc>
+    <lastmod>2016-09-01T08:32:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>laowalter.github.io/posts/tech/quanta_api/</loc>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/regex/</loc>
+    <lastmod>2019-06-28T16:16:18+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/samba/</loc>
+    <lastmod>2018-11-17T10:17:08+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/search/</loc>
+    <lastmod>2018-11-04T11:36:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/shell/</loc>
+    <lastmod>2017-12-01T23:30:08+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/stock/</loc>
+    <lastmod>2018-11-18T09:35:04+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/</loc>
+    <lastmod>2016-02-29T10:40:40+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/categories/tech/</loc>
+    <lastmod>2019-08-18T10:30:29+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/thinking/</loc>
+    <lastmod>2018-07-14T14:32:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/trading_digest/</loc>
+    <lastmod>2018-10-26T21:45:03+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/translate/</loc>
+    <lastmod>2018-10-13T08:10:51+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/video/</loc>
+    <lastmod>2019-01-02T12:04:48+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/vim/</loc>
+    <lastmod>2016-02-29T10:28:24+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/virtualbox/</loc>
+    <lastmod>2016-02-29T09:52:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/webserver/</loc>
+    <lastmod>2017-02-02T22:00:18+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/wifi/</loc>
+    <lastmod>2017-11-16T16:55:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/window/</loc>
+    <lastmod>2016-12-09T22:02:20+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/x11/</loc>
+    <lastmod>2019-02-22T10:51:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/%E4%B9%A6%E6%B3%95/</loc>
+    <lastmod>2017-03-19T20:57:07+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/%E4%BF%AE%E5%BF%83/</loc>
+    <lastmod>2018-05-17T14:52:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/%E6%93%8D%E4%BD%9C/</loc>
+    <lastmod>2017-02-09T12:20:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/%E7%BC%A0%E8%AE%BA/</loc>
+    <lastmod>2018-11-18T09:35:04+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/%E8%A3%85%E6%9C%BA/</loc>
+    <lastmod>2019-03-26T20:03:53+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</loc>
+    <lastmod>2018-04-13T15:30:54+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>laowalter.github.io/tags/%E9%80%9A%E8%BE%BE%E4%BF%A1/</loc>
+    <lastmod>2018-03-23T10:44:12+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

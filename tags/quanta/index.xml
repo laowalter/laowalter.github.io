@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>quanta on Just a Memo</title>
+    <title>Quanta on Just a Memo</title>
     <link>laowalter.github.io/tags/quanta/</link>
-    <description>Recent content in quanta on Just a Memo</description>
+    <description>Recent content in Quanta on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Sep 2016 08:32:00 +0000</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Thu, 01 Sep 2016 08:32:00 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/vnpy/</guid>
-      <description>安装VNPY 安装python 2 and virtualenv (1) python2 brew install python then ~/.bashrc PATH=/usr/local/bin::$PATH then 退出，在重新进入 iterm2 (2) virtualenv pip install virtualenv ### 建立virtualenvs bash mkdir .virtualenvs cd .virtualenvs virtualenv -p python vnpy export WORKON_HOME=~/.virtualenvs source ~/.virtualenvs/vnpy/bin/activate pip install virtualenvwrapper</description>
+      <description>安装VNPY 安装python 2 and virtualenv (1) python2 brew install python then ~/.bashrc PATH=/usr/local/bin::$PATH then 退出，在重新进入 iterm2 (2) virtualenv pip install virtualenv ### 建立virtualenvs ```bash mkdir .virtualenvs cd .virtualenvs virtualenv -p python vnpy export WORKON_HOME=~/.virtualenvs source ~/.virtualenvs/vnpy/bin/activate pip install virtualenvwrapper</description>
     </item>
     
     <item>

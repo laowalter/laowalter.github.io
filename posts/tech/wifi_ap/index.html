@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -70,9 +70,9 @@ CONFIG_B43<span style="color:#f92672">=</span>m
 CONFIG_B43_BCMA<span style="color:#f92672">=</span>y
 CONFIG_B43_SSB<span style="color:#f92672">=</span>y
 CONFIG_B43_BUSES_BCMA_AND_SSB<span style="color:#f92672">=</span>y
-<span style="color:#75715e"># CONFIG_B43_BUSES_BCMA is not set</span>
-<span style="color:#75715e"># CONFIG_B43_BUSES_SSB is not set</span>
-CONFIG_B43_PCI_AUTOSELECT<span style="color:#f92672">=</span>y
+<span style="color:#75715e"># CONFIG_B43_BUSES_BCMA is not set
+</span><span style="color:#75715e"># CONFIG_B43_BUSES_SSB is not set
+</span><span style="color:#75715e"></span>CONFIG_B43_PCI_AUTOSELECT<span style="color:#f92672">=</span>y
 CONFIG_B43_PCICORE_AUTOSELECT<span style="color:#f92672">=</span>y
 CONFIG_B43_SDIO<span style="color:#f92672">=</span>y
 CONFIG_B43_BCMA_PIO<span style="color:#f92672">=</span>y
@@ -82,8 +82,8 @@ CONFIG_B43_PHY_N<span style="color:#f92672">=</span>y
 CONFIG_B43_PHY_LP<span style="color:#f92672">=</span>y
 CONFIG_B43_PHY_HT<span style="color:#f92672">=</span>y
 CONFIG_B43_HWRNG<span style="color:#f92672">=</span>y
-<span style="color:#75715e"># CONFIG_B43_DEBUG is not set</span>
-CONFIG_B43LEGACY<span style="color:#f92672">=</span>m
+<span style="color:#75715e"># CONFIG_B43_DEBUG is not set
+</span><span style="color:#75715e"></span>CONFIG_B43LEGACY<span style="color:#f92672">=</span>m
 CONFIG_B43LEGACY_PCI_AUTOSELECT<span style="color:#f92672">=</span>y
 CONFIG_B43LEGACY_PCICORE_AUTOSELECT<span style="color:#f92672">=</span>y
 CONFIG_B43LEGACY_HWRNG<span style="color:#f92672">=</span>y
@@ -91,15 +91,15 @@ CONFIG_B43LEGACY_DEBUG<span style="color:#f92672">=</span>y
 CONFIG_B43LEGACY_DMA<span style="color:#f92672">=</span>y
 CONFIG_B43LEGACY_PIO<span style="color:#f92672">=</span>y
 CONFIG_B43LEGACY_DMA_AND_PIO_MODE<span style="color:#f92672">=</span>y
-<span style="color:#75715e"># CONFIG_B43LEGACY_DMA_MODE is not set</span>
-<span style="color:#75715e"># CONFIG_B43LEGACY_PIO_MODE is not set</span>
-CONFIG_BRCMUTIL<span style="color:#f92672">=</span>m
+<span style="color:#75715e"># CONFIG_B43LEGACY_DMA_MODE is not set
+</span><span style="color:#75715e"># CONFIG_B43LEGACY_PIO_MODE is not set
+</span><span style="color:#75715e"></span>CONFIG_BRCMUTIL<span style="color:#f92672">=</span>m
 CONFIG_BRCMSMAC<span style="color:#f92672">=</span>m
 CONFIG_BRCMFMAC<span style="color:#f92672">=</span>m
 CONFIG_BRCMFMAC_PROTO_BCDC<span style="color:#f92672">=</span>y
 CONFIG_BRCMFMAC_SDIO<span style="color:#f92672">=</span>y
-<span style="color:#75715e"># CONFIG_BRCMFMAC_USB is not set</span>
-<span style="color:#75715e"># CONFIG_BRCMFMAC_PCIE is not set</span></code></pre></div>
+<span style="color:#75715e"># CONFIG_BRCMFMAC_USB is not set
+</span><span style="color:#75715e"></span># CONFIG_BRCMFMAC_PCIE is not set</code></pre></div>
 <h3 id="intall-package">Intall package</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq net-wireless/b43-fwcutter
 emerge -avq sys-firmware/b43-firmware</code></pre></div>
@@ -110,60 +110,62 @@ emerge -avq sys-firmware/b43-firmware</code></pre></div>
 <p>Configure wpa_supplicant.conf as follows (mode=2 is Access Point mode, for more see documentation):</p>
 
 <ul>
-<li><p>Find the hardware info</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iw phy</code></pre></div></li>
-
-<li><p>/etc/wpa_spplicant/wpa_supplicant.conf</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">network<span style="color:#f92672">={</span>
-ssid<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;AP-NAME&#34;</span>
-mode<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
-key_mgmt<span style="color:#f92672">=</span>WPA-PSK
-psk<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span>
-frequency<span style="color:#f92672">=</span><span style="color:#ae81ff">2462</span>
-<span style="color:#f92672">}</span></code></pre></div></li>
+<li>Find the hardware info</li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iw phy</code></pre></div>
+<ul>
+<li>/etc/wpa_spplicant/wpa_supplicant.conf</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">network<span style="color:#f92672">={</span>
+    ssid<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;AP-NAME&#34;</span>
+    mode<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+    key_mgmt<span style="color:#f92672">=</span>WPA-PSK
+    psk<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span>
+    frequency<span style="color:#f92672">=</span><span style="color:#ae81ff">2462</span>
+<span style="color:#f92672">}</span></code></pre></div>
 <p>You can choose right frequncy according to the table on wikipedia.</p>
 
 <h4 id="dhcp-server">DHCP server</h4>
 
 <ul>
-<li><p>install dhcp with server use</p>
+<li>install dhcp with server use</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">su
 echo ‘net-misc/dhcp server’ | sudo tee -a /etc/portage/package.use
-emerge -avq net-misc/dhcp</code></pre></div></li>
+emerge -avq net-misc/dhcp</code></pre></div>
+<ul>
+<li>/etc/conf.d/dhpcd</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /etc/conf.d/dhcpd: config file for /etc/init.d/dhcpd
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># If you require more than one instance of dhcpd you can create symbolic
+</span><span style="color:#75715e"># links to dhcpd service like so
+</span><span style="color:#75715e">#   cd /etc/init.d
+</span><span style="color:#75715e">#   ln -s dhcpd dhcpd.foo
+</span><span style="color:#75715e">#   cd ../conf.d
+</span><span style="color:#75715e">#   cp dhcpd dhcpd.foo
+</span><span style="color:#75715e"># Now you can edit dhcpd.foo and specify a different configuration file.
+</span><span style="color:#75715e"># You&#39;ll also need to specify a pidfile in that dhcpd.conf file.
+</span><span style="color:#75715e"># See the pid-file-name option in the dhcpd.conf man page for details.
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># If you wish to run dhcpd in a chroot, uncomment the following line
+</span><span style="color:#75715e"># DHCPD_CHROOT=&#34;/var/lib/dhcp/chroot&#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># All file paths below are relative to the chroot.
+</span><span style="color:#75715e"># You can specify a different chroot directory but MAKE SURE it&#39;s empty.
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># Specify a configuration file - the default is /etc/dhcp/dhcpd.conf
+</span><span style="color:#75715e"></span>DHCPD_CONF<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/etc/dhcp/dhcpd.conf&#34;</span>
 
-<li><p>/etc/conf.d/dhpcd</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /etc/conf.d/dhcpd: config file for /etc/init.d/dhcpd</span>
+<span style="color:#75715e"># Configure which interface or interfaces to for dhcpd to listen on.
+</span><span style="color:#75715e"># List all interfaces space separated. If this is not specified then
+</span><span style="color:#75715e"># we listen on all interfaces.
+</span><span style="color:#75715e"></span>DHCPD_IFACE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wlan0&#34;</span>
 
-<span style="color:#75715e"># If you require more than one instance of dhcpd you can create symbolic</span>
-<span style="color:#75715e"># links to dhcpd service like so</span>
-<span style="color:#75715e">#   cd /etc/init.d</span>
-<span style="color:#75715e">#   ln -s dhcpd dhcpd.foo</span>
-<span style="color:#75715e">#   cd ../conf.d</span>
-<span style="color:#75715e">#   cp dhcpd dhcpd.foo</span>
-<span style="color:#75715e"># Now you can edit dhcpd.foo and specify a different configuration file.</span>
-<span style="color:#75715e"># You&#39;ll also need to specify a pidfile in that dhcpd.conf file.</span>
-<span style="color:#75715e"># See the pid-file-name option in the dhcpd.conf man page for details.</span>
-
-<span style="color:#75715e"># If you wish to run dhcpd in a chroot, uncomment the following line</span>
-<span style="color:#75715e"># DHCPD_CHROOT=&#34;/var/lib/dhcp/chroot&#34;</span>
-
-<span style="color:#75715e"># All file paths below are relative to the chroot.</span>
-<span style="color:#75715e"># You can specify a different chroot directory but MAKE SURE it&#39;s empty.</span>
-
-<span style="color:#75715e"># Specify a configuration file - the default is /etc/dhcp/dhcpd.conf</span>
-DHCPD_CONF<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/etc/dhcp/dhcpd.conf&#34;</span>
-
-<span style="color:#75715e"># Configure which interface or interfaces to for dhcpd to listen on.</span>
-<span style="color:#75715e"># List all interfaces space separated. If this is not specified then</span>
-<span style="color:#75715e"># we listen on all interfaces.</span>
-DHCPD_IFACE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wlan0&#34;</span>
-
-<span style="color:#75715e"># Insert any other dhcpd options - see the man page for a full list.</span>
-<span style="color:#75715e"># DHCPD_OPTS=&#34;&#34;</span></code></pre></div></li>
-
-<li><p>Configure /etc/dhcp/dhcpd.conf</p></li>
+<span style="color:#75715e"># Insert any other dhcpd options - see the man page for a full list.
+</span><span style="color:#75715e"></span># DHCPD_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span></code></pre></div>
+<ul>
+<li>Configure /etc/dhcp/dhcpd.conf</li>
 </ul>
 
 <p><strong>特别说明</strong>，因为加入本地DNS服务器，所有要在本地DNS服务器的name.conf中，把192.168.6.0/24加入acl &ldquo;trusted&rdquo;. 负责无法解析。</p>
@@ -181,17 +183,17 @@ DHCPD_IFACE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo /etc/init.d/net.wifi start
 sudo ifconfig wifi <span style="color:#ae81ff">192</span>.168.6.1/24</code></pre></div>
 <h4 id="set-for-permanent-etc-conf-d-net">Set for permanent /etc/conf.d/net</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">### WIRED to internet ###</span>
-config_eth0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;laowalter.github.io netmask 255.255.255.0 brd 192.168.0.255&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">### WIRED to internet ###
+</span><span style="color:#75715e"></span>config_eth0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;192.168.0.199 netmask 255.255.255.0 brd 192.168.0.255&#34;</span>
 routes_eth0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;default via 192.168.0.1&#34;</span>
 
-<span style="color:#75715e">### WIFI ###</span>
-modules_wlan0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wpa_supplicant&#34;</span>
+<span style="color:#75715e">### WIFI ###
+</span><span style="color:#75715e"></span>modules_wlan0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wpa_supplicant&#34;</span>
 config_wlan0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;192.168.6.1/24&#34;</span>
 wpa_supplicant_wlan0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-Dnl80211 -d -f /var/log/wpa_supplicant.log&#34;</span></code></pre></div>
 <h4 id="add-route">Add route</h4>
 
-<p>假设laowalter.github.io wired to the Internet</p>
+<p>假设192.168.0.199 wired to the Internet</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo echo <span style="color:#ae81ff">1</span> &gt; /proc/sys/net/ipv4/ip_forward
 sudo iptables -t nat -A POSTROUTING --source <span style="color:#ae81ff">192</span>.168.6.0/24 -j SNAT --to <span style="color:#ae81ff">192</span>.168.0.199
 sudo /etc/init.d/iptables save
@@ -204,19 +206,21 @@ rc-update add net.wlan0 default</code></pre></div>
 <h3 id="by-hostapd">By hostapd</h3>
 
 <ul>
-<li><p>/etc/conf.d/net</p>
+<li>/etc/conf.d/net</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Disable wpa_supplicant first
 
-<span style="color:#75715e">### WIRED ###</span>
-config_eth0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;laowalter.github.io netmask 255.255.255.0 brd 192.168.0.255&#34;</span>
+<span style="color:#75715e">### WIRED ###
+</span><span style="color:#75715e"></span>config_eth0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;192.168.0.199 netmask 255.255.255.0 brd 192.168.0.255&#34;</span>
 routes_eth0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;default via 192.168.0.1&#34;</span>
 
 modules_wlan0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;!wpa_supplicant&#34;</span>
-<span style="color:#75715e">#wpa_supplicant_wlan0=&#34;-Dnl80211 -d -f /var/log/wpa_supplicant.log&#34;</span>
-config_wlan0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;192.168.6.1/24&#34;</span>
-routes_wlan0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;default via 192.168.0.1&#34;</span></code></pre></div></li>
-
-<li><p>/etc/hostapd/hostapd.conf</p>
+<span style="color:#75715e">#wpa_supplicant_wlan0=&#34;-Dnl80211 -d -f /var/log/wpa_supplicant.log&#34;
+</span><span style="color:#75715e"></span>config_wlan0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;192.168.6.1/24&#34;</span>
+routes_wlan0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;default via 192.168.0.1&#34;</span></code></pre></div>
+<ul>
+<li>/etc/hostapd/hostapd.conf</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">interface<span style="color:#f92672">=</span>wlan0
 driver<span style="color:#f92672">=</span>nl80211
 logger_syslog<span style="color:#f92672">=</span>-1
@@ -265,9 +269,7 @@ wpa<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
 wpa_passphrase<span style="color:#f92672">=</span>Helecomm1
 wpa_key_mgmt<span style="color:#f92672">=</span>WPA-PSK
 rsn_pairwise<span style="color:#f92672">=</span>CCMP
-ssid<span style="color:#f92672">=</span>ghome2</code></pre></div></li>
-</ul>
-
+ssid<span style="color:#f92672">=</span>ghome2</code></pre></div>
 <h3 id="default-service">Default service</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rc-update add hostapd default
 rc-update add dhcpd default

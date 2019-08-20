@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -48,27 +48,31 @@
 <h2 id="parted-分区">Parted 分区</h2>
 
 <ul>
-<li><p>Partition</p>
+<li>Partition
+<br /></li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">parted /dev/sdc
 mkpart primary fat32 <span style="color:#ae81ff">0</span>% <span style="color:#ae81ff">100</span>%
-set <span style="color:#ae81ff">1</span> boot on</code></pre></div></li>
-
-<li><p>Format partition</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkfs.vfat -F <span style="color:#ae81ff">32</span> /dev/sdc1</code></pre></div></li>
+set <span style="color:#ae81ff">1</span> boot on</code></pre></div>
+<ul>
+<li>Format partition
+<br /></li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkfs.vfat -F <span style="color:#ae81ff">32</span> /dev/sdc1</code></pre></div>
 <ol>
-<li><p>mount iso</p>
+<li>mount iso
+<br /></li>
+</ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo mkdir /mnt/windows10/
-sudo mount -t auto -o -loop /path/to/windows.iso /mnt/windows10</code></pre></div></li>
-
-<li><p>Copy all files in /mnt/windows10 to usbstick</p>
+sudo mount -t auto -o -loop /path/to/windows.iso /mnt/windows10</code></pre></div>
+<ol>
+<li>Copy all files in /mnt/windows10 to usbstick
+<br /></li>
+</ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mount /dev/sdc1 /mnt/usb
 screen -S cp
 cd /mnt/usb/
-sudo cp -fr /mnt/windows10/* .</code></pre></div></li>
-</ol>
-
+sudo cp -fr /mnt/windows10/* .</code></pre></div>
 </article>
 
     </body>

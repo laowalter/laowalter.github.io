@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -81,10 +81,10 @@
 <h3 id="create-virtualenv-manually">Create virtualenv manually</h3>
 
 <p><code>Notice</code>: For some reason, can not simplely run &lsquo;virtualenv&rsquo; -p to create one.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">source .bin/quanta.sh <span style="color:#75715e"># enter a python3 virtualenv already exist, this named &#39;quanta&#39;</span>
-cd .virtualenv
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">source .bin/quanta.sh <span style="color:#75715e"># enter a python3 virtualenv already exist, this named &#39;quanta&#39;
+</span><span style="color:#75715e"></span>cd .virtualenv
 virtualenv -p /opt/pypy3.3-v5.2.0-alpha1-osx64/bin/pypy3 pypy3
-<span style="color:#75715e"># will got some ERRORS, and FORGET IT.</span> </code></pre></div>
+# will got some ERRORS, and FORGET IT. </code></pre></div>
 <h3 id="install-pip">Install pip</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd .virtualenv/pypy3
 ./pypy3 -m ensurepip
@@ -92,7 +92,7 @@ ln -s pip3 pip
 ./pip install virtualenvwrapper</code></pre></div>
 <h3 id="manually-build-activate-shell-scripts">Manually build activate shell scripts</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/.virtualenv/pypy3/bin/
-cp ~/.virtualenv/quanta/bin/activate* .  <span style="color:#75715e"># copy all the activate scripts of quanta env</span></code></pre></div>
+cp ~/.virtualenv/quanta/bin/activate* .  # copy all the activate scripts of quanta env</code></pre></div>
 <p>Edit  ~/.virtualenv/pypy3/bin/activate, activate.csh activate.fish and activate_this.py, replace &lsquo;quanta&rsquo; by &lsquo;pypy3&rsquo;</p>
 
 <h3 id="according-the-following-reference-to-create-a-bin-pypy-sh">According the following reference to create a ~/.bin/pypy.sh</h3>
@@ -194,11 +194,13 @@ axes.unicode_minus  : False
 <h2 id="ta-lib">TA-Lib</h2>
 
 <ul>
-<li><p>Install</p>
+<li>Install
+<br /></li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	$ brew install ta-lib
-	$ pip install TA-Lib</code></pre></div></li>
-
-<li><p><a href="http://mrjbq7.github.io/ta-lib/doc_index.html">Documents: http://mrjbq7.github.io/ta-lib/doc_index.html</a></p></li>
+	$ pip install TA-Lib</code></pre></div>
+<ul>
+<li><a href="http://mrjbq7.github.io/ta-lib/doc_index.html">Documents: http://mrjbq7.github.io/ta-lib/doc_index.html</a></li>
 </ul>
 
 <h2 id="install-other-libs">Install other libs</h2>
@@ -209,12 +211,10 @@ axes.unicode_minus  : False
 
 <ul>
 <li>vim，macvim need reinstall under the current active virtualenv</li>
-
-<li><p>macvim can only support either one of python2 and python3</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install macvim --with-python3
-brew install vim --with-python3</code></pre></div></li>
+<li>macvim can only support either one of python2 and python3</li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    brew install macvim --with-python3
+    brew install vim --with-python3</code></pre></div>
 <h3 id="run">run</h3>
 
 <ul>

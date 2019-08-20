@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -71,24 +71,29 @@
 <h3 id="使用技巧-http-vim-wikia-com-wiki-category-vimtip"><a href="http://vim.wikia.com/wiki/Category:VimTip">使用技巧</a></h3>
 
 <ul>
-<li><p>文件编码</p>
+<li>文件编码</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:set fenc<span style="color:#f92672">=</span>gbk
-:set fenc<span style="color:#f92672">=</span>utf-8</code></pre></div></li>
-
-<li><p>DOS UNIX 转换</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">set ff<span style="color:#f92672">=</span>unix</code></pre></div></li>
-
-<li><p>Swap character</p>
+:set fenc<span style="color:#f92672">=</span>utf-8</code></pre></div>
+<ul>
+<li>DOS UNIX 转换</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">set ff<span style="color:#f92672">=</span>unix</code></pre></div>
+<ul>
+<li>Swap character</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xp
-Xp</code></pre></div></li>
-
-<li><p>Global Replace,  <code>$</code> says &ldquo;put vim in last-line mode&rdquo;.</p>
+Xp</code></pre></div>
+<ul>
+<li>Global Replace,  <code>$</code> says &ldquo;put vim in last-line mode&rdquo;.</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:1,$s/George Bush/Barack Obama/g 
-:1,$s/td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;CENTER&#34;</span>/td/g</code></pre></div></li>
-
-<li><p>Delete blank lines in vim (empty lines), use this vim command in “last line mode”</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:g/^$/d</code></pre></div></li>
-
+:1,$s/td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;CENTER&#34;</span>/td/g</code></pre></div>
+<ul>
+<li>Delete blank lines in vim (empty lines), use this vim command in “last line mode”</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:g/^$/d</code></pre></div>
+<ul>
 <li><p>折叠快捷键</p>
 
 <ul>
@@ -123,14 +128,18 @@ brew linkapps macvim</code></pre></div>
 <h3 id="plugin-installation">Plugin Installation</h3>
 
 <ol>
-<li><p>Install to ~/.vim/autoload/pathogen.vim. Or copy and paste:</p>
+<li>Install to ~/.vim/autoload/pathogen.vim. Or copy and paste:
+<br /></li>
+</ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p ~/.vim/autoload ~/.vim/bundle <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim</code></pre></div></li>
-
-<li><p>Install Vundle</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle</code></pre></div></li>
-
-<li><p>Runtime Path Manipulation</p></li>
+</span><span style="color:#ae81ff"></span>curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim</code></pre></div>
+<ol>
+<li>Install Vundle
+<br /></li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle</code></pre></div>
+<ol>
+<li>Runtime Path Manipulation</li>
 </ol>
 
 <p>%filename: ~/.vimrc</p>
@@ -222,7 +231,7 @@ let g:pymode_syntax_space_errors <span style="color:#f92672">=</span> g:pymode_s
 </ul>
 
 <p>%filename: ~/.vim/bundle/perl-support.vim/plugin/perl-support.vim</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#ae81ff">162</span>   <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span>:<span style="color:#a6e22e">Perl_Perl</span>                 = <span style="color:#a6e22e">system</span>(<span style="color:#e6db74">&#34;/usr/bin/which perl&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#ae81ff">162</span>   <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span>:<span style="color:#a6e22e">Perl_Perl</span>                 = <span style="color:#a6e22e">system</span>(<span style="color:#75715e">&#34;/usr/bin/which perl&#34;)</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#ae81ff">163</span>   <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span>:<span style="color:#a6e22e">Perl_Perl</span>                 = <span style="color:#a6e22e">substitute</span>(<span style="color:#a6e22e">s</span>:<span style="color:#a6e22e">Perl_Perl</span>, <span style="color:#e6db74">&#39;\n$&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)</code></pre></div>
 <h3 id="about-youcompleteme-ycm">About Youcompleteme (YCM)</h3>
 
@@ -235,16 +244,16 @@ let g:pymode_syntax_space_errors <span style="color:#f92672">=</span> g:pymode_s
 <p>Then BundleInstall</p>
 
 <ul>
-<li><p>Install ncurses</p>
+<li>Install ncurses</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">touch /etc/portage/package.use/ncurses
 echo <span style="color:#e6db74">&#34;sys-libs/ncurses tinfo&#34;</span> &gt; /etc/portage/package.use/ncurses
-emerge sys-libs/ncurses:5</code></pre></div></li>
-
-<li><p>compile</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd .vim/bundle/YouCompleteMe/
-./install --all</code></pre></div></li>
+emerge sys-libs/ncurses:5</code></pre></div>
+<ul>
+<li>compile</li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd .vim/bundle/YouCompleteMe/
+./install --all</code></pre></div>
 <p>Ignore <strong>ERROR: msbuild or xbuild is required to build Omnisharp.</strong> 这是给.net用的。</p>
 
 </article>

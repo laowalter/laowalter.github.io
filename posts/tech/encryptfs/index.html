@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -74,10 +74,10 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root# emerge -avq sys-fs/lvm2 
 root# emerge -avq sys-fs/cryptsetup</code></pre></div>
 <h4 id="检查dm-crpyt是否已经加载">检查dm-crpyt是否已经加载</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls -l /dev/mapper/control <span style="color:#75715e"># 接下来加载dm-crypt内核模块：</span>
-$ sudo modprobe dm-crypt <span style="color:#75715e"># dm-crypt加载后，它会用device-mapper自动注册。</span>
-$ sudo dmsetup targets <span style="color:#75715e"># 应该看到crypt的下列输出：</span>
-crypt            v1.1.0
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls -l /dev/mapper/control <span style="color:#75715e"># 接下来加载dm-crypt内核模块：
+</span><span style="color:#75715e"></span>$ sudo modprobe dm-crypt <span style="color:#75715e"># dm-crypt加载后，它会用device-mapper自动注册。
+</span><span style="color:#75715e"></span>$ sudo dmsetup targets <span style="color:#75715e"># 应该看到crypt的下列输出：
+</span><span style="color:#75715e"></span>crypt            v1.1.0
 striped          v1.0.2
 linear           v1.0.1
 error            v1.0.1</code></pre></div>
@@ -86,13 +86,13 @@ error            v1.0.1</code></pre></div>
 <h4 id="创建一个100m的加密镜像">创建一个100M的加密镜像</h4>
 
 <ul>
-<li><p>bsxcount=100M</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/zero of<span style="color:#f92672">=</span>~/secret.img bs<span style="color:#f92672">=</span>1M count<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span></code></pre></div></li>
-
-<li><p>连接 dev/loop0 到加密镜像文件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo losetup /dev/loop0 ~/secret.img</code></pre></div></li>
+<li>bsxcount=100M</li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/zero of<span style="color:#f92672">=</span>~/secret.img bs<span style="color:#f92672">=</span>1M count<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span></code></pre></div>
+<ul>
+<li>连接 dev/loop0 到加密镜像文件</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo losetup /dev/loop0 ~/secret.img</code></pre></div>
 <h4 id="挂载">挂载</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo cryptsetup -y create encryptfs /dev/loop0
 $ sudo dmsetup ls

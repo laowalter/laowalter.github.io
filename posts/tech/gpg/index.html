@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -49,36 +49,40 @@
 <h2 id="gpg-setup">GPG setup</h2>
 
 <ul>
-<li><p>.bashrc</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GPG_TTY<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>tty<span style="color:#66d9ef">)</span>
-export GPG_TTY</code></pre></div></li>
-
-<li><p>import public key</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --import sone.bin</code></pre></div></li>
-
-<li><p>check finger print</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --fingerprint</code></pre></div></li>
-
-<li><p>.vimrc</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;jamessan/vim-gnupg&#39;</span></code></pre></div></li>
-
-<li><p>generate keys</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --full-generate-key</code></pre></div></li>
+<li>.bashrc</li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GPG_TTY<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>tty<span style="color:#66d9ef">)</span>
+export GPG_TTY</code></pre></div>
+<ul>
+<li>import public key</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --import sone.bin</code></pre></div>
+<ul>
+<li>check finger print</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --fingerprint</code></pre></div>
+<ul>
+<li>.vimrc</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;jamessan/vim-gnupg&#39;</span></code></pre></div>
+<ul>
+<li>generate keys</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --full-generate-key</code></pre></div>
 <h2 id="use-gpg">Use GPG</h2>
 
 <ul>
-<li><p>encrypt file with recipient</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --output doc.gpg --encrypt --recipient blake@cyb.org doc</code></pre></div></li>
-
-<li><p>encrypt file with password</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg -c doc</code></pre></div></li>
-
-<li><p>decrypt file</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --output doc --decrypt doc.gpg</code></pre></div></li>
+<li>encrypt file with recipient</li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --output doc.gpg --encrypt --recipient blake@cyb.org doc</code></pre></div>
+<ul>
+<li>encrypt file with password</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg -c doc</code></pre></div>
+<ul>
+<li>decrypt file</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --output doc --decrypt doc.gpg</code></pre></div>
 </article>
 
     </body>

@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -89,24 +89,24 @@ PIDFile /var/run/tor/tor.pid
 DataDirectory   /var/lib/tor/data
 Log warn syslog
 
-<span style="color:#75715e">###### Socket Proxy Port ######</span>
-SOCKSPort <span style="color:#ae81ff">192</span>.168.0.199:9050
+<span style="color:#75715e">###### Socket Proxy Port ######
+</span><span style="color:#75715e"></span>SOCKSPort <span style="color:#ae81ff">192</span>.168.0.199:9050
 SOCKSPolicy accept <span style="color:#ae81ff">192</span>.168.0.0/24
 
-<span style="color:#75715e">###### Http Proxy Port #####</span>
-HTTPTunnelPort <span style="color:#ae81ff">192</span>.168.0.199:9060 OnionTrafficOnly
+<span style="color:#75715e">###### Http Proxy Port #####
+</span><span style="color:#75715e"></span>HTTPTunnelPort <span style="color:#ae81ff">192</span>.168.0.199:9060 OnionTrafficOnly
 
 
-<span style="color:#75715e">###### Nyx Monitor #######</span>
-ControlPort <span style="color:#ae81ff">9051</span>
+<span style="color:#75715e">###### Nyx Monitor #######
+</span><span style="color:#75715e"></span>ControlPort <span style="color:#ae81ff">9051</span>
 HashedControlPassword <span style="color:#ae81ff">16</span>:64D63491C3E1077E609BA395D0C68765D60044EDF9DRB5BE909284DAA9
 
-<span style="color:#75715e">##### DarkNet Server #####</span>
-HiddenServiceDir /var/lib/tor/hidden_service/
+<span style="color:#75715e">##### DarkNet Server #####
+</span><span style="color:#75715e"></span>HiddenServiceDir /var/lib/tor/hidden_service/
 HiddenServicePort <span style="color:#ae81ff">4444</span> <span style="color:#ae81ff">127</span>.0.0.1:8000
 
-<span style="color:#75715e">###### Meek #######</span>
-UseBridges <span style="color:#ae81ff">1</span>
+<span style="color:#75715e">###### Meek #######
+</span><span style="color:#75715e"></span>UseBridges <span style="color:#ae81ff">1</span>
 ClientTransportPlugin meek exec  /usr/bin/meek-client
 Bridge meek <span style="color:#ae81ff">0</span>.0.2.0:1 url<span style="color:#f92672">=</span>https://meek.azureedge.net/ front<span style="color:#f92672">=</span>ajax.aspnetcdn.com
 Bridge meek <span style="color:#ae81ff">0</span>.0.2.0:2 url<span style="color:#f92672">=</span>https://d2cly7j4zqgua7.cloudfront.net/ front<span style="color:#f92672">=</span>a0.awsstatic.com</code></pre></div>

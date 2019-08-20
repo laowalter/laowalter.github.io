@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -44,7 +44,11 @@
 <li><a href="#安装vnpy">安装VNPY</a>
 <ul>
 <li><a href="#安装python-2-and-virtualenv">安装python 2 and virtualenv</a></li>
-<li><a href="#建立环境切换命令文件-start-vnpy-sh">建立环境切换命令文件 start_vnpy.sh</a></li>
+<li><a href="#启动-退出-vnpy-环境">启动 退出 vnpy 环境</a></li>
+<li><a href="#安装vnpy源程序">安装VNPY源程序</a></li>
+<li><a href="#安装需要的库">安装需要的库</a></li>
+<li><a href="#进入vnpy环境安装其他软件包">进入vnpy环境安装其他软件包</a></li>
+<li><a href="#安装其他需要的">安装其他需要的</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -64,129 +68,90 @@
 <p>(2) virtualenv</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install virtualenv
 
-<span style="color:#75715e">### 建立virtualenvs</span></code></pre></div>
-<p>bash
+<span style="color:#75715e">### 建立virtualenvs
+</span><span style="color:#75715e"></span>
+<span style="color:#e6db74">```</span>bash
 mkdir .virtualenvs
 cd .virtualenvs
 virtualenv -p python vnpy
-export WORKON_HOME=~/.virtualenvs
+export WORKON_HOME<span style="color:#f92672">=</span>~/.virtualenvs
 source ~/.virtualenvs/vnpy/bin/activate
 pip install virtualenvwrapper
-source ~/.virtualenvs/vnpy/bin/virtualenvwrapper.sh</p>
+source ~/.virtualenvs/vnpy/bin/virtualenvwrapper.sh
 
-<h3 id="建立环境切换命令文件-start-vnpy-sh">建立环境切换命令文件 start_vnpy.sh</h3>
-
-<p>``bash
+<span style="color:#75715e">### 建立环境切换命令文件 start_vnpy.sh
+</span><span style="color:#75715e"></span>
+<span style="color:#e6db74">``</span>bash
 mkdir .bin
-vi .bin/start_vnpy</p>
-
-<pre><code>
-start_vnpy
-
-</code></pre>
-
-<p>shell
-#!/bin/sh</p>
-
-<p>export WORKON_HOME=~/.virtualenvs
+vi .bin/start_vnpy</code></pre></div>
+<p>start_vnpy</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span>
+export WORKON_HOME<span style="color:#f92672">=</span>~/.virtualenvs
 source ~/.virtualenvs/vnpy/bin/activate
-source ~/.virtualenvs/vnpy/bin/virtualenvwrapper.sh</p>
+source ~/.virtualenvs/vnpy/bin/virtualenvwrapper.sh
 
-<p>###########
-#Prompt
-#</p>
+<span style="color:#75715e">###########
+</span><span style="color:#75715e">#Prompt
+</span><span style="color:#75715e">#
+</span><span style="color:#75715e"></span>
+set_prompt <span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    Last_Command<span style="color:#f92672">=</span>$? <span style="color:#75715e"># Must come first!
+</span><span style="color:#75715e"></span>    Blue<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\[\e[01;34m\]&#39;</span>
+    White<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\[\e[01;37m\]&#39;</span>
+    Red<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\[\e[01;31m\]&#39;</span>
+    Green<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\[\e[01;32m\]&#39;</span>
+    Reset<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\[\e[00m\]&#39;</span>
+    FancyX<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\342\234\227&#39;</span>
+    Checkmark<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\342\234\223&#39;</span>
 
-<p>set_prompt () {
-    Last_Command=$? # Must come first!
-    Blue=&rsquo;[\e[01;34m]&lsquo;
-    White=&rsquo;[\e[01;37m]&lsquo;
-    Red=&rsquo;[\e[01;31m]&lsquo;
-    Green=&rsquo;[\e[01;32m]&lsquo;
-    Reset=&rsquo;[\e[00m]&lsquo;
-    FancyX=&rsquo;\342\234\227&rsquo;
-    Checkmark=&rsquo;\342\234\223&rsquo;</p>
+    <span style="color:#75715e"># Add a bright white exit status for the last command
+</span><span style="color:#75715e"></span>    PS1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$White<span style="color:#e6db74">\$? &#34;</span>
+    <span style="color:#75715e"># If it was successful, print a green check mark. Otherwise, print
+</span><span style="color:#75715e"></span>    <span style="color:#75715e"># a red X.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> $Last_Command <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+        PS1<span style="color:#f92672">+=</span><span style="color:#e6db74">&#34;</span>$Green$Checkmark<span style="color:#e6db74"> &#34;</span>
+    <span style="color:#66d9ef">else</span>
+        PS1<span style="color:#f92672">+=</span><span style="color:#e6db74">&#34;</span>$Red$FancyX<span style="color:#e6db74"> &#34;</span>
+    <span style="color:#66d9ef">fi</span>
+    
+    <span style="color:#75715e"># SET ENVIROMENT DISPLAY NAME HERE
+</span><span style="color:#75715e"></span>    PS1<span style="color:#f92672">+=</span><span style="color:#e6db74">&#34;[\[\e[31m\]vnpy\[\e[m\]]&#34;</span>
 
-<pre><code># Add a bright white exit status for the last command
-PS1=&quot;$White\$? &quot;
-# If it was successful, print a green check mark. Otherwise, print
-# a red X.
-if [[ $Last_Command == 0 ]]; then
-    PS1+=&quot;$Green$Checkmark &quot;
-else
-    PS1+=&quot;$Red$FancyX &quot;
-fi
+    <span style="color:#75715e"># If root, just print the host in red. Otherwise, print the current user
+</span><span style="color:#75715e"></span>    <span style="color:#75715e"># and host in green.
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> $EUID <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+        PS1<span style="color:#f92672">+=</span><span style="color:#e6db74">&#34;</span>$Red<span style="color:#e6db74">\\h &#34;</span>
+    <span style="color:#66d9ef">else</span>
+        PS1<span style="color:#f92672">+=</span><span style="color:#e6db74">&#34;</span>$Green<span style="color:#e6db74">\\u@\\h &#34;</span>
+    <span style="color:#66d9ef">fi</span>
+    <span style="color:#75715e"># Print the working directory and prompt marker in blue, and reset
+</span><span style="color:#75715e"></span>    <span style="color:#75715e"># the text color to the default.
+</span><span style="color:#75715e"></span>    PS1<span style="color:#f92672">+=</span><span style="color:#e6db74">&#34;</span>$Blue<span style="color:#e6db74">\\w \\\$</span>$Reset<span style="color:#e6db74"> &#34;</span>
+<span style="color:#f92672">}</span>
 
-# SET ENVIROMENT DISPLAY NAME HERE
-PS1+=&quot;[\[\e[31m\]vnpy\[\e[m\]]&quot;
+PROMPT_COMMAND<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;RET=$?; if [ $RET != 0  ] ; then echo &#34;rc: $RET&#34;; fi&#39;</span>
 
-# If root, just print the host in red. Otherwise, print the current user
-# and host in green.
+PROMPT_COMMAND<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;set_prompt&#39;</span></code></pre></div>
+<h3 id="启动-退出-vnpy-环境">启动 退出 vnpy 环境</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">source .bin/start_vnpy.sh
+exit</code></pre></div>
+<h3 id="安装vnpy源程序">安装VNPY源程序</h3>
 
-if [[ $EUID == 0 ]]; then
-    PS1+=&quot;$Red\\h &quot;
-else
-    PS1+=&quot;$Green\\u@\\h &quot;
-fi
-# Print the working directory and prompt marker in blue, and reset
-# the text color to the default.
-PS1+=&quot;$Blue\\w \\\$$Reset &quot;
-</code></pre>
-
-<p>}</p>
-
-<p>PROMPT_COMMAND=&lsquo;RET=$?; if [ $RET != 0  ] ; then echo &ldquo;rc: $RET&rdquo;; fi&rsquo;</p>
-
-<p>PROMPT_COMMAND=&lsquo;set_prompt&rsquo;</p>
-
-<pre><code>
-### 启动 退出 vnpy 环境
-
-</code></pre>
-
-<p>bash
-source .bin/start_vnpy.sh
-exit</p>
-
-<pre><code>
-### 安装VNPY源程序
-
-### 安装需要的库
-
-</code></pre>
-
-<p>bash
-brew install pyqt
-brew install sip</p>
-
-<pre><code>
-因为建立vnpy时， sip和pyqt的数据包没有被copy过去，所以需要自己链接
-
-</code></pre>
-
-<p>bash
-cd ~/.virtualenvs/vnpy/lib/python2.7
+<h3 id="安装需要的库">安装需要的库</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install pyqt
+brew install sip</code></pre></div>
+<p>因为建立vnpy时， sip和pyqt的数据包没有被copy过去，所以需要自己链接</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/.virtualenvs/vnpy/lib/python2.7
 ln -s /usr/local/lib/python2.7/site-packages/PyQt4 .
-ln -s /usr/local/lib/python2.7/site-packages/sip* .</p>
-
-<pre><code>
-### 进入vnpy环境安装其他软件包
-
-</code></pre>
-
-<p>bash
-source ~/.bin/vnpy
-pip install pymongo qdarkstyle psutil</p>
-
-<pre><code>
-### 安装其他需要的
-
-</code></pre>
-
-<p>bash
-brew install boost boost-python
-brew install cmake
-```</p>
-
+ln -s /usr/local/lib/python2.7/site-packages/sip* .</code></pre></div>
+<h3 id="进入vnpy环境安装其他软件包">进入vnpy环境安装其他软件包</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">source ~/.bin/vnpy
+pip install pymongo qdarkstyle psutil</code></pre></div>
+<h3 id="安装其他需要的">安装其他需要的</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install boost boost-python
+brew install cmake</code></pre></div>
 </article>
 
     </body>

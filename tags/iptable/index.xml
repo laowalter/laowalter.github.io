@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iptable on Just a Memo</title>
+    <title>Iptable on Just a Memo</title>
     <link>laowalter.github.io/tags/iptable/</link>
-    <description>Recent content in iptable on Just a Memo</description>
+    <description>Recent content in Iptable on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 19 Apr 2016 23:27:55 +0000</lastBuildDate>
@@ -17,9 +17,7 @@
       <pubDate>Tue, 19 Apr 2016 23:27:55 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/linux_server/</guid>
-      <description> iptables (https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules)  List Chains with number
-sudo iptables -L -n -v --line-numbers Delete Chains
-sudo iptables -D INPUT 7  </description>
+      <description> iptables (https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules)  List Chains with number bash sudo iptables -L -n -v --line-numbers  Delete Chains bash sudo iptables -D INPUT 7   </description>
     </item>
     
   </channel>

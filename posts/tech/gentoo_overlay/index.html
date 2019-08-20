@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -51,20 +51,21 @@
 <h2 id="add-local-overlay">Add local overlay</h2>
 
 <ul>
-<li><p>Create directory</p>
+<li>Create directory</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p /usr/local/portage/metadata
 echo <span style="color:#e6db74">&#34;masters = gentoo&#34;</span> &gt; /usr/local/portage/metadata/layout.conf
-chown -R portage:portage /usr/local/portage/</code></pre></div></li>
-
-<li><p>Modify make.conf</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PORTDIR_OVERLAY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/portage/ </span><span style="color:#e6db74">${</span>PORTDIR_OVERLAY<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span></code></pre></div></li>
-
-<li><p>Add [local] part to /etc/portage/repos.conf/gentoo.conf</p>
+chown -R portage:portage /usr/local/portage/</code></pre></div>
+<ul>
+<li>Modify make.conf</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PORTDIR_OVERLAY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/portage/ </span><span style="color:#e6db74">${</span>PORTDIR_OVERLAY<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span></code></pre></div>
+<ul>
+<li>Add [local] part to /etc/portage/repos.conf/gentoo.conf</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>local<span style="color:#f92672">]</span>
 location <span style="color:#f92672">=</span> /usr/local/portage
-auto-syc <span style="color:#f92672">=</span> no</code></pre></div></li>
-</ul>
-
+auto-syc <span style="color:#f92672">=</span> no</code></pre></div>
 <h3 id="add-a-local-ebuild">Add a local ebuild</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo cp -r /usr/portage/net-p2p/transmission /usr/local/portage
 cd /usr/local/portage

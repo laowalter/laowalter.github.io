@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -121,16 +121,20 @@
     <span style="color:#e6db74">&#34;listen_ip&#34;</span>: <span style="color:#e6db74">&#34;0.0.0.0&#34;</span>
 }</code></pre></div>
 <ul>
-<li><p>启动 xx-net</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./start --noauth_local_webserver</code></pre></div></li>
-
-<li><p>部署</p>
+<li>启动 xx-net
+<br /></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./start --noauth_local_webserver</code></pre></div>
+<ul>
+<li>部署
 
 <ol>
 <li>在远端打开 <a href="http://10.0.0.1:8085">http://10.0.0.1:8085</a></li>
 <li>点击部署(Deploy Server)</li>
-
-<li><p>在 2 项中，找到类似下面内容, 给与授权。</p>
+<li>在 2 项中，找到类似下面内容, 给与授权。
+<br /></li>
+</ol></li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Your browser has been opened to visit:
 
 https://accounts.google.com/o/oauth2/auth?scope<span style="color:#f92672">=</span>https%3A%2F%2Fwww.googleapis.com%    2Fauth%2Fappengine.admin+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform    +https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&amp;redirect_uri<span style="color:#f92672">=</span>http%3A%2F    %2Flocalhost%3A8080%2F&amp;response_type<span style="color:#f92672">=</span>code&amp;client_id<span style="color:#f92672">=</span><span style="color:#ae81ff">550516889912</span>.apps.googleuserc    ontent.com&amp;access_type<span style="color:#f92672">=</span>offline
@@ -138,35 +142,31 @@ https://accounts.google.com/o/oauth2/auth?scope<span style="color:#f92672">=</sp
 If your browser is on a different machine <span style="color:#66d9ef">then</span> exit and re-run this
 application with the command-line parameter
 
---noauth_local_webserver</code></pre></div></li>
-</ol></li>
-</ul>
-
+--noauth_local_webserver</code></pre></div>
 <h4 id="关于配置文件的重要说明-https-github-com-xx-net-xx-net-wiki-goagent-config-file"><a href="https://github.com/XX-net/XX-Net/wiki/GoAgent-Config-file">关于配置文件的重要说明</a></h4>
 
 <h4 id="upgrade-xx-net-升级xx-net">Upgrade XX-Net（升级xx-net）</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">su <span style="color:#75715e"># su to root</span> 
-su xx-net from root su to xx-net
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">su <span style="color:#75715e"># su to root 
+</span><span style="color:#75715e"></span>su xx-net from root su to xx-net
 cd .xx-net
 git fetch --all
 git reset --hard origin/master</code></pre></div>
 <h4 id="xx-net-1">XX-Net</h4>
 
 <ul>
-<li><p>git clone</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/XX-net/XX-Net</code></pre></div></li>
+<li>git clone
+<br /></li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">   git clone https://github.com/XX-net/XX-Net</code></pre></div>
 <p><strong>in Gentoo</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq dev-python/pyopenssl</code></pre></div>
 <ul>
 <li><p>git pull</p>
 
-<p>Sometimes have problem while git pull, then just use reset to ignore local modification.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git reset --hard
-git pull</code></pre></div></li>
+<p>Sometimes have problem while git pull, then just use reset to ignore local modification.</p></li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">   git reset --hard
+   git pull</code></pre></div>
 <h4 id="enable-ipv6">Enable IPV6</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    emerge -avq miredo
     modprobe tun
@@ -241,8 +241,8 @@ debuginfo = 0
 <h4 id="start-stop-daemon-etc-init-d-xx-net">Start-Stop-Daemon, /etc/init.d/xx-net</h4>
 
 <h5 id="create-a-user-xx-net-to-running-xx-net">Create a user(xx-net) to running xx-net</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">useradd -M xx-net <span style="color:#75715e"># &#34;-M means no shell login and home directory&#34;</span>
-sudo chown -R xx-net:xx-net ~/.xx-net</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">useradd -M xx-net <span style="color:#75715e"># &#34;-M means no shell login and home directory&#34;
+</span><span style="color:#75715e"></span>sudo chown -R xx-net:xx-net ~/.xx-net</code></pre></div>
 <h5 id="service-daemon-for-running-by-xx-net">Service Daemon for running by xx-net</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/sbin/openrc-run
 </span><span style="color:#75715e"></span>

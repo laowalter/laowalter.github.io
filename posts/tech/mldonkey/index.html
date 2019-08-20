@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -81,10 +81,9 @@ http_port <span style="color:#f92672">=</span> <span style="color:#ae81ff">9092<
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">SERVER<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0.0.0.0&#34;</span>
 PORT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;9092&#34;</span></code></pre></div>
 <ul>
-<li><p>重启服务</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/etc/init.d/mldonkey start</code></pre></div></li>
+<li>重启服务</li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/etc/init.d/mldonkey start</code></pre></div>
 <h3 id="防火墙添加配置打开9092管理通道">防火墙添加配置打开9092管理通道</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo iptables -A INPUT -s <span style="color:#ae81ff">192</span>.168.0.0/24 -p tcp -m tcp --dport <span style="color:#ae81ff">9092</span> -j ACCEPT</code></pre></div>
 </article>

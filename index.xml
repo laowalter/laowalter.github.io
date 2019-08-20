@@ -26,7 +26,7 @@
       <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/hugo_cheatsheet/</guid>
-      <description>Publish to github Generate htmls docker exec -it hugo hugo Find and replace wrong address like &amp;ldquo;:1313&amp;rdquo; $ cd public/ $ grep -ri :1313 * $ sudo find ./ -type f -exec sed -i -e &amp;#39;s/:1313//g&amp;#39; {} \; Hugo markdown format Section number default Section number is set to &amp;ldquo;true&amp;rdquo; add &amp;ldquo;section_number = false&amp;rdquo; to front matter if Dont Not want to add section_number in the content. +++ title =</description>
+      <description>Publish to github Generate htmls docker exec -it hugo hugo Find and replace wrong address like &amp;ldquo;:1313&amp;rdquo; $ cd public/ $ grep -ri :1313 * $ sudo find ./ -type f -exec sed -i -e &amp;#39;s/:1313//g&amp;#39; {} \; $ sudo find ./ -type f -exec sed -i -e &amp;#39;s/192\.168\.0\.199/laowalter.github.io/g&amp;#39; {} \; Hugo markdown format Section number default Section number is set to &amp;ldquo;true&amp;rdquo; add &amp;ldquo;section_number = false&amp;rdquo; to front matter</description>
     </item>
     
     <item>
@@ -80,7 +80,7 @@
       <pubDate>Tue, 21 May 2019 10:32:29 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/go%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83/</guid>
-      <description>vim-go 安装 解决GoInstallBinaries 安装超时 export http_proxy=laowalter.github.io:8128 export https_proxy=laowalter.github.io:8128 然后在vim安装 :GoInstallBinaries Go 环境设置 关于GOPATH，有文章建议一个项目使用一个gopa</description>
+      <description>vim-go 安装 解决GoInstallBinaries 安装超时 export http_proxy=192.168.0.199:8128 export https_proxy=192.168.0.199:8128 然后在vim安装 :GoInstallBinaries Go 环境设置 关于GOPATH，有文章建议一个项目使用一个gopa</description>
     </item>
     
     <item>
@@ -242,7 +242,11 @@
       <pubDate>Tue, 05 Feb 2019 19:35:26 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/vlc/</guid>
-      <description>Hotkeys During playback you can press g or h to adjust subtitle delay (adjust step is 50 ms). OS X v2.2.1 keys: &amp;ldquo;h&amp;rdquo; (decrease delay, subtitles display after sound) and &amp;ldquo;j&amp;rdquo; (increase delay, subtitles display before sound). If subtitle is ahead of sound, press g If subtitle is behind sound, press h Extended Settings You can also set a specific delay. Go to Tools &amp;gt; Track Synchronization and set the</description>
+      <description>Hotkeys During playback you can press g or h to adjust subtitle delay (adjust step is 50 ms).
+OS X v2.2.1 keys: &amp;ldquo;h&amp;rdquo; (decrease delay, subtitles display after sound) and &amp;ldquo;j&amp;rdquo; (increase delay, subtitles display before sound).
+If subtitle is ahead of sound, press g If subtitle is behind sound, press h
+Extended Settings
+You can also set a specific delay. Go to Tools &amp;gt; Track Synchronization and set the delay you want.</description>
     </item>
     
     <item>
@@ -368,7 +372,7 @@
       <pubDate>Sat, 17 Nov 2018 10:17:08 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/samba/</guid>
-      <description>配置文件 smb.conf %filename: /etc/samba/smb.conf [global] workgroup = home server string = mini server role = standalone server hosts allow = 192.168.0. 192.168.1. 192.168.6. 127. security = user log file = /var/log/samba/log.%m max log size = 50 interfaces = laowalter.github.io 127.0.0.1 dns proxy = no [homes] comment = Home Directories valid users = %S read only = No path = %H/samba create mask = 0644 directory mask =</description>
+      <description>配置文件 smb.conf %filename: /etc/samba/smb.conf [global] workgroup = home server string = mini server role = standalone server hosts allow = 192.168.0. 192.168.1. 192.168.6. 127. security = user log file = /var/log/samba/log.%m max log size = 50 interfaces = 192.168.0.199 127.0.0.1 dns proxy = no [homes] comment = Home Directories valid users = %S read only = No path = %H/samba create mask = 0644 directory mask =</description>
     </item>
     
     <item>
@@ -406,7 +410,7 @@
       <guid>laowalter.github.io/posts/tech/itunes/</guid>
       <description> Change iTunes Backup directory
  Default backup directory  Move to “J:\My iPhone Backup\Backup”, Just create a softlink
-mklink /J “%APPDATA%\Apple Computer\MobileSync\Backup” “J:\My iPhone Backup\Backup”   </description>
+   mklink /J “%APPDATA%\Apple Computer\MobileSync\Backup” “J:\My iPhone Backup\Backup”</description>
     </item>
     
     <item>
@@ -469,7 +473,7 @@ mklink /J “%APPDATA%\Apple Computer\MobileSync\Backup” “J:\My iPhone Backu
       <pubDate>Sat, 13 Oct 2018 08:10:51 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/dict/</guid>
-      <description>网络字典（推荐） Install $ sudo emerge -avq app-i18n/translate-shell Config %filename: .translate-shell/init.trans { :tl [&amp;#34;zh-CN&amp;#34;] :user-agent &amp;#34;Mozilla/5.0 (X11; Linux x86_64; rv:33.0) Gecko/20100101 Firefox/63.0&amp;#34; :proxy &amp;#34;http://laowalter.github.io:8087&amp;#34; } USE trans en:zh good trans good trans zh:en 好 trans -x http://laowalter.github.io:8087 good 本地中文字典 Install emerge -avq app-text/sdcv To install a dictionary, first create the /usr/share/stardict/dic directory, if it does not exist. After that,</description>
+      <description>网络字典（推荐） Install $ sudo emerge -avq app-i18n/translate-shell Config %filename: .translate-shell/init.trans { :tl [&amp;#34;zh-CN&amp;#34;] :user-agent &amp;#34;Mozilla/5.0 (X11; Linux x86_64; rv:33.0) Gecko/20100101 Firefox/63.0&amp;#34; :proxy &amp;#34;http://192.168.0.199:8087&amp;#34; } USE trans en:zh good trans good trans zh:en 好 trans -x http://192.168.0.199:8087 good 本地中文字典 Install emerge -avq app-text/sdcv To install a dictionary, first create the /usr/share/stardict/dic directory, if it does not exist. After that,</description>
     </item>
     
     <item>
@@ -839,15 +843,7 @@ mklink /J “%APPDATA%\Apple Computer\MobileSync\Backup” “J:\My iPhone Backu
       <pubDate>Wed, 13 Dec 2017 22:04:53 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/gpg/</guid>
-      <description> GPG setup  .bashrc
-GPG_TTY=$(tty) export GPG_TTY import public key
-gpg --import sone.bin check finger print
-gpg --fingerprint .vimrc
-Plugin &amp;#39;jamessan/vim-gnupg&amp;#39; generate keys
-gpg --full-generate-key  Use GPG  encrypt file with recipient
-gpg --output doc.gpg --encrypt --recipient blake@cyb.org doc encrypt file with password
-gpg -c doc decrypt file
-gpg --output doc --decrypt doc.gpg  </description>
+      <description>GPG setup  .bashrc  GPG_TTY=$(tty) export GPG_TTY  import public key  gpg --import sone.bin  check finger print  gpg --fingerprint  .vimrc  Plugin &amp;#39;jamessan/vim-gnupg&amp;#39;  generate keys  gpg --full-generate-key Use GPG  encrypt file with recipient  gpg --output doc.gpg --encrypt --recipient blake@cyb.org doc  encrypt file with password  gpg -c doc  decrypt file  gpg --output doc --decrypt doc.</description>
     </item>
     
     <item>
@@ -865,8 +861,7 @@ gpg --output doc --decrypt doc.gpg  </description>
       <pubDate>Thu, 07 Dec 2017 15:07:58 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/jupyter_in_python/</guid>
-      <description>Install Install package $ pip install jupyter $ jupyter notebook --generate-config Config ~/.jupyter/jupyter_notebook_config.py edit ~/.jupyter/jupyter_notebook_config.py c.NotebookApp.ip = &amp;#39;laowalter.github.io&amp;#39;   Start jupyter
-$ jupyter notebook --no-browser [I 16:56:50.226 NotebookApp] Serving notebooks from local directory: /home/walter [I 16:56:50.226 NotebookApp] 0 active kernels [I 16:56:50.226 NotebookApp] The Jupyter Notebook is running at: [I 16:56:50.226 NotebookApp] http://mini:8888/?token=6d97162c599bf9e0010b2bf886be238cdf60cf17b12edb62 [I 16:56:50.226 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).</description>
+      <description>Install Install package $ pip install jupyter $ jupyter notebook --generate-config Config ~/.jupyter/jupyter_notebook_config.py edit ~/.jupyter/jupyter_notebook_config.py c.NotebookApp.ip = &amp;#39;192.168.0.199&amp;#39;   Start jupyter  $ jupyter notebook --no-browser [I 16:56:50.226 NotebookApp] Serving notebooks from local directory: /home/walter [I 16:56:50.226 NotebookApp] 0 active kernels [I 16:56:50.226 NotebookApp] The Jupyter Notebook is running at: [I 16:56:50.226 NotebookApp] http://mini:8888/?token=6d97162c599bf9e0010b2bf886be238cdf60cf17b12edb62 [I 16:56:50.226 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).</description>
     </item>
     
     <item>
@@ -902,7 +897,7 @@ $ jupyter notebook --no-browser [I 16:56:50.226 NotebookApp] Serving notebooks f
       <pubDate>Fri, 01 Dec 2017 23:30:08 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/bash/</guid>
-      <description>Linux .bashrc if [[ $- != *i* ]] ; then # Shell is non-interactive. Be done now! return fi # Locale export TERM=xterm-256color export LC_ALL=zh_CN.UTF-8 export LANG=zh_CN.UTF-8 # Perlbrew export PERLBREW_ROOT=/opt/perl5 PATH=$PATH:~/.bin:/opt/perl5/bin # Ssh login need password phrase once if [ ! -S ~/.ssh/ssh_auth_sock ]; then eval `ssh-agent` ln -sf &amp;#34;$SSH_AUTH_SOCK&amp;#34; ~/.ssh/ssh_auth_sock fi export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock ssh-add -l &amp;gt; /dev/null || ssh-add Mac OS .bashrc ######### #Alias # alias ls=&amp;#34;ls -G&amp;#34; alias rm=&amp;#39;rm -i&amp;#39; alias mv=&amp;#39;mv -i&amp;#39; alias cp=&amp;#39;cp -i&amp;#39; alias grep=&amp;#39;grep --color=auto&amp;#39; alias vi=&amp;#39;/usr/local/bin/vim&amp;#39; alias vim=&amp;#39;/usr/local/bin/vim&amp;#39; #enviroment export LC_ALL=zh_CN.</description>
+      <description>Linux .bashrc if [[ $- != *i* ]] ; then # Shell is non-interactive. Be done now!  return fi # Locale export TERM=xterm-256color export LC_ALL=zh_CN.UTF-8 export LANG=zh_CN.UTF-8 # Perlbrew export PERLBREW_ROOT=/opt/perl5 PATH=$PATH:~/.bin:/opt/perl5/bin # Ssh login need password phrase once if [ ! -S ~/.ssh/ssh_auth_sock ]; then eval `ssh-agent` ln -sf &amp;#34;$SSH_AUTH_SOCK&amp;#34; ~/.ssh/ssh_auth_sock fi export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock ssh-add -l &amp;gt; /dev/null || ssh-add Mac OS .bashrc ######### #Alias # alias ls=&amp;#34;ls -G&amp;#34; alias rm=&amp;#39;rm -i&amp;#39; alias mv=&amp;#39;mv -i&amp;#39; alias cp=&amp;#39;cp -i&amp;#39; alias grep=&amp;#39;grep --color=auto&amp;#39; alias vi=&amp;#39;/usr/local/bin/vim&amp;#39; alias vim=&amp;#39;/usr/local/bin/vim&amp;#39; #enviroment export LC_ALL=zh_CN.</description>
     </item>
     
     <item>
@@ -981,7 +976,7 @@ BE SURE to stop transmission daemon first before change the follow setting.
       <guid>laowalter.github.io/posts/tech/kernel_config/</guid>
       <description>Upgrade kernel Offical Document
 $ su - # cd /usr/src # cp /proc/config.gz . # gunzip config.gz # cd linux # make menuconfig, load /usr/src/config, save to /usr/src/linux/.config # make &amp;amp;&amp;amp; make modules_install # cp arch/x86_64/boot/bzImage /boot/efi/boot/bzimage.efi  Mac-mini Kernel config %filename: Kernel config
-# # Automatically generated file; DO NOT EDIT. # Linux/x86 4.14.0-gentoo Kernel Configuration # # # Gentoo Linux # CONFIG_GENTOO_LINUX=y CONFIG_GENTOO_LINUX_UDEV=y CONFIG_GENTOO_LINUX_PORTAGE=y # # Support for init systems, system and service managers # CONFIG_GENTOO_LINUX_INIT_SCRIPT=y # CONFIG_GENTOO_LINUX_INIT_SYSTEMD is not set CONFIG_64BIT=y CONFIG_X86_64=y CONFIG_X86=y CONFIG_INSTRUCTION_DECODER=y CONFIG_OUTPUT_FORMAT=&amp;#34;elf64-x86-64&amp;#34; CONFIG_ARCH_DEFCONFIG=&amp;#34;arch/x86/configs/x86_64_defconfig&amp;#34; CONFIG_LOCKDEP_SUPPORT=y CONFIG_STACKTRACE_SUPPORT=y CONFIG_MMU=y CONFIG_ARCH_MMAP_RND_BITS_MIN=28 CONFIG_ARCH_MMAP_RND_BITS_MAX=32 CONFIG_ARCH_MMAP_RND_COMPAT_BITS_MIN=8 CONFIG_ARCH_MMAP_RND_COMPAT_BITS_MAX=16 CONFIG_NEED_DMA_MAP_STATE=y CONFIG_NEED_SG_DMA_LENGTH=y CONFIG_GENERIC_ISA_DMA=y CONFIG_GENERIC_BUG=y CONFIG_GENERIC_BUG_RELATIVE_POINTERS=y CONFIG_GENERIC_HWEIGHT=y CONFIG_ARCH_MAY_HAVE_PC_FDC=y CONFIG_RWSEM_XCHGADD_ALGORITHM=y CONFIG_GENERIC_CALIBRATE_DELAY=y CONFIG_ARCH_HAS_CPU_RELAX=y CONFIG_ARCH_HAS_CACHE_LINE_SIZE=y CONFIG_HAVE_SETUP_PER_CPU_AREA=y CONFIG_NEED_PER_CPU_EMBED_FIRST_CHUNK=y CONFIG_NEED_PER_CPU_PAGE_FIRST_CHUNK=y CONFIG_ARCH_HIBERNATION_POSSIBLE=y CONFIG_ARCH_SUSPEND_POSSIBLE=y CONFIG_ARCH_WANT_HUGE_PMD_SHARE=y CONFIG_ARCH_WANT_GENERAL_HUGETLB=y CONFIG_ZONE_DMA32=y CONFIG_AUDIT_ARCH=y CONFIG_ARCH_SUPPORTS_OPTIMIZED_INLINING=y CONFIG_ARCH_SUPPORTS_DEBUG_PAGEALLOC=y CONFIG_HAVE_INTEL_TXT=y CONFIG_X86_64_SMP=y CONFIG_ARCH_SUPPORTS_UPROBES=y CONFIG_FIX_EARLYCON_MEM=y CONFIG_PGTABLE_LEVELS=4 CONFIG_DEFCONFIG_LIST=&amp;#34;/lib/modules/$UNAME_RELEASE/.</description>
+# # Automatically generated file; DO NOT EDIT. # Linux/x86 4.14.0-gentoo Kernel Configuration #  # # Gentoo Linux # CONFIG_GENTOO_LINUX=y CONFIG_GENTOO_LINUX_UDEV=y CONFIG_GENTOO_LINUX_PORTAGE=y # # Support for init systems, system and service managers # CONFIG_GENTOO_LINUX_INIT_SCRIPT=y # CONFIG_GENTOO_LINUX_INIT_SYSTEMD is not set CONFIG_64BIT=y CONFIG_X86_64=y CONFIG_X86=y CONFIG_INSTRUCTION_DECODER=y CONFIG_OUTPUT_FORMAT=&amp;#34;elf64-x86-64&amp;#34; CONFIG_ARCH_DEFCONFIG=&amp;#34;arch/x86/configs/x86_64_defconfig&amp;#34; CONFIG_LOCKDEP_SUPPORT=y CONFIG_STACKTRACE_SUPPORT=y CONFIG_MMU=y CONFIG_ARCH_MMAP_RND_BITS_MIN=28 CONFIG_ARCH_MMAP_RND_BITS_MAX=32 CONFIG_ARCH_MMAP_RND_COMPAT_BITS_MIN=8 CONFIG_ARCH_MMAP_RND_COMPAT_BITS_MAX=16 CONFIG_NEED_DMA_MAP_STATE=y CONFIG_NEED_SG_DMA_LENGTH=y CONFIG_GENERIC_ISA_DMA=y CONFIG_GENERIC_BUG=y CONFIG_GENERIC_BUG_RELATIVE_POINTERS=y CONFIG_GENERIC_HWEIGHT=y CONFIG_ARCH_MAY_HAVE_PC_FDC=y CONFIG_RWSEM_XCHGADD_ALGORITHM=y CONFIG_GENERIC_CALIBRATE_DELAY=y CONFIG_ARCH_HAS_CPU_RELAX=y CONFIG_ARCH_HAS_CACHE_LINE_SIZE=y CONFIG_HAVE_SETUP_PER_CPU_AREA=y CONFIG_NEED_PER_CPU_EMBED_FIRST_CHUNK=y CONFIG_NEED_PER_CPU_PAGE_FIRST_CHUNK=y CONFIG_ARCH_HIBERNATION_POSSIBLE=y CONFIG_ARCH_SUSPEND_POSSIBLE=y CONFIG_ARCH_WANT_HUGE_PMD_SHARE=y CONFIG_ARCH_WANT_GENERAL_HUGETLB=y CONFIG_ZONE_DMA32=y CONFIG_AUDIT_ARCH=y CONFIG_ARCH_SUPPORTS_OPTIMIZED_INLINING=y CONFIG_ARCH_SUPPORTS_DEBUG_PAGEALLOC=y CONFIG_HAVE_INTEL_TXT=y CONFIG_X86_64_SMP=y CONFIG_ARCH_SUPPORTS_UPROBES=y CONFIG_FIX_EARLYCON_MEM=y CONFIG_PGTABLE_LEVELS=4 CONFIG_DEFCONFIG_LIST=&amp;#34;/lib/modules/$UNAME_RELEASE/.</description>
     </item>
     
     <item>
@@ -1039,7 +1034,7 @@ mkdir -p /mnt/cifs/new_tdx  Test auto mount sudo automount -vc Should see some o
       <pubDate>Fri, 03 Nov 2017 11:12:10 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/topo/</guid>
-      <description>Network config [jtable] 192.168.1.1,电信网关 192.168.1.2, Mac-Mini-Linux eth1 laowalter.github.io, Mac-Mini-Linux eth0 192.168.0.1, 移动网关 192.168.0.2, lhome 路由器 192.168.0.5, ghome1 路由器 192.168.0.9, ghome3 路由器(目前是布法罗路由器) 192.168.0.131, 扩展点1 192.168.0.234, 扩展点2 192.168.0.64, 打印机</description>
+      <description>Network config [jtable] 192.168.1.1,电信网关 192.168.1.2, Mac-Mini-Linux eth1 192.168.0.199, Mac-Mini-Linux eth0 192.168.0.1, 移动网关 192.168.0.2, lhome 路由器 192.168.0.5, ghome1 路由器 192.168.0.9, ghome3 路由器(目前是布法罗路由器) 192.168.0.131, 扩展点1 192.168.0.234, 扩展点2 192.168.0.64, 打印机</description>
     </item>
     
     <item>
@@ -1140,12 +1135,8 @@ server { listen 192.168.0.202:8080; server_name gentoo; access_log /tmp/bokeh.ac
       
       <guid>laowalter.github.io/posts/tech/matplotlib/</guid>
       <description>Matplot chinese font  Problem  /home/walter/.virtualenv/python3/lib/python3.6/site-packages/matplotlib/font_manager.py:1316: UserWarning: findfont: Font family [&amp;lsquo;sans-serif&amp;rsquo;] not found. Falling back to DejaVu Sans (prop.get_family(), self.defaultFamily[fontext]))
- Add Chinese font
- Add font to system
-cp simhei.ttf /usr/share/fonts/ttfs/ fc-cache -fv * Add following in program python
-   import matplotlib.pyplot as plt plt.rcParams[&amp;lsquo;font.sans-serif&amp;rsquo;]=[&amp;lsquo;SimHei&amp;rsquo;]
-or just change ~/.config/matplotlib/matplotlibrc  config mpl.rccParams[&amp;lsquo;font.sans-serif&amp;rsquo;]=[&amp;lsquo;SimHei&amp;rsquo;]
-	* clear matplotlib cache  bash rm -fr ~/.cache/matplotlib ```</description>
+ Add Chinese font  Add font to system ```bash cp simhei.ttf /usr/share/fonts/ttfs/ fc-cache -fv * Add following in program   import matplotlib.pyplot as plt plt.rcParams[&amp;#39;font.sans-serif&amp;#39;]=[&amp;#39;SimHei&amp;#39;] or just change ~/.config/matplotlib/matplotlibrc
+mpl.rccParams[&amp;#39;font.sans-serif&amp;#39;]=[&amp;#39;SimHei&amp;#39;] * clear matplotlib cache  rm -fr ~/.</description>
     </item>
     
     <item>
@@ -1199,7 +1190,7 @@ or just change ~/.config/matplotlib/matplotlibrc  config mpl.rccParams[&amp;lsqu
       <pubDate>Tue, 29 Nov 2016 18:05:14 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/gentoo/</guid>
-      <description>Auto run 自动执行/启动执行 /etc/local.d/ipforward.start #!/bin/bash # for hostapd /sbin/iptables -t nat -A POSTROUTING --source 192.168.6.0/24 -j SNAT --to laowalter.github.io 必须是可执行文件 chmod +x /etc/local.d/ipforward.start 执行 /etc/init.d/local restart Emerge ACCEPT_KEYWORDS=&amp;#34;~amd64&amp;#34; emerge Something Cron emerge -avq sys-process/dcron sudo usermod -a -G cron someuser # 为someuser用户增加</description>
+      <description>Auto run 自动执行/启动执行 /etc/local.d/ipforward.start #!/bin/bash # for hostapd /sbin/iptables -t nat -A POSTROUTING --source 192.168.6.0/24 -j SNAT --to 192.168.0.199 必须是可执行文件 chmod +x /etc/local.d/ipforward.start 执行 /etc/init.d/local restart Emerge ACCEPT_KEYWORDS=&amp;#34;~amd64&amp;#34; emerge Something Cron emerge -avq sys-process/dcron sudo usermod -a -G cron someuser # 为someuser用户增加</description>
     </item>
     
     <item>
@@ -1217,7 +1208,7 @@ or just change ~/.config/matplotlib/matplotlibrc  config mpl.rccParams[&amp;lsqu
       <pubDate>Thu, 01 Sep 2016 08:32:00 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/vnpy/</guid>
-      <description>安装VNPY 安装python 2 and virtualenv (1) python2 brew install python then ~/.bashrc PATH=/usr/local/bin::$PATH then 退出，在重新进入 iterm2 (2) virtualenv pip install virtualenv ### 建立virtualenvs bash mkdir .virtualenvs cd .virtualenvs virtualenv -p python vnpy export WORKON_HOME=~/.virtualenvs source ~/.virtualenvs/vnpy/bin/activate pip install virtualenvwrapper</description>
+      <description>安装VNPY 安装python 2 and virtualenv (1) python2 brew install python then ~/.bashrc PATH=/usr/local/bin::$PATH then 退出，在重新进入 iterm2 (2) virtualenv pip install virtualenv ### 建立virtualenvs ```bash mkdir .virtualenvs cd .virtualenvs virtualenv -p python vnpy export WORKON_HOME=~/.virtualenvs source ~/.virtualenvs/vnpy/bin/activate pip install virtualenvwrapper</description>
     </item>
     
     <item>
@@ -2002,9 +1993,7 @@ Apple bluetooth keyboard. Under Device Manager, find the Broadcom wireless adapt
       <pubDate>Tue, 19 Apr 2016 23:27:55 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/linux_server/</guid>
-      <description> iptables (https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules)  List Chains with number
-sudo iptables -L -n -v --line-numbers Delete Chains
-sudo iptables -D INPUT 7  </description>
+      <description> iptables (https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules)  List Chains with number bash sudo iptables -L -n -v --line-numbers  Delete Chains bash sudo iptables -D INPUT 7   </description>
     </item>
     
     <item>
@@ -2040,13 +2029,10 @@ sudo iptables -D INPUT 7  </description>
       <pubDate>Mon, 29 Feb 2016 10:40:40 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/databases/</guid>
-      <description>Mongodb Enter mongo shell mongo 192.168.0.25 Start mongodb  Upgrade
-brew upgrade mongodb brew info mongdb ln -s /usr/local/Cellar/mongodb/3.2.4/bin/* /usr/local/bin/ config: /usr/local/etc/mongod.conf, Dont forget touh /usr/local/var/log/mongodb/mongo.log
-  %filename: /usr/local/etc/mongod.conf
-systemLog: destination: file path: /usr/local/var/log/mongodb/mongo.log logAppend: true	storage: dbPath: /Volumes/Home/Walter/mongodb	net: bindIp: 192.168.0.99  manual start
-mongod --config /usr/local/etc/mongod.conf Mac autostart
+      <description>Mongodb Enter mongo shell mongo 192.168.0.25 Start mongodb  Upgrade  brew upgrade mongodb brew info mongdb ln -s /usr/local/Cellar/mongodb/3.2.4/bin/* /usr/local/bin/  config: /usr/local/etc/mongod.conf, Dont forget touh /usr/local/var/log/mongodb/mongo.log  %filename: /usr/local/etc/mongod.conf
+systemLog: destination: file path: /usr/local/var/log/mongodb/mongo.log logAppend: true	storage: dbPath: /Volumes/Home/Walter/mongodb	net: bindIp: 192.168.0.99  manual start  mongod --config /usr/local/etc/mongod.conf  Mac autostart
  /Library/LaunchDaemons/org.mongo.mongod.plist   %filename: /Library/LaunchDaemons/org.mongo.mongod.plist
-&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE plist PUBLIC &amp;#34;-//Apple//DTD PLIST 1.0//EN&amp;#34; &amp;#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&amp;#34;&amp;gt; &amp;lt;plist version=&amp;#34;1.0&amp;#34;&amp;gt; &amp;lt;dict&amp;gt; &amp;lt;key&amp;gt;Label&amp;lt;/key&amp;gt; &amp;lt;string&amp;gt;org.</description>
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE plist PUBLIC &amp;#34;-//Apple//DTD PLIST 1.0//EN&amp;#34; &amp;#34;http://www.</description>
     </item>
     
     <item>
@@ -2532,6 +2518,15 @@ source .bin/quanta.sh # enter a python3 virtualenv already exist, this named &am
     </item>
     
     <item>
+      <title>DNS_Server Config</title>
+      <link>laowalter.github.io/posts/tech/dns_server_config/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>laowalter.github.io/posts/tech/dns_server_config/</guid>
+      <description>Install emerge -aqv bind bind-tools Config /* * Refer to the named.conf(5) and named(8) man pages, and the documentation * in /usr/share/doc/bind-* for more details. * Online versions of the documentation can be found here: * https://kb.isc.org/article/AA-01031 * * If you are going to set up an authoritative server, make sure you * understand the hairy details of how DNS works. Even with simple mistakes, * you can break connectivity</description>
+    </item>
+    
+    <item>
       <title>Develop Pelican Plugin</title>
       <link>laowalter.github.io/posts/tech/dev_pelican_plugin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -2550,15 +2545,6 @@ source .bin/quanta.sh # enter a python3 virtualenv already exist, this named &am
     </item>
     
     <item>
-      <title>DNS_Server Config</title>
-      <link>laowalter.github.io/posts/tech/dns_server_config/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>laowalter.github.io/posts/tech/dns_server_config/</guid>
-      <description>Install emerge -aqv bind bind-tools Config /* * Refer to the named.conf(5) and named(8) man pages, and the documentation * in /usr/share/doc/bind-* for more details. * Online versions of the documentation can be found here: * https://kb.isc.org/article/AA-01031 * * If you are going to set up an authoritative server, make sure you * understand the hairy details of how DNS works. Even with simple mistakes, * you can break connectivity</description>
-    </item>
-    
-    <item>
       <title>Encrypt Filesystem / 加密文件系统</title>
       <link>laowalter.github.io/posts/tech/encryptfs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -2573,10 +2559,7 @@ source .bin/quanta.sh # enter a python3 virtualenv already exist, this named &am
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/gentoo_overlay/</guid>
-      <description> Add local overlay  Create directory
-mkdir -p /usr/local/portage/metadata echo &amp;#34;masters = gentoo&amp;#34; &amp;gt; /usr/local/portage/metadata/layout.conf chown -R portage:portage /usr/local/portage/ Modify make.conf
-PORTDIR_OVERLAY=&amp;#34;/usr/local/portage/ ${PORTDIR_OVERLAY}&amp;#34; Add [local] part to /etc/portage/repos.conf/gentoo.conf
-[local] location = /usr/local/portage auto-syc = no  Add a local ebuild sudo cp -r /usr/portage/net-p2p/transmission /usr/local/portage cd /usr/local/portage ebuild transmission-2.92-r2.ebuild manifest</description>
+      <description> Add local overlay  Create directory  mkdir -p /usr/local/portage/metadata echo &amp;#34;masters = gentoo&amp;#34; &amp;gt; /usr/local/portage/metadata/layout.conf chown -R portage:portage /usr/local/portage/  Modify make.conf  PORTDIR_OVERLAY=&amp;#34;/usr/local/portage/ ${PORTDIR_OVERLAY}&amp;#34;  Add [local] part to /etc/portage/repos.conf/gentoo.conf  [local] location = /usr/local/portage auto-syc = no Add a local ebuild sudo cp -r /usr/portage/net-p2p/transmission /usr/local/portage cd /usr/local/portage ebuild transmission-2.92-r2.ebuild manifest</description>
     </item>
     
     <item>

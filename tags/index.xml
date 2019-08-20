@@ -6,166 +6,22 @@
     <description>Recent content in Tags on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Aug 2019 10:32:08 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Feb 2016 10:40:40 +0000</lastBuildDate>
     
 	<atom:link href="laowalter.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>futures</title>
-      <link>laowalter.github.io/tags/futures/</link>
-      <pubDate>Sun, 18 Aug 2019 10:32:08 +0000</pubDate>
+      <title>Apache</title>
+      <link>laowalter.github.io/tags/apache/</link>
+      <pubDate>Mon, 29 Feb 2016 10:40:40 +0000</pubDate>
       
-      <guid>laowalter.github.io/tags/futures/</guid>
+      <guid>laowalter.github.io/tags/apache/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>blog</title>
-      <link>laowalter.github.io/tags/blog/</link>
-      <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cheatsheet</title>
-      <link>laowalter.github.io/tags/cheatsheet/</link>
-      <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/cheatsheet/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>laowalter.github.io/tags/docker/</link>
-      <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>laowalter.github.io/tags/hugo/</link>
-      <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>go</title>
-      <link>laowalter.github.io/tags/go/</link>
-      <pubDate>Fri, 28 Jun 2019 16:16:18 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>regex</title>
-      <link>laowalter.github.io/tags/regex/</link>
-      <pubDate>Fri, 28 Jun 2019 16:16:18 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/regex/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>laowalter.github.io/tags/linux/</link>
-      <pubDate>Thu, 25 Apr 2019 09:40:45 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>eli</title>
-      <link>laowalter.github.io/tags/eli/</link>
-      <pubDate>Mon, 22 Apr 2019 17:40:41 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/eli/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>nas</title>
-      <link>laowalter.github.io/tags/nas/</link>
-      <pubDate>Wed, 17 Apr 2019 12:14:17 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/nas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ebuild</title>
-      <link>laowalter.github.io/tags/ebuild/</link>
-      <pubDate>Thu, 28 Mar 2019 17:51:15 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/ebuild/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gentoo</title>
-      <link>laowalter.github.io/tags/gentoo/</link>
-      <pubDate>Thu, 28 Mar 2019 17:51:15 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/gentoo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>装机</title>
-      <link>laowalter.github.io/tags/%E8%A3%85%E6%9C%BA/</link>
-      <pubDate>Tue, 26 Mar 2019 20:03:53 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/%E8%A3%85%E6%9C%BA/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>dns</title>
-      <link>laowalter.github.io/tags/dns/</link>
-      <pubDate>Sun, 24 Mar 2019 11:29:42 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/dns/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>net</title>
-      <link>laowalter.github.io/tags/net/</link>
-      <pubDate>Fri, 22 Mar 2019 13:00:42 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/net/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>download</title>
-      <link>laowalter.github.io/tags/download/</link>
-      <pubDate>Mon, 18 Mar 2019 18:01:15 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/download/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>bluetooth</title>
-      <link>laowalter.github.io/tags/bluetooth/</link>
-      <pubDate>Fri, 01 Mar 2019 23:42:48 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/bluetooth/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>appid</title>
+      <title>Appid</title>
       <link>laowalter.github.io/tags/appid/</link>
       <pubDate>Fri, 01 Mar 2019 07:18:53 +0000</pubDate>
       
@@ -174,52 +30,7 @@
     </item>
     
     <item>
-      <title>life</title>
-      <link>laowalter.github.io/tags/life/</link>
-      <pubDate>Fri, 01 Mar 2019 07:18:53 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/life/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>encrypt</title>
-      <link>laowalter.github.io/tags/encrypt/</link>
-      <pubDate>Wed, 27 Feb 2019 14:04:48 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/encrypt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>x11</title>
-      <link>laowalter.github.io/tags/x11/</link>
-      <pubDate>Fri, 22 Feb 2019 10:51:44 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/x11/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>diy</title>
-      <link>laowalter.github.io/tags/diy/</link>
-      <pubDate>Tue, 19 Feb 2019 22:42:10 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/diy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>video</title>
-      <link>laowalter.github.io/tags/video/</link>
-      <pubDate>Wed, 02 Jan 2019 12:04:48 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/video/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>bike</title>
+      <title>Bike</title>
       <link>laowalter.github.io/tags/bike/</link>
       <pubDate>Mon, 24 Dec 2018 20:40:19 +0000</pubDate>
       
@@ -228,7 +39,295 @@
     </item>
     
     <item>
-      <title>latex</title>
+      <title>Blockchain</title>
+      <link>laowalter.github.io/tags/blockchain/</link>
+      <pubDate>Sun, 04 Mar 2018 12:31:44 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/blockchain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>laowalter.github.io/tags/blog/</link>
+      <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bluetooth</title>
+      <link>laowalter.github.io/tags/bluetooth/</link>
+      <pubDate>Fri, 01 Mar 2019 23:42:48 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/bluetooth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Browser</title>
+      <link>laowalter.github.io/tags/browser/</link>
+      <pubDate>Sun, 04 Nov 2018 11:23:50 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/browser/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chan</title>
+      <link>laowalter.github.io/tags/chan/</link>
+      <pubDate>Mon, 12 Jun 2017 21:06:42 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/chan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chat</title>
+      <link>laowalter.github.io/tags/chat/</link>
+      <pubDate>Sat, 10 Nov 2018 09:15:44 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/chat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cheatsheet</title>
+      <link>laowalter.github.io/tags/cheatsheet/</link>
+      <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/cheatsheet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cron</title>
+      <link>laowalter.github.io/tags/cron/</link>
+      <pubDate>Fri, 04 May 2018 17:58:52 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/cron/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data</title>
+      <link>laowalter.github.io/tags/data/</link>
+      <pubDate>Sun, 11 Feb 2018 19:45:43 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Db</title>
+      <link>laowalter.github.io/tags/db/</link>
+      <pubDate>Thu, 12 Apr 2018 11:21:57 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/db/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Diy</title>
+      <link>laowalter.github.io/tags/diy/</link>
+      <pubDate>Tue, 19 Feb 2019 22:42:10 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/diy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dns</title>
+      <link>laowalter.github.io/tags/dns/</link>
+      <pubDate>Sun, 24 Mar 2019 11:29:42 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>laowalter.github.io/tags/docker/</link>
+      <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Download</title>
+      <link>laowalter.github.io/tags/download/</link>
+      <pubDate>Mon, 18 Mar 2019 18:01:15 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/download/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ebuild</title>
+      <link>laowalter.github.io/tags/ebuild/</link>
+      <pubDate>Thu, 28 Mar 2019 17:51:15 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/ebuild/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Eli</title>
+      <link>laowalter.github.io/tags/eli/</link>
+      <pubDate>Mon, 22 Apr 2019 17:40:41 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/eli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Encrypt</title>
+      <link>laowalter.github.io/tags/encrypt/</link>
+      <pubDate>Wed, 27 Feb 2019 14:04:48 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/encrypt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>English</title>
+      <link>laowalter.github.io/tags/english/</link>
+      <pubDate>Mon, 15 Oct 2018 12:13:33 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/english/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Firefox</title>
+      <link>laowalter.github.io/tags/firefox/</link>
+      <pubDate>Thu, 05 Apr 2018 09:30:39 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/firefox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Futures</title>
+      <link>laowalter.github.io/tags/futures/</link>
+      <pubDate>Sun, 18 Aug 2019 10:32:08 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/futures/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gentoo</title>
+      <link>laowalter.github.io/tags/gentoo/</link>
+      <pubDate>Thu, 28 Mar 2019 17:51:15 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/gentoo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gfw</title>
+      <link>laowalter.github.io/tags/gfw/</link>
+      <pubDate>Mon, 30 Apr 2018 10:07:42 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/gfw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>laowalter.github.io/tags/git/</link>
+      <pubDate>Thu, 29 Sep 2016 10:06:20 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>laowalter.github.io/tags/go/</link>
+      <pubDate>Fri, 28 Jun 2019 16:16:18 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hexo</title>
+      <link>laowalter.github.io/tags/hexo/</link>
+      <pubDate>Sun, 27 Mar 2016 19:38:35 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/hexo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>laowalter.github.io/tags/hugo/</link>
+      <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Image</title>
+      <link>laowalter.github.io/tags/image/</link>
+      <pubDate>Wed, 07 Dec 2016 20:14:58 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/image/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iphone</title>
+      <link>laowalter.github.io/tags/iphone/</link>
+      <pubDate>Sun, 04 Nov 2018 08:53:42 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/iphone/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iptable</title>
+      <link>laowalter.github.io/tags/iptable/</link>
+      <pubDate>Tue, 19 Apr 2016 23:27:55 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/iptable/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iptables</title>
+      <link>laowalter.github.io/tags/iptables/</link>
+      <pubDate>Sat, 09 Dec 2017 22:42:57 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/iptables/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Itunes</title>
+      <link>laowalter.github.io/tags/itunes/</link>
+      <pubDate>Sun, 04 Nov 2018 08:53:42 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/itunes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kernel</title>
+      <link>laowalter.github.io/tags/kernel/</link>
+      <pubDate>Tue, 21 Nov 2017 10:26:07 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/kernel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Latex</title>
       <link>laowalter.github.io/tags/latex/</link>
       <pubDate>Fri, 14 Dec 2018 16:16:19 +0000</pubDate>
       
@@ -237,7 +336,34 @@
     </item>
     
     <item>
-      <title>manual</title>
+      <title>Life</title>
+      <link>laowalter.github.io/tags/life/</link>
+      <pubDate>Fri, 01 Mar 2019 07:18:53 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>laowalter.github.io/tags/linux/</link>
+      <pubDate>Thu, 25 Apr 2019 09:40:45 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mac</title>
+      <link>laowalter.github.io/tags/mac/</link>
+      <pubDate>Sun, 04 Nov 2018 08:53:42 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Manual</title>
       <link>laowalter.github.io/tags/manual/</link>
       <pubDate>Tue, 11 Dec 2018 10:28:19 +0000</pubDate>
       
@@ -246,7 +372,79 @@
     </item>
     
     <item>
-      <title>nginx</title>
+      <title>Matplotlib</title>
+      <link>laowalter.github.io/tags/matplotlib/</link>
+      <pubDate>Thu, 02 Feb 2017 22:00:18 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/matplotlib/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Media</title>
+      <link>laowalter.github.io/tags/media/</link>
+      <pubDate>Fri, 24 Nov 2017 19:53:08 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/media/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mongodb</title>
+      <link>laowalter.github.io/tags/mongodb/</link>
+      <pubDate>Tue, 25 Sep 2018 08:44:25 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Movies</title>
+      <link>laowalter.github.io/tags/movies/</link>
+      <pubDate>Sat, 02 Dec 2017 19:01:24 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/movies/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mysql</title>
+      <link>laowalter.github.io/tags/mysql/</link>
+      <pubDate>Mon, 29 Feb 2016 10:40:40 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nas</title>
+      <link>laowalter.github.io/tags/nas/</link>
+      <pubDate>Wed, 17 Apr 2019 12:14:17 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/nas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Net</title>
+      <link>laowalter.github.io/tags/net/</link>
+      <pubDate>Fri, 22 Mar 2019 13:00:42 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/net/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>laowalter.github.io/tags/network/</link>
+      <pubDate>Wed, 07 Mar 2018 15:33:51 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
       <link>laowalter.github.io/tags/nginx/</link>
       <pubDate>Sun, 02 Dec 2018 11:45:29 +0000</pubDate>
       
@@ -255,7 +453,61 @@
     </item>
     
     <item>
-      <title>php</title>
+      <title>Others</title>
+      <link>laowalter.github.io/tags/others/</link>
+      <pubDate>Mon, 16 Jul 2018 22:00:26 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/others/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Panda</title>
+      <link>laowalter.github.io/tags/panda/</link>
+      <pubDate>Tue, 25 Sep 2018 08:44:25 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/panda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pandas</title>
+      <link>laowalter.github.io/tags/pandas/</link>
+      <pubDate>Sun, 11 Feb 2018 19:45:43 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/pandas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pelican</title>
+      <link>laowalter.github.io/tags/pelican/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/pelican/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Perl</title>
+      <link>laowalter.github.io/tags/perl/</link>
+      <pubDate>Mon, 29 Feb 2016 10:40:40 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/perl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Photo</title>
+      <link>laowalter.github.io/tags/photo/</link>
+      <pubDate>Sun, 21 Jan 2018 15:21:16 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/photo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Php</title>
       <link>laowalter.github.io/tags/php/</link>
       <pubDate>Sun, 02 Dec 2018 11:45:29 +0000</pubDate>
       
@@ -264,38 +516,47 @@
     </item>
     
     <item>
-      <title>stock</title>
-      <link>laowalter.github.io/tags/stock/</link>
-      <pubDate>Sun, 18 Nov 2018 09:35:04 +0000</pubDate>
+      <title>Print</title>
+      <link>laowalter.github.io/tags/print/</link>
+      <pubDate>Wed, 22 Nov 2017 23:45:16 +0000</pubDate>
       
-      <guid>laowalter.github.io/tags/stock/</guid>
+      <guid>laowalter.github.io/tags/print/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>缠论</title>
-      <link>laowalter.github.io/tags/%E7%BC%A0%E8%AE%BA/</link>
-      <pubDate>Sun, 18 Nov 2018 09:35:04 +0000</pubDate>
+      <title>Python</title>
+      <link>laowalter.github.io/tags/python/</link>
+      <pubDate>Tue, 25 Sep 2018 08:44:25 +0000</pubDate>
       
-      <guid>laowalter.github.io/tags/%E7%BC%A0%E8%AE%BA/</guid>
+      <guid>laowalter.github.io/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>samba</title>
+      <title>Quanta</title>
+      <link>laowalter.github.io/tags/quanta/</link>
+      <pubDate>Thu, 01 Sep 2016 08:32:00 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/quanta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Regex</title>
+      <link>laowalter.github.io/tags/regex/</link>
+      <pubDate>Fri, 28 Jun 2019 16:16:18 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/regex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Samba</title>
       <link>laowalter.github.io/tags/samba/</link>
       <pubDate>Sat, 17 Nov 2018 10:17:08 +0000</pubDate>
       
       <guid>laowalter.github.io/tags/samba/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>chat</title>
-      <link>laowalter.github.io/tags/chat/</link>
-      <pubDate>Sat, 10 Nov 2018 09:15:44 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/chat/</guid>
       <description></description>
     </item>
     
@@ -309,241 +570,7 @@
     </item>
     
     <item>
-      <title>browser</title>
-      <link>laowalter.github.io/tags/browser/</link>
-      <pubDate>Sun, 04 Nov 2018 11:23:50 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/browser/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>iphone</title>
-      <link>laowalter.github.io/tags/iphone/</link>
-      <pubDate>Sun, 04 Nov 2018 08:53:42 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/iphone/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>itunes</title>
-      <link>laowalter.github.io/tags/itunes/</link>
-      <pubDate>Sun, 04 Nov 2018 08:53:42 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/itunes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mac</title>
-      <link>laowalter.github.io/tags/mac/</link>
-      <pubDate>Sun, 04 Nov 2018 08:53:42 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/mac/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>trading_digest</title>
-      <link>laowalter.github.io/tags/trading_digest/</link>
-      <pubDate>Fri, 26 Oct 2018 21:45:03 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/trading_digest/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>english</title>
-      <link>laowalter.github.io/tags/english/</link>
-      <pubDate>Mon, 15 Oct 2018 12:13:33 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/english/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>translate</title>
-      <link>laowalter.github.io/tags/translate/</link>
-      <pubDate>Sat, 13 Oct 2018 08:10:51 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/translate/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mongodb</title>
-      <link>laowalter.github.io/tags/mongodb/</link>
-      <pubDate>Tue, 25 Sep 2018 08:44:25 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/mongodb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>panda</title>
-      <link>laowalter.github.io/tags/panda/</link>
-      <pubDate>Tue, 25 Sep 2018 08:44:25 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/panda/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>laowalter.github.io/tags/python/</link>
-      <pubDate>Tue, 25 Sep 2018 08:44:25 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>others</title>
-      <link>laowalter.github.io/tags/others/</link>
-      <pubDate>Mon, 16 Jul 2018 22:00:26 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/others/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>thinking</title>
-      <link>laowalter.github.io/tags/thinking/</link>
-      <pubDate>Sat, 14 Jul 2018 14:32:44 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/thinking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>修心</title>
-      <link>laowalter.github.io/tags/%E4%BF%AE%E5%BF%83/</link>
-      <pubDate>Thu, 17 May 2018 14:52:39 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/%E4%BF%AE%E5%BF%83/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cron</title>
-      <link>laowalter.github.io/tags/cron/</link>
-      <pubDate>Fri, 04 May 2018 17:58:52 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/cron/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gfw</title>
-      <link>laowalter.github.io/tags/gfw/</link>
-      <pubDate>Mon, 30 Apr 2018 10:07:42 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/gfw/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>输入法</title>
-      <link>laowalter.github.io/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</link>
-      <pubDate>Fri, 13 Apr 2018 15:30:54 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DB</title>
-      <link>laowalter.github.io/tags/db/</link>
-      <pubDate>Thu, 12 Apr 2018 11:21:57 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/db/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>firefox</title>
-      <link>laowalter.github.io/tags/firefox/</link>
-      <pubDate>Thu, 05 Apr 2018 09:30:39 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/firefox/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>通达信</title>
-      <link>laowalter.github.io/tags/%E9%80%9A%E8%BE%BE%E4%BF%A1/</link>
-      <pubDate>Fri, 23 Mar 2018 10:44:12 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/%E9%80%9A%E8%BE%BE%E4%BF%A1/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>network</title>
-      <link>laowalter.github.io/tags/network/</link>
-      <pubDate>Wed, 07 Mar 2018 15:33:51 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/network/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>blockchain</title>
-      <link>laowalter.github.io/tags/blockchain/</link>
-      <pubDate>Sun, 04 Mar 2018 12:31:44 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/blockchain/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data</title>
-      <link>laowalter.github.io/tags/data/</link>
-      <pubDate>Sun, 11 Feb 2018 19:45:43 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pandas</title>
-      <link>laowalter.github.io/tags/pandas/</link>
-      <pubDate>Sun, 11 Feb 2018 19:45:43 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/pandas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>photo</title>
-      <link>laowalter.github.io/tags/photo/</link>
-      <pubDate>Sun, 21 Jan 2018 15:21:16 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/photo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>iptables</title>
-      <link>laowalter.github.io/tags/iptables/</link>
-      <pubDate>Sat, 09 Dec 2017 22:42:57 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/iptables/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>movies</title>
-      <link>laowalter.github.io/tags/movies/</link>
-      <pubDate>Sat, 02 Dec 2017 19:01:24 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/movies/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shell</title>
+      <title>Shell</title>
       <link>laowalter.github.io/tags/shell/</link>
       <pubDate>Fri, 01 Dec 2017 23:30:08 +0000</pubDate>
       
@@ -552,34 +579,79 @@
     </item>
     
     <item>
-      <title>media</title>
-      <link>laowalter.github.io/tags/media/</link>
-      <pubDate>Fri, 24 Nov 2017 19:53:08 +0000</pubDate>
+      <title>Stock</title>
+      <link>laowalter.github.io/tags/stock/</link>
+      <pubDate>Sun, 18 Nov 2018 09:35:04 +0000</pubDate>
       
-      <guid>laowalter.github.io/tags/media/</guid>
+      <guid>laowalter.github.io/tags/stock/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>print</title>
-      <link>laowalter.github.io/tags/print/</link>
-      <pubDate>Wed, 22 Nov 2017 23:45:16 +0000</pubDate>
+      <title>Thinking</title>
+      <link>laowalter.github.io/tags/thinking/</link>
+      <pubDate>Sat, 14 Jul 2018 14:32:44 +0000</pubDate>
       
-      <guid>laowalter.github.io/tags/print/</guid>
+      <guid>laowalter.github.io/tags/thinking/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>kernel</title>
-      <link>laowalter.github.io/tags/kernel/</link>
-      <pubDate>Tue, 21 Nov 2017 10:26:07 +0000</pubDate>
+      <title>Trading_digest</title>
+      <link>laowalter.github.io/tags/trading_digest/</link>
+      <pubDate>Fri, 26 Oct 2018 21:45:03 +0000</pubDate>
       
-      <guid>laowalter.github.io/tags/kernel/</guid>
+      <guid>laowalter.github.io/tags/trading_digest/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>wifi</title>
+      <title>Translate</title>
+      <link>laowalter.github.io/tags/translate/</link>
+      <pubDate>Sat, 13 Oct 2018 08:10:51 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/translate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Video</title>
+      <link>laowalter.github.io/tags/video/</link>
+      <pubDate>Wed, 02 Jan 2019 12:04:48 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/video/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>laowalter.github.io/tags/vim/</link>
+      <pubDate>Mon, 29 Feb 2016 10:28:24 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Virtualbox</title>
+      <link>laowalter.github.io/tags/virtualbox/</link>
+      <pubDate>Mon, 29 Feb 2016 09:52:41 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/virtualbox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Webserver</title>
+      <link>laowalter.github.io/tags/webserver/</link>
+      <pubDate>Thu, 02 Feb 2017 22:00:18 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/webserver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wifi</title>
       <link>laowalter.github.io/tags/wifi/</link>
       <pubDate>Thu, 16 Nov 2017 16:55:00 +0000</pubDate>
       
@@ -588,11 +660,20 @@
     </item>
     
     <item>
-      <title>chan</title>
-      <link>laowalter.github.io/tags/chan/</link>
-      <pubDate>Mon, 12 Jun 2017 21:06:42 +0000</pubDate>
+      <title>Window</title>
+      <link>laowalter.github.io/tags/window/</link>
+      <pubDate>Fri, 09 Dec 2016 22:02:20 +0000</pubDate>
       
-      <guid>laowalter.github.io/tags/chan/</guid>
+      <guid>laowalter.github.io/tags/window/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>X11</title>
+      <link>laowalter.github.io/tags/x11/</link>
+      <pubDate>Fri, 22 Feb 2019 10:51:44 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/x11/</guid>
       <description></description>
     </item>
     
@@ -606,6 +687,15 @@
     </item>
     
     <item>
+      <title>修心</title>
+      <link>laowalter.github.io/tags/%E4%BF%AE%E5%BF%83/</link>
+      <pubDate>Thu, 17 May 2018 14:52:39 +0000</pubDate>
+      
+      <guid>laowalter.github.io/tags/%E4%BF%AE%E5%BF%83/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>操作</title>
       <link>laowalter.github.io/tags/%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Thu, 09 Feb 2017 12:20:14 +0000</pubDate>
@@ -615,128 +705,38 @@
     </item>
     
     <item>
-      <title>matplotlib</title>
-      <link>laowalter.github.io/tags/matplotlib/</link>
-      <pubDate>Thu, 02 Feb 2017 22:00:18 +0000</pubDate>
+      <title>缠论</title>
+      <link>laowalter.github.io/tags/%E7%BC%A0%E8%AE%BA/</link>
+      <pubDate>Sun, 18 Nov 2018 09:35:04 +0000</pubDate>
       
-      <guid>laowalter.github.io/tags/matplotlib/</guid>
+      <guid>laowalter.github.io/tags/%E7%BC%A0%E8%AE%BA/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>webserver</title>
-      <link>laowalter.github.io/tags/webserver/</link>
-      <pubDate>Thu, 02 Feb 2017 22:00:18 +0000</pubDate>
+      <title>装机</title>
+      <link>laowalter.github.io/tags/%E8%A3%85%E6%9C%BA/</link>
+      <pubDate>Tue, 26 Mar 2019 20:03:53 +0000</pubDate>
       
-      <guid>laowalter.github.io/tags/webserver/</guid>
+      <guid>laowalter.github.io/tags/%E8%A3%85%E6%9C%BA/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>window</title>
-      <link>laowalter.github.io/tags/window/</link>
-      <pubDate>Fri, 09 Dec 2016 22:02:20 +0000</pubDate>
+      <title>输入法</title>
+      <link>laowalter.github.io/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+      <pubDate>Fri, 13 Apr 2018 15:30:54 +0000</pubDate>
       
-      <guid>laowalter.github.io/tags/window/</guid>
+      <guid>laowalter.github.io/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>image</title>
-      <link>laowalter.github.io/tags/image/</link>
-      <pubDate>Wed, 07 Dec 2016 20:14:58 +0000</pubDate>
+      <title>通达信</title>
+      <link>laowalter.github.io/tags/%E9%80%9A%E8%BE%BE%E4%BF%A1/</link>
+      <pubDate>Fri, 23 Mar 2018 10:44:12 +0000</pubDate>
       
-      <guid>laowalter.github.io/tags/image/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>laowalter.github.io/tags/git/</link>
-      <pubDate>Thu, 29 Sep 2016 10:06:20 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>quanta</title>
-      <link>laowalter.github.io/tags/quanta/</link>
-      <pubDate>Thu, 01 Sep 2016 08:32:00 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/quanta/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>iptable</title>
-      <link>laowalter.github.io/tags/iptable/</link>
-      <pubDate>Tue, 19 Apr 2016 23:27:55 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/iptable/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hexo</title>
-      <link>laowalter.github.io/tags/hexo/</link>
-      <pubDate>Sun, 27 Mar 2016 19:38:35 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/hexo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>apache</title>
-      <link>laowalter.github.io/tags/apache/</link>
-      <pubDate>Mon, 29 Feb 2016 10:40:40 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/apache/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mysql</title>
-      <link>laowalter.github.io/tags/mysql/</link>
-      <pubDate>Mon, 29 Feb 2016 10:40:40 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>perl</title>
-      <link>laowalter.github.io/tags/perl/</link>
-      <pubDate>Mon, 29 Feb 2016 10:40:40 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/perl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vim</title>
-      <link>laowalter.github.io/tags/vim/</link>
-      <pubDate>Mon, 29 Feb 2016 10:28:24 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/vim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>virtualbox</title>
-      <link>laowalter.github.io/tags/virtualbox/</link>
-      <pubDate>Mon, 29 Feb 2016 09:52:41 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/virtualbox/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pelican</title>
-      <link>laowalter.github.io/tags/pelican/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>laowalter.github.io/tags/pelican/</guid>
+      <guid>laowalter.github.io/tags/%E9%80%9A%E8%BE%BE%E4%BF%A1/</guid>
       <description></description>
     </item>
     

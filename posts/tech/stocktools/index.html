@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -54,10 +54,9 @@
 <h2 id="matplotlib">Matplotlib</h2>
 
 <ol>
-<li><p>Install</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install pygtk</code></pre></div></li>
+<li>Install</li>
 </ol>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    brew install pygtk</code></pre></div>
 <p>Since already install PyQt5, so edit <code>./matplotlib/matplotlibrc</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Fro UTF8 fonts
 backend: Qt5Agg
@@ -68,27 +67,25 @@ axes.unicode_minus  : False</code></pre></div>
 <h3 id="install">Install</h3>
 
 <ul>
-<li><p>Gentoo</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq sci-libs/ta-lib-0.4.0
-pip install TA-lib</code></pre></div></li>
-
-<li><p>Mac</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew install ta-lib
-$ pip install TA-Lib</code></pre></div></li>
+<li>Gentoo</li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    emerge -avq sci-libs/ta-lib-0.4.0
+    pip install TA-lib</code></pre></div>
+<ul>
+<li>Mac</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ brew install ta-lib
+    $ pip install TA-Lib</code></pre></div>
 <h3 id="使用">使用：</h3>
 
 <ul>
 <li><a href="http://mrjbq7.github.io/ta-lib/doc_index.html">Documents: http://mrjbq7.github.io/ta-lib/doc_index.html</a></li>
-
-<li><p>TA-Lib MA_Type 参数类型的意义</p>
+<li>TA-Lib MA_Type 参数类型的意义</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> talib
 <span style="color:#f92672">from</span> talib <span style="color:#f92672">import</span> MA_Type
 
-MA_Type: <span style="color:#ae81ff">0</span><span style="color:#f92672">=</span>SMA, <span style="color:#ae81ff">1</span><span style="color:#f92672">=</span>EMA, <span style="color:#ae81ff">2</span><span style="color:#f92672">=</span>WMA, <span style="color:#ae81ff">3</span><span style="color:#f92672">=</span>DEMA, <span style="color:#ae81ff">4</span><span style="color:#f92672">=</span>TEMA, <span style="color:#ae81ff">5</span><span style="color:#f92672">=</span>TRIMA, <span style="color:#ae81ff">6</span><span style="color:#f92672">=</span>KAMA, <span style="color:#ae81ff">7</span><span style="color:#f92672">=</span>MAMA, <span style="color:#ae81ff">8</span><span style="color:#f92672">=</span>T3 (Default<span style="color:#f92672">=</span>SMA)</code></pre></div></li>
-</ul>
-
+MA_Type: <span style="color:#ae81ff">0</span><span style="color:#f92672">=</span>SMA, <span style="color:#ae81ff">1</span><span style="color:#f92672">=</span>EMA, <span style="color:#ae81ff">2</span><span style="color:#f92672">=</span>WMA, <span style="color:#ae81ff">3</span><span style="color:#f92672">=</span>DEMA, <span style="color:#ae81ff">4</span><span style="color:#f92672">=</span>TEMA, <span style="color:#ae81ff">5</span><span style="color:#f92672">=</span>TRIMA, <span style="color:#ae81ff">6</span><span style="color:#f92672">=</span>KAMA, <span style="color:#ae81ff">7</span><span style="color:#f92672">=</span>MAMA, <span style="color:#ae81ff">8</span><span style="color:#f92672">=</span>T3 (Default<span style="color:#f92672">=</span>SMA)</code></pre></div>
 <p>移动平均（英语：moving average，MA），又称“移动平均线”简称均线，是技术分析中一种分析时间序列数据的工具。最常见的是利用股价、回报或交易量等变数计算出移动平均。
 移动平均可抚平短期波动，反映出长期趋势或周期。数学上，移动平均可视为一种卷积。</p>
 

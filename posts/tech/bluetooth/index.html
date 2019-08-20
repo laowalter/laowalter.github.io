@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -104,7 +104,7 @@ rc-update add bluetooth default</code></pre></div>
 
 <p>%filename: /etc/pulse/default.pa</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">把 load-module module-bluetooth-discover 注释掉，改为 
-   <span style="color:#75715e">#load-module module-bluetooth-discover</span></code></pre></div>
+   #load-module module-bluetooth-discover</code></pre></div>
 <p>%filename: /usr/bin/start-pulseaudio-x11</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">在这句后面
     <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> x<span style="color:#e6db74">&#34;</span>$SESSION_MANAGER<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> x <span style="color:#f92672">]</span> ; <span style="color:#66d9ef">then</span>
@@ -115,19 +115,19 @@ rc-update add bluetooth default</code></pre></div>
 <h4 id="配对-连接">配对、连接</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mini ~/blog $ bluetoothctl
 Agent registered
-<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># power on</span>
-<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># show</span>
-<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># discoverable on</span>
-<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># agent on</span>
-<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># default-agent</span>
-<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># scan on</span>
-<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Controller <span style="color:#ae81ff">20</span>:C9:D0:92:92:6E Discovering: yes
+<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># power on
+</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># show
+</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># discoverable on
+</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># agent on
+</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># default-agent
+</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># scan on
+</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Controller <span style="color:#ae81ff">20</span>:C9:D0:92:92:6E Discovering: yes
 <span style="color:#f92672">[</span>NEW<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">60</span>:C5:3C:E1:62:E9 <span style="color:#ae81ff">60</span>-C5-3C-E1-62-E9
 <span style="color:#f92672">[</span>NEW<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C LE-Bose Revolve+ SoundLink
 <span style="color:#f92672">[</span>NEW<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">64</span>:9B:50:0A:00:BA <span style="color:#ae81ff">64</span>-9B-50-0A-00-BA
-<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># scan off</span>
-<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># pair 04:52:C7:D1:BA:2C</span>
-Attempting to pair with <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C
+<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># scan off
+</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># pair 04:52:C7:D1:BA:2C
+</span><span style="color:#75715e"></span>Attempting to pair with <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C
 <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Connected: yes
 <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Name: Bose Revolve+ SoundLink
 <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Alias: Bose Revolve+ SoundLink
@@ -143,8 +143,8 @@ Attempting to pair with <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C
 Pairing successful
 <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C ServicesResolved: no
 <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Connected: no
-<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># connect 04:52:C7:D1:BA:2C</span>
-Attempting to connect to <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C
+<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># connect 04:52:C7:D1:BA:2C
+</span><span style="color:#75715e"></span>Attempting to connect to <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C
 <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Connected: yes
 Connection successful
 <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C ServicesResolved: yes
@@ -153,10 +153,10 @@ Connection successful
 
 <h5 id="连接已经配对过的蓝牙设备">连接已经配对过的蓝牙设备</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bluetoothctl
-<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># power on</span>
-<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># paired-devices</span>
-Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Bose Revolve+ SoundLink
-<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># connect 04:52:C7:D1:BA:2C</span></code></pre></div>
+<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># power on
+</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># paired-devices
+</span><span style="color:#75715e"></span>Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Bose Revolve+ SoundLink
+<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span># connect <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C</code></pre></div>
 <h5 id="设置bluealsa音量">设置bluealsa音量</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user@mini ~ $ amixer sget <span style="color:#e6db74">&#39;Master&#39;</span>
 Simple mixer control <span style="color:#e6db74">&#39;Master&#39;</span>,0

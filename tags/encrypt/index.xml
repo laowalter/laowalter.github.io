@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>encrypt on Just a Memo</title>
+    <title>Encrypt on Just a Memo</title>
     <link>laowalter.github.io/tags/encrypt/</link>
-    <description>Recent content in encrypt on Just a Memo</description>
+    <description>Recent content in Encrypt on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 27 Feb 2019 14:04:48 +0000</lastBuildDate>
@@ -26,15 +26,7 @@
       <pubDate>Wed, 13 Dec 2017 22:04:53 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/gpg/</guid>
-      <description> GPG setup  .bashrc
-GPG_TTY=$(tty) export GPG_TTY import public key
-gpg --import sone.bin check finger print
-gpg --fingerprint .vimrc
-Plugin &amp;#39;jamessan/vim-gnupg&amp;#39; generate keys
-gpg --full-generate-key  Use GPG  encrypt file with recipient
-gpg --output doc.gpg --encrypt --recipient blake@cyb.org doc encrypt file with password
-gpg -c doc decrypt file
-gpg --output doc --decrypt doc.gpg  </description>
+      <description>GPG setup  .bashrc  GPG_TTY=$(tty) export GPG_TTY  import public key  gpg --import sone.bin  check finger print  gpg --fingerprint  .vimrc  Plugin &amp;#39;jamessan/vim-gnupg&amp;#39;  generate keys  gpg --full-generate-key Use GPG  encrypt file with recipient  gpg --output doc.gpg --encrypt --recipient blake@cyb.org doc  encrypt file with password  gpg -c doc  decrypt file  gpg --output doc --decrypt doc.</description>
     </item>
     
     <item>

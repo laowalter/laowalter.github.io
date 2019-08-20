@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -50,21 +50,22 @@
 <h2 id="一个简单例子">一个简单例子</h2>
 
 <ul>
-<li><p>net-dns/dnsmasq-2.80是官方的，但是不具备regex支持功能，<a href="https://github.com/laowalter/dnsmasq-regex支持regex">https://github.com/laowalter/dnsmasq-regex支持regex</a>, 这是在dnsmasq-2.80基础上加了一个patch，patch文件有两个，在patches目录下可以看到。</p>
+<li>net-dns/dnsmasq-2.80是官方的，但是不具备regex支持功能，<a href="https://github.com/laowalter/dnsmasq-regex支持regex">https://github.com/laowalter/dnsmasq-regex支持regex</a>, 这是在dnsmasq-2.80基础上加了一个patch，patch文件有两个，在patches目录下可以看到。</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls -l dnsmasq-regex/patches/
 -rw-r--r-- <span style="color:#ae81ff">1</span> portage portage <span style="color:#ae81ff">10644</span> Mar <span style="color:#ae81ff">28</span> <span style="color:#ae81ff">17</span>:42 <span style="color:#ae81ff">001</span>-regex-server.patch
--rw-r--r-- <span style="color:#ae81ff">1</span> portage portage  <span style="color:#ae81ff">4593</span> Mar <span style="color:#ae81ff">28</span> <span style="color:#ae81ff">17</span>:42 <span style="color:#ae81ff">002</span>-regex-ipset.patch</code></pre></div></li>
-
-<li><p>创立 /usr/local/portage/net-dns/dnsmasq/dnsmasq-2.80-r1.ebuild</p></li>
+-rw-r--r-- <span style="color:#ae81ff">1</span> portage portage  <span style="color:#ae81ff">4593</span> Mar <span style="color:#ae81ff">28</span> <span style="color:#ae81ff">17</span>:42 <span style="color:#ae81ff">002</span>-regex-ipset.patch</code></pre></div>
+<ul>
+<li>创立 /usr/local/portage/net-dns/dnsmasq/dnsmasq-2.80-r1.ebuild</li>
 </ul>
 
 <p>这是根据/usr/portage/net-dns/dnsmasq/dnsmasq-2.80.ebuild 修改而来。</p>
 
 <p>%filename: /usr/local/portage/net-dns/dnsmasq/dnsmasq-2.80-r1.ebuild</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Copyright 1999-2019 Gentoo Authors</span>
-<span style="color:#75715e"># Copyright 2017-2018 Sony Interactive Entertainment Inc.</span>
-<span style="color:#75715e"># Distributed under the terms of the GNU General Public License v2</span>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Copyright 1999-2019 Gentoo Authors
+</span><span style="color:#75715e"># Copyright 2017-2018 Sony Interactive Entertainment Inc.
+</span><span style="color:#75715e"># Distributed under the terms of the GNU General Public License v2
+</span><span style="color:#75715e"></span>
 EAPI<span style="color:#f92672">=</span><span style="color:#ae81ff">7</span>
 
 inherit toolchain-funcs flag-o-matic user systemd
@@ -271,25 +272,25 @@ src_install<span style="color:#f92672">()</span> <span style="color:#f92672">{</
 <span style="color:#f92672">}</span>
 
 pkg_preinst<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-	<span style="color:#75715e"># temporary workaround to (hopefully) prevent leases file from being removed</span>
-	<span style="color:#f92672">[[</span> -f /var/lib/misc/dnsmasq.leases <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+	<span style="color:#75715e"># temporary workaround to (hopefully) prevent leases file from being removed
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">[[</span> -f /var/lib/misc/dnsmasq.leases <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>		cp /var/lib/misc/dnsmasq.leases <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>T<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
 <span style="color:#f92672">}</span>
 
 pkg_postinst<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-	<span style="color:#75715e"># temporary workaround to (hopefully) prevent leases file from being removed</span>
-	<span style="color:#f92672">[[</span> -f <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>T<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/dnsmasq.leases <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+	<span style="color:#75715e"># temporary workaround to (hopefully) prevent leases file from being removed
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">[[</span> -f <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>T<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/dnsmasq.leases <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>		cp <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>T<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/dnsmasq.leases /var/lib/misc/dnsmasq.leases
 <span style="color:#f92672">}</span></code></pre></div>
 <ul>
-<li><p>准备文件 /usr/local/portage/net-dns/dnsmasq/files</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp <span style="color:#ae81ff">001</span>-regex-server.patch /usr/local/portage/net-dns/dnsmasq/files/
-cp <span style="color:#ae81ff">002</span>-regex-ipset.patch /usr/local/portage/net-dns/dnsmasq/files/</code></pre></div></li>
-
-<li><p>完成ebuild</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ebuild dnsmasq-2.80-r1.ebuild digest</code></pre></div></li>
+<li>准备文件 /usr/local/portage/net-dns/dnsmasq/files</li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> cp <span style="color:#ae81ff">001</span>-regex-server.patch /usr/local/portage/net-dns/dnsmasq/files/
+ cp <span style="color:#ae81ff">002</span>-regex-ipset.patch /usr/local/portage/net-dns/dnsmasq/files/</code></pre></div>
+<ul>
+<li>完成ebuild</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ebuild dnsmasq-2.80-r1.ebuild digest</code></pre></div>
 </article>
 
     </body>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iphone on Just a Memo</title>
+    <title>Iphone on Just a Memo</title>
     <link>laowalter.github.io/tags/iphone/</link>
-    <description>Recent content in iphone on Just a Memo</description>
+    <description>Recent content in Iphone on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 04 Nov 2018 08:53:42 +0000</lastBuildDate>
@@ -19,7 +19,7 @@
       <guid>laowalter.github.io/posts/tech/itunes/</guid>
       <description> Change iTunes Backup directory
  Default backup directory  Move to “J:\My iPhone Backup\Backup”, Just create a softlink
-mklink /J “%APPDATA%\Apple Computer\MobileSync\Backup” “J:\My iPhone Backup\Backup”   </description>
+   mklink /J “%APPDATA%\Apple Computer\MobileSync\Backup” “J:\My iPhone Backup\Backup”</description>
     </item>
     
     <item>

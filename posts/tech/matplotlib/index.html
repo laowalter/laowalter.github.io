@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -57,34 +57,23 @@
   (prop.get_family(), self.defaultFamily[fontext]))</p>
 
 <ol>
-<li><p>Add Chinese font</p>
+<li>Add Chinese font
 
 <ul>
-<li><p>Add font to system</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp simhei.ttf /usr/share/fonts/ttfs/
+<li>Add font to system
+```bash
+cp simhei.ttf /usr/share/fonts/ttfs/
 fc-cache -fv
-	* Add following in program</code></pre></div>
-<p>python</p></li>
+	* Add following in program</li>
 </ul></li>
 </ol>
-
-<p>import matplotlib.pyplot as plt
-plt.rcParams[&lsquo;font.sans-serif&rsquo;]=[&lsquo;SimHei&rsquo;]</p>
-
-<pre><code>or just change ~/.config/matplotlib/matplotlibrc
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39;font.sans-serif&#39;</span>]<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;SimHei&#39;</span>]</code></pre></div>
+<p>or just change ~/.config/matplotlib/matplotlibrc</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-config" data-lang="config">mpl.rccParams[&#39;font.sans-serif&#39;]=[&#39;SimHei&#39;]</code></pre></div>
+<pre><code>* clear matplotlib cache 
 </code></pre>
-
-<p>config
-mpl.rccParams[&lsquo;font.sans-serif&rsquo;]=[&lsquo;SimHei&rsquo;]</p>
-
-<pre><code>	* clear matplotlib cache 
-
-</code></pre>
-
-<p>bash
-rm -fr ~/.cache/matplotlib
-```</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rm -fr ~/.cache/matplotlib</code></pre></div>
 </article>
 
     </body>

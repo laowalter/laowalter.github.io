@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -197,14 +197,15 @@ zone <span style="color:#e6db74">&#34;6.168.192.in-addr.arpa&#34;</span> IN <spa
         notify no;
 <span style="color:#f92672">}</span>;</code></pre></div>
 <ul>
-<li><p>file: pri/ghome.zone</p>
+<li>file: pri/ghome.zone</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$TTL 1W
 @       IN      SOA     ns.ghome. root.ghome.  <span style="color:#f92672">(</span>
-                                  <span style="color:#ae81ff">2018030901</span> ; Serial
-                                  <span style="color:#ae81ff">28800</span>      ; Refresh
-                                  <span style="color:#ae81ff">14400</span>      ; Retry
-                                  <span style="color:#ae81ff">604800</span>     ; Expire - <span style="color:#ae81ff">1</span> week
-                                  <span style="color:#ae81ff">86400</span> <span style="color:#f92672">)</span>    ; Minimum
+                                      <span style="color:#ae81ff">2018030901</span> ; Serial
+                                      <span style="color:#ae81ff">28800</span>      ; Refresh
+                                      <span style="color:#ae81ff">14400</span>      ; Retry
+                                      <span style="color:#ae81ff">604800</span>     ; Expire - <span style="color:#ae81ff">1</span> week
+                                      <span style="color:#ae81ff">86400</span> <span style="color:#f92672">)</span>    ; Minimum
 
 ghome.          IN      NS      ns.ghome.
 ns.ghome.       IN      A       <span style="color:#ae81ff">192</span>.168.0.199
@@ -217,16 +218,17 @@ ghome1	IN	    A	    <span style="color:#ae81ff">192</span>.168.0.5
 ghome2 	IN	    A 	    <span style="color:#ae81ff">192</span>.168.6.1
 air     IN      A       <span style="color:#ae81ff">192</span>.168.0.10
 win     IN      A       <span style="color:#ae81ff">192</span>.168.0.18
-mini    IN      A       <span style="color:#ae81ff">192</span>.168.0.199</code></pre></div></li>
-
-<li><p>file: pri/0.168.192.in-addr.arpa.zone</p>
+mini    IN      A       <span style="color:#ae81ff">192</span>.168.0.199</code></pre></div>
+<ul>
+<li>file: pri/0.168.192.in-addr.arpa.zone</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$TTL 1W
 @       IN      SOA     ghome. root.ghome.  <span style="color:#f92672">(</span>
-                                  <span style="color:#ae81ff">2018030901</span> ; Serial
-                                  <span style="color:#ae81ff">28800</span>      ; Refresh
-                                  <span style="color:#ae81ff">14400</span>      ; Retry
-                                  <span style="color:#ae81ff">604800</span>     ; Expire - <span style="color:#ae81ff">1</span> week
-                                  <span style="color:#ae81ff">86400</span> <span style="color:#f92672">)</span>    ; Minimum
+                                      <span style="color:#ae81ff">2018030901</span> ; Serial
+                                      <span style="color:#ae81ff">28800</span>      ; Refresh
+                                      <span style="color:#ae81ff">14400</span>      ; Retry
+                                      <span style="color:#ae81ff">604800</span>     ; Expire - <span style="color:#ae81ff">1</span> week
+                                      <span style="color:#ae81ff">86400</span> <span style="color:#f92672">)</span>    ; Minimum
 
 ghome.	IN      NS      ns.ghome.
 
@@ -234,23 +236,22 @@ ghome.	IN      NS      ns.ghome.
 <span style="color:#ae81ff">1</span>	PTR	router.ghome.
 <span style="color:#ae81ff">10</span>	PTR	air.ghome.
 <span style="color:#ae81ff">18</span>	PTR	win.ghome.
-<span style="color:#ae81ff">199</span>	PTR	mini.ghome.</code></pre></div></li>
-
-<li><p>file pri/6.168.192.in-addr.arpa.zone</p>
+<span style="color:#ae81ff">199</span>	PTR	mini.ghome.</code></pre></div>
+<ul>
+<li>file pri/6.168.192.in-addr.arpa.zone</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$TTL 1W
 @       IN      SOA     ghome. root.ghome.  <span style="color:#f92672">(</span>
-                                  <span style="color:#ae81ff">2018030901</span> ; Serial
-                                  <span style="color:#ae81ff">28800</span>      ; Refresh
-                                  <span style="color:#ae81ff">14400</span>      ; Retry
-                                  <span style="color:#ae81ff">604800</span>     ; Expire - <span style="color:#ae81ff">1</span> week
-                                  <span style="color:#ae81ff">86400</span> <span style="color:#f92672">)</span>    ; Minimum
+                                      <span style="color:#ae81ff">2018030901</span> ; Serial
+                                      <span style="color:#ae81ff">28800</span>      ; Refresh
+                                      <span style="color:#ae81ff">14400</span>      ; Retry
+                                      <span style="color:#ae81ff">604800</span>     ; Expire - <span style="color:#ae81ff">1</span> week
+                                      <span style="color:#ae81ff">86400</span> <span style="color:#f92672">)</span>    ; Minimum
 
-    IN      NS      ghome.
+        IN      NS      ghome.
 
 ; private hosts reverse lookup
-<span style="color:#ae81ff">1</span>       PTR     ghome2.ghome.</code></pre></div></li>
-</ul>
-
+<span style="color:#ae81ff">1</span>       PTR     ghome2.ghome.</code></pre></div>
 <h3 id="iptables-rules">IPTABLES RULES</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iptables -A INPUT -p udp --sport <span style="color:#ae81ff">53</span> -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -A INPUT -p udp --dport <span style="color:#ae81ff">53</span> -j ACCEPT

@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -55,17 +55,17 @@
 <h3 id="增加用户-并赋予权限">增加用户，并赋予权限</h3>
 
 <ol>
-<li><p>创建本机用户stock@localhost，不能从其他机器访问,<code>即使grant all privileges 也没用</code></p>
+<li>创建本机用户stock@localhost，不能从其他机器访问,<code>即使grant all privileges 也没用</code></li>
+</ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">create user <span style="color:#e6db74">&#39;stock&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> identified by <span style="color:#e6db74">&#39;my_pass&#39;</span>;
 grant all privileges on *.* to <span style="color:#e6db74">&#39;stock&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> with grant option;
-flush privileges;</code></pre></div></li>
-
-<li><p>创建用户stock@%，可以在任何机器访问此数据库</p>
+flush privileges;</code></pre></div>
+<ol>
+<li>创建用户stock@%，可以在任何机器访问此数据库</li>
+</ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">create user <span style="color:#e6db74">&#39;stock&#39;</span>%<span style="color:#e6db74">&#39; identified by &#39;</span>my_pass<span style="color:#e6db74">&#39;;
 </span><span style="color:#e6db74">grant all privileges on *.* to &#39;</span>stock<span style="color:#e6db74">&#39;@&#39;</span>%<span style="color:#960050;background-color:#1e0010">&#39;</span> with grant option;
-flush privileges;</code></pre></div></li>
-</ol>
-
+flush privileges;</code></pre></div>
 <h3 id="赋予个别用户特别权限-https-dev-mysql-com-doc-refman-5-7-en-adding-users-html"><a href="https://dev.mysql.com/doc/refman/5.7/en/adding-users.html">赋予个别用户特别权限</a></h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql&gt; CREATE USER <span style="color:#e6db74">&#39;custom&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;password&#39;</span>;
 mysql&gt; GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP

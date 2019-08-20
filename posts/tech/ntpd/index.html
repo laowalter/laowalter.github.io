@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -63,64 +63,64 @@ sudo rc-update add ntpd default</code></pre></div>
 <p>&rdquo;-4&rdquo;强制使用ipv4，这样就不会使用ipv6了。ntpd启动后，会试图使用所有可用网络。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NTPD_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;-4 -g&#39;</span></code></pre></div>
 <h3 id="etc-ntpd-conf">/etc/ntpd.conf</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># DHCP clients can append or replace NTP configuration files.</span>
-<span style="color:#75715e"># You should consult your DHCP client documentation about its</span>
-<span style="color:#75715e"># default behaviour and how to change it.</span>
-
-<span style="color:#75715e"># Name of the servers ntpd should sync with</span>
-<span style="color:#75715e"># Please respect the access policy as stated by the responsible person.</span>
-<span style="color:#75715e">#server         ntp.example.tld         iburst</span>
-
-<span style="color:#75715e"># Common pool for random people</span>
-<span style="color:#75715e">#server pool.ntp.org</span>
-
-<span style="color:#75715e"># Pools for Gentoo users</span>
-server <span style="color:#ae81ff">0</span>.gentoo.pool.ntp.org
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># DHCP clients can append or replace NTP configuration files.
+</span><span style="color:#75715e"># You should consult your DHCP client documentation about its
+</span><span style="color:#75715e"># default behaviour and how to change it.
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># Name of the servers ntpd should sync with
+</span><span style="color:#75715e"># Please respect the access policy as stated by the responsible person.
+</span><span style="color:#75715e">#server         ntp.example.tld         iburst
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># Common pool for random people
+</span><span style="color:#75715e">#server pool.ntp.org
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># Pools for Gentoo users
+</span><span style="color:#75715e"></span>server <span style="color:#ae81ff">0</span>.gentoo.pool.ntp.org
 server <span style="color:#ae81ff">1</span>.gentoo.pool.ntp.org
 server <span style="color:#ae81ff">2</span>.gentoo.pool.ntp.org
 server <span style="color:#ae81ff">3</span>.gentoo.pool.ntp.org
 
-<span style="color:#75715e">##</span>
-<span style="color:#75715e"># A list of available servers can be found here:</span>
-<span style="color:#75715e"># http://www.pool.ntp.org/</span>
-<span style="color:#75715e"># http://www.pool.ntp.org/#use</span>
-<span style="color:#75715e"># A good way to get servers for your machine is:</span>
-<span style="color:#75715e"># netselect -s 3 pool.ntp.org</span>
-<span style="color:#75715e">##</span>
+<span style="color:#75715e">##
+</span><span style="color:#75715e"># A list of available servers can be found here:
+</span><span style="color:#75715e"># http://www.pool.ntp.org/
+</span><span style="color:#75715e"># http://www.pool.ntp.org/#use
+</span><span style="color:#75715e"># A good way to get servers for your machine is:
+</span><span style="color:#75715e"># netselect -s 3 pool.ntp.org
+</span><span style="color:#75715e">##
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># you should not need to modify the following paths
+</span><span style="color:#75715e"></span>driftfile       /var/lib/ntp/ntp.drift
 
-<span style="color:#75715e"># you should not need to modify the following paths</span>
-driftfile       /var/lib/ntp/ntp.drift
+<span style="color:#75715e">#server ntplocal.example.com prefer
+</span><span style="color:#75715e">#server timeserver.example.org
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># Warning: Using default NTP settings will leave your NTP
+</span><span style="color:#75715e"># server accessible to all hosts on the Internet.
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># If you want to deny all machines (including your own)
+</span><span style="color:#75715e"># from accessing the NTP server, uncomment:
+</span><span style="color:#75715e">#restrict default ignore
+</span><span style="color:#75715e"></span>
 
-<span style="color:#75715e">#server ntplocal.example.com prefer</span>
-<span style="color:#75715e">#server timeserver.example.org</span>
-
-<span style="color:#75715e"># Warning: Using default NTP settings will leave your NTP</span>
-<span style="color:#75715e"># server accessible to all hosts on the Internet.</span>
-
-<span style="color:#75715e"># If you want to deny all machines (including your own)</span>
-<span style="color:#75715e"># from accessing the NTP server, uncomment:</span>
-<span style="color:#75715e">#restrict default ignore</span>
-
-
-<span style="color:#75715e"># Default configuration:</span>
-<span style="color:#75715e"># - Allow only time queries, at a limited rate, sending KoD when in excess.</span>
-<span style="color:#75715e"># - Allow all local queries (IPv4, IPv6)</span>
-restrict default nomodify nopeer noquery limited kod
+<span style="color:#75715e"># Default configuration:
+</span><span style="color:#75715e"># - Allow only time queries, at a limited rate, sending KoD when in excess.
+</span><span style="color:#75715e"># - Allow all local queries (IPv4, IPv6)
+</span><span style="color:#75715e"></span>restrict default nomodify nopeer noquery limited kod
 restrict <span style="color:#ae81ff">127</span>.0.0.1
 restrict <span style="color:#f92672">[</span>::1<span style="color:#f92672">]</span>
 
 
-<span style="color:#75715e"># To allow machines within your network to synchronize</span>
-<span style="color:#75715e"># their clocks with your server, but ensure they are</span>
-<span style="color:#75715e"># not allowed to configure the server or used as peers</span>
-<span style="color:#75715e"># to synchronize against, uncomment this line.</span>
-#
-restrict <span style="color:#ae81ff">192</span>.168.0.0 mask <span style="color:#ae81ff">255</span>.255.255.0 nomodify nopeer notrap
+<span style="color:#75715e"># To allow machines within your network to synchronize
+</span><span style="color:#75715e"># their clocks with your server, but ensure they are
+</span><span style="color:#75715e"># not allowed to configure the server or used as peers
+</span><span style="color:#75715e"># to synchronize against, uncomment this line.
+</span><span style="color:#75715e">#
+</span><span style="color:#75715e"></span>restrict <span style="color:#ae81ff">192</span>.168.0.0 mask <span style="color:#ae81ff">255</span>.255.255.0 nomodify nopeer notrap
 restrict <span style="color:#ae81ff">192</span>.168.6.0 mask <span style="color:#ae81ff">255</span>.255.255.0 nomodify nopeer notrap
 
 
-<span style="color:#75715e"># 在网络不同是，保证不会报错。</span>
-server <span style="color:#ae81ff">127</span>.127.1.0
+<span style="color:#75715e"># 在网络不同是，保证不会报错。
+</span><span style="color:#75715e"></span>server <span style="color:#ae81ff">127</span>.127.1.0
 fudge <span style="color:#ae81ff">127</span>.127.1.0 stratum <span style="color:#ae81ff">10</span>
 
 disable monitor</code></pre></div>

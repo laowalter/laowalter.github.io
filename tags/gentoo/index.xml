@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>gentoo on Just a Memo</title>
+    <title>Gentoo on Just a Memo</title>
     <link>laowalter.github.io/tags/gentoo/</link>
-    <description>Recent content in gentoo on Just a Memo</description>
+    <description>Recent content in Gentoo on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 Mar 2019 17:51:15 +0000</lastBuildDate>
@@ -63,7 +63,7 @@ emerge -avq net-wireless/wpa_supplicant emerge -avq net-misc/bridge-utils Config
       <pubDate>Tue, 29 Nov 2016 18:05:14 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/gentoo/</guid>
-      <description>Auto run 自动执行/启动执行 /etc/local.d/ipforward.start #!/bin/bash # for hostapd /sbin/iptables -t nat -A POSTROUTING --source 192.168.6.0/24 -j SNAT --to laowalter.github.io 必须是可执行文件 chmod +x /etc/local.d/ipforward.start 执行 /etc/init.d/local restart Emerge ACCEPT_KEYWORDS=&amp;#34;~amd64&amp;#34; emerge Something Cron emerge -avq sys-process/dcron sudo usermod -a -G cron someuser # 为someuser用户增加</description>
+      <description>Auto run 自动执行/启动执行 /etc/local.d/ipforward.start #!/bin/bash # for hostapd /sbin/iptables -t nat -A POSTROUTING --source 192.168.6.0/24 -j SNAT --to 192.168.0.199 必须是可执行文件 chmod +x /etc/local.d/ipforward.start 执行 /etc/init.d/local restart Emerge ACCEPT_KEYWORDS=&amp;#34;~amd64&amp;#34; emerge Something Cron emerge -avq sys-process/dcron sudo usermod -a -G cron someuser # 为someuser用户增加</description>
     </item>
     
   </channel>

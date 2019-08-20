@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -129,8 +129,8 @@ $ <span style="color:#66d9ef">select</span> /dev/sda
 
 <span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> align-check
 
-<span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> set <span style="color:#ae81ff">1</span> boot on  <span style="color:#75715e"># Flags: boot, esp</span>
-<span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> name <span style="color:#ae81ff">1</span> bootloader</code></pre></div>
+<span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> set <span style="color:#ae81ff">1</span> boot on  <span style="color:#75715e"># Flags: boot, esp
+</span><span style="color:#75715e"></span><span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> name <span style="color:#ae81ff">1</span> bootloader</code></pre></div>
 <h4 id="format-disk">Format disk</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkfs.vfat -F <span style="color:#ae81ff">32</span> /dev/sda1
 mkfs.btrfs /dev/sda2
@@ -140,15 +140,13 @@ mkfs.btrfs /dev/sda3</code></pre></div>
 <ul>
 <li><a href="http://mirrors.163.com/gentoo/releases/amd64/autobuilds/current-stage3-amd64/">Mirror 163 stage direcotry</a></li>
 <li><a href="http://mirrors.163.com/gentoo/releases/amd64/autobuilds/current-stage3-amd64/stage3-amd64-20171102.tar.bz2">stage3-amd64-20171102.tar.bz2 @163</a></li>
-
-<li><p><a href="http://mirrors.163.com/gentoo/releases/snapshots/current/portage-latest.tar.bz2">portage-lastest.tar.bz2 @163</a></p>
+<li><a href="http://mirrors.163.com/gentoo/releases/snapshots/current/portage-latest.tar.bz2">portage-lastest.tar.bz2 @163</a></li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mount /dev/sda2 /mnt/gentoo
 cd /mnt/gentoo
 tar xjpf stage3-*.tar.bz2 --xattrs --numeric-owner
 cd usr
-tar xjf portage-latest.tar.bz2</code></pre></div></li>
-</ul>
-
+tar xjf portage-latest.tar.bz2</code></pre></div>
 <h3 id="chroot">chroot</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /mnt/gentoo
 mirrorselect -i -o &gt;&gt; /mnt/gentoo/etc/portage/make.conf
@@ -172,31 +170,29 @@ eix-update</code></pre></div>
 <ul>
 <li><p><a href="https://wiki.gentoo.org/wiki/Safe_CFLAGS#Ivy_Bridge">cflags  set</a></p></li>
 
-<li><p>/etc/portage/make.conf</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CHOST<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;x86_64-pc-linux-gnu&#34;</span>
-CFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-march=ivybridge -O2 -pipe&#34;</span>
-CXXFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>CFLAGS<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-MAKEOPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-j9&#34;</span>
-
-USE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-X vim-syntax python perl sqlite logrotate xml zh_CN zlib unicode multilib tk turetype&#34;</span>
-
-CPU_FLAGS_X86<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mmx sse sse2&#34;</span>
-PORTDIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/portage&#34;</span>
-DISTDIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PORTDIR<span style="color:#e6db74">}</span><span style="color:#e6db74">/distfiles&#34;</span>
-PKGDIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PORTDIR<span style="color:#e6db74">}</span><span style="color:#e6db74">/packages&#34;</span>
-    
-GENTOO_MIRRORS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://mirrors.163.com/gentoo/&#34;</span>
-ACCEPT_LICENSE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*&#34;</span></code></pre></div></li>
+<li><p>/etc/portage/make.conf</p></li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    CHOST<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;x86_64-pc-linux-gnu&#34;</span>
+    CFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-march=ivybridge -O2 -pipe&#34;</span>
+    CXXFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>CFLAGS<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+    MAKEOPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-j9&#34;</span>
 
+    USE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-X vim-syntax python perl sqlite logrotate xml zh_CN zlib unicode multilib tk turetype&#34;</span>
+
+    CPU_FLAGS_X86<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mmx sse sse2&#34;</span>
+    PORTDIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/portage&#34;</span>
+    DISTDIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PORTDIR<span style="color:#e6db74">}</span><span style="color:#e6db74">/distfiles&#34;</span>
+    PKGDIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PORTDIR<span style="color:#e6db74">}</span><span style="color:#e6db74">/packages&#34;</span>
+    
+    GENTOO_MIRRORS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://mirrors.163.com/gentoo/&#34;</span>
+    ACCEPT_LICENSE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*&#34;</span></code></pre></div>
 <h4 id="kernel-config">Kernel config</h4>
 
 <ol>
-<li><p>First install, just use <code>/proc/config.gz</code> and add <a href="https://wiki.gentoo.org/wiki/EFI_stub_kernel">EFI stub kernel</a> config</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge --ask sys-kernel/gentoo-sources
-gunzip /proc/config.gz /usr/src</code></pre></div></li>
+<li>First install, just use <code>/proc/config.gz</code> and add <a href="https://wiki.gentoo.org/wiki/EFI_stub_kernel">EFI stub kernel</a> config</li>
 </ol>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge --ask sys-kernel/gentoo-sources
+gunzip /proc/config.gz /usr/src</code></pre></div>
 <h4 id="etc-fstab">/etc/fstab</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/dev/sdb1               /boot                   vfat            noauto,noatime  <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span>
 /dev/sdb2               /                       btrfs           noatime         <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">1</span>
@@ -211,63 +207,67 @@ cp /boot/vmlinuz-* /boot/efi/boot/bootx64.efi</code></pre></div><div class="high
 <p><strong>The final</strong></p>
 
 <p>Kernel Stub single Boot EFI needs like the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/localhost /mnt/efi <span style="color:#75715e"># efibootmgr -v</span>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/localhost /mnt/efi <span style="color:#75715e"># efibootmgr -v
+</span><span style="color:#75715e"></span>
 BootCurrent: <span style="color:#ae81ff">0000</span>
 Timeout: <span style="color:#ae81ff">5</span> seconds
 BootOrder: <span style="color:#ae81ff">0000</span>
-Boot0000* Gentoo        HD<span style="color:#f92672">(</span><span style="color:#ae81ff">1</span>,GPT,ed6ad4ea-5f43-4c26-935c-1e5710e864d5,0x28,0x64000<span style="color:#f92672">)</span>/File<span style="color:#f92672">(</span><span style="color:#ae81ff">\e</span>fi<span style="color:#ae81ff">\b</span>oot<span style="color:#ae81ff">\b</span>zimage.efi<span style="color:#f92672">)</span></code></pre></div>
+Boot0000* Gentoo        HD<span style="color:#f92672">(</span><span style="color:#ae81ff">1</span>,GPT,ed6ad4ea-5f43-4c26-935c-1e5710e864d5,0x28,0x64000<span style="color:#f92672">)</span>/File<span style="color:#f92672">(</span><span style="color:#ae81ff">\e</span><span style="color:#66d9ef">fi</span><span style="color:#ae81ff">\b</span>oot<span style="color:#ae81ff">\b</span>zimage.efi<span style="color:#f92672">)</span></code></pre></div>
 <h3 id="reboot">Reboot</h3>
 
 <ul>
-<li><p>umount All</p>
+<li>umount All</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exit
 cd
 umount -l /mnt/gentoo/dev<span style="color:#f92672">{</span>/shm,/pts,<span style="color:#f92672">}</span>
-umount -R /mnt/gentoo</code></pre></div></li>
-
-<li><p>add users</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">useradd -m -G users,wheel,audio -s /bin/bash _user_
-reboot</code></pre></div></li>
+umount -R /mnt/gentoo</code></pre></div>
+<ul>
+<li>add users</li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">useradd -m -G users,wheel,audio -s /bin/bash _user_
+reboot</code></pre></div>
 <h3 id="others">Others</h3>
 
 <h4 id="modules">modules</h4>
 
 <ul>
-<li><p>emerge &ndash;sync</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eix-sync</code></pre></div></li>
-
-<li><p>/etc/conf.d/hostname</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hostname<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tux&#34;</span></code></pre></div></li>
-
-<li><p>/etc/conf.d/net</p>
+<li>emerge &ndash;sync</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eix-sync</code></pre></div>
+<ul>
+<li>/etc/conf.d/hostname</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hostname<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tux&#34;</span></code></pre></div>
+<ul>
+<li>/etc/conf.d/net</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dns_domain_lo<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;homenetwork&#34;</span>
 
 config_enp0s3<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;192.168.0.203 netmask 255.255.255.0 brd 192.168.0.255&#34;</span>
 routes_enp0s3<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;default via 192.168.0.1&#34;</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /etc/init.d
 ln -s net.lo net.enp03
-rc-update add net.enp03 default</code></pre></div></li>
-
-<li><p>/etc/locale.gen</p>
+rc-update add net.enp03 default</code></pre></div>
+<ul>
+<li>/etc/locale.gen</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">en_US ISO-8859-1
 en_US.UTF-8 UTF-8
-zh_CN.UTF-8 UTF-8</code></pre></div></li>
-
-<li><p>/etc/hosts</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># This defines the current system and must be set</span>
-<span style="color:#ae81ff">127</span>.0.0.1     tux.homenetwork tux localhost
-  
-<span style="color:#75715e"># Optional definition of extra systems on the network</span>
-<span style="color:#ae81ff">192</span>.168.0.5   jenny.homenetwork jenny
-<span style="color:#ae81ff">192</span>.168.0.6   benny.homenetwork benny</code></pre></div></li>
-
-<li><p>/etc/conf.d/hwclock</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">clock<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTC&#34;</span>
-clock_args<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span></code></pre></div></li>
+zh_CN.UTF-8 UTF-8</code></pre></div>
+<ul>
+<li>/etc/hosts</li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># This defines the current system and must be set
+</span><span style="color:#75715e"></span><span style="color:#ae81ff">127</span>.0.0.1     tux.homenetwork tux localhost
+  
+<span style="color:#75715e"># Optional definition of extra systems on the network
+</span><span style="color:#75715e"></span><span style="color:#ae81ff">192</span>.168.0.5   jenny.homenetwork jenny
+<span style="color:#ae81ff">192</span>.168.0.6   benny.homenetwork benny</code></pre></div>
+<ul>
+<li>/etc/conf.d/hwclock</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">clock<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTC&#34;</span>
+clock_args<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span></code></pre></div>
 <h3 id="about-mac-efi">About Mac EFI</h3>
 
 <p>Someone said mac only reconize hfs+ EFI,</p>
@@ -291,7 +291,7 @@ emerge -avq hfsprogs</code></pre></div>
 <h6 id="find-the-netcard">find the netcard</h6>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dmesg|grep -ri eth0</code></pre></div>
 <h6 id="etc-conf-d-net">/etc/conf.d/net</h6>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">config_enp1s0f0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;laowalter.github.io netmask 255.255.255.0 brd 192.168.0.255&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">config_enp1s0f0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;192.168.0.199 netmask 255.255.255.0 brd 192.168.0.255&#34;</span>
 routes_enp1s0f0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;default via 192.168.0.1&#34;</span></code></pre></div>
 <h5 id="wireless-b43">Wireless (b43)</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq sys-firmware/b43-firmware</code></pre></div>

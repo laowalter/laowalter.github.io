@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -98,7 +98,7 @@ pip install pelican bs4 typogrify markdown pillow pycrypto pysvg-py3 piexif typo
 <p><code>Notice</code>: pysvg-py3 is for python3, pysvg is for python2.7</p>
 
 <h2 id="clone-git">Clone git</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone ssh://git@laowalter.github.io/~/blog.git </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone --recursive https://github.com/getpelican/pelican-plugins</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone ssh://git@192.168.0.199/~/blog.git </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone --recursive https://github.com/getpelican/pelican-plugins</code></pre></div>
 <p><code>Notice</code>: the theme already in the git.</p>
 
 <h2 id="配置-old-for-first-install">配置&ndash;(old, for first Install)</h2>
@@ -244,20 +244,18 @@ SHARIFF <span style="color:#f92672">=</span> True</code></pre></div>
 
 <ul>
 <li>Download autohide js file store it into</li>
-
-<li><p>In base.html just before </body> add the following:</p>
+<li>In base.html just before </body> add the following:</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ SITEURL   }}/{{ THEME_STATIC_DIR   }}/js/jquery.bootstrap-autohidingnavbar.min.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
 <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div.navbar-fixed-top&#34;</span>).<span style="color:#a6e22e">autoHidingNavbar</span>();<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
 
 <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
-<span style="color:#a6e22e">$</span>(document).<span style="color:#a6e22e">ready</span>(<span style="color:#66d9ef">function</span> () {
-    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div.navbar-fixed-top&#34;</span>).<span style="color:#a6e22e">autoHidingNavbar</span>(<span style="color:#e6db74">&#39;setDisableAutohide&#39;</span>, <span style="color:#66d9ef">false</span> );
+    <span style="color:#a6e22e">$</span>(document).<span style="color:#a6e22e">ready</span>(<span style="color:#66d9ef">function</span> () {
+        <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div.navbar-fixed-top&#34;</span>).<span style="color:#a6e22e">autoHidingNavbar</span>(<span style="color:#e6db74">&#39;setDisableAutohide&#39;</span>, <span style="color:#66d9ef">false</span> );
     
-});
+    });
 <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
-</code></pre></div></li>
-</ul>
-
+</code></pre></div>
 <h2 id="better-image-plugin">Better Image plugin</h2>
 
 <p>Append the following to ~/blog/themes/pelican-bootstrap3/static/css/style.css</p>

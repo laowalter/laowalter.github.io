@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
 
 </head>
 
@@ -82,8 +82,8 @@
 
 <h3 id="etc-local-d-ipforward-start">/etc/local.d/ipforward.start</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span><span style="color:#75715e"># for hostapd</span>
-/sbin/iptables -t nat -A POSTROUTING --source <span style="color:#ae81ff">192</span>.168.6.0/24 -j SNAT --to <span style="color:#ae81ff">192</span>.168.0.199</code></pre></div>
+</span><span style="color:#75715e"></span><span style="color:#75715e"># for hostapd
+</span><span style="color:#75715e"></span>/sbin/iptables -t nat -A POSTROUTING --source <span style="color:#ae81ff">192</span>.168.6.0/24 -j SNAT --to <span style="color:#ae81ff">192</span>.168.0.199</code></pre></div>
 <p><strong>必须是可执行文件</strong></p>
 
 <pre><code>chmod +x /etc/local.d/ipforward.start
@@ -95,7 +95,7 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ACCEPT_KEYWORDS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~amd64&#34;</span> emerge Something</code></pre></div>
 <h2 id="cron">Cron</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq sys-process/dcron
-sudo usermod -a -G cron someuser  <span style="color:#75715e"># 为someuser用户增加cron功能</span></code></pre></div>
+sudo usermod -a -G cron someuser  # 为someuser用户增加cron功能</code></pre></div>
 <h2 id="rename-back-to-net-eth0-net-wlan0-改名网络接口">Rename back to net.eth0 net.wlan0 改名网络接口</h2>
 
 <p>create a file /etc/udev/rules.d/10-rename-network.rules with the content:</p>
