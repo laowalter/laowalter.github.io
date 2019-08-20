@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    <link rel="stylesheet" href="//192.168.0.199:1313/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    <link href="//192.168.0.199:1313/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+
+    <h1>Mpd</h1>
+    <p>Fri Nov 24, 2017</p>
+    
+    <a class="tag tag--primary tag--small"   href="//192.168.0.199:1313/"><font color="green">Home</font></a>
+
+    
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/media">media</a>
+        
+    
+
+    <hr><br>
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#install-mpd">Install mpd</a></li>
+<li><a href="#trick">Trick</a></li>
+<li><a href="#控制volume">控制Volume</a></li>
+<li><a href="#etc-mpd-conf">/etc/mpd.conf</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h3 id="install-mpd">Install mpd</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ eix -e mpd
+<span style="color:#f92672">[</span>I<span style="color:#f92672">]</span> media-sound/mpd
+     Available versions:  <span style="color:#ae81ff">0</span>.19.19 ~0.19.21 ~0.19.21-r1 ~0.20.4 ~0.20.6 ~0.20.8 ~0.20.9 <span style="color:#f92672">(</span>~<span style="color:#f92672">)</span><span style="color:#ae81ff">0</span>.20.10 <span style="color:#f92672">{</span>adplug +alsa ao audiofile bzip2 cdio +curl debug +eventfd expat faad +ffmpeg +fifo flac fluidsynth +glib gme +icu +id3tag +inotify +ipv6 jack lame libav libmpdclient libsamplerate libsoxr +mad mikmod mms modplug mpg123 musepack +network nfs ogg openal opus oss pipe pulseaudio recorder samba selinux sid +signalfd sndfile soundcloud sqlite systemd tcpd twolame unicode upnp vorbis wavpack webdav wildmidi zeroconf zip zlib<span style="color:#f92672">}</span>
+     Installed versions:  <span style="color:#ae81ff">0</span>.20.10<span style="color:#f92672">(</span>18时53分35秒 2017年11月24日<span style="color:#f92672">)(</span>alsa ao audiofile bzip2 curl eventfd expat ffmpeg fifo flac icu id3tag inotify ipv6 jack lame libav libsamplerate mad mms mpg123 network pulseaudio signalfd sqlite tcpd unicode webdav wildmidi zip zlib -adplug -cdio -debug -faad -fluidsynth -gme -libmpdclient -libsoxr -mikmod -modplug -musepack -nfs -ogg -openal -opus -oss -pipe -recorder -samba -selinux -sid -sndfile -soundcloud -systemd -twolame -upnp -vorbis -wavpack -zeroconf<span style="color:#f92672">)</span>
+     Homepage:            https://www.musicpd.org https://github.com/MusicPlayerDaemon/MPD
+     Description:         The Music Player Daemon <span style="color:#f92672">(</span>mpd<span style="color:#f92672">)</span></code></pre></div>
+<h3 id="trick">Trick</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod <span style="color:#ae81ff">775</span> -R /var/lib/mpd/music</code></pre></div>
+<h3 id="控制volume">控制Volume</h3>
+
+<p>Adjust</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">alsamixer</code></pre></div>
+<p>Save</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo alsactl store</code></pre></div>
+<h3 id="etc-mpd-conf">/etc/mpd.conf</h3>
+
+<p>%filename: /etc/mpd.conf</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e"># An example configuration file for MPD.</span>
+<span style="color:#75715e"># Read the user manual for documentation: http://www.musicpd.org/doc/user/</span>
+
+
+<span style="color:#75715e"># Files and directories #######################################################</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This setting controls the top directory which MPD will search to discover the</span>
+<span style="color:#75715e"># available audio files and add them to the daemon&#39;s online database. This </span>
+<span style="color:#75715e"># setting defaults to the XDG directory, otherwise the music directory will be</span>
+<span style="color:#75715e"># be disabled and audio files will only be accepted over ipc socket (using</span>
+<span style="color:#75715e"># file:// protocol) or streaming files over an accepted protocol.</span>
+<span style="color:#75715e">#</span>
+music_directory			<span style="color:#e6db74">&#34;/var/lib/mpd/music&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This setting sets the MPD internal playlist directory. The purpose of this</span>
+<span style="color:#75715e"># directory is storage for playlists created by MPD. The server will use </span>
+<span style="color:#75715e"># playlist files not created by the server but only if they are in the MPD</span>
+<span style="color:#75715e"># format. This setting defaults to playlist saving being disabled.</span>
+<span style="color:#75715e">#</span>
+playlist_directory		<span style="color:#e6db74">&#34;/var/lib/mpd/playlists&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This setting sets the location of the MPD database. This file is used to</span>
+<span style="color:#75715e"># load the database at server start up and store the database while the </span>
+<span style="color:#75715e"># server is not up. This setting defaults to disabled which will allow</span>
+<span style="color:#75715e"># MPD to accept files over ipc socket (using file:// protocol) or streaming</span>
+<span style="color:#75715e"># files over an accepted protocol.</span>
+<span style="color:#75715e">#</span>
+db_file			<span style="color:#e6db74">&#34;/var/lib/mpd/database&#34;</span>
+<span style="color:#75715e"># </span>
+<span style="color:#75715e"># These settings are the locations for the daemon log files for the daemon.</span>
+<span style="color:#75715e"># These logs are great for troubleshooting, depending on your log_level</span>
+<span style="color:#75715e"># settings.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># The special value &#34;syslog&#34; makes MPD use the local syslog daemon. This</span>
+<span style="color:#75715e"># setting defaults to logging to syslog.</span>
+<span style="color:#75715e">#</span>
+log_file			<span style="color:#e6db74">&#34;/var/lib/mpd/log&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This setting sets the location of the file which stores the process ID</span>
+<span style="color:#75715e"># for use of mpd --kill and some init scripts. This setting is required when</span>
+<span style="color:#75715e"># using the Gentoo init script.</span>
+<span style="color:#75715e">#</span>
+pid_file			<span style="color:#e6db74">&#34;/var/lib/mpd/pid&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This setting sets the location of the file which contains information about</span>
+<span style="color:#75715e"># most variables to get MPD back into the same general shape it was in before</span>
+<span style="color:#75715e"># it was brought down. This setting is disabled by default and the server </span>
+<span style="color:#75715e"># state will be reset on server start up.</span>
+<span style="color:#75715e">#</span>
+state_file			<span style="color:#e6db74">&#34;/var/lib/mpd/state&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># The location of the sticker database.  This is a database which</span>
+<span style="color:#75715e"># manages dynamic information attached to songs.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#sticker_file			&#34;~/.mpd/sticker.sql&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">###############################################################################</span>
+
+
+<span style="color:#75715e"># General music daemon options ################################################</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This setting specifies the user that MPD will run as. MPD should never run as</span>
+<span style="color:#75715e"># root and you may use this setting to make MPD change its user ID after</span>
+<span style="color:#75715e"># initialization. This setting is disabled by default and MPD is run as the</span>
+<span style="color:#75715e"># current user.</span>
+<span style="color:#75715e">#</span>
+user				<span style="color:#e6db74">&#34;mpd&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This setting specifies the group that MPD will run as. If not specified</span>
+<span style="color:#75715e"># primary group of user specified with &#34;user&#34; setting will be used (if set).</span>
+<span style="color:#75715e"># This is useful if MPD needs to be a member of group such as &#34;audio&#34; to</span>
+<span style="color:#75715e"># have permission to use sound card.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#group				&#34;nogroup&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This setting sets the address for the daemon to listen on. Careful attention</span>
+<span style="color:#75715e"># should be paid if this is assigned to anything other then the default, any.</span>
+<span style="color:#75715e"># This setting can deny access to control of the daemon. Not effective if</span>
+<span style="color:#75715e"># systemd socket activiation is in use.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># For network</span>
+bind_to_address		<span style="color:#e6db74">&#34;localhost&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># And for Unix Socket</span>
+bind_to_address		<span style="color:#e6db74">&#34;/var/lib/mpd/socket&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This setting is the TCP port that is desired for the daemon to get assigned</span>
+<span style="color:#75715e"># to.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#port				&#34;6600&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This setting controls the type of information which is logged. Available </span>
+<span style="color:#75715e"># setting arguments are &#34;default&#34;, &#34;secure&#34; or &#34;verbose&#34;. The &#34;verbose&#34; setting</span>
+<span style="color:#75715e"># argument is recommended for troubleshooting, though can quickly stretch</span>
+<span style="color:#75715e"># available resources on limited hardware storage.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#log_level			&#34;default&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># Setting &#34;restore_paused&#34; to &#34;yes&#34; puts MPD into pause mode instead</span>
+<span style="color:#75715e"># of starting playback after startup.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#restore_paused &#34;no&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This setting enables MPD to create playlists in a format usable by other</span>
+<span style="color:#75715e"># music players.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#save_absolute_paths_in_playlists	&#34;no&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This setting defines a list of tag types that will be extracted during the</span>
+<span style="color:#75715e"># audio file discovery process. The complete list of possible values can be</span>
+<span style="color:#75715e"># found in the user manual.</span>
+<span style="color:#75715e">#metadata_to_use	&#34;artist,album,title,track,name,genre,date,composer,performer,disc&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This example just enables the &#34;comment&#34; tag without disabling all</span>
+<span style="color:#75715e"># the other supported tags: </span>
+<span style="color:#f92672">---</span>
+<span style="color:#75715e">#metadata_to_use &#34;+comment&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This setting enables automatic update of MPD&#39;s database when files in </span>
+<span style="color:#75715e"># music_directory are changed.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#auto_update	&#34;yes&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># Limit the depth of the directories being watched, 0 means only watch</span>
+<span style="color:#75715e"># the music directory itself.  There is no limit by default.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#auto_update_depth &#34;3&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">###############################################################################</span>
+
+
+<span style="color:#75715e"># Symbolic link behavior ######################################################</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># If this setting is set to &#34;yes&#34;, MPD will discover audio files by following </span>
+<span style="color:#75715e"># symbolic links outside of the configured music_directory.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#follow_outside_symlinks	&#34;yes&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># If this setting is set to &#34;yes&#34;, MPD will discover audio files by following</span>
+<span style="color:#75715e"># symbolic links inside of the configured music_directory.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#follow_inside_symlinks		&#34;yes&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">###############################################################################</span>
+
+
+<span style="color:#75715e"># Zeroconf / Avahi Service Discovery ##########################################</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># If this setting is set to &#34;yes&#34;, service information will be published with</span>
+<span style="color:#75715e"># Zeroconf / Avahi.</span>
+<span style="color:#75715e">#</span>
+zeroconf_enabled		<span style="color:#e6db74">&#34;yes&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># The argument to this setting will be the Zeroconf / Avahi unique name for</span>
+<span style="color:#75715e"># this MPD server on the network. %h will be replaced with the hostname.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#zeroconf_name			&#34;Music Player @ %h&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">###############################################################################</span>
+
+
+<span style="color:#75715e"># Permissions #################################################################</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># If this setting is set, MPD will require password authorization. The password</span>
+<span style="color:#75715e"># setting can be specified multiple times for different password profiles.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#password                        &#34;password@read,add,control,admin&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This setting specifies the permissions a user has who has not yet logged in. </span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#default_permissions             &#34;read,add,control,admin&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">###############################################################################</span>
+
+
+<span style="color:#75715e"># Database #######################################################################</span>
+<span style="color:#75715e">#</span>
+
+<span style="color:#75715e">#database {</span>
+<span style="color:#75715e">#       plugin &#34;proxy&#34;</span>
+<span style="color:#75715e">#       host &#34;other.mpd.host&#34;</span>
+<span style="color:#75715e">#       port &#34;6600&#34;</span>
+<span style="color:#75715e">#}</span>
+
+<span style="color:#75715e"># Input #######################################################################</span>
+<span style="color:#75715e">#</span>
+
+input {
+        plugin <span style="color:#e6db74">&#34;curl&#34;</span>
+<span style="color:#75715e">#       proxy &#34;proxy.isp.com:8080&#34;</span>
+<span style="color:#75715e">#       proxy_user &#34;user&#34;</span>
+<span style="color:#75715e">#       proxy_password &#34;password&#34;</span>
+}
+
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">###############################################################################</span>
+
+<span style="color:#75715e"># Audio Output ################################################################</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># MPD supports various audio output types, as well as playing through multiple </span>
+<span style="color:#75715e"># audio outputs at the same time, through multiple audio_output settings </span>
+<span style="color:#75715e"># blocks. Setting this block is optional, though the server will only attempt</span>
+<span style="color:#75715e"># autodetection for one sound card.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># An example of an ALSA output:</span>
+<span style="color:#75715e"># MAC MINI 自带喇叭播放</span>
+audio_output {
+	type		<span style="color:#e6db74">&#34;alsa&#34;</span>
+	name		<span style="color:#e6db74">&#34;my alsa device&#34;</span>
+	device		<span style="color:#e6db74">&#34;hw:0,0&#34;</span>	<span style="color:#75715e"># optional</span>
+	mixer_type      <span style="color:#e6db74">&#34;hardware&#34;</span>	<span style="color:#75715e"># optional</span>
+	mixer_device	<span style="color:#e6db74">&#34;default&#34;</span>	<span style="color:#75715e"># optional</span>
+	mixer_control	<span style="color:#e6db74">&#34;pcm&#34;</span>		<span style="color:#75715e"># optional</span>
+	mixer_index	<span style="color:#e6db74">&#34;0&#34;</span>		<span style="color:#75715e"># optional</span>
+}
+
+
+audio_output {
+	type		<span style="color:#e6db74">&#34;alsa&#34;</span>
+	name		<span style="color:#e6db74">&#34;bluetooth speaker&#34;</span>
+	device		<span style="color:#e6db74">&#34;bluealsa&#34;</span>	<span style="color:#75715e"># optional</span>
+	mixer_type      <span style="color:#e6db74">&#34;software&#34;</span>	<span style="color:#75715e"># optional</span>
+	mixer_device	<span style="color:#e6db74">&#34;bluealsa&#34;</span>	<span style="color:#75715e"># optional</span>
+	mixer_control	<span style="color:#e6db74">&#34;pcm&#34;</span>		<span style="color:#75715e"># optional</span>
+	mixer_index	<span style="color:#e6db74">&#34;0&#34;</span>		<span style="color:#75715e"># optional</span>
+}
+
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># An example of an OSS output:</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#audio_output {</span>
+<span style="color:#75715e">#	type		&#34;oss&#34;</span>
+<span style="color:#75715e">#	name		&#34;My OSS Device&#34;</span>
+<span style="color:#75715e">##	device		&#34;/dev/dsp&#34;	# optional</span>
+<span style="color:#75715e">##	mixer_type      &#34;hardware&#34;	# optional</span>
+<span style="color:#75715e">##	mixer_device	&#34;/dev/mixer&#34;	# optional</span>
+<span style="color:#75715e">##	mixer_control	&#34;PCM&#34;		# optional</span>
+<span style="color:#75715e">#}</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># An example of a shout output (for streaming to Icecast):</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#audio_output {</span>
+<span style="color:#75715e">#	type		&#34;shout&#34;</span>
+<span style="color:#75715e">#	encoder		&#34;vorbis&#34;		# optional</span>
+<span style="color:#75715e">#	name		&#34;My Shout Stream&#34;</span>
+<span style="color:#75715e">#	host		&#34;localhost&#34;</span>
+<span style="color:#75715e">#	port		&#34;8000&#34;</span>
+<span style="color:#75715e">#	mount		&#34;/mpd.ogg&#34;</span>
+<span style="color:#75715e">#	password	&#34;hackme&#34;</span>
+<span style="color:#75715e">#	quality		&#34;5.0&#34;</span>
+<span style="color:#75715e">#	bitrate		&#34;128&#34;</span>
+<span style="color:#75715e">#	format		&#34;44100:16:1&#34;</span>
+<span style="color:#75715e">##	protocol	&#34;icecast2&#34;		# optional</span>
+<span style="color:#75715e">##	user		&#34;source&#34;		# optional</span>
+<span style="color:#75715e">##	description	&#34;My Stream Description&#34;	# optional</span>
+<span style="color:#75715e">##	url		&#34;http://example.com&#34;	# optional</span>
+<span style="color:#75715e">##	genre		&#34;jazz&#34;			# optional</span>
+<span style="color:#75715e">##	public		&#34;no&#34;			# optional</span>
+<span style="color:#75715e">##	timeout		&#34;2&#34;			# optional</span>
+<span style="color:#75715e">##	mixer_type      &#34;software&#34;		# optional</span>
+<span style="color:#75715e">#}</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># An example of a recorder output:</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#audio_output {</span>
+<span style="color:#75715e">#	type		&#34;recorder&#34;</span>
+<span style="color:#75715e">#	name		&#34;My recorder&#34;</span>
+<span style="color:#75715e">#	encoder		&#34;vorbis&#34;		# optional, vorbis or lame</span>
+<span style="color:#75715e">#	path		&#34;/var/lib/mpd/recorder/mpd.ogg&#34;</span>
+<span style="color:#75715e">##	quality		&#34;5.0&#34;			# do not define if bitrate is defined</span>
+<span style="color:#75715e">#	bitrate		&#34;128&#34;			# do not define if quality is defined</span>
+<span style="color:#75715e">#	format		&#34;44100:16:1&#34;</span>
+<span style="color:#75715e">#}</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># An example of a httpd output (built-in HTTP streaming server):</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#audio_output {</span>
+<span style="color:#75715e">#	type		&#34;httpd&#34;</span>
+<span style="color:#75715e">#	name		&#34;My HTTP Stream&#34;</span>
+<span style="color:#75715e">#	encoder		&#34;vorbis&#34;		# optional, vorbis or lame</span>
+<span style="color:#75715e">#	port		&#34;8000&#34;</span>
+<span style="color:#75715e">#	bind_to_address	&#34;0.0.0.0&#34;		# optional, IPv4 or IPv6</span>
+<span style="color:#75715e">##	quality		&#34;5.0&#34;			# do not define if bitrate is defined</span>
+<span style="color:#75715e">#	bitrate		&#34;128&#34;			# do not define if quality is defined</span>
+<span style="color:#75715e">#	format		&#34;44100:16:1&#34;</span>
+<span style="color:#75715e">#	max_clients	&#34;0&#34;			# optional 0=no limit</span>
+<span style="color:#75715e">#}</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># An example of a pulseaudio output (streaming to a remote pulseaudio server)</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#audio_output {</span>
+<span style="color:#75715e">#	type		&#34;pulse&#34;</span>
+<span style="color:#75715e">#	name		&#34;My Pulse Output&#34;</span>
+<span style="color:#75715e">##	server		&#34;remote_server&#34;		# optional</span>
+<span style="color:#75715e">##	sink		&#34;remote_server_sink&#34;	# optional</span>
+<span style="color:#75715e">#}</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># An example of a winmm output (Windows multimedia API).</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#audio_output {</span>
+<span style="color:#75715e">#	type		&#34;winmm&#34;</span>
+<span style="color:#75715e">#	name		&#34;My WinMM output&#34;</span>
+<span style="color:#75715e">##	device		&#34;Digital Audio (S/PDIF) (High Definition Audio Device)&#34; # optional</span>
+<span style="color:#75715e">#		or</span>
+<span style="color:#75715e">##	device		&#34;0&#34;		# optional</span>
+<span style="color:#75715e">##	mixer_type	&#34;hardware&#34;	# optional</span>
+<span style="color:#75715e">#}</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># An example of an openal output.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#audio_output {</span>
+<span style="color:#75715e">#	type		&#34;openal&#34;</span>
+<span style="color:#75715e">#	name		&#34;My OpenAL output&#34;</span>
+<span style="color:#75715e">##	device		&#34;Digital Audio (S/PDIF) (High Definition Audio Device)&#34; # optional</span>
+<span style="color:#75715e">#}</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># An example of an sndio output.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#audio_output {</span>
+<span style="color:#75715e">#	type		&#34;sndio&#34;</span>
+<span style="color:#75715e">#	name		&#34;sndio output&#34;</span>
+<span style="color:#75715e">#	mixer_type	&#34;hardware&#34;</span>
+<span style="color:#75715e">#}</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># An example of an OS X output:</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#audio_output {</span>
+<span style="color:#75715e">#	type		&#34;osx&#34;</span>
+<span style="color:#75715e">#	name		&#34;My OS X Device&#34;</span>
+<span style="color:#75715e">##	device		&#34;Built-in Output&#34;	# optional</span>
+<span style="color:#75715e">##	channel_map      &#34;-1,-1,0,1&#34;	# optional</span>
+<span style="color:#75715e">#}</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">## Example &#34;pipe&#34; output:</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#audio_output {</span>
+<span style="color:#75715e">#	type		&#34;pipe&#34;</span>
+<span style="color:#75715e">#	name		&#34;my pipe&#34;</span>
+<span style="color:#75715e">#	command		&#34;aplay -f cd 2&gt;/dev/null&#34;</span>
+<span style="color:#75715e">## Or if you&#39;re want to use AudioCompress</span>
+<span style="color:#75715e">#	command		&#34;AudioCompress -m | aplay -f cd 2&gt;/dev/null&#34;</span>
+<span style="color:#75715e">## Or to send raw PCM stream through PCM:</span>
+<span style="color:#75715e">#	command		&#34;nc example.org 8765&#34;</span>
+<span style="color:#75715e">#	format		&#34;44100:16:2&#34;</span>
+<span style="color:#75715e">#}</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">## An example of a null output (for no audio output):</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#audio_output {</span>
+<span style="color:#75715e">#	type		&#34;null&#34;</span>
+<span style="color:#75715e">#	name		&#34;My Null Output&#34;</span>
+<span style="color:#75715e">#	mixer_type      &#34;none&#34;			# optional</span>
+<span style="color:#75715e">#}</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">###############################################################################</span>
+
+
+<span style="color:#75715e"># Normalization automatic volume adjustments ##################################</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This setting specifies the type of ReplayGain to use. This setting can have</span>
+<span style="color:#75715e"># the argument &#34;off&#34;, &#34;album&#34;, &#34;track&#34; or &#34;auto&#34;. &#34;auto&#34; is a special mode that</span>
+<span style="color:#75715e"># chooses between &#34;track&#34; and &#34;album&#34; depending on the current state of</span>
+<span style="color:#75715e"># random playback. If random playback is enabled then &#34;track&#34; mode is used.</span>
+<span style="color:#75715e"># See &lt;http://www.replaygain.org&gt; for more details about ReplayGain.</span>
+<span style="color:#75715e"># This setting is off by default.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#replaygain			&#34;album&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This setting sets the pre-amp used for files that have ReplayGain tags. By</span>
+<span style="color:#75715e"># default this setting is disabled.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#replaygain_preamp		&#34;0&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This setting sets the pre-amp used for files that do NOT have ReplayGain tags.</span>
+<span style="color:#75715e"># By default this setting is disabled.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#replaygain_missing_preamp	&#34;0&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This setting enables or disables ReplayGain limiting.</span>
+<span style="color:#75715e"># MPD calculates actual amplification based on the ReplayGain tags</span>
+<span style="color:#75715e"># and replaygain_preamp / replaygain_missing_preamp setting.</span>
+<span style="color:#75715e"># If replaygain_limit is enabled MPD will never amplify audio signal</span>
+<span style="color:#75715e"># above its original level. If replaygain_limit is disabled such amplification</span>
+<span style="color:#75715e"># might occur. By default this setting is enabled.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#replaygain_limit		&#34;yes&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This setting enables on-the-fly normalization volume adjustment. This will</span>
+<span style="color:#75715e"># result in the volume of all playing audio to be adjusted so the output has </span>
+<span style="color:#75715e"># equal &#34;loudness&#34;. This setting is disabled by default.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#volume_normalization		&#34;no&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">###############################################################################</span>
+
+<span style="color:#75715e"># Character Encoding ##########################################################</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># If file or directory names do not display correctly for your locale then you </span>
+<span style="color:#75715e"># may need to modify this setting.</span>
+<span style="color:#75715e">#</span>
+filesystem_charset <span style="color:#e6db74">&#34;UTF-8&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">###############################################################################</span></code></pre></div>
+</article>
+
+    <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>

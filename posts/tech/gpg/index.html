@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    <link rel="stylesheet" href="//192.168.0.199:1313/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    <link href="//192.168.0.199:1313/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+
+    <h1>GPG</h1>
+    <p>Wed Dec 13, 2017</p>
+    
+    <a class="tag tag--primary tag--small"   href="//192.168.0.199:1313/"><font color="green">Home</font></a>
+
+    
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/encrypt">encrypt</a>
+        
+    
+
+    <hr><br>
+<nav id="TableOfContents">
+<ul>
+<li><a href="#gpg-setup">GPG setup</a></li>
+<li><a href="#use-gpg">Use GPG</a></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h2 id="gpg-setup">GPG setup</h2>
+
+<ul>
+<li><p>.bashrc</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GPG_TTY<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>tty<span style="color:#66d9ef">)</span>
+export GPG_TTY</code></pre></div></li>
+
+<li><p>import public key</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --import sone.bin</code></pre></div></li>
+
+<li><p>check finger print</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --fingerprint</code></pre></div></li>
+
+<li><p>.vimrc</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;jamessan/vim-gnupg&#39;</span></code></pre></div></li>
+
+<li><p>generate keys</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --full-generate-key</code></pre></div></li>
+</ul>
+
+<h2 id="use-gpg">Use GPG</h2>
+
+<ul>
+<li><p>encrypt file with recipient</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --output doc.gpg --encrypt --recipient blake@cyb.org doc</code></pre></div></li>
+
+<li><p>encrypt file with password</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg -c doc</code></pre></div></li>
+
+<li><p>decrypt file</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --output doc --decrypt doc.gpg</code></pre></div></li>
+</ul>
+
+</article>
+
+    <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>

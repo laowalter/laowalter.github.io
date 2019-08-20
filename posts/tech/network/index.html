@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    <link rel="stylesheet" href="//192.168.0.199:1313/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    <link href="//192.168.0.199:1313/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+
+    <h1>Network</h1>
+    <p>Wed Mar 7, 2018</p>
+    
+    <a class="tag tag--primary tag--small"   href="//192.168.0.199:1313/"><font color="green">Home</font></a>
+
+    
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/network">network</a>
+        
+    
+
+    <hr><br>
+<nav id="TableOfContents">
+<ul>
+<li><a href="#about-ipv6-things">About IPV6 things</a></li>
+<li><a href="#list-opened-ports-and-program-own-them">List opened ports and program own them.</a></li>
+<li><a href="#多网卡">多网卡</a></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h2 id="about-ipv6-things">About IPV6 things</h2>
+
+<ul>
+<li><a href="http://blog.kompaz.win/2017/02/22/OpenWRT%20IPv6%20%E9%85%8D%E7%BD%AE/">OpenWRT IPv6 三种配置方式</a></li>
+</ul>
+
+<h2 id="list-opened-ports-and-program-own-them">List opened ports and program own them.</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo lsof -i
+sudo netstat -lptu
+sudo netstat -tulpn</code></pre></div>
+<ul>
+<li><p>Which port bounded to port 22</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo lsof -i :22</code></pre></div></li>
+</ul>
+
+<h2 id="多网卡">多网卡</h2>
+
+<ul>
+<li><a href="https://kindlund.wordpress.com/2007/11/19/configuring-multiple-default-routes-in-linux/">Ref.1:多网卡配置使用ip route</a></li>
+<li><a href="https://wiki.gentoo.org/wiki/Static_Routing">Gentoo 多网卡、静态路由</a></li>
+</ul>
+
+</article>
+
+    <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>

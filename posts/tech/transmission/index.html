@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    <link rel="stylesheet" href="//192.168.0.199:1313/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    <link href="//192.168.0.199:1313/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+
+    <h1>Transmission</h1>
+    <p>Fri Nov 24, 2017</p>
+    
+    <a class="tag tag--primary tag--small"   href="//192.168.0.199:1313/"><font color="green">Home</font></a>
+
+    
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/download">download</a>
+        
+    
+
+    <hr><br>
+<article>
+    <p><code>Notice</code></p>
+
+<p>BE SURE to stop transmission daemon first before change the follow setting.</p>
+
+<p>** if disable ipv6 set  &ldquo;bind-address-ipv6&rdquo;: &ldquo;fe80::&rdquo; **</p>
+
+<p>%filename: /var/lib/transmission/config/settings.json</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">{
+    <span style="color:#e6db74">&#34;alt-speed-down&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">50</span>,
+    <span style="color:#e6db74">&#34;alt-speed-enabled&#34;</span><span style="color:#f92672">:</span> false,
+    <span style="color:#e6db74">&#34;alt-speed-time-begin&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">540</span>,
+    <span style="color:#e6db74">&#34;alt-speed-time-day&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">127</span>,
+    <span style="color:#e6db74">&#34;alt-speed-time-enabled&#34;</span><span style="color:#f92672">:</span> false,
+    <span style="color:#e6db74">&#34;alt-speed-time-end&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1020</span>,
+    <span style="color:#e6db74">&#34;alt-speed-up&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">50</span>,
+    <span style="color:#e6db74">&#34;bind-address-ipv4&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0.0.0.0&#34;</span>,
+    <span style="color:#e6db74">&#34;bind-address-ipv6&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;::&#34;</span>,
+    <span style="color:#e6db74">&#34;blocklist-enabled&#34;</span><span style="color:#f92672">:</span> false,
+    <span style="color:#e6db74">&#34;blocklist-url&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;http://www.example.com/blocklist&#34;</span>,
+    <span style="color:#e6db74">&#34;cache-size-mb&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">4</span>,
+    <span style="color:#e6db74">&#34;dht-enabled&#34;</span><span style="color:#f92672">:</span> true,
+    <span style="color:#e6db74">&#34;download-dir&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;/data/downloads/torrents/&#34;</span>,
+    <span style="color:#e6db74">&#34;download-queue-enabled&#34;</span><span style="color:#f92672">:</span> true,
+    <span style="color:#e6db74">&#34;download-queue-size&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>,
+    <span style="color:#e6db74">&#34;encryption&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+    <span style="color:#e6db74">&#34;idle-seeding-limit&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">30</span>,
+    <span style="color:#e6db74">&#34;idle-seeding-limit-enabled&#34;</span><span style="color:#f92672">:</span> false,
+    <span style="color:#e6db74">&#34;incomplete-dir&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;/data/downloads/torrents/incomplete&#34;</span>,
+    <span style="color:#e6db74">&#34;incomplete-dir-enabled&#34;</span><span style="color:#f92672">:</span> false,
+    <span style="color:#e6db74">&#34;lpd-enabled&#34;</span><span style="color:#f92672">:</span> false,
+    <span style="color:#e6db74">&#34;message-level&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
+    <span style="color:#e6db74">&#34;peer-congestion-algorithm&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#e6db74">&#34;peer-id-ttl-hours&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">6</span>,
+    <span style="color:#e6db74">&#34;peer-limit-global&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span>,
+    <span style="color:#e6db74">&#34;peer-limit-per-torrent&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">50</span>,
+    <span style="color:#e6db74">&#34;peer-port&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">51413</span>,
+    <span style="color:#e6db74">&#34;peer-port-random-high&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">65535</span>,
+    <span style="color:#e6db74">&#34;peer-port-random-low&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">49152</span>,
+    <span style="color:#e6db74">&#34;peer-port-random-on-start&#34;</span><span style="color:#f92672">:</span> false,
+    <span style="color:#e6db74">&#34;peer-socket-tos&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;default&#34;</span>,
+    <span style="color:#e6db74">&#34;pex-enabled&#34;</span><span style="color:#f92672">:</span> true,
+    <span style="color:#e6db74">&#34;pidfile&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;/var/run/transmission/transmission.pid&#34;</span>,
+    <span style="color:#e6db74">&#34;port-forwarding-enabled&#34;</span><span style="color:#f92672">:</span> true,
+    <span style="color:#e6db74">&#34;preallocation&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+    <span style="color:#e6db74">&#34;prefetch-enabled&#34;</span><span style="color:#f92672">:</span> true,
+    <span style="color:#e6db74">&#34;queue-stalled-enabled&#34;</span><span style="color:#f92672">:</span> true,
+    <span style="color:#e6db74">&#34;queue-stalled-minutes&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">30</span>,
+    <span style="color:#e6db74">&#34;ratio-limit&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
+    <span style="color:#e6db74">&#34;ratio-limit-enabled&#34;</span><span style="color:#f92672">:</span> false,
+    <span style="color:#e6db74">&#34;rename-partial-files&#34;</span><span style="color:#f92672">:</span> true,
+    <span style="color:#e6db74">&#34;rpc-authentication-required&#34;</span><span style="color:#f92672">:</span> false,
+    <span style="color:#e6db74">&#34;rpc-bind-address&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0.0.0.0&#34;</span>,
+    <span style="color:#e6db74">&#34;rpc-enabled&#34;</span><span style="color:#f92672">:</span> true,
+    <span style="color:#e6db74">&#34;rpc-password&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;{0e297507488854e5e744c47447fe5e0690ae740fXG4YERW3&#34;</span>,
+    <span style="color:#e6db74">&#34;rpc-port&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">9091</span>,
+    <span style="color:#e6db74">&#34;rpc-url&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;/transmission/&#34;</span>,
+    <span style="color:#e6db74">&#34;rpc-username&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#e6db74">&#34;rpc-whitelist&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;127.0.0.1, 192.168.*.*&#34;</span>,
+    <span style="color:#e6db74">&#34;rpc-whitelist-enabled&#34;</span><span style="color:#f92672">:</span> true,
+    <span style="color:#e6db74">&#34;scrape-paused-torrents-enabled&#34;</span><span style="color:#f92672">:</span> true,
+    <span style="color:#e6db74">&#34;script-torrent-done-enabled&#34;</span><span style="color:#f92672">:</span> false,
+    <span style="color:#e6db74">&#34;script-torrent-done-static&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#e6db74">&#34;seed-queue-enabled&#34;</span><span style="color:#f92672">:</span> false,
+    <span style="color:#e6db74">&#34;seed-queue-size&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
+    <span style="color:#e6db74">&#34;speed-limit-down&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1000</span>,
+    <span style="color:#e6db74">&#34;speed-limit-down-enabled&#34;</span><span style="color:#f92672">:</span> true,
+    <span style="color:#e6db74">&#34;speed-limit-up&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span>,
+    <span style="color:#e6db74">&#34;speed-limit-up-enabled&#34;</span><span style="color:#f92672">:</span> true,
+    <span style="color:#e6db74">&#34;start-added-torrents&#34;</span><span style="color:#f92672">:</span> true,
+    <span style="color:#e6db74">&#34;trash-original-torrent-files&#34;</span><span style="color:#f92672">:</span> false,
+    <span style="color:#e6db74">&#34;umask&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18</span>,
+    <span style="color:#e6db74">&#34;upload-slots-per-torrent&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">14</span>,
+    <span style="color:#e6db74">&#34;utp-enabled&#34;</span><span style="color:#f92672">:</span> true
+}</code></pre></div>
+</article>
+
+    <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>

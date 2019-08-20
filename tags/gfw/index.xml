@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gfw on Just a Memo</title>
+    <link>//192.168.0.199:1313/tags/gfw/</link>
+    <description>Recent content in gfw on Just a Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Apr 2018 10:07:42 +0000</lastBuildDate>
+    
+	<atom:link href="//192.168.0.199:1313/tags/gfw/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>xx-net(expired)</title>
+      <link>//192.168.0.199:1313/posts/tech/xx-net/</link>
+      <pubDate>Mon, 30 Apr 2018 10:07:42 +0000</pubDate>
+      
+      <guid>//192.168.0.199:1313/posts/tech/xx-net/</guid>
+      <description>XX-Net https://github.com/XX-net/XX-Net https://github.com/yangyangwithgnu/hardseed 近期问题解决 修改max_scan_ip_thread_num的限制 修改 ~/.xx-net/code/default/gae_proxy/local/config.py Click here to download config.py 的 patch file 安装 3.13.0 以上版本升级 启动之前远程打开管理功能(0</description>
+    </item>
+    
+    <item>
+      <title>Tor</title>
+      <link>//192.168.0.199:1313/posts/tech/tor/</link>
+      <pubDate>Fri, 13 Apr 2018 10:36:08 +0000</pubDate>
+      
+      <guid>//192.168.0.199:1313/posts/tech/tor/</guid>
+      <description>Install tor sudo emerge -avq tor Intall meek git clone https://git.torproject.org/pluggable-transports/meek.git 这里需要了解的一点是meek-client是基于Tor的一个库写的，在代码中也可以看到工程的头部引用了Tor的一个go</description>
+    </item>
+    
+  </channel>
+</rss>

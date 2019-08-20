@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    <link rel="stylesheet" href="//192.168.0.199:1313/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    <link href="//192.168.0.199:1313/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+
+    <h1>Perl</h1>
+    <p>Mon Feb 29, 2016</p>
+    
+    <a class="tag tag--primary tag--small"   href="//192.168.0.199:1313/"><font color="green">Home</font></a>
+
+    
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/perl">perl</a>
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/mysql">mysql</a>
+        
+    
+
+    <hr><br>
+<nav id="TableOfContents">
+<ul>
+<li><a href="#install-perlbrew-to-gentoo-linux">Install perlbrew to Gentoo Linux</a></li>
+<li><a href="#install-perlbrew-to-mac-osx">Install Perlbrew to Mac OSX</a></li>
+<li><a href="#perl-mysql-utf8">Perl mysql utf8</a></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h2 id="install-perlbrew-to-gentoo-linux">Install perlbrew to Gentoo Linux</h2>
+
+<p><strong>Install to /opt/</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export PERLBREW_ROOT<span style="color:#f92672">=</span>/opt/perl5
+curl -L https://install.perlbrew.pl | bash
+perlbrew lib create base;</code></pre></div>
+<h2 id="install-perlbrew-to-mac-osx">Install Perlbrew to Mac OSX</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	<span style="color:#ae81ff">\c</span>url -L http://install.perlbrew.pl | bash
+	perlbrew available
+	perlbrew install perl-5.23.3
+	perlbrew install-cpanm
+	perlbrew lib create base;
+	perlbrew switch perl-5.23.3@base</code></pre></div>
+<h2 id="perl-mysql-utf8">Perl mysql utf8</h2>
+
+<ol>
+<li><p>First of all, make sure your locale is in UTF8</p>
+
+<ul>
+<li><p>mysql</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/etc/my.cnf
+<span style="color:#f92672">[</span>client<span style="color:#f92672">]</span>
+default-character-set<span style="color:#f92672">=</span>utf8
+        
+<span style="color:#f92672">[</span>mysql<span style="color:#f92672">]</span>
+default-character-set<span style="color:#f92672">=</span>utf8
+        
+<span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
+init-connect<span style="color:#f92672">=</span>’SET NAMES utf8’
+collation-server <span style="color:#f92672">=</span> utf8_unicode_ci
+character-set-server <span style="color:#f92672">=</span> utf8</code></pre></div></li>
+</ul></li>
+
+<li><p>Perl script:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">    binmode STDOUT, <span style="color:#e6db74">&#34;:utf8&#34;</span>; <span style="color:#e6db74">//</span>remove wide character warning<span style="color:#f92672">.</span></code></pre></div></li>
+
+<li><p>Connect to the database</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">    <span style="color:#66d9ef">my</span> $dbh <span style="color:#f92672">=</span> DBI<span style="color:#f92672">-&gt;</span>connect(<span style="color:#e6db74">&#34;DBI:mysql:database=nameofdb;host=localhost&#34;</span>,
+                   <span style="color:#e6db74">&#34;root&#34;</span>, <span style="color:#e6db74">&#34;password&#34;</span>,
+                   {<span style="color:#e6db74">&#39;RaiseError&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>,
+                   <span style="color:#e6db74">&#39;mysql_enable_utf8&#39;</span> <span style="color:#f92672">=&gt;</span><span style="color:#ae81ff">1</span>}); <span style="color:#e6db74">//</span> This is important to confirm utf8 connection<span style="color:#f92672">.</span></code></pre></div></li>
+</ol>
+
+</article>
+
+    <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    <link rel="stylesheet" href="//192.168.0.199:1313/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    <link href="//192.168.0.199:1313/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+
+    <h1>Ethereum</h1>
+    <p>Tue Mar 27, 2018</p>
+    
+    <a class="tag tag--primary tag--small"   href="//192.168.0.199:1313/"><font color="green">Home</font></a>
+
+    
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/net">net</a>
+        
+    
+
+    <hr><br>
+<nav id="TableOfContents">
+<ul>
+<li><a href="#install">Install</a>
+<ul>
+<li><a href="#gentoo">Gentoo</a></li>
+<li><a href="#create-get-account">Create get account</a></li>
+<li><a href="#create-ethereum-wallet">Create ethereum wallet</a></li>
+<li><a href="#mining">Mining</a>
+<ul>
+<li><a href="#use-internet-server">Use Internet Server</a></li>
+<li><a href="#with-geth">With geth</a>
+<ul>
+<li><a href="#cpu-mining">CPU Mining</a></li>
+<li><a href="#gpu-mining">GPU Mining</a></li>
+</ul></li>
+<li><a href="#with-ethermine">With ethermine</a></li>
+<li><a href="#multi-machine-mini">Multi Machine Mini</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h2 id="install">Install</h2>
+
+<h3 id="gentoo">Gentoo</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ sudo layman -a foxiverlay
+    $ sudo eix-update
+    $ emerge -avq net-p2p/go-ethereum
+    $ emerge -avq net-p2p/ethminer</code></pre></div>
+<h3 id="create-get-account">Create get account</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">   $ geth account new</code></pre></div>
+<h3 id="create-ethereum-wallet">Create ethereum wallet</h3>
+
+<ol>
+<li>Go to <a href="https://github.com/ethereum/mist/releases">https://github.com/ethereum/mist/releases</a></li>
+
+<li><p>Download windows version, tutotial<a href="https://medium.com/@attores/step-by-step-guide-getting-started-with-ethereum-mist-wallet-772a3cc99af4">https://medium.com/@attores/step-by-step-guide-getting-started-with-ethereum</a></p></li>
+
+<li><p>etherminer<a href="https://github.com/ethereum-mining/ethminer/releases">https://github.com/ethereum-mining/ethminer/releases</a></p></li>
+</ol>
+
+<h3 id="mining">Mining</h3>
+
+<h4 id="use-internet-server">Use Internet Server</h4>
+
+<ul>
+<li><a href="https://ethermine.org">ethermine.org</a> server list</li>
+
+<li><p>Command line</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ethminer.exe -G -P stratum+ssl://0x3DC7F73Ad59e55f41fc8a40F0304F9e243358f9a.miner1@asia1.ethermine.org:5555</code></pre></div></li>
+</ul>
+
+<h4 id="with-geth">With geth</h4>
+
+<h5 id="cpu-mining">CPU Mining</h5>
+
+<ul>
+<li><p>linux</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">geth --mine --minerthreads<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span> --cache <span style="color:#ae81ff">4096</span></code></pre></div></li>
+</ul>
+
+<h5 id="gpu-mining">GPU Mining</h5>
+
+<h4 id="with-ethermine">With ethermine</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/ethereum-mining/ethminer/releases</code></pre></div>
+<ul>
+<li>windows</li>
+</ul>
+
+<p><code>Note: 0.14rc3版本 -F 开关说是过时了，用-P替代，但是用-P程序就崩溃了。所以只能用-F</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ethminer.exe -G -F http://192.168.0.199:8545/?miner<span style="color:#f92672">=</span>0x3DC7F73Ad59e55f41fc8a40F0304F9e243358f9a</code></pre></div>
+<h4 id="multi-machine-mini">Multi Machine Mini</h4>
+
+<p>Start as a server</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ethminer --rpc --rpcaddr <span style="color:#ae81ff">192</span>.168.0.199 --rpcport <span style="color:#ae81ff">8545</span></code></pre></div>
+</article>
+
+    <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>

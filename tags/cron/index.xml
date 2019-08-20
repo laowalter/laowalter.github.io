@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cron on Just a Memo</title>
+    <link>//192.168.0.199:1313/tags/cron/</link>
+    <description>Recent content in cron on Just a Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 04 May 2018 17:58:52 +0000</lastBuildDate>
+    
+	<atom:link href="//192.168.0.199:1313/tags/cron/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cron</title>
+      <link>//192.168.0.199:1313/posts/tech/cron/</link>
+      <pubDate>Fri, 04 May 2018 17:58:52 +0000</pubDate>
+      
+      <guid>//192.168.0.199:1313/posts/tech/cron/</guid>
+      <description> Install emerge -avq vixie-cron  Crontab %filename: Crontab
+* * * * * command to be executed - - - - - | | | | | | | | | +----- day of week (0 - 6) (Sunday=0) | | | +------- month (1 - 12) | | +--------- day of month (1 - 31) | +----------- hour (0 - 23) +------------- min (0 - 59)</description>
+    </item>
+    
+  </channel>
+</rss>

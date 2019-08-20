@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    <link rel="stylesheet" href="//192.168.0.199:1313/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    <link href="//192.168.0.199:1313/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+
+    <h1>Stocktools Installation</h1>
+    <p>Wed Aug 29, 2018</p>
+    
+    <a class="tag tag--primary tag--small"   href="//192.168.0.199:1313/"><font color="green">Home</font></a>
+
+    
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/stock">stock</a>
+        
+    
+
+    <hr><br>
+<nav id="TableOfContents">
+<ul>
+<li><a href="#matplotlib">Matplotlib</a></li>
+<li><a href="#ta-lib">TA-Lib</a>
+<ul>
+<li><a href="#install">Install</a></li>
+<li><a href="#使用">使用：</a></li>
+</ul></li>
+<li><a href="#statsmodels">Statsmodels</a></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h2 id="matplotlib">Matplotlib</h2>
+
+<ol>
+<li><p>Install</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install pygtk</code></pre></div></li>
+</ol>
+
+<p>Since already install PyQt5, so edit <code>./matplotlib/matplotlibrc</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Fro UTF8 fonts
+backend: Qt5Agg
+font.sans-serif : STHeiti
+axes.unicode_minus  : False</code></pre></div>
+<h2 id="ta-lib">TA-Lib</h2>
+
+<h3 id="install">Install</h3>
+
+<ul>
+<li><p>Gentoo</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq sci-libs/ta-lib-0.4.0
+pip install TA-lib</code></pre></div></li>
+
+<li><p>Mac</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew install ta-lib
+$ pip install TA-Lib</code></pre></div></li>
+</ul>
+
+<h3 id="使用">使用：</h3>
+
+<ul>
+<li><a href="http://mrjbq7.github.io/ta-lib/doc_index.html">Documents: http://mrjbq7.github.io/ta-lib/doc_index.html</a></li>
+
+<li><p>TA-Lib MA_Type 参数类型的意义</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> talib
+<span style="color:#f92672">from</span> talib <span style="color:#f92672">import</span> MA_Type
+
+MA_Type: <span style="color:#ae81ff">0</span><span style="color:#f92672">=</span>SMA, <span style="color:#ae81ff">1</span><span style="color:#f92672">=</span>EMA, <span style="color:#ae81ff">2</span><span style="color:#f92672">=</span>WMA, <span style="color:#ae81ff">3</span><span style="color:#f92672">=</span>DEMA, <span style="color:#ae81ff">4</span><span style="color:#f92672">=</span>TEMA, <span style="color:#ae81ff">5</span><span style="color:#f92672">=</span>TRIMA, <span style="color:#ae81ff">6</span><span style="color:#f92672">=</span>KAMA, <span style="color:#ae81ff">7</span><span style="color:#f92672">=</span>MAMA, <span style="color:#ae81ff">8</span><span style="color:#f92672">=</span>T3 (Default<span style="color:#f92672">=</span>SMA)</code></pre></div></li>
+</ul>
+
+<p>移动平均（英语：moving average，MA），又称“移动平均线”简称均线，是技术分析中一种分析时间序列数据的工具。最常见的是利用股价、回报或交易量等变数计算出移动平均。
+移动平均可抚平短期波动，反映出长期趋势或周期。数学上，移动平均可视为一种卷积。</p>
+
+<p>简单移动平均（英语：simple moving average，SMA）是某变数之前n个数值的未作加权算术平均。例如，收市价的10日简单移动平均指之前10日收市价的平均数。：</p>
+
+<p>当计算连续的数值，一个新的数值加入，同时一个旧数值剔出，所以无需每次都重新逐个数值加起来。
+在技术分析中，不同的市场对常用天数（n值）有不同的需求，例如：某些市场普遍的n值为10日、40日、200日；有些则是5日、10日、20日、60日、120日、240日，视乎分析时期长短而定。投资者冀从移动平均线的图表中分辨出支持位或阻力位。</p>
+
+<p>加权移动平均（英语：weighted moving average，WMA）指计算平均值时将个别数据乘以不同数值，在技术分析中，n日WMA的最近期一个数值乘以n、次近的乘以n-1，如此类推，一直到0：</p>
+
+<p>指数移动平均（英语：exponential moving average，EMA或EWMA）是以指数式递减加权的移动平均。各数值的加权影响力随时间而指数式递减，越近期的数据加权影响力越重，但较旧的数据也给予一定的加权值</p>
+
+<h2 id="statsmodels">Statsmodels</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ pip install statsmodels</code></pre></div>
+</article>
+
+    <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>

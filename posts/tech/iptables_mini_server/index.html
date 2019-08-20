@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    <link rel="stylesheet" href="//192.168.0.199:1313/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    <link href="//192.168.0.199:1313/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+
+    <h1>IPTABLES (Mini Server)</h1>
+    <p>Sat Dec 9, 2017</p>
+    
+    <a class="tag tag--primary tag--small"   href="//192.168.0.199:1313/"><font color="green">Home</font></a>
+
+    
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/iptables">iptables</a>
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/net">net</a>
+        
+    
+
+    <hr><br>
+<nav id="TableOfContents">
+<ul>
+<li><a href="#参考资料">参考资料</a>
+<ul>
+<li><a href="#list-openned-ports">list openned ports</a></li>
+<li><a href="#ternedo-miredo-共存-iptables">Ternedo / Miredo 共存 iptables</a>
+<ul>
+<li><a href="#about-ternedo-http-www-microsoft-com-technet-network-ipv6-teredo-mspx"><a href="http://www.microsoft.com/technet/network/ipv6/teredo.mspx">About Ternedo</a></a></li>
+<li><a href="#iptables-miredo-转载如下-https-support-microsoft-com-en-us-help-968510-firewall-requirements-for-coexisting-with-teredo"><a href="https://support.microsoft.com/en-us/help/968510/firewall-requirements-for-coexisting-with-teredo">iptables Miredo 转载如下</a></a></li>
+</ul></li>
+<li><a href="#my-iptables">My iptables</a>
+<ul>
+<li><a href="#iptables-save">iptables.save</a></li>
+<li><a href="#add-the-service-to-default">Add the service to default</a></li>
+</ul></li>
+<li><a href="#etc-init-d-iptables-save-to-where">/etc/init.d/iptables save to where</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h2 id="参考资料">参考资料</h2>
+
+<ul>
+<li><a href="https://lesca.me/archives/iptables-examples.html">iptables常用规则：屏蔽IP地址、禁用ping、协议设置、NAT与转发、负载平衡、自定义链</a></li>
+<li><a href="https://lesca.me/topics/network/iptables">各种iptables中文资料</a></li>
+<li><a href="https://www.thegeekstuff.com/2011/06/iptables-rules-examples/">Most Frequently Used Linux IPTables Rules Examples</a></li>
+<li><a href="https://www.jethrocarr.com/2013/02/09/ip6tables-ipv6-icmp-vs-icmp/">ipv6(miredo) and ipv4 共存</a></li>
+</ul>
+
+<h3 id="list-openned-ports">list openned ports</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">walter@mini ~/blog $ sudo netstat -lptu
+Active Internet connections <span style="color:#f92672">(</span>only servers<span style="color:#f92672">)</span>
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">192</span>.168.0.199:8000      <span style="color:#ae81ff">0</span>.0.0.0:*               LISTEN      <span style="color:#ae81ff">3614</span>/nginx: master
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>.0.0.0:9091            <span style="color:#ae81ff">0</span>.0.0.0:*               LISTEN      <span style="color:#ae81ff">16078</span>/transmission-
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">192</span>.168.0.199:60967     <span style="color:#ae81ff">0</span>.0.0.0:*               LISTEN      <span style="color:#ae81ff">16078</span>/transmission-
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">192</span>.168.0.199:6600      <span style="color:#ae81ff">0</span>.0.0.0:*               LISTEN      <span style="color:#ae81ff">3421</span>/mpd
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">127</span>.0.0.1:3306          <span style="color:#ae81ff">0</span>.0.0.0:*               LISTEN      <span style="color:#ae81ff">3515</span>/mysqld
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>.0.0.0:139             <span style="color:#ae81ff">0</span>.0.0.0:*               LISTEN      <span style="color:#ae81ff">3684</span>/smbd
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">192</span>.168.0.199:80        <span style="color:#ae81ff">0</span>.0.0.0:*               LISTEN      <span style="color:#ae81ff">3614</span>/nginx: master
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>.0.0.0:8085            <span style="color:#ae81ff">0</span>.0.0.0:*               LISTEN      <span style="color:#ae81ff">32436</span>/python2
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">192</span>.168.0.199:22        <span style="color:#ae81ff">0</span>.0.0.0:*               LISTEN      <span style="color:#ae81ff">32654</span>/sshd
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>.0.0.0:8086            <span style="color:#ae81ff">0</span>.0.0.0:*               LISTEN      <span style="color:#ae81ff">32436</span>/python2
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>.0.0.0:8087            <span style="color:#ae81ff">0</span>.0.0.0:*               LISTEN      <span style="color:#ae81ff">32436</span>/python2
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">192</span>.168.0.199:631       <span style="color:#ae81ff">0</span>.0.0.0:*               LISTEN      <span style="color:#ae81ff">3202</span>/cupsd
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">192</span>.168.0.199:8888      <span style="color:#ae81ff">0</span>.0.0.0:*               LISTEN      <span style="color:#ae81ff">3306</span>/python3.6
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>.0.0.0:445             <span style="color:#ae81ff">0</span>.0.0.0:*               LISTEN      <span style="color:#ae81ff">3684</span>/smbd
+tcp6       <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> :::548                  :::*                    LISTEN      <span style="color:#ae81ff">3579</span>/afpd
+tcp6       <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> :::139                  :::*                    LISTEN      <span style="color:#ae81ff">3684</span>/smbd
+tcp6       <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> ::1:4700                :::*                    LISTEN      <span style="color:#ae81ff">3580</span>/cnid_metad
+tcp6       <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> :::445                  :::*                    LISTEN      <span style="color:#ae81ff">3684</span>/smbd
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>.0.0.0:59787           <span style="color:#ae81ff">0</span>.0.0.0:*                           <span style="color:#ae81ff">16078</span>/transmission-
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">192</span>.168.0.199:3555      <span style="color:#ae81ff">0</span>.0.0.0:*                           <span style="color:#ae81ff">3341</span>/miredo
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">192</span>.168.0.199:60967     <span style="color:#ae81ff">0</span>.0.0.0:*                           <span style="color:#ae81ff">16078</span>/transmission-
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>.0.0.0:37101           <span style="color:#ae81ff">0</span>.0.0.0:*                           <span style="color:#ae81ff">16078</span>/transmission-
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>.0.0.0:39175           <span style="color:#ae81ff">0</span>.0.0.0:*                           <span style="color:#ae81ff">16078</span>/transmission-
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">39</span>.12.152.143:6771      <span style="color:#ae81ff">0</span>.0.0.0:*                           <span style="color:#ae81ff">16078</span>/transmission-
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">192</span>.168.0.199:123       <span style="color:#ae81ff">0</span>.0.0.0:*                           <span style="color:#ae81ff">3649</span>/ntpd: ntp engi
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">192</span>.168.0.255:137       <span style="color:#ae81ff">0</span>.0.0.0:*                           <span style="color:#ae81ff">3693</span>/nmbd
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">192</span>.168.0.199:137       <span style="color:#ae81ff">0</span>.0.0.0:*                           <span style="color:#ae81ff">3693</span>/nmbd
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>.0.0.0:137             <span style="color:#ae81ff">0</span>.0.0.0:*                           <span style="color:#ae81ff">3693</span>/nmbd
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">192</span>.168.0.255:138       <span style="color:#ae81ff">0</span>.0.0.0:*                           <span style="color:#ae81ff">3693</span>/nmbd
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">192</span>.168.0.199:138       <span style="color:#ae81ff">0</span>.0.0.0:*                           <span style="color:#ae81ff">3693</span>/nmbd
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>.0.0.0:138             <span style="color:#ae81ff">0</span>.0.0.0:*                           <span style="color:#ae81ff">3693</span>/nmbd
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>.0.0.0:49457           <span style="color:#ae81ff">0</span>.0.0.0:*                           <span style="color:#ae81ff">16078</span>/transmission-
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>.0.0.0:49585           <span style="color:#ae81ff">0</span>.0.0.0:*                           <span style="color:#ae81ff">16078</span>/transmission-
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>.0.0.0:58786           <span style="color:#ae81ff">0</span>.0.0.0:*                           <span style="color:#ae81ff">16078</span>/transmission-
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>.0.0.0:34361           <span style="color:#ae81ff">0</span>.0.0.0:*                           <span style="color:#ae81ff">16078</span>/transmission-</code></pre></div>
+<h3 id="ternedo-miredo-共存-iptables">Ternedo / Miredo 共存 iptables</h3>
+
+<h4 id="about-ternedo-http-www-microsoft-com-technet-network-ipv6-teredo-mspx"><a href="http://www.microsoft.com/technet/network/ipv6/teredo.mspx">About Ternedo</a></h4>
+
+<h4 id="iptables-miredo-转载如下-https-support-microsoft-com-en-us-help-968510-firewall-requirements-for-coexisting-with-teredo"><a href="https://support.microsoft.com/en-us/help/968510/firewall-requirements-for-coexisting-with-teredo">iptables Miredo 转载如下</a></h4>
+
+<p>In order for client firewalls to coexist with Teredo, the firewalls must follow the guidelines listed below.</p>
+
+<ol>
+<li>The client firewall must allow resolution of teredo.IPv6.microsoft.com.</li>
+<li>The client firewall must exempt UDP IPv4 traffic to/ from remote UDP port 3544.
+
+<ul>
+<li>Port 3544 allows the client to communicate to the Teredo Server.</li>
+</ul></li>
+
+<li><p>Client firewalls must support the following ICMPv6 error messages &amp; discovery functions:</p>
+
+<ol>
+<li>ICMPv6 Neighbor Solicitation / Neighbor Advertisement
+
+<ol>
+<li>The codes for these are 135 and 136</li>
+</ol></li>
+<li>ICMPv6 Echo Request/ Reply
+
+<ol>
+<li>The codes for these are 128 and 129</li>
+</ol></li>
+<li>Packet Too Big
+
+<ol>
+<li>The code for this is 2</li>
+</ol></li>
+<li>Parameter Problem
+
+<ol>
+<li>The code for this  is 4</li>
+</ol></li>
+<li>Time Exceeded
+
+<ol>
+<li>The codes for this is 3</li>
+</ol></li>
+<li>Destination Unreachable
+
+<ol>
+<li>The code for this is 1</li>
+</ol></li>
+<li>Router Solicitation / Router Advertisement
+
+<ol>
+<li>Codes 133 and 134
+<br /></li>
+</ol></li>
+</ol>
+
+<p>Note:  If the above ICMPv6 messages cannot be specifically allowed, then the exemption of all ICMPv6 messages should be enabled on the firewall</p></li>
+
+<li><p>The client firewall should allow the system to send and receive UDP/IPv4 packets to UDP port 1900</p>
+
+<ul>
+<li>Port 1900 allows UPnP discovery traffic to flow, and while is not necessary, will improve connectivity rates.</li>
+</ul></li>
+</ol>
+
+<h3 id="my-iptables">My iptables</h3>
+
+<h4 id="iptables-save">iptables.save</h4>
+
+<pre><code># Generated by iptables-save v1.6.1 on Sat Jun 23 15:52:49 2018
+*nat
+:PREROUTING ACCEPT [177:12260]
+:INPUT ACCEPT [165:11324]
+:OUTPUT ACCEPT [164:14376]
+:POSTROUTING ACCEPT [164:14376]
+-A POSTROUTING -s 192.168.6.0/24 -j SNAT --to-source 192.168.0.199
+COMMIT
+# Completed on Sat Jun 23 15:52:49 2018
+# Generated by iptables-save v1.6.1 on Sat Jun 23 15:52:49 2018
+*mangle
+:PREROUTING ACCEPT [39273:32137779]
+:INPUT ACCEPT [39273:32137779]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [35864:25741216]
+:POSTROUTING ACCEPT [35866:25741682]
+COMMIT
+# Completed on Sat Jun 23 15:52:49 2018
+# Generated by iptables-save v1.6.1 on Sat Jun 23 15:52:49 2018
+*filter
+:INPUT DROP [8:936]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-A INPUT -p tcp -m tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p tcp -m tcp --dport 873 -m state --state NEW,ESTABLISHED -j ACCEPT
+-A INPUT -p tcp -m tcp --sport 873 -m state --state NEW,ESTABLISHED -j ACCEPT
+-A INPUT -p tcp -m tcp --sport 80 -j ACCEPT
+-A INPUT -p tcp -m tcp --sport 443 -j ACCEPT
+-A INPUT -p tcp -m tcp --sport 21 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 80 -m state --state NEW,ESTABLISHED -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 443 -m state --state NEW,ESTABLISHED -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 8000 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 8888 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 7001 -j ACCEPT
+-A INPUT -p udp -m udp --sport 53 -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -p udp -m udp --dport 53 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 53 -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p tcp -m tcp --dport 8085 -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p tcp -m tcp --dport 8086 -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p tcp -m tcp --dport 8087 -j ACCEPT
+-A INPUT -i wlan0 -p tcp -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p tcp -m tcp --dport 9091 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 56230 -j ACCEPT
+-A INPUT -p udp -m udp --dport 56230 -j ACCEPT
+-A INPUT -p udp -m udp --dport 49152:65535 -j ACCEPT
+-A INPUT -p udp -m udp --dport 3545 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 3545 -j ACCEPT
+-A INPUT -p ipv6-icmp -j ACCEPT
+-A INPUT -i teredo -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 123 -j ACCEPT
+-A INPUT -i lo -m state --state NEW -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p udp -m udp --dport 548 -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p udp -m udp --dport 5353 -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p udp -m udp --dport 427 -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p udp -m udp --dport 201 -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p udp -m udp --dport 202 -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p udp -m udp --dport 204 -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p udp -m udp --dport 206 -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p udp -m udp --dport 1900 -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p tcp -m tcp --dport 548 -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p tcp -m tcp --dport 5353 -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p tcp -m tcp --dport 427 -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p tcp -m tcp --dport 201 -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p tcp -m tcp --dport 202 -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p tcp -m tcp --dport 204 -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p tcp -m tcp --dport 206 -j ACCEPT
+-A INPUT -s 192.168.0.0/24 -p tcp -m tcp --dport 1900 -j ACCEPT
+-A INPUT -i eth0 -p udp -m udp --dport 138 -m state --state NEW -j ACCEPT
+-A INPUT -i eth0 -p udp -m udp --dport 137 -m state --state NEW -j ACCEPT
+-A INPUT -i eth0 -p tcp -m tcp --dport 445 -m state --state NEW -j ACCEPT
+-A INPUT -i eth0 -p tcp -m tcp --dport 135 -m state --state NEW -j ACCEPT
+-A INPUT -i eth0 -p tcp -m tcp --dport 139 -m state --state NEW -j ACCEPT
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -m state --state INVALID -j DROP
+-A FORWARD -p ipv6-icmp -j ACCEPT
+-A FORWARD -i teredo -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -m state --state INVALID -j DROP
+-A FORWARD -m state --state NEW -j ACCEPT
+-A OUTPUT -p tcp -m tcp --sport 22 -j ACCEPT
+-A OUTPUT -p tcp -m tcp --sport 80 -j ACCEPT
+-A OUTPUT -p tcp -m tcp --sport 8000 -j ACCEPT
+-A OUTPUT -d 192.168.0.0/24 -p tcp -m tcp --sport 8886 -j ACCEPT
+-A OUTPUT -d 192.168.0.0/24 -p tcp -m tcp --sport 8887 -j ACCEPT
+-A OUTPUT -d 192.168.0.0/24 -p tcp -m tcp --sport 8888 -j ACCEPT
+-A OUTPUT -d 192.168.0.0/24 -p tcp -m tcp --sport 7001 -j ACCEPT
+-A OUTPUT -o wlan0 -p tcp -j ACCEPT
+-A OUTPUT -p udp -m udp --sport 56230 -j ACCEPT
+-A OUTPUT -p tcp -m tcp --sport 56230 -j ACCEPT
+-A OUTPUT -p udp -m udp --sport 3545 -j ACCEPT
+-A OUTPUT -p tcp -m tcp --sport 3545 -j ACCEPT
+-A OUTPUT -p ipv6-icmp -j ACCEPT
+-A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A OUTPUT -m state --state INVALID -j DROP
+-A OUTPUT -m state --state NEW -j ACCEPT
+COMMIT
+</code></pre>
+
+<h4 id="add-the-service-to-default">Add the service to default</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /etc/init.d/iptables save</span>
+<span style="color:#75715e"># /etc/init.d/ip6tables save</span>
+<span style="color:#75715e"># /etc/init.d/iptables start</span>
+<span style="color:#75715e"># /etc/init.d/ip6tables start</span>
+<span style="color:#75715e"># rc-update add iptables default</span>
+<span style="color:#75715e"># rc-update add ip6tables default</span></code></pre></div>
+<h3 id="etc-init-d-iptables-save-to-where">/etc/init.d/iptables save to where</h3>
+
+<ul>
+<li>/var/lib/ip6tables</li>
+<li>/var/lib/iptables</li>
+</ul>
+
+</article>
+
+    <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mysql on Just a Memo</title>
+    <link>//192.168.0.199:1313/tags/mysql/</link>
+    <description>Recent content in mysql on Just a Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Feb 2016 10:40:40 +0000</lastBuildDate>
+    
+	<atom:link href="//192.168.0.199:1313/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DataBases</title>
+      <link>//192.168.0.199:1313/posts/tech/databases/</link>
+      <pubDate>Mon, 29 Feb 2016 10:40:40 +0000</pubDate>
+      
+      <guid>//192.168.0.199:1313/posts/tech/databases/</guid>
+      <description>Mongodb Enter mongo shell mongo 192.168.0.25 Start mongodb  Upgrade
+brew upgrade mongodb brew info mongdb ln -s /usr/local/Cellar/mongodb/3.2.4/bin/* /usr/local/bin/ config: /usr/local/etc/mongod.conf, Dont forget touh /usr/local/var/log/mongodb/mongo.log
+  %filename: /usr/local/etc/mongod.conf
+systemLog: destination: file path: /usr/local/var/log/mongodb/mongo.log logAppend: true	storage: dbPath: /Volumes/Home/Walter/mongodb	net: bindIp: 192.168.0.99  manual start
+mongod --config /usr/local/etc/mongod.conf Mac autostart
+ /Library/LaunchDaemons/org.mongo.mongod.plist   %filename: /Library/LaunchDaemons/org.mongo.mongod.plist
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE plist PUBLIC &amp;#34;-//Apple//DTD PLIST 1.0//EN&amp;#34; &amp;#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&amp;#34;&amp;gt; &amp;lt;plist version=&amp;#34;1.0&amp;#34;&amp;gt; &amp;lt;dict&amp;gt; &amp;lt;key&amp;gt;Label&amp;lt;/key&amp;gt; &amp;lt;string&amp;gt;org.</description>
+    </item>
+    
+    <item>
+      <title>Perl</title>
+      <link>//192.168.0.199:1313/posts/tech/perl/</link>
+      <pubDate>Mon, 29 Feb 2016 10:20:56 +0000</pubDate>
+      
+      <guid>//192.168.0.199:1313/posts/tech/perl/</guid>
+      <description>Install perlbrew to Gentoo Linux Install to /opt/
+export PERLBREW_ROOT=/opt/perl5 curl -L https://install.perlbrew.pl | bash perlbrew lib create base; Install Perlbrew to Mac OSX \curl -L http://install.perlbrew.pl | bash perlbrew available perlbrew install perl-5.23.3 perlbrew install-cpanm perlbrew lib create base; perlbrew switch perl-5.23.3@base Perl mysql utf8  First of all, make sure your locale is in UTF8
+ mysql
+/etc/my.cnf [client] default-character-set=utf8 [mysql] default-character-set=utf8 [mysqld] init-connect=’SET NAMES utf8’ collation-server = utf8_unicode_ci character-set-server = utf8  Perl script:</description>
+    </item>
+    
+  </channel>
+</rss>

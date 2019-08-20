@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    <link rel="stylesheet" href="//192.168.0.199:1313/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    <link href="//192.168.0.199:1313/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+
+    <h1>xx-net(expired)</h1>
+    <p>Mon Apr 30, 2018</p>
+    
+    <a class="tag tag--primary tag--small"   href="//192.168.0.199:1313/"><font color="green">Home</font></a>
+
+    
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/gfw">gfw</a>
+        
+    
+
+    <hr><br>
+<nav id="TableOfContents">
+<ul>
+<li><a href="#xx-net">XX-Net</a>
+<ul>
+<li><a href="#近期问题解决">近期问题解决</a>
+<ul>
+<li><a href="#修改max-scan-ip-thread-num的限制">修改max_scan_ip_thread_num的限制</a></li>
+</ul></li>
+<li><a href="#安装">安装</a>
+<ul>
+<li><a href="#3-13-0-以上版本升级">3.13.0 以上版本升级</a></li>
+<li><a href="#关于配置文件的重要说明-https-github-com-xx-net-xx-net-wiki-goagent-config-file"><a href="https://github.com/XX-net/XX-Net/wiki/GoAgent-Config-file">关于配置文件的重要说明</a></a></li>
+<li><a href="#upgrade-xx-net-升级xx-net">Upgrade XX-Net（升级xx-net）</a></li>
+<li><a href="#xx-net-1">XX-Net</a></li>
+<li><a href="#enable-ipv6">Enable IPV6</a></li>
+<li><a href="#xx-net-script-in-mac">XX-Net script in Mac</a></li>
+</ul></li>
+<li><a href="#在xhttp-www-jiaoyizhe-com-forum-16-1-htmlx-net-data-gae-proxy创建config-json-current-但是未能验证其有效性">在xhttp://www.jiaoyizhe.com/forum-16-1.htmlx-net/data/gae_proxy创建config.json (current, 但是未能验证其有效性)</a>
+<ul>
+<li><a href="#在xx-net-data-gae-proxy创建manual-ini-old">在xx-net/data/gae_proxy创建manual.ini (old)</a></li>
+<li><a href="#start-stop-daemon-etc-init-d-xx-net">Start-Stop-Daemon, /etc/init.d/xx-net</a>
+<ul>
+<li><a href="#create-a-user-xx-net-to-running-xx-net">Create a user(xx-net) to running xx-net</a></li>
+<li><a href="#service-daemon-for-running-by-xx-net">Service Daemon for running by xx-net</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h2 id="xx-net">XX-Net</h2>
+
+<ul>
+<li><a href="https://github.com/XX-net/XX-Net">https://github.com/XX-net/XX-Net</a></li>
+<li><a href="https://github.com/yangyangwithgnu/hardseed">https://github.com/yangyangwithgnu/hardseed</a></li>
+</ul>
+
+<h3 id="近期问题解决">近期问题解决</h3>
+
+<h4 id="修改max-scan-ip-thread-num的限制">修改max_scan_ip_thread_num的限制</h4>
+
+<ul>
+<li>修改 ~/.xx-net/code/default/gae_proxy/local/config.py
+
+<ul>
+<li><a href="/downloads/tech/xx-net-config_py.patch.tar.bz2">Click here to download config.py 的 patch file</a></li>
+</ul></li>
+</ul>
+
+<h3 id="安装">安装</h3>
+
+<h4 id="3-13-0-以上版本升级">3.13.0 以上版本升级</h4>
+
+<ul>
+<li>启动之前远程打开管理功能(0.0.0.0:8085)，并打开0.0.0.0的8087端口
+
+<ol>
+<li>data/launcher/config.yaml的module：
+
+<ul>
+<li>修改allow_remote_connect: 1</li>
+<li>增加control_ip: 0.0.0.0</li>
+</ul></li>
+</ol></li>
+</ul>
+
+<p>%filename: data/launcher/config.yaml</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  <span style="color:#ae81ff">1</span> modules:
+  <span style="color:#ae81ff">2</span>   gae_proxy: <span style="color:#f92672">{</span>auto_start: <span style="color:#ae81ff">1</span>, show_detail: <span style="color:#ae81ff">1</span><span style="color:#f92672">}</span>
+  <span style="color:#ae81ff">3</span>   launcher: <span style="color:#f92672">{</span>allow_remote_connect: <span style="color:#ae81ff">0</span>, control_ip: <span style="color:#ae81ff">0</span>.0.0.0, control_port: <span style="color:#ae81ff">8085</span>, last_run_version: <span style="color:#ae81ff">3</span>.13.1,
+  <span style="color:#ae81ff">4</span>     popup_webui: <span style="color:#ae81ff">0</span>, proxy: smart_router, show_systray: <span style="color:#ae81ff">0</span><span style="color:#f92672">}</span>
+  <span style="color:#ae81ff">5</span>   smart_router: <span style="color:#f92672">{</span>auto_start: <span style="color:#ae81ff">1</span><span style="color:#f92672">}</span>
+  <span style="color:#ae81ff">6</span>   x_tunnel: <span style="color:#f92672">{</span>auto_start: <span style="color:#ae81ff">0</span><span style="color:#f92672">}</span>
+  <span style="color:#ae81ff">7</span> show_compat_suggest: <span style="color:#ae81ff">0</span>
+  <span style="color:#ae81ff">8</span> update: <span style="color:#f92672">{</span>last_path: /home/walter/.xx-net/code/default/launcher, postUpdateStat: noChange,
+  <span style="color:#ae81ff">9</span>   uuid: f7a8c8a7-ab34-4b3b-886d-7a3b44447171<span style="color:#f92672">}</span></code></pre></div>
+<pre><code>2. data/launcher/config.json
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{
+    <span style="color:#e6db74">&#34;listen_ip&#34;</span>: <span style="color:#e6db74">&#34;0.0.0.0&#34;</span>
+}</code></pre></div>
+<ul>
+<li><p>启动 xx-net</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./start --noauth_local_webserver</code></pre></div></li>
+
+<li><p>部署</p>
+
+<ol>
+<li>在远端打开 <a href="http://10.0.0.1:8085">http://10.0.0.1:8085</a></li>
+<li>点击部署(Deploy Server)</li>
+
+<li><p>在 2 项中，找到类似下面内容, 给与授权。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Your browser has been opened to visit:
+
+https://accounts.google.com/o/oauth2/auth?scope<span style="color:#f92672">=</span>https%3A%2F%2Fwww.googleapis.com%    2Fauth%2Fappengine.admin+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform    +https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&amp;redirect_uri<span style="color:#f92672">=</span>http%3A%2F    %2Flocalhost%3A8080%2F&amp;response_type<span style="color:#f92672">=</span>code&amp;client_id<span style="color:#f92672">=</span><span style="color:#ae81ff">550516889912</span>.apps.googleuserc    ontent.com&amp;access_type<span style="color:#f92672">=</span>offline
+
+If your browser is on a different machine <span style="color:#66d9ef">then</span> exit and re-run this
+application with the command-line parameter
+
+--noauth_local_webserver</code></pre></div></li>
+</ol></li>
+</ul>
+
+<h4 id="关于配置文件的重要说明-https-github-com-xx-net-xx-net-wiki-goagent-config-file"><a href="https://github.com/XX-net/XX-Net/wiki/GoAgent-Config-file">关于配置文件的重要说明</a></h4>
+
+<h4 id="upgrade-xx-net-升级xx-net">Upgrade XX-Net（升级xx-net）</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">su <span style="color:#75715e"># su to root</span> 
+su xx-net from root su to xx-net
+cd .xx-net
+git fetch --all
+git reset --hard origin/master</code></pre></div>
+<h4 id="xx-net-1">XX-Net</h4>
+
+<ul>
+<li><p>git clone</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/XX-net/XX-Net</code></pre></div></li>
+</ul>
+
+<p><strong>in Gentoo</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq dev-python/pyopenssl</code></pre></div>
+<ul>
+<li><p>git pull</p>
+
+<p>Sometimes have problem while git pull, then just use reset to ignore local modification.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git reset --hard
+git pull</code></pre></div></li>
+</ul>
+
+<h4 id="enable-ipv6">Enable IPV6</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    emerge -avq miredo
+    modprobe tun
+    /etc/init.d/miredo start</code></pre></div>
+<h4 id="xx-net-script-in-mac">XX-Net script in Mac</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    /Volumes/Home/Walter/breakGW/XX-Net/start.command &gt;/dev/null <span style="color:#ae81ff">2</span>&gt;&amp;<span style="color:#ae81ff">1</span> &amp;</code></pre></div>
+<h3 id="在xhttp-www-jiaoyizhe-com-forum-16-1-htmlx-net-data-gae-proxy创建config-json-current-但是未能验证其有效性">在xhttp://www.jiaoyizhe.com/forum-16-1.htmlx-net/data/gae_proxy创建config.json (current, 但是未能验证其有效性)</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;max_scan_ip_thread_num&#34;</span>: <span style="color:#ae81ff">50</span>,
+  <span style="color:#f92672">&#34;GAE_APPIDS&#34;</span>: [
+    <span style="color:#e6db74">&#34;fffregister11&#34;</span>,
+    <span style="color:#e6db74">&#34;fffregister12&#34;</span>,
+    <span style="color:#e6db74">&#34;fffregister13&#34;</span>,
+    <span style="color:#e6db74">&#34;fffregister14&#34;</span>,
+    <span style="color:#e6db74">&#34;fffregister15&#34;</span>,
+    <span style="color:#e6db74">&#34;fffregister16&#34;</span>,
+    <span style="color:#e6db74">&#34;fffregister17&#34;</span>,
+    <span style="color:#e6db74">&#34;fffregister18&#34;</span>,
+    <span style="color:#e6db74">&#34;fffregister19&#34;</span>
+  ],
+  <span style="color:#f92672">&#34;listen_ip&#34;</span>: <span style="color:#e6db74">&#34;0.0.0.0&#34;</span>,
+  <span style="color:#f92672">&#34;use_ipv6&#34;</span>: <span style="color:#e6db74">&#34;force_ipv6&#34;</span>,
+  <span style="color:#f92672">&#34;hosts_gae&#34;</span>: <span style="color:#e6db74">&#34;deja.com&#34;</span>,
+  <span style="color:#f92672">&#34;hosts_direct&#34;</span>: [
+    <span style="color:#e6db74">&#34;appengine.google.com&#34;</span>,
+    <span style="color:#e6db74">&#34;www.google.com&#34;</span>,
+    <span style="color:#e6db74">&#34;www.youtube.com&#34;</span>,
+    <span style="color:#e6db74">&#34;www.vevo.com&#34;</span>,
+    <span style="color:#e6db74">&#34;www.gogotunnel.com&#34;</span>,
+    <span style="color:#e6db74">&#34;www.skype.com&#34;</span>,
+    <span style="color:#e6db74">&#34;photos.google.com&#34;</span>
+  ],
+  <span style="color:#f92672">&#34;hosts_direct_endswith&#34;</span>: [
+    <span style="color:#e6db74">&#34;.appspot.com&#34;</span>,
+    <span style="color:#e6db74">&#34;.google.com&#34;</span> ,
+    <span style="color:#e6db74">&#34;.googlevideo.com&#34;</span>
+  ]
+}</code></pre></div>
+<h4 id="在xx-net-data-gae-proxy创建manual-ini-old">在xx-net/data/gae_proxy创建manual.ini (old)</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-config" data-lang="config">[pac]
+enable = 1
+ip = 0.0.0.0
+port = 8086
+file = proxy.pac
+gfwlist = https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
+expired = 86400
+
+[listen]
+ip = 0.0.0.0
+port = 8087
+visible = 1
+debuginfo = 0
+
+[hosts]
+.youtube.com=gae
+.ytimg.com=gae
+.google.com=gae
+.gmail.com=gae
+.t.com=gae
+.twitter.com=gae
+.twimg.com=gae
+.ggpht.com=gae
+.googleusercontent.com=gae
+.googlevideo.com=gae
+.googleapis.com=gae
+.google-analytics.com=gae
+.6park.com=gae
+.pscp.tv=gae
+.mingjing.com=gae
+.google.com=gae
+.google.ca=gae</code></pre></div>
+<h4 id="start-stop-daemon-etc-init-d-xx-net">Start-Stop-Daemon, /etc/init.d/xx-net</h4>
+
+<h5 id="create-a-user-xx-net-to-running-xx-net">Create a user(xx-net) to running xx-net</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">useradd -M xx-net <span style="color:#75715e"># &#34;-M means no shell login and home directory&#34;</span>
+sudo chown -R xx-net:xx-net ~/.xx-net</code></pre></div>
+<h5 id="service-daemon-for-running-by-xx-net">Service Daemon for running by xx-net</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/sbin/openrc-run
+</span><span style="color:#75715e"></span>
+depend<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    need net
+    after miredo
+    use dns logger
+<span style="color:#f92672">}</span>
+
+PIDFILE<span style="color:#f92672">=</span>/var/run/<span style="color:#e6db74">${</span>SVCNAME<span style="color:#e6db74">}</span>.pid
+DIR<span style="color:#f92672">=</span>/home/walter/.xx-net
+CMD<span style="color:#f92672">=</span>$DIR/start
+NAME<span style="color:#f92672">=</span>xx-net
+OPTS<span style="color:#f92672">=</span>
+
+start<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    ebegin <span style="color:#e6db74">&#34;Starting XX-Net&#34;</span>
+    start-stop-daemon --start --background <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --chdir $DIR <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --user $NAME <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --make-pidfile --pidfile $PIDFILE <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --exec $CMD   &gt; /var/log/xxnet.log
+    eend $?
+<span style="color:#f92672">}</span>
+
+
+stop<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    ebegin <span style="color:#e6db74">&#34;Stopping XX-Net&#34;</span>
+    local pid_<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>ps aux|grep -E <span style="color:#e6db74">&#39;/usr/lib/python-exec/python2.7/python&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>                |grep -E <span style="color:#e6db74">&#39;code&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>                |grep -E <span style="color:#e6db74">&#39;launcher/start.py&#39;</span>|awk <span style="color:#e6db74">&#39;{printf $2}&#39;</span><span style="color:#e6db74">`</span>
+
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f $PIDFILE <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+            kill -9 $pid_
+    <span style="color:#66d9ef">fi</span>
+
+    start-stop-daemon --stop <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --pidfile $PIDFILE <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --user $NAME <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --exec $CMD <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    eend $?
+<span style="color:#f92672">}</span></code></pre></div>
+</article>
+
+    <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>

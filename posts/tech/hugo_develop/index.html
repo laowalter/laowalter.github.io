@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    <link rel="stylesheet" href="//192.168.0.199:1313/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    <link href="//192.168.0.199:1313/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+
+    <h1>Develop Hugo</h1>
+    <p>Thu Aug 8, 2019</p>
+    
+    <a class="tag tag--primary tag--small"   href="//192.168.0.199:1313/"><font color="green">Home</font></a>
+
+    
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/hugo">hugo</a>
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/blog">blog</a>
+        
+    
+
+    <hr><br>
+<nav id="TableOfContents">
+<ul>
+<li><a href="#youtube-tutorial">Youtube Tutorial</a></li>
+<li><a href="#有特别帮助的网址">有特别帮助的网址</a>
+<ul>
+<li><a href="#步骤">步骤</a>
+<ul>
+<li><a href="#建立框架">建立框架</a></li>
+<li><a href="#处理tags-categories">处理tags/categories</a></li>
+<li><a href="#目前为止-目录结构如下">目前为止，目录结构如下：</a></li>
+<li><a href="#添加新的-taxomony-例如-moods">添加新的 taxomony, 例如 moods</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#建立css-sass">建立css/sass</a></li>
+<li><a href="#解析mindmap">解析mindmap</a>
+<ul>
+<li><a href="#加入如下文件">加入如下文件</a></li>
+</ul></li>
+<li><a href="#配置文件格式">配置文件格式</a></li>
+<li><a href="#修改-syntax-highlight">修改 Syntax Highlight</a></li>
+<li><a href="#table-of-content">Table of Content</a></li>
+<li><a href="#add-section-number">Add Section Number</a></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h2 id="youtube-tutorial">Youtube Tutorial</h2>
+
+<p><a href="https://www.youtube.com/watch?v=qtIqKaDlqXo&amp;list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3">https://www.youtube.com/watch?v=qtIqKaDlqXo&amp;list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3</a></p>
+
+<h2 id="有特别帮助的网址">有特别帮助的网址</h2>
+
+<ol>
+<li>关于整体结构和简单的theme设置 <a href="https://www.zeolearn.com/magazine/develop-a-theme-for-hugo">https://www.zeolearn.com/magazine/develop-a-theme-for-hugo</a></li>
+
+<li><p>中文网站 <a href="https://bwaycer.github.io/hugo_tutorial.hugo/overview/introduction/">https://bwaycer.github.io/hugo_tutorial.hugo/overview/introduction/</a></p></li>
+
+<li><p><a href="https://gohugo.io/content-management/syntax-highlighting/">语法高亮的支持</a></p></li>
+
+<li><p><a href="https://glennmccomb.com/articles/how-to-build-custom-hugo-pagination/">Paginator用法</a></p></li>
+
+<li><p><a href="https://wocai.de/post/2019/03/hugo-中使用思维导图/">使用思维导图</a></p></li>
+
+<li><p><a href="https://qsli.github.io/2017/01/01/markdown-mindmap/">Hexo 脑图</a></p></li>
+
+<li><p><a href="https://tgnyc.github.io/posts/addjstohugo/">Insert javascript into hugo by partial</a></p></li>
+
+<li><p><a href="https://gohugo.io/templates/shortcode-templates/">Create custom Shortcodes</a></p></li>
+
+<li><p><a href="https://blog.jeremylikness.com/blog/dynamic-search-in-a-static-hugo-website/">Dynamic Search in a Static Hugo Website</a></p></li>
+
+<li><p><a href="https://gist.github.com/eddiewebb/735feb48f50f0ddd65ae5606a1cb41ae#layoutspagesearchhtml">搜索</a></p></li>
+
+<li><p><a href="https://blevesearch.com/news/Site-Search/">Site Search is Back!</a></p></li>
+
+<li><p><a href="https://www.jaredwolff.com/hugo-search-with-lunr-and-gulp/">How to Add Search to a Hugo Site with Lunr and Gulp</a></p></li>
+
+<li><p><a href="https://verummeum.com/hugo-advanced-features/">目前在看 Search, comments and an image viewer with Hugo</a></p></li>
+</ol>
+
+<h3 id="步骤">步骤</h3>
+
+<h4 id="建立框架">建立框架</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ hugo new site ./
+    $ hugo new theme mytheme // 建立一个名为mytheme的主题</code></pre></div>
+<p>按照  <a href="https://www.zeolearn.com/magazine/develop-a-theme-for-hugo">https://www.zeolearn.com/magazine/develop-a-theme-for-hugo</a> 的方法实现基本配置</p>
+
+<h4 id="处理tags-categories">处理tags/categories</h4>
+
+<p>tags和categories是hugo内置的两个类型，并不需要单独创建，只要文档中的front matter部分有tags和categories的内容，就可以在 <a href="http://site/tags/">http://site/tags/</a> 或 <a href="http://site/categories/">http://site/categories/</a> 列出来；</p>
+
+<h4 id="目前为止-目录结构如下">目前为止，目录结构如下：</h4>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  
+  ├── archetypes
+  │   └── default.md
+  ├── default.md
+  ├── layouts
+  │   ├── <span style="color:#ae81ff">404</span>.html
+  │   ├── _default
+  │   │   ├── baseof.html
+  │   │   ├── list.html
+  │   │   └── single.html
+  │   ├── index.html
+  │   └── partials
+  │       ├── footer.html
+  │       ├── header.html
+  │       ├── head.html
+  │       └── tags.html
+  ├── LICENSE
+  └── theme.toml</code></pre></div>
+
+<p>其中 tags文件用于把tag插入文章的内容中之用。</p>
+
+<h4 id="添加新的-taxomony-例如-moods">添加新的 taxomony, 例如 moods</h4>
+
+<ol>
+<li>在文档中加入此分类，比如  moods : [&ldquo;happy&rdquo;]</li>
+
+<li><p>修改 config.toml，加入</p>
+
+<pre><code>[taxonomies]
+    tag = &quot;tags&quot;
+    category = &quot;categories&quot;
+    mood = &quot;moods&quot;
+</code></pre></li>
+</ol>
+
+<h2 id="建立css-sass">建立css/sass</h2>
+
+<ul>
+<li>mkdir asset</li>
+</ul>
+
+<p>在theme中，</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> mkdir assets</code></pre></div>
+<ul>
+<li><p>asset/main.scss</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">$</span><span style="color:#f92672">main-bg-color</span><span style="color:#f92672">:</span> #B8BDBE<span style="color:#f92672">;</span>
+ 
+<span style="color:#f92672">body</span> {
+   <span style="color:#66d9ef">background-color</span>: <span style="color:#960050;background-color:#1e0010">$</span>main-bg-color;
+}
+ 
+<span style="color:#f92672">h1</span> {
+ <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">green</span>;
+}</code></pre></div></li>
+
+<li><p>修改 layouts/partials/head.html</p></li>
+</ul>
+
+<p>加入 {{ style &hellip; 和 &lt;link rel= &hellip; 内容，此时main.scss 将在引用 head.html中模板中起作用。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ie-edge&#34;</span>&gt;
+    {{ $style := resources.Get &#34;sass/main.scss&#34; | toCSS | minify | fingerprint }}
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $style.Permalink }}&#34;</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;</code></pre></div>
+<h2 id="解析mindmap">解析mindmap</h2>
+
+<h3 id="加入如下文件">加入如下文件</h3>
+
+<ul>
+<li><p>/themes/&lt;theme_name&gt;/static</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">static/
+├── css
+│   ├── kityminder.core.css
+│   └── mindmap.css
+└── js
+ ├── kityminder.core.min.js
+ ├── kity.min.js
+ ├── mindmap.js
+ └── mindmap.min.js</code></pre></div></li>
+
+<li><p>/themes/&lt;theme_name&gt;/layout/shortcodes</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tree" data-lang="tree">shortcodes/
+└── mind.html</code></pre></div></li>
+</ul>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>mind.html</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"> 
+ &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Get 0 }}&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mindmap&#34;</span>&gt;
+     {{ .Inner | markdownify }}
+ &lt;/<span style="color:#f92672">div</span>&gt;
+ </code></pre></div>
+    </div>
+</div>
+
+<p>markdownify 使得 .Inner|markdown  被解析为markdown文件格式;</p>
+
+<ul>
+<li>/themes/&lt;theme_name&gt;/layouts/partial/</li>
+</ul>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/themes/&lt;theme_name&gt;/layouts/partial/mindmap.html</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"> <span style="color:#75715e">&lt;!-- layouts/partials --&gt;</span>
+ &lt;<span style="color:#f92672">head</span>&gt;
+     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ie-edge&#34;</span>&gt;
+ 
+     <span style="color:#75715e">&lt;!-- Eable sass --&gt;</span>
+     {{ $style := resources.Get &#34;sass/main.scss&#34; | toCSS | minify | fingerprint }}
+     &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $style.Permalink }}&#34;</span>&gt;
+ 
+     <span style="color:#75715e">&lt;!-- Insert for mindmap --&gt;</span>
+     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+     &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}css/kityminder.core.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+     &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}css/mindmap.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}js/kity.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}js/kityminder.core.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}js/mindmap.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+ &lt;/<span style="color:#f92672">head</span>&gt;</code></pre></div>
+    </div>
+</div>
+
+<h2 id="配置文件格式">配置文件格式</h2>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/etc/conf.d/net</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> 
+ <span style="color:#75715e">### DNS ###</span>
+ 
+ dns_servers<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.1.1.1 9.9.9.9 192.168.0.1&#34;</span>
+ <span style="color:#75715e">#dns_search=&#34;ghome&#34;</span>
+ 
+ <span style="color:#75715e">### WIRED ###</span>
+ config_eth0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;192.168.0.199 netmask 255.255.255.0 brd 192.168.0.255&#34;</span>
+ routes_eth0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;default via 192.168.0.1&#34;</span>
+ 
+ <span style="color:#75715e">#config_eth1=&#34;192.168.1.2 netmask 255.255.255.0 brd 192.168.1.255&#34;</span>
+ <span style="color:#75715e">#routes_eth1=&#34;default via 192.168.1.1&#34;</span>
+ 
+ 
+ <span style="color:#75715e">#modules_wlan0=&#34;!wpa_supplicant&#34;</span>
+ <span style="color:#75715e">#wpa_supplicant_wlan0=&#34;-Dnl80211 -d -f /var/log/wpa_supplicant.log&#34;</span>
+ <span style="color:#75715e">#config_wlan0=&#34;192.168.6.1/24&#34;</span>
+ <span style="color:#75715e">#routes_wlan0=&#34;default via 192.168.0.199&#34;</span>
+ 
+ 
+ <span style="color:#75715e">### IPV6 Static ###</span></code></pre></div>
+    </div>
+</div>
+
+<h2 id="修改-syntax-highlight">修改 Syntax Highlight</h2>
+
+<p>In <strong>/config.toml</strong> you need these lines:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hugo" data-lang="hugo"> PygmentsCodeFences = true
+ PygmentsStyle = &#34;monokai&#34;</code></pre></div>
+<p>For a list of styles, <a href="https://help.farbox.com/pygments.html">https://help.farbox.com/pygments.html</a> is a good source. I think there are more, but I haven&rsquo;t found a comprehensive list yet.</p>
+
+<p>For the background of code blocks, actually this is set by the Hugo theme, for the Hyde theme I was using I needed to override the css like this:</p>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/themes/hyde/static/css/override.css</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"> pre {
+   background-color: #23241f;
+ }
+ code {
+   background-color: #EEE
+ }</code></pre></div>
+    </div>
+</div>
+
+<p>And add the ref link to /themes/hyde/layouts/partials/head.html</p>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/themes/hyde/layouts/partials/head.html</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"> ...
+
+ &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Site.BaseURL }}css/override.css&#34;</span>&gt;
+
+ ...</code></pre></div>
+    </div>
+</div>
+
+<h2 id="table-of-content">Table of Content</h2>
+
+<p><a href="https://github.com/gohugoio/hugo/issues/1778">参考链接</a></p>
+
+<p>目前在 paritial/single.html中</p>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>paritial/single.html</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"> 22 {{- $toc := .TableOfContents -}}
+ 23 {{- $toc := replaceRE `&lt;<span style="color:#f92672">ul</span>&gt;\n&lt;<span style="color:#f92672">li</span>&gt;\n&lt;<span style="color:#f92672">ul</span>&gt;` `&lt;<span style="color:#f92672">ul</span>&gt;` $toc -}}
+ 24 {{- safeHTML $toc -}}</code></pre></div>
+    </div>
+</div>
+
+<h2 id="add-section-number">Add Section Number</h2>
+
+<ol>
+<li>add <article> to _default/single.html</li>
+<li>add a css to static/css/section_number/</li>
+<li>add css to partial/single-head.html</li>
+</ol>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>_default/single.html</b></p>
+        
+    </div>
+</div>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">article</span>&gt;
+    {{ .Content }}
+&lt;/<span style="color:#f92672">article</span>&gt; </code></pre></td></tr></table>
+</div>
+</div>
+
+<p><br></p>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>static/css/section_number/section_number.css</b></p>
+        
+    </div>
+</div>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">body</span> {
+<span style="color:#66d9ef">counter-reset</span> : h2;
+	}
+
+<span style="color:#f92672">h2</span> {
+<span style="color:#66d9ef">counter-reset</span> : h3;
+	}
+
+<span style="color:#f92672">h3</span> {
+<span style="color:#66d9ef">counter-reset</span> : h4;
+	}
+
+<span style="color:#f92672">h4</span> {
+<span style="color:#66d9ef">counter-reset</span> : h5;
+	}
+
+<span style="color:#f92672">h5</span> {
+<span style="color:#66d9ef">counter-reset</span> : h6;
+	}
+
+<span style="color:#f92672">article</span> <span style="color:#f92672">h2</span>:<span style="color:#a6e22e">before</span> {
+<span style="color:#66d9ef">content</span> : counter(h2,<span style="color:#66d9ef">decimal</span>) <span style="color:#e6db74">&#34;. &#34;</span>;
+<span style="color:#66d9ef">counter-increment</span> : h2;
+	}
+
+<span style="color:#f92672">article</span> <span style="color:#f92672">h3</span>:<span style="color:#a6e22e">before</span> {
+<span style="color:#66d9ef">content</span> : counter(h2,<span style="color:#66d9ef">decimal</span>) <span style="color:#e6db74">&#34;.&#34;</span> counter(h3,<span style="color:#66d9ef">decimal</span>) <span style="color:#e6db74">&#34;. &#34;</span>;
+<span style="color:#66d9ef">counter-increment</span> : h3;
+	}
+
+<span style="color:#f92672">article</span> <span style="color:#f92672">h4</span>:<span style="color:#a6e22e">before</span> {
+<span style="color:#66d9ef">content</span> : counter(h2,<span style="color:#66d9ef">decimal</span>) <span style="color:#e6db74">&#34;.&#34;</span> counter(h3,<span style="color:#66d9ef">decimal</span>) <span style="color:#e6db74">&#34;.&#34;</span> counter(h4,<span style="color:#66d9ef">decimal</span>) <span style="color:#e6db74">&#34;. &#34;</span>;
+<span style="color:#66d9ef">counter-increment</span> : h4;
+	}
+
+<span style="color:#f92672">article</span> <span style="color:#f92672">h5</span>:<span style="color:#a6e22e">before</span> {
+<span style="color:#66d9ef">content</span> : counter(h2,<span style="color:#66d9ef">decimal</span>) <span style="color:#e6db74">&#34;.&#34;</span> counter(h3,<span style="color:#66d9ef">decimal</span>) <span style="color:#e6db74">&#34;.&#34;</span> counter(h4,<span style="color:#66d9ef">decimal</span>) <span style="color:#e6db74">&#34;.&#34;</span> counter(h5,<span style="color:#66d9ef">decimal</span>) <span style="color:#e6db74">&#34;. &#34;</span>;
+<span style="color:#66d9ef">counter-increment</span> : h5;
+	}
+
+<span style="color:#f92672">article</span> <span style="color:#f92672">h6</span>:<span style="color:#a6e22e">before</span> {
+<span style="color:#66d9ef">content</span> : counter(h2,<span style="color:#66d9ef">decimal</span>) <span style="color:#e6db74">&#34;.&#34;</span> counter(h3,<span style="color:#66d9ef">decimal</span>) <span style="color:#e6db74">&#34;.&#34;</span> counter(h4,<span style="color:#66d9ef">decimal</span>) <span style="color:#e6db74">&#34;.&#34;</span> counter(h5,<span style="color:#66d9ef">decimal</span>) <span style="color:#e6db74">&#34;.&#34;</span> counter(h6,<span style="color:#66d9ef">decimal</span>) <span style="color:#e6db74">&#34;. &#34;</span>;
+<span style="color:#66d9ef">counter-increment</span> : h6;
+	}
+
+<span style="color:#f92672">h2</span>.<span style="color:#a6e22e">nocount</span>:<span style="color:#a6e22e">before</span><span style="color:#f92672">,</span> <span style="color:#f92672">h3</span>.<span style="color:#a6e22e">nocount</span>:<span style="color:#a6e22e">before</span><span style="color:#f92672">,</span> <span style="color:#f92672">h4</span>.<span style="color:#a6e22e">nocount</span>:<span style="color:#a6e22e">before</span><span style="color:#f92672">,</span> <span style="color:#f92672">h5</span>.<span style="color:#a6e22e">nocount</span>:<span style="color:#a6e22e">before</span><span style="color:#f92672">,</span> <span style="color:#f92672">h6</span>.<span style="color:#a6e22e">nocount</span>:<span style="color:#a6e22e">before</span> {
+<span style="color:#66d9ef">content</span> : <span style="color:#e6db74">&#34;&#34;</span>;
+<span style="color:#66d9ef">counter-increment</span> : <span style="color:#66d9ef">none</span>;
+	}</code></pre></td></tr></table>
+</div>
+</div>
+
+<p><br></p>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>layout/partial/single-head.html</b></p>
+        
+    </div>
+</div>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">head</span>&gt;
+    <span style="color:#75715e">&lt;!-- Insert for mindmap --&gt;</span>
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}css/mindmap/kityminder.core.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}css/mindmap/mindmap.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}js/mindmap/kity.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}js/mindmap/kityminder.core.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}js/mindmap/mindmap.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+
+    <span style="color:#75715e">&lt;!-- Insert Section number --&gt;</span>
+<span style="display:block;width:100%;background-color:#3c3d38">    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}css/section_number/section_number.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+</span>&lt;/<span style="color:#f92672">head</span>&gt;</code></pre></td></tr></table>
+</div>
+</div>
+
+</article>
+
+    <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>

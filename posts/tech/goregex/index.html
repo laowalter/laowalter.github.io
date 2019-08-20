@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    <link rel="stylesheet" href="//192.168.0.199:1313/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    <link href="//192.168.0.199:1313/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+
+    <h1>Go regex 正则表达式</h1>
+    <p>Fri Jun 28, 2019</p>
+    
+    <a class="tag tag--primary tag--small"   href="//192.168.0.199:1313/"><font color="green">Home</font></a>
+
+    
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/go">go</a>
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/regex">regex</a>
+        
+    
+
+    <hr><br>
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#golang中的正则表达式-链接-https-blog-csdn-net-zfy1355-article-details-52959803"><a href="https://blog.csdn.net/zfy1355/article/details/52959803">Golang中的正则表达式(链接)</a></a></li>
+<li><a href="#如下代码使用golang的正则表达式regexp-去除html-css-script代码-仅保留页面文字">如下代码使用golang的正则表达式regexp：去除HTML，CSS，SCRIPT代码，仅保留页面文字</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h3 id="golang中的正则表达式-链接-https-blog-csdn-net-zfy1355-article-details-52959803"><a href="https://blog.csdn.net/zfy1355/article/details/52959803">Golang中的正则表达式(链接)</a></h3>
+
+<h3 id="如下代码使用golang的正则表达式regexp-去除html-css-script代码-仅保留页面文字">如下代码使用golang的正则表达式regexp：去除HTML，CSS，SCRIPT代码，仅保留页面文字</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;io/ioutil&#34;</span>
+    <span style="color:#e6db74">&#34;net/http&#34;</span>
+    <span style="color:#e6db74">&#34;regexp&#34;</span>
+    <span style="color:#e6db74">&#34;strings&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#a6e22e">resp</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Get</span>(<span style="color:#e6db74">&#34;http://www.baidu.com&#34;</span>)
+    <span style="color:#75715e">// resp, err := http.Get(&#34;http://www.163.com&#34;)
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;http get error.&#34;</span>)
+    }
+    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">resp</span>.<span style="color:#a6e22e">Body</span>.<span style="color:#a6e22e">Close</span>()
+    <span style="color:#a6e22e">body</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">ioutil</span>.<span style="color:#a6e22e">ReadAll</span>(<span style="color:#a6e22e">resp</span>.<span style="color:#a6e22e">Body</span>)
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;http read error&#34;</span>)
+    }
+
+    <span style="color:#a6e22e">src</span> <span style="color:#f92672">:=</span> string(<span style="color:#a6e22e">body</span>)
+
+    <span style="color:#75715e">//将HTML标签全转换成小写
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">re</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">regexp</span>.<span style="color:#a6e22e">Compile</span>(<span style="color:#e6db74">&#34;\\&lt;[\\S\\s]+?\\&gt;&#34;</span>)
+    <span style="color:#a6e22e">src</span> = <span style="color:#a6e22e">re</span>.<span style="color:#a6e22e">ReplaceAllStringFunc</span>(<span style="color:#a6e22e">src</span>, <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">ToLower</span>)
+
+    <span style="color:#75715e">//去除STYLE
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">re</span>, <span style="color:#a6e22e">_</span> = <span style="color:#a6e22e">regexp</span>.<span style="color:#a6e22e">Compile</span>(<span style="color:#e6db74">&#34;\\&lt;style[\\S\\s]+?\\&lt;/style\\&gt;&#34;</span>)
+    <span style="color:#a6e22e">src</span> = <span style="color:#a6e22e">re</span>.<span style="color:#a6e22e">ReplaceAllString</span>(<span style="color:#a6e22e">src</span>, <span style="color:#e6db74">&#34;&#34;</span>)
+
+    <span style="color:#75715e">//去除SCRIPT
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">re</span>, <span style="color:#a6e22e">_</span> = <span style="color:#a6e22e">regexp</span>.<span style="color:#a6e22e">Compile</span>(<span style="color:#e6db74">&#34;\\&lt;script[\\S\\s]+?\\&lt;/script\\&gt;&#34;</span>)
+    <span style="color:#a6e22e">src</span> = <span style="color:#a6e22e">re</span>.<span style="color:#a6e22e">ReplaceAllString</span>(<span style="color:#a6e22e">src</span>, <span style="color:#e6db74">&#34;&#34;</span>)
+
+    <span style="color:#75715e">//去除所有尖括号内的HTML代码，并换成换行符
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">re</span>, <span style="color:#a6e22e">_</span> = <span style="color:#a6e22e">regexp</span>.<span style="color:#a6e22e">Compile</span>(<span style="color:#e6db74">&#34;\\&lt;[\\S\\s]+?\\&gt;&#34;</span>)
+    <span style="color:#a6e22e">src</span> = <span style="color:#a6e22e">re</span>.<span style="color:#a6e22e">ReplaceAllString</span>(<span style="color:#a6e22e">src</span>, <span style="color:#e6db74">&#34;\n&#34;</span>)
+
+    <span style="color:#75715e">//去除连续的换行符
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">re</span>, <span style="color:#a6e22e">_</span> = <span style="color:#a6e22e">regexp</span>.<span style="color:#a6e22e">Compile</span>(<span style="color:#e6db74">&#34;\\s{2,}&#34;</span>)
+    <span style="color:#a6e22e">src</span> = <span style="color:#a6e22e">re</span>.<span style="color:#a6e22e">ReplaceAllString</span>(<span style="color:#a6e22e">src</span>, <span style="color:#e6db74">&#34;\n&#34;</span>)
+
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">TrimSpace</span>(<span style="color:#a6e22e">src</span>))
+}</code></pre></div>
+</article>
+
+    <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>

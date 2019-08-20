@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    <link rel="stylesheet" href="//192.168.0.199:1313/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    <link href="//192.168.0.199:1313/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+
+    <h1>VIM</h1>
+    <p>Mon Feb 29, 2016</p>
+    
+    <a class="tag tag--primary tag--small"   href="//192.168.0.199:1313/"><font color="green">Home</font></a>
+
+    
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/vim">vim</a>
+        
+    
+
+    <hr><br>
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#vim-bundleupdate-之后出现的问题">Vim BundleUpdate 之后出现的问题</a>
+<ul>
+<li><a href="#ycm-youcompleteme-server-启动失败">YcM(YouCompleteMe) server 启动失败</a></li>
+</ul></li>
+<li><a href="#使用技巧-http-vim-wikia-com-wiki-category-vimtip"><a href="http://vim.wikia.com/wiki/Category:VimTip">使用技巧</a></a></li>
+<li><a href="#in-stall-vim">In stall Vim</a></li>
+<li><a href="#plugin-installation">Plugin Installation</a></li>
+<li><a href="#set-guifont-and-size">set GuiFont and Size</a></li>
+<li><a href="#install-fonts">Install Fonts</a></li>
+<li><a href="#perl">Perl</a></li>
+<li><a href="#about-youcompleteme-ycm">About Youcompleteme (YCM)</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h3 id="vim-bundleupdate-之后出现的问题">Vim BundleUpdate 之后出现的问题</h3>
+
+<h4 id="ycm-youcompleteme-server-启动失败">YcM(YouCompleteMe) server 启动失败</h4>
+
+<p>解决办法重新执行<code>install.py</code></p>
+
+<pre><code>cd ~/.vim/bundle/YouCompleteMe
+./install.py
+</code></pre>
+
+<h3 id="使用技巧-http-vim-wikia-com-wiki-category-vimtip"><a href="http://vim.wikia.com/wiki/Category:VimTip">使用技巧</a></h3>
+
+<ul>
+<li><p>文件编码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:set fenc<span style="color:#f92672">=</span>gbk
+:set fenc<span style="color:#f92672">=</span>utf-8</code></pre></div></li>
+
+<li><p>DOS UNIX 转换</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">set ff<span style="color:#f92672">=</span>unix</code></pre></div></li>
+
+<li><p>Swap character</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xp
+Xp</code></pre></div></li>
+
+<li><p>Global Replace,  <code>$</code> says &ldquo;put vim in last-line mode&rdquo;.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:1,$s/George Bush/Barack Obama/g 
+:1,$s/td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;CENTER&#34;</span>/td/g</code></pre></div></li>
+
+<li><p>Delete blank lines in vim (empty lines), use this vim command in “last line mode”</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:g/^$/d</code></pre></div></li>
+
+<li><p>折叠快捷键</p>
+
+<ul>
+<li>zc 折叠，只折叠最外层的折叠</li>
+<li>zC 对所在范围内所有嵌套的折叠点进行折叠，包括嵌套的所有折叠.</li>
+<li>zo 展开折叠，只展开最外层的折叠.</li>
+<li>zO 对所在范围内所有嵌套的折叠点展开，包括嵌套折叠.</li>
+<li>[z 到当前打开的折叠的开始处。</li>
+<li>]z 到当前打开的折叠的末尾处。</li>
+<li>zj 向下移动。到达下一个折叠的开始处。关闭的折叠也被计入。</li>
+<li>zk 向上移动到前一折叠的结束处。关闭的折叠也被</li>
+<li>zd 删除 (delete) 在光标下的折叠。仅当 ‘foldmethod’ 设为 “manual” 或 “marker” 时有效。</li>
+<li>zD 循环删除 (Delete) 光标下的折叠，即嵌套删除折叠。</li>
+<li>仅当 ‘foldmethod’ 设为 “manual” 或 “marker” 时有效。</li>
+<li>zE 除去 (Eliminate) 窗口里“所有”的折叠。</li>
+<li>仅当 ‘foldmethod’ 设为 “manual” 或 “marker” 时有效。</li>
+<li>zfap 将光标移到段落内，然后按zfap，就可以自动对整个段落添加折叠标签</li>
+<li>zr 假定你已经创建了若干折叠，而现在需要阅览全部文本。你可以移到每个折叠处，并键入”zo”。若要做得更快，可以用这个命令:zr</li>
+<li>zm 这将折叠更多 (M-ore)。你可以重复 “zr” 和 “zm” 来打开和关闭若干层嵌套的折叠，不然得一个一个的用zc来折叠.  如果你有一个嵌套了好几层深的折叠，你可以用这个命令把它们全部打开:</li>
+<li>zR 这将减少折叠直至一个也不剩。而用下面这个命令你可以关闭所有的折叠:</li>
+<li>zM 这将增加折叠，直至所有的折叠都关闭了。</li>
+<li>你可以用 |zn| 命令快速禁止折叠功能。然后 |zN| 恢复原来的折叠。|zi| 切换于两者之间。</li>
+</ul></li>
+
+<li><p><a href="https://www.cnblogs.com/wangkangluo1/archive/2012/04/12/2444952.html">vim 常用快捷键 二</a></p></li>
+</ul>
+
+<h3 id="in-stall-vim">In stall Vim</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install macvim --with-python3
+brew link macvim
+brew linkapps macvim</code></pre></div>
+<h3 id="plugin-installation">Plugin Installation</h3>
+
+<ol>
+<li><p>Install to ~/.vim/autoload/pathogen.vim. Or copy and paste:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p ~/.vim/autoload ~/.vim/bundle <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim</code></pre></div></li>
+
+<li><p>Install Vundle</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle</code></pre></div></li>
+
+<li><p>Runtime Path Manipulation</p></li>
+</ol>
+
+<p>%filename: ~/.vimrc</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">set nocompatible
+filetype off
+set  rtp<span style="color:#f92672">+=</span>~/.vim/bundle/vundle/
+call vundle#begin<span style="color:#f92672">()</span>
+
+Bundle <span style="color:#e6db74">&#39;Lokaltog/powerline&#39;</span>, <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;rtp&#39;</span>: <span style="color:#e6db74">&#39;powerline/bindings/vim/&#39;</span><span style="color:#f92672">}</span>
+Bundle <span style="color:#e6db74">&#39;gmarik/vundle&#39;</span>
+Bundle <span style="color:#e6db74">&#39;tpope/vim-surround&#39;</span>
+Bundle <span style="color:#e6db74">&#39;jiangmiao/auto-pairs&#39;</span>
+<span style="color:#e6db74">&#34; Bundle &#39;Lokaltog/vim-powerline&#39;
+</span><span style="color:#e6db74">Bundle &#39;bling/vim-airline&#39;
+</span><span style="color:#e6db74">Bundle &#39;perl-support.vim&#39;
+</span><span style="color:#e6db74">Bundle &#39;Lokaltog/vim-easymotion&#39;
+</span><span style="color:#e6db74">Bundle &#39;desert256.vim&#39;
+</span><span style="color:#e6db74">Bundle &#39;solarized&#39;
+</span><span style="color:#e6db74">Bundle &#39;PHP-correct-Indenting&#39;
+</span><span style="color:#e6db74">Bundle &#39;mattn/emmet-vim&#39;
+</span><span style="color:#e6db74">Bundle &#39;php.vim-html-enhanced&#39;
+</span><span style="color:#e6db74">Bundle &#39;OmniCppComplete&#39;
+</span><span style="color:#e6db74">Bundle &#39;Railscasts-Theme-GUIand256color&#39;
+</span><span style="color:#e6db74">Plugin &#39;Javascript-Indentation&#39;
+</span><span style="color:#e6db74">Plugin &#39;Enhanced-Javascript-syntax&#39;
+</span><span style="color:#e6db74">Plugin &#39;jmcantrell/vim-virtualenv&#39;
+</span><span style="color:#e6db74">Plugin &#39;klen/python-mode&#39;
+</span><span style="color:#e6db74">call vundle#end()
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">&#34;</span> Powerline setup
+set guifont<span style="color:#f92672">=</span>DejaVu<span style="color:#ae81ff">\ </span>Sans<span style="color:#ae81ff">\ </span>Mono<span style="color:#ae81ff">\ </span><span style="color:#66d9ef">for</span><span style="color:#ae81ff">\ </span>Powerline<span style="color:#ae81ff">\ </span><span style="color:#ae81ff">9</span>
+set laststatus<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+set t_Co<span style="color:#f92672">=</span><span style="color:#ae81ff">256</span>
+
+let g:Powerline_symbols<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;unicode&#39;</span>
+
+<span style="color:#e6db74">&#34; Perl_Perltidy in Perl-support
+</span><span style="color:#e6db74">let g:Perl_Perltidy  = &#39;on&#39;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">&#34;</span>set file encoding
+set fileencodings<span style="color:#f92672">=</span>utf-8,gb2312,gbk,gb18030 
+
+<span style="color:#e6db74">&#34; Python-mode
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">&#34;</span> Maximum line length
+let g:pymode_options_max_line_length <span style="color:#f92672">=</span> <span style="color:#ae81ff">120</span>
+
+<span style="color:#e6db74">&#34; Auto check on save
+</span><span style="color:#e6db74">let g:pymode_lint_write = 1
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">&#34;</span> syntax highlighting
+let g:pymode_syntax <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+let g:pymode_syntax_all <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+let g:pymode_syntax_indent_errors <span style="color:#f92672">=</span> g:pymode_syntax_all
+let g:pymode_syntax_space_errors <span style="color:#f92672">=</span> g:pymode_syntax_all
+
+<span style="color:#e6db74">&#34; Don&#39;t autofold code
+</span><span style="color:#e6db74">let g:pymode_folding = 0
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">set cursorline
+</span><span style="color:#e6db74">set number
+</span><span style="color:#e6db74">syntax enable
+</span><span style="color:#e6db74">set background=dark
+</span><span style="color:#e6db74">colorscheme solarized
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">set tabstop=4 shiftwidth=4 expandtab
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">colorscheme railscasts
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">filetype plugin indent on
+</span><span style="color:#e6db74">syntax on
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">inoremap &lt;C-e&gt; &lt;Esc&gt;A
+</span><span style="color:#e6db74">inoremap &lt;C-a&gt; &lt;Esc&gt;I </span></code></pre></div>
+<h3 id="set-guifont-and-size">set GuiFont and Size</h3>
+
+<p>%filename: .gvimrc</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">guifont</span>=<span style="color:#a6e22e">TerminusTTF</span>:<span style="color:#a6e22e">h22</span></code></pre></div>
+<h3 id="install-fonts">Install Fonts</h3>
+
+<p>Terminus TTF</p>
+
+<p>(<a href="https://files.ax86.net/terminus-ttf)[https://files.ax86.net/terminus-ttf">https://files.ax86.net/terminus-ttf)[https://files.ax86.net/terminus-ttf</a>]</p>
+
+<h3 id="perl">Perl</h3>
+
+<ul>
+<li>For perlbrew in vim:</li>
+</ul>
+
+<p>%filename: ~/.vim/bundle/perl-support.vim/plugin/perl-support.vim</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#ae81ff">162</span>   <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span>:<span style="color:#a6e22e">Perl_Perl</span>                 = <span style="color:#a6e22e">system</span>(<span style="color:#e6db74">&#34;/usr/bin/which perl&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#ae81ff">163</span>   <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span>:<span style="color:#a6e22e">Perl_Perl</span>                 = <span style="color:#a6e22e">substitute</span>(<span style="color:#a6e22e">s</span>:<span style="color:#a6e22e">Perl_Perl</span>, <span style="color:#e6db74">&#39;\n$&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)</code></pre></div>
+<h3 id="about-youcompleteme-ycm">About Youcompleteme (YCM)</h3>
+
+<ul>
+<li>.vimrc</li>
+</ul>
+
+<p>%filename: ~/.vimrc</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">Plugin <span style="color:#e6db74">&#39;Valloric/YouCompleteMe&#39;</span></code></pre></div>
+<p>Then BundleInstall</p>
+
+<ul>
+<li><p>Install ncurses</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">touch /etc/portage/package.use/ncurses
+echo <span style="color:#e6db74">&#34;sys-libs/ncurses tinfo&#34;</span> &gt; /etc/portage/package.use/ncurses
+emerge sys-libs/ncurses:5</code></pre></div></li>
+
+<li><p>compile</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd .vim/bundle/YouCompleteMe/
+./install --all</code></pre></div></li>
+</ul>
+
+<p>Ignore <strong>ERROR: msbuild or xbuild is required to build Omnisharp.</strong> 这是给.net用的。</p>
+
+</article>
+
+    <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>

@@ -1,0 +1,75 @@
+\documentclass{article}[40pt]
+\usepackage{geometry}
+\geometry{b4paper,left=2.5cm,right=2.5cm,top=3cm,bottom=1cm}
+
+\usepackage{xeCJK} % 这个包可以指定中文字体。
+\setCJKfamilyfont{hei}{Adobe Heiti Std}
+\newcommand{\hei}{\CJKfamily{hei}}
+\newcommand{\song}{Adobe Song Std}
+\newcommand{\kai}{Adobe Kaiti Std R}
+\usepackage{fontspec}
+\setCJKmainfont{\song}
+
+\usepackage[justification=centering]{caption}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+    \hei {\Huge 作息时间表}
+\end{center}
+\hfill
+
+\begin{table}[!hbt]
+\centering
+\large\selectfont
+\begin{tabular}{|l|l|l|}\hline
+\multicolumn{3}{|c|}{上午}\\
+\hline
+\hei{时间}& \hei{安排} & \hei{备注}\\
+\hline
+6:30am-7:00am&	起床&	洗漱\\
+\hline
+7:00am-7:30am&	锻炼&	易筋经\\
+\hline
+7:30am-8:00am&	早餐&\\
+\hline
+8:00am-8:15am&	工作环境准备&	备水、擦桌子屏幕\\
+\hline
+8:15am-8:55am&	盘前准备&\\
+\hline
+9:00am-11:30am&	期货交易&\\
+\hline
+11:30am-12:30pm&	午餐&\\
+\hline
+\multicolumn{3}{|c|}{下午}\\
+\hline
+    1:30pm-3:00pm&	期货交易&\\
+\hline
+    3:00pm-3:20pm&	休息&\\
+\hline
+    3:20pm-4:20pm&	复盘&\\
+\hline
+    4:20pm-5:20pm&	锻炼&\\
+\hline
+    5:20pm-6:30pm&	陪母亲聊天&\\
+\hline
+
+\multicolumn{3}{|c|}{晚上}\\
+\hline
+    6:30pm-7:30pm&	和老婆一起做饭&\\
+\hline
+    7:00pm-7:30pm&	晚餐&\\
+\hline
+    7:30pm-8:30pm&	休息&\\
+\hline
+    8:30pm-9:00pm&	盘前准备&\\
+\hline
+    9:00pm-11:30pm&	期货交易&\\
+\hline
+    11:30pm-6:30am&	就寝&\\
+\hline
+\end{tabular}
+\end{table}
+
+
+\end{document}

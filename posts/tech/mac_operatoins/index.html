@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    <link rel="stylesheet" href="//192.168.0.199:1313/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    <link href="//192.168.0.199:1313/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+
+    <h1>Mac Operations</h1>
+    <p>Mon Feb 29, 2016</p>
+    
+    <a class="tag tag--primary tag--small"   href="//192.168.0.199:1313/"><font color="green">Home</font></a>
+
+    
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/mac">mac</a>
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/virtualbox">virtualbox</a>
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/git">git</a>
+        
+    
+
+    <hr><br>
+<nav id="TableOfContents">
+<ul>
+<li><a href="#mac-operation">Mac Operation</a>
+<ul>
+<li><a href="#create-bootable-mac-usb">create bootable mac usb</a></li>
+<li><a href="#brew-install-with-proxy">brew install with proxy</a></li>
+<li><a href="#set-hostname">set HostName</a></li>
+<li><a href="#find-and-replace-in-command-line">find and replace in command line</a></li>
+</ul></li>
+<li><a href="#autostart">Autostart</a>
+<ul>
+<li><a href="#cron">Cron</a></li>
+<li><a href="#virtual-box">Virtual Box</a></li>
+<li><a href="#create-git-server">Create git server</a>
+<ul>
+<li><a href="#server-computer">Server Computer:</a></li>
+<li><a href="#client-computer">Client Computer</a></li>
+</ul></li>
+<li><a href="#mac-change-keyboard-map">Mac change keyboard map</a></li>
+<li><a href="#webserver">Webserver</a>
+<ul>
+<li><a href="#启动本机web服务器-根地址-library-webserver-documents">启动本机web服务器, 根地址/Library/WebServer/Documents</a></li>
+<li><a href="#建立-username-conf-username是用户账号">建立 username.conf, username是用户账号</a></li>
+<li><a href="#打开-etc-apache2-httpd-conf">打开/etc/apache2/httpd.conf</a></li>
+<li><a href="#打开-etc-apache2-extra-httpd-userdir-conf">打开 /etc/apache2/extra/httpd-userdir.conf</a></li>
+<li><a href="#启动apache">启动apache</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h1 id="mac-operation">Mac Operation</h1>
+
+<h2 id="create-bootable-mac-usb">create bootable mac usb</h2>
+
+<ol>
+<li>In Application Download High Sierra apps</li>
+<li>Format usb stick with mac external file system</li>
+
+<li><p>In terminal:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo /Applications/Install<span style="color:#ae81ff">\ </span>macOS<span style="color:#ae81ff">\ </span>High<span style="color:#ae81ff">\ </span>Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install<span style="color:#ae81ff">\ </span>macOS<span style="color:#ae81ff">\ </span>High<span style="color:#ae81ff">\ </span>Sierra.app</code></pre></div></li>
+</ol>
+
+<h2 id="brew-install-with-proxy">brew install with proxy</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export ALL_PROXY<span style="color:#f92672">=</span><span style="color:#ae81ff">127</span>.0.0.1:8087
+brew install chromedriver</code></pre></div>
+<h2 id="set-hostname">set HostName</h2>
+
+<ol>
+<li>set /etc/hosts</li>
+
+<li><p>set hostname</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo scutil --set ComputerName newname
+sudo scutil --set LocalHostName newname
+sudo scutil --set HostName newname
+dscacheutil -flushcache</code></pre></div></li>
+</ol>
+
+<h2 id="find-and-replace-in-command-line">find and replace in command line</h2>
+
+<ul>
+<li><p>replace</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find ./ -type f -print0|xargs -0 sed -ie <span style="color:#e6db74">&#39;s/{% asset_img /![Alt Text](\/images\/108class\//g&#39;</span>
+find ./ -type f -print0|xargs -0 sed -ie <span style="color:#e6db74">&#39;s/^---$//g&#39;</span>
+find . -name <span style="color:#e6db74">&#39;*.md&#39;</span> -type f -exec sed -i <span style="color:#e6db74">&#39;&#39;</span> -e  <span style="color:#e6db74">&#39;s/\\n//&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+find . -name <span style="color:#e6db74">&#39;*.css&#39;</span> -type f -exec sed -i <span style="color:#e6db74">&#39;&#39;</span> -e  <span style="color:#e6db74">&#39;s/googleapis/useso/&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></code></pre></div></li>
+
+<li><p>delete</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -name <span style="color:#e6db74">&#39;*md&#39;</span> -type f -exec sed -i <span style="color:#e6db74">&#39;&#39;</span> -e  <span style="color:#e6db74">&#39;/^$/d&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></code></pre></div></li>
+</ul>
+
+<h1 id="autostart">Autostart</h1>
+
+<ul>
+<li><p>/Library/LaunchDaemons/com.localhost.hexo.plist</p>
+
+<ul>
+<li><p>Check script error with plutil</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">plutil -lint /Library/LaunchDaemons/com.localhost.hexo.plist</code></pre></div></li>
+
+<li><p>Set up log to /var/log/system.log</p></li>
+</ul></li>
+</ul>
+
+<h2 id="cron">Cron</h2>
+
+<ul>
+<li>command</li>
+</ul>
+
+<p><code>注意:</code> crontab 在用户环境中不能够直接用crontab -e编辑，因为无法保存。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	~ su -
+	<span style="color:#75715e"># root # crontab -u walter -e</span></code></pre></div>
+<p><img src="/images/tech/crontab.gif" alt="crontab.gif" /></p>
+
+<ul>
+<li><p>MacMini <code>cron file for walter</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	<span style="color:#ae81ff">15</span> <span style="color:#ae81ff">09</span> * * <span style="color:#ae81ff">1</span>-5 walter /usr/bin/afplay ~/.stocknotice/alert915.m4a
+	<span style="color:#ae81ff">30</span> <span style="color:#ae81ff">11</span> * * <span style="color:#ae81ff">1</span>-5 walter /usr/bin/afplay ~/.stocknotice/closeram.m4a
+	<span style="color:#ae81ff">55</span> <span style="color:#ae81ff">12</span> * * <span style="color:#ae81ff">1</span>-5 walter /usr/bin/afplay ~/.stocknotice/openpm.m4a
+	<span style="color:#ae81ff">00</span> <span style="color:#ae81ff">15</span> * * <span style="color:#ae81ff">1</span>-5 walter /usr/bin/afplay ~/.stocknotice/closepm.m4a</code></pre></div></li>
+
+<li><p>关于virtualenv python的演示</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>export LC_ALL<span style="color:#f92672">=</span>zh_CN.UTF-8
+export LANG<span style="color:#f92672">=</span>zh_CN.UTF-8
+PATH<span style="color:#f92672">=</span>/bin:/usr/sbin:/usr/bin
+PATH<span style="color:#f92672">=</span>~/.bin:/usr/local/bin:/usr/local/mysql/bin:$PATH
+
+source ~/.bin/quanta.sh
+cd ~/quanta/strategy/small_mkval/
+<span style="color:#75715e"># ~/.virtualenvs/quanta/bin/python data_prepare.py</span>
+python data_prepare.py</code></pre></div></li>
+
+<li><p>spyder</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export WORKON_HOME<span style="color:#f92672">=</span>~/.virtualenvs
+source ~/.virtualenvs/quanta/bin/activate
+python ~/bin/spyder/bootstrap.py  &gt; /dev/null <span style="color:#ae81ff">2</span>&gt;&amp;<span style="color:#ae81ff">1</span> &amp;</code></pre></div></li>
+</ul>
+
+<h2 id="virtual-box">Virtual Box</h2>
+
+<ul>
+<li><p>Set Virtual Box resolution for  Mac or Linux</p>
+
+<ul>
+<li><p>One Screen</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~$ VBoxManage controlvm <span style="color:#e6db74">&#34;Name of Virtual Machine&#34;</span> setvideomodehint <span style="color:#ae81ff">1920</span> <span style="color:#ae81ff">1080</span> <span style="color:#ae81ff">32</span></code></pre></div></li>
+
+<li><p>Multiscreen​</p>
+
+<p>Add second monitor first in the setting menu of Virutal Box, The First screen number is 0 and the second is 1.​ ps Stock is the virtual machine name. then, ​</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~$ VBoxManage controlvm Stock setvideomodehint <span style="color:#ae81ff">2560</span> <span style="color:#ae81ff">1440</span> <span style="color:#ae81ff">32</span>​ <span style="color:#ae81ff">0</span>
+~$ VBoxManage controlvm Stock setvideomodehint <span style="color:#ae81ff">1920</span> <span style="color:#ae81ff">1080</span> <span style="color:#ae81ff">32</span>​ <span style="color:#ae81ff">1</span></code></pre></div></li>
+</ul></li>
+</ul>
+
+<h2 id="create-git-server">Create git server</h2>
+
+<h3 id="server-computer">Server Computer:</h3>
+
+<ol>
+<li><p>Add a new user: git</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">		$ create a new user named <span style="color:#e6db74">&#39;git&#39;</span>
+		$ enable web sharing
+		$ git config receive.denyCurrentBranch updateInstead</code></pre></div></li>
+
+<li><p>Initialise a git directory</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">		$ mkdir something.git
+		$ cd something.git
+		$ git init --bare</code></pre></div></li>
+</ol>
+
+<h3 id="client-computer">Client Computer</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git clone ssh://localhost/~/something.git</code></pre></div>
+<p>Or: git is the username</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git clone ssh://git@localhost/~/something.git</code></pre></div>
+<p>First push:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git push origin master</code></pre></div>
+<h2 id="mac-change-keyboard-map">Mac change keyboard map</h2>
+
+<p>Key replace Application name:  <code>Karabiner</code></p>
+
+<h2 id="webserver">Webserver</h2>
+
+<p>(<a href="http://digitalshore.io/local-web-development-environment-apache-osx-10-11-el-capitan/)[http://digitalshore.io/local-web-development-environment-apache-osx-10-11-el-capitan/">http://digitalshore.io/local-web-development-environment-apache-osx-10-11-el-capitan/)[http://digitalshore.io/local-web-development-environment-apache-osx-10-11-el-capitan/</a>]</p>
+
+<h3 id="启动本机web服务器-根地址-library-webserver-documents">启动本机web服务器, 根地址/Library/WebServer/Documents</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apachectl start
+$ sudo apachectl stop
+$ sudo apachectl restart</code></pre></div>
+<h3 id="建立-username-conf-username是用户账号">建立 username.conf, username是用户账号</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd /etc/apache2/users
+$ sudo vi username.conf</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;Directory</span> <span style="color:#960050;background-color:#1e0010">&#34;/Users/username/Sites/&#34;</span><span style="color:#f92672">&gt;</span>
+    AllowOverride All
+    Options Indexes MultiViews FollowSymLinks
+    Require all granted
+<span style="color:#f92672">&lt;/Directory&gt;</span></code></pre></div>
+<p>username.conf 的Permissions 应该是：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo chmod <span style="color:#ae81ff">644</span> username.conf
+$ ls -l username.conf
+-rw-r--r-- root wheel <span style="color:#ae81ff">298</span> Jun <span style="color:#ae81ff">28</span> <span style="color:#ae81ff">16</span>:47 username.conf</code></pre></div>
+<h3 id="打开-etc-apache2-httpd-conf">打开/etc/apache2/httpd.conf</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf"> LoadModule authz_core_module libexec/apache2/mod_authz_core.so
+ LoadModule authz_host_module libexec/apache2/mod_authz_host.so
+ LoadModule userdir_module libexec/apache2/mod_userdir.so
+ LoadModule include_module libexec/apache2/mod_include.so
+ LoadModule rewrite_module libexec/apache2/mod_rewrite.so
+ LoadModule php5_module libexec/apache2/libphp5.so
+ Include <span style="color:#e6db74">/private/etc/apache2/extra/httpd-userdir.conf</span></code></pre></div>
+<h3 id="打开-etc-apache2-extra-httpd-userdir-conf">打开 /etc/apache2/extra/httpd-userdir.conf</h3>
+
+<p>uncomment the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">Include /private/etc/apache2/users/*.conf</code></pre></div>
+<h3 id="启动apache">启动apache</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir ~/Sites
+sudo apachectl restart</code></pre></div>
+</article>
+
+    <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>

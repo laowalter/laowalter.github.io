@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>video on Just a Memo</title>
+    <link>//192.168.0.199:1313/tags/video/</link>
+    <description>Recent content in video on Just a Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 02 Jan 2019 12:04:48 +0000</lastBuildDate>
+    
+	<atom:link href="//192.168.0.199:1313/tags/video/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ffmpeg</title>
+      <link>//192.168.0.199:1313/posts/tech/ffmpeg/</link>
+      <pubDate>Wed, 02 Jan 2019 12:04:48 +0000</pubDate>
+      
+      <guid>//192.168.0.199:1313/posts/tech/ffmpeg/</guid>
+      <description>Split videos and music file into chunks 可以是webm, mp3 或其他 video文件； -segment_time 后面的参数是秒； ffmpeg -i music.webm -f segment -segment_time 4000 -c copy output%03d.webm 把当前的目录内所有的mov文件转换成MP4 %filename: convert.sh #!/bin/bash</description>
+    </item>
+    
+    <item>
+      <title>Video</title>
+      <link>//192.168.0.199:1313/posts/tech/video/</link>
+      <pubDate>Sat, 10 Feb 2018 13:55:13 +0000</pubDate>
+      
+      <guid>//192.168.0.199:1313/posts/tech/video/</guid>
+      <description>Video Combine Combine multiple flvs into one emerge -avq mplayer mencoder -forceidx -of lavf -oac pcm -ovc copy -o film.flv 1.flv 2.flv 3.flv 4.flv 5.flv 6.flv 7.flv 8.flv 9.flv Spit One mp4 into multiple mp4 ffmpeg -i 5大運動傷害搶先知.mp4 -c copy -map 0 -segment_time 00:01:30 -f segment -f segment output%03d.mp4 Video Downloader youtube youtub</description>
+    </item>
+    
+  </channel>
+</rss>

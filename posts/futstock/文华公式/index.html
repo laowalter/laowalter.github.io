@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    <link rel="stylesheet" href="//192.168.0.199:1313/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    <link href="//192.168.0.199:1313/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+
+    <h1>文华公式</h1>
+    <p>Sat Jan 26, 2019</p>
+    
+    <a class="tag tag--primary tag--small"   href="//192.168.0.199:1313/"><font color="green">Home</font></a>
+
+    
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/futures">futures</a>
+        
+    
+
+    <hr><br>
+<nav id="TableOfContents">
+<ul>
+<li><a href="#挤牌公式">挤牌公式</a></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h2 id="挤牌公式">挤牌公式</h2>
+
+<p>挤牌指标（TTM Squeeze）,来自约翰.F.卡特《驾驭交易》，即两个通道：布林通道和肯特纳通道（Keltner Channel），当K线在肯特纳通道里运行时可看作盘整行情，当K线站上肯特纳通道之上时可看作多头行情，当K线在肯特纳通道之下时可看作空头行情。
+　
+当布林通道横盘时，当布林通道的上轨上穿肯特纳的上轨可看作挤牌预警，当K线站上肯特纳时做多，等着行情加速上涨。 反之，当布林通道下轨下穿肯特纳通道下轨可看作挤牌下跌预警，当K线站在肯特纳通道下，做空，等着行情加速下跌。</p>
+
+<p>交易方向好像是按照动量摆动指标。</p>
+
+<p>%filename: 挤牌公式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">KELT_:<span style="color:#f92672">=</span>KELT/10;
+
+TR:<span style="color:#f92672">=</span>MAX<span style="color:#f92672">(</span>MAX<span style="color:#f92672">((</span>HIGH-LOW<span style="color:#f92672">)</span>,ABS<span style="color:#f92672">(</span>REF<span style="color:#f92672">(</span>CLOSE,1<span style="color:#f92672">)</span>-HIGH<span style="color:#f92672">))</span>,ABS<span style="color:#f92672">(</span>REF<span style="color:#f92672">(</span>CLOSE,1<span style="color:#f92672">)</span>-LOW<span style="color:#f92672">))</span>;
+ATR:<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>TR,N<span style="color:#f92672">)</span>;
+HIGHBBCHL:<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,N<span style="color:#f92672">)</span> + BOLBS*STD<span style="color:#f92672">(</span>C,N<span style="color:#f92672">)</span>,COLORYELLOW;
+LOWBBCHL:<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,N<span style="color:#f92672">)</span> - BOLBS*STD<span style="color:#f92672">(</span>C,N<span style="color:#f92672">)</span>,COLORYELLOW;
+
+CENTERLINE:<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,N<span style="color:#f92672">)</span>;
+HIGHKELTN:<span style="color:#f92672">=</span>CENTERLINE+KELT_*ATR,COLORBLUE;
+LOWKELTN:<span style="color:#f92672">=</span>CENTERLINE-KELT_*ATR,COLORBLUE;
+
+MOM:<span style="color:#f92672">=</span>CLOSE-REF<span style="color:#f92672">(</span>CLOSE,MOMP<span style="color:#f92672">)</span>;
+MOMHIST:<span style="color:#f92672">=</span>EMA<span style="color:#f92672">(</span>MOM,MOMEMA<span style="color:#f92672">)</span>;
+
+BBUP:<span style="color:#f92672">=</span>IF<span style="color:#f92672">(</span>HIGHBBCHL&gt;HIGHKELTN AND MOMHIST &gt;0, MOMHIST,0<span style="color:#f92672">)</span>;
+BBDO:<span style="color:#f92672">=</span>IF<span style="color:#f92672">(</span>LOWBBCHL&lt;LOWKELTN AND MOMHIST &lt;<span style="color:#ae81ff">0</span>, MOMHIST,0<span style="color:#f92672">)</span>;
+BBMID:<span style="color:#f92672">=</span>IF<span style="color:#f92672">(</span>BBUP<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> AND BBDO<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, MOMHIST,0<span style="color:#f92672">)</span>;
+
+BUY:<span style="color:#f92672">=</span>BBUP;
+SELL:<span style="color:#f92672">=</span>BBDO;
+MID:BBMID;
+
+BB:IF<span style="color:#f92672">(</span>BBUP OR BBDO,CROSSDOT,CIRCLEDOT<span style="color:#f92672">)</span>;
+MTM:MA<span style="color:#f92672">(</span>MOM, MOMEMA<span style="color:#f92672">)</span>,COLORSTICK;</code></pre></div>
+</article>
+
+    <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>

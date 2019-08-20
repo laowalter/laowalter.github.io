@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    <link rel="stylesheet" href="//192.168.0.199:1313/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    <link href="//192.168.0.199:1313/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+
+    <h1>Linux Bluetooth / 蓝牙</h1>
+    <p>Fri Mar 1, 2019</p>
+    
+    <a class="tag tag--primary tag--small"   href="//192.168.0.199:1313/"><font color="green">Home</font></a>
+
+    
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/bluetooth">bluetooth</a>
+        
+    
+
+    <hr><br>
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#文档">文档</a></li>
+<li><a href="#安装过程">安装过程</a>
+<ul>
+<li><a href="#emerge-数据包">emerge 数据包</a></li>
+<li><a href="#启动蓝牙服务-授权用户">启动蓝牙服务，授权用户</a></li>
+</ul></li>
+<li><a href="#我的配置过程">我的配置过程</a>
+<ul>
+<li><a href="#bluez-有个bug">bluez 有个bug</a></li>
+<li><a href="#配对-连接">配对、连接</a></li>
+<li><a href="#使用">使用</a>
+<ul>
+<li><a href="#连接已经配对过的蓝牙设备">连接已经配对过的蓝牙设备</a></li>
+<li><a href="#设置bluealsa音量">设置bluealsa音量</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#注意事项">注意事项</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h3 id="文档">文档</h3>
+
+<pre><code>* [Gentoo Wiki 蓝牙](https://wiki.gentoo.org/wiki/Bluetooth)
+* [Gentoo wiki 蓝牙 bluez-alsa](https://wiki.gentoo.org/wiki/Bluetooth_Headset)
+* [Github blue-alsa 包含使用方法](https://github.com/Arkq/bluez-alsa)
+</code></pre>
+
+<h3 id="安装过程">安装过程</h3>
+
+<h4 id="emerge-数据包">emerge 数据包</h4>
+
+<p>%filename: /etc/portage/package.use/bluez</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">net-wireless/bluez alsa btpclient</code></pre></div>
+<p>%filename: /etc/portage/package.use/pulseaudio</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">media-sound/pulseaudio bluetooth dbus equalizer</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq net-wireless/bluez  
+emerge -avq media-sound/pulseaudio</code></pre></div>
+<p>%filename: /etc/bluetooth/main.conf</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>Policy<span style="color:#f92672">]</span>
+AutoEnable<span style="color:#f92672">=</span>true</code></pre></div>
+<h4 id="启动蓝牙服务-授权用户">启动蓝牙服务，授权用户</h4>
+
+<p>%filename: command summury &ldquo;bluetoothctl&rdquo;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">power on
+discoverable on
+show <span style="color:#ae81ff">20</span>:C9:D0:92:92:6E
+agent on
+default-agent
+scan on
+scan off
+trust <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C
+pair <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C
+connect <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpasswd -a &lt;userame&gt; plugdev
+rc-service bluetooth start
+rc-update add bluetooth default</code></pre></div>
+<h3 id="我的配置过程">我的配置过程</h3>
+
+<h4 id="bluez-有个bug">bluez 有个bug</h4>
+
+<p>%filename: /etc/pulse/default.pa</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">把 load-module module-bluetooth-discover 注释掉，改为 
+   <span style="color:#75715e">#load-module module-bluetooth-discover</span></code></pre></div>
+<p>%filename: /usr/bin/start-pulseaudio-x11</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">在这句后面
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> x<span style="color:#e6db74">&#34;</span>$SESSION_MANAGER<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> x <span style="color:#f92672">]</span> ; <span style="color:#66d9ef">then</span>
+        /usr/bin/pactl load-module module-x11-xsmp <span style="color:#e6db74">&#34;display=</span>$DISPLAY<span style="color:#e6db74"> session_manager=</span>$SESSION_MANAGER<span style="color:#e6db74">&#34;</span> &gt; /dev/null
+    <span style="color:#66d9ef">fi</span>
+加入一行
+    /usr/bin/pactl load-module module-bluetooth-discover</code></pre></div>
+<h4 id="配对-连接">配对、连接</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mini ~/blog $ bluetoothctl
+Agent registered
+<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># power on</span>
+<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># show</span>
+<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># discoverable on</span>
+<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># agent on</span>
+<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># default-agent</span>
+<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># scan on</span>
+<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Controller <span style="color:#ae81ff">20</span>:C9:D0:92:92:6E Discovering: yes
+<span style="color:#f92672">[</span>NEW<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">60</span>:C5:3C:E1:62:E9 <span style="color:#ae81ff">60</span>-C5-3C-E1-62-E9
+<span style="color:#f92672">[</span>NEW<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C LE-Bose Revolve+ SoundLink
+<span style="color:#f92672">[</span>NEW<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">64</span>:9B:50:0A:00:BA <span style="color:#ae81ff">64</span>-9B-50-0A-00-BA
+<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># scan off</span>
+<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># pair 04:52:C7:D1:BA:2C</span>
+Attempting to pair with <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C
+<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Connected: yes
+<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Name: Bose Revolve+ SoundLink
+<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Alias: Bose Revolve+ SoundLink
+<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Modalias: bluetooth:v009Ep4011d0150
+<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C UUIDs: <span style="color:#ae81ff">00001101</span>-0000-1000-8000-00805f9b34fb
+<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C UUIDs: 0000110b-0000-1000-8000-00805f9b34fb
+<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C UUIDs: 0000110c-0000-1000-8000-00805f9b34fb
+<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C UUIDs: 0000110e-0000-1000-8000-00805f9b34fb
+<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C UUIDs: 0000111e-0000-1000-8000-00805f9b34fb
+<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C UUIDs: <span style="color:#ae81ff">00001200</span>-0000-1000-8000-00805f9b34fb
+<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C ServicesResolved: yes
+<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Paired: yes
+Pairing successful
+<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C ServicesResolved: no
+<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Connected: no
+<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># connect 04:52:C7:D1:BA:2C</span>
+Attempting to connect to <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C
+<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Connected: yes
+Connection successful
+<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C ServicesResolved: yes
+<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Controller <span style="color:#ae81ff">20</span>:C9:D0:92:92:6E Discoverable: no</code></pre></div>
+<h4 id="使用">使用</h4>
+
+<h5 id="连接已经配对过的蓝牙设备">连接已经配对过的蓝牙设备</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bluetoothctl
+<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># power on</span>
+<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># paired-devices</span>
+Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Bose Revolve+ SoundLink
+<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># connect 04:52:C7:D1:BA:2C</span></code></pre></div>
+<h5 id="设置bluealsa音量">设置bluealsa音量</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user@mini ~ $ amixer sget <span style="color:#e6db74">&#39;Master&#39;</span>
+Simple mixer control <span style="color:#e6db74">&#39;Master&#39;</span>,0
+  Capabilities: pvolume pswitch pswitch-joined
+  Playback channels: Front Left - Front Right
+  Limits: Playback <span style="color:#ae81ff">0</span> - <span style="color:#ae81ff">65536</span>
+  Mono:
+  Front Left: Playback <span style="color:#ae81ff">58178</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">89</span>%<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>off<span style="color:#f92672">]</span>
+  Front Right: Playback <span style="color:#ae81ff">58421</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">89</span>%<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>off<span style="color:#f92672">]</span>
+
+user@mini ~ $ amixer sset <span style="color:#e6db74">&#39;Master&#39;</span> <span style="color:#ae81ff">100</span>% on
+Simple mixer control <span style="color:#e6db74">&#39;Master&#39;</span>,0
+  Capabilities: pvolume pswitch pswitch-joined
+  Playback channels: Front Left - Front Right
+  Limits: Playback <span style="color:#ae81ff">0</span> - <span style="color:#ae81ff">65536</span>
+  Mono:
+  Front Left: Playback <span style="color:#ae81ff">65536</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">100</span>%<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>on<span style="color:#f92672">]</span>
+  Front Right: Playback <span style="color:#ae81ff">65536</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">100</span>%<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>on<span style="color:#f92672">]</span></code></pre></div>
+<h3 id="注意事项">注意事项</h3>
+
+</article>
+
+    <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>

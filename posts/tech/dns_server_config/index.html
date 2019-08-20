@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    <link rel="stylesheet" href="//192.168.0.199:1313/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    <link href="//192.168.0.199:1313/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+
+    <h1>DNS_Server Config</h1>
+    <p>Mon Jan 1, 0001</p>
+    
+    <a class="tag tag--primary tag--small"   href="//192.168.0.199:1313/"><font color="green">Home</font></a>
+
+    
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/dns">dns</a>
+        
+    
+
+    <hr><br>
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#install">Install</a></li>
+<li><a href="#config">Config</a></li>
+<li><a href="#iptables-rules">IPTABLES RULES</a></li>
+<li><a href="#特别说明">特别说明</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h3 id="install">Install</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -aqv bind bind-tools</code></pre></div>
+<h3 id="config">Config</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/*
+ * Refer to the named.conf<span style="color:#f92672">(</span><span style="color:#ae81ff">5</span><span style="color:#f92672">)</span> and named<span style="color:#f92672">(</span><span style="color:#ae81ff">8</span><span style="color:#f92672">)</span> man pages, and the documentation
+ * in /usr/share/doc/bind-* <span style="color:#66d9ef">for</span> more details.
+ * Online versions of the documentation can be found here:
+ * https://kb.isc.org/article/AA-01031
+ *
+ * If you are going to set up an authoritative server, make sure you
+ * understand the hairy details of how DNS works. Even with simple mistakes,
+ * you can break connectivity <span style="color:#66d9ef">for</span> affected parties, or cause huge amounts of
+ * useless Internet traffic.
+ */
+
+acl <span style="color:#e6db74">&#34;xfer&#34;</span> <span style="color:#f92672">{</span>
+	/* Deny transfers by default except <span style="color:#66d9ef">for</span> the listed hosts.
+	 * If we have other name servers, place them here.
+	 */
+	none;
+<span style="color:#f92672">}</span>;
+
+/*
+ * You might put in here some ips which are allowed to use the cache or
+ * recursive queries
+ */
+acl <span style="color:#e6db74">&#34;trusted&#34;</span> <span style="color:#f92672">{</span>
+	<span style="color:#ae81ff">127</span>.0.0.0/8;
+	::1/128;
+	<span style="color:#ae81ff">192</span>.168.6.0/24;
+	<span style="color:#ae81ff">192</span>.168.0.0/24;
+<span style="color:#f92672">}</span>;
+
+options <span style="color:#f92672">{</span>
+	directory <span style="color:#e6db74">&#34;/var/bind&#34;</span>;
+	pid-file <span style="color:#e6db74">&#34;/run/named/named.pid&#34;</span>;
+
+	/* https://www.isc.org/solutions/dlv &gt;<span style="color:#f92672">=</span>bind-9.7.x only */
+	//bindkeys-file <span style="color:#e6db74">&#34;/etc/bind/bind.keys&#34;</span>;
+
+	listen-on-v6 port <span style="color:#ae81ff">53</span> <span style="color:#f92672">{</span> ::1; <span style="color:#f92672">}</span>;
+	listen-on port <span style="color:#ae81ff">53</span> <span style="color:#f92672">{</span> <span style="color:#ae81ff">127</span>.0.0.1; <span style="color:#ae81ff">192</span>.168.0.199; <span style="color:#f92672">}</span>;
+
+	allow-query <span style="color:#f92672">{</span>
+		/*
+		 * Accept queries from our <span style="color:#e6db74">&#34;trusted&#34;</span> ACL.  We will
+		 * allow anyone to query our master zones below.
+		 * This prevents us from becoming a free DNS server
+		 * to the masses.
+		 */
+		trusted;
+	<span style="color:#f92672">}</span>;
+
+	allow-query-cache <span style="color:#f92672">{</span>
+		/* Use the cache <span style="color:#66d9ef">for</span> the <span style="color:#e6db74">&#34;trusted&#34;</span> ACL. */
+		trusted;
+	<span style="color:#f92672">}</span>;
+
+	allow-recursion <span style="color:#f92672">{</span>
+		/* Only trusted addresses are allowed to use recursion. */
+		trusted;
+	<span style="color:#f92672">}</span>;
+
+	allow-transfer <span style="color:#f92672">{</span>
+		/* Zone tranfers are denied by default. */
+		none;
+	<span style="color:#f92672">}</span>;
+
+	allow-update <span style="color:#f92672">{</span>
+		/* Don<span style="color:#e6db74">&#39;t allow updates, e.g. via nsupdate. */
+</span><span style="color:#e6db74">		none;
+</span><span style="color:#e6db74">	};
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">	/*
+</span><span style="color:#e6db74">	* If you&#39;</span>ve got a DNS server around at your upstream provider, enter its
+	* IP address here, and enable the line below. This will make you benefit
+	* from its cache, thus reduce overall DNS traffic in the Internet.
+	*
+	* Uncomment the following lines to turn on DNS forwarding, and change
+	*  and/or update the forwarding ip address<span style="color:#f92672">(</span>es<span style="color:#f92672">)</span>:
+	*/
+	forward first;
+	forwarders <span style="color:#f92672">{</span>
+	//	<span style="color:#ae81ff">123</span>.123.123.123;	// Your ISP NS
+	//	<span style="color:#ae81ff">124</span>.124.124.124;	// Your ISP NS
+	//	<span style="color:#ae81ff">4</span>.2.2.1;		// Level3 Public DNS
+	//	<span style="color:#ae81ff">4</span>.2.2.2;		// Level3 Public DNS
+		<span style="color:#ae81ff">8</span>.8.8.8;		// Google Open DNS
+		<span style="color:#ae81ff">8</span>.8.4.4;		// Google Open DNS
+	<span style="color:#f92672">}</span>;
+
+
+	dnssec-enable yes;
+	//dnssec-validation yes;
+
+	/*
+	 * As of bind <span style="color:#ae81ff">9</span>.8.0:
+	 * <span style="color:#e6db74">&#34;If the root key provided has expired,
+</span><span style="color:#e6db74">	 * named will log the expiration and validation will not work.&#34;</span>
+	 */
+	dnssec-validation auto;
+
+	/* <span style="color:#66d9ef">if</span> you have problems and are behind a firewall: */
+	//query-source address * port <span style="color:#ae81ff">53</span>;
+<span style="color:#f92672">}</span>;
+
+logging <span style="color:#f92672">{</span>
+	channel default_log <span style="color:#f92672">{</span>
+		file <span style="color:#e6db74">&#34;/var/log/named/named.log&#34;</span> versions <span style="color:#ae81ff">5</span> size 50M;
+		print-time yes;
+		print-severity yes;
+		print-category yes;
+	<span style="color:#f92672">}</span>;
+
+	category default <span style="color:#f92672">{</span> default_log; <span style="color:#f92672">}</span>;
+	category general <span style="color:#f92672">{</span> default_log; <span style="color:#f92672">}</span>;
+<span style="color:#f92672">}</span>;
+
+include <span style="color:#e6db74">&#34;/etc/bind/rndc.key&#34;</span>;
+controls <span style="color:#f92672">{</span>
+	inet <span style="color:#ae81ff">127</span>.0.0.1 port <span style="color:#ae81ff">953</span> allow <span style="color:#f92672">{</span> <span style="color:#ae81ff">127</span>.0.0.1/32; ::1/128; <span style="color:#f92672">}</span> keys <span style="color:#f92672">{</span> <span style="color:#e6db74">&#34;rndc-key&#34;</span>; <span style="color:#f92672">}</span>;
+<span style="color:#f92672">}</span>;
+
+zone <span style="color:#e6db74">&#34;.&#34;</span> in <span style="color:#f92672">{</span>
+	type hint;
+	file <span style="color:#e6db74">&#34;/var/bind/named.cache&#34;</span>;
+<span style="color:#f92672">}</span>;
+
+zone <span style="color:#e6db74">&#34;ghome&#34;</span> IN <span style="color:#f92672">{</span>
+	type master;
+	file <span style="color:#e6db74">&#34;pri/ghome.zone&#34;</span>;
+	notify no;
+<span style="color:#f92672">}</span>;
+
+zone <span style="color:#e6db74">&#34;0.168.192.in-addr.arpa&#34;</span> IN <span style="color:#f92672">{</span>
+	type master;
+	file <span style="color:#e6db74">&#34;pri/0.168.192.in-addr.arpa.zone&#34;</span>;
+	notify no;
+<span style="color:#f92672">}</span>;
+
+zone <span style="color:#e6db74">&#34;6.168.192.in-addr.arpa&#34;</span> IN <span style="color:#f92672">{</span>
+        type master;
+        file <span style="color:#e6db74">&#34;pri/6.168.192.in-addr.arpa.zone&#34;</span>;
+        notify no;
+<span style="color:#f92672">}</span>;</code></pre></div>
+<ul>
+<li><p>file: pri/ghome.zone</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$TTL 1W
+@       IN      SOA     ns.ghome. root.ghome.  <span style="color:#f92672">(</span>
+                                  <span style="color:#ae81ff">2018030901</span> ; Serial
+                                  <span style="color:#ae81ff">28800</span>      ; Refresh
+                                  <span style="color:#ae81ff">14400</span>      ; Retry
+                                  <span style="color:#ae81ff">604800</span>     ; Expire - <span style="color:#ae81ff">1</span> week
+                                  <span style="color:#ae81ff">86400</span> <span style="color:#f92672">)</span>    ; Minimum
+
+ghome.          IN      NS      ns.ghome.
+ns.ghome.       IN      A       <span style="color:#ae81ff">192</span>.168.0.199
+
+; private host
+router  IN      A       <span style="color:#ae81ff">192</span>.168.0.1
+printer IN	    A	    <span style="color:#ae81ff">192</span>.168.0.250
+lhome	IN	    A	    <span style="color:#ae81ff">192</span>.168.0.2
+ghome1	IN	    A	    <span style="color:#ae81ff">192</span>.168.0.5
+ghome2 	IN	    A 	    <span style="color:#ae81ff">192</span>.168.6.1
+air     IN      A       <span style="color:#ae81ff">192</span>.168.0.10
+win     IN      A       <span style="color:#ae81ff">192</span>.168.0.18
+mini    IN      A       <span style="color:#ae81ff">192</span>.168.0.199</code></pre></div></li>
+
+<li><p>file: pri/0.168.192.in-addr.arpa.zone</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$TTL 1W
+@       IN      SOA     ghome. root.ghome.  <span style="color:#f92672">(</span>
+                                  <span style="color:#ae81ff">2018030901</span> ; Serial
+                                  <span style="color:#ae81ff">28800</span>      ; Refresh
+                                  <span style="color:#ae81ff">14400</span>      ; Retry
+                                  <span style="color:#ae81ff">604800</span>     ; Expire - <span style="color:#ae81ff">1</span> week
+                                  <span style="color:#ae81ff">86400</span> <span style="color:#f92672">)</span>    ; Minimum
+
+ghome.	IN      NS      ns.ghome.
+
+; private hosts reverse lookup
+<span style="color:#ae81ff">1</span>	PTR	router.ghome.
+<span style="color:#ae81ff">10</span>	PTR	air.ghome.
+<span style="color:#ae81ff">18</span>	PTR	win.ghome.
+<span style="color:#ae81ff">199</span>	PTR	mini.ghome.</code></pre></div></li>
+
+<li><p>file pri/6.168.192.in-addr.arpa.zone</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$TTL 1W
+@       IN      SOA     ghome. root.ghome.  <span style="color:#f92672">(</span>
+                                  <span style="color:#ae81ff">2018030901</span> ; Serial
+                                  <span style="color:#ae81ff">28800</span>      ; Refresh
+                                  <span style="color:#ae81ff">14400</span>      ; Retry
+                                  <span style="color:#ae81ff">604800</span>     ; Expire - <span style="color:#ae81ff">1</span> week
+                                  <span style="color:#ae81ff">86400</span> <span style="color:#f92672">)</span>    ; Minimum
+
+    IN      NS      ghome.
+
+; private hosts reverse lookup
+<span style="color:#ae81ff">1</span>       PTR     ghome2.ghome.</code></pre></div></li>
+</ul>
+
+<h3 id="iptables-rules">IPTABLES RULES</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iptables -A INPUT -p udp --sport <span style="color:#ae81ff">53</span> -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A INPUT -p udp --dport <span style="color:#ae81ff">53</span> -j ACCEPT
+iptables -A INPUT -p tcp --dport <span style="color:#ae81ff">53</span> -j ACCEPT</code></pre></div>
+<h3 id="特别说明">特别说明</h3>
+
+<p>如过有其他NAT的网段(如:192.168.6.0/24), 加入这一行 192.168.6.0/24; 到trusted。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">acl <span style="color:#e6db74">&#34;trusted&#34;</span> <span style="color:#f92672">{</span>
+    <span style="color:#ae81ff">127</span>.0.0.0/8;
+    ::1/128;
+    <span style="color:#ae81ff">192</span>.168.0.0/24;
+    <span style="color:#ae81ff">192</span>.168.6.0/24;  
+<span style="color:#f92672">}</span>;</code></pre></div>
+</article>
+
+    <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>

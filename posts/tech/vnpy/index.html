@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    <link rel="stylesheet" href="//192.168.0.199:1313/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    <link href="//192.168.0.199:1313/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+
+    <h1>VNPY安装和使用</h1>
+    <p>Thu Sep 1, 2016</p>
+    
+    <a class="tag tag--primary tag--small"   href="//192.168.0.199:1313/"><font color="green">Home</font></a>
+
+    
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/stock">stock</a>
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/quanta">quanta</a>
+        
+    
+
+    <hr><br>
+<nav id="TableOfContents">
+<ul>
+<li><a href="#安装vnpy">安装VNPY</a>
+<ul>
+<li><a href="#安装python-2-and-virtualenv">安装python 2 and virtualenv</a></li>
+<li><a href="#建立环境切换命令文件-start-vnpy-sh">建立环境切换命令文件 start_vnpy.sh</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h2 id="安装vnpy">安装VNPY</h2>
+
+<h3 id="安装python-2-and-virtualenv">安装python 2 and virtualenv</h3>
+
+<p>(1) python2</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install python</code></pre></div>
+<p>then ~/.bashrc</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PATH<span style="color:#f92672">=</span>/usr/local/bin::$PATH</code></pre></div>
+<p>then 退出，在重新进入 iterm2</p>
+
+<p>(2) virtualenv</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install virtualenv
+
+<span style="color:#75715e">### 建立virtualenvs</span></code></pre></div>
+<p>bash
+mkdir .virtualenvs
+cd .virtualenvs
+virtualenv -p python vnpy
+export WORKON_HOME=~/.virtualenvs
+source ~/.virtualenvs/vnpy/bin/activate
+pip install virtualenvwrapper
+source ~/.virtualenvs/vnpy/bin/virtualenvwrapper.sh</p>
+
+<h3 id="建立环境切换命令文件-start-vnpy-sh">建立环境切换命令文件 start_vnpy.sh</h3>
+
+<p>``bash
+mkdir .bin
+vi .bin/start_vnpy</p>
+
+<pre><code>
+start_vnpy
+
+</code></pre>
+
+<p>shell
+#!/bin/sh</p>
+
+<p>export WORKON_HOME=~/.virtualenvs
+source ~/.virtualenvs/vnpy/bin/activate
+source ~/.virtualenvs/vnpy/bin/virtualenvwrapper.sh</p>
+
+<p>###########
+#Prompt
+#</p>
+
+<p>set_prompt () {
+    Last_Command=$? # Must come first!
+    Blue=&rsquo;[\e[01;34m]&lsquo;
+    White=&rsquo;[\e[01;37m]&lsquo;
+    Red=&rsquo;[\e[01;31m]&lsquo;
+    Green=&rsquo;[\e[01;32m]&lsquo;
+    Reset=&rsquo;[\e[00m]&lsquo;
+    FancyX=&rsquo;\342\234\227&rsquo;
+    Checkmark=&rsquo;\342\234\223&rsquo;</p>
+
+<pre><code># Add a bright white exit status for the last command
+PS1=&quot;$White\$? &quot;
+# If it was successful, print a green check mark. Otherwise, print
+# a red X.
+if [[ $Last_Command == 0 ]]; then
+    PS1+=&quot;$Green$Checkmark &quot;
+else
+    PS1+=&quot;$Red$FancyX &quot;
+fi
+
+# SET ENVIROMENT DISPLAY NAME HERE
+PS1+=&quot;[\[\e[31m\]vnpy\[\e[m\]]&quot;
+
+# If root, just print the host in red. Otherwise, print the current user
+# and host in green.
+
+if [[ $EUID == 0 ]]; then
+    PS1+=&quot;$Red\\h &quot;
+else
+    PS1+=&quot;$Green\\u@\\h &quot;
+fi
+# Print the working directory and prompt marker in blue, and reset
+# the text color to the default.
+PS1+=&quot;$Blue\\w \\\$$Reset &quot;
+</code></pre>
+
+<p>}</p>
+
+<p>PROMPT_COMMAND=&lsquo;RET=$?; if [ $RET != 0  ] ; then echo &ldquo;rc: $RET&rdquo;; fi&rsquo;</p>
+
+<p>PROMPT_COMMAND=&lsquo;set_prompt&rsquo;</p>
+
+<pre><code>
+### 启动 退出 vnpy 环境
+
+</code></pre>
+
+<p>bash
+source .bin/start_vnpy.sh
+exit</p>
+
+<pre><code>
+### 安装VNPY源程序
+
+### 安装需要的库
+
+</code></pre>
+
+<p>bash
+brew install pyqt
+brew install sip</p>
+
+<pre><code>
+因为建立vnpy时， sip和pyqt的数据包没有被copy过去，所以需要自己链接
+
+</code></pre>
+
+<p>bash
+cd ~/.virtualenvs/vnpy/lib/python2.7
+ln -s /usr/local/lib/python2.7/site-packages/PyQt4 .
+ln -s /usr/local/lib/python2.7/site-packages/sip* .</p>
+
+<pre><code>
+### 进入vnpy环境安装其他软件包
+
+</code></pre>
+
+<p>bash
+source ~/.bin/vnpy
+pip install pymongo qdarkstyle psutil</p>
+
+<pre><code>
+### 安装其他需要的
+
+</code></pre>
+
+<p>bash
+brew install boost boost-python
+brew install cmake
+```</p>
+
+</article>
+
+    <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>

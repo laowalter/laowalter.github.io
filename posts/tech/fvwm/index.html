@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    <link rel="stylesheet" href="//192.168.0.199:1313/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    <link href="//192.168.0.199:1313/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+
+    <h1>FVWM</h1>
+    <p>Fri Feb 22, 2019</p>
+    
+    <a class="tag tag--primary tag--small"   href="//192.168.0.199:1313/"><font color="green">Home</font></a>
+
+    
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/x11">x11</a>
+        
+    
+
+    <hr><br>
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#mouse-cursor">mouse cursor</a></li>
+<li><a href="#fvwm-console-font-setup">Fvwm console font setup</a></li>
+<li><a href="#windows-title-bar-等各种中文字体支持">Windows Title Bar 等各种中文字体支持</a>
+<ul>
+<li><a href="#安装字体">安装字体</a></li>
+<li><a href="#配置fvwm的配置文件">配置fvwm的配置文件</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h3 id="mouse-cursor">mouse cursor</h3>
+
+<p>%filename: ~/.Xresources</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#ae81ff">18</span> Xcursor.theme: ComixCursors-White
+ <span style="color:#ae81ff">19</span> Xcursor.size: <span style="color:#ae81ff">64</span></code></pre></div>
+<h3 id="fvwm-console-font-setup">Fvwm console font setup</h3>
+
+<p>%filename: ~/.Xresources</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#ae81ff">40</span> FvwmConsole*VT100*geometry: 40x4
+ <span style="color:#ae81ff">41</span> FvwmConsole*font: xft:Inconsolata LGC:pixelsize<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span></code></pre></div>
+<h3 id="windows-title-bar-等各种中文字体支持">Windows Title Bar 等各种中文字体支持</h3>
+
+<h4 id="安装字体">安装字体</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ emerge -avq media-fonts/wqy-zenhei
+$ fc-list|grep WenQuanYi
+/usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc: WenQuanYi Zen Hei:style<span style="color:#f92672">=</span>Regular
+/usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc: WenQuanYi Zen Hei Sharp,文泉驛點陣正黑:style<span style="color:#f92672">=</span>Regular
+/usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc: WenQuanYi Zen Hei Mono:style<span style="color:#f92672">=</span>Regular</code></pre></div>
+<h4 id="配置fvwm的配置文件">配置fvwm的配置文件</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">将原来的缺省配置：
+    Font <span style="color:#e6db74">&#34;xft:Sans:Bold:size=8:antialias=True&#34;</span>
+全部改为：
+    Font <span style="color:#e6db74">&#34;xft:WenQuanYi Zen Hei:Sans:Bold:size=8:antialias=True&#34;</span></code></pre></div>
+</article>
+
+    <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>

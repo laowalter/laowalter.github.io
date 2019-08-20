@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    <link rel="stylesheet" href="//192.168.0.199:1313/sass/main.min.25934bb03db303dfa541f621fc29b24509d8e2c2e39a063de4a77a16ab2fec19.css">
+
+</head>
+
+    
+<head>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+    <link href="//192.168.0.199:1313/css/mindmap/kityminder.core.css" rel="stylesheet" type="text/css">
+    <link href="//192.168.0.199:1313/css/mindmap/mindmap.css" rel="stylesheet" type="text/css">
+    <script src="//192.168.0.199:1313/js/mindmap/kity.min.js"></script>
+    <script src="//192.168.0.199:1313/js/mindmap/kityminder.core.min.js"></script>
+    <script src="//192.168.0.199:1313/js/mindmap/mindmap.js"></script>
+	
+
+    
+    
+    <link href="//192.168.0.199:1313/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+
+    <h1>Hugo Cheatsheet</h1>
+    <p>Sun Aug 18, 2019</p>
+    
+    <a class="tag tag--primary tag--small"   href="//192.168.0.199:1313/"><font color="green">Home</font></a>
+
+    
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/hugo">hugo</a>
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/cheatsheet">cheatsheet</a>
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/docker">docker</a>
+        
+           <a class="tag tag--primary tag--small" href="//192.168.0.199:1313/tags/blog">blog</a>
+        
+    
+
+    <hr><br>
+<nav id="TableOfContents">
+<ul>
+<li><a href="#hugo-markdown-format">Hugo markdown format</a>
+<ul>
+<li><a href="#section-number">Section number</a></li>
+<li><a href="#syntax-highlight">Syntax Highlight</a></li>
+<li><a href="#file-format">file format</a>
+<ul>
+<li><a href="#pygmentscodefences-format">PygmentsCodeFences format</a></li>
+<li><a href="#hugo-format">Hugo format</a></li>
+<li><a href="#mindmap">mindmap</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#启动-docker-运行-jojomi-hugo-的方法">启动 docker 运行 jojomi/hugo 的方法</a>
+<ul>
+<li><a href="#启动-jojomi-hugo">启动 jojomi/hugo</a></li>
+<li><a href="#生成-tmp-src-publish-目录中的-静态文件">生成 ~/tmp/src/publish 目录中的 静态文件</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h2 id="hugo-markdown-format">Hugo markdown format</h2>
+
+<h3 id="section-number">Section number</h3>
+
+<ol>
+<li>default Section number is set to &ldquo;true&rdquo;</li>
+<li>add &ldquo;<strong>section_number = false</strong>&rdquo; to front matter if Dont Not want to add section_number in the content.</li>
+</ol>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">   <span style="color:#960050;background-color:#1e0010">+++</span>
+   <span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Hugo Cheatsheet&#34;</span>
+   <span style="color:#a6e22e">date</span> = <span style="color:#e6db74">2019-08-18T10:30:29Z</span>
+   <span style="color:#a6e22e">description</span> = <span style="color:#e6db74">&#34;&#34;</span>
+   <span style="color:#a6e22e">tags</span> = [<span style="color:#e6db74">&#34;hugo&#34;</span>, <span style="color:#e6db74">&#34;cheatsheet&#34;</span>, <span style="color:#e6db74">&#34;docker&#34;</span>, <span style="color:#e6db74">&#34;blog&#34;</span>]
+   <span style="color:#a6e22e">categories</span> = [<span style="color:#e6db74">&#34;tech&#34;</span>]
+<span style="display:block;width:100%;background-color:#3c3d38">   <span style="color:#a6e22e">section_number</span> = <span style="color:#66d9ef">false</span>
+</span>   <span style="color:#960050;background-color:#1e0010">+++</span></code></pre></div>
+
+<h3 id="syntax-highlight">Syntax Highlight</h3>
+
+<p>{{&lt; highlight go &ldquo;linenos=table,hl_lines=8 15-17,linenostart=199&rdquo; &gt;}}<br>
+// &hellip; code<br>
+{{&lt; /highlight &gt;}}</p>
+
+<h3 id="file-format">file format</h3>
+
+<h4 id="pygmentscodefences-format">PygmentsCodeFences format</h4>
+
+<p>{{% file &ldquo;filename&rdquo; %}}<br>
+```nginx<br><br>
+something <br><br>
+```
+{{% /file %}}</p>
+
+<h4 id="hugo-format">Hugo format</h4>
+
+<p>{{% file &ldquo;layout/partial/single-head.html&rdquo; %}}<br>
+{{% /file %}}
+{{&lt; highlight html &ldquo;linenos=table, linenostart=1, hl_lines=11&rdquo; &gt;}}<br>
+&lt;head&gt;<br>
+   &nbsp;&nbsp; &lt;link href=&ldquo;{{.Site.BaseURL}}css/section_number/section_number.css&rdquo; rel=&ldquo;stylesheet&rdquo; type=&ldquo;text/css&rdquo;&gt;<br>
+&lt;/head&gt;<br>
+{{&lt; /highlight &gt;}}</p>
+
+<h4 id="mindmap">mindmap</h4>
+
+<p>{{% mindmap mindname %}}
+<br>
+- root<br>
+&nbsp; &nbsp; - c1<br>
+&nbsp; &nbsp;    - c2<br>
+{{% /mindmap %}}</p>
+
+<p><br></p>
+
+<div id="mindname" class="mindmap">
+    <ul>
+<li>root
+
+<ul>
+<li>c1</li>
+<li>c2</li>
+</ul></li>
+</ul>
+</div>
+
+<h2 id="启动-docker-运行-jojomi-hugo-的方法">启动 docker 运行 jojomi/hugo 的方法</h2>
+
+<h3 id="启动-jojomi-hugo">启动 jojomi/hugo</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ docker run --rm --name <span style="color:#e6db74">&#34;hugo&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -p <span style="color:#ae81ff">1313</span>:1313 
+    -v ~/hugo-blog/:/src <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -e HUGO_THEME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;walter&#34;</span> <span style="color:#ae81ff">\ </span>
+    -e HUGO_WATCH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>  <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -e HUGO_DESTINATION<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;public&#34;</span> <span style="color:#ae81ff">\
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#ae81ff"></span>    -e HUGO_BASEURL<span style="color:#f92672">=</span><span style="color:#ae81ff">192</span>.168.0.199 <span style="color:#ae81ff">\
+</span></span><span style="color:#ae81ff"></span>    --publish-all  jojomi/hugo</code></pre></div>
+
+<p>说明：</p>
+
+<ol>
+<li><p>在jojomi/hugo中, 必须指定 HUGO_THEME=&ldquo;casper-two&rdquo;,否则报错。 而在 config.    toml 中指定 theme = &ldquo;casper-two&rdquo; 不起作用，</p></li>
+
+<li><p>上面的服务启动之后, 目前只能在本地用 localhost:1313, 访问192.168.0.199 并
+不正常。可能要使用 .Permalink .RelPermalink .Params.url</p></li>
+
+<li><p><font color="green">-e HUGO_DESTINATION=&ldquo;public&rdquo; </font>使得publish的内容输出到 public 目录之中，这个内容应该可以直接上传到github</p></li>
+</ol>
+
+<h3 id="生成-tmp-src-publish-目录中的-静态文件">生成 ~/tmp/src/publish 目录中的 静态文件</h3>
+
+<ol>
+<li><p>先执行上面的container， 然后才有下面的命令, -D 表示显示draft, 但是这里 hugo -D 并不正常，应该直接用上面的的&rdquo;启动 jojomi/hugo” <font color="green">-e HUGO_DESTINATION=&ldquo;public&rdquo;</font> 命令。</p>
+
+<p>下面命令行中第一个hugo是docker的container的名字，第二个hugo是应用程序hugo;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker exec -it hugo hugo -D //会使得public的结果</code></pre></div></li>
+
+<li><p>查看hugo的Version</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker exec -it hugo hugo version</code></pre></div></li>
+</ol>
+
+</article>
+
+    <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>
