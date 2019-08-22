@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>media on Just a Memo</title>
-    <link>laowalter.github.io/tags/media/</link>
+    <link>/tags/media/</link>
     <description>Recent content in media on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 24 Nov 2017 19:53:08 +0000</lastBuildDate>
     
-	<atom:link href="laowalter.github.io/tags/media/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/media/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Mpd</title>
-      <link>laowalter.github.io/posts/tech/mpd/</link>
+      <link>/posts/tech/mpd/</link>
       <pubDate>Fri, 24 Nov 2017 19:53:08 +0000</pubDate>
       
-      <guid>laowalter.github.io/posts/tech/mpd/</guid>
+      <guid>/posts/tech/mpd/</guid>
       <description>Install mpd $ eix -e mpd [I] media-sound/mpd Available versions: 0.19.19 ~0.19.21 ~0.19.21-r1 ~0.20.4 ~0.20.6 ~0.20.8 ~0.20.9 (~)0.20.10 {adplug +alsa ao audiofile bzip2 cdio +curl debug +eventfd expat faad +ffmpeg +fifo flac fluidsynth +glib gme +icu +id3tag +inotify +ipv6 jack lame libav libmpdclient libsamplerate libsoxr +mad mikmod mms modplug mpg123 musepack +network nfs ogg openal opus oss pipe pulseaudio recorder samba selinux sid +signalfd sndfile soundcloud sqlite systemd tcpd twolame</description>
     </item>
     

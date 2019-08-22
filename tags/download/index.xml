@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>download on Just a Memo</title>
-    <link>laowalter.github.io/tags/download/</link>
+    <link>/tags/download/</link>
     <description>Recent content in download on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 18 Mar 2019 18:01:15 +0000</lastBuildDate>
     
-	<atom:link href="laowalter.github.io/tags/download/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/download/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Mldonkey 电驴</title>
-      <link>laowalter.github.io/posts/tech/mldonkey/</link>
+      <link>/posts/tech/mldonkey/</link>
       <pubDate>Mon, 18 Mar 2019 18:01:15 +0000</pubDate>
       
-      <guid>laowalter.github.io/posts/tech/mldonkey/</guid>
+      <guid>/posts/tech/mldonkey/</guid>
       <description>安装 $ sudo emerge -avq net-p2p/mldonkey 配置 第一启动后台服务不要更改任何配置； 安装过程会自动创建一个用户“p2p”， $ sud /etc/init.d/mldonkey start 修改配置文件 首先停止服务 /etc/init.d/mldonkey stop 修改配置文件 filename:</description>
     </item>
     
     <item>
       <title>Aria2 / 百度网盘</title>
-      <link>laowalter.github.io/posts/tech/aria2/</link>
+      <link>/posts/tech/aria2/</link>
       <pubDate>Fri, 02 Nov 2018 20:49:37 +0000</pubDate>
       
-      <guid>laowalter.github.io/posts/tech/aria2/</guid>
+      <guid>/posts/tech/aria2/</guid>
       <description>Linux 使用 aria 安装 manual: man aria2c emerge net-misc/aria2 config file $HOME/.aria2/aria2.conf 配置 $HOME/.aria2/aria2.conf 配置文件说明 filename: ~/.aria2/aria2.conf 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 ## 全局设置</description>
     </item>
     
     <item>
       <title>Transmission</title>
-      <link>laowalter.github.io/posts/tech/transmission/</link>
+      <link>/posts/tech/transmission/</link>
       <pubDate>Fri, 24 Nov 2017 19:57:30 +0000</pubDate>
       
-      <guid>laowalter.github.io/posts/tech/transmission/</guid>
+      <guid>/posts/tech/transmission/</guid>
       <description>Notice
 BE SURE to stop transmission daemon first before change the follow setting.
 ** if disable ipv6 set &amp;ldquo;bind-address-ipv6&amp;rdquo;: &amp;ldquo;fe80::&amp;rdquo; **

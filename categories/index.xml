@@ -2,75 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Just a Memo</title>
-    <link>laowalter.github.io/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 22 Aug 2019 12:38:01 +0800</lastBuildDate>
     
-	<atom:link href="laowalter.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>tech</title>
-      <link>laowalter.github.io/categories/tech/</link>
+      <link>/categories/tech/</link>
       <pubDate>Thu, 22 Aug 2019 12:38:01 +0800</pubDate>
       
-      <guid>laowalter.github.io/categories/tech/</guid>
+      <guid>/categories/tech/</guid>
       <description></description>
     </item>
     
     <item>
       <title>futures</title>
-      <link>laowalter.github.io/categories/futures/</link>
+      <link>/categories/futures/</link>
       <pubDate>Sun, 18 Aug 2019 10:32:08 +0000</pubDate>
       
-      <guid>laowalter.github.io/categories/futures/</guid>
+      <guid>/categories/futures/</guid>
       <description></description>
     </item>
     
     <item>
       <title>eli</title>
-      <link>laowalter.github.io/categories/eli/</link>
+      <link>/categories/eli/</link>
       <pubDate>Mon, 22 Apr 2019 17:40:41 +0000</pubDate>
       
-      <guid>laowalter.github.io/categories/eli/</guid>
+      <guid>/categories/eli/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fut&amp;Stock</title>
-      <link>laowalter.github.io/categories/futstock/</link>
+      <link>/categories/futstock/</link>
       <pubDate>Thu, 14 Mar 2019 11:53:37 +0000</pubDate>
       
-      <guid>laowalter.github.io/categories/futstock/</guid>
+      <guid>/categories/futstock/</guid>
       <description></description>
     </item>
     
     <item>
       <title>life</title>
-      <link>laowalter.github.io/categories/life/</link>
+      <link>/categories/life/</link>
       <pubDate>Fri, 01 Mar 2019 07:18:53 +0000</pubDate>
       
-      <guid>laowalter.github.io/categories/life/</guid>
+      <guid>/categories/life/</guid>
       <description></description>
     </item>
     
     <item>
       <title>eco</title>
-      <link>laowalter.github.io/categories/eco/</link>
+      <link>/categories/eco/</link>
       <pubDate>Tue, 16 Oct 2018 08:19:00 +0000</pubDate>
       
-      <guid>laowalter.github.io/categories/eco/</guid>
+      <guid>/categories/eco/</guid>
       <description></description>
     </item>
     
     <item>
       <title>chan108</title>
-      <link>laowalter.github.io/categories/chan108/</link>
+      <link>/categories/chan108/</link>
       <pubDate>Mon, 12 Jun 2017 21:06:42 +0000</pubDate>
       
-      <guid>laowalter.github.io/categories/chan108/</guid>
+      <guid>/categories/chan108/</guid>
       <description></description>
     </item>
     

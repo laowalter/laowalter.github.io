@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>appid on Just a Memo</title>
-    <link>laowalter.github.io/tags/appid/</link>
+    <link>/tags/appid/</link>
     <description>Recent content in appid on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Mar 2019 07:18:53 +0000</lastBuildDate>
     
-	<atom:link href="laowalter.github.io/tags/appid/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/appid/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Apple ID/ appleid / 苹果ID申请</title>
-      <link>laowalter.github.io/posts/life/appleid/</link>
+      <link>/posts/life/appleid/</link>
       <pubDate>Fri, 01 Mar 2019 07:18:53 +0000</pubDate>
       
-      <guid>laowalter.github.io/posts/life/appleid/</guid>
+      <guid>/posts/life/appleid/</guid>
       <description>申请过程 申请教程 生成美国的地址和付款信息的网站https://www.fakeaddressgenerator.com/</description>
     </item>
     

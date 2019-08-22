@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>firefox on Just a Memo</title>
-    <link>laowalter.github.io/tags/firefox/</link>
+    <link>/tags/firefox/</link>
     <description>Recent content in firefox on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 05 Apr 2018 09:30:39 +0000</lastBuildDate>
     
-	<atom:link href="laowalter.github.io/tags/firefox/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/firefox/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Firefox Add-On Develop</title>
-      <link>laowalter.github.io/posts/tech/firefox_addons/</link>
+      <link>/posts/tech/firefox_addons/</link>
       <pubDate>Thu, 05 Apr 2018 09:30:39 +0000</pubDate>
       
-      <guid>laowalter.github.io/posts/tech/firefox_addons/</guid>
+      <guid>/posts/tech/firefox_addons/</guid>
       <description>Multi Profile （多个火狐） Windows Create Profiles &amp;#34;C:\Program Files\Mozilla Firefox\firefox.exe&amp;#34; --Profilemanager Create shortcut for specific profile &amp;ldquo;direct&amp;rdquo; (ex.) &amp;#34;C:\Program Files\Mozilla Firefox\firefox.exe&amp;#34; -P direct --no-remote My firefox plugins %caption: 常用插件 Develop Extension / Addons 开发文档</description>
     </item>
     

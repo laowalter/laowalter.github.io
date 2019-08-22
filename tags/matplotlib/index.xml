@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>matplotlib on Just a Memo</title>
-    <link>laowalter.github.io/tags/matplotlib/</link>
+    <link>/tags/matplotlib/</link>
     <description>Recent content in matplotlib on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Feb 2017 22:00:18 +0000</lastBuildDate>
     
-	<atom:link href="laowalter.github.io/tags/matplotlib/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/matplotlib/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Matplotlib</title>
-      <link>laowalter.github.io/posts/tech/matplotlib/</link>
+      <link>/posts/tech/matplotlib/</link>
       <pubDate>Thu, 02 Feb 2017 22:00:18 +0000</pubDate>
       
-      <guid>laowalter.github.io/posts/tech/matplotlib/</guid>
+      <guid>/posts/tech/matplotlib/</guid>
       <description>Matplot chinese font  Problem  /home/walter/.virtualenv/python3/lib/python3.6/site-packages/matplotlib/font_manager.py:1316: UserWarning: findfont: Font family [&amp;lsquo;sans-serif&amp;rsquo;] not found. Falling back to DejaVu Sans (prop.get_family(), self.defaultFamily[fontext]))
  Add Chinese font
  Add font to system

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>print on Just a Memo</title>
-    <link>laowalter.github.io/tags/print/</link>
+    <link>/tags/print/</link>
     <description>Recent content in print on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 22 Nov 2017 23:45:16 +0000</lastBuildDate>
     
-	<atom:link href="laowalter.github.io/tags/print/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/print/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Cups/Printer</title>
-      <link>laowalter.github.io/posts/tech/cups/</link>
+      <link>/posts/tech/cups/</link>
       <pubDate>Wed, 22 Nov 2017 23:45:16 +0000</pubDate>
       
-      <guid>laowalter.github.io/posts/tech/cups/</guid>
+      <guid>/posts/tech/cups/</guid>
       <description>HP 打印机 这是全面的的私有驱动程序, 包括打印、传真和扫描。 net-print/hplip-plugin net-print/hplip CUPS 打印机设置 安装软件 cups emerge -avq cups 允许远程配置 filename: /etc/cups/cupsd.conf &amp;lt;Location /&amp;gt; Order allow,deny Allow localhost Allow from 192.168.0.* &amp;lt;/Location&amp;gt; &amp;lt;Location /admin&amp;gt; Order allow,deny Allow localhost Allow from</description>
     </item>
     

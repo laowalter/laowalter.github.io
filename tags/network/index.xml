@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>network on Just a Memo</title>
-    <link>laowalter.github.io/tags/network/</link>
+    <link>/tags/network/</link>
     <description>Recent content in network on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 07 Mar 2018 15:33:51 +0000</lastBuildDate>
     
-	<atom:link href="laowalter.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/network/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Network</title>
-      <link>laowalter.github.io/posts/tech/network/</link>
+      <link>/posts/tech/network/</link>
       <pubDate>Wed, 07 Mar 2018 15:33:51 +0000</pubDate>
       
-      <guid>laowalter.github.io/posts/tech/network/</guid>
+      <guid>/posts/tech/network/</guid>
       <description>About IPV6 things OpenWRT IPv6 三种配置方式 List opened ports and program own them. sudo lsof -i sudo netstat -lptu sudo netstat -tulpn Which port bounded to port 22 sudo lsof -i :22 多网卡 Ref.1:多网卡配置使用ip route Gentoo 多网卡、静态路由</description>
     </item>
     

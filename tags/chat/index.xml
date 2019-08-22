@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>chat on Just a Memo</title>
-    <link>laowalter.github.io/tags/chat/</link>
+    <link>/tags/chat/</link>
     <description>Recent content in chat on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 10 Nov 2018 09:15:44 +0000</lastBuildDate>
     
-	<atom:link href="laowalter.github.io/tags/chat/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/chat/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>IRC/Weechat</title>
-      <link>laowalter.github.io/posts/tech/irc/</link>
+      <link>/posts/tech/irc/</link>
       <pubDate>Sat, 10 Nov 2018 09:15:44 +0000</pubDate>
       
-      <guid>laowalter.github.io/posts/tech/irc/</guid>
+      <guid>/posts/tech/irc/</guid>
       <description>Weechat 安装 目前Weechat所有的script都能支持python2, 官方加以暂时都编译为python2。 $ cat /etc/portage/package.use/weechat net-irc/weechat python_single_target_python2_7 -python_single_target_python3_6 OTR (1) Install OTR [ebuild N ] dev-python/pycrypto-2.6.1-r2 USE=&amp;#34;gmp -doc -test&amp;#34; PYTHON_TARGETS=&amp;#34;python2_7 python3_6</description>
     </item>
     

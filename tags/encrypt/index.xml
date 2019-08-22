@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>encrypt on Just a Memo</title>
-    <link>laowalter.github.io/tags/encrypt/</link>
+    <link>/tags/encrypt/</link>
     <description>Recent content in encrypt on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 13 Mar 2019 11:36:10 +0000</lastBuildDate>
     
-	<atom:link href="laowalter.github.io/tags/encrypt/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/encrypt/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Encrypt Filesystem / 加密文件系统</title>
-      <link>laowalter.github.io/posts/tech/encryptfs/</link>
+      <link>/posts/tech/encryptfs/</link>
       <pubDate>Wed, 13 Mar 2019 11:36:10 +0000</pubDate>
       
-      <guid>laowalter.github.io/posts/tech/encryptfs/</guid>
+      <guid>/posts/tech/encryptfs/</guid>
       <description>Dm-crypt 加密文件系统镜像 数据包准备 安装 root# emerge -avq sys-fs/lvm2 root# emerge -avq sys-fs/cryptsetup 检查dm-crpyt是否已经加载 $ ls -l /dev/mapper/control # 接下来加载dm-crypt内核模块： $ sudo modprobe dm-crypt # dm</description>
     </item>
     
     <item>
       <title>密码生成程序</title>
-      <link>laowalter.github.io/posts/tech/genpasswd/</link>
+      <link>/posts/tech/genpasswd/</link>
       <pubDate>Wed, 27 Feb 2019 14:04:48 +0000</pubDate>
       
-      <guid>laowalter.github.io/posts/tech/genpasswd/</guid>
+      <guid>/posts/tech/genpasswd/</guid>
       <description>Gentoo Wiki 密码生成 Command ranpwd 随机生成密码 mkpasswd 随机生成密码</description>
     </item>
     
     <item>
       <title>GPG</title>
-      <link>laowalter.github.io/posts/tech/gpg/</link>
+      <link>/posts/tech/gpg/</link>
       <pubDate>Wed, 13 Dec 2017 22:04:53 +0000</pubDate>
       
-      <guid>laowalter.github.io/posts/tech/gpg/</guid>
+      <guid>/posts/tech/gpg/</guid>
       <description> GPG setup  .bashrc
 GPG_TTY=$(tty) export GPG_TTY import public key
 gpg --import sone.bin check finger print
@@ -48,10 +48,10 @@ gpg --output doc --decrypt doc.gpg  </description>
     
     <item>
       <title>Encrypt</title>
-      <link>laowalter.github.io/posts/tech/encrypt/</link>
+      <link>/posts/tech/encrypt/</link>
       <pubDate>Wed, 29 Nov 2017 22:42:39 +0000</pubDate>
       
-      <guid>laowalter.github.io/posts/tech/encrypt/</guid>
+      <guid>/posts/tech/encrypt/</guid>
       <description> Encrypt a partiton with dm-crypt Reference  Gentoo dm-crypt wiki  Encrypt files with Gnupg </description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>samba on Just a Memo</title>
-    <link>laowalter.github.io/tags/samba/</link>
+    <link>/tags/samba/</link>
     <description>Recent content in samba on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 17 Nov 2018 10:17:08 +0000</lastBuildDate>
     
-	<atom:link href="laowalter.github.io/tags/samba/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/samba/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Samba</title>
-      <link>laowalter.github.io/posts/tech/samba/</link>
+      <link>/posts/tech/samba/</link>
       <pubDate>Sat, 17 Nov 2018 10:17:08 +0000</pubDate>
       
-      <guid>laowalter.github.io/posts/tech/samba/</guid>
+      <guid>/posts/tech/samba/</guid>
       <description>配置文件 smb.conf filename: /etc/samba/smb.conf [global] workgroup = home server string = mini server role = standalone server hosts allow = 192.168.0. 192.168.1. 192.168.6. 127. security = user log file = /var/log/samba/log.%m max log size = 50 interfaces = 192.168.0.199 127.0.0.1 dns proxy = no [homes] comment = Home Directories valid users = %S read only = No path = %H/samba create mask = 0644 directory mask =</description>
     </item>
     
