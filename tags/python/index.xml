@@ -56,6 +56,17 @@ or just change ~/.config/matplotlib/matplotlibrc  config mpl.rccParams[&amp;lsqu
     </item>
     
     <item>
+      <title>Build python ENV</title>
+      <link>/posts/tech/build_python_env/</link>
+      <pubDate>Tue, 27 Sep 2016 10:59:26 +0000</pubDate>
+      
+      <guid>/posts/tech/build_python_env/</guid>
+      <description>Install pypy Notice：This situation is install pypy3 after another virtualenv for python3 has already installed.
+Download tar package from http://pypy.org/ Extract pakage to /opt tar xvf pypy3.3-v5.2.0-alpha1-osx64.tar.bz2 /opt/ Create virtualenv manually Notice: For some reason, can not simplely run &amp;lsquo;virtualenv&amp;rsquo; -p to create one.
+source .bin/quanta.sh # enter a python3 virtualenv already exist, this named &amp;#39;quanta&amp;#39; cd .virtualenv virtualenv -p /opt/pypy3.3-v5.2.0-alpha1-osx64/bin/pypy3 pypy3 # will got some ERRORS, and FORGET IT.</description>
+    </item>
+    
+    <item>
       <title>Quanta Program</title>
       <link>/posts/futstock/quanta-program/</link>
       <pubDate>Mon, 29 Feb 2016 11:13:01 +0000</pubDate>
@@ -71,17 +82,6 @@ or just change ~/.config/matplotlib/matplotlibrc  config mpl.rccParams[&amp;lsqu
       
       <guid>/posts/futstock/quanta-resources/</guid>
       <description>toc: true CTP 接口资料 https://www.citicsf.com/download/ctp http://www.sfit.com.cn/5_2_DocumentDown.htm 国内量化交易接口 easytrader 基于python程序 smurfyquant.com 基于同花顺、通达信的客户端 Quanta Resourses: www.reddit.com www.joinquant.com Forex Trading Demo Project Forex Sign in repo in github List Forex Trading Diary #1 - Automated Forex Trading with the OANDA API Forex</description>
-    </item>
-    
-    <item>
-      <title>Build python ENV</title>
-      <link>/posts/tech/build_python_env/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/tech/build_python_env/</guid>
-      <description>Install pypy Notice：This situation is install pypy3 after another virtualenv for python3 has already installed.
-Download tar package from http://pypy.org/ Extract pakage to /opt tar xvf pypy3.3-v5.2.0-alpha1-osx64.tar.bz2 /opt/ Create virtualenv manually Notice: For some reason, can not simplely run &amp;lsquo;virtualenv&amp;rsquo; -p to create one.
-source .bin/quanta.sh # enter a python3 virtualenv already exist, this named &amp;#39;quanta&amp;#39; cd .virtualenv virtualenv -p /opt/pypy3.3-v5.2.0-alpha1-osx64/bin/pypy3 pypy3 # will got some ERRORS, and FORGET IT.</description>
     </item>
     
   </channel>

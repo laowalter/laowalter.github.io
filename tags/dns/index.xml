@@ -23,7 +23,7 @@
     <item>
       <title>DNS_Server Config</title>
       <link>/posts/tech/dns_server_config/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 09 Mar 2018 18:30:08 +0000</pubDate>
       
       <guid>/posts/tech/dns_server_config/</guid>
       <description>Install emerge -aqv bind bind-tools Config /* * Refer to the named.conf(5) and named(8) man pages, and the documentation * in /usr/share/doc/bind-* for more details. * Online versions of the documentation can be found here: * https://kb.isc.org/article/AA-01031 * * If you are going to set up an authoritative server, make sure you * understand the hairy details of how DNS works. Even with simple mistakes, * you can break connectivity</description>

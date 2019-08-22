@@ -23,7 +23,7 @@
     <item>
       <title>Quanta API</title>
       <link>/posts/tech/quanta_api/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 22 Sep 2016 10:00:00 +0000</pubDate>
       
       <guid>/posts/tech/quanta_api/</guid>
       <description>查询股票总市值和流通市值 总市值：mktcap 流通市值：nmc import tushare as ts df = ts.get_today_all() df.head() df = ts.get_today_all() code name changepercent trade open high low settlement volume turnoverratio amount per pb mktcap nmc 0 601500 通用股份 10.035 9.43 9.43 9.43 9.43 8.57 24800 0.01418</description>

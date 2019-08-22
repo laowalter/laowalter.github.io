@@ -453,20 +453,20 @@
     </item>
     
     <item>
-      <title>gfw</title>
-      <link>/tags/gfw/</link>
-      <pubDate>Mon, 30 Apr 2018 10:07:42 +0000</pubDate>
-      
-      <guid>/tags/gfw/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>输入法</title>
       <link>/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</link>
       <pubDate>Fri, 13 Apr 2018 15:30:54 +0000</pubDate>
       
       <guid>/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gfw</title>
+      <link>/tags/gfw/</link>
+      <pubDate>Fri, 13 Apr 2018 10:36:08 +0000</pubDate>
+      
+      <guid>/tags/gfw/</guid>
       <description></description>
     </item>
     
@@ -606,6 +606,15 @@
     </item>
     
     <item>
+      <title>device</title>
+      <link>/tags/device/</link>
+      <pubDate>Sun, 05 Nov 2017 20:40:58 +0000</pubDate>
+      
+      <guid>/tags/device/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>书法</title>
       <link>/tags/%E4%B9%A6%E6%B3%95/</link>
       <pubDate>Sun, 19 Mar 2017 20:57:07 +0000</pubDate>
@@ -671,7 +680,7 @@
     <item>
       <title>quanta</title>
       <link>/tags/quanta/</link>
-      <pubDate>Thu, 01 Sep 2016 08:32:00 +0000</pubDate>
+      <pubDate>Thu, 22 Sep 2016 10:00:00 +0000</pubDate>
       
       <guid>/tags/quanta/</guid>
       <description></description>
@@ -728,15 +737,6 @@
       <pubDate>Mon, 29 Feb 2016 09:52:41 +0000</pubDate>
       
       <guid>/tags/virtualbox/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>device</title>
-      <link>/tags/device/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/device/</guid>
       <description></description>
     </item>
     

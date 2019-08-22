@@ -58,6 +58,18 @@ emerge -avq net-wireless/wpa_supplicant emerge -avq net-misc/bridge-utils Config
     </item>
     
     <item>
+      <title>MountWindow</title>
+      <link>/posts/tech/mount_windows/</link>
+      <pubDate>Sat, 04 Nov 2017 19:56:15 +0000</pubDate>
+      
+      <guid>/posts/tech/mount_windows/</guid>
+      <description>On MAC System Keep Network Drives Mounted on Mac OS X using Autofs Copy from
+Edit /etc/auto_master /mnt/cifs is home of mount point
+# Automounter master map # +auto_master	# Use directory service /net	-hosts	-nobrowse,hidefromfinder,nosuid /home	auto_home	-nobrowse,hidefromfinder /Network/Servers	-fstab /-	-static /mnt/cifs	auto_nas Edit /etc/auto_nas new_tdx -fstype=smbfs,soft,noowners,noatime,nosuid ://user:passwd@192.168.0.18/new_tdx [OPTIONAL] Security sudo chmod 600 /etc/auto_nas ####– Create mount directory
+mkdir -p /mnt/cifs/new_tdx  Test auto mount sudo automount -vc Should see some output similar to this</description>
+    </item>
+    
+    <item>
       <title>SSH</title>
       <link>/posts/tech/ssh/</link>
       <pubDate>Fri, 13 Oct 2017 18:22:24 +0000</pubDate>

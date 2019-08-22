@@ -39,6 +39,18 @@
     </item>
     
     <item>
+      <title>Gentoo_Overlay</title>
+      <link>/posts/tech/gentoo_overlay/</link>
+      <pubDate>Sat, 25 Nov 2017 09:50:11 +0000</pubDate>
+      
+      <guid>/posts/tech/gentoo_overlay/</guid>
+      <description> Add local overlay  Create directory
+mkdir -p /usr/local/portage/metadata echo &amp;#34;masters = gentoo&amp;#34; &amp;gt; /usr/local/portage/metadata/layout.conf chown -R portage:portage /usr/local/portage/ Modify make.conf
+PORTDIR_OVERLAY=&amp;#34;/usr/local/portage/ ${PORTDIR_OVERLAY}&amp;#34; Add [local] part to /etc/portage/repos.conf/gentoo.conf
+[local] location = /usr/local/portage auto-syc = no  Add a local ebuild sudo cp -r /usr/portage/net-p2p/transmission /usr/local/portage cd /usr/local/portage ebuild transmission-2.92-r2.ebuild manifest</description>
+    </item>
+    
+    <item>
       <title>Sound driver in Linux</title>
       <link>/posts/tech/sounddriver/</link>
       <pubDate>Thu, 23 Nov 2017 23:41:48 +0000</pubDate>
@@ -58,6 +70,18 @@
     </item>
     
     <item>
+      <title>MountWindow</title>
+      <link>/posts/tech/mount_windows/</link>
+      <pubDate>Sat, 04 Nov 2017 19:56:15 +0000</pubDate>
+      
+      <guid>/posts/tech/mount_windows/</guid>
+      <description>On MAC System Keep Network Drives Mounted on Mac OS X using Autofs Copy from
+Edit /etc/auto_master /mnt/cifs is home of mount point
+# Automounter master map # +auto_master	# Use directory service /net	-hosts	-nobrowse,hidefromfinder,nosuid /home	auto_home	-nobrowse,hidefromfinder /Network/Servers	-fstab /-	-static /mnt/cifs	auto_nas Edit /etc/auto_nas new_tdx -fstype=smbfs,soft,noowners,noatime,nosuid ://user:passwd@192.168.0.18/new_tdx [OPTIONAL] Security sudo chmod 600 /etc/auto_nas ####– Create mount directory
+mkdir -p /mnt/cifs/new_tdx  Test auto mount sudo automount -vc Should see some output similar to this</description>
+    </item>
+    
+    <item>
       <title>Linux_Server</title>
       <link>/posts/tech/linux_server/</link>
       <pubDate>Tue, 19 Apr 2016 23:27:55 +0000</pubDate>
@@ -66,18 +90,6 @@
       <description> iptables (https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules)  List Chains with number
 sudo iptables -L -n -v --line-numbers Delete Chains
 sudo iptables -D INPUT 7  </description>
-    </item>
-    
-    <item>
-      <title>Gentoo_Overlay</title>
-      <link>/posts/tech/gentoo_overlay/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/tech/gentoo_overlay/</guid>
-      <description> Add local overlay  Create directory
-mkdir -p /usr/local/portage/metadata echo &amp;#34;masters = gentoo&amp;#34; &amp;gt; /usr/local/portage/metadata/layout.conf chown -R portage:portage /usr/local/portage/ Modify make.conf
-PORTDIR_OVERLAY=&amp;#34;/usr/local/portage/ ${PORTDIR_OVERLAY}&amp;#34; Add [local] part to /etc/portage/repos.conf/gentoo.conf
-[local] location = /usr/local/portage auto-syc = no  Add a local ebuild sudo cp -r /usr/portage/net-p2p/transmission /usr/local/portage cd /usr/local/portage ebuild transmission-2.92-r2.ebuild manifest</description>
     </item>
     
   </channel>

@@ -380,15 +380,6 @@ mklink /J “%APPDATA%\Apple Computer\MobileSync\Backup” “J:\My iPhone Backu
     </item>
     
     <item>
-      <title>xx-net(expired)</title>
-      <link>/posts/tech/xx-net/</link>
-      <pubDate>Mon, 30 Apr 2018 10:07:42 +0000</pubDate>
-      
-      <guid>/posts/tech/xx-net/</guid>
-      <description>XX-Net https://github.com/XX-net/XX-Net https://github.com/yangyangwithgnu/hardseed 近期问题解决 修改max_scan_ip_thread_num的限制 修改 ~/.xx-net/code/default/gae_proxy/local/config.py Click here to download config.py 的 patch file 安装 3.13.0 以上版本升级 启动之前远程打开管理功能(0</description>
-    </item>
-    
-    <item>
       <title>Input 输入法（未测试）</title>
       <link>/posts/tech/input/</link>
       <pubDate>Fri, 13 Apr 2018 15:30:54 +0000</pubDate>
@@ -440,6 +431,15 @@ mklink /J “%APPDATA%\Apple Computer\MobileSync\Backup” “J:\My iPhone Backu
       
       <guid>/posts/tech/ethereum/</guid>
       <description>Install Gentoo $ sudo layman -a foxiverlay $ sudo eix-update $ emerge -avq net-p2p/go-ethereum $ emerge -avq net-p2p/ethminer Create get account $ geth account new Create ethereum wallet Go to https://github.com/ethereum/mist/releases Download windows version, tutotialhttps://medium.com/@attores/step-by-step-guide-getting-started-with-ethereum etherminerhttps://github.com/ethereum-mining/ethminer/releases Mining Use Internet Server ethermine.org server list Command line ethminer.exe -G -P stratum+ssl://0x3DC7F73Ad59e55f41fc8a40F0304F9e243358f9a.miner1@asia1.ethermine.org:5555 With geth CPU Mining linux geth --mine --minerthreads=4 --cache 4096 GPU Mining With ethermine https://github.com/ethereum-mining/ethminer/releases windows Note: 0.14</description>
+    </item>
+    
+    <item>
+      <title>DNS_Server Config</title>
+      <link>/posts/tech/dns_server_config/</link>
+      <pubDate>Fri, 09 Mar 2018 18:30:08 +0000</pubDate>
+      
+      <guid>/posts/tech/dns_server_config/</guid>
+      <description>Install emerge -aqv bind bind-tools Config /* * Refer to the named.conf(5) and named(8) man pages, and the documentation * in /usr/share/doc/bind-* for more details. * Online versions of the documentation can be found here: * https://kb.isc.org/article/AA-01031 * * If you are going to set up an authoritative server, make sure you * understand the hairy details of how DNS works. Even with simple mistakes, * you can break connectivity</description>
     </item>
     
     <item>
@@ -596,6 +596,18 @@ $ jupyter notebook --no-browser [I 16:56:50.226 NotebookApp] Serving notebooks f
     </item>
     
     <item>
+      <title>Gentoo_Overlay</title>
+      <link>/posts/tech/gentoo_overlay/</link>
+      <pubDate>Sat, 25 Nov 2017 09:50:11 +0000</pubDate>
+      
+      <guid>/posts/tech/gentoo_overlay/</guid>
+      <description> Add local overlay  Create directory
+mkdir -p /usr/local/portage/metadata echo &amp;#34;masters = gentoo&amp;#34; &amp;gt; /usr/local/portage/metadata/layout.conf chown -R portage:portage /usr/local/portage/ Modify make.conf
+PORTDIR_OVERLAY=&amp;#34;/usr/local/portage/ ${PORTDIR_OVERLAY}&amp;#34; Add [local] part to /etc/portage/repos.conf/gentoo.conf
+[local] location = /usr/local/portage auto-syc = no  Add a local ebuild sudo cp -r /usr/portage/net-p2p/transmission /usr/local/portage cd /usr/local/portage ebuild transmission-2.92-r2.ebuild manifest</description>
+    </item>
+    
+    <item>
       <title>Transmission</title>
       <link>/posts/tech/transmission/</link>
       <pubDate>Fri, 24 Nov 2017 19:57:30 +0000</pubDate>
@@ -682,6 +694,15 @@ emerge -avq net-wireless/wpa_supplicant emerge -avq net-misc/bridge-utils Config
       
       <guid>/posts/tech/mac_mini_gentoo/</guid>
       <description>Mac Mini(late 2012) Install Gentoo Linux(single boot, kernel stub) USB Download admin iso Create Linux bootable usb stick Partiton (GPT must) [jtable] Device, Mount Point,Filesystem,Description /dev/sda1,not mounted,(bootloader),BIOS boot partition /dev/sda2,/boot/efi,fat32,EFI System Partition (ESP) where the EFI files will be held to boot into the bootloader 0xEE /dev/sda3,/,ext4,root partition for your system [/jtable] list partition $ parted (parted) print devices /dev/sda (500GB) /dev/sdb (250GB) /dev/sdc (15.6GB) $ select /dev/sda (parted) print</description>
+    </item>
+    
+    <item>
+      <title>Devices</title>
+      <link>/posts/tech/devices/</link>
+      <pubDate>Sun, 05 Nov 2017 20:40:58 +0000</pubDate>
+      
+      <guid>/posts/tech/devices/</guid>
+      <description>Mac mini Linux filename: 设备清单 mini description: Lunch Box Computer product: Macmini6,1 (System SKU#) vendor: Apple Inc. version: 1.0 serial: C07JG233DWYL width: 4294967295 bits capabilities: smbios-2.4 dmi-2.4 smp vsyscall32 configuration: boot=normal chassis=lunchbox family=Macmini sku=System SKU# uuid=DCB7B2B4-68E8-025F-868F-EEAA28F047DF *-core description: Motherboard product: Mac-031AEE4D24BFF0B1 vendor: Apple Inc. physical id: 0 version: Macmini6,1 serial: C07237706JXF1HCAL slot: Part Component *-cpu:0 description: CPU product: Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz vendor: Intel Corp.</description>
     </item>
     
     <item>
@@ -803,6 +824,26 @@ or just change ~/.config/matplotlib/matplotlibrc  config mpl.rccParams[&amp;lsqu
     </item>
     
     <item>
+      <title>Build python ENV</title>
+      <link>/posts/tech/build_python_env/</link>
+      <pubDate>Tue, 27 Sep 2016 10:59:26 +0000</pubDate>
+      
+      <guid>/posts/tech/build_python_env/</guid>
+      <description>Install pypy Notice：This situation is install pypy3 after another virtualenv for python3 has already installed.
+Download tar package from http://pypy.org/ Extract pakage to /opt tar xvf pypy3.3-v5.2.0-alpha1-osx64.tar.bz2 /opt/ Create virtualenv manually Notice: For some reason, can not simplely run &amp;lsquo;virtualenv&amp;rsquo; -p to create one.
+source .bin/quanta.sh # enter a python3 virtualenv already exist, this named &amp;#39;quanta&amp;#39; cd .virtualenv virtualenv -p /opt/pypy3.3-v5.2.0-alpha1-osx64/bin/pypy3 pypy3 # will got some ERRORS, and FORGET IT.</description>
+    </item>
+    
+    <item>
+      <title>Quanta API</title>
+      <link>/posts/tech/quanta_api/</link>
+      <pubDate>Thu, 22 Sep 2016 10:00:00 +0000</pubDate>
+      
+      <guid>/posts/tech/quanta_api/</guid>
+      <description>查询股票总市值和流通市值 总市值：mktcap 流通市值：nmc import tushare as ts df = ts.get_today_all() df.head() df = ts.get_today_all() code name changepercent trade open high low settlement volume turnoverratio amount per pb mktcap nmc 0 601500 通用股份 10.035 9.43 9.43 9.43 9.43 8.57 24800 0.01418</description>
+    </item>
+    
+    <item>
       <title>VNPY安装和使用</title>
       <link>/posts/tech/vnpy/</link>
       <pubDate>Thu, 01 Sep 2016 08:32:00 +0000</pubDate>
@@ -894,56 +935,6 @@ export PERLBREW_ROOT=/opt/perl5 curl -L https://install.perlbrew.pl | bash perlb
       
       <guid>/posts/tech/mac_operatoins/</guid>
       <description>Mac Operation create bootable mac usb In Application Download High Sierra apps Format usb stick with mac external file system In terminal: $ sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install\ macOS\ High\ Sierra.app brew install with proxy export ALL_PROXY=127.0.0.1:8087 brew install chromedriver set HostName set /etc/hosts set hostname sudo scutil --set ComputerName newname sudo scutil --set LocalHostName newname sudo scutil --set HostName newname dscacheutil -flushcache find and replace</description>
-    </item>
-    
-    <item>
-      <title>Build python ENV</title>
-      <link>/posts/tech/build_python_env/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/tech/build_python_env/</guid>
-      <description>Install pypy Notice：This situation is install pypy3 after another virtualenv for python3 has already installed.
-Download tar package from http://pypy.org/ Extract pakage to /opt tar xvf pypy3.3-v5.2.0-alpha1-osx64.tar.bz2 /opt/ Create virtualenv manually Notice: For some reason, can not simplely run &amp;lsquo;virtualenv&amp;rsquo; -p to create one.
-source .bin/quanta.sh # enter a python3 virtualenv already exist, this named &amp;#39;quanta&amp;#39; cd .virtualenv virtualenv -p /opt/pypy3.3-v5.2.0-alpha1-osx64/bin/pypy3 pypy3 # will got some ERRORS, and FORGET IT.</description>
-    </item>
-    
-    <item>
-      <title>Devices</title>
-      <link>/posts/tech/devices/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/tech/devices/</guid>
-      <description>Mac mini Linux filename: 设备清单 mini description: Lunch Box Computer product: Macmini6,1 (System SKU#) vendor: Apple Inc. version: 1.0 serial: C07JG233DWYL width: 4294967295 bits capabilities: smbios-2.4 dmi-2.4 smp vsyscall32 configuration: boot=normal chassis=lunchbox family=Macmini sku=System SKU# uuid=DCB7B2B4-68E8-025F-868F-EEAA28F047DF *-core description: Motherboard product: Mac-031AEE4D24BFF0B1 vendor: Apple Inc. physical id: 0 version: Macmini6,1 serial: C07237706JXF1HCAL slot: Part Component *-cpu:0 description: CPU product: Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz vendor: Intel Corp.</description>
-    </item>
-    
-    <item>
-      <title>DNS_Server Config</title>
-      <link>/posts/tech/dns_server_config/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/tech/dns_server_config/</guid>
-      <description>Install emerge -aqv bind bind-tools Config /* * Refer to the named.conf(5) and named(8) man pages, and the documentation * in /usr/share/doc/bind-* for more details. * Online versions of the documentation can be found here: * https://kb.isc.org/article/AA-01031 * * If you are going to set up an authoritative server, make sure you * understand the hairy details of how DNS works. Even with simple mistakes, * you can break connectivity</description>
-    </item>
-    
-    <item>
-      <title>Gentoo_Overlay</title>
-      <link>/posts/tech/gentoo_overlay/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/tech/gentoo_overlay/</guid>
-      <description> Add local overlay  Create directory
-mkdir -p /usr/local/portage/metadata echo &amp;#34;masters = gentoo&amp;#34; &amp;gt; /usr/local/portage/metadata/layout.conf chown -R portage:portage /usr/local/portage/ Modify make.conf
-PORTDIR_OVERLAY=&amp;#34;/usr/local/portage/ ${PORTDIR_OVERLAY}&amp;#34; Add [local] part to /etc/portage/repos.conf/gentoo.conf
-[local] location = /usr/local/portage auto-syc = no  Add a local ebuild sudo cp -r /usr/portage/net-p2p/transmission /usr/local/portage cd /usr/local/portage ebuild transmission-2.92-r2.ebuild manifest</description>
-    </item>
-    
-    <item>
-      <title>Quanta API</title>
-      <link>/posts/tech/quanta_api/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/tech/quanta_api/</guid>
-      <description>查询股票总市值和流通市值 总市值：mktcap 流通市值：nmc import tushare as ts df = ts.get_today_all() df.head() df = ts.get_today_all() code name changepercent trade open high low settlement volume turnoverratio amount per pb mktcap nmc 0 601500 通用股份 10.035 9.43 9.43 9.43 9.43 8.57 24800 0.01418</description>
     </item>
     
   </channel>

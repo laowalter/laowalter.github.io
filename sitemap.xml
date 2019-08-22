@@ -263,12 +263,12 @@
   </url>
   
   <url>
-    <loc>/tags/life/</loc>
+    <loc>/categories/life/</loc>
     <lastmod>2019-03-01T07:18:53+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/life/</loc>
+    <loc>/tags/life/</loc>
     <lastmod>2019-03-01T07:18:53+00:00</lastmod>
   </url>
   
@@ -663,16 +663,6 @@
   </url>
   
   <url>
-    <loc>/tags/gfw/</loc>
-    <lastmod>2018-04-30T10:07:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/tech/xx-net/</loc>
-    <lastmod>2018-04-30T10:07:42+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/posts/tech/input/</loc>
     <lastmod>2018-04-13T15:30:54+00:00</lastmod>
   </url>
@@ -680,6 +670,11 @@
   <url>
     <loc>/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</loc>
     <lastmod>2018-04-13T15:30:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/gfw/</loc>
+    <lastmod>2018-04-13T10:36:08+00:00</lastmod>
   </url>
   
   <url>
@@ -730,6 +725,11 @@
   <url>
     <loc>/posts/futstock/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/</loc>
     <lastmod>2018-03-23T10:44:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/tech/dns_server_config/</loc>
+    <lastmod>2018-03-09T18:30:08+00:00</lastmod>
   </url>
   
   <url>
@@ -883,6 +883,11 @@
   </url>
   
   <url>
+    <loc>/posts/tech/gentoo_overlay/</loc>
+    <lastmod>2017-11-25T09:50:11+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/posts/tech/transmission/</loc>
     <lastmod>2017-11-24T19:57:30+00:00</lastmod>
   </url>
@@ -945,6 +950,16 @@
   <url>
     <loc>/posts/tech/mac_mini_gentoo/</loc>
     <lastmod>2017-11-09T10:02:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/device/</loc>
+    <lastmod>2017-11-05T20:40:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/tech/devices/</loc>
+    <lastmod>2017-11-05T20:40:58+00:00</lastmod>
   </url>
   
   <url>
@@ -1088,8 +1103,18 @@
   </url>
   
   <url>
+    <loc>/posts/tech/build_python_env/</loc>
+    <lastmod>2016-09-27T10:59:26+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/quanta/</loc>
-    <lastmod>2016-09-01T08:32:00+00:00</lastmod>
+    <lastmod>2016-09-22T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/tech/quanta_api/</loc>
+    <lastmod>2016-09-22T10:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -1840,30 +1865,6 @@
   <url>
     <loc>/about/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/posts/tech/build_python_env/</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/device/</loc>
-  </url>
-  
-  <url>
-    <loc>/posts/tech/devices/</loc>
-  </url>
-  
-  <url>
-    <loc>/posts/tech/dns_server_config/</loc>
-  </url>
-  
-  <url>
-    <loc>/posts/tech/gentoo_overlay/</loc>
-  </url>
-  
-  <url>
-    <loc>/posts/tech/quanta_api/</loc>
   </url>
   
 </urlset>
