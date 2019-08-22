@@ -138,7 +138,7 @@ $ echo apple1 apple3 apple1 apple2 botemo1 | sed &amp;#39;/apple./ { s/apple1/ap
       <pubDate>Tue, 26 Mar 2019 20:03:53 +0000</pubDate>
       
       <guid>/posts/tech/makeup_pc/</guid>
-      <description>##软路由 配件 网卡(拆机的原装网卡) BCM 5709c 4口千兆，价格约100元； CPU 第四代 CPU i3 4170 + B85主板 NAS CPU E3-1234LV5 311 主板 ASROCK/永擎 C236 WSI 1565 内存 金士顿E</description>
+      <description>软路由 配件 网卡(拆机的原装网卡) BCM 5709c 4口千兆，价格约100元； CPU 第四代 CPU i3 4170 + B85主板 NAS CPU E3-1234LV5 311 主板 ASROCK/永擎 C236 WSI 1565 内存 金士顿ECC</description>
     </item>
     
     <item>
