@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,20 +24,21 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Git</h1> 
+            <p>Thu Sep 29, 2016</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>Git</h1>
-    <p>Thu Sep 29, 2016</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/git">git</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/git">git</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#use-git">Use Git</a></li>
 <li><a href="#about-github">About Github</a>
@@ -72,21 +73,20 @@
 <h2 id="use-git">Use Git</h2>
 
 <ul>
-<li>删除branch</li>
+<li><p>删除branch</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push origin --delete gh-pages  <span style="color:#75715e"># 删除远程库中的分支gh-pages</span>
+git branch -D gh-pages <span style="color:#75715e"># 删除本地分支gh-pages</span></code></pre></div></li>
+
+<li><p>不同的git client出现冲突，无法pull</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git fetch --all  <span style="color:#75715e"># 从远程仓库中下载最新的内容，但是不在本地合并</span>
+git reset --hard origin/master <span style="color:#75715e"># 重置master，--hard 指全部文件</span></code></pre></div></li>
+
+<li><p>删除branch</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch -d the_local_brach  <span style="color:#75715e"># 删除本地的</span>
+git push origin: the_remote_branch <span style="color:#75715e"># 删除远程的</span>
+git push origin --delete the_remote_branch <span style="color:#75715e"># 删除远程的</span></code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push origin --delete gh-pages  <span style="color:#75715e"># 删除远程库中的分支gh-pages
-</span><span style="color:#75715e"></span>git branch -D gh-pages # 删除本地分支gh-pages</code></pre></div>
-<ul>
-<li>不同的git client出现冲突，无法pull</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git fetch --all  <span style="color:#75715e"># 从远程仓库中下载最新的内容，但是不在本地合并
-</span><span style="color:#75715e"></span>git reset --hard origin/master # 重置master，--hard 指全部文件</code></pre></div>
-<ul>
-<li>删除branch</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch -d the_local_brach  <span style="color:#75715e"># 删除本地的
-</span><span style="color:#75715e"></span>git push origin: the_remote_branch <span style="color:#75715e"># 删除远程的
-</span><span style="color:#75715e"></span>git push origin --delete the_remote_branch # 删除远程的</code></pre></div>
+
 <h2 id="about-github">About Github</h2>
 
 <h3 id="generate-ssh-key">Generate ssh key</h3>
@@ -101,29 +101,31 @@ git clone git://github.com/Laowalter/project.git ./</code></pre></div>
 <h2 id="problems">Problems:</h2>
 
 <ol>
-<li>Ask password phrase again and again</li>
-</ol>
+<li><p>Ask password phrase again and again</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eval <span style="color:#e6db74">`</span>ssh-agent -s<span style="color:#e6db74">`</span>
-ssh-add</code></pre></div>
+ssh-add</code></pre></div></li>
+</ol>
+
 <h2 id="install-git-on-mac">Install Git on Mac</h2>
 
 <h3 id="server-computer">Server Computer:</h3>
 
 <ol>
-<li>Add a new user: git
+<li><p>Add a new user: git</p>
 
 <ul>
 <li>(1) Create a new user named &ldquo;git&rdquo;</li>
-<li>(2) Evennable web sharing</li>
+
+<li><p>(2) Evennable web sharing</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config receive.denyCurrentBranch updateInstead</code></pre></div></li>
 </ul></li>
-</ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    git config receive.denyCurrentBranch updateInstead</code></pre></div>
-<ol>
-<li>Initialise a git directory</li>
-</ol>
+
+<li><p>Initialise a git directory</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir something.git
 cd something.git
-git init --bare</code></pre></div>
+git init --bare</code></pre></div></li>
+</ol>
+
 <h3 id="client-computer">Client Computer</h3>
 
 <h4 id="new-repo">new repo</h4>

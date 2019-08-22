@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>device on Just a Memo</title>
+    <link>laowalter.github.io/tags/device/</link>
+    <description>Recent content in device on Just a Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="laowalter.github.io/tags/device/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Devices</title>
+      <link>laowalter.github.io/posts/tech/devices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>laowalter.github.io/posts/tech/devices/</guid>
+      <description>Mac mini Linux filename: 设备清单 mini description: Lunch Box Computer product: Macmini6,1 (System SKU#) vendor: Apple Inc. version: 1.0 serial: C07JG233DWYL width: 4294967295 bits capabilities: smbios-2.4 dmi-2.4 smp vsyscall32 configuration: boot=normal chassis=lunchbox family=Macmini sku=System SKU# uuid=DCB7B2B4-68E8-025F-868F-EEAA28F047DF *-core description: Motherboard product: Mac-031AEE4D24BFF0B1 vendor: Apple Inc. physical id: 0 version: Macmini6,1 serial: C07237706JXF1HCAL slot: Part Component *-cpu:0 description: CPU product: Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz vendor: Intel Corp.</description>
+    </item>
+    
+  </channel>
+</rss>

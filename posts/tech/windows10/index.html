@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,20 +24,21 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Windows 10</h1> 
+            <p>Fri Dec 9, 2016</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>Windows 10</h1>
-    <p>Fri Dec 9, 2016</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/window">window</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/window">window</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#bluetooth蓝牙问题">BlueTooth蓝牙问题</a></li>
 <li><a href="#系统启动相关">系统启动相关</a></li>
@@ -122,11 +123,10 @@
 <h2 id="setup-time-sync-interval">Setup Time sync interval</h2>
 
 <ul>
-<li>run regedit</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">HKEY_LOCAL_MACHINE<span style="color:#ae81ff">\S</span>YSTEM<span style="color:#ae81ff">\C</span>ontrolSet001<span style="color:#ae81ff">\s</span>ervices<span style="color:#ae81ff">\W</span>32Time<span style="color:#ae81ff">\T</span>imeProviders<span style="color:#ae81ff">\N</span>tpClient</code></pre></div>
-<ul>
-<li>改变 <code>SpecialPollInterval</code> 的值。</li>
+<li><p>run regedit</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">HKEY_LOCAL_MACHINE<span style="color:#ae81ff">\S</span>YSTEM<span style="color:#ae81ff">\C</span>ontrolSet001<span style="color:#ae81ff">\s</span>ervices<span style="color:#ae81ff">\W</span>32Time<span style="color:#ae81ff">\T</span>imeProviders<span style="color:#ae81ff">\N</span>tpClient</code></pre></div></li>
+
+<li><p>改变 <code>SpecialPollInterval</code> 的值。</p></li>
 </ul>
 
 <h2 id="stop-service">Stop service:</h2>
@@ -154,10 +154,13 @@
 
 <h3 id="苹果键盘在windows-10-64bit-的使用-autohotkey">苹果键盘在Windows 10(64bit)的使用：AutoHotKey</h3>
 
-<p>%filename: mac_g6.ahk</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-</span><span style="color:#75715e"></span>; <span style="color:#75715e">#Warn  ; Enable warnings to assist with detecting common errors.
-</span><span style="color:#75715e"></span>SendMode Input  ; Recommended <span style="color:#66d9ef">for</span> new scripts due to its superior speed and reliability.
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>mac_g6.ahk</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.</span>
+; <span style="color:#75715e">#Warn  ; Enable warnings to assist with detecting common errors.</span>
+SendMode Input  ; Recommended <span style="color:#66d9ef">for</span> new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ;-----------------------------------------
@@ -170,14 +173,14 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; ! <span style="color:#f92672">=</span> ALT
 ; ^ <span style="color:#f92672">=</span> CTRL
 ; + <span style="color:#f92672">=</span> SHIFT
-; <span style="color:#75715e"># = WIN
-</span><span style="color:#75715e"></span>;
+; <span style="color:#75715e"># = WIN</span>
+;
 ; Debug action snippet: MsgBox You pressed Control-A <span style="color:#66d9ef">while</span> Notepad is active.
 
-<span style="color:#75715e">#Persistent
-</span><span style="color:#75715e">#InstallKeybdHook
-</span><span style="color:#75715e">#SingleInstance force
-</span><span style="color:#75715e"></span>SetTitleMatchMode <span style="color:#ae81ff">2</span>
+<span style="color:#75715e">#Persistent</span>
+<span style="color:#75715e">#InstallKeybdHook</span>
+<span style="color:#75715e">#SingleInstance force</span>
+SetTitleMatchMode <span style="color:#ae81ff">2</span>
 SendMode Input
 
 
@@ -194,8 +197,8 @@ F12::SendInput <span style="color:#f92672">{</span>Volume_Up<span style="color:#
 ;LAlt::LWin ; add a semicolon in front of this line <span style="color:#66d9ef">if</span> you want to disable the windows key
 
 ; Eject Key
-;F20::SendInput <span style="color:#f92672">{</span>Insert<span style="color:#f92672">}</span> ; F20 doesn<span style="color:#960050;background-color:#1e0010">&#39;</span>t show up on AHK anymore, see <span style="color:#75715e">#3
-</span><span style="color:#75715e"></span>
+;F20::SendInput <span style="color:#f92672">{</span>Insert<span style="color:#f92672">}</span> ; F20 doesn<span style="color:#960050;background-color:#1e0010">&#39;</span>t show up on AHK anymore, see <span style="color:#75715e">#3</span>
+
 ; F13-15, standard windows mapping
 F13::SendInput <span style="color:#f92672">{</span>PrintScreen<span style="color:#f92672">}</span>
 F14::SendInput <span style="color:#f92672">{</span>ScrollLock<span style="color:#f92672">}</span>
@@ -207,8 +210,8 @@ F15::SendInput <span style="color:#f92672">{</span>Pause<span style="color:#f926
 
 LAlt &amp; backspace::sendinput, <span style="color:#f92672">{</span>delete<span style="color:#f92672">}</span>
 ^E::Send ^<span style="color:#f92672">{</span>End<span style="color:#f92672">}</span>
-<span style="color:#75715e">#i::sendinput, {Insert}
-</span><span style="color:#75715e"></span>RWin::Send <span style="color:#f92672">{</span>PgUp<span style="color:#f92672">}</span>
+<span style="color:#75715e">#i::sendinput, {Insert}</span>
+RWin::Send <span style="color:#f92672">{</span>PgUp<span style="color:#f92672">}</span>
 RAlt::Send <span style="color:#f92672">{</span>PgDn<span style="color:#f92672">}</span>
 
 ; --------------------------------------------------------------
@@ -222,46 +225,49 @@ LWin &amp; F12::send <span style="color:#f92672">{</span>PrintScreen<span style=
 ; --------------------------------------------------------------
 
 ; Make Ctrl + S work with cmd <span style="color:#f92672">(</span>windows<span style="color:#f92672">)</span> key
-<span style="color:#75715e">#s::Send ^s
-</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#s::Send ^s</span>
+
 ; Selecting
-<span style="color:#75715e">#a::^a
-</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#a::^a</span>
+
 ; Copying
-<span style="color:#75715e">#c::Send ^c
-</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#c::Send ^c</span>
+
 ; Pasting
-<span style="color:#75715e">#v::Send ^v
-</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#v::Send ^v</span>
+
 ; Cutting
-<span style="color:#75715e">#x::Send ^x
-</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#x::Send ^x</span>
+
 ; Opening
-<span style="color:#75715e">#o::Send ^o
-</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#o::Send ^o</span>
+
 ; Finding
-<span style="color:#75715e">#f::Send ^f
-</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#f::Send ^f</span>
+
 ; Undo
-<span style="color:#75715e">#z::Send ^z
-</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#z::Send ^z</span>
+
 ; Redo
-<span style="color:#75715e">#y::Send ^y
-</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#y::Send ^y</span>
+
 ; New tab
-<span style="color:#75715e">#t::Send ^t
-</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#t::Send ^t</span>
+
 ; close tab
-<span style="color:#75715e">#w::Send ^w
-</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#w::Send ^w</span>
+
 ; Close windows <span style="color:#f92672">(</span>cmd + q to Alt + F4<span style="color:#f92672">)</span>
-<span style="color:#75715e">#q::Send !{F4}
-</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#q::Send !{F4}</span>
+
 ; Remap Windows + Tab to Alt + Tab.
 Lwin &amp; Tab::AltTab
 
 ; minimize windows
-#m::WinMinimize,a</code></pre></div>
+<span style="color:#75715e">#m::WinMinimize,a</span></code></pre></div>
+    </div>
+</div>
+
 <h2 id="autorun-自动运行-启动运行">Autorun / 自动运行 / 启动运行</h2>
 
 <p>选择运行</p>

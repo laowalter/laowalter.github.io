@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,22 +24,23 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Develop Hugo</h1> 
+            <p>Thu Aug 8, 2019</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>Develop Hugo</h1>
-    <p>Thu Aug 8, 2019</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/hugo">hugo</a>
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/blog">blog</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/hugo">hugo</a>
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/blog">blog</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#youtube-tutorial">Youtube Tutorial</a></li>
 <li><a href="#有特别帮助的网址">有特别帮助的网址</a>
@@ -138,14 +139,15 @@
 
 <ol>
 <li>在文档中加入此分类，比如  moods : [&ldquo;happy&rdquo;]</li>
-<li>修改 config.toml，加入</li>
-</ol>
 
-<pre><code>    [taxonomies]
-        tag = &quot;tags&quot;
-        category = &quot;categories&quot;
-        mood = &quot;moods&quot;
-</code></pre>
+<li><p>修改 config.toml，加入</p>
+
+<pre><code>[taxonomies]
+    tag = &quot;tags&quot;
+    category = &quot;categories&quot;
+    mood = &quot;moods&quot;
+</code></pre></li>
+</ol>
 
 <h2 id="建立css-sass">建立css/sass</h2>
 
@@ -156,19 +158,18 @@
 <p>在theme中，</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> mkdir assets</code></pre></div>
 <ul>
-<li>asset/main.scss</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"> <span style="color:#f92672">$</span><span style="color:#f92672">main-bg-color</span><span style="color:#f92672">:</span> #B8BDBE<span style="color:#f92672">;</span>
+<li><p>asset/main.scss</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">$</span><span style="color:#f92672">main-bg-color</span><span style="color:#f92672">:</span> #B8BDBE<span style="color:#f92672">;</span>
  
- <span style="color:#f92672">body</span> {
-       <span style="color:#66d9ef">background-color</span>: <span style="color:#960050;background-color:#1e0010">$</span>main-bg-color;
- }
+<span style="color:#f92672">body</span> {
+   <span style="color:#66d9ef">background-color</span>: <span style="color:#960050;background-color:#1e0010">$</span>main-bg-color;
+}
  
- <span style="color:#f92672">h1</span> {
-     <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">green</span>;
- }</code></pre></div>
-<ul>
-<li>修改 layouts/partials/head.html</li>
+<span style="color:#f92672">h1</span> {
+ <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">green</span>;
+}</code></pre></div></li>
+
+<li><p>修改 layouts/partials/head.html</p></li>
 </ul>
 
 <p>加入 {{ style &hellip; 和 &lt;link rel= &hellip; 内容，此时main.scss 将在引用 head.html中模板中起作用。</p>
@@ -184,68 +185,58 @@
 <h3 id="加入如下文件">加入如下文件</h3>
 
 <ul>
-<li>/themes/&lt;theme_name&gt;/static</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> static/
- ├── css
- │   ├── kityminder.core.css
- │   └── mindmap.css
- └── js
-     ├── kityminder.core.min.js
-     ├── kity.min.js
-     ├── mindmap.js
-     └── mindmap.min.js</code></pre></div>
-<ul>
-<li>/themes/&lt;theme_name&gt;/layout/shortcodes</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tree" data-lang="tree">shortcodes/
-└── mind.html</code></pre></div>
-<div class="file" >
-    
-    <div class="filename" >
-        <p style="padding:0; margin:0;">filename: <b>mind.html</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"> 
- &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Get 0 }}&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mindmap&#34;</span>&gt;
-     {{ .Inner | markdownify }}
- &lt;/<span style="color:#f92672">div</span>&gt;
- </code></pre></div>
+<li><p>/themes/&lt;theme_name&gt;/static</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">static/
+├── css
+│   ├── kityminder.core.css
+│   └── mindmap.css
+└── js
+ ├── kityminder.core.min.js
+ ├── kity.min.js
+ ├── mindmap.js
+ └── mindmap.min.js</code></pre></div></li>
 
-    </div>
-</div>
-
-
-<p>markdownify 使得 .Inner|markdown  被解析为markdown文件格式;</p>
-
-<ul>
-<li>/themes/&lt;theme_name&gt;/layouts/partial/</li>
-</ul>
+<li><p>/themes/&lt;theme_name&gt;/layout/shortcodes</p>
 
 <div class="file" >
     
-    <div class="filename" >
-        <p style="padding:0; margin:0;">filename: <b>/themes/&lt;theme_name&gt;/layouts/partial/mindmap.html</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"> <span style="color:#75715e">&lt;!-- layouts/partials --&gt;</span>
- &lt;<span style="color:#f92672">head</span>&gt;
-     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
-     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
-     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ie-edge&#34;</span>&gt;
- 
-     <span style="color:#75715e">&lt;!-- Eable sass --&gt;</span>
-     {{ $style := resources.Get &#34;sass/main.scss&#34; | toCSS | minify | fingerprint }}
-     &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $style.Permalink }}&#34;</span>&gt;
- 
-     <span style="color:#75715e">&lt;!-- Insert for mindmap --&gt;</span>
-     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-     &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}css/kityminder.core.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
-     &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}css/mindmap.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
-     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}js/kity.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}js/kityminder.core.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}js/mindmap.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
- &lt;/<span style="color:#f92672">head</span>&gt;</code></pre></div>
-
-    </div>
+<div class="filename" >
+    <p style="padding:0; margin:0;">filename: <b>themes/&lt;theme_name&gt;/layout/shortcodes/mind.html</b></p>
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Get 0 }}&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mindmap&#34;</span>&gt;
+{{ .Inner | markdownify }}
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+</div>
 </div>
 
+<p>markdownify 使得 .Inner|markdown  被解析为markdown文件格式;</p></li>
+
+<li><p>/themes/&lt;theme_name&gt;/layouts/partial/</p>
+
+<div class="file" >
+    
+<div class="filename" >
+    <p style="padding:0; margin:0;">filename: <b>/themes/&lt;theme_name&gt;/layouts/partial/mindmap.html</b></p>
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"> <span style="color:#75715e">&lt;!-- layouts/partials --&gt;</span>
+&lt;<span style="color:#f92672">head</span>&gt;
+ &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+ &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+ &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ie-edge&#34;</span>&gt;
+ 
+ <span style="color:#75715e">&lt;!-- Eable sass --&gt;</span>
+ {{ $style := resources.Get &#34;sass/main.scss&#34; | toCSS | minify | fingerprint }}
+ &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $style.Permalink }}&#34;</span>&gt;
+ 
+ <span style="color:#75715e">&lt;!-- Insert for mindmap --&gt;</span>
+ &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+ &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}css/kityminder.core.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+ &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}css/mindmap.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+ &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}js/kity.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+ &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}js/kityminder.core.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+ &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}js/mindmap.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;</code></pre></div>
+</div>
+</div></li>
+</ul>
 
 <h2 id="配置文件格式">配置文件格式</h2>
 
@@ -254,36 +245,41 @@
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/conf.d/net</b></p>
         <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> 
- <span style="color:#75715e">### DNS ###
-</span><span style="color:#75715e"></span> 
+ <span style="color:#75715e">### DNS ###</span>
+ 
  dns_servers<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.1.1.1 9.9.9.9 192.168.0.1&#34;</span>
- <span style="color:#75715e">#dns_search=&#34;ghome&#34;
-</span><span style="color:#75715e"></span> 
- <span style="color:#75715e">### WIRED ###
-</span><span style="color:#75715e"></span> config_eth0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;192.168.0.199 netmask 255.255.255.0 brd 192.168.0.255&#34;</span>
+ <span style="color:#75715e">#dns_search=&#34;ghome&#34;</span>
+ 
+ <span style="color:#75715e">### WIRED ###</span>
+ config_eth0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;192.168.0.199 netmask 255.255.255.0 brd 192.168.0.255&#34;</span>
  routes_eth0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;default via 192.168.0.1&#34;</span>
  
- <span style="color:#75715e">#config_eth1=&#34;192.168.1.2 netmask 255.255.255.0 brd 192.168.1.255&#34;
-</span><span style="color:#75715e"></span> <span style="color:#75715e">#routes_eth1=&#34;default via 192.168.1.1&#34;
-</span><span style="color:#75715e"></span> 
+ <span style="color:#75715e">#config_eth1=&#34;192.168.1.2 netmask 255.255.255.0 brd 192.168.1.255&#34;</span>
+ <span style="color:#75715e">#routes_eth1=&#34;default via 192.168.1.1&#34;</span>
  
- <span style="color:#75715e">#modules_wlan0=&#34;!wpa_supplicant&#34;
-</span><span style="color:#75715e"></span> <span style="color:#75715e">#wpa_supplicant_wlan0=&#34;-Dnl80211 -d -f /var/log/wpa_supplicant.log&#34;
-</span><span style="color:#75715e"></span> <span style="color:#75715e">#config_wlan0=&#34;192.168.6.1/24&#34;
-</span><span style="color:#75715e"></span> <span style="color:#75715e">#routes_wlan0=&#34;default via 192.168.0.199&#34;
-</span><span style="color:#75715e"></span> 
  
- ### IPV6 Static ###</code></pre></div>
-
+ <span style="color:#75715e">#modules_wlan0=&#34;!wpa_supplicant&#34;</span>
+ <span style="color:#75715e">#wpa_supplicant_wlan0=&#34;-Dnl80211 -d -f /var/log/wpa_supplicant.log&#34;</span>
+ <span style="color:#75715e">#config_wlan0=&#34;192.168.6.1/24&#34;</span>
+ <span style="color:#75715e">#routes_wlan0=&#34;default via 192.168.0.199&#34;</span>
+ 
+ 
+ <span style="color:#75715e">### IPV6 Static ###</span></code></pre></div>
     </div>
 </div>
-
 
 <h2 id="修改-syntax-highlight">修改 Syntax Highlight</h2>
 
 <p>In <strong>/config.toml</strong> you need these lines:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hugo" data-lang="hugo"> PygmentsCodeFences = true
- PygmentsStyle = &#34;monokai&#34;</code></pre></div>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>config.toml</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hugo" data-lang="hugo"> PygmentsCodeFences = true</code></pre></div>
+    </div>
+</div>
+
 <p>For a list of styles, <a href="https://help.farbox.com/pygments.html">https://help.farbox.com/pygments.html</a> is a good source. I think there are more, but I haven&rsquo;t found a comprehensive list yet.</p>
 
 <p>For the background of code blocks, actually this is set by the Hugo theme, for the Hyde theme I was using I needed to override the css like this:</p>
@@ -298,10 +294,8 @@
  code {
    background-color: #EEE
  }</code></pre></div>
-
     </div>
 </div>
-
 
 <p>And add the ref link to /themes/hyde/layouts/partials/head.html</p>
 
@@ -314,10 +308,8 @@
  &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Site.BaseURL }}css/override.css&#34;</span>&gt;
 
  ...</code></pre></div>
-
     </div>
 </div>
-
 
 <h2 id="table-of-content">Table of Content</h2>
 
@@ -332,10 +324,8 @@
         <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"> 22 {{- $toc := .TableOfContents -}}
  23 {{- $toc := replaceRE `&lt;<span style="color:#f92672">ul</span>&gt;\n&lt;<span style="color:#f92672">li</span>&gt;\n&lt;<span style="color:#f92672">ul</span>&gt;` `&lt;<span style="color:#f92672">ul</span>&gt;` $toc -}}
  24 {{- safeHTML $toc -}}</code></pre></div>
-
     </div>
 </div>
-
 
 <h2 id="add-section-number">Add Section Number</h2>
 
@@ -345,7 +335,7 @@
 <li>add css to partial/single-head.html</li>
 </ol>
 
-<p><div class="file" >
+<div class="file" >
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>_default/single.html</b></p>
@@ -355,20 +345,20 @@
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">article</span>&gt;
     {{ .Content }}
 &lt;/<span style="color:#f92672">article</span>&gt; </code></pre></td></tr></table>
 </div>
-</div></p>
+</div>
 
 <p><br></p>
 
-<p><div class="file" >
+<div class="file" >
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>static/css/section_number/section_number.css</b></p>
@@ -378,55 +368,55 @@
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">49
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">body</span> {
@@ -479,11 +469,11 @@
 <span style="color:#66d9ef">counter-increment</span> : <span style="color:#66d9ef">none</span>;
 	}</code></pre></td></tr></table>
 </div>
-</div></p>
+</div>
 
 <p><br></p>
 
-<p><div class="file" >
+<div class="file" >
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>layout/partial/single-head.html</b></p>
@@ -493,18 +483,18 @@
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">head</span>&gt;
@@ -520,7 +510,7 @@
 <span style="display:block;width:100%;background-color:#3c3d38">    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Site.BaseURL}}css/section_number/section_number.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
 </span>&lt;/<span style="color:#f92672">head</span>&gt;</code></pre></td></tr></table>
 </div>
-</div></p>
+</div>
 
 </article>
 

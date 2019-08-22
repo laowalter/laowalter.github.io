@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,24 +24,25 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Mac Operations</h1> 
+            <p>Mon Feb 29, 2016</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>Mac Operations</h1>
-    <p>Mon Feb 29, 2016</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/mac">mac</a>
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/virtualbox">virtualbox</a>
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/git">git</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/mac">mac</a>
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/virtualbox">virtualbox</a>
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/git">git</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#mac-operation">Mac Operation</a>
 <ul>
@@ -80,10 +81,11 @@
 <ol>
 <li>In Application Download High Sierra apps</li>
 <li>Format usb stick with mac external file system</li>
-<li>In terminal:
-<br /></li>
+
+<li><p>In terminal:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo /Applications/Install<span style="color:#ae81ff">\ </span>macOS<span style="color:#ae81ff">\ </span>High<span style="color:#ae81ff">\ </span>Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install<span style="color:#ae81ff">\ </span>macOS<span style="color:#ae81ff">\ </span>High<span style="color:#ae81ff">\ </span>Sierra.app</code></pre></div></li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo /Applications/Install<span style="color:#ae81ff">\ </span>macOS<span style="color:#ae81ff">\ </span>High<span style="color:#ae81ff">\ </span>Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install<span style="color:#ae81ff">\ </span>macOS<span style="color:#ae81ff">\ </span>High<span style="color:#ae81ff">\ </span>Sierra.app</code></pre></div>
+
 <h2 id="brew-install-with-proxy">brew install with proxy</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export ALL_PROXY<span style="color:#f92672">=</span><span style="color:#ae81ff">127</span>.0.0.1:8087
 brew install chromedriver</code></pre></div>
@@ -91,37 +93,39 @@ brew install chromedriver</code></pre></div>
 
 <ol>
 <li>set /etc/hosts</li>
-<li>set hostname</li>
+
+<li><p>set hostname</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo scutil --set ComputerName newname
+sudo scutil --set LocalHostName newname
+sudo scutil --set HostName newname
+dscacheutil -flushcache</code></pre></div></li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    sudo scutil --set ComputerName newname
-    sudo scutil --set LocalHostName newname
-    sudo scutil --set HostName newname
-    dscacheutil -flushcache</code></pre></div>
+
 <h2 id="find-and-replace-in-command-line">find and replace in command line</h2>
 
 <ul>
-<li>replace</li>
+<li><p>replace</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find ./ -type f -print0|xargs -0 sed -ie <span style="color:#e6db74">&#39;s/{% asset_img /![Alt Text](\/images\/108class\//g&#39;</span>
+find ./ -type f -print0|xargs -0 sed -ie <span style="color:#e6db74">&#39;s/^---$//g&#39;</span>
+find . -name <span style="color:#e6db74">&#39;*.md&#39;</span> -type f -exec sed -i <span style="color:#e6db74">&#39;&#39;</span> -e  <span style="color:#e6db74">&#39;s/\\n//&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+find . -name <span style="color:#e6db74">&#39;*.css&#39;</span> -type f -exec sed -i <span style="color:#e6db74">&#39;&#39;</span> -e  <span style="color:#e6db74">&#39;s/googleapis/useso/&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></code></pre></div></li>
+
+<li><p>delete</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -name <span style="color:#e6db74">&#39;*md&#39;</span> -type f -exec sed -i <span style="color:#e6db74">&#39;&#39;</span> -e  <span style="color:#e6db74">&#39;/^$/d&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    find ./ -type f -print0|xargs -0 sed -ie <span style="color:#e6db74">&#39;s/{% asset_img /![Alt Text](\/images\/108class\//g&#39;</span>
-    find ./ -type f -print0|xargs -0 sed -ie <span style="color:#e6db74">&#39;s/^---$//g&#39;</span>
-    find . -name <span style="color:#e6db74">&#39;*.md&#39;</span> -type f -exec sed -i <span style="color:#e6db74">&#39;&#39;</span> -e  <span style="color:#e6db74">&#39;s/\\n//&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
-    find . -name <span style="color:#e6db74">&#39;*.css&#39;</span> -type f -exec sed -i <span style="color:#e6db74">&#39;&#39;</span> -e  <span style="color:#e6db74">&#39;s/googleapis/useso/&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></code></pre></div>
-<ul>
-<li>delete</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    find . -name <span style="color:#e6db74">&#39;*md&#39;</span> -type f -exec sed -i <span style="color:#e6db74">&#39;&#39;</span> -e  <span style="color:#e6db74">&#39;/^$/d&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></code></pre></div>
+
 <h1 id="autostart">Autostart</h1>
 
 <ul>
-<li>/Library/LaunchDaemons/com.localhost.hexo.plist
+<li><p>/Library/LaunchDaemons/com.localhost.hexo.plist</p>
 
 <ul>
-<li>Check script error with plutil</li>
+<li><p>Check script error with plutil</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">plutil -lint /Library/LaunchDaemons/com.localhost.hexo.plist</code></pre></div></li>
+
+<li><p>Set up log to /var/log/system.log</p></li>
 </ul></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    plutil -lint /Library/LaunchDaemons/com.localhost.hexo.plist</code></pre></div>
-<pre><code>* Set up log to /var/log/system.log
-</code></pre>
 
 <h2 id="cron">Cron</h2>
 
@@ -131,67 +135,67 @@ brew install chromedriver</code></pre></div>
 
 <p><code>注意:</code> crontab 在用户环境中不能够直接用crontab -e编辑，因为无法保存。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	~ su -
-	# root # crontab -u walter -e</code></pre></div>
+	<span style="color:#75715e"># root # crontab -u walter -e</span></code></pre></div>
 <p><img src="/images/tech/crontab.gif" alt="crontab.gif" /></p>
 
 <ul>
-<li>MacMini <code>cron file for walter</code></li>
-</ul>
+<li><p>MacMini <code>cron file for walter</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	<span style="color:#ae81ff">15</span> <span style="color:#ae81ff">09</span> * * <span style="color:#ae81ff">1</span>-5 walter /usr/bin/afplay ~/.stocknotice/alert915.m4a
 	<span style="color:#ae81ff">30</span> <span style="color:#ae81ff">11</span> * * <span style="color:#ae81ff">1</span>-5 walter /usr/bin/afplay ~/.stocknotice/closeram.m4a
 	<span style="color:#ae81ff">55</span> <span style="color:#ae81ff">12</span> * * <span style="color:#ae81ff">1</span>-5 walter /usr/bin/afplay ~/.stocknotice/openpm.m4a
-	<span style="color:#ae81ff">00</span> <span style="color:#ae81ff">15</span> * * <span style="color:#ae81ff">1</span>-5 walter /usr/bin/afplay ~/.stocknotice/closepm.m4a</code></pre></div>
-<ul>
-<li>关于virtualenv python的演示</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    <span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>    export LC_ALL<span style="color:#f92672">=</span>zh_CN.UTF-8
-    export LANG<span style="color:#f92672">=</span>zh_CN.UTF-8
-    PATH<span style="color:#f92672">=</span>/bin:/usr/sbin:/usr/bin
-    PATH<span style="color:#f92672">=</span>~/.bin:/usr/local/bin:/usr/local/mysql/bin:$PATH
+	<span style="color:#ae81ff">00</span> <span style="color:#ae81ff">15</span> * * <span style="color:#ae81ff">1</span>-5 walter /usr/bin/afplay ~/.stocknotice/closepm.m4a</code></pre></div></li>
 
-    source ~/.bin/quanta.sh
-    cd ~/quanta/strategy/small_mkval/
-    <span style="color:#75715e"># ~/.virtualenvs/quanta/bin/python data_prepare.py
-</span><span style="color:#75715e"></span>    python data_prepare.py</code></pre></div>
-<ul>
-<li>spyder</li>
-</ul>
+<li><p>关于virtualenv python的演示</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>export LC_ALL<span style="color:#f92672">=</span>zh_CN.UTF-8
+export LANG<span style="color:#f92672">=</span>zh_CN.UTF-8
+PATH<span style="color:#f92672">=</span>/bin:/usr/sbin:/usr/bin
+PATH<span style="color:#f92672">=</span>~/.bin:/usr/local/bin:/usr/local/mysql/bin:$PATH
+
+source ~/.bin/quanta.sh
+cd ~/quanta/strategy/small_mkval/
+<span style="color:#75715e"># ~/.virtualenvs/quanta/bin/python data_prepare.py</span>
+python data_prepare.py</code></pre></div></li>
+
+<li><p>spyder</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export WORKON_HOME<span style="color:#f92672">=</span>~/.virtualenvs
 source ~/.virtualenvs/quanta/bin/activate
-python ~/bin/spyder/bootstrap.py  &gt; /dev/null <span style="color:#ae81ff">2</span>&gt;&amp;<span style="color:#ae81ff">1</span> &amp;</code></pre></div>
+python ~/bin/spyder/bootstrap.py  &gt; /dev/null <span style="color:#ae81ff">2</span>&gt;&amp;<span style="color:#ae81ff">1</span> &amp;</code></pre></div></li>
+</ul>
+
 <h2 id="virtual-box">Virtual Box</h2>
 
 <ul>
 <li><p>Set Virtual Box resolution for  Mac or Linux</p>
 
 <ul>
-<li>One Screen</li>
+<li><p>One Screen</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~$ VBoxManage controlvm <span style="color:#e6db74">&#34;Name of Virtual Machine&#34;</span> setvideomodehint <span style="color:#ae81ff">1920</span> <span style="color:#ae81ff">1080</span> <span style="color:#ae81ff">32</span></code></pre></div></li>
+
+<li><p>Multiscreen​</p>
+
+<p>Add second monitor first in the setting menu of Virutal Box, The First screen number is 0 and the second is 1.​ ps Stock is the virtual machine name. then, ​</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~$ VBoxManage controlvm Stock setvideomodehint <span style="color:#ae81ff">2560</span> <span style="color:#ae81ff">1440</span> <span style="color:#ae81ff">32</span>​ <span style="color:#ae81ff">0</span>
+~$ VBoxManage controlvm Stock setvideomodehint <span style="color:#ae81ff">1920</span> <span style="color:#ae81ff">1080</span> <span style="color:#ae81ff">32</span>​ <span style="color:#ae81ff">1</span></code></pre></div></li>
 </ul></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~$ VBoxManage controlvm <span style="color:#e6db74">&#34;Name of Virtual Machine&#34;</span> setvideomodehint <span style="color:#ae81ff">1920</span> <span style="color:#ae81ff">1080</span> <span style="color:#ae81ff">32</span></code></pre></div>
-<pre><code>- Multiscreen​
 
-    Add second monitor first in the setting menu of Virutal Box, The First screen number is 0 and the second is 1.​ ps Stock is the virtual machine name. then, ​
-</code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~$ VBoxManage controlvm Stock setvideomodehint <span style="color:#ae81ff">2560</span> <span style="color:#ae81ff">1440</span> <span style="color:#ae81ff">32</span>​ <span style="color:#ae81ff">0</span>
-~$ VBoxManage controlvm Stock setvideomodehint <span style="color:#ae81ff">1920</span> <span style="color:#ae81ff">1080</span> <span style="color:#ae81ff">32</span>​ <span style="color:#ae81ff">1</span></code></pre></div>
 <h2 id="create-git-server">Create git server</h2>
 
 <h3 id="server-computer">Server Computer:</h3>
 
 <ol>
-<li>Add a new user: git</li>
-</ol>
+<li><p>Add a new user: git</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">		$ create a new user named <span style="color:#e6db74">&#39;git&#39;</span>
 		$ enable web sharing
-		$ git config receive.denyCurrentBranch updateInstead</code></pre></div>
-<ol>
-<li>Initialise a git directory</li>
-</ol>
+		$ git config receive.denyCurrentBranch updateInstead</code></pre></div></li>
+
+<li><p>Initialise a git directory</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">		$ mkdir something.git
 		$ cd something.git
-		$ git init --bare</code></pre></div>
+		$ git init --bare</code></pre></div></li>
+</ol>
+
 <h3 id="client-computer">Client Computer</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git clone ssh://localhost/~/something.git</code></pre></div>
 <p>Or: git is the username</p>

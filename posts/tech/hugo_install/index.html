@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    <link href="laowalter.github.iocss/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Hugo Install In Gentoo</h1> 
+            <p>Thu Aug 22, 2019</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/hugo">hugo</a>
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/ebuild">ebuild</a>
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/gentoo">gentoo</a>
+                
+            
+          </div>
+      </div>
+
+    <hr><br><nav id="TableOfContents">
+<ul>
+<li><a href="#find-hugo-ebuild">Find hugo ebuild</a></li>
+<li><a href="#install-hugo-ebuild-in-to-local-portage-usr-local-portage-www-apps-hugo">Install hugo ebuild in to local portage &ldquo;/usr/local/portage/www-apps/hugo&rdquo;</a>
+<ul>
+<li><a href="#cp-hugo-ebuid">cp hugo ebuid</a></li>
+<li><a href="#modify-hego-0-57-2-ebuild">modify hego-0.57.2.ebuild</a></li>
+<li><a href="#then-build-the-digest">Then build the digest</a></li>
+</ul></li>
+<li><a href="#emerge-avq-hugo">emerge -avq hugo</a></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h2 id="find-hugo-ebuild">Find hugo ebuild</h2>
+
+<p><a href="https://gpo.zugaina.org/"><em>Click Here</em> to Search HUGO in Gentoo Overlays</a></p>
+
+<p>Here is what I found:</p>
+
+<pre><code>https://gohugo.io
+hugo-0.57.2
+~amd64 ~x86
+debug pie +sass
+Overlay: NuLL3rr0r (outside)
+</code></pre>
+
+<h2 id="install-hugo-ebuild-in-to-local-portage-usr-local-portage-www-apps-hugo">Install hugo ebuild in to local portage &ldquo;/usr/local/portage/www-apps/hugo&rdquo;</h2>
+
+<h3 id="cp-hugo-ebuid">cp hugo ebuid</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cp hugo-0.57.2 /usr/local/portage/www-apps/hugo</code></pre></div>
+<h3 id="modify-hego-0-57-2-ebuild">modify hego-0.57.2.ebuild</h3>
+
+<p><strong>Replace line 202 with line 203</strong></p>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/usr/local/portage/www-apps/hugo/hugo-0.57.2.ebuild</b></p>
+        
+    </div>
+</div>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ebuild" data-lang="ebuild"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">171
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">172
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">173
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">174
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">175
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">176
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">177
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">178
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">179
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">180
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">181
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">182
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">183
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">184
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">185
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">186
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">187
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">188
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">189
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">190
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">191
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">192
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">193
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">194
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">195
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">196
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">197
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">198
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">204
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">205
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">206
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">207
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">208
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">209
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">210
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">211
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">212
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">213
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">214
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">215
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">216
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">217
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">218
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">219
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">220
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">221
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">222
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">223
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">224
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">225
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">226
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">227
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">228
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">229
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">230
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">231
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">232
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">233
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">234
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">235
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">236
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">237
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">238
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">239
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">240
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">241
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">242
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">243
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">244
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">245
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">246
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">247
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">248
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">249
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">250
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">251
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">252
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">253
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">254
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">255
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">256
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">257
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">258
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">259
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">260
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">261
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">262
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ebuild" data-lang="ebuild"><span style="color:#75715e"># Copyright 1999-2019 Gentoo Authors</span>
+<span style="color:#75715e"># Distributed under the terms of the GNU General Public License v2</span>
+
+EAPI<span style="color:#f92672">=</span><span style="color:#ae81ff">7</span>
+
+<span style="color:#75715e"># Change this when you update the ebuild</span>
+GIT_COMMIT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;58c56e9ded2e4b7f0c9ae7e02f89f3a1dcb0d3a7&#34;</span>
+EGO_PN<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;github.com/gohugoio/hugo&#34;</span>
+EGO_VENDOR<span style="color:#f92672">=(</span>
+	<span style="color:#75715e"># Note: Keep EGO_VENDOR in sync with `GO111MODULE=on go list -m all`</span>
+	<span style="color:#e6db74">&#34;cloud.google.com/go v0.39.0 github.com/googleapis/google-cloud-go&#34;</span>
+	<span style="color:#e6db74">&#34;contrib.go.opencensus.io/exporter/aws 2befc13012d0 github.com/census-ecosystem/opencensus-go-exporter-aws&#34;</span>
+	<span style="color:#e6db74">&#34;contrib.go.opencensus.io/exporter/ocagent v0.4.12 github.com/census-ecosystem/opencensus-go-exporter-ocagent&#34;</span>
+	<span style="color:#e6db74">&#34;contrib.go.opencensus.io/exporter/stackdriver v0.11.0 github.com/census-ecosystem/opencensus-go-exporter-stackdriver&#34;</span>
+	<span style="color:#e6db74">&#34;contrib.go.opencensus.io/integrations/ocsql v0.1.4 github.com/opencensus-integrations/ocsql&#34;</span>
+	<span style="color:#e6db74">&#34;contrib.go.opencensus.io/resource 21591786a5e0 github.com/census-ecosystem/opencensus-go-resource&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/Azure/azure-amqp-common-go v1.1.4&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/Azure/azure-pipeline-go v0.1.9&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/Azure/azure-sdk-for-go v27.3.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/Azure/azure-service-bus-go v0.4.1&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/Azure/azure-storage-blob-go v0.6.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/Azure/go-autorest v11.1.2&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/Azure/go-autorest/tracing v11.1.2 github.com/Azure/go-autorest&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/BurntSushi/locker a6e239ea1c69&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/BurntSushi/toml v0.3.1&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/GoogleCloudPlatform/cloudsql-proxy 6ac0b49e7197&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/OneOfOne/xxhash v1.2.2&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/PuerkitoBio/purell v1.1.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/PuerkitoBio/urlesc de5bf2ad4578&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/alecthomas/assert 405dbfeb8e38&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/alecthomas/chroma v0.6.4&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/alecthomas/colour 60882d9e2721&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/alecthomas/kong v0.1.15&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/alecthomas/repr d37bc2a10ba1&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/alecthomas/template a0175ee3bccc&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/alecthomas/units 2efee857e7cf&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/armon/consul-api eb2c6b5be1b6&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/armon/go-radix v1.0.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/aws/aws-sdk-go v1.19.40&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/beorn7/perks v1.0.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/bep/debounce v1.2.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/bep/gitmap v1.1.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/bep/go-tocss v0.6.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/census-instrumentation/opencensus-proto v0.2.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/cespare/xxhash v1.1.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/cheekybits/is 68e9c0620927&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/client9/misspell v0.3.4&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/codahale/hdrhistogram 3a0bb77429bd&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/coreos/bbolt v1.3.2&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/coreos/etcd v3.3.10&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/coreos/go-semver v0.2.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/coreos/go-systemd 95778dfbb74e&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/coreos/pkg 399ea9e2e55f&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/cpuguy83/go-md2man v1.0.10&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/danwakefield/fnmatch cbb64ac3d964&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/davecgh/go-spew v1.1.1&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/dgrijalva/jwt-go v3.2.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/dgryski/go-sip13 e10d5fee7954&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/dimchansky/utfbom v1.1.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/disintegration/imaging v1.6.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/dlclark/regexp2 v1.1.6&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/dustin/go-humanize v1.0.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/eknkc/amber cdade1c07385&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/fortytw2/leaktest v1.3.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/frankban/quicktest v1.4.1&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/fsnotify/fsnotify v1.4.7&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/ghodss/yaml v1.0.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/go-kit/kit v0.8.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/go-logfmt/logfmt v0.4.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/go-sql-driver/mysql v1.4.1&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/go-stack/stack v1.8.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/gobwas/glob v0.2.3&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/gogo/protobuf v1.2.1&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/gohugoio/testmodBuilder/mods c56af20f2e95 github.com/gohugoio/testmodBuilder&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/golang/glog 23def4e6c14b&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/golang/groupcache 5b532d6fd5ef&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/golang/mock v1.2.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/golang/protobuf v1.3.1&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/golang/snappy v0.0.1&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/google/btree v1.0.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/google/go-cmp v0.3.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/google/martian v2.1.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/google/pprof 3ea8567a2e57&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/google/uuid v1.1.1&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/google/wire v0.2.2&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/googleapis/gax-go v2.0.2&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/googleapis/gax-go/v2 v2.0.2 github.com/googleapis/gax-go&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/gorilla/websocket v1.4.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/grpc-ecosystem/go-grpc-middleware v1.0.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/grpc-ecosystem/grpc-gateway v1.9.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/hashicorp/golang-lru v0.5.1&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/hashicorp/hcl v1.0.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/inconshreveable/mousetrap v1.0.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/jdkato/prose v1.1.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/jmespath/go-jmespath c2b33e8439af&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/joho/godotenv v1.3.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/jonboulle/clockwork v0.1.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/jstemmer/go-junit-report af01ea7f8024&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/julienschmidt/httprouter v1.2.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/kisielk/errcheck v1.1.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/kisielk/gotool v1.0.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/konsorten/go-windows-terminal-sequences v1.0.1&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/kr/logfmt b84e30acd515&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/kr/pretty v0.1.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/kr/pty v1.1.1&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/kr/text v0.1.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/kyokomi/emoji v1.5.1&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/lib/pq v1.1.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/magefile/mage v1.4.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/magiconair/properties v1.8.1&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/markbates/inflect a12c3aec81a6&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/matryer/try 9ac251b645a2&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/mattn/go-colorable v0.0.9&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/mattn/go-isatty v0.0.8&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/mattn/go-runewidth v0.0.4&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/matttproud/golang_protobuf_extensions v1.0.1&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/miekg/mmark v1.3.6&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/mitchellh/go-homedir v1.1.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/mitchellh/hashstructure v1.0.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/mitchellh/mapstructure v1.1.2&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/muesli/smartcrop f6ebaa786a12&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/mwitkow/go-conntrack cc309e4a2223&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/nfnt/resize 83c6a9932646&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/nicksnyder/go-i18n v1.10.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/niklasfasching/go-org v0.1.2&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/oklog/ulid v1.3.1&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/olekukonko/tablewriter d4647c9c7a84&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/opentracing/opentracing-go v1.0.2&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/pelletier/go-toml v1.4.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/pkg/errors v0.8.1&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/pmezard/go-difflib v1.0.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/prometheus/client_golang v0.9.3&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/prometheus/client_model fd36f4220a90&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/prometheus/common v0.4.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/prometheus/procfs 5867b95ac084&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/prometheus/tsdb v0.7.1&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/rogpeppe/fastuuid 6724a57986af&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/rogpeppe/go-internal v1.3.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/russross/blackfriday a477dd164691&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/sanity-io/litter v1.1.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/sergi/go-diff v1.0.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/sirupsen/logrus v1.2.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/soheilhy/cmux v0.1.4&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/spaolacci/murmur3 f09979ecbc72&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/spf13/afero v1.2.2&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/spf13/cast v1.3.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/spf13/cobra v0.0.4&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/spf13/fsync v0.9.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/spf13/jwalterweatherman v1.1.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/spf13/pflag v1.0.3&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/spf13/viper v1.4.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/stretchr/objx v0.1.1&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/stretchr/testify v1.3.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/tdewolff/minify/v2 v2.3.7 github.com/tdewolff/minify&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/tdewolff/parse/v2 v2.3.5 github.com/tdewolff/parse&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/tdewolff/test v1.0.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/tidwall/pretty 1166b9ac2b65&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/tmc/grpc-websocket-proxy 0ad062ec5ee5&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/uber-go/atomic v1.3.2&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/uber/jaeger-client-go v2.15.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/uber/jaeger-lib v1.5.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/ugorji/go v1.1.4&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/wellington/go-libsass c63644206701&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/xdg/scram 7eeb5667e42c&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/xdg/stringprep v1.0.0&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/xiang90/probing 43a291ad63a2&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/xordataexchange/crypt b2862e3d0a77&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/yosssi/ace v0.0.5&#34;</span>
+	<span style="color:#e6db74">&#34;go.etcd.io/bbolt v1.3.2 github.com/etcd-io/bbolt&#34;</span>
+	<span style="color:#e6db74">&#34;go.mongodb.org/mongo-driver v1.0.1 github.com/mongodb/mongo-go-driver&#34;</span>
+	<span style="color:#e6db74">&#34;go.opencensus.io v0.22.0 github.com/census-instrumentation/opencensus-go&#34;</span>
+	<span style="color:#e6db74">&#34;go.uber.org/atomic v1.4.0 github.com/uber-go/atomic&#34;</span>
+	<span style="color:#e6db74">&#34;go.uber.org/multierr v1.1.0 github.com/uber-go/multierr&#34;</span>
+	<span style="color:#e6db74">&#34;go.uber.org/zap v1.10.0 github.com/uber-go/zap&#34;</span>
+	<span style="color:#e6db74">&#34;gocloud.dev v0.15.0 github.com/google/go-cloud&#34;</span>
+	<span style="color:#e6db74">&#34;golang.org/x/crypto d864b10871cd github.com/golang/crypto&#34;</span>
+	<span style="color:#e6db74">&#34;golang.org/x/exp 509febef88a4 github.com/golang/exp&#34;</span>
+	<span style="color:#e6db74">&#34;golang.org/x/image f03afa92d3ff github.com/golang/image&#34;</span>
+	<span style="color:#e6db74">&#34;golang.org/x/lint d0100b6bd8b3 github.com/golang/lint&#34;</span>
+	<span style="color:#e6db74">&#34;golang.org/x/net 1492cefac77f github.com/golang/net&#34;</span>
+	<span style="color:#e6db74">&#34;golang.org/x/oauth2 aaccbc9213b0 github.com/golang/oauth2&#34;</span>
+	<span style="color:#e6db74">&#34;golang.org/x/sync 112230192c58 github.com/golang/sync&#34;</span>
+	<span style="color:#e6db74">&#34;golang.org/x/sys fae7ac547cb7 github.com/golang/sys&#34;</span>
+	<span style="color:#e6db74">&#34;golang.org/x/text v0.3.2 github.com/golang/text&#34;</span>
+	<span style="color:#e6db74">&#34;golang.org/x/time 9d24e82272b4 github.com/golang/time&#34;</span>
+	<span style="color:#e6db74">&#34;golang.org/x/tools fe54fb35175b github.com/golang/tools&#34;</span>
+	<span style="color:#e6db74">&#34;golang.org/x/xerrors a985d3407aa7 github.com/golang/xerrors&#34;</span>
+	<span style="color:#e6db74">&#34;google.golang.org/api v0.5.0 github.com/googleapis/google-api-go-client&#34;</span>
+	<span style="color:#e6db74">&#34;google.golang.org/appengine v1.6.0 github.com/golang/appengine&#34;</span>
+	<span style="color:#e6db74">&#34;google.golang.org/genproto c2c4e71fbf69 github.com/googleapis/go-genproto&#34;</span>
+	<span style="color:#e6db74">&#34;google.golang.org/grpc v1.21.0 github.com/grpc/grpc-go&#34;</span>
+	<span style="color:#e6db74">&#34;gopkg.in/alecthomas/kingpin.v2 v2.2.6 github.com/alecthomas/kingpin&#34;</span>
+	<span style="color:#e6db74">&#34;gopkg.in/check.v1 788fd7840127 github.com/go-check/check&#34;</span>
+	<span style="color:#e6db74">&#34;gopkg.in/errgo.v2 v2.1.0 github.com/go-errgo/errgo&#34;</span>
+	<span style="color:#e6db74">&#34;gopkg.in/resty.v1 v1.12.0 github.com/go-resty/resty&#34;</span>
+	<span style="color:#e6db74">&#34;gopkg.in/yaml.v2 v2.2.2 github.com/go-yaml/yaml&#34;</span>
+	<span style="color:#e6db74">&#34;honnef.co/go/tools 3f1c8253044a github.com/dominikh/go-tools&#34;</span>
+	<span style="color:#e6db74">&#34;pack.ag/amqp v0.11.0 github.com/vcabbage/amqp&#34;</span>
+<span style="color:#f92672">)</span>
+
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e">#inherit bash-completion-r1 golang-vcs-snapshot-r1 &lt;-- 注释掉这一行,</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38">inherit bash-completion-r1 golang-vcs-snapshot <span style="color:#75715e"># 修改为这一行</span>
+</span>
+DESCRIPTION<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;A static HTML and CSS website generator written in Go&#34;</span>
+HOMEPAGE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://gohugo.io&#34;</span>
+ARCHIVE_URI<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://</span><span style="color:#e6db74">${</span>EGO_PN<span style="color:#e6db74">}</span><span style="color:#e6db74">/archive/v</span><span style="color:#e6db74">${</span>PV<span style="color:#e6db74">}</span><span style="color:#e6db74">.tar.gz -&gt; </span><span style="color:#e6db74">${</span>P<span style="color:#e6db74">}</span><span style="color:#e6db74">.tar.gz&#34;</span>
+SRC_URI<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>ARCHIVE_URI<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">${</span>EGO_VENDOR_URI<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+
+<span style="color:#75715e">#RESTRICT=&#34;test&#34;</span>
+
+LICENSE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Apache-2.0&#34;</span>
+SLOT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span>
+KEYWORDS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~amd64 ~x86&#34;</span>
+IUSE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;debug pie +sass&#34;</span>
+
+QA_PRESTRIPPED<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;usr/bin/.*&#34;</span>
+
+G<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>WORKDIR<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span>P<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+S<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>G<span style="color:#e6db74">}</span><span style="color:#e6db74">/src/</span><span style="color:#e6db74">${</span>EGO_PN<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+
+src_compile<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+	export GOPATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>G<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+	export CGO_CFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>CFLAGS<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+	export CGO_CXXFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>CXXFLAGS<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+	export CGO_LDFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>LDFLAGS<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+	local myldflags<span style="color:#f92672">=(</span>
+		<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>usex !debug <span style="color:#e6db74">&#39;-s -w&#39;</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+		-X <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>EGO_PN<span style="color:#e6db74">}</span><span style="color:#e6db74">/common/hugo.commitHash=</span><span style="color:#e6db74">${</span>GIT_COMMIT:0:7<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+		-X <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>EGO_PN<span style="color:#e6db74">}</span><span style="color:#e6db74">/common/hugo.buildDate=</span><span style="color:#66d9ef">$(</span>date -u <span style="color:#e6db74">&#39;+%FT%T%z&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+	<span style="color:#f92672">)</span>
+	local mygoargs<span style="color:#f92672">=(</span>
+		-v -work -x
+		-buildmode <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>usex pie pie exe<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+		-asmflags <span style="color:#e6db74">&#34;all=-trimpath=</span><span style="color:#e6db74">${</span>S<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+		-gcflags <span style="color:#e6db74">&#34;all=-trimpath=</span><span style="color:#e6db74">${</span>S<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+		-ldflags <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>myldflags[*]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+		-tags <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>usex sass <span style="color:#e6db74">&#39;extended&#39;</span> <span style="color:#e6db74">&#39;none&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+	<span style="color:#f92672">)</span>
+	go build <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>mygoargs[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">||</span> die
+
+	./hugo gen man --dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>T<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/man <span style="color:#f92672">||</span> die
+	./hugo gen autocomplete --completionfile<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>T<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/hugo <span style="color:#f92672">||</span> die
+<span style="color:#f92672">}</span>
+
+src_test<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+	<span style="color:#75715e"># Remove failing tests. If you know how to fix them, then please contribute.</span>
+	rm hugolib/<span style="color:#f92672">{</span>collections,embedded_shortcodes,page,permalinks,shortcode<span style="color:#f92672">}</span>_test.go <span style="color:#f92672">||</span> die
+
+	<span style="color:#75715e"># git_test.go requires a proper git repository</span>
+	rm releaser/git_test.go <span style="color:#f92672">||</span> die
+
+	go test -tags none ./... <span style="color:#f92672">||</span> die
+<span style="color:#f92672">}</span>
+
+src_install<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+	dobin hugo
+	use debug <span style="color:#f92672">&amp;&amp;</span> dostrip -x /usr/bin/hugo
+
+	doman <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>T<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/man/*
+	dobashcomp <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>T<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/hugo
+<span style="color:#f92672">}</span></code></pre></td></tr></table>
+</div>
+</div>
+
+<h3 id="then-build-the-digest">Then build the digest</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ cd /usr/local/portage/www-apps/hugo/
+ $ sudo ebuild hugo-hugo-0.57.2.ebuild digest
+
+ //NOTICE: <span style="color:#66d9ef">for</span> first time, all files should be download from github ... <span style="color:#66d9ef">for</span> generate digest.
+
+ $ tree
+   /usr/local/portage/www-apps/
+   └── hugo
+       ├── hugo-0.57.2.ebuild
+       ├── Manifest
+       └── metadata.xml</code></pre></div>
+<h2 id="emerge-avq-hugo">emerge -avq hugo</h2>
+
+</article>
+
+    </body>
+</html>

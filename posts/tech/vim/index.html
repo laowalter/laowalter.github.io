@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,22 +24,21 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>VIM</h1> 
+            <p>Mon Feb 29, 2016</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>VIM</h1>
-    <p>Mon Feb 29, 2016</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/vim">vim</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/vim">vim</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
-<ul>
-<li>
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#vim-bundleupdate-之后出现的问题">Vim BundleUpdate 之后出现的问题</a>
 <ul>
@@ -53,47 +52,38 @@
 <li><a href="#perl">Perl</a></li>
 <li><a href="#about-youcompleteme-ycm">About Youcompleteme (YCM)</a></li>
 </ul></li>
-</ul></li>
 </ul>
 </nav><article>
     
 
-<h3 id="vim-bundleupdate-之后出现的问题">Vim BundleUpdate 之后出现的问题</h3>
+<h2 id="vim-bundleupdate-之后出现的问题">Vim BundleUpdate 之后出现的问题</h2>
 
-<h4 id="ycm-youcompleteme-server-启动失败">YcM(YouCompleteMe) server 启动失败</h4>
+<h3 id="ycm-youcompleteme-server-启动失败">YcM(YouCompleteMe) server 启动失败</h3>
 
 <p>解决办法重新执行<code>install.py</code></p>
-
-<pre><code>cd ~/.vim/bundle/YouCompleteMe
-./install.py
-</code></pre>
-
-<h3 id="使用技巧-http-vim-wikia-com-wiki-category-vimtip"><a href="http://vim.wikia.com/wiki/Category:VimTip">使用技巧</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/.vim/bundle/YouCompleteMe
+./install.py</code></pre></div>
+<h2 id="使用技巧-http-vim-wikia-com-wiki-category-vimtip"><a href="http://vim.wikia.com/wiki/Category:VimTip">使用技巧</a></h2>
 
 <ul>
-<li>文件编码</li>
-</ul>
+<li><p>文件编码</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:set fenc<span style="color:#f92672">=</span>gbk
-:set fenc<span style="color:#f92672">=</span>utf-8</code></pre></div>
-<ul>
-<li>DOS UNIX 转换</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">set ff<span style="color:#f92672">=</span>unix</code></pre></div>
-<ul>
-<li>Swap character</li>
-</ul>
+:set fenc<span style="color:#f92672">=</span>utf-8</code></pre></div></li>
+
+<li><p>DOS UNIX 转换</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">set ff<span style="color:#f92672">=</span>unix</code></pre></div></li>
+
+<li><p>Swap character</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xp
-Xp</code></pre></div>
-<ul>
-<li>Global Replace,  <code>$</code> says &ldquo;put vim in last-line mode&rdquo;.</li>
-</ul>
+Xp</code></pre></div></li>
+
+<li><p>Global Replace,  <code>$</code> says &ldquo;put vim in last-line mode&rdquo;.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:1,$s/George Bush/Barack Obama/g 
-:1,$s/td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;CENTER&#34;</span>/td/g</code></pre></div>
-<ul>
-<li>Delete blank lines in vim (empty lines), use this vim command in “last line mode”</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:g/^$/d</code></pre></div>
-<ul>
+:1,$s/td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;CENTER&#34;</span>/td/g</code></pre></div></li>
+
+<li><p>Delete blank lines in vim (empty lines), use this vim command in “last line mode”</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:g/^$/d</code></pre></div></li>
+
 <li><p>折叠快捷键</p>
 
 <ul>
@@ -121,139 +111,336 @@ Xp</code></pre></div>
 <li><p><a href="https://www.cnblogs.com/wangkangluo1/archive/2012/04/12/2444952.html">vim 常用快捷键 二</a></p></li>
 </ul>
 
-<h3 id="in-stall-vim">In stall Vim</h3>
+<h2 id="in-stall-vim">In stall Vim</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install macvim --with-python3
 brew link macvim
 brew linkapps macvim</code></pre></div>
-<h3 id="plugin-installation">Plugin Installation</h3>
+<h2 id="plugin-installation">Plugin Installation</h2>
 
 <ol>
-<li>Install to ~/.vim/autoload/pathogen.vim. Or copy and paste:
-<br /></li>
-</ol>
+<li><p>Install to ~/.vim/autoload/pathogen.vim. Or copy and paste:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p ~/.vim/autoload ~/.vim/bundle <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim</code></pre></div>
-<ol>
-<li>Install Vundle
-<br /></li>
+</span><span style="color:#ae81ff"></span>curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim</code></pre></div></li>
+
+<li><p>Install Vundle</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle</code></pre></div></li>
+
+<li><p>Runtime Path Manipulation</p>
+
+<div class="file" >
+    
+<div class="filename" >
+    <p style="padding:0; margin:0;">filename: <b>~/.vimrc</b></p>
+        
+</div>
+</div>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">    <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">nocompatible</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">filetype</span> <span style="color:#a6e22e">on</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">syntax</span> <span style="color:#a6e22e">on</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">set</span>  <span style="color:#a6e22e">rtp</span>+=~<span style="color:#e6db74">/.vim/</span><span style="color:#a6e22e">bundle</span><span style="color:#e6db74">/vundle/</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">call</span> <span style="color:#a6e22e">vundle</span>#<span style="color:#a6e22e">begin</span>()<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;gmarik/vundle&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;Lokaltog/powerline&#39;</span>, {<span style="color:#e6db74">&#39;rtp&#39;</span>: <span style="color:#e6db74">&#39;powerline/bindings/vim/&#39;</span>}<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;jiangmiao/auto-pairs&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;Lokaltog/vim-powerline&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;perl-support.vim&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;Lokaltog/vim-easymotion&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;alvan/vim-closetag&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;Valloric/YouCompleteMe&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;PHP-correct-Indenting&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;mattn/emmet-vim&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;php.vim-html-enhanced&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;Javascript-Indentation&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;Enhanced-Javascript-syntax&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;jmcantrell/vim-virtualenv&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;kh3phr3n/python-syntax&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;NLKNguyen/papercolor-theme&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;altercation/vim-colors-solarized&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;Lokaltog/vim-distinguished&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;kevinw/pyflakes-vim&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;tmhedberg/SimpylFold&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;jamessan/vim-gnupg&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;lervag/vimtex&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;fatih/vim-go&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;SirVer/ultiSnips&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;ervandew/supertab&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;robertbasic/vim-hugo-helper&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    &#34;Plugin &#39;sebdah/vim-delve&#39; </span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    &#34;Plugin &#39;Shougo/vimshell&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">call</span> <span style="color:#a6e22e">vundle</span>#<span style="color:#a6e22e">end</span>()<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    
+</span><span style="color:#75715e">    &#34;tmhedberg/SimpylFold&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">SimpylFold_docstring_preview</span> = <span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">filetype</span> <span style="color:#a6e22e">plugin</span> <span style="color:#a6e22e">indent</span> <span style="color:#a6e22e">on</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">t_Co</span>=<span style="color:#ae81ff">256</span>   <span style="color:#75715e">&#34; This is may or may not needed.</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">solarized_termcolors</span>=<span style="color:#ae81ff">256</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">background</span>=dark<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">colorscheme</span> <span style="color:#a6e22e">PaperColor</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    &#34;colorscheme solarized</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    &#34;colorscheme distinguished</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">laststatus</span>=<span style="color:#ae81ff">2</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    
+</span><span style="color:#75715e">    &#34; Perl_Perltidy in Perl-support</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">Perl_Perltidy</span>  = <span style="color:#e6db74">&#39;on&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    
+</span><span style="color:#75715e">    &#34;set file encoding</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">fileencodings</span>=<span style="color:#a6e22e">utf</span><span style="color:#ae81ff">-8</span>,<span style="color:#a6e22e">gb2312</span>,<span style="color:#a6e22e">gbk</span>,<span style="color:#a6e22e">gb18030</span> <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">tabstop</span>=<span style="color:#ae81ff">4</span> <span style="color:#a6e22e">shiftwidth</span>=<span style="color:#ae81ff">4</span> <span style="color:#a6e22e">expandtab</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">number</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">vimtex_view_general_viewer</span> = <span style="color:#e6db74">&#34;less&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">imap</span> &lt;<span style="color:#a6e22e">C</span>-<span style="color:#a6e22e">e</span>&gt; &lt;<span style="color:#a6e22e">Esc</span>&gt; <span style="color:#a6e22e">l</span> <span style="color:#a6e22e">a</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">imap</span> &lt;<span style="color:#a6e22e">C</span>-<span style="color:#a6e22e">a</span>&gt; &lt;<span style="color:#a6e22e">Esc</span>&gt;<span style="color:#a6e22e">I</span> <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    
+</span><span style="color:#75715e">    &#34;inoremap &lt;expr&gt; j ((pumvisible())?(&#34;\&lt;C-n&gt;&#34;):(&#34;j&#34;))</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    &#34;inoremap &lt;expr&gt; k ((pumvisible())?(&#34;\&lt;C-p&gt;&#34;):(&#34;k&#34;))</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    
+</span><span style="color:#75715e">    &#34;let g:ycm_global_ycm_extra_conf = &#39;~/.vim/.ycm_extra_conf.py&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">ycm_confirm_extra_conf</span> = <span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    &#34;To avoid conflict snippets</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">ycm_key_list_select_completion</span> = [<span style="color:#e6db74">&#39;&lt;C-j&gt;&#39;</span>, <span style="color:#e6db74">&#39;&lt;Down&gt;&#39;</span>]<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">ycm_key_list_previous_completion</span> = [<span style="color:#e6db74">&#39;&lt;C-k&gt;&#39;</span>, <span style="color:#e6db74">&#39;&lt;Up&gt;&#39;</span>]<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">SuperTabDefaultCompletionType</span> = <span style="color:#e6db74">&#39;&lt;C-n&gt;&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">ycm_autoclose_preview_window_after_completion</span> = <span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">ycm_autoclose_preview_window_after_insertion</span> = <span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">ycm_show_diagnostics_ui</span> = <span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">ycm_enable_diagnostic_signs</span> = <span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">ycm_echo_current_diagnostic</span> = <span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">ycm_collect_identifiers_from_tags_files</span> = <span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    &#34; better key bindings for UltiSnipsExpandTrigger</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">UltiSnipsExpandTrigger</span> = <span style="color:#e6db74">&#34;&lt;tab&gt;&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">UltiSnipsJumpForwardTrigger</span> = <span style="color:#e6db74">&#34;&lt;tab&gt;&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">UltiSnipsJumpBackwardTrigger</span> = <span style="color:#e6db74">&#34;&lt;s-tab&gt;&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    
+</span><span style="color:#75715e">    &#34;map vim-go</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mapleader</span> = <span style="color:#e6db74">&#34;,&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">go_highlight_types</span> = <span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">FileType</span> <span style="color:#a6e22e">go</span> <span style="color:#a6e22e">nmap</span> &lt;<span style="color:#a6e22e">leader</span>&gt;<span style="color:#a6e22e">r</span> &lt;<span style="color:#a6e22e">Plug</span>&gt;(<span style="color:#a6e22e">go</span>-<span style="color:#a6e22e">run</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">FileType</span> <span style="color:#a6e22e">go</span> <span style="color:#a6e22e">nmap</span> &lt;<span style="color:#a6e22e">leader</span>&gt;<span style="color:#a6e22e">b</span> &lt;<span style="color:#a6e22e">Plug</span>&gt;(<span style="color:#a6e22e">go</span>-<span style="color:#a6e22e">build</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">FileType</span> <span style="color:#a6e22e">go</span> <span style="color:#a6e22e">nmap</span> &lt;<span style="color:#a6e22e">leader</span>&gt;<span style="color:#a6e22e">t</span> &lt;<span style="color:#a6e22e">Plug</span>&gt;(<span style="color:#a6e22e">go</span>-<span style="color:#a6e22e">test</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">FileType</span> <span style="color:#a6e22e">go</span> <span style="color:#a6e22e">nmap</span> &lt;<span style="color:#a6e22e">leader</span>&gt;<span style="color:#a6e22e">n</span> :<span style="color:#a6e22e">cnext</span>&lt;<span style="color:#a6e22e">CR</span>&gt;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">FileType</span> <span style="color:#a6e22e">go</span> <span style="color:#a6e22e">nmap</span> &lt;<span style="color:#a6e22e">leader</span>&gt;<span style="color:#a6e22e">p</span> :<span style="color:#a6e22e">cprevious</span>&lt;<span style="color:#a6e22e">CR</span>&gt;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">FileType</span> <span style="color:#a6e22e">go</span> <span style="color:#a6e22e">nmap</span> &lt;<span style="color:#a6e22e">leader</span>&gt;<span style="color:#a6e22e">c</span> :<span style="color:#a6e22e">cclose</span>&lt;<span style="color:#a6e22e">CR</span>&gt;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    &#34; auto</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">autowrite</span> <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    
+</span><span style="color:#75715e">    &#34; Simple re-format for minified Javascript</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">command</span>! <span style="color:#a6e22e">UnMinify</span> <span style="color:#a6e22e">call</span> <span style="color:#a6e22e">UnMinify</span>()<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">function</span>! <span style="color:#a6e22e">UnMinify</span>()<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>        %<span style="color:#a6e22e">s</span><span style="color:#e6db74">/{\ze[^\r\n]/</span>{\<span style="color:#a6e22e">r</span>/<span style="color:#a6e22e">g</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>        %<span style="color:#a6e22e">s</span><span style="color:#e6db74">/){/</span>) {/<span style="color:#a6e22e">g</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>        %<span style="color:#a6e22e">s</span><span style="color:#e6db74">/};\?\ze[^\r\n]/</span>\<span style="color:#ae81ff">0</span>\<span style="color:#a6e22e">r</span>/<span style="color:#a6e22e">g</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>        %<span style="color:#a6e22e">s</span><span style="color:#e6db74">/;\ze[^\r\n]/</span>;\<span style="color:#a6e22e">r</span>/<span style="color:#a6e22e">g</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>        %<span style="color:#a6e22e">s</span><span style="color:#e6db74">/[^\s]\zs[=&amp;|]\+\ze[^\s]/</span> \<span style="color:#ae81ff">0</span> /<span style="color:#a6e22e">g</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>        <span style="color:#a6e22e">normal</span> <span style="color:#a6e22e">ggVG</span>=<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">endfunction</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    
+</span><span style="color:#75715e">    
+</span><span style="color:#75715e">    &#34;Fold/unfold by syntax</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">foldmethod</span>=<span style="color:#a6e22e">syntax</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">go_fmt_experimental</span> = <span style="color:#ae81ff">1</span> <span style="color:#75715e">&#34;this line is only for vim-go bug on autocmd</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">augroup</span> <span style="color:#a6e22e">remember_folds</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      <span style="color:#a6e22e">autocmd</span>!<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      <span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">BufWinLeave</span> * <span style="color:#a6e22e">mkview</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      <span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">BufWinEnter</span> * <span style="color:#a6e22e">silent</span>! <span style="color:#a6e22e">loadview</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">augroup</span> <span style="color:#a6e22e">END</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    </code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle</code></pre></div>
-<ol>
-<li>Runtime Path Manipulation</li>
-</ol>
 
-<p>%filename: ~/.vimrc</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">set nocompatible
-filetype off
-set  rtp<span style="color:#f92672">+=</span>~/.vim/bundle/vundle/
-call vundle#begin<span style="color:#f92672">()</span>
+<h2 id="set-guifont-and-size">set GuiFont and Size</h2>
 
-Bundle <span style="color:#e6db74">&#39;Lokaltog/powerline&#39;</span>, <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;rtp&#39;</span>: <span style="color:#e6db74">&#39;powerline/bindings/vim/&#39;</span><span style="color:#f92672">}</span>
-Bundle <span style="color:#e6db74">&#39;gmarik/vundle&#39;</span>
-Bundle <span style="color:#e6db74">&#39;tpope/vim-surround&#39;</span>
-Bundle <span style="color:#e6db74">&#39;jiangmiao/auto-pairs&#39;</span>
-<span style="color:#e6db74">&#34; Bundle &#39;Lokaltog/vim-powerline&#39;
-</span><span style="color:#e6db74">Bundle &#39;bling/vim-airline&#39;
-</span><span style="color:#e6db74">Bundle &#39;perl-support.vim&#39;
-</span><span style="color:#e6db74">Bundle &#39;Lokaltog/vim-easymotion&#39;
-</span><span style="color:#e6db74">Bundle &#39;desert256.vim&#39;
-</span><span style="color:#e6db74">Bundle &#39;solarized&#39;
-</span><span style="color:#e6db74">Bundle &#39;PHP-correct-Indenting&#39;
-</span><span style="color:#e6db74">Bundle &#39;mattn/emmet-vim&#39;
-</span><span style="color:#e6db74">Bundle &#39;php.vim-html-enhanced&#39;
-</span><span style="color:#e6db74">Bundle &#39;OmniCppComplete&#39;
-</span><span style="color:#e6db74">Bundle &#39;Railscasts-Theme-GUIand256color&#39;
-</span><span style="color:#e6db74">Plugin &#39;Javascript-Indentation&#39;
-</span><span style="color:#e6db74">Plugin &#39;Enhanced-Javascript-syntax&#39;
-</span><span style="color:#e6db74">Plugin &#39;jmcantrell/vim-virtualenv&#39;
-</span><span style="color:#e6db74">Plugin &#39;klen/python-mode&#39;
-</span><span style="color:#e6db74">call vundle#end()
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">&#34;</span> Powerline setup
-set guifont<span style="color:#f92672">=</span>DejaVu<span style="color:#ae81ff">\ </span>Sans<span style="color:#ae81ff">\ </span>Mono<span style="color:#ae81ff">\ </span><span style="color:#66d9ef">for</span><span style="color:#ae81ff">\ </span>Powerline<span style="color:#ae81ff">\ </span><span style="color:#ae81ff">9</span>
-set laststatus<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
-set t_Co<span style="color:#f92672">=</span><span style="color:#ae81ff">256</span>
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>.gvimrc</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">guifont</span>=<span style="color:#a6e22e">TerminusTTF</span>:<span style="color:#a6e22e">h22</span></code></pre></div>
+    </div>
+</div>
 
-let g:Powerline_symbols<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;unicode&#39;</span>
-
-<span style="color:#e6db74">&#34; Perl_Perltidy in Perl-support
-</span><span style="color:#e6db74">let g:Perl_Perltidy  = &#39;on&#39;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">&#34;</span>set file encoding
-set fileencodings<span style="color:#f92672">=</span>utf-8,gb2312,gbk,gb18030 
-
-<span style="color:#e6db74">&#34; Python-mode
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">&#34;</span> Maximum line length
-let g:pymode_options_max_line_length <span style="color:#f92672">=</span> <span style="color:#ae81ff">120</span>
-
-<span style="color:#e6db74">&#34; Auto check on save
-</span><span style="color:#e6db74">let g:pymode_lint_write = 1
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">&#34;</span> syntax highlighting
-let g:pymode_syntax <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-let g:pymode_syntax_all <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-let g:pymode_syntax_indent_errors <span style="color:#f92672">=</span> g:pymode_syntax_all
-let g:pymode_syntax_space_errors <span style="color:#f92672">=</span> g:pymode_syntax_all
-
-<span style="color:#e6db74">&#34; Don&#39;t autofold code
-</span><span style="color:#e6db74">let g:pymode_folding = 0
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">set cursorline
-</span><span style="color:#e6db74">set number
-</span><span style="color:#e6db74">syntax enable
-</span><span style="color:#e6db74">set background=dark
-</span><span style="color:#e6db74">colorscheme solarized
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">set tabstop=4 shiftwidth=4 expandtab
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">colorscheme railscasts
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">filetype plugin indent on
-</span><span style="color:#e6db74">syntax on
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">inoremap &lt;C-e&gt; &lt;Esc&gt;A
-</span><span style="color:#e6db74">inoremap &lt;C-a&gt; &lt;Esc&gt;I </span></code></pre></div>
-<h3 id="set-guifont-and-size">set GuiFont and Size</h3>
-
-<p>%filename: .gvimrc</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">guifont</span>=<span style="color:#a6e22e">TerminusTTF</span>:<span style="color:#a6e22e">h22</span></code></pre></div>
-<h3 id="install-fonts">Install Fonts</h3>
+<h2 id="install-fonts">Install Fonts</h2>
 
 <p>Terminus TTF</p>
 
 <p>(<a href="https://files.ax86.net/terminus-ttf)[https://files.ax86.net/terminus-ttf">https://files.ax86.net/terminus-ttf)[https://files.ax86.net/terminus-ttf</a>]</p>
 
-<h3 id="perl">Perl</h3>
+<h2 id="perl">Perl</h2>
 
 <ul>
 <li>For perlbrew in vim:</li>
 </ul>
 
-<p>%filename: ~/.vim/bundle/perl-support.vim/plugin/perl-support.vim</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#ae81ff">162</span>   <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span>:<span style="color:#a6e22e">Perl_Perl</span>                 = <span style="color:#a6e22e">system</span>(<span style="color:#75715e">&#34;/usr/bin/which perl&#34;)</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#ae81ff">163</span>   <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span>:<span style="color:#a6e22e">Perl_Perl</span>                 = <span style="color:#a6e22e">substitute</span>(<span style="color:#a6e22e">s</span>:<span style="color:#a6e22e">Perl_Perl</span>, <span style="color:#e6db74">&#39;\n$&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)</code></pre></div>
-<h3 id="about-youcompleteme-ycm">About Youcompleteme (YCM)</h3>
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>~/.vim/bundle/perl-support.vim/plugin/perl-support.vim</b></p>
+        
+    </div>
+</div>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#ae81ff">162</span>   <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span>:<span style="color:#a6e22e">Perl_Perl</span>                 = <span style="color:#a6e22e">system</span>(<span style="color:#e6db74">&#34;/usr/bin/which perl&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#ae81ff">163</span>   <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span>:<span style="color:#a6e22e">Perl_Perl</span>                 = <span style="color:#a6e22e">substitute</span>(<span style="color:#a6e22e">s</span>:<span style="color:#a6e22e">Perl_Perl</span>, <span style="color:#e6db74">&#39;\n$&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)</code></pre></td></tr></table>
+</div>
+</div>
+
+<h2 id="about-youcompleteme-ycm">About Youcompleteme (YCM)</h2>
 
 <ul>
 <li>.vimrc</li>
 </ul>
 
-<p>%filename: ~/.vimrc</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">Plugin <span style="color:#e6db74">&#39;Valloric/YouCompleteMe&#39;</span></code></pre></div>
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>~/.vimrc</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">Plugin</span> <span style="color:#e6db74">&#39;Valloric/YouCompleteMe&#39;</span></code></pre></div>
+    </div>
+</div>
+
 <p>Then BundleInstall</p>
 
 <ul>
-<li>Install ncurses</li>
-</ul>
+<li><p>Install ncurses</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">touch /etc/portage/package.use/ncurses
 echo <span style="color:#e6db74">&#34;sys-libs/ncurses tinfo&#34;</span> &gt; /etc/portage/package.use/ncurses
-emerge sys-libs/ncurses:5</code></pre></div>
-<ul>
-<li>compile</li>
-</ul>
+emerge sys-libs/ncurses:5</code></pre></div></li>
+
+<li><p>compile</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd .vim/bundle/YouCompleteMe/
-./install --all</code></pre></div>
+./install --all</code></pre></div></li>
+</ul>
+
 <p>Ignore <strong>ERROR: msbuild or xbuild is required to build Omnisharp.</strong> 这是给.net用的。</p>
 
 </article>

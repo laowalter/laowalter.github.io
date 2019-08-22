@@ -1,15 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vim on Just a Memo</title>
+    <title>vim on Just a Memo</title>
     <link>laowalter.github.io/tags/vim/</link>
-    <description>Recent content in Vim on Just a Memo</description>
+    <description>Recent content in vim on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Feb 2016 10:28:24 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Aug 2019 07:49:35 +0800</lastBuildDate>
     
 	<atom:link href="laowalter.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sed</title>
+      <link>laowalter.github.io/posts/tech/sed/</link>
+      <pubDate>Wed, 21 Aug 2019 07:49:35 +0800</pubDate>
+      
+      <guid>laowalter.github.io/posts/tech/sed/</guid>
+      <description> Sed Reference
+ Directory Recursively
+$ find ./ -type f -exec sed -i -e &amp;#39;s/:1313//g&amp;#39; {} \; $ find ./ -type f -exec sed -i -e &amp;#39;s/192\.168\.0\.199/laowalter.github.io/g&amp;#39; {} \; Search and Replace
+$ sed -i &amp;#39;s/^tag/tags/g&amp;#39; Search in matched
+$ echo apple1 apple3 apple1 apple2 botemo1 | sed &amp;#39;/apple./ { s/apple1/apple2/g; }&amp;#39;  </description>
+    </item>
+    
+    <item>
+      <title>Vim Cheatsheet</title>
+      <link>laowalter.github.io/posts/tech/vim_cheatsheet/</link>
+      <pubDate>Mon, 22 Jul 2019 08:42:27 +0000</pubDate>
+      
+      <guid>laowalter.github.io/posts/tech/vim_cheatsheet/</guid>
+      <description>Vim 全局 :saveas file - 另存为 :close - 关闭当前窗口 K - open man page for word under the cursor H - 移动到当前页面顶部 M - 移动到当前页面中间 L - 移动到当前页面底部 w - 移动到下个单词开</description>
+    </item>
     
     <item>
       <title>VIM</title>

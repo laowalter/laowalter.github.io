@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,20 +24,21 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>IRC/Weechat</h1> 
+            <p>Sat Nov 10, 2018</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>IRC/Weechat</h1>
-    <p>Sat Nov 10, 2018</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/chat">chat</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/chat">chat</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#weechat">Weechat</a>
 <ul>
@@ -54,12 +55,11 @@
 <h3 id="安装">安装</h3>
 
 <ul>
-<li>目前Weechat所有的script都能支持python2, 官方加以暂时都编译为python2。</li>
-</ul>
+<li><p>目前Weechat所有的script都能支持python2, 官方加以暂时都编译为python2。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat /etc/portage/package.use/weechat
-net-irc/weechat  python_single_target_python2_7 -python_single_target_python3_6</code></pre></div>
-<ul>
-<li>OTR</li>
+net-irc/weechat  python_single_target_python2_7 -python_single_target_python3_6</code></pre></div></li>
+
+<li><p>OTR</p></li>
 </ul>
 
 <p>(1) Install OTR</p>
@@ -73,40 +73,33 @@ net-irc/weechat  python_single_target_python2_7 -python_single_target_python3_6<
 <h3 id="使用">使用</h3>
 
 <ul>
-<li>设置缺省的 nickname</li>
-</ul>
+<li><p>设置缺省的 nickname</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/set irc.server_default.nicks comma,separated,list,of,nicks
-/set irc.server.<span style="color:#f92672">[</span>SERVER_NAME<span style="color:#f92672">]</span>.nicks somename</code></pre></div>
-<ul>
-<li>连接freenode/关闭</li>
-</ul>
+/set irc.server.<span style="color:#f92672">[</span>SERVER_NAME<span style="color:#f92672">]</span>.nicks somename</code></pre></div></li>
+
+<li><p>连接freenode/关闭</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/connect freenode
-/close</code></pre></div>
-<ul>
-<li>连接irc服务器
-<br /></li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/set irc.server.freenode.autoconnect on <span style="color:#75715e"># 自动连接 freenode 
-</span><span style="color:#75715e"></span>/set irc.server.freenode.command <span style="color:#e6db74">&#34;/msg nickserv identify xxxxxxx&#34;</span></code></pre></div>
-<ul>
-<li>删除 irc server
-<br /></li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/unset irc.server.freenode.nicks</code></pre></div>
-<ul>
-<li><code>SSL</code> 强制
-<br /></li>
-</ul>
+/close</code></pre></div></li>
+
+<li><p>连接irc服务器</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/set irc.server.freenode.autoconnect on <span style="color:#75715e"># 自动连接 freenode</span> 
+/set irc.server.freenode.command <span style="color:#e6db74">&#34;/msg nickserv identify xxxxxxx&#34;</span></code></pre></div></li>
+
+<li><p>删除 irc server</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/unset irc.server.freenode.nicks</code></pre></div></li>
+
+<li><p><code>SSL</code> 强制</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/set irc.server.freenode.addresses <span style="color:#e6db74">&#34;chat.freenode.net/7000&#34;</span>
-/set irc.server.freenode.ssl on</code></pre></div>
-<ul>
-<li>Windows 管理</li>
-</ul>
+/set irc.server.freenode.ssl on</code></pre></div></li>
+
+<li><p>Windows 管理</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/buffer
 /window
 /window splitv <span style="color:#ae81ff">33</span>
 /window splith 
-/window merge</code></pre></div>
+/window merge</code></pre></div></li>
+</ul>
+
 </article>
 
     </body>

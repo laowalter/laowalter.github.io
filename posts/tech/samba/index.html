@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,36 +24,37 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Samba</h1> 
+            <p>Sat Nov 17, 2018</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>Samba</h1>
-    <p>Sat Nov 17, 2018</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/samba">samba</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/samba">samba</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
-<ul>
-<li>
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#配置文件-smb-conf">配置文件 smb.conf</a></li>
 <li><a href="#特别说明">特别说明：</a></li>
 <li><a href="#samba-手册-https-www-samba-org-samba-docs-current-man-html-smb-conf-5-html"><a href="https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html">《Samba 手册》</a></a></li>
 </ul></li>
-</ul></li>
 </ul>
 </nav><article>
     
 
-<h3 id="配置文件-smb-conf">配置文件 smb.conf</h3>
+<h2 id="配置文件-smb-conf">配置文件 smb.conf</h2>
 
-<p>%filename: /etc/samba/smb.conf</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>global<span style="color:#f92672">]</span>
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/etc/samba/smb.conf</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>global<span style="color:#f92672">]</span>
    workgroup <span style="color:#f92672">=</span> home
    server string <span style="color:#f92672">=</span> mini
    server role <span style="color:#f92672">=</span> standalone server
@@ -104,7 +105,10 @@
    printable <span style="color:#f92672">=</span> no
    guest ok <span style="color:#f92672">=</span> yes
    force user <span style="color:#f92672">=</span> %U</code></pre></div>
-<h3 id="特别说明">特别说明：</h3>
+    </div>
+</div>
+
+<h2 id="特别说明">特别说明：</h2>
 
 <ul>
 <li>testparm 用于检查smb.conf的语法是否正确。</li>
@@ -135,7 +139,7 @@
 
 <p>另外需要说明的是，上面几个配置项，会和security mask、force security mode、directory security mask、force directory security mode这几个配置项相互作用。这几个带”security”的配置项会影响Windows NT/2000的ACL功能，一般我们不需要设置。</p>
 
-<h3 id="samba-手册-https-www-samba-org-samba-docs-current-man-html-smb-conf-5-html"><a href="https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html">《Samba 手册》</a></h3>
+<h2 id="samba-手册-https-www-samba-org-samba-docs-current-man-html-smb-conf-5-html"><a href="https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html">《Samba 手册》</a></h2>
 
 </article>
 

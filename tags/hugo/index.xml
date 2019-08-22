@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo on Just a Memo</title>
+    <title>hugo on Just a Memo</title>
     <link>laowalter.github.io/tags/hugo/</link>
-    <description>Recent content in Hugo on Just a Memo</description>
+    <description>Recent content in hugo on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Aug 2019 10:30:29 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Aug 2019 12:38:01 +0800</lastBuildDate>
     
 	<atom:link href="laowalter.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo Install In Gentoo</title>
+      <link>laowalter.github.io/posts/tech/hugo_install/</link>
+      <pubDate>Thu, 22 Aug 2019 12:38:01 +0800</pubDate>
+      
+      <guid>laowalter.github.io/posts/tech/hugo_install/</guid>
+      <description>Find hugo ebuild Click Here to Search HUGO in Gentoo Overlays Here is what I found: https://gohugo.io hugo-0.57.2 ~amd64 ~x86 debug pie +sass Overlay: NuLL3rr0r (outside) Install hugo ebuild in to local portage &amp;ldquo;/usr/local/portage/www-apps/hugo&amp;rdquo; cp hugo ebuid $ cp hugo-0.57.2 /usr/local/portage/www-apps/hugo modify hego-0.57.2.ebuild Replace line 202 with line 203 filename: /usr/local/portage/www-apps/hugo/hugo-0.57.2.ebuild 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19</description>
+    </item>
     
     <item>
       <title>Hugo Cheatsheet</title>

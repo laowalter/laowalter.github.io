@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,20 +24,21 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Ethereum</h1> 
+            <p>Tue Mar 27, 2018</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>Ethereum</h1>
-    <p>Tue Mar 27, 2018</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/net">net</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/net">net</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#install">Install</a>
 <ul>
@@ -86,17 +87,20 @@
 
 <ul>
 <li><a href="https://ethermine.org">ethermine.org</a> server list</li>
-<li>Command line</li>
+
+<li><p>Command line</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ethminer.exe -G -P stratum+ssl://0x3DC7F73Ad59e55f41fc8a40F0304F9e243358f9a.miner1@asia1.ethermine.org:5555</code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ethminer.exe -G -P stratum+ssl://0x3DC7F73Ad59e55f41fc8a40F0304F9e243358f9a.miner1@asia1.ethermine.org:5555</code></pre></div>
+
 <h4 id="with-geth">With geth</h4>
 
 <h5 id="cpu-mining">CPU Mining</h5>
 
 <ul>
-<li>linux</li>
+<li><p>linux</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">geth --mine --minerthreads<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span> --cache <span style="color:#ae81ff">4096</span></code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">geth --mine --minerthreads<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span> --cache <span style="color:#ae81ff">4096</span></code></pre></div>
+
 <h5 id="gpu-mining">GPU Mining</h5>
 
 <h4 id="with-ethermine">With ethermine</h4>

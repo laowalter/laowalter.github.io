@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,26 +24,27 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>DataBases</h1> 
+            <p>Mon Feb 29, 2016</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>DataBases</h1>
-    <p>Mon Feb 29, 2016</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/mysql">mysql</a>
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/perl">perl</a>
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/apache">apache</a>
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/mongodb">mongodb</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/mysql">mysql</a>
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/perl">perl</a>
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/apache">apache</a>
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/mongodb">mongodb</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#mongodb">Mongodb</a>
 <ul>
@@ -69,29 +70,33 @@
 <h3 id="start-mongodb">Start mongodb</h3>
 
 <ul>
-<li>Upgrade</li>
-</ul>
+<li><p>Upgrade</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew upgrade mongodb
 brew info mongdb
-ln -s /usr/local/Cellar/mongodb/3.2.4/bin/* /usr/local/bin/</code></pre></div>
-<ul>
-<li>config: /usr/local/etc/mongod.conf, Dont forget touh <code>/usr/local/var/log/mongodb/mongo.log</code></li>
+ln -s /usr/local/Cellar/mongodb/3.2.4/bin/* /usr/local/bin/</code></pre></div></li>
+
+<li><p>config: /usr/local/etc/mongod.conf, Dont forget touh <code>/usr/local/var/log/mongodb/mongo.log</code></p></li>
 </ul>
 
-<p>%filename:  /usr/local/etc/mongod.conf</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">	<span style="color:#a6e22e">systemLog</span>:<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  		<span style="color:#a6e22e">destination</span>: <span style="color:#a6e22e">file</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  		<span style="color:#a6e22e">path</span>: <span style="color:#e6db74">/usr/</span><span style="color:#a6e22e">local</span><span style="color:#e6db74">/var/</span><span style="color:#a6e22e">log</span><span style="color:#e6db74">/mongodb/</span><span style="color:#a6e22e">mongo</span>.<span style="color:#a6e22e">log</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  		<span style="color:#a6e22e">logAppend</span>: <span style="color:#a6e22e">true</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>	<span style="color:#a6e22e">storage</span>:<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  		<span style="color:#a6e22e">dbPath</span>: <span style="color:#e6db74">/Volumes/</span><span style="color:#a6e22e">Home</span><span style="color:#e6db74">/Walter/</span><span style="color:#a6e22e">mongodb</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>	<span style="color:#a6e22e">net</span>:<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  		<span style="color:#a6e22e">bindIp</span>: <span style="color:#ae81ff">192</span>.<span style="color:#ae81ff">168</span>.<span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">99</span></code></pre></div>
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b> /usr/local/etc/mongod.conf</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"> <span style="color:#a6e22e">systemLog</span>:<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>         <span style="color:#a6e22e">destination</span>: <span style="color:#a6e22e">file</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>         <span style="color:#a6e22e">path</span>: <span style="color:#e6db74">/usr/</span><span style="color:#a6e22e">local</span><span style="color:#e6db74">/var/</span><span style="color:#a6e22e">log</span><span style="color:#e6db74">/mongodb/</span><span style="color:#a6e22e">mongo</span>.<span style="color:#a6e22e">log</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>         <span style="color:#a6e22e">logAppend</span>: <span style="color:#a6e22e">true</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span> <span style="color:#a6e22e">storage</span>:<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>         <span style="color:#a6e22e">dbPath</span>: <span style="color:#e6db74">/Volumes/</span><span style="color:#a6e22e">Home</span><span style="color:#e6db74">/Walter/</span><span style="color:#a6e22e">mongodb</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span> <span style="color:#a6e22e">net</span>:<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>         <span style="color:#a6e22e">bindIp</span>: <span style="color:#ae81ff">192</span>.<span style="color:#ae81ff">168</span>.<span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">99</span></code></pre></div>
+    </div>
+</div>
+
 <ul>
-<li>manual start</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> mongod --config /usr/local/etc/mongod.conf</code></pre></div>
-<ul>
+<li><p>manual start</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mongod --config /usr/local/etc/mongod.conf</code></pre></div></li>
+
 <li><p>Mac autostart</p>
 
 <ul>
@@ -99,23 +104,29 @@ ln -s /usr/local/Cellar/mongodb/3.2.4/bin/* /usr/local/bin/</code></pre></div>
 </ul></li>
 </ul>
 
-<p>%filename: /Library/LaunchDaemons/org.mongo.mongod.plist</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">		<span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>  
-		<span style="color:#75715e">&lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt;</span>  
-		<span style="color:#f92672">&lt;plist</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;1.0&#34;</span><span style="color:#f92672">&gt;</span>  
-		<span style="color:#f92672">&lt;dict&gt;</span>  
-	   	<span style="color:#f92672">&lt;key&gt;</span>Label<span style="color:#f92672">&lt;/key&gt;</span>
-	   	<span style="color:#f92672">&lt;string&gt;</span>org.mongo.mongod<span style="color:#f92672">&lt;/string&gt;</span>
-	   	<span style="color:#f92672">&lt;key&gt;</span>RunAtLoad<span style="color:#f92672">&lt;/key&gt;</span>
-	   	<span style="color:#f92672">&lt;true/&gt;</span>
-      	<span style="color:#f92672">&lt;key&gt;</span>ProgramArguments<span style="color:#f92672">&lt;/key&gt;</span>
-      	<span style="color:#f92672">&lt;array&gt;</span>
-        	<span style="color:#f92672">&lt;string&gt;</span>/usr/local/bin/mongod<span style="color:#f92672">&lt;/string&gt;</span>
-        	<span style="color:#f92672">&lt;string&gt;</span>--config<span style="color:#f92672">&lt;/string&gt;</span>
-        	<span style="color:#f92672">&lt;string&gt;</span>/usr/local/etc/mongod.conf<span style="color:#f92672">&lt;/string&gt;</span>
-      	<span style="color:#f92672">&lt;/array&gt;</span>
-		<span style="color:#f92672">&lt;/dict&gt;</span>  
-		<span style="color:#f92672">&lt;/plist&gt;</span></code></pre></div>
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/Library/LaunchDaemons/org.mongo.mongod.plist</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">     <span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>  
+        <span style="color:#75715e">&lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt;</span>  
+        <span style="color:#f92672">&lt;plist</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;1.0&#34;</span><span style="color:#f92672">&gt;</span>  
+        <span style="color:#f92672">&lt;dict&gt;</span>  
+        <span style="color:#f92672">&lt;key&gt;</span>Label<span style="color:#f92672">&lt;/key&gt;</span>
+        <span style="color:#f92672">&lt;string&gt;</span>org.mongo.mongod<span style="color:#f92672">&lt;/string&gt;</span>
+        <span style="color:#f92672">&lt;key&gt;</span>RunAtLoad<span style="color:#f92672">&lt;/key&gt;</span>
+        <span style="color:#f92672">&lt;true/&gt;</span>
+        <span style="color:#f92672">&lt;key&gt;</span>ProgramArguments<span style="color:#f92672">&lt;/key&gt;</span>
+        <span style="color:#f92672">&lt;array&gt;</span>
+            <span style="color:#f92672">&lt;string&gt;</span>/usr/local/bin/mongod<span style="color:#f92672">&lt;/string&gt;</span>
+            <span style="color:#f92672">&lt;string&gt;</span>--config<span style="color:#f92672">&lt;/string&gt;</span>
+            <span style="color:#f92672">&lt;string&gt;</span>/usr/local/etc/mongod.conf<span style="color:#f92672">&lt;/string&gt;</span>
+        <span style="color:#f92672">&lt;/array&gt;</span>
+        <span style="color:#f92672">&lt;/dict&gt;</span>  
+        <span style="color:#f92672">&lt;/plist&gt;</span></code></pre></div>
+    </div>
+</div>
+
 <pre><code>* Add to launchctl
 </code></pre>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">		sudo chown root:wheel /Library/LaunchDaemons/org.mongo.mongod.plist  
@@ -124,40 +135,37 @@ ln -s /usr/local/Cellar/mongodb/3.2.4/bin/* /usr/local/bin/</code></pre></div>
 <h3 id="mongodb-operation">Mongodb operation</h3>
 
 <ul>
-<li>connect database</li>
-</ul>
+<li><p>connect database</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	$ mongod
-	$ use stock</code></pre></div>
-<ul>
-<li>create compound unique index</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mongodb" data-lang="mongodb">	db.hist.createIndex({&#39;code&#39;:1, &#39;date&#39;:-1},{background:true, unique:true})</code></pre></div>
-<ul>
-<li>multi select</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mongodb" data-lang="mongodb">	db.getCollection(&#39;histfq&#39;).find({&#39;code&#39;:&#39;600036&#39;, date:ISODate(&#34;2013-02-06T00:00:00.000Z&#34;)})</code></pre></div>
-<ul>
-<li>sort</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mongodb" data-lang="mongodb">	db.getCollection(&#39;histfq&#39;).find({&#39;code&#39;:&#39;600036&#39;}).sort({&#39;date&#39;:-1})</code></pre></div>
-<ul>
+	$ use stock</code></pre></div></li>
+
+<li><p>create compound unique index</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mongodb" data-lang="mongodb">	db.hist.createIndex({&#39;code&#39;:1, &#39;date&#39;:-1},{background:true, unique:true})</code></pre></div></li>
+
+<li><p>multi select</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mongodb" data-lang="mongodb">	db.getCollection(&#39;histfq&#39;).find({&#39;code&#39;:&#39;600036&#39;, date:ISODate(&#34;2013-02-06T00:00:00.000Z&#34;)})</code></pre></div></li>
+
+<li><p>sort</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mongodb" data-lang="mongodb">	db.getCollection(&#39;histfq&#39;).find({&#39;code&#39;:&#39;600036&#39;}).sort({&#39;date&#39;:-1})</code></pre></div></li>
+
 <li><p>date</p>
 
 <ul>
-<li>correct format in python for mongodb
-<br /></li>
+<li><p>correct format in python for mongodb</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">		date_format {<span style="color:#e6db74">&#39;date&#39;</span>: datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2009</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">45</span>)}</code></pre></div></li>
 </ul></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">		date_format {<span style="color:#e6db74">&#39;date&#39;</span>: datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2009</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">45</span>)}</code></pre></div>
+
 <h2 id="mysql">Mysql</h2>
 
 <h3 id="operation">Operation</h3>
 
 <ul>
-<li>UPDATE test SET</li>
-</ul>
+<li><p>UPDATE test SET</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql">	url<span style="color:#f92672">=</span> <span style="color:#66d9ef">REPLACE</span>(<span style="color:#e6db74">&#39;www.test.com&#39;</span>,<span style="color:#e6db74">&#39;test&#39;</span>, <span style="color:#e6db74">&#39;abc&#39;</span> )
-	<span style="color:#66d9ef">WHERE</span> url <span style="color:#66d9ef">REGEXP</span> <span style="color:#e6db74">&#39;^(www.test)&#39;</span>;</code></pre></div>
+	<span style="color:#66d9ef">WHERE</span> url <span style="color:#66d9ef">REGEXP</span> <span style="color:#e6db74">&#39;^(www.test)&#39;</span>;</code></pre></div></li>
+</ul>
+
 <h3 id="mysql-php-apahe-perl-dbd-in-yosemite">Mysql Php Apahe Perl DBD in Yosemite</h3>
 
 <ul>
@@ -169,14 +177,13 @@ ln -s /usr/local/Cellar/mongodb/3.2.4/bin/* /usr/local/bin/</code></pre></div>
 
 <p><a href="https://movabletype.org/documentation/installation/osx-10-9.html​">https://movabletype.org/documentation/installation/osx-10-9.html​</a></p></li>
 
-<li><p>Then add:</p></li>
+<li><p>Then add:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache">	<span style="color:#960050;background-color:#1e0010">&#34;</span>Require <span style="color:#66d9ef">all</span> granted<span style="color:#960050;background-color:#1e0010">&#34;</span> to username.conf</code></pre></div></li>
+
+<li><p>Before cpan install DBD::mysql for perl</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib</code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache">	<span style="color:#960050;background-color:#1e0010">&#34;</span>Require <span style="color:#66d9ef">all</span> granted<span style="color:#960050;background-color:#1e0010">&#34;</span> to username.conf</code></pre></div>
-<ul>
-<li>Before cpan install DBD::mysql for perl
-<br /></li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib</code></pre></div>
+
 <h3 id="permit-remote-accee-to-root">permit remote accee to root</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql">mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> PRIVILEGES <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;root&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;t0ngfang&#39;</span> <span style="color:#66d9ef">WITH</span> <span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">OPTION</span>;
 mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">FLUSH</span> PRIVILEGES;</code></pre></div>

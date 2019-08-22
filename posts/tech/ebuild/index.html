@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,22 +24,23 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Ebuild</h1> 
+            <p>Thu Mar 28, 2019</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>Ebuild</h1>
-    <p>Thu Mar 28, 2019</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/gentoo">gentoo</a>
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/ebuild">ebuild</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/gentoo">gentoo</a>
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/ebuild">ebuild</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#一个简单例子">一个简单例子</a></li>
 </ul></li>
@@ -50,22 +51,24 @@
 <h2 id="一个简单例子">一个简单例子</h2>
 
 <ul>
-<li>net-dns/dnsmasq-2.80是官方的，但是不具备regex支持功能，<a href="https://github.com/laowalter/dnsmasq-regex支持regex">https://github.com/laowalter/dnsmasq-regex支持regex</a>, 这是在dnsmasq-2.80基础上加了一个patch，patch文件有两个，在patches目录下可以看到。</li>
-</ul>
+<li><p>net-dns/dnsmasq-2.80是官方的，但是不具备regex支持功能，<a href="https://github.com/laowalter/dnsmasq-regex支持regex">https://github.com/laowalter/dnsmasq-regex支持regex</a>, 这是在dnsmasq-2.80基础上加了一个patch，patch文件有两个，在patches目录下可以看到。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls -l dnsmasq-regex/patches/
 -rw-r--r-- <span style="color:#ae81ff">1</span> portage portage <span style="color:#ae81ff">10644</span> Mar <span style="color:#ae81ff">28</span> <span style="color:#ae81ff">17</span>:42 <span style="color:#ae81ff">001</span>-regex-server.patch
--rw-r--r-- <span style="color:#ae81ff">1</span> portage portage  <span style="color:#ae81ff">4593</span> Mar <span style="color:#ae81ff">28</span> <span style="color:#ae81ff">17</span>:42 <span style="color:#ae81ff">002</span>-regex-ipset.patch</code></pre></div>
-<ul>
-<li>创立 /usr/local/portage/net-dns/dnsmasq/dnsmasq-2.80-r1.ebuild</li>
+-rw-r--r-- <span style="color:#ae81ff">1</span> portage portage  <span style="color:#ae81ff">4593</span> Mar <span style="color:#ae81ff">28</span> <span style="color:#ae81ff">17</span>:42 <span style="color:#ae81ff">002</span>-regex-ipset.patch</code></pre></div></li>
+
+<li><p>创立 /usr/local/portage/net-dns/dnsmasq/dnsmasq-2.80-r1.ebuild</p></li>
 </ul>
 
 <p>这是根据/usr/portage/net-dns/dnsmasq/dnsmasq-2.80.ebuild 修改而来。</p>
 
-<p>%filename: /usr/local/portage/net-dns/dnsmasq/dnsmasq-2.80-r1.ebuild</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Copyright 1999-2019 Gentoo Authors
-</span><span style="color:#75715e"># Copyright 2017-2018 Sony Interactive Entertainment Inc.
-</span><span style="color:#75715e"># Distributed under the terms of the GNU General Public License v2
-</span><span style="color:#75715e"></span>
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/usr/local/portage/net-dns/dnsmasq/dnsmasq-2.80-r1.ebuild</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Copyright 1999-2019 Gentoo Authors</span>
+<span style="color:#75715e"># Copyright 2017-2018 Sony Interactive Entertainment Inc.</span>
+<span style="color:#75715e"># Distributed under the terms of the GNU General Public License v2</span>
+
 EAPI<span style="color:#f92672">=</span><span style="color:#ae81ff">7</span>
 
 inherit toolchain-funcs flag-o-matic user systemd
@@ -84,213 +87,216 @@ IUSE<span style="color:#f92672">+=</span><span style="color:#e6db74">&#34; +inot
 DM_LINGUAS<span style="color:#f92672">=(</span>de es <span style="color:#66d9ef">fi</span> fr id it no pl pt_BR ro<span style="color:#f92672">)</span>
 
 BDEPEND<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app-arch/xz-utils
-</span><span style="color:#e6db74">	virtual/pkgconfig
-</span><span style="color:#e6db74">	nls? ( sys-devel/gettext )
+</span><span style="color:#e6db74"> virtual/pkgconfig
+</span><span style="color:#e6db74"> nls? ( sys-devel/gettext )
 </span><span style="color:#e6db74">&#34;</span>
 
 COMMON_DEPEND<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dbus? ( sys-apps/dbus:= )
-</span><span style="color:#e6db74">	idn? (
-</span><span style="color:#e6db74">		!libidn2? ( net-dns/libidn:0= )
-</span><span style="color:#e6db74">		libidn2? ( &gt;=net-dns/libidn2-2.0:= )
-</span><span style="color:#e6db74">	)
-</span><span style="color:#e6db74">	lua? ( dev-lang/lua:* )
-</span><span style="color:#e6db74">	conntrack? ( net-libs/libnetfilter_conntrack:= )
-</span><span style="color:#e6db74">	nls? ( sys-devel/gettext )
+</span><span style="color:#e6db74"> idn? (
+</span><span style="color:#e6db74">     !libidn2? ( net-dns/libidn:0= )
+</span><span style="color:#e6db74">     libidn2? ( &gt;=net-dns/libidn2-2.0:= )
+</span><span style="color:#e6db74"> )
+</span><span style="color:#e6db74"> lua? ( dev-lang/lua:* )
+</span><span style="color:#e6db74"> conntrack? ( net-libs/libnetfilter_conntrack:= )
+</span><span style="color:#e6db74"> nls? ( sys-devel/gettext )
 </span><span style="color:#e6db74">&#34;</span>
 
 DEPEND<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>COMMON_DEPEND<span style="color:#e6db74">}</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">	dnssec? (
-</span><span style="color:#e6db74">		dev-libs/nettle:=[gmp]
-</span><span style="color:#e6db74">		static? ( &gt;=dev-libs/nettle-3.4[static-libs(+)] )
-</span><span style="color:#e6db74">	)
+</span><span style="color:#e6db74"> dnssec? (
+</span><span style="color:#e6db74">     dev-libs/nettle:=[gmp]
+</span><span style="color:#e6db74">     static? ( &gt;=dev-libs/nettle-3.4[static-libs(+)] )
+</span><span style="color:#e6db74"> )
 </span><span style="color:#e6db74">&#34;</span>
 
 RDEPEND<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>COMMON_DEPEND<span style="color:#e6db74">}</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">	dnssec? (
-</span><span style="color:#e6db74">		!static? (
-</span><span style="color:#e6db74">			&gt;=dev-libs/nettle-3.4:=[gmp]
-</span><span style="color:#e6db74">		)
-</span><span style="color:#e6db74">	)
-</span><span style="color:#e6db74">	selinux? ( sec-policy/selinux-dnsmasq )
+</span><span style="color:#e6db74"> dnssec? (
+</span><span style="color:#e6db74">     !static? (
+</span><span style="color:#e6db74">         &gt;=dev-libs/nettle-3.4:=[gmp]
+</span><span style="color:#e6db74">     )
+</span><span style="color:#e6db74"> )
+</span><span style="color:#e6db74"> selinux? ( sec-policy/selinux-dnsmasq )
 </span><span style="color:#e6db74">&#34;</span>
 
 
 PATCHES<span style="color:#f92672">=(</span> 
-	<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FILESDIR<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/001-regex-server.patch 
-	<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FILESDIR<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/002-regex-ipset.patch
+    <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FILESDIR<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/001-regex-server.patch 
+    <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FILESDIR<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/002-regex-ipset.patch
 
 <span style="color:#f92672">)</span>
 
 
 
 REQUIRED_USE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dhcp-tools? ( dhcp )
-</span><span style="color:#e6db74">	lua? ( script )
-</span><span style="color:#e6db74">	libidn2? ( idn )&#34;</span>
+</span><span style="color:#e6db74"> lua? ( script )
+</span><span style="color:#e6db74"> libidn2? ( idn )&#34;</span>
 
 use_have<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-	local useflag no_only uword
-	<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">${</span>1<span style="color:#e6db74">}</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;-n&#39;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
-		no_only<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-		shift
-	<span style="color:#66d9ef">fi</span>
-	useflag<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>1<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-	shift
+    local useflag no_only uword
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">${</span>1<span style="color:#e6db74">}</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;-n&#39;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+        no_only<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+        shift
+    <span style="color:#66d9ef">fi</span>
+    useflag<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>1<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+    shift
 
-	uword<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>1<span style="color:#66d9ef">:-</span><span style="color:#e6db74">${</span>useflag<span style="color:#e6db74">}}</span><span style="color:#e6db74">&#34;</span>
-	shift
+    uword<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>1<span style="color:#66d9ef">:-</span><span style="color:#e6db74">${</span>useflag<span style="color:#e6db74">}}</span><span style="color:#e6db74">&#34;</span>
+    shift
 
-	<span style="color:#66d9ef">while</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">${</span>uword<span style="color:#e6db74">}</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">do</span>
-		uword<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>uword^^<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#66d9ef">while</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">${</span>uword<span style="color:#e6db74">}</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">do</span>
+        uword<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>uword^^<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
 
-		<span style="color:#66d9ef">if</span> ! use <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>useflag<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">then</span>
-			printf -- <span style="color:#e6db74">&#34; -DNO_%s&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>uword<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-		<span style="color:#66d9ef">elif</span> <span style="color:#f92672">[[</span> -z <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>no_only<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
-			printf -- <span style="color:#e6db74">&#34; -DHAVE_%s&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>uword<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-		<span style="color:#66d9ef">fi</span>
-		uword<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>1<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-		shift
-	<span style="color:#66d9ef">done</span>
+        <span style="color:#66d9ef">if</span> ! use <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>useflag<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">then</span>
+            printf -- <span style="color:#e6db74">&#34; -DNO_%s&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>uword<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#66d9ef">elif</span> <span style="color:#f92672">[[</span> -z <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>no_only<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+            printf -- <span style="color:#e6db74">&#34; -DHAVE_%s&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>uword<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#66d9ef">fi</span>
+        uword<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>1<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+        shift
+    <span style="color:#66d9ef">done</span>
 <span style="color:#f92672">}</span>
 
 pkg_pretend<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">if</span> use static; <span style="color:#66d9ef">then</span>
-		einfo <span style="color:#e6db74">&#34;Only sys-libs/gmp and dev-libs/nettle are statically linked.&#34;</span>
-		use dnssec <span style="color:#f92672">||</span> einfo <span style="color:#e6db74">&#34;Thus, </span><span style="color:#e6db74">${</span>P<span style="color:#e6db74">}</span><span style="color:#e6db74">[!dnssec,static] makes no sense;&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>			<span style="color:#e6db74">&#34;the static USE flag is ignored.&#34;</span>
-	<span style="color:#66d9ef">fi</span>
+    <span style="color:#66d9ef">if</span> use static; <span style="color:#66d9ef">then</span>
+        einfo <span style="color:#e6db74">&#34;Only sys-libs/gmp and dev-libs/nettle are statically linked.&#34;</span>
+        use dnssec <span style="color:#f92672">||</span> einfo <span style="color:#e6db74">&#34;Thus, </span><span style="color:#e6db74">${</span>P<span style="color:#e6db74">}</span><span style="color:#e6db74">[!dnssec,static] makes no sense;&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>          <span style="color:#e6db74">&#34;the static USE flag is ignored.&#34;</span>
+    <span style="color:#66d9ef">fi</span>
 <span style="color:#f92672">}</span>
 
 pkg_setup<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-	enewgroup dnsmasq
-	enewuser dnsmasq -1 -1 /dev/null dnsmasq
+    enewgroup dnsmasq
+    enewuser dnsmasq -1 -1 /dev/null dnsmasq
 <span style="color:#f92672">}</span>
 
 src_prepare<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-	default
-	sed -i -r <span style="color:#e6db74">&#39;s:lua5.[0-9]+:lua:&#39;</span> Makefile
-	sed -i <span style="color:#e6db74">&#34;s:%%PREFIX%%:</span><span style="color:#e6db74">${</span>EPREFIX<span style="color:#e6db74">}</span><span style="color:#e6db74">/usr:&#34;</span> dnsmasq.conf.example
+    default
+    sed -i -r <span style="color:#e6db74">&#39;s:lua5.[0-9]+:lua:&#39;</span> Makefile
+    sed -i <span style="color:#e6db74">&#34;s:%%PREFIX%%:</span><span style="color:#e6db74">${</span>EPREFIX<span style="color:#e6db74">}</span><span style="color:#e6db74">/usr:&#34;</span> dnsmasq.conf.example
 
 <span style="color:#f92672">}</span>
 
 src_configure<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-	COPTS<span style="color:#f92672">=(</span>
-		<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have -n auth-dns auth<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-		<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have conntrack<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-		<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have dbus<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-		<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use libidn2 <span style="color:#f92672">||</span> use_have idn<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-		<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have libidn2<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-		<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have -n inotify<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-		<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have -n dhcp dhcp dhcp6<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-		<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have -n ipv6 ipv6 dhcp6<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-		<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have -n id id<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-		<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have lua luascript<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-		<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have regex<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-		<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have regex_ipset<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-		<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have -n script<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-		<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have -n tftp<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-		<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have dnssec<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-		<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have static dnssec_static<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-		<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have -n dumpfile<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-	<span style="color:#f92672">)</span>
+    COPTS<span style="color:#f92672">=(</span>
+        <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have -n auth-dns auth<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have conntrack<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have dbus<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use libidn2 <span style="color:#f92672">||</span> use_have idn<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have libidn2<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have -n inotify<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have -n dhcp dhcp dhcp6<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have -n ipv6 ipv6 dhcp6<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have -n id id<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have lua luascript<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have regex<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have regex_ipset<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have -n script<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have -n tftp<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have dnssec<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have static dnssec_static<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>use_have -n dumpfile<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#f92672">)</span>
 <span style="color:#f92672">}</span>
 
 src_compile<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-	emake <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		PREFIX<span style="color:#f92672">=</span>/usr <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		MANDIR<span style="color:#f92672">=</span>/usr/share/man <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		CC<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>tc-getCC<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		PKG_CONFIG<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>tc-getPKG_CONFIG<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		CFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>CFLAGS<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		LDFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>LDFLAGS<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		COPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>COPTS[*]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		CONFFILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/etc/</span><span style="color:#e6db74">${</span>PN<span style="color:#e6db74">}</span><span style="color:#e6db74">.conf&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		all<span style="color:#66d9ef">$(</span>use nls <span style="color:#f92672">&amp;&amp;</span> printf -- <span style="color:#e6db74">&#34;-i18n\n&#34;</span><span style="color:#66d9ef">)</span>
+    emake <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      PREFIX<span style="color:#f92672">=</span>/usr <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      MANDIR<span style="color:#f92672">=</span>/usr/share/man <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      CC<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>tc-getCC<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      PKG_CONFIG<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>tc-getPKG_CONFIG<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      CFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>CFLAGS<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      LDFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>LDFLAGS<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      COPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>COPTS[*]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      CONFFILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/etc/</span><span style="color:#e6db74">${</span>PN<span style="color:#e6db74">}</span><span style="color:#e6db74">.conf&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      all<span style="color:#66d9ef">$(</span>use nls <span style="color:#f92672">&amp;&amp;</span> printf -- <span style="color:#e6db74">&#34;-i18n\n&#34;</span><span style="color:#66d9ef">)</span>
 
-	use dhcp-tools <span style="color:#f92672">&amp;&amp;</span> emake -C contrib/lease-tools <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		PREFIX<span style="color:#f92672">=</span>/usr <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		MANDIR<span style="color:#f92672">=</span>/usr/share/man <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		CC<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>tc-getCC<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		PKG_CONFIG<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>tc-getPKG_CONFIG<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		CFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>CFLAGS<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		LDFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>LDFLAGS<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		all
+    use dhcp-tools <span style="color:#f92672">&amp;&amp;</span> emake -C contrib/lease-tools <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      PREFIX<span style="color:#f92672">=</span>/usr <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      MANDIR<span style="color:#f92672">=</span>/usr/share/man <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      CC<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>tc-getCC<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      PKG_CONFIG<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>tc-getPKG_CONFIG<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      CFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>CFLAGS<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      LDFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>LDFLAGS<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      all
 <span style="color:#f92672">}</span>
 
 src_install<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-	local lingua puid
-	emake <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		PREFIX<span style="color:#f92672">=</span>/usr <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		MANDIR<span style="color:#f92672">=</span>/usr/share/man <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		COPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>COPTS[*]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		DESTDIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>ED<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		install<span style="color:#66d9ef">$(</span>use nls <span style="color:#f92672">&amp;&amp;</span> printf -- <span style="color:#e6db74">&#34;-i18n\n&#34;</span><span style="color:#66d9ef">)</span>
+    local lingua puid
+    emake <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      PREFIX<span style="color:#f92672">=</span>/usr <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      MANDIR<span style="color:#f92672">=</span>/usr/share/man <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      COPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>COPTS[*]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      DESTDIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>ED<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      install<span style="color:#66d9ef">$(</span>use nls <span style="color:#f92672">&amp;&amp;</span> printf -- <span style="color:#e6db74">&#34;-i18n\n&#34;</span><span style="color:#66d9ef">)</span>
 
-	<span style="color:#66d9ef">for</span> lingua in <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>DM_LINGUAS[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
-		has <span style="color:#e6db74">${</span>lingua<span style="color:#e6db74">}</span> <span style="color:#e6db74">${</span>LINGUAS-<span style="color:#e6db74">${</span>lingua<span style="color:#e6db74">}}</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>			<span style="color:#f92672">||</span> rm -rf <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>ED<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/usr/share/locale/<span style="color:#e6db74">${</span>lingua<span style="color:#e6db74">}</span>
-	<span style="color:#66d9ef">done</span>
-	<span style="color:#f92672">[[</span> -d <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>D<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/usr/share/locale/ <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		rmdir --ignore-fail-on-non-empty <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>ED<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/usr/share/locale/
+    <span style="color:#66d9ef">for</span> lingua in <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>DM_LINGUAS[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
+        has <span style="color:#e6db74">${</span>lingua<span style="color:#e6db74">}</span> <span style="color:#e6db74">${</span>LINGUAS-<span style="color:#e6db74">${</span>lingua<span style="color:#e6db74">}}</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>          <span style="color:#f92672">||</span> rm -rf <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>ED<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/usr/share/locale/<span style="color:#e6db74">${</span>lingua<span style="color:#e6db74">}</span>
+    <span style="color:#66d9ef">done</span>
+    <span style="color:#f92672">[[</span> -d <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>D<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/usr/share/locale/ <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      rmdir --ignore-fail-on-non-empty <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>ED<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/usr/share/locale/
 
-	dodoc CHANGELOG CHANGELOG.archive FAQ dnsmasq.conf.example
-	dodoc -r logo
+    dodoc CHANGELOG CHANGELOG.archive FAQ dnsmasq.conf.example
+    dodoc -r logo
 
-	docinto html/
-	dodoc *.html
+    docinto html/
+    dodoc *.html
 
-	newinitd <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FILESDIR<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/dnsmasq-init-r4 <span style="color:#e6db74">${</span>PN<span style="color:#e6db74">}</span>
-	newconfd <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FILESDIR<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/dnsmasq.confd-r1 <span style="color:#e6db74">${</span>PN<span style="color:#e6db74">}</span>
+    newinitd <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FILESDIR<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/dnsmasq-init-r4 <span style="color:#e6db74">${</span>PN<span style="color:#e6db74">}</span>
+    newconfd <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FILESDIR<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/dnsmasq.confd-r1 <span style="color:#e6db74">${</span>PN<span style="color:#e6db74">}</span>
 
-	insinto /etc/logrotate.d
-	newins <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FILESDIR<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/dnsmasq.logrotate <span style="color:#e6db74">${</span>PN<span style="color:#e6db74">}</span>
+    insinto /etc/logrotate.d
+    newins <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FILESDIR<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/dnsmasq.logrotate <span style="color:#e6db74">${</span>PN<span style="color:#e6db74">}</span>
 
-	insinto /etc
-	newins dnsmasq.conf.example dnsmasq.conf
+    insinto /etc
+    newins dnsmasq.conf.example dnsmasq.conf
 
-	insinto /usr/share/dnsmasq
-	doins trust-anchors.conf
+    insinto /usr/share/dnsmasq
+    doins trust-anchors.conf
 
-	<span style="color:#66d9ef">if</span> use dhcp; <span style="color:#66d9ef">then</span>
-		keepdir /var/lib/misc
-		newinitd <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FILESDIR<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/dnsmasq-init-dhcp-r3 <span style="color:#e6db74">${</span>PN<span style="color:#e6db74">}</span>
-	<span style="color:#66d9ef">fi</span>
-	<span style="color:#66d9ef">if</span> use dbus; <span style="color:#66d9ef">then</span>
-		insinto /etc/dbus-1/system.d
-		doins dbus/dnsmasq.conf
-	<span style="color:#66d9ef">fi</span>
+    <span style="color:#66d9ef">if</span> use dhcp; <span style="color:#66d9ef">then</span>
+        keepdir /var/lib/misc
+        newinitd <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FILESDIR<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/dnsmasq-init-dhcp-r3 <span style="color:#e6db74">${</span>PN<span style="color:#e6db74">}</span>
+    <span style="color:#66d9ef">fi</span>
+    <span style="color:#66d9ef">if</span> use dbus; <span style="color:#66d9ef">then</span>
+        insinto /etc/dbus-1/system.d
+        doins dbus/dnsmasq.conf
+    <span style="color:#66d9ef">fi</span>
 
-	<span style="color:#66d9ef">if</span> use dhcp-tools; <span style="color:#66d9ef">then</span>
-		dosbin contrib/lease-tools/<span style="color:#f92672">{</span>dhcp_release,dhcp_lease_time<span style="color:#f92672">}</span>
-		doman contrib/lease-tools/<span style="color:#f92672">{</span>dhcp_release,dhcp_lease_time<span style="color:#f92672">}</span>.1
-		<span style="color:#66d9ef">if</span> use ipv6; <span style="color:#66d9ef">then</span>
-			dosbin contrib/lease-tools/dhcp_release6
-			doman contrib/lease-tools/dhcp_release6.1
-		<span style="color:#66d9ef">fi</span>
-	<span style="color:#66d9ef">fi</span>
+    <span style="color:#66d9ef">if</span> use dhcp-tools; <span style="color:#66d9ef">then</span>
+        dosbin contrib/lease-tools/<span style="color:#f92672">{</span>dhcp_release,dhcp_lease_time<span style="color:#f92672">}</span>
+        doman contrib/lease-tools/<span style="color:#f92672">{</span>dhcp_release,dhcp_lease_time<span style="color:#f92672">}</span>.1
+        <span style="color:#66d9ef">if</span> use ipv6; <span style="color:#66d9ef">then</span>
+            dosbin contrib/lease-tools/dhcp_release6
+            doman contrib/lease-tools/dhcp_release6.1
+        <span style="color:#66d9ef">fi</span>
+    <span style="color:#66d9ef">fi</span>
 
-	systemd_newunit <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FILESDIR<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/<span style="color:#e6db74">${</span>PN<span style="color:#e6db74">}</span>.service-r1 <span style="color:#e6db74">${</span>PN<span style="color:#e6db74">}</span>.service
+    systemd_newunit <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FILESDIR<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/<span style="color:#e6db74">${</span>PN<span style="color:#e6db74">}</span>.service-r1 <span style="color:#e6db74">${</span>PN<span style="color:#e6db74">}</span>.service
 <span style="color:#f92672">}</span>
 
 pkg_preinst<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-	<span style="color:#75715e"># temporary workaround to (hopefully) prevent leases file from being removed
-</span><span style="color:#75715e"></span>	<span style="color:#f92672">[[</span> -f /var/lib/misc/dnsmasq.leases <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		cp /var/lib/misc/dnsmasq.leases <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>T<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#75715e"># temporary workaround to (hopefully) prevent leases file from being removed</span>
+    <span style="color:#f92672">[[</span> -f /var/lib/misc/dnsmasq.leases <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      cp /var/lib/misc/dnsmasq.leases <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>T<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
 <span style="color:#f92672">}</span>
 
 pkg_postinst<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-	<span style="color:#75715e"># temporary workaround to (hopefully) prevent leases file from being removed
-</span><span style="color:#75715e"></span>	<span style="color:#f92672">[[</span> -f <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>T<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/dnsmasq.leases <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>		cp <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>T<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/dnsmasq.leases /var/lib/misc/dnsmasq.leases
+    <span style="color:#75715e"># temporary workaround to (hopefully) prevent leases file from being removed</span>
+    <span style="color:#f92672">[[</span> -f <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>T<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/dnsmasq.leases <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      cp <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>T<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/dnsmasq.leases /var/lib/misc/dnsmasq.leases
 <span style="color:#f92672">}</span></code></pre></div>
+    </div>
+</div>
+
 <ul>
-<li>准备文件 /usr/local/portage/net-dns/dnsmasq/files</li>
+<li><p>准备文件 /usr/local/portage/net-dns/dnsmasq/files</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp <span style="color:#ae81ff">001</span>-regex-server.patch /usr/local/portage/net-dns/dnsmasq/files/
+cp <span style="color:#ae81ff">002</span>-regex-ipset.patch /usr/local/portage/net-dns/dnsmasq/files/</code></pre></div></li>
+
+<li><p>完成ebuild</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ebuild dnsmasq-2.80-r1.ebuild digest</code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> cp <span style="color:#ae81ff">001</span>-regex-server.patch /usr/local/portage/net-dns/dnsmasq/files/
- cp <span style="color:#ae81ff">002</span>-regex-ipset.patch /usr/local/portage/net-dns/dnsmasq/files/</code></pre></div>
-<ul>
-<li>完成ebuild</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ebuild dnsmasq-2.80-r1.ebuild digest</code></pre></div>
+
 </article>
 
     </body>

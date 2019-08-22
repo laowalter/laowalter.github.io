@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gentoo on Just a Memo</title>
+    <title>gentoo on Just a Memo</title>
     <link>laowalter.github.io/tags/gentoo/</link>
-    <description>Recent content in Gentoo on Just a Memo</description>
+    <description>Recent content in gentoo on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Mar 2019 17:51:15 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Aug 2019 12:38:01 +0800</lastBuildDate>
     
 	<atom:link href="laowalter.github.io/tags/gentoo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo Install In Gentoo</title>
+      <link>laowalter.github.io/posts/tech/hugo_install/</link>
+      <pubDate>Thu, 22 Aug 2019 12:38:01 +0800</pubDate>
+      
+      <guid>laowalter.github.io/posts/tech/hugo_install/</guid>
+      <description>Find hugo ebuild Click Here to Search HUGO in Gentoo Overlays Here is what I found: https://gohugo.io hugo-0.57.2 ~amd64 ~x86 debug pie +sass Overlay: NuLL3rr0r (outside) Install hugo ebuild in to local portage &amp;ldquo;/usr/local/portage/www-apps/hugo&amp;rdquo; cp hugo ebuid $ cp hugo-0.57.2 /usr/local/portage/www-apps/hugo modify hego-0.57.2.ebuild Replace line 202 with line 203 filename: /usr/local/portage/www-apps/hugo/hugo-0.57.2.ebuild 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19</description>
+    </item>
     
     <item>
       <title>Ebuild</title>
@@ -54,7 +63,7 @@ emerge -avq net-wireless/wpa_supplicant emerge -avq net-misc/bridge-utils Config
       <pubDate>Fri, 13 Oct 2017 18:22:24 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/ssh/</guid>
-      <description>Linux SSH agent .bashrc 关于ssh部分 %filename: .bashrc # SSH agent if [ ! -S ~/.ssh/ssh_auth_sock ]; then eval `ssh-agent` ln -sf &amp;#34;$SSH_AUTH_SOCK&amp;#34; ~/.ssh/ssh_auth_sock fi export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock ssh-add -l &amp;gt; /dev/null || ssh-add Windows Putty Putty程序组 第一步运行PuttyGen 设置远程机器 ~/.ssh/authorized_keys 把上</description>
+      <description>Linux SSH agent .bashrc 关于ssh部分 filename: .bashrc # SSH agent if [ ! -S ~/.ssh/ssh_auth_sock ]; then eval `ssh-agent` ln -sf &amp;#34;$SSH_AUTH_SOCK&amp;#34; ~/.ssh/ssh_auth_sock fi export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock ssh-add -l &amp;gt; /dev/null || ssh-add Windows Putty Putty程序组 第一步运行PuttyGen 设置远程机器 ~/.ssh/authorized_keys 把上</description>
     </item>
     
     <item>

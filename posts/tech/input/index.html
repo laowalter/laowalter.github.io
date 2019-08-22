@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,20 +24,21 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Input 输入法（未测试）</h1> 
+            <p>Fri Apr 13, 2018</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>Input 输入法（未测试）</h1>
-    <p>Fri Apr 13, 2018</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/%E8%BE%93%E5%85%A5%E6%B3%95">输入法</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/%E8%BE%93%E5%85%A5%E6%B3%95">输入法</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#windows">Windows</a></li>
 <li><a href="#linux-input">Linux Input</a>
@@ -63,41 +64,59 @@
 
 <h4 id="terminal-console">Terminal Console</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq fcitx</code></pre></div>
-<p>%filename: .bashrc</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GTK_IM_MODULE<span style="color:#f92672">=</span>fcitx
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>.bashrc</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GTK_IM_MODULE<span style="color:#f92672">=</span>fcitx
 export QT_IM_MODULE<span style="color:#f92672">=</span>fcitx
 export XMODIFIERS<span style="color:#f92672">=</span>@im<span style="color:#f92672">=</span>fcitx</code></pre></div>
+    </div>
+</div>
+
 <p>If you do not enable the gtk and gtk3 USE flags, the first line should be:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GTK_IM_MODULE<span style="color:#f92672">=</span>xim</code></pre></div>
 <p>If you do not enable the qt USE flag, the second line should be:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export QT_IM_MODULE<span style="color:#f92672">=</span>xim</code></pre></div>
 <h4 id="session-mode-xprofile">Session Mode (~/.xprofile)</h4>
 
-<p>%finename: ~/.xprofile</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GTK_IM_MODULE<span style="color:#f92672">=</span>fcitx
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>~/.xprofile</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GTK_IM_MODULE<span style="color:#f92672">=</span>fcitx
 export QT_IM_MODULE<span style="color:#f92672">=</span>fcitx
 export XMODIFIERS<span style="color:#f92672">=</span>@im<span style="color:#f92672">=</span>fcitx</code></pre></div>
+    </div>
+</div>
+
 <h4 id="startx-xinitrc">startx (~/.xinitrc)</h4>
 
-<p>%filename: ~/.xprofile</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GTK_IM_MODULE<span style="color:#f92672">=</span>fcitx
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>~/.xprofile</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GTK_IM_MODULE<span style="color:#f92672">=</span>fcitx
 export QT_IM_MODULE<span style="color:#f92672">=</span>fcitx
 export XMODIFIERS<span style="color:#f92672">=</span>@im<span style="color:#f92672">=</span>fcitx</code></pre></div>
+    </div>
+</div>
+
 <h3 id="说明">说明</h3>
 
 <p>FCITX 4.1.2 中带的二笔是青松快版，用起来不方便。二笔论坛上提供的超强二笔的码表又有些老旧。</p>
 
 <ol>
 <li>在 Windows 中安装极点超强二笔，从词库管理中导出码表，将前边的非数据部分删除后另存为UTF-8格式。</li>
-<li>搜索并下载码表转换工具：jd2fcitx，将极点导出的码表转换为FCITX可以使用的格式。也就是将</li>
-</ol>
+
+<li><p>搜索并下载码表转换工具：jd2fcitx，将极点导出的码表转换为FCITX可以使用的格式。也就是将</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">agrt 黯然 盎然
 转换为
 agrt 黯然
 agrt 盎然
-例：jd2fcitx freeime.txt &gt; jd2fcitx.txt</code></pre></div>
-<ol>
-<li>然后按快版的简码设定自己编辑码表。这里需要注意，超强V键定义了很多符号，这些东西平时用的太少了。为了和下边的简码兼容，需要将v提头的编码删掉。</li>
+例：jd2fcitx freeime.txt &gt; jd2fcitx.txt</code></pre></div></li>
+
+<li><p>然后按快版的简码设定自己编辑码表。这里需要注意，超强V键定义了很多符号，这些东西平时用的太少了。为了和下边的简码兼容，需要将v提头的编码删掉。</p></li>
 </ol>
 
 <p>简码列表</p>

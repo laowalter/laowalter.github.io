@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Life on Just a Memo</title>
+    <title>life on Just a Memo</title>
     <link>laowalter.github.io/tags/life/</link>
-    <description>Recent content in Life on Just a Memo</description>
+    <description>Recent content in life on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Mar 2019 07:18:53 +0000</lastBuildDate>
@@ -35,7 +35,7 @@
       <pubDate>Tue, 19 Feb 2019 22:42:10 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/life/diy/</guid>
-      <description>Carpenter Work Bench</description>
+      <description> Carpenter   </description>
     </item>
     
     <item>
@@ -44,11 +44,7 @@
       <pubDate>Tue, 05 Feb 2019 19:35:26 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/vlc/</guid>
-      <description>Hotkeys During playback you can press g or h to adjust subtitle delay (adjust step is 50 ms).
-OS X v2.2.1 keys: &amp;ldquo;h&amp;rdquo; (decrease delay, subtitles display after sound) and &amp;ldquo;j&amp;rdquo; (increase delay, subtitles display before sound).
-If subtitle is ahead of sound, press g If subtitle is behind sound, press h
-Extended Settings
-You can also set a specific delay. Go to Tools &amp;gt; Track Synchronization and set the delay you want.</description>
+      <description>Hotkeys During playback you can press g or h to adjust subtitle delay (adjust step is 50 ms). OS X v2.2.1 keys: &amp;ldquo;h&amp;rdquo; (decrease delay, subtitles display after sound) and &amp;ldquo;j&amp;rdquo; (increase delay, subtitles display before sound). If subtitle is ahead of sound, press g If subtitle is behind sound, press h Extended Settings You can also set a specific delay. Go to Tools &amp;gt; Track Synchronization and set the</description>
     </item>
     
     <item>

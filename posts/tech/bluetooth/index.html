@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,22 +24,21 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Bluetooth (linux) / 蓝牙</h1> 
+            <p>Fri Mar 1, 2019</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>Linux Bluetooth / 蓝牙</h1>
-    <p>Fri Mar 1, 2019</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/bluetooth">bluetooth</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/bluetooth">bluetooth</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
-<ul>
-<li>
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#文档">文档</a></li>
 <li><a href="#安装过程">安装过程</a>
@@ -59,33 +58,54 @@
 </ul></li>
 <li><a href="#注意事项">注意事项</a></li>
 </ul></li>
-</ul></li>
 </ul>
 </nav><article>
     
 
-<h3 id="文档">文档</h3>
+<h2 id="文档">文档</h2>
 
 <pre><code>* [Gentoo Wiki 蓝牙](https://wiki.gentoo.org/wiki/Bluetooth)
 * [Gentoo wiki 蓝牙 bluez-alsa](https://wiki.gentoo.org/wiki/Bluetooth_Headset)
 * [Github blue-alsa 包含使用方法](https://github.com/Arkq/bluez-alsa)
 </code></pre>
 
-<h3 id="安装过程">安装过程</h3>
+<h2 id="安装过程">安装过程</h2>
 
-<h4 id="emerge-数据包">emerge 数据包</h4>
+<h3 id="emerge-数据包">emerge 数据包</h3>
 
-<p>%filename: /etc/portage/package.use/bluez</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">net-wireless/bluez alsa btpclient</code></pre></div>
-<p>%filename: /etc/portage/package.use/pulseaudio</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">media-sound/pulseaudio bluetooth dbus equalizer</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq net-wireless/bluez  
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/etc/portage/package.use/bluez</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">net-wireless/bluez alsa btpclient</code></pre></div>
+    </div>
+</div>
+
+<p><br></p>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/etc/portage/package.use/pulseaudio</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">media-sound/pulseaudio bluetooth dbus equalizer</code></pre></div>
+    </div>
+</div>
+
+<p><br></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq net-wireless/bluez  
 emerge -avq media-sound/pulseaudio</code></pre></div>
-<p>%filename: /etc/bluetooth/main.conf</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>Policy<span style="color:#f92672">]</span>
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/etc/bluetooth/main.conf</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>Policy<span style="color:#f92672">]</span>
 AutoEnable<span style="color:#f92672">=</span>true</code></pre></div>
-<h4 id="启动蓝牙服务-授权用户">启动蓝牙服务，授权用户</h4>
+    </div>
+</div>
 
-<p>%filename: command summury &ldquo;bluetoothctl&rdquo;</p>
+<h3 id="启动蓝牙服务-授权用户">启动蓝牙服务，授权用户</h3>
+
+<p><em>command summury &ldquo;bluetoothctl&rdquo;</em></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">power on
 discoverable on
 show <span style="color:#ae81ff">20</span>:C9:D0:92:92:6E
@@ -98,66 +118,80 @@ pair <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C
 connect <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpasswd -a &lt;userame&gt; plugdev
 rc-service bluetooth start
 rc-update add bluetooth default</code></pre></div>
-<h3 id="我的配置过程">我的配置过程</h3>
+<h2 id="我的配置过程">我的配置过程</h2>
 
-<h4 id="bluez-有个bug">bluez 有个bug</h4>
+<h3 id="bluez-有个bug">bluez 有个bug</h3>
 
-<p>%filename: /etc/pulse/default.pa</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">把 load-module module-bluetooth-discover 注释掉，改为 
-   #load-module module-bluetooth-discover</code></pre></div>
-<p>%filename: /usr/bin/start-pulseaudio-x11</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">在这句后面
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/etc/pulse/default.pa</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">把 load-module module-bluetooth-discover 注释掉，改为 
+   <span style="color:#75715e">#load-module module-bluetooth-discover</span></code></pre></div>
+    </div>
+</div>
+
+<p><br></p>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/usr/bin/start-pulseaudio-x11</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">在这句后面
     <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> x<span style="color:#e6db74">&#34;</span>$SESSION_MANAGER<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> x <span style="color:#f92672">]</span> ; <span style="color:#66d9ef">then</span>
         /usr/bin/pactl load-module module-x11-xsmp <span style="color:#e6db74">&#34;display=</span>$DISPLAY<span style="color:#e6db74"> session_manager=</span>$SESSION_MANAGER<span style="color:#e6db74">&#34;</span> &gt; /dev/null
     <span style="color:#66d9ef">fi</span>
 加入一行
     /usr/bin/pactl load-module module-bluetooth-discover</code></pre></div>
-<h4 id="配对-连接">配对、连接</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mini ~/blog $ bluetoothctl
-Agent registered
-<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># power on
-</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># show
-</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># discoverable on
-</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># agent on
-</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># default-agent
-</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># scan on
-</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Controller <span style="color:#ae81ff">20</span>:C9:D0:92:92:6E Discovering: yes
-<span style="color:#f92672">[</span>NEW<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">60</span>:C5:3C:E1:62:E9 <span style="color:#ae81ff">60</span>-C5-3C-E1-62-E9
-<span style="color:#f92672">[</span>NEW<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C LE-Bose Revolve+ SoundLink
-<span style="color:#f92672">[</span>NEW<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">64</span>:9B:50:0A:00:BA <span style="color:#ae81ff">64</span>-9B-50-0A-00-BA
-<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># scan off
-</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># pair 04:52:C7:D1:BA:2C
-</span><span style="color:#75715e"></span>Attempting to pair with <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C
-<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Connected: yes
-<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Name: Bose Revolve+ SoundLink
-<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Alias: Bose Revolve+ SoundLink
-<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Modalias: bluetooth:v009Ep4011d0150
-<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C UUIDs: <span style="color:#ae81ff">00001101</span>-0000-1000-8000-00805f9b34fb
-<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C UUIDs: 0000110b-0000-1000-8000-00805f9b34fb
-<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C UUIDs: 0000110c-0000-1000-8000-00805f9b34fb
-<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C UUIDs: 0000110e-0000-1000-8000-00805f9b34fb
-<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C UUIDs: 0000111e-0000-1000-8000-00805f9b34fb
-<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C UUIDs: <span style="color:#ae81ff">00001200</span>-0000-1000-8000-00805f9b34fb
-<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C ServicesResolved: yes
-<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Paired: yes
-Pairing successful
-<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C ServicesResolved: no
-<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Connected: no
-<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># connect 04:52:C7:D1:BA:2C
-</span><span style="color:#75715e"></span>Attempting to connect to <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C
-<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Connected: yes
-Connection successful
-<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C ServicesResolved: yes
-<span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Controller <span style="color:#ae81ff">20</span>:C9:D0:92:92:6E Discoverable: no</code></pre></div>
-<h4 id="使用">使用</h4>
+    </div>
+</div>
 
-<h5 id="连接已经配对过的蓝牙设备">连接已经配对过的蓝牙设备</h5>
+<h3 id="配对-连接">配对、连接</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> mini ~/blog $ bluetoothctl
+ Agent registered
+ <span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># power on</span>
+ <span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># show</span>
+ <span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># discoverable on</span>
+ <span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># agent on</span>
+ <span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># default-agent</span>
+ <span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># scan on</span>
+ <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Controller <span style="color:#ae81ff">20</span>:C9:D0:92:92:6E Discovering: yes
+ <span style="color:#f92672">[</span>NEW<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">60</span>:C5:3C:E1:62:E9 <span style="color:#ae81ff">60</span>-C5-3C-E1-62-E9
+ <span style="color:#f92672">[</span>NEW<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C LE-Bose Revolve+ SoundLink
+ <span style="color:#f92672">[</span>NEW<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">64</span>:9B:50:0A:00:BA <span style="color:#ae81ff">64</span>-9B-50-0A-00-BA
+ <span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># scan off</span>
+ <span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># pair 04:52:C7:D1:BA:2C</span>
+ Attempting to pair with <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C
+ <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Connected: yes
+ <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Name: Bose Revolve+ SoundLink
+ <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Alias: Bose Revolve+ SoundLink
+ <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Modalias: bluetooth:v009Ep4011d0150
+ <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C UUIDs: <span style="color:#ae81ff">00001101</span>-0000-1000-8000-00805f9b34fb
+ <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C UUIDs: 0000110b-0000-1000-8000-00805f9b34fb
+ <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C UUIDs: 0000110c-0000-1000-8000-00805f9b34fb
+ <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C UUIDs: 0000110e-0000-1000-8000-00805f9b34fb
+ <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C UUIDs: 0000111e-0000-1000-8000-00805f9b34fb
+ <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C UUIDs: <span style="color:#ae81ff">00001200</span>-0000-1000-8000-00805f9b34fb
+ <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C ServicesResolved: yes
+ <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Paired: yes
+ Pairing successful
+ <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C ServicesResolved: no
+ <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Connected: no
+ <span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># connect 04:52:C7:D1:BA:2C</span>
+ Attempting to connect to <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C
+ <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Connected: yes
+ Connection successful
+ <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C ServicesResolved: yes
+ <span style="color:#f92672">[</span>CHG<span style="color:#f92672">]</span> Controller <span style="color:#ae81ff">20</span>:C9:D0:92:92:6E Discoverable: no</code></pre></div>
+<h3 id="使用">使用</h3>
+
+<h4 id="连接已经配对过的蓝牙设备">连接已经配对过的蓝牙设备</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bluetoothctl
-<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># power on
-</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># paired-devices
-</span><span style="color:#75715e"></span>Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Bose Revolve+ SoundLink
-<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span># connect <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C</code></pre></div>
-<h5 id="设置bluealsa音量">设置bluealsa音量</h5>
+<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># power on</span>
+<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># paired-devices</span>
+Device <span style="color:#ae81ff">04</span>:52:C7:D1:BA:2C Bose Revolve+ SoundLink
+<span style="color:#f92672">[</span>bluetooth<span style="color:#f92672">]</span><span style="color:#75715e"># connect 04:52:C7:D1:BA:2C</span></code></pre></div>
+<h4 id="设置bluealsa音量">设置bluealsa音量</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user@mini ~ $ amixer sget <span style="color:#e6db74">&#39;Master&#39;</span>
 Simple mixer control <span style="color:#e6db74">&#39;Master&#39;</span>,0
   Capabilities: pvolume pswitch pswitch-joined
@@ -175,7 +209,7 @@ Simple mixer control <span style="color:#e6db74">&#39;Master&#39;</span>,0
   Mono:
   Front Left: Playback <span style="color:#ae81ff">65536</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">100</span>%<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>on<span style="color:#f92672">]</span>
   Front Right: Playback <span style="color:#ae81ff">65536</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">100</span>%<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>on<span style="color:#f92672">]</span></code></pre></div>
-<h3 id="注意事项">注意事项</h3>
+<h2 id="注意事项">注意事项</h2>
 
 </article>
 

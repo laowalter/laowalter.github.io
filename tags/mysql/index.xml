@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mysql on Just a Memo</title>
+    <title>mysql on Just a Memo</title>
     <link>laowalter.github.io/tags/mysql/</link>
-    <description>Recent content in Mysql on Just a Memo</description>
+    <description>Recent content in mysql on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 29 Feb 2016 10:40:40 +0000</lastBuildDate>
@@ -17,9 +17,12 @@
       <pubDate>Mon, 29 Feb 2016 10:40:40 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/databases/</guid>
-      <description>Mongodb Enter mongo shell mongo 192.168.0.25 Start mongodb  Upgrade  brew upgrade mongodb brew info mongdb ln -s /usr/local/Cellar/mongodb/3.2.4/bin/* /usr/local/bin/  config: /usr/local/etc/mongod.conf, Dont forget touh /usr/local/var/log/mongodb/mongo.log  %filename: /usr/local/etc/mongod.conf
-systemLog: destination: file path: /usr/local/var/log/mongodb/mongo.log logAppend: true	storage: dbPath: /Volumes/Home/Walter/mongodb	net: bindIp: 192.168.0.99  manual start  mongod --config /usr/local/etc/mongod.conf  Mac autostart
- /Library/LaunchDaemons/org.mongo.mongod.plist   %filename: /Library/LaunchDaemons/org.mongo.mongod.plist
+      <description>Mongodb Enter mongo shell mongo 192.168.0.25 Start mongodb  Upgrade
+brew upgrade mongodb brew info mongdb ln -s /usr/local/Cellar/mongodb/3.2.4/bin/* /usr/local/bin/ config: /usr/local/etc/mongod.conf, Dont forget touh /usr/local/var/log/mongodb/mongo.log
+  filename:  /usr/local/etc/mongod.conf
+systemLog: destination: file path: /usr/local/var/log/mongodb/mongo.log logAppend: true storage: dbPath: /Volumes/Home/Walter/mongodb net: bindIp: 192.168.0.99    manual start
+mongod --config /usr/local/etc/mongod.conf Mac autostart
+ /Library/LaunchDaemons/org.mongo.mongod.plist   filename: /Library/LaunchDaemons/org.mongo.mongod.plist
 &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE plist PUBLIC &amp;#34;-//Apple//DTD PLIST 1.0//EN&amp;#34; &amp;#34;http://www.</description>
     </item>
     

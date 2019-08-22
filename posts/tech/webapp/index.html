@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,20 +24,21 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Webapp</h1> 
+            <p>Sun Jan 21, 2018</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>Webapp</h1>
-    <p>Sun Jan 21, 2018</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/gentoo">gentoo</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/gentoo">gentoo</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#web-config-on-gentoo-wiki-https-wiki-gentoo-org-wiki-webapp-config"><a href="https://wiki.gentoo.org/wiki/Webapp-config">web-config on Gentoo wiki</a></a>
 <ul>
@@ -52,29 +53,33 @@
 <h2 id="web-config-on-gentoo-wiki-https-wiki-gentoo-org-wiki-webapp-config"><a href="https://wiki.gentoo.org/wiki/Webapp-config">web-config on Gentoo wiki</a></h2>
 
 <ul>
-<li>webconfig&rsquo;s config (/etc/vhosts/webapp-config)</li>
+<li><p>webconfig&rsquo;s config (/etc/vhosts/webapp-config)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">vhost_server</span>=<span style="color:#e6db74">&#34;nginx&#34;</span></code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">vhost_server</span>=<span style="color:#75715e">&#34;nginx&#34;</span></code></pre></div>
+
 <h3 id="install">Install</h3>
 
 <ul>
-<li>Command</li>
+<li><p>Command</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">webapp-config -h mini -d piwigo -I piwigo <span style="color:#ae81ff">2</span>.9.2</code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">webapp-config -h mini -d piwigo -I piwigo <span style="color:#ae81ff">2</span>.9.2</code></pre></div>
+
 <p>or</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</span>.9.2</code></pre></div>
 <ul>
-<li>Position</li>
+<li><p>Position</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/var/www/</code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/var/www/</code></pre></div>
+
 <h2 id="upgrade-through-webapp-config">Upgrade through webapp-config</h2>
 
 <ol>
 <li><p>根据 /etc/vhosts/webapp-config 执行下列文件</p></li>
 
-<li><p>upgrade</p></li>
+<li><p>upgrade</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo webapp-config -h localhost -d piwigo -U piwigo <span style="color:#ae81ff">2</span>.9.4</code></pre></div></li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo webapp-config -h localhost -d piwigo -U piwigo <span style="color:#ae81ff">2</span>.9.4</code></pre></div>
+
 </article>
 
     </body>

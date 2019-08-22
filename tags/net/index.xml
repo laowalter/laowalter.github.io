@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Net on Just a Memo</title>
+    <title>net on Just a Memo</title>
     <link>laowalter.github.io/tags/net/</link>
-    <description>Recent content in Net on Just a Memo</description>
+    <description>Recent content in net on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 22 Mar 2019 13:00:42 +0000</lastBuildDate>
@@ -17,7 +17,8 @@
       <pubDate>Fri, 22 Mar 2019 13:00:42 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/ipv6/</guid>
-      <description>Disable ipv6 on Gentoo %filename: /etc/sysctl.conf</description>
+      <description> Disable ipv6 on Gentoo filename: /etc/sysctl.conf
+net.ipv6.conf.eth0.disable_ipv6=1   </description>
     </item>
     
     <item>

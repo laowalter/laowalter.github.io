@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,20 +24,21 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Jupyter in Python</h1> 
+            <p>Thu Dec 7, 2017</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>Jupyter in Python</h1>
-    <p>Thu Dec 7, 2017</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/python">python</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/python">python</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#install">Install</a>
 <ul>
@@ -65,8 +66,7 @@ $ jupyter notebook --generate-config</code></pre></div>
 <h4 id="edit-jupyter-jupyter-notebook-config-py">edit ~/.jupyter/jupyter_notebook_config.py</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c<span style="color:#f92672">.</span>NotebookApp<span style="color:#f92672">.</span>ip <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;192.168.0.199&#39;</span> </code></pre></div>
 <ul>
-<li>Start jupyter</li>
-</ul>
+<li><p>Start jupyter</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ jupyter notebook --no-browser
 <span style="color:#f92672">[</span>I <span style="color:#ae81ff">16</span>:56:50.226 NotebookApp<span style="color:#f92672">]</span> Serving notebooks from local directory: /home/walter
 <span style="color:#f92672">[</span>I <span style="color:#ae81ff">16</span>:56:50.226 NotebookApp<span style="color:#f92672">]</span> <span style="color:#ae81ff">0</span> active kernels
@@ -75,13 +75,14 @@ $ jupyter notebook --generate-config</code></pre></div>
 <span style="color:#f92672">[</span>I <span style="color:#ae81ff">16</span>:56:50.226 NotebookApp<span style="color:#f92672">]</span> Use Control-C to stop this server and shut down all kernels <span style="color:#f92672">(</span>twice to skip confirmation<span style="color:#f92672">)</span>.
 <span style="color:#f92672">[</span>C <span style="color:#ae81ff">16</span>:56:50.227 NotebookApp<span style="color:#f92672">]</span>
 
-    Copy/paste this URL into your browser when you connect <span style="color:#66d9ef">for</span> the first time,
-    to login with a token:
-        http://mini:8888/?token<span style="color:#f92672">=</span>6d97162c599bf9e0010b2bf886be238cdf60cf17b12edb62</code></pre></div>
-<ul>
-<li>Open a remote browser copy the above url</li>
+Copy/paste this URL into your browser when you connect <span style="color:#66d9ef">for</span> the first time,
+to login with a token:
+    http://mini:8888/?token<span style="color:#f92672">=</span>6d97162c599bf9e0010b2bf886be238cdf60cf17b12edb62</code></pre></div></li>
+
+<li><p>Open a remote browser copy the above url</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">http://mini:8888/?token<span style="color:#f92672">=</span>6d97162c599bf9e0010b2bf886be238cdf60cf17b12edb62<span style="color:#e6db74">`</span></code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">http://mini:8888/?token<span style="color:#f92672">=</span>6d97162c599bf9e0010b2bf886be238cdf60cf17b12edb62<span style="color:#e6db74">`</span></code></pre></div>
+
 <h4 id="edit-jupyter-jupyter-notebook-config-py-1">edit  ~/.jupyter/jupyter_notebook_config.py</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c<span style="color:#f92672">.</span>NotebookApp<span style="color:#f92672">.</span>password_required <span style="color:#f92672">=</span> True</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ jupyter-notebook --no-browser
 <span style="color:#f92672">[</span>C <span style="color:#ae81ff">17</span>:51:26.974 NotebookApp<span style="color:#f92672">]</span> Notebook servers are configured to only be run with a password.

@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,20 +24,21 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>IPHONE linux backup</h1> 
+            <p>Sat Feb 17, 2018</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>IPHONE linux backup</h1>
-    <p>Sat Feb 17, 2018</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/iphone">iphone</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/iphone">iphone</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li>
 <ul>
@@ -67,19 +68,16 @@ sudo emerge -avq app-pda/usbmuxd</code></pre></div><div class="highlight"><pre s
 </code></pre>
 
 <ul>
-<li>mkdir /media/iPhone</li>
-</ul>
+<li><p>mkdir /media/iPhone</p>
 
 <pre><code>make /media/iPhone
 chmod 777 /media/iPhone/
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>Mount iphone</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ifuse /media/iPhone --root</code></pre></div>
-<ul>
-<li>Umount iphone</li>
+<li><p>Mount iphone</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ifuse /media/iPhone --root</code></pre></div></li>
+
+<li><p>Umount iphone</p></li>
 </ul>
 
 <p>普通用户即可</p>

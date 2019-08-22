@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,20 +24,21 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Latex Demos and Templates</h1> 
+            <p>Fri Dec 14, 2018</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>Latex Demos and Templates</h1>
-    <p>Fri Dec 14, 2018</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/latex">latex</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/latex">latex</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#常用的latex宏包">常用的latex宏包</a></li>
 <li><a href="#一些功能">一些功能</a>
@@ -134,22 +135,31 @@ tikz        功能最强大的绘图宏包之一
 <li>命令使用</li>
 </ul>
 
-<p>%filename: .tex</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">-------------preamble-------
-<span style="color:#ae81ff">\u</span>sepakage xcolor
-<span style="color:#ae81ff">\d</span>efinecolor<span style="color:#f92672">{</span>ballblue<span style="color:#f92672">}{</span>rgb<span style="color:#f92672">}{</span><span style="color:#ae81ff">0</span>.13, <span style="color:#ae81ff">0</span>.67, <span style="color:#ae81ff">0</span>.8<span style="color:#f92672">}</span>
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>.tex</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex">-------------preamble-------
+<span style="color:#66d9ef">\usepakage</span> xcolor
+<span style="color:#66d9ef">\definecolor</span>{ballblue}{rgb}{0.13, 0.67, 0.8}
 --------------content--------
-<span style="color:#ae81ff">\c</span>olor<span style="color:#f92672">{</span>ballblue<span style="color:#f92672">}</span>
+<span style="color:#66d9ef">\color</span>{ballblue}
 
 or 
 
-<span style="color:#ae81ff">\t</span>extcolor<span style="color:#f92672">{</span>red<span style="color:#f92672">}{</span>the read text<span style="color:#f92672">}</span></code></pre></div>
+<span style="color:#66d9ef">\textcolor</span>{red}{the read text}</code></pre></div>
+    </div>
+</div>
+
 <h2 id="模板">模板</h2>
 
 <h3 id="模板一">模板一</h3>
 
-<p>%filename: 模板一</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#66d9ef">\documentclass</span>{article}
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>模板一</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#66d9ef">\documentclass</span>{article}
 <span style="color:#66d9ef">\usepackage</span>{geometry}
 <span style="color:#66d9ef">\geometry</span>{b5paper,left=2.5cm,right=2.5cm,top=3cm,bottom=1cm}
 
@@ -182,10 +192,16 @@ or
 <span style="color:#66d9ef">\item</span> 修心沒有終點，了願了，要再來，來了還要再來，吃苦了，苦而已，唯有隨喜自在才是真自在。
 <span style="color:#66d9ef">\end</span>{enumerate}
 <span style="color:#66d9ef">\end</span>{document}</code></pre></div>
+    </div>
+</div>
+
 <h3 id="模板二-table">模板二{table)</h3>
 
-<p>%filename: 模板二(table)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[justification=centering]</span>{caption}
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>模板二(table)</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[justification=centering]</span>{caption}
 
 <span style="color:#66d9ef">\begin</span>{document}
 <span style="color:#66d9ef">\thispagestyle</span>{empty}
@@ -220,6 +236,9 @@ or
 <span style="color:#66d9ef">\end</span>{table}
 
 <span style="color:#66d9ef">\end</span>{document}</code></pre></div>
+    </div>
+</div>
+
 </article>
 
     </body>

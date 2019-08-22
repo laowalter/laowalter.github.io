@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,20 +24,21 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Golang Webcrawler</h1> 
+            <p>Wed Jun 26, 2019</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>Golang爬虫</h1>
-    <p>Wed Jun 26, 2019</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/go">go</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/go">go</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li>
 <ul>
@@ -45,10 +46,6 @@
 <li><a href="#头部的包">头部的包</a></li>
 <li><a href="#chrome-headless-配置">chrome headless 配置</a></li>
 <li><a href="#启动chromedriver">启动chromedriver</a></li>
-<li><a href="#解析html-文件">解析html 文件</a>
-<ul>
-<li><a href="#利用正则清洗-html-去掉特殊字符串等">利用正则清洗 html 去掉特殊字符串等。</a></li>
-</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -119,39 +116,55 @@
     <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">wd</span>.<span style="color:#a6e22e">Quit</span>()
 
 
-<span style="color:#960050;background-color:#1e0010">###</span> <span style="color:#a6e22e">加载一个网页地址是url</span>
+<span style="color:#960050;background-color:#1e0010">###</span> <span style="color:#a6e22e">加载一个网页地址是url</span></code></pre></div>
+<p>go
+    err = wd.Get(url)
+    if err != nil {
+        log.Println(fmt.Sprintf(&ldquo;Failed to load page: %s\n&rdquo;, err))
+    }</p>
 
-<span style="color:#e6db74">``</span><span style="color:#960050;background-color:#1e0010">`</span><span style="color:#66d9ef">go</span>
-    <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">wd</span>.<span style="color:#a6e22e">Get</span>(<span style="color:#a6e22e">url</span>)
-    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;Failed to load page: %s\n&#34;</span>, <span style="color:#a6e22e">err</span>))
-    }
+<pre><code>// 运行页面的javascript，可能会出现无法执行或者执行错误的情况，直到timeout
+jsRt, err := wd.ExecuteScript(&quot;return document.readyState&quot;, nil)
+check(err)
+//fmt.Println(&quot;网页的Javascript加载: &quot;, jsRt)
 
-    <span style="color:#75715e">// 运行页面的javascript，可能会出现无法执行或者执行错误的情况，直到timeout
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">jsRt</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">wd</span>.<span style="color:#a6e22e">ExecuteScript</span>(<span style="color:#e6db74">&#34;return document.readyState&#34;</span>, <span style="color:#66d9ef">nil</span>)
-    <span style="color:#a6e22e">check</span>(<span style="color:#a6e22e">err</span>)
-    <span style="color:#75715e">//fmt.Println(&#34;网页的Javascript加载: &#34;, jsRt)
-</span><span style="color:#75715e"></span>
-    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">jsRt</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;complete&#34;</span> {
-        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;网页加载未完成&#34;</span>)
-    }</code></pre></div>
-<h3 id="解析html-文件">解析html 文件</h3>
-
-<h4 id="利用正则清洗-html-去掉特殊字符串等">利用正则清洗 html 去掉特殊字符串等。</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    &lt;!<span style="color:#f92672">--</span>!<span style="color:#f92672">--</span>&gt; 
-    &lt;<span style="color:#a6e22e">script</span>&gt;
-    &lt;<span style="color:#a6e22e">header</span>&gt; </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">doc</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">Document</span>
-<span style="color:#a6e22e">doc</span>, <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">NewDocumentFromReader</span>(<span style="color:#a6e22e">bytes</span>.<span style="color:#a6e22e">NewReader</span>([]byte(<span style="color:#a6e22e">frameHtml</span>)))
-<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-	<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">err</span>)
-	<span style="color:#66d9ef">return</span>
+if jsRt != &quot;complete&quot; {
+    log.Println(&quot;网页加载未完成&quot;)
 }
+</code></pre>
 
-<span style="color:#a6e22e">doc</span> = <span style="color:#a6e22e">doc</span>.<span style="color:#a6e22e">body</span>() <span style="color:#75715e">//只解析&lt;body&gt;部分
-</span><span style="color:#75715e"></span>
-<span style="color:#a6e22e">doc</span>.<span style="color:#a6e22e">Find</span>(<span style="color:#e6db74">&#34;li.s-result-item&#34;</span>).<span style="color:#a6e22e">Each</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">liIndex</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">liItem</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">Selection</span>) {
-	<span style="color:#75715e">// do something
-</span><span style="color:#75715e"></span>})</code></pre></div>
+<pre><code>
+
+### 解析html 文件
+
+#### 利用正则清洗 html 去掉特殊字符串等。
+
+</code></pre>
+
+<p>go
+    <!--!-->
+    <script>
+    <header></p>
+
+<pre><code>
+
+</code></pre>
+
+<p>go
+var doc *goquery.Document
+doc, err = goquery.NewDocumentFromReader(bytes.NewReader([]byte(frameHtml)))
+if err != nil {
+    log.Println(err)
+    return
+}</p>
+
+<p>doc = doc.body() //只解析<body>部分</p>
+
+<p>doc.Find(&ldquo;li.s-result-item&rdquo;).Each(func(liIndex int, liItem *goquery.Selection) {
+    // do something
+})
+```</p>
+
 </article>
 
     </body>

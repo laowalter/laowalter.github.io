@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,20 +24,21 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Xetex/Latex/Xelatex</h1> 
+            <p>Thu Nov 22, 2018</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>Xetex/Latex/Xelatex</h1>
-    <p>Thu Nov 22, 2018</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/latex">latex</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/latex">latex</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li>
 <ul>
@@ -67,8 +68,11 @@
 
 <h4 id="模板一">模板一</h4>
 
-<p>%filename: 模板一(简体)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#66d9ef">\documentclass</span><span style="color:#a6e22e">[11pt,a4paper]</span>{article}
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>模板一(简体)</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#66d9ef">\documentclass</span><span style="color:#a6e22e">[11pt,a4paper]</span>{article}
 <span style="color:#66d9ef">\usepackage</span>{fontspec,xltxtra,xunicode}
 <span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[slantfont,boldfont]</span>{xeCJK}
 
@@ -95,10 +99,16 @@
 <span style="color:#66d9ef">\kai</span>  CJKfamily为楷体效果<span style="color:#66d9ef">\\</span>
 <span style="color:#66d9ef">\hei</span>  CJKfamily为黑体效果<span style="color:#66d9ef">\\</span>
 <span style="color:#66d9ef">\end</span>{document}</code></pre></div>
+    </div>
+</div>
+
 <h4 id="模板二-繁体">模板二(繁体)</h4>
 
-<p>%filename: 模板二</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#66d9ef">\documentclass</span><span style="color:#a6e22e">[11pt,a4paper]</span>{article}
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>模板二</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#66d9ef">\documentclass</span><span style="color:#a6e22e">[11pt,a4paper]</span>{article}
 <span style="color:#66d9ef">\usepackage</span>{fontspec,xltxtra,xunicode}
 <span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[slantfont,boldfont]</span>{xeCJK}
 
@@ -127,6 +137,9 @@
 <span style="color:#66d9ef">\kai</span>  CJKfamily为楷体效果<span style="color:#66d9ef">\\</span>
 <span style="color:#66d9ef">\hei</span>  CJKfamily为黑体效果<span style="color:#66d9ef">\\</span>
 <span style="color:#66d9ef">\end</span>{document}</code></pre></div>
+    </div>
+</div>
+
 <h3 id="安装-xetex-xelatex-latex">安装 xetex、xelatex、latex</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge dev-texlive/texlive-xetex
 emerge dev-texlive/texlive-langcjk
@@ -139,18 +152,23 @@ texhash </code></pre></div>
 
 <ol>
 <li>Copy fonts (Adobe Simsun) to /usr/share/fonts/</li>
-<li>Then running:</li>
-</ol>
+
+<li><p>Then running:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fc-cache -f
-fc-list</code></pre></div>
+fc-list</code></pre></div></li>
+</ol>
+
 <h2 id="vim-plugin-for-latex-lervag-vimtex">Vim plugin for latex (<code>lervag/vimtex</code>)</h2>
 
 <h3 id="install">Install</h3>
 
 <h4 id="install-plugin">Install plugin</h4>
 
-<p>%filename: .vimrc</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Plugin <span style="color:#e6db74">&#39;lervag/vimtex&#39;</span>
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>.vimrc</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Plugin <span style="color:#e6db74">&#39;lervag/vimtex&#39;</span>
 
 let g:vimtex_compiler_latexmk <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>
     <span style="color:#ae81ff">\ </span><span style="color:#e6db74">&#39;options&#39;</span> : <span style="color:#f92672">[</span>
@@ -162,6 +180,9 @@ let g:vimtex_compiler_latexmk <span style="color:#f92672">=</span> <span style="
     <span style="color:#ae81ff">\ </span>  <span style="color:#e6db74">&#39;-interaction=nonstopmode&#39;</span>,
     <span style="color:#ae81ff">\ </span><span style="color:#f92672">]</span>
     <span style="color:#ae81ff">\}</span></code></pre></div>
+    </div>
+</div>
+
 <p>then save and quit then restart vim enter <code>:BundleInstall</code></p>
 
 <h4 id="install-required-package">Install required package</h4>

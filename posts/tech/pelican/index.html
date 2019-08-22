@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,20 +24,21 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Pelican</h1> 
+            <p>Sat May 14, 2016</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>Pelican</h1>
-    <p>Sat May 14, 2016</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/blog">blog</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/blog">blog</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#github">Github</a>
 <ul>
@@ -244,18 +245,20 @@ SHARIFF <span style="color:#f92672">=</span> True</code></pre></div>
 
 <ul>
 <li>Download autohide js file store it into</li>
-<li>In base.html just before </body> add the following:</li>
-</ul>
+
+<li><p>In base.html just before </body> add the following:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ SITEURL   }}/{{ THEME_STATIC_DIR   }}/js/jquery.bootstrap-autohidingnavbar.min.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
 <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div.navbar-fixed-top&#34;</span>).<span style="color:#a6e22e">autoHidingNavbar</span>();<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
 
 <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#a6e22e">$</span>(document).<span style="color:#a6e22e">ready</span>(<span style="color:#66d9ef">function</span> () {
-        <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div.navbar-fixed-top&#34;</span>).<span style="color:#a6e22e">autoHidingNavbar</span>(<span style="color:#e6db74">&#39;setDisableAutohide&#39;</span>, <span style="color:#66d9ef">false</span> );
+<span style="color:#a6e22e">$</span>(document).<span style="color:#a6e22e">ready</span>(<span style="color:#66d9ef">function</span> () {
+    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div.navbar-fixed-top&#34;</span>).<span style="color:#a6e22e">autoHidingNavbar</span>(<span style="color:#e6db74">&#39;setDisableAutohide&#39;</span>, <span style="color:#66d9ef">false</span> );
     
-    });
+});
 <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
-</code></pre></div>
+</code></pre></div></li>
+</ul>
+
 <h2 id="better-image-plugin">Better Image plugin</h2>
 
 <p>Append the following to ~/blog/themes/pelican-bootstrap3/static/css/style.css</p>

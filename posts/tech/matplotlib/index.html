@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,22 +24,23 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Matplotlib</h1> 
+            <p>Thu Feb 2, 2017</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>Matplotlib</h1>
-    <p>Thu Feb 2, 2017</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/matplotlib">matplotlib</a>
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/python">python</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/matplotlib">matplotlib</a>
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/python">python</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#matplot-chinese-font">Matplot chinese font</a></li>
 </ul></li>
@@ -57,23 +58,34 @@
   (prop.get_family(), self.defaultFamily[fontext]))</p>
 
 <ol>
-<li>Add Chinese font
+<li><p>Add Chinese font</p>
 
 <ul>
-<li>Add font to system
-```bash
-cp simhei.ttf /usr/share/fonts/ttfs/
+<li><p>Add font to system</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp simhei.ttf /usr/share/fonts/ttfs/
 fc-cache -fv
-	* Add following in program</li>
+	* Add following in program</code></pre></div>
+<p>python</p></li>
 </ul></li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
-plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39;font.sans-serif&#39;</span>]<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;SimHei&#39;</span>]</code></pre></div>
-<p>or just change ~/.config/matplotlib/matplotlibrc</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-config" data-lang="config">mpl.rccParams[&#39;font.sans-serif&#39;]=[&#39;SimHei&#39;]</code></pre></div>
-<pre><code>* clear matplotlib cache 
+
+<p>import matplotlib.pyplot as plt
+plt.rcParams[&lsquo;font.sans-serif&rsquo;]=[&lsquo;SimHei&rsquo;]</p>
+
+<pre><code>or just change ~/.config/matplotlib/matplotlibrc
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rm -fr ~/.cache/matplotlib</code></pre></div>
+
+<p>config
+mpl.rccParams[&lsquo;font.sans-serif&rsquo;]=[&lsquo;SimHei&rsquo;]</p>
+
+<pre><code>	* clear matplotlib cache 
+
+</code></pre>
+
+<p>bash
+rm -fr ~/.cache/matplotlib
+```</p>
+
 </article>
 
     </body>

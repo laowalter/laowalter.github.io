@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,20 +24,21 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Video</h1> 
+            <p>Sat Feb 10, 2018</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>Video</h1>
-    <p>Sat Feb 10, 2018</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/video">video</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/video">video</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#video-combine">Video Combine</a>
 <ul>
@@ -68,32 +69,31 @@ mencoder -forceidx -of lavf -oac pcm -ovc copy -o film.flv <span style="color:#a
 <p>youtube音频和视频很多是分开的，ffmpeg用来将音频和视频合并。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq ffmpeg</code></pre></div>
 <p>安装youtube-dl</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">. ~/.bin/python3.sh <span style="color:#75715e">#启动env
-</span><span style="color:#75715e"></span>pip install youtube-dl</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">. ~/.bin/python3.sh <span style="color:#75715e">#启动env</span>
+pip install youtube-dl</code></pre></div>
 <p>配置文件 ~/.config/youtube-dl/config</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Do not copy the mtime
-</span><span style="color:#75715e"></span>--no-mtime
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Do not copy the mtime</span>
+--no-mtime
 
-<span style="color:#75715e"># Use this proxy
-</span><span style="color:#75715e"></span>--proxy socks4a://192.168.0.199:9050/
-<span style="color:#75715e">#--proxy http://192.168.0.199:8087/
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e"># Save all videos under Movies directory in your home directory
-</span><span style="color:#75715e"></span>-o ~/tmp/%<span style="color:#f92672">(</span>title<span style="color:#f92672">)</span>s.%<span style="color:#f92672">(</span>ext<span style="color:#f92672">)</span>s
+<span style="color:#75715e"># Use this proxy</span>
+--proxy socks4a://192.168.0.199:9050/
+<span style="color:#75715e">#--proxy http://192.168.0.199:8087/</span>
 
-<span style="color:#75715e"># Socket time out
-</span><span style="color:#75715e"></span>--socket-timeout <span style="color:#ae81ff">600</span>
+<span style="color:#75715e"># Save all videos under Movies directory in your home directory</span>
+-o ~/tmp/%<span style="color:#f92672">(</span>title<span style="color:#f92672">)</span>s.%<span style="color:#f92672">(</span>ext<span style="color:#f92672">)</span>s
 
-<span style="color:#75715e">#
-</span><span style="color:#75715e"></span>--no-check-certificate
+<span style="color:#75715e"># Socket time out</span>
+--socket-timeout <span style="color:#ae81ff">600</span>
 
-<span style="color:#75715e"># Force resume of partially downloaded files
-</span><span style="color:#75715e"></span>--continue</code></pre></div>
+#
+--no-check-certificate
+
+<span style="color:#75715e"># Force resume of partially downloaded files</span>
+--continue</code></pre></div>
 <h3 id="使用youtube-dl">使用youtube-dl</h3>
 
 <ul>
-<li>列出视频可下载的文件</li>
-</ul>
+<li><p>列出视频可下载的文件</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">0</span> ✓ <span style="color:#f92672">(</span>Python3<span style="color:#f92672">)</span>walter@mini ~/tmp $ youtube-dl -F  https://www.youtube.com/watch?v<span style="color:#f92672">=</span>Y2yxoUHAGQ
 <span style="color:#f92672">[</span>youtube<span style="color:#f92672">]</span> Y2yxoIUHAGQ: Downloading webpage
 <span style="color:#f92672">[</span>youtube<span style="color:#f92672">]</span> Y2yxoIUHAGQ: Downloading video info webpage
@@ -116,11 +116,12 @@ format code  extension  resolution note
 <span style="color:#ae81ff">17</span>           3gp        176x144    small , mp4v.20.3, mp4a.40.2@ 24k
 <span style="color:#ae81ff">36</span>           3gp        320x180    small , mp4v.20.3, mp4a.40.2
 <span style="color:#ae81ff">43</span>           webm       640x360    medium , vp8.0, vorbis@128k
-<span style="color:#ae81ff">18</span>           mp4        640x360    medium , avc1.42001E, mp4a.40.2@ 96k <span style="color:#f92672">(</span>best<span style="color:#f92672">)</span></code></pre></div>
-<ul>
-<li>下载</li>
+<span style="color:#ae81ff">18</span>           mp4        640x360    medium , avc1.42001E, mp4a.40.2@ 96k <span style="color:#f92672">(</span>best<span style="color:#f92672">)</span></code></pre></div></li>
+
+<li><p>下载</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">youtube-dl -f135+140 https://www.youtube.com/watch?v<span style="color:#f92672">=</span>Y2yxoUHAGQ</code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">youtube-dl -f135+140 https://www.youtube.com/watch?v<span style="color:#f92672">=</span>Y2yxoUHAGQ</code></pre></div>
+
 </article>
 
     </body>

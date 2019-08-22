@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Video on Just a Memo</title>
+    <title>video on Just a Memo</title>
     <link>laowalter.github.io/tags/video/</link>
-    <description>Recent content in Video on Just a Memo</description>
+    <description>Recent content in video on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 02 Jan 2019 12:04:48 +0000</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Wed, 02 Jan 2019 12:04:48 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/ffmpeg/</guid>
-      <description>Split videos and music file into chunks 可以是webm, mp3 或其他 video文件； -segment_time 后面的参数是秒； ffmpeg -i music.webm -f segment -segment_time 4000 -c copy output%03d.webm 把当前的目录内所有的mov文件转换成MP4 %filename: convert.sh #!/bin/bash</description>
+      <description>Split videos and music file into chunks 可以是webm, mp3 或其他 video文件； -segment_time 后面的参数是秒； ffmpeg -i music.webm -f segment -segment_time 4000 -c copy output%03d.webm 把当前的目录内所有的mov文件转换成MP4 filename: convert.sh #!/bin/bash</description>
     </item>
     
     <item>

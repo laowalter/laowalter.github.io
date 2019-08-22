@@ -17,7 +17,7 @@
       <pubDate>Fri, 13 Apr 2018 15:30:54 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/input/</guid>
-      <description>Windows Linux Input 安装文档 https://fcitx-im.org Terminal Console emerge -avq fcitx %filename: .bashrc export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx If you do not enable the gtk and gtk3 USE flags, the first line should be: export GTK_IM_MODULE=xim If you do not enable the qt USE flag, the second line should be: export QT_IM_MODULE=xim Session Mode (~/.xprofile) %finename: ~/.xprofile export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx startx (~/.xinitrc) %filename: ~/.xprofile</description>
+      <description>Windows Linux Input 安装文档 https://fcitx-im.org Terminal Console emerge -avq fcitx filename: .bashrc export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx If you do not enable the gtk and gtk3 USE flags, the first line should be: export GTK_IM_MODULE=xim If you do not enable the qt USE flag, the second line should be: export QT_IM_MODULE=xim Session Mode (~/.xprofile) filename: ~/.xprofile export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx startx (~/.xinitrc) filename: ~/.xprofile</description>
     </item>
     
   </channel>

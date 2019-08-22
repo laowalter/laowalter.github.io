@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -16,13 +16,6 @@
 <head>
     
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
-    <link href="laowalter.github.iocss/mindmap/kityminder.core.css" rel="stylesheet" type="text/css">
-    <link href="laowalter.github.iocss/mindmap/mindmap.css" rel="stylesheet" type="text/css">
-    <script src="laowalter.github.iojs/mindmap/kity.min.js"></script>
-    <script src="laowalter.github.iojs/mindmap/kityminder.core.min.js"></script>
-    <script src="laowalter.github.iojs/mindmap/mindmap.js"></script>
-	
 
     
     
@@ -31,26 +24,27 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Hugo Cheatsheet</h1> 
+            <p>Sun Aug 18, 2019</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>Hugo Cheatsheet</h1>
-    <p>Sun Aug 18, 2019</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/hugo">hugo</a>
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/cheatsheet">cheatsheet</a>
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/docker">docker</a>
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/blog">blog</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/hugo">hugo</a>
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/cheatsheet">cheatsheet</a>
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/docker">docker</a>
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/blog">blog</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#publish-to-github">Publish to github</a></li>
 <li><a href="#hugo-markdown-format">Hugo markdown format</a>
@@ -81,10 +75,10 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker exec -it hugo hugo </code></pre></div></li>
 
 <li><p>Find and replace wrong address like &ldquo;:1313&rdquo;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd public/
-$ grep -ri :1313 *
-$ sudo find ./ -type f -exec sed -i -e <span style="color:#e6db74">&#39;s/:1313//g&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
-$ sudo find ./ -type f -exec sed -i -e <span style="color:#e6db74">&#39;s/192\.168\.0\.199/laowalter.github.io/g&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ cd public/
+ $ grep -ri :1313 *
+ $ sudo find ./ -type f -exec sed -i -e <span style="color:#e6db74">&#39;s/:1313//g&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+ $ sudo find ./ -type f -exec sed -i -e <span style="color:#e6db74">&#39;s/192\.168\.0\.199/laowalter.github.io/g&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></code></pre></div></li>
 </ol>
 
 <h2 id="hugo-markdown-format">Hugo markdown format</h2>
@@ -93,67 +87,65 @@ $ sudo find ./ -type f -exec sed -i -e <span style="color:#e6db74">&#39;s/192\.1
 
 <ol>
 <li>default Section number is set to &ldquo;true&rdquo;</li>
-<li>add &ldquo;<strong>section_number = false</strong>&rdquo; to front matter if Dont Not want to add section_number in the content.</li>
-</ol>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">   <span style="color:#960050;background-color:#1e0010">+++</span>
-   <span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Hugo Cheatsheet&#34;</span>
-   <span style="color:#a6e22e">date</span> = <span style="color:#e6db74">2019-08-18T10:30:29Z</span>
-   <span style="color:#a6e22e">description</span> = <span style="color:#e6db74">&#34;&#34;</span>
-   <span style="color:#a6e22e">tags</span> = [<span style="color:#e6db74">&#34;hugo&#34;</span>, <span style="color:#e6db74">&#34;cheatsheet&#34;</span>, <span style="color:#e6db74">&#34;docker&#34;</span>, <span style="color:#e6db74">&#34;blog&#34;</span>]
-   <span style="color:#a6e22e">categories</span> = [<span style="color:#e6db74">&#34;tech&#34;</span>]
-<span style="display:block;width:100%;background-color:#3c3d38">   <span style="color:#a6e22e">section_number</span> = <span style="color:#66d9ef">false</span>
-</span>   <span style="color:#960050;background-color:#1e0010">+++</span></code></pre></div>
+<li><p>add &ldquo;<strong>section_number = false</strong>&rdquo; to front matter if Dont Not want to add section_number in the content.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">      <span style="color:#960050;background-color:#1e0010">+++</span>
+      <span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Hugo Cheatsheet&#34;</span>
+      <span style="color:#a6e22e">date</span> = <span style="color:#e6db74">2019-08-18T10:30:29Z</span>
+      <span style="color:#a6e22e">description</span> = <span style="color:#e6db74">&#34;&#34;</span>
+      <span style="color:#a6e22e">tags</span> = [<span style="color:#e6db74">&#34;hugo&#34;</span>, <span style="color:#e6db74">&#34;cheatsheet&#34;</span>, <span style="color:#e6db74">&#34;docker&#34;</span>, <span style="color:#e6db74">&#34;blog&#34;</span>]
+      <span style="color:#a6e22e">categories</span> = [<span style="color:#e6db74">&#34;tech&#34;</span>]
+<span style="display:block;width:100%;background-color:#3c3d38">      <span style="color:#a6e22e">section_number</span> = <span style="color:#66d9ef">false</span>
+</span>      <span style="color:#960050;background-color:#1e0010">+++</span>
+    </code></pre></div></li>
+</ol>
 
 <h3 id="syntax-highlight">Syntax Highlight</h3>
 
+<ul>
+<li><a href="https://gohugo.io/content-management/syntax-highlighting/">Supported Lang by highlight</a></li>
+
+<li><p>General format</p>
+
 <p>{{&lt; highlight go &ldquo;linenos=table,hl_lines=8 15-17,linenostart=199&rdquo; &gt;}}<br>
 // &hellip; code<br>
-{{&lt; /highlight &gt;}}</p>
+{{&lt; /highlight &gt;}}</p></li>
+</ul>
 
 <h3 id="file-format">file format</h3>
 
 <h4 id="pygmentscodefences-format">PygmentsCodeFences format</h4>
 
-<p>{{% file &ldquo;filename&rdquo; %}}<br>
-```nginx<br><br>
-something <br><br>
-```
-{{% /file %}}</p>
+<pre><code>{{% file &quot;filename&quot; %}}&lt;br&gt;
+\`\`\`nginx&lt;br&gt;&lt;br&gt;
+something &lt;br&gt;&lt;br&gt;
+\`\`\`
+{{% /file %}}
+</code></pre>
 
 <h4 id="hugo-format">Hugo format</h4>
 
-<p>{{% file &ldquo;layout/partial/single-head.html&rdquo; %}}<br>
-{{% /file %}}
-{{&lt; highlight html &ldquo;linenos=table, linenostart=1, hl_lines=11&rdquo; &gt;}}<br>
-&lt;head&gt;<br>
-   &nbsp;&nbsp; &lt;link href=&ldquo;{{.Site.BaseURL}}css/section_number/section_number.css&rdquo; rel=&ldquo;stylesheet&rdquo; type=&ldquo;text/css&rdquo;&gt;<br>
-&lt;/head&gt;<br>
-{{&lt; /highlight &gt;}}</p>
+<pre><code>{{% file &quot;layout/partial/single-head.html&quot; %}}
+{{% /file %}}&lt;br&gt;
+{{&lt; highlight html &quot;linenos=table, linenostart=1, hl_lines=11&quot; &gt;}}&lt;br&gt;
+\&lt;head\&gt;&lt;br&gt;
+   &amp;nbsp;&amp;nbsp; \&lt;link href=&quot;{{.Site.BaseURL}}css/section_number/section_number.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;\&gt;&lt;br&gt;
+\&lt;/head\&gt;&lt;br&gt;
+{{&lt; /highlight &gt;}}
+</code></pre>
 
 <h4 id="mindmap">mindmap</h4>
 
-<p>{{% mindmap mindname %}}
-<br>
-- root<br>
-&nbsp; &nbsp; - c1<br>
-&nbsp; &nbsp;    - c2<br>
-{{% /mindmap %}}</p>
+<pre><code>{{% mindmap mindname %}}
+&lt;br&gt;
+- root&lt;br&gt;
+&amp;nbsp; &amp;nbsp; - c1&lt;br&gt;
+&amp;nbsp; &amp;nbsp;    - c2&lt;br&gt;
+{{% /mindmap %}}
+</code></pre>
 
 <p><br></p>
-
-<div id="mindname" class="mindmap">
-    <ul>
-<li>root
-
-<ul>
-<li>c1</li>
-<li>c2</li>
-</ul></li>
-</ul>
-
-</div>
-
 
 <h2 id="启动-docker-运行-jojomi-hugo-的方法">启动 docker 运行 jojomi/hugo 的方法</h2>
 
@@ -184,13 +176,13 @@ something <br><br>
 <ol>
 <li><p>先执行上面的container， 然后才有下面的命令, -D 表示显示draft, 但是这里 hugo -D 并不正常，应该直接用上面的的&rdquo;启动 jojomi/hugo” <font color="green">-e HUGO_DESTINATION=&ldquo;public&rdquo;</font> 命令。</p>
 
-<p>下面命令行中第一个hugo是docker的container的名字，第二个hugo是应用程序hugo;</p></li>
+<p>下面命令行中第一个hugo是docker的container的名字，第二个hugo是应用程序hugo;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker exec -it hugo hugo -D //会使得public的结果</code></pre></div></li>
+
+<li><p>查看hugo的Version</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker exec -it hugo hugo version</code></pre></div></li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ docker exec -it hugo hugo -D //会使得public的结果</code></pre></div>
-<ol>
-<li>查看hugo的Version</li>
-</ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ docker exec -it hugo hugo version</code></pre></div>
+
 </article>
 
     </body>

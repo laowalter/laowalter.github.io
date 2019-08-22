@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,20 +24,21 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>文华公式</h1> 
+            <p>Sat Jan 26, 2019</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>文华公式</h1>
-    <p>Sat Jan 26, 2019</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/futures">futures</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/futures">futures</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#挤牌公式">挤牌公式</a></li>
 </ul></li>
@@ -53,8 +54,11 @@
 
 <p>交易方向好像是按照动量摆动指标。</p>
 
-<p>%filename: 挤牌公式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">KELT_:<span style="color:#f92672">=</span>KELT/10;
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>挤牌公式</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">KELT_:<span style="color:#f92672">=</span>KELT/10;
 
 TR:<span style="color:#f92672">=</span>MAX<span style="color:#f92672">(</span>MAX<span style="color:#f92672">((</span>HIGH-LOW<span style="color:#f92672">)</span>,ABS<span style="color:#f92672">(</span>REF<span style="color:#f92672">(</span>CLOSE,1<span style="color:#f92672">)</span>-HIGH<span style="color:#f92672">))</span>,ABS<span style="color:#f92672">(</span>REF<span style="color:#f92672">(</span>CLOSE,1<span style="color:#f92672">)</span>-LOW<span style="color:#f92672">))</span>;
 ATR:<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>TR,N<span style="color:#f92672">)</span>;
@@ -78,6 +82,9 @@ MID:BBMID;
 
 BB:IF<span style="color:#f92672">(</span>BBUP OR BBDO,CROSSDOT,CIRCLEDOT<span style="color:#f92672">)</span>;
 MTM:MA<span style="color:#f92672">(</span>MOM, MOMEMA<span style="color:#f92672">)</span>,COLORSTICK;</code></pre></div>
+    </div>
+</div>
+
 </article>
 
     </body>

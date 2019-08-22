@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on Just a Memo</title>
+    <title>python on Just a Memo</title>
     <link>laowalter.github.io/tags/python/</link>
-    <description>Recent content in Python on Just a Memo</description>
+    <description>Recent content in python on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Sep 2018 08:44:25 +0000</lastBuildDate>
@@ -26,7 +26,8 @@
       <pubDate>Thu, 07 Dec 2017 15:07:58 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/jupyter_in_python/</guid>
-      <description>Install Install package $ pip install jupyter $ jupyter notebook --generate-config Config ~/.jupyter/jupyter_notebook_config.py edit ~/.jupyter/jupyter_notebook_config.py c.NotebookApp.ip = &amp;#39;192.168.0.199&amp;#39;   Start jupyter  $ jupyter notebook --no-browser [I 16:56:50.226 NotebookApp] Serving notebooks from local directory: /home/walter [I 16:56:50.226 NotebookApp] 0 active kernels [I 16:56:50.226 NotebookApp] The Jupyter Notebook is running at: [I 16:56:50.226 NotebookApp] http://mini:8888/?token=6d97162c599bf9e0010b2bf886be238cdf60cf17b12edb62 [I 16:56:50.226 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).</description>
+      <description>Install Install package $ pip install jupyter $ jupyter notebook --generate-config Config ~/.jupyter/jupyter_notebook_config.py edit ~/.jupyter/jupyter_notebook_config.py c.NotebookApp.ip = &amp;#39;192.168.0.199&amp;#39;   Start jupyter
+$ jupyter notebook --no-browser [I 16:56:50.226 NotebookApp] Serving notebooks from local directory: /home/walter [I 16:56:50.226 NotebookApp] 0 active kernels [I 16:56:50.226 NotebookApp] The Jupyter Notebook is running at: [I 16:56:50.226 NotebookApp] http://mini:8888/?token=6d97162c599bf9e0010b2bf886be238cdf60cf17b12edb62 [I 16:56:50.226 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).</description>
     </item>
     
     <item>
@@ -46,8 +47,12 @@ server { listen 192.168.0.202:8080; server_name gentoo; access_log /tmp/bokeh.ac
       
       <guid>laowalter.github.io/posts/tech/matplotlib/</guid>
       <description>Matplot chinese font  Problem  /home/walter/.virtualenv/python3/lib/python3.6/site-packages/matplotlib/font_manager.py:1316: UserWarning: findfont: Font family [&amp;lsquo;sans-serif&amp;rsquo;] not found. Falling back to DejaVu Sans (prop.get_family(), self.defaultFamily[fontext]))
- Add Chinese font  Add font to system ```bash cp simhei.ttf /usr/share/fonts/ttfs/ fc-cache -fv * Add following in program   import matplotlib.pyplot as plt plt.rcParams[&amp;#39;font.sans-serif&amp;#39;]=[&amp;#39;SimHei&amp;#39;] or just change ~/.config/matplotlib/matplotlibrc
-mpl.rccParams[&amp;#39;font.sans-serif&amp;#39;]=[&amp;#39;SimHei&amp;#39;] * clear matplotlib cache  rm -fr ~/.</description>
+ Add Chinese font
+ Add font to system
+cp simhei.ttf /usr/share/fonts/ttfs/ fc-cache -fv * Add following in program python
+   import matplotlib.pyplot as plt plt.rcParams[&amp;lsquo;font.sans-serif&amp;rsquo;]=[&amp;lsquo;SimHei&amp;rsquo;]
+or just change ~/.config/matplotlib/matplotlibrc  config mpl.rccParams[&amp;lsquo;font.sans-serif&amp;rsquo;]=[&amp;lsquo;SimHei&amp;rsquo;]
+	* clear matplotlib cache  bash rm -fr ~/.cache/matplotlib ```</description>
     </item>
     
     <item>

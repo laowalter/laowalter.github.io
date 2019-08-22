@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,20 +24,21 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Freenas</h1> 
+            <p>Wed Apr 17, 2019</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>Freenas</h1>
-    <p>Wed Apr 17, 2019</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/nas">nas</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/nas">nas</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#terminal-console">Terminal / Console</a>
 <ul>
@@ -72,10 +73,16 @@
 
 <h3 id="step-one">Step one</h3>
 
-<p>%filename: ~/.login_conf</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">me:<span style="color:#ae81ff">\
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>~/.login_conf</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">me:<span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>        :charset<span style="color:#f92672">=</span>UTF-8:<span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>        :lang<span style="color:#f92672">=</span>zh_CN.UTF-8:</code></pre></div>
+    </div>
+</div>
+
 <h3 id="step-two">Step two</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd
 cp .profile .bash_profile</code></pre></div>
@@ -91,10 +98,11 @@ alias ls<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ls 
 <h3 id="errors">Errors</h3>
 
 <ul>
-<li>Metadata corrupt after fetch</li>
+<li><p>Metadata corrupt after fetch</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rm -fr /var/db/portsnap/*
+portsnap fetch</code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> rm -fr /var/db/portsnap/*
- portsnap fetch</code></pre></div>
+
 <h3 id="jail-initialize">Jail initialize</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pkg install screen 
 pkg install bash
@@ -106,17 +114,20 @@ port fetch</code></pre></div>
 <h4 id="php72-fpm">php72-fpm</h4>
 
 <ul>
-<li>Config
-%filename: /usr/local/etc/php-fpm.d/www.conf
-<code>bash
-;修改一下内容
-user = www
-group = www
-listen = /var/run/php72-fpm.sock
-listen.owner = www
-listen.group = www
-listen.mode = 0660
-</code></li>
+<li><p>Config
+<div class="file" ></p>
+
+<div class="filename" >
+    <p style="padding:0; margin:0;">filename: <b>/usr/local/etc/php-fpm.d/www.conf</b></p>
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">;修改一下内容
+user <span style="color:#f92672">=</span> www
+group <span style="color:#f92672">=</span> www
+listen <span style="color:#f92672">=</span> /var/run/php72-fpm.sock
+listen.owner <span style="color:#f92672">=</span> www
+listen.group <span style="color:#f92672">=</span> www
+listen.mode <span style="color:#f92672">=</span> <span style="color:#ae81ff">0660</span></code></pre></div>
+</div>
+</div></li>
 
 <li><p>Nginx</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">server <span style="color:#f92672">{</span>
@@ -126,46 +137,51 @@ access_log  /var/log/nginx/access.log;
 error_log  /var/log/nginx/error.log;
 
 root /usr/local/www/nginx;
-<span style="color:#75715e">#root /usr/local/www/piwigo;
-</span><span style="color:#75715e"># php config let nginx talk to php socket
-</span><span style="color:#75715e"></span>location ~ <span style="color:#f92672">[</span>^/<span style="color:#f92672">]</span><span style="color:#ae81ff">\.</span>php<span style="color:#f92672">(</span>/|$<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+<span style="color:#75715e">#root /usr/local/www/piwigo;</span>
+<span style="color:#75715e"># php config let nginx talk to php socket</span>
+location ~ <span style="color:#f92672">[</span>^/<span style="color:#f92672">]</span><span style="color:#ae81ff">\.</span>php<span style="color:#f92672">(</span>/|$<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
     fastcgi_split_path_info ^<span style="color:#f92672">(</span>.+?<span style="color:#ae81ff">\.</span>php<span style="color:#f92672">)(</span>/.*<span style="color:#f92672">)</span>$;
     <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>!-f $document_root$fastcgi_script_name<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
             <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">404</span>;
     <span style="color:#f92672">}</span>
 
-    <span style="color:#75715e"># Mitigate https://httpoxy.org/ vulnerabilities
-</span><span style="color:#75715e"></span>    fastcgi_param HTTP_PROXY <span style="color:#e6db74">&#34;&#34;</span>;
+    <span style="color:#75715e"># Mitigate https://httpoxy.org/ vulnerabilities</span>
+    fastcgi_param HTTP_PROXY <span style="color:#e6db74">&#34;&#34;</span>;
 
     fastcgi_pass unix:/var/run/php72-fpm.sock;
     fastcgi_index index.php;
 
-    <span style="color:#75715e"># include the fastcgi_param setting
-</span><span style="color:#75715e"></span>    include fastcgi_params;
+    <span style="color:#75715e"># include the fastcgi_param setting</span>
+    include fastcgi_params;
 
-    <span style="color:#75715e"># SCRIPT_FILENAME parameter is used for PHP FPM determining
-</span><span style="color:#75715e"></span>    <span style="color:#75715e"># the script name.
-</span><span style="color:#75715e"></span>    fastcgi_param  SCRIPT_FILENAME   $document_root$fastcgi_script_name;
+    <span style="color:#75715e"># SCRIPT_FILENAME parameter is used for PHP FPM determining</span>
+    <span style="color:#75715e"># the script name.</span>
+    fastcgi_param  SCRIPT_FILENAME   $document_root$fastcgi_script_name;
 <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span></code></pre></div></li>
 
 <li><p>Autostart</p></li>
 </ul>
 
-<p>%filename: /etc/rc.conf</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php_fpm_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span></code></pre></div>
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/etc/rc.conf</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php_fpm_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span></code></pre></div>
+    </div>
+</div>
+ 
+
 <h4 id="mysql-server">mysql server</h4>
 
 <ul>
-<li>install
-<code>bash
-pkg install mysql56-server
-</code></li>
+<li><p>install</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pkg install mysql56-server</code></pre></div></li>
 </ul>
 
 <h3 id="xx-net">xx-net</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># pkg install py27-pip
-</span><span style="color:#75715e"></span>#  pip install cryptography interface</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># pkg install py27-pip</span>
+<span style="color:#75715e">#  pip install cryptography interface</span></code></pre></div>
 <h2 id="encrypt">encrypt</h2>
 
 <h2 id="mount">mount</h2>

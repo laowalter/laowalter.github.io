@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bluetooth on Just a Memo</title>
+    <title>bluetooth on Just a Memo</title>
     <link>laowalter.github.io/tags/bluetooth/</link>
-    <description>Recent content in Bluetooth on Just a Memo</description>
+    <description>Recent content in bluetooth on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Mar 2019 23:42:48 +0000</lastBuildDate>
@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Linux Bluetooth / 蓝牙</title>
+      <title>Bluetooth (linux) / 蓝牙</title>
       <link>laowalter.github.io/posts/tech/bluetooth/</link>
       <pubDate>Fri, 01 Mar 2019 23:42:48 +0000</pubDate>
       

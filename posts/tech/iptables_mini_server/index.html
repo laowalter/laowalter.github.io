@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,31 +24,27 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>IPTABLES (Mini Server)</h1> 
+            <p>Sat Dec 9, 2017</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>IPTABLES (Mini Server)</h1>
-    <p>Sat Dec 9, 2017</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/iptables">iptables</a>
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/net">net</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/iptables">iptables</a>
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/net">net</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#参考资料">参考资料</a>
 <ul>
 <li><a href="#list-openned-ports">list openned ports</a></li>
-<li><a href="#ternedo-miredo-共存-iptables">Ternedo / Miredo 共存 iptables</a>
-<ul>
-<li><a href="#about-ternedo-http-www-microsoft-com-technet-network-ipv6-teredo-mspx"><a href="http://www.microsoft.com/technet/network/ipv6/teredo.mspx">About Ternedo</a></a></li>
-<li><a href="#iptables-miredo-转载如下-https-support-microsoft-com-en-us-help-968510-firewall-requirements-for-coexisting-with-teredo"><a href="https://support.microsoft.com/en-us/help/968510/firewall-requirements-for-coexisting-with-teredo">iptables Miredo 转载如下</a></a></li>
-</ul></li>
 <li><a href="#my-iptables">My iptables</a>
 <ul>
 <li><a href="#iptables-save">iptables.save</a></li>
@@ -109,77 +105,10 @@ udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff"
 udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>.0.0.0:49585           <span style="color:#ae81ff">0</span>.0.0.0:*                           <span style="color:#ae81ff">16078</span>/transmission-
 udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>.0.0.0:58786           <span style="color:#ae81ff">0</span>.0.0.0:*                           <span style="color:#ae81ff">16078</span>/transmission-
 udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>.0.0.0:34361           <span style="color:#ae81ff">0</span>.0.0.0:*                           <span style="color:#ae81ff">16078</span>/transmission-</code></pre></div>
-<h3 id="ternedo-miredo-共存-iptables">Ternedo / Miredo 共存 iptables</h3>
-
-<h4 id="about-ternedo-http-www-microsoft-com-technet-network-ipv6-teredo-mspx"><a href="http://www.microsoft.com/technet/network/ipv6/teredo.mspx">About Ternedo</a></h4>
-
-<h4 id="iptables-miredo-转载如下-https-support-microsoft-com-en-us-help-968510-firewall-requirements-for-coexisting-with-teredo"><a href="https://support.microsoft.com/en-us/help/968510/firewall-requirements-for-coexisting-with-teredo">iptables Miredo 转载如下</a></h4>
-
-<p>In order for client firewalls to coexist with Teredo, the firewalls must follow the guidelines listed below.</p>
-
-<ol>
-<li>The client firewall must allow resolution of teredo.IPv6.microsoft.com.</li>
-<li>The client firewall must exempt UDP IPv4 traffic to/ from remote UDP port 3544.
-
-<ul>
-<li>Port 3544 allows the client to communicate to the Teredo Server.</li>
-</ul></li>
-
-<li><p>Client firewalls must support the following ICMPv6 error messages &amp; discovery functions:</p>
-
-<ol>
-<li>ICMPv6 Neighbor Solicitation / Neighbor Advertisement
-
-<ol>
-<li>The codes for these are 135 and 136</li>
-</ol></li>
-<li>ICMPv6 Echo Request/ Reply
-
-<ol>
-<li>The codes for these are 128 and 129</li>
-</ol></li>
-<li>Packet Too Big
-
-<ol>
-<li>The code for this is 2</li>
-</ol></li>
-<li>Parameter Problem
-
-<ol>
-<li>The code for this  is 4</li>
-</ol></li>
-<li>Time Exceeded
-
-<ol>
-<li>The codes for this is 3</li>
-</ol></li>
-<li>Destination Unreachable
-
-<ol>
-<li>The code for this is 1</li>
-</ol></li>
-<li>Router Solicitation / Router Advertisement
-
-<ol>
-<li>Codes 133 and 134
-<br /></li>
-</ol></li>
-</ol>
-
-<p>Note:  If the above ICMPv6 messages cannot be specifically allowed, then the exemption of all ICMPv6 messages should be enabled on the firewall</p></li>
-
-<li><p>The client firewall should allow the system to send and receive UDP/IPv4 packets to UDP port 1900</p>
-
-<ul>
-<li>Port 1900 allows UPnP discovery traffic to flow, and while is not necessary, will improve connectivity rates.</li>
-</ul></li>
-</ol>
-
 <h3 id="my-iptables">My iptables</h3>
 
 <h4 id="iptables-save">iptables.save</h4>
-
-<pre><code># Generated by iptables-save v1.6.1 on Sat Jun 23 15:52:49 2018
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-iptables" data-lang="iptables"># Generated by iptables-save v1.6.1 on Sat Jun 23 15:52:49 2018
 *nat
 :PREROUTING ACCEPT [177:12260]
 :INPUT ACCEPT [165:11324]
@@ -275,16 +204,14 @@ COMMIT
 -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 -A OUTPUT -m state --state INVALID -j DROP
 -A OUTPUT -m state --state NEW -j ACCEPT
-COMMIT
-</code></pre>
-
+COMMIT</code></pre></div>
 <h4 id="add-the-service-to-default">Add the service to default</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /etc/init.d/iptables save
-</span><span style="color:#75715e"># /etc/init.d/ip6tables save
-</span><span style="color:#75715e"># /etc/init.d/iptables start
-</span><span style="color:#75715e"># /etc/init.d/ip6tables start
-</span><span style="color:#75715e"># rc-update add iptables default
-</span><span style="color:#75715e"></span># rc-update add ip6tables default</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /etc/init.d/iptables save</span>
+<span style="color:#75715e"># /etc/init.d/ip6tables save</span>
+<span style="color:#75715e"># /etc/init.d/iptables start</span>
+<span style="color:#75715e"># /etc/init.d/ip6tables start</span>
+<span style="color:#75715e"># rc-update add iptables default</span>
+<span style="color:#75715e"># rc-update add ip6tables default</span></code></pre></div>
 <h3 id="etc-init-d-iptables-save-to-where">/etc/init.d/iptables save to where</h3>
 
 <ul>

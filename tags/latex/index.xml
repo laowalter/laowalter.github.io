@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Latex on Just a Memo</title>
+    <title>latex on Just a Memo</title>
     <link>laowalter.github.io/tags/latex/</link>
-    <description>Recent content in Latex on Just a Memo</description>
+    <description>Recent content in latex on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 14 Dec 2018 16:16:19 +0000</lastBuildDate>
@@ -26,7 +26,7 @@
       <pubDate>Thu, 22 Nov 2018 21:44:41 +0000</pubDate>
       
       <guid>laowalter.github.io/posts/tech/latex/</guid>
-      <description>使用xelatex 模板一 %filename: 模板一(简体) \documentclass[11pt,a4paper]{article} \usepackage{fontspec,xltxtra,xunicode} \usepackage[slantfont,boldfont]{xeCJK} \setCJKmainfont[BoldFont=Adobe Heiti Std,ItalicFont=Adobe Kaiti Std]{Adobe Song Std} \setCJKsansfont{Adobe Heiti Std} \setCJKmonofont{Adobe Song Std} \setCJKfamilyfont{song}{Adobe Song Std} \setCJKfamilyfont{hei}{Adobe Heiti Std} \setCJKfamilyfont{kai}{Adobe Kaiti Std} \newcommand{\hei}{\CJKfamily{hei}} \newcommand{\song}{\CJKfamily{song}} \newcommand{\kai}{\CJKfamily{kai}} \title{\LaTeX中文博客模板} \author{wangl393} \date{\today}</description>
+      <description>使用xelatex 模板一 filename: 模板一(简体) \documentclass[11pt,a4paper]{article} \usepackage{fontspec,xltxtra,xunicode} \usepackage[slantfont,boldfont]{xeCJK} \setCJKmainfont[BoldFont=Adobe Heiti Std,ItalicFont=Adobe Kaiti Std]{Adobe Song Std} \setCJKsansfont{Adobe Heiti Std} \setCJKmonofont{Adobe Song Std} \setCJKfamilyfont{song}{Adobe Song Std} \setCJKfamilyfont{hei}{Adobe Heiti Std} \setCJKfamilyfont{kai}{Adobe Kaiti Std} \newcommand{\hei}{\CJKfamily{hei}} \newcommand{\song}{\CJKfamily{song}} \newcommand{\kai}{\CJKfamily{kai}} \title{\LaTeX中文博客模板} \author{wangl393} \date{\today}</description>
     </item>
     
   </channel>

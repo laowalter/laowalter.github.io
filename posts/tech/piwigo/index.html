@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,20 +24,21 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Piwigo</h1> 
+            <p>Sun Jan 21, 2018</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>Piwigo</h1>
-    <p>Sun Jan 21, 2018</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/photo">photo</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/photo">photo</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li><a href="#use-piwigo-注意事项">Use Piwigo 注意事项</a>
 <ul>
@@ -109,29 +110,28 @@
 <h4 id="php">php</h4>
 
 <ul>
-<li>自2.9.5之后必须打开 mysql use，只打开 mysqli不行。</li>
+<li><p>自2.9.5之后必须打开 mysql use，只打开 mysqli不行。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dev-lang/php curl mysql</code></pre></div></li>
+
+<li><p>安装必要的数据包，给插件使用</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq dev-php/pecl-imagick
+emerge -avq media-libs/libmediainfo
+emerge -avq  media-video/mediainfo
+emerge -avq media-libs/exiftool</code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> dev-lang/php curl mysql</code></pre></div>
-<ul>
-<li>安装必要的数据包，给插件使用</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> emerge -avq dev-php/pecl-imagick
- emerge -avq media-libs/libmediainfo
- emerge -avq  media-video/mediainfo
- emerge -avq media-libs/exiftool</code></pre></div>
+
 <h4 id="config-nginx-to-support">config Nginx to support</h4>
 
 <div class="file" >
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/nginx/nginx.conf</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#66d9ef">...</span>
+        <p>&rdquo; %}}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#66d9ef">...</span>
  <span style="color:#e6db74">include</span> <span style="color:#e6db74">/etc/nginx/conf.d/*.conf</span>;
  <span style="color:#66d9ef">...</span></code></pre></div>
-
     </div>
 </div>
-
 
 <p><br></p>
 
@@ -139,7 +139,8 @@
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/nginx/conf.d/piwigo.conf</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#66d9ef">server</span> {
+        <p>&rdquo; %}}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#66d9ef">server</span> {
     <span style="color:#f92672">listen</span> 0.0.0.0:<span style="color:#ae81ff">3128</span>;
     <span style="color:#f92672">server_name</span> <span style="color:#e6db74">photo</span>;
     <span style="color:#75715e">#root /var/www/localhost/;
@@ -152,10 +153,8 @@
             <span style="color:#f92672">fastcgi_pass</span> <span style="color:#e6db74">unix:/run/php-fpm.socket</span>;
     }
  }</code></pre></div>
-
     </div>
 </div>
-
 
 <p><br></p>
 
@@ -163,13 +162,12 @@
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/php/fpm-php7.2/php.ini</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">upload_max_filesize <span style="color:#f92672">=</span> 1000M
+        <p>&rdquo; %}}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">upload_max_filesize <span style="color:#f92672">=</span> 1000M
 post_max_size <span style="color:#f92672">=</span> 1000M
 max_file_uploads <span style="color:#f92672">=</span> <span style="color:#ae81ff">200</span> // Default是20，产生504 gateway time-out</code></pre></div>
-
     </div>
 </div>
-
 
 <h4 id="config-php-fpm">Config php-fpm</h4>
 
@@ -179,17 +177,16 @@ max_file_uploads <span style="color:#f92672">=</span> <span style="color:#ae81ff
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/php/fpm-php7.1/fpm.d/www.conf</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  user <span style="color:#f92672">=</span> nginx  //nobody 更安全，当更新结束之后建议改为nobody
+        <p>&rdquo; %}}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  user <span style="color:#f92672">=</span> nginx  //nobody 更安全，当更新结束之后建议改为nobody
   group <span style="color:#f92672">=</span> nginx //nobody 更安全，当更新结束之后建议改为nobody
 
   listen <span style="color:#f92672">=</span> /run/php-fpm.socket
   listen.owner <span style="color:#f92672">=</span> nginx
   listen.group <span style="color:#f92672">=</span> nginx
   listen.mode <span style="color:#f92672">=</span> <span style="color:#ae81ff">0660</span></code></pre></div>
-
     </div>
 </div>
-
 
 <h5 id="adjust-upload-limited">adjust upload limited</h5>
 
@@ -197,12 +194,11 @@ max_file_uploads <span style="color:#f92672">=</span> <span style="color:#ae81ff
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/php/fpm-php7.1/php.ini</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">upload_tmp_dir <span style="color:#f92672">=</span> /tmp
+        <p>&rdquo; %}}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">upload_tmp_dir <span style="color:#f92672">=</span> /tmp
 upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div>
-
     </div>
 </div>
-
 
 <p><br></p>
 
@@ -210,12 +206,11 @@ upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/ngnix/nginx.conf</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">client_max_body_size</span> <span style="color:#e6db74">20M</span>;
+        <p>&rdquo; %}}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">client_max_body_size</span> <span style="color:#e6db74">20M</span>;
 <span style="color:#66d9ef">client_body_buffer_size</span> <span style="color:#ae81ff">128k</span>;</code></pre></div>
-
     </div>
 </div>
-
 
 <h5 id="add-php-fpm-to-default-service">add php-fpm to default service</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> sudo  /etc/init.d/php-fpm start
@@ -231,16 +226,15 @@ upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/usr/local/etc/php-fpm.d/www.conf</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> user <span style="color:#f92672">=</span> www
+        <p>&rdquo; %}}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> user <span style="color:#f92672">=</span> www
  group <span style="color:#f92672">=</span> www
  listen <span style="color:#f92672">=</span> /var/run/php72-fpm.sock
  listen.owner <span style="color:#f92672">=</span> www
  listen.group <span style="color:#f92672">=</span> www
  listen.mode <span style="color:#f92672">=</span> <span style="color:#ae81ff">0660</span></code></pre></div>
-
     </div>
 </div>
-
 
 <h4 id="nginx">nginx</h4>
 
@@ -248,7 +242,8 @@ upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/usr/local/etc/nginx/nginx.conf</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#66d9ef">worker_processes</span>  <span style="color:#ae81ff">1</span>;
+        <p>&rdquo; %}}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#66d9ef">worker_processes</span>  <span style="color:#ae81ff">1</span>;
 
  <span style="color:#66d9ef">events</span> {
     <span style="color:#f92672">worker_connections</span>  <span style="color:#ae81ff">1024</span>;
@@ -290,10 +285,8 @@ upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div>
         }
     }
  }</code></pre></div>
-
     </div>
 </div>
-
 
 <h4 id="etc-rc-conf">/etc/rc.conf</h4>
 
@@ -301,24 +294,24 @@ upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/rc.conf</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> nginx_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span>
+        <p>&rdquo; %}}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> nginx_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span>
  php_fpm_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span>
  mysql_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span></code></pre></div>
-
     </div>
 </div>
-
 
 <h3 id="mysql-databases-prepaire">MySQL databases prepaire</h3>
 
 <ul>
-<li>photos 是mysql数据库名称</li>
+<li><p>photos 是mysql数据库名称</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql">mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> piwigo;
+mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">create</span> user <span style="color:#e6db74">&#39;walter&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;abcdef&#39;</span>;
+mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">all</span> privileges <span style="color:#66d9ef">on</span> piwigo . <span style="color:#f92672">*</span> <span style="color:#66d9ef">to</span> <span style="color:#e6db74">&#39;walter&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span>;
+mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">flush</span> privileges;
+mysql<span style="color:#f92672">&gt;</span> quit;</code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"> mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> piwigo;
- mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">create</span> user <span style="color:#e6db74">&#39;walter&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;abcdef&#39;</span>;
- mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">all</span> privileges <span style="color:#66d9ef">on</span> piwigo . <span style="color:#f92672">*</span> <span style="color:#66d9ef">to</span> <span style="color:#e6db74">&#39;walter&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span>;
- mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">flush</span> privileges;
- mysql<span style="color:#f92672">&gt;</span> quit;</code></pre></div>
+
 <h3 id="install-piwigo">install piwigo</h3>
 
 <h4 id="文件准备">文件准备</h4>
@@ -377,10 +370,8 @@ webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</sp
      {
        $language = $language_code;
  </code></pre></div>
-
     </div>
 </div>
-
 
 <ul>
 <li>暂时不需要修改</li>
@@ -390,13 +381,12 @@ webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</sp
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>piwigo/include/common.inc.php</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+        <p>&rdquo; %}}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
   define<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;PHPWG_DOMAIN&#39;</span>, <span style="color:#e6db74">&#39;cn.piwigo.org&#39;</span><span style="color:#f92672">)</span>;
 <span style="color:#f92672">}</span></code></pre></div>
-
     </div>
 </div>
-
 
 <h5 id="确认-修改目录权限">确认/修改目录权限</h5>
 
@@ -417,12 +407,11 @@ webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</sp
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/var/www/localhost/htdocs/piwigo/plugins/read_metadata/admin.php</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">--- $exif <span style="color:#f92672">=</span> read_exif_data<span style="color:#f92672">(</span>$filename<span style="color:#f92672">)</span>;
+        <p>&rdquo; %}}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">--- $exif <span style="color:#f92672">=</span> read_exif_data<span style="color:#f92672">(</span>$filename<span style="color:#f92672">)</span>;
 +++ $exif <span style="color:#f92672">=</span> exif_read_data<span style="color:#f92672">(</span>$filename<span style="color:#f92672">)</span>;</code></pre></div>
-
     </div>
 </div>
-
 
 <h3 id="openstreetmap">OpenStreetMap</h3>
 
@@ -434,15 +423,14 @@ webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</sp
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/var/www/localhost/htdocs/piwigo/osmmap.php</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+        <p>&rdquo; %}}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 <span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;PHPWG_ROOT_PATH&#39;</span>,<span style="color:#e6db74">&#39;./&#39;</span>);
 <span style="color:#66d9ef">include_once</span>( <span style="color:#a6e22e">PHPWG_ROOT_PATH</span><span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;plugins/piwigo-openstreetmap/osmmap2.php&#39;</span>);
 <span style="color:#75715e">?&gt;</span>
 </code></pre></div>
-
     </div>
 </div>
-
 
 <h3 id="maps-earth">Maps &amp; Earth</h3>
 
@@ -452,15 +440,14 @@ webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</sp
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/var/www/localhost/htdocs/piwigo/map.php</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"> <span style="color:#75715e">&lt;?php</span>
+        <p>&rdquo; %}}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"> <span style="color:#75715e">&lt;?php</span>
  <span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;PHPWG_ROOT_PATH&#39;</span>,<span style="color:#e6db74">&#39;./&#39;</span>);
  <span style="color:#66d9ef">include_once</span>( <span style="color:#a6e22e">PHPWG_ROOT_PATH</span><span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;plugins/rv_gmaps/map.php&#39;</span>);
  <span style="color:#75715e">?&gt;</span>
 </code></pre></div>
-
     </div>
 </div>
-
 
 <h2 id="导入照片">导入照片</h2>
 

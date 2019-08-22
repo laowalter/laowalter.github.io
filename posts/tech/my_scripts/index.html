@@ -8,7 +8,7 @@
 
     
     
-    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.ef740697b92983f94ae209bb0e3184554cbc28dcfc08832347dacd426dc8d3a2.css">
+    <link rel="stylesheet" href="/laowalter.github.io/sass/main.min.6e3c2b079ee31b17abb26d025a098c60ce82093b938c09a95277f558ea824d75.css">
 
 </head>
 
@@ -24,20 +24,21 @@
 </head>
 
     <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>My_Scripts</h1> 
+            <p>Tue Nov 21, 2017</p>
+            <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
 
-    <h1>My_Scripts</h1>
-    <p>Tue Nov 21, 2017</p>
-    
-    <a class="tag tag--primary tag--small"   href="laowalter.github.io"><font color="green">Home</font></a>
+            
+                
+                    <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/shell">shell</a>
+                
+            
+          </div>
+      </div>
 
-    
-        
-           <a class="tag tag--primary tag--small" href="laowalter.github.io/tags/shell">shell</a>
-        
-    
-
-    <hr><br>
-<nav id="TableOfContents">
+    <hr><br><nav id="TableOfContents">
 <ul>
 <li>
 <ul>
@@ -57,8 +58,8 @@
 sudo umount -f /mnt/cifs/* <span style="color:#f92672">||</span>true
 
 sudo mount /mnt/cifs/vipdoc 
-<span style="color:#66d9ef">if</span> test $? -eq <span style="color:#ae81ff">0</span>; <span style="color:#66d9ef">then</span>   <span style="color:#75715e">#sucessfull mount
-</span><span style="color:#75715e"></span>    echo <span style="color:#e6db74">&#34;mounted /mnt/cifs/vipdoc&#34;</span>
+<span style="color:#66d9ef">if</span> test $? -eq <span style="color:#ae81ff">0</span>; <span style="color:#66d9ef">then</span>   <span style="color:#75715e">#sucessfull mount</span>
+    echo <span style="color:#e6db74">&#34;mounted /mnt/cifs/vipdoc&#34;</span>
     echo <span style="color:#e6db74">&#34;rsync /mnt/cifs/vipdoc to /backup/tdx&#34;</span>
     rsync -az /mnt/cifs/vipdoc /backup/tdx
     echo <span style="color:#e6db74">&#34;umount vipdoc&#34;</span>
@@ -66,8 +67,8 @@ sudo mount /mnt/cifs/vipdoc
 <span style="color:#66d9ef">fi</span>
 
 sudo mount /mnt/cifs/hq_cache 
-<span style="color:#66d9ef">if</span> test $? -eq <span style="color:#ae81ff">0</span>; <span style="color:#66d9ef">then</span>   <span style="color:#75715e"># sucessfull mount
-</span><span style="color:#75715e"></span>    echo <span style="color:#e6db74">&#34;mounted /mnt/cifs/hq_cache&#34;</span>
+<span style="color:#66d9ef">if</span> test $? -eq <span style="color:#ae81ff">0</span>; <span style="color:#66d9ef">then</span>   <span style="color:#75715e"># sucessfull mount</span>
+    echo <span style="color:#e6db74">&#34;mounted /mnt/cifs/hq_cache&#34;</span>
     echo <span style="color:#e6db74">&#34;rysnc /mnt/cifs/hq_cache  to /backup/tdx&#34;</span>
     rsync -az /mnt/cifs/hq_cache /backup/tdx 
     echo <span style="color:#e6db74">&#34;umount hq_cache&#34;</span>
