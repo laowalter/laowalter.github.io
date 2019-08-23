@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Aug 2019 12:38:01 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 23 Aug 2019 12:31:39 +0800</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CSS</title>
+      <link>/posts/tech/css/</link>
+      <pubDate>Fri, 23 Aug 2019 12:31:39 +0800</pubDate>
+      
+      <guid>/posts/tech/css/</guid>
+      <description> @font-face
+@font-face { font-family: Lobster; src: url(&amp;#34;../fonts/Lobster-Regular.ttf&amp;#34;); } @font-face { font-family: Lobster; src: url(&amp;#34;../fonts/Lobster-Regular.ttf&amp;#34;); } .datetime { font-family: Lobster, cursive; color: #003366; } Google Fonts
+  </description>
+    </item>
     
     <item>
       <title>Hugo Install In Gentoo</title>
