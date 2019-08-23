@@ -129,8 +129,7 @@ emerge -avq media-libs/exiftool</code></pre></div></li>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/nginx/nginx.conf</b></p>
-        <p>&rdquo; %}}</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#66d9ef">...</span>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#66d9ef">...</span>
  <span style="color:#e6db74">include</span> <span style="color:#e6db74">/etc/nginx/conf.d/*.conf</span>;
  <span style="color:#66d9ef">...</span></code></pre></div>
     </div>
@@ -142,8 +141,7 @@ emerge -avq media-libs/exiftool</code></pre></div></li>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/nginx/conf.d/piwigo.conf</b></p>
-        <p>&rdquo; %}}</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#66d9ef">server</span> {
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#66d9ef">server</span> {
     <span style="color:#f92672">listen</span> 0.0.0.0:<span style="color:#ae81ff">3128</span>;
     <span style="color:#f92672">server_name</span> <span style="color:#e6db74">photo</span>;
     <span style="color:#75715e">#root /var/www/localhost/;
@@ -165,8 +163,7 @@ emerge -avq media-libs/exiftool</code></pre></div></li>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/php/fpm-php7.2/php.ini</b></p>
-        <p>&rdquo; %}}</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">upload_max_filesize <span style="color:#f92672">=</span> 1000M
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">upload_max_filesize <span style="color:#f92672">=</span> 1000M
 post_max_size <span style="color:#f92672">=</span> 1000M
 max_file_uploads <span style="color:#f92672">=</span> <span style="color:#ae81ff">200</span> // Default是20，产生504 gateway time-out</code></pre></div>
     </div>
@@ -180,8 +177,7 @@ max_file_uploads <span style="color:#f92672">=</span> <span style="color:#ae81ff
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/php/fpm-php7.1/fpm.d/www.conf</b></p>
-        <p>&rdquo; %}}</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  user <span style="color:#f92672">=</span> nginx  //nobody 更安全，当更新结束之后建议改为nobody
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  user <span style="color:#f92672">=</span> nginx  //nobody 更安全，当更新结束之后建议改为nobody
   group <span style="color:#f92672">=</span> nginx //nobody 更安全，当更新结束之后建议改为nobody
 
   listen <span style="color:#f92672">=</span> /run/php-fpm.socket
@@ -197,8 +193,7 @@ max_file_uploads <span style="color:#f92672">=</span> <span style="color:#ae81ff
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/php/fpm-php7.1/php.ini</b></p>
-        <p>&rdquo; %}}</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">upload_tmp_dir <span style="color:#f92672">=</span> /tmp
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">upload_tmp_dir <span style="color:#f92672">=</span> /tmp
 upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div>
     </div>
 </div>
@@ -209,8 +204,7 @@ upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/ngnix/nginx.conf</b></p>
-        <p>&rdquo; %}}</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">client_max_body_size</span> <span style="color:#e6db74">20M</span>;
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">client_max_body_size</span> <span style="color:#e6db74">20M</span>;
 <span style="color:#66d9ef">client_body_buffer_size</span> <span style="color:#ae81ff">128k</span>;</code></pre></div>
     </div>
 </div>
@@ -229,8 +223,7 @@ upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/usr/local/etc/php-fpm.d/www.conf</b></p>
-        <p>&rdquo; %}}</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> user <span style="color:#f92672">=</span> www
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> user <span style="color:#f92672">=</span> www
  group <span style="color:#f92672">=</span> www
  listen <span style="color:#f92672">=</span> /var/run/php72-fpm.sock
  listen.owner <span style="color:#f92672">=</span> www
@@ -245,8 +238,7 @@ upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/usr/local/etc/nginx/nginx.conf</b></p>
-        <p>&rdquo; %}}</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#66d9ef">worker_processes</span>  <span style="color:#ae81ff">1</span>;
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#66d9ef">worker_processes</span>  <span style="color:#ae81ff">1</span>;
 
  <span style="color:#66d9ef">events</span> {
     <span style="color:#f92672">worker_connections</span>  <span style="color:#ae81ff">1024</span>;
@@ -297,8 +289,7 @@ upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/rc.conf</b></p>
-        <p>&rdquo; %}}</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> nginx_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> nginx_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span>
  php_fpm_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span>
  mysql_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span></code></pre></div>
     </div>
@@ -384,8 +375,7 @@ webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</sp
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>piwigo/include/common.inc.php</b></p>
-        <p>&rdquo; %}}</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
   define<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;PHPWG_DOMAIN&#39;</span>, <span style="color:#e6db74">&#39;cn.piwigo.org&#39;</span><span style="color:#f92672">)</span>;
 <span style="color:#f92672">}</span></code></pre></div>
     </div>
@@ -410,8 +400,7 @@ webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</sp
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/var/www/localhost/htdocs/piwigo/plugins/read_metadata/admin.php</b></p>
-        <p>&rdquo; %}}</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">--- $exif <span style="color:#f92672">=</span> read_exif_data<span style="color:#f92672">(</span>$filename<span style="color:#f92672">)</span>;
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">--- $exif <span style="color:#f92672">=</span> read_exif_data<span style="color:#f92672">(</span>$filename<span style="color:#f92672">)</span>;
 +++ $exif <span style="color:#f92672">=</span> exif_read_data<span style="color:#f92672">(</span>$filename<span style="color:#f92672">)</span>;</code></pre></div>
     </div>
 </div>
@@ -426,8 +415,7 @@ webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</sp
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/var/www/localhost/htdocs/piwigo/osmmap.php</b></p>
-        <p>&rdquo; %}}</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 <span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;PHPWG_ROOT_PATH&#39;</span>,<span style="color:#e6db74">&#39;./&#39;</span>);
 <span style="color:#66d9ef">include_once</span>( <span style="color:#a6e22e">PHPWG_ROOT_PATH</span><span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;plugins/piwigo-openstreetmap/osmmap2.php&#39;</span>);
 <span style="color:#75715e">?&gt;</span>
@@ -443,8 +431,7 @@ webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</sp
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/var/www/localhost/htdocs/piwigo/map.php</b></p>
-        <p>&rdquo; %}}</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"> <span style="color:#75715e">&lt;?php</span>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"> <span style="color:#75715e">&lt;?php</span>
  <span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;PHPWG_ROOT_PATH&#39;</span>,<span style="color:#e6db74">&#39;./&#39;</span>);
  <span style="color:#66d9ef">include_once</span>( <span style="color:#a6e22e">PHPWG_ROOT_PATH</span><span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;plugins/rv_gmaps/map.php&#39;</span>);
  <span style="color:#75715e">?&gt;</span>

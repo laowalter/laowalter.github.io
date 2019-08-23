@@ -249,7 +249,7 @@ net.ipv6.conf.eth0.disable_ipv6=1   </description>
       <pubDate>Sun, 02 Dec 2018 11:45:29 +0000</pubDate>
       
       <guid>/posts/tech/php-fpm/</guid>
-      <description>Install /Upgrade php-fpm Config /etc/php/fpm-php7.2/fpm.d/www.conf filename: /etc/php/fpm-php7.2/fpm.d/www.conf &amp;rdquo; %}} listen = /run/php-fpm.socket listen.owner = nginx listen.group = nginx listen.mode = 0660 Adjust upload limited filename: /etc/php/fpm-php7.2/php.ini &amp;rdquo; %}} upload_tmp_dir = /tmp upload_max_filesize = 20M /etc/ngnix/nginx.conf filename: /etc/ngnix/nginx.conf &amp;rdquo; %}} client_max_body_size 20M; client_body_buffer_size 128k; Add php-fpm to default service # sudo /etc/init.d/php-fpm start # rc-update add php-fpm default Setup php-fpm in nginx 简单的只用一个ng</description>
+      <description>Install /Upgrade php-fpm Config /etc/php/fpm-php7.2/fpm.d/www.conf filename: /etc/php/fpm-php7.2/fpm.d/www.conf listen = /run/php-fpm.socket listen.owner = nginx listen.group = nginx listen.mode = 0660 Adjust upload limited filename: /etc/php/fpm-php7.2/php.ini upload_tmp_dir = /tmp upload_max_filesize = 20M /etc/ngnix/nginx.conf filename: /etc/ngnix/nginx.conf client_max_body_size 20M; client_body_buffer_size 128k; Add php-fpm to default service # sudo /etc/init.d/php-fpm start # rc-update add php-fpm default Setup php-fpm in nginx 简单的只用一个nginx.co</description>
     </item>
     
     <item>

@@ -114,8 +114,7 @@
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>~/.bin/loadEncryptFilesystem.sh</b></p>
-        <p>&rdquo; %}}</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#75715e">#!/bin/sh</span>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#75715e">#!/bin/sh</span>
  
  sudo losetup /dev/loop0 /data/encryptimg/secret.img
  sudo cryptsetup create encryptfs /dev/loop0
@@ -129,8 +128,7 @@
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>~/.bin/unloadEncryptFilesystem.sh</b></p>
-        <p>&rdquo; %}}</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
 </span><span style="color:#75715e"></span>
 sudo umount /home/walter/encryptfs
 sudo cryptsetup remove encryptfs
@@ -151,8 +149,7 @@ sudo losetup -d /dev/loop0</code></pre></div>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/udev/rules.d/99-myencryptfs.rules</b></p>
-        <p>&rdquo; %}}</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">KERNEL<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;loop0&#34;</span> ENV<span style="color:#f92672">{</span>ID_FS_UUID<span style="color:#f92672">}==</span><span style="color:#e6db74">&#34;c086c30c-bea0-452f-8616-0afa9848b3&#34;</span> MODE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0600&#34;</span> OWNER<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;user&#34;</span> GROUP<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;group&#34;</span>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">KERNEL<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;loop0&#34;</span> ENV<span style="color:#f92672">{</span>ID_FS_UUID<span style="color:#f92672">}==</span><span style="color:#e6db74">&#34;c086c30c-bea0-452f-8616-0afa9848b3&#34;</span> MODE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0600&#34;</span> OWNER<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;user&#34;</span> GROUP<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;group&#34;</span>
 <span style="color:#75715e">#KERNEL==&#34;loop5&#34; MODE=&#34;0600&#34; OWNER=&#34;MyUser&#34; GROUP=&#34;MyGroupUser&#34; ENV{UDISKS_IGNORE}=&#34;1&#34; ENV{UDISKS_PRESENTATION_HIDE}=&#34;1&#34; ENV{ID_DRIVE_EJECTABLE}=&#34;0&#34;</span></code></pre></div>
     </div>
 </div>

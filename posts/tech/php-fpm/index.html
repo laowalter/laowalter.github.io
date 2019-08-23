@@ -71,12 +71,10 @@
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/php/fpm-php7.2/fpm.d/www.conf</b></p>
-        <p>&rdquo; %}}
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  listen <span style="color:#f92672">=</span> /run/php-fpm.socket
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  listen <span style="color:#f92672">=</span> /run/php-fpm.socket
   listen.owner <span style="color:#f92672">=</span> nginx
   listen.group <span style="color:#f92672">=</span> nginx
-  listen.mode <span style="color:#f92672">=</span> <span style="color:#ae81ff">0660</span></code></pre></div></p>
-
+  listen.mode <span style="color:#f92672">=</span> <span style="color:#ae81ff">0660</span></code></pre></div>
     </div>
 </div>
 
@@ -86,10 +84,8 @@
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/php/fpm-php7.2/php.ini</b></p>
-        <p>&rdquo; %}}
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">upload_tmp_dir <span style="color:#f92672">=</span> /tmp
-upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div></p>
-
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">upload_tmp_dir <span style="color:#f92672">=</span> /tmp
+upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div>
     </div>
 </div>
 
@@ -99,10 +95,8 @@ upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div><
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/ngnix/nginx.conf</b></p>
-        <p>&rdquo; %}}
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">client_max_body_size 20M;
-client_body_buffer_size 128k;</code></pre></div></p>
-
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">client_max_body_size 20M;
+client_body_buffer_size 128k;</code></pre></div>
     </div>
 </div>
 
@@ -119,25 +113,22 @@ client_body_buffer_size 128k;</code></pre></div></p>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/ngnix/nginx.conf</b></p>
-        <p>&rdquo; %}}
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server</span> {
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server</span> {
     <span style="color:#f92672">listen</span> 0.0.0.0:<span style="color:#ae81ff">7001</span>;
     <span style="color:#f92672">server_name</span> <span style="color:#e6db74">pannel</span>;
     <span style="color:#f92672">access_log</span> <span style="color:#e6db74">/var/log/pannel.log</span> <span style="color:#e6db74">main</span>;
-    <span style="color:#f92672">error_log</span> <span style="color:#e6db74">/var/log/pannel.info</span> <span style="color:#e6db74">error</span>;</p>
+    <span style="color:#f92672">error_log</span> <span style="color:#e6db74">/var/log/pannel.info</span> <span style="color:#e6db74">error</span>;
 
-<pre><code>&lt;span style=&quot;color:#f92672&quot;&gt;root&lt;/span&gt; &lt;span style=&quot;color:#e6db74&quot;&gt;/var/www/localhost/htdocs/pannel&lt;/span&gt;;
-&lt;span style=&quot;color:#f92672&quot;&gt;location&lt;/span&gt; &lt;span style=&quot;color:#e6db74&quot;&gt;/&lt;/span&gt; {
-        &lt;span style=&quot;color:#f92672&quot;&gt;index&lt;/span&gt; &lt;span style=&quot;color:#e6db74&quot;&gt;index.html&lt;/span&gt;;
-        &lt;span style=&quot;color:#f92672&quot;&gt;fastcgi_index&lt;/span&gt; &lt;span style=&quot;color:#e6db74&quot;&gt;index.html&lt;/span&gt;;
-}
-&lt;span style=&quot;color:#f92672&quot;&gt;location&lt;/span&gt; ~ &lt;span style=&quot;color:#e6db74&quot;&gt;\.php$&lt;/span&gt; {
-        &lt;span style=&quot;color:#f92672&quot;&gt;try_files&lt;/span&gt; $uri =&lt;span style=&quot;color:#ae81ff&quot;&gt;404&lt;/span&gt;;
-        &lt;span style=&quot;color:#f92672&quot;&gt;include&lt;/span&gt; &lt;span style=&quot;color:#e6db74&quot;&gt;/etc/nginx/fastcgi.conf&lt;/span&gt;;
-        &lt;span style=&quot;color:#f92672&quot;&gt;fastcgi_pass&lt;/span&gt; &lt;span style=&quot;color:#e6db74&quot;&gt;unix:/run/php-fpm.socket&lt;/span&gt;;
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-</code></pre>
-
+    <span style="color:#f92672">root</span> <span style="color:#e6db74">/var/www/localhost/htdocs/pannel</span>;
+    <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
+            <span style="color:#f92672">index</span> <span style="color:#e6db74">index.html</span>;
+            <span style="color:#f92672">fastcgi_index</span> <span style="color:#e6db74">index.html</span>;
+    }
+    <span style="color:#f92672">location</span> ~ <span style="color:#e6db74">\.php$</span> {
+            <span style="color:#f92672">try_files</span> $uri =<span style="color:#ae81ff">404</span>;
+            <span style="color:#f92672">include</span> <span style="color:#e6db74">/etc/nginx/fastcgi.conf</span>;
+            <span style="color:#f92672">fastcgi_pass</span> <span style="color:#e6db74">unix:/run/php-fpm.socket</span>;
+    }</code></pre></div>
     </div>
 </div>
 
@@ -164,7 +155,6 @@ client_body_buffer_size 128k;</code></pre></div></p>
     </div>
 </div>
 
-<p>&rdquo; %}}
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -270,7 +260,7 @@ client_body_buffer_size 128k;</code></pre></div></p>
 	<span style="color:#f92672">include</span> <span style="color:#e6db74">/etc/nginx/conf.d/*.conf</span>;
 }</code></pre></td></tr></table>
 </div>
-</div></p>
+</div>
 
 <p><br></p>
 
@@ -282,7 +272,6 @@ client_body_buffer_size 128k;</code></pre></div></p>
     </div>
 </div>
 
-<p>&rdquo; %}}
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -334,7 +323,7 @@ client_body_buffer_size 128k;</code></pre></div></p>
    	}
  }</code></pre></td></tr></table>
 </div>
-</div></p>
+</div>
 
 </article>
 
