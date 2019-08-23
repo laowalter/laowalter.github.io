@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>tech</title>
+      <title>Tech</title>
       <link>/categories/tech/</link>
       <pubDate>Fri, 23 Aug 2019 12:31:39 +0800</pubDate>
       
@@ -21,16 +21,16 @@
     </item>
     
     <item>
-      <title>futures</title>
-      <link>/categories/futures/</link>
+      <title>Fut&amp;Stock</title>
+      <link>/categories/futstock/</link>
       <pubDate>Sun, 18 Aug 2019 10:32:08 +0000</pubDate>
       
-      <guid>/categories/futures/</guid>
+      <guid>/categories/futstock/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>eli</title>
+      <title>Eli</title>
       <link>/categories/eli/</link>
       <pubDate>Mon, 22 Apr 2019 17:40:41 +0000</pubDate>
       
@@ -39,16 +39,7 @@
     </item>
     
     <item>
-      <title>Fut&amp;Stock</title>
-      <link>/categories/futstock/</link>
-      <pubDate>Thu, 14 Mar 2019 11:53:37 +0000</pubDate>
-      
-      <guid>/categories/futstock/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>life</title>
+      <title>Life</title>
       <link>/categories/life/</link>
       <pubDate>Fri, 01 Mar 2019 07:18:53 +0000</pubDate>
       
@@ -57,7 +48,7 @@
     </item>
     
     <item>
-      <title>eco</title>
+      <title>Eco</title>
       <link>/categories/eco/</link>
       <pubDate>Tue, 16 Oct 2018 08:19:00 +0000</pubDate>
       
@@ -66,7 +57,7 @@
     </item>
     
     <item>
-      <title>chan108</title>
+      <title>Chan108</title>
       <link>/categories/chan108/</link>
       <pubDate>Mon, 12 Jun 2017 21:06:42 +0000</pubDate>
       

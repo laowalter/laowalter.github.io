@@ -33,5 +33,14 @@ $ echo apple1 apple3 apple1 apple2 botemo1 | sed &amp;#39;/apple./ { s/apple1/ap
       <description>Golang中的正则表达式(链接) 如下代码使用golang的正则表达式regexp：去除HTML，CSS，SCRIPT代码，仅保留页面文字 1</description>
     </item>
     
+    <item>
+      <title>goQuery</title>
+      <link>/posts/tech/goquery/</link>
+      <pubDate>Fri, 28 Jun 2019 09:36:52 +0000</pubDate>
+      
+      <guid>/posts/tech/goquery/</guid>
+      <description>from https://www.51hint.com/posts/goquery/ 最近研究Go爬虫相关的知识，使用到goquery这个库比较多，尤其是对爬取到的HTML进行选择和查找匹配的内容时，goquery的选择器</description>
+    </item>
+    
   </channel>
 </rss>
