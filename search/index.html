@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    
+    <link rel="stylesheet" href="/sass/main.min.38780e25f54e87bd5bf385bac88bae54cdf75c1f38c35f9f90add66c498844fb.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    
+    <link href="/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.4/fuse.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+        <script src=/js/search.js></script>
+
+        <section class="resume-section p-3 p-lg-5 d-flex flex-column">
+          <div class="my-auto" >
+            <form action=/search>
+              <input id="search-query" name="s"/>
+            </form>
+            <div id="search-results">
+             <h3>Matching pages</h3>
+            </div>
+          </div>
+        </section>
+        
+        <script id="search-result-template" type="text/x-js-template">
+            <div id="summary-${key}">
+              <h4><a href="${link}">${title}</a></h4>
+              <p>${snippet}</p>
+              ${ isset tags }<p>Tags: ${tags}</p>${ end }
+              ${ isset categories }<p>Categories: ${categories}</p>${ end }
+            </div>
+        </script>
+    </body>
+</html>

@@ -63,7 +63,7 @@ $ echo apple1 apple3 apple1 apple2 botemo1 | sed &amp;#39;/apple./ { s/apple1/ap
     </item>
     
     <item>
-      <title>Develop Hugo</title>
+      <title>Hugo Theme Development</title>
       <link>/posts/tech/hugo_develop/</link>
       <pubDate>Thu, 08 Aug 2019 23:29:12 +0800</pubDate>
       
