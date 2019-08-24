@@ -17,7 +17,9 @@
       <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
       
       <guid>/posts/tech/hugo_cheatsheet/</guid>
-      <description>Publish to github Generate htmls docker exec -it hugo hugo Find and replace wrong address like &amp;ldquo;:1313&amp;rdquo; $ cd public/ $ grep -ri :1313 * $ sudo find ./ -type f -exec sed -i -e &amp;#39;s/:1313//g&amp;#39; {} \; $ sudo find ./ -type f -exec sed -i -e &amp;#39;s/192\.168\.0\.199/laowalter.github.io/g&amp;#39; {} \; Hugo markdown format Section number default Section number is set to &amp;ldquo;true&amp;rdquo; add &amp;ldquo;section_number = false&amp;rdquo; to front matter</description>
+      <description>Publish to github  Generate htmls
+docker exec -it hugo hugo  Find and replace wrong address like &amp;ldquo;:1313&amp;rdquo;
+$ cd public/ $ grep -ri :1313 * $ sudo find ./ -type f -exec sed -i -e &amp;#39;s/:1313//g&amp;#39; {} \; $ sudo find ./ -type f -exec sed -i -e &amp;#39;s/192\.168\.0\.199/laowalter.github.io/g&amp;#39; {} \;  Hugo markdown format Section number  default Section number is set to &amp;ldquo;true&amp;rdquo; add &amp;ldquo;section_number = false&amp;rdquo; to front matter if Dont Not want to add section_number in the content.</description>
     </item>
     
     <item>

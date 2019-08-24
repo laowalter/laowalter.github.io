@@ -43,13 +43,10 @@
 
     <hr><br><nav id="TableOfContents">
 <ul>
-<li>
-<ul>
 <li><a href="#首先在服务器上安装最新版本的chrome-和-chromedriver">首先在服务器上安装最新版本的chrome 和 chromedriver</a></li>
 <li><a href="#头部的包">头部的包</a></li>
 <li><a href="#chrome-headless-配置">chrome headless 配置</a></li>
 <li><a href="#启动chromedriver">启动chromedriver</a></li>
-</ul></li>
 </ul></li>
 </ul>
 </nav><article>
@@ -57,14 +54,14 @@
 
 <p>使用Golang+selenium 驱动 chrome headless 模式，再用 goquery 解析html 字符。</p>
 
-<h3 id="首先在服务器上安装最新版本的chrome-和-chromedriver">首先在服务器上安装最新版本的chrome 和 chromedriver</h3>
+<h2 id="首先在服务器上安装最新版本的chrome-和-chromedriver">首先在服务器上安装最新版本的chrome 和 chromedriver</h2>
 
 <ol>
 <li>emerge -avq www-cient/google-chrome</li>
 <li><a href="https://sites.google.com/a/chromium.org/chromedriver/downloads">下载对应的chromedriver(链接)</a></li>
 </ol>
 
-<h3 id="头部的包">头部的包</h3>
+<h2 id="头部的包">头部的包</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> (
     <span style="color:#e6db74">&#34;bytes&#34;</span>
     <span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -75,7 +72,7 @@
     <span style="color:#e6db74">&#34;log&#34;</span>
     <span style="color:#e6db74">&#34;strings&#34;</span>
 )</code></pre></div>
-<h3 id="chrome-headless-配置">chrome headless 配置</h3>
+<h2 id="chrome-headless-配置">chrome headless 配置</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">port</span> = <span style="color:#ae81ff">9515</span> <span style="color:#75715e">// chromdriver service port
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">frameHtml</span> <span style="color:#66d9ef">string</span>
 
@@ -105,7 +102,7 @@
         },
     }
     <span style="color:#a6e22e">caps</span>.<span style="color:#a6e22e">AddChrome</span>(<span style="color:#a6e22e">chromeCaps</span>)</code></pre></div>
-<h3 id="启动chromedriver">启动chromedriver</h3>
+<h2 id="启动chromedriver">启动chromedriver</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#75715e">//selenium.NewChromeDriverService(&#34;chromedriver&#34;, port, opts...)
 </span><span style="color:#75715e"></span>    <span style="color:#a6e22e">service</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">selenium</span>.<span style="color:#a6e22e">NewChromeDriverService</span>(<span style="color:#e6db74">&#34;chromedriver&#34;</span>, <span style="color:#a6e22e">port</span>)
     <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
@@ -119,7 +116,7 @@
     <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">wd</span>.<span style="color:#a6e22e">Quit</span>()
 
 
-<span style="color:#960050;background-color:#1e0010">###</span> <span style="color:#a6e22e">加载一个网页地址是url</span></code></pre></div>
+<span style="color:#960050;background-color:#1e0010">##</span> <span style="color:#a6e22e">加载一个网页地址是url</span></code></pre></div>
 <p>go
     err = wd.Get(url)
     if err != nil {
@@ -138,9 +135,9 @@ if jsRt != &quot;complete&quot; {
 
 <pre><code>
 
-### 解析html 文件
+## 解析html 文件
 
-#### 利用正则清洗 html 去掉特殊字符串等。
+### 利用正则清洗 html 去掉特殊字符串等。
 
 </code></pre>
 

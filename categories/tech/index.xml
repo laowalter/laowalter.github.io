@@ -50,15 +50,17 @@ $ echo apple1 apple3 apple1 apple2 botemo1 | sed &amp;#39;/apple./ { s/apple1/ap
       <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
       
       <guid>/posts/tech/hugo_cheatsheet/</guid>
-      <description>Publish to github Generate htmls docker exec -it hugo hugo Find and replace wrong address like &amp;ldquo;:1313&amp;rdquo; $ cd public/ $ grep -ri :1313 * $ sudo find ./ -type f -exec sed -i -e &amp;#39;s/:1313//g&amp;#39; {} \; $ sudo find ./ -type f -exec sed -i -e &amp;#39;s/192\.168\.0\.199/laowalter.github.io/g&amp;#39; {} \; Hugo markdown format Section number default Section number is set to &amp;ldquo;true&amp;rdquo; add &amp;ldquo;section_number = false&amp;rdquo; to front matter</description>
+      <description>Publish to github  Generate htmls
+docker exec -it hugo hugo  Find and replace wrong address like &amp;ldquo;:1313&amp;rdquo;
+$ cd public/ $ grep -ri :1313 * $ sudo find ./ -type f -exec sed -i -e &amp;#39;s/:1313//g&amp;#39; {} \; $ sudo find ./ -type f -exec sed -i -e &amp;#39;s/192\.168\.0\.199/laowalter.github.io/g&amp;#39; {} \;  Hugo markdown format Section number  default Section number is set to &amp;ldquo;true&amp;rdquo; add &amp;ldquo;section_number = false&amp;rdquo; to front matter if Dont Not want to add section_number in the content.</description>
     </item>
     
     <item>
       <title>Hugo Theme Development</title>
-      <link>/posts/tech/hugo_develop/</link>
+      <link>/posts/tech/hugo_theme_develop/</link>
       <pubDate>Thu, 08 Aug 2019 23:29:12 +0800</pubDate>
       
-      <guid>/posts/tech/hugo_develop/</guid>
+      <guid>/posts/tech/hugo_theme_develop/</guid>
       <description>Youtube Tutorial https://www.youtube.com/watch?v=qtIqKaDlqXo&amp;amp;list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3 有特别帮助的网址 关于整体结构和简单的theme设置 https://www.zeolearn.com/magazine/develop-a-theme-for-hugo 中文网站 https://bwaycer.github.io/hugo_tutorial.hugo/overview/introduction/ 语法高亮的支持 Paginator用法 使用思维导图 Hexo 脑图 Insert javascript into hugo by partial Create custom Shortcodes</description>
     </item>
     

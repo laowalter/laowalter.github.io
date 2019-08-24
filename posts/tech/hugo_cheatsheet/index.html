@@ -64,11 +64,6 @@
 <li><a href="#mindmap">mindmap</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#启动-docker-运行-jojomi-hugo-的方法">启动 docker 运行 jojomi/hugo 的方法</a>
-<ul>
-<li><a href="#启动-jojomi-hugo">启动 jojomi/hugo</a></li>
-<li><a href="#生成-tmp-src-publish-目录中的-静态文件">生成 ~/tmp/src/publish 目录中的 静态文件</a></li>
-</ul></li>
 </ul></li>
 </ul>
 </nav><article>
@@ -114,8 +109,8 @@
 
 <li><p>General format</p>
 
-<p>{{&lt; highlight go &ldquo;linenos=table,hl_lines=8 15-17,linenostart=199&rdquo; &gt;}}<br>
-// &hellip; code<br>
+<p>{{&lt; highlight go &ldquo;linenos=table,hl_lines=8 15-17,linenostart=199&rdquo; &gt;}}
+ &hellip; code
 {{&lt; /highlight &gt;}}</p></li>
 </ul>
 
@@ -123,71 +118,34 @@
 
 <h4 id="pygmentscodefences-format">PygmentsCodeFences format</h4>
 
-<pre><code>{{% file &quot;filename&quot; %}}&lt;br&gt;
-\`\`\`nginx&lt;br&gt;&lt;br&gt;
-something &lt;br&gt;&lt;br&gt;
-\`\`\`
+<pre><code>{{% file &quot;filename&quot; %}}
+
+```nginxg&lt;br&gt;
+something g&lt;br&gt;
+```
+
 {{% /file %}}
 </code></pre>
 
 <h4 id="hugo-format">Hugo format</h4>
 
 <pre><code>{{% file &quot;layout/partial/single-head.html&quot; %}}
-{{% /file %}}&lt;br&gt;
-{{&lt; highlight html &quot;linenos=table, linenostart=1, hl_lines=11&quot; &gt;}}&lt;br&gt;
-\&lt;head\&gt;&lt;br&gt;
-   &amp;nbsp;&amp;nbsp; \&lt;link href=&quot;{{.Site.BaseURL}}css/section_number/section_number.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;\&gt;&lt;br&gt;
-\&lt;/head\&gt;&lt;br&gt;
+{{% /file %}}
+{{&lt; highlight html &quot;linenos=table, linenostart=1, hl_lines=11&quot; &gt;}}
+&lt;head&gt;
+   &lt;link href=&quot;{{.Site.BaseURL}}css/section_number/section_number.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+&lt;/head&gt;
 {{&lt; /highlight &gt;}}
 </code></pre>
 
 <h4 id="mindmap">mindmap</h4>
 
 <pre><code>{{% mindmap mindname %}}
-&lt;br&gt;
-- root&lt;br&gt;
-&amp;nbsp; &amp;nbsp; - c1&lt;br&gt;
-&amp;nbsp; &amp;nbsp;    - c2&lt;br&gt;
+- root
+    - c1
+    - c2
 {{% /mindmap %}}
 </code></pre>
-
-<p><br></p>
-
-<h2 id="启动-docker-运行-jojomi-hugo-的方法">启动 docker 运行 jojomi/hugo 的方法</h2>
-
-<h3 id="启动-jojomi-hugo">启动 jojomi/hugo</h3>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ docker run --rm --name <span style="color:#e6db74">&#34;hugo&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -p <span style="color:#ae81ff">1313</span>:1313 
-    -v ~/hugo-blog/:/src <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -e HUGO_THEME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;walter&#34;</span> <span style="color:#ae81ff">\ </span>
-    -e HUGO_WATCH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>  <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -e HUGO_DESTINATION<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;public&#34;</span> <span style="color:#ae81ff">\
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#ae81ff"></span>    -e HUGO_BASEURL<span style="color:#f92672">=</span><span style="color:#ae81ff">192</span>.168.0.199 <span style="color:#ae81ff">\
-</span></span><span style="color:#ae81ff"></span>    --publish-all  jojomi/hugo</code></pre></div>
-
-<p>说明：</p>
-
-<ol>
-<li><p>在jojomi/hugo中, 必须指定 HUGO_THEME=&ldquo;casper-two&rdquo;,否则报错。 而在 config.    toml 中指定 theme = &ldquo;casper-two&rdquo; 不起作用，</p></li>
-
-<li><p>上面的服务启动之后, 目前只能在本地用 localhost:1313, 访问192.168.0.199 并
-不正常。可能要使用 .Permalink .RelPermalink .Params.url</p></li>
-
-<li><p><font color="green">-e HUGO_DESTINATION=&ldquo;public&rdquo; </font>使得publish的内容输出到 public 目录之中，这个内容应该可以直接上传到github</p></li>
-</ol>
-
-<h3 id="生成-tmp-src-publish-目录中的-静态文件">生成 ~/tmp/src/publish 目录中的 静态文件</h3>
-
-<ol>
-<li><p>先执行上面的container， 然后才有下面的命令, -D 表示显示draft, 但是这里 hugo -D 并不正常，应该直接用上面的的&rdquo;启动 jojomi/hugo” <font color="green">-e HUGO_DESTINATION=&ldquo;public&rdquo;</font> 命令。</p>
-
-<p>下面命令行中第一个hugo是docker的container的名字，第二个hugo是应用程序hugo;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker exec -it hugo hugo -D //会使得public的结果</code></pre></div></li>
-
-<li><p>查看hugo的Version</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker exec -it hugo hugo version</code></pre></div></li>
-</ol>
 
 </article>
 
