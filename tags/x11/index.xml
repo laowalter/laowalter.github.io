@@ -26,7 +26,7 @@
       <pubDate>Sun, 07 Jan 2018 17:39:15 +0000</pubDate>
       
       <guid>/posts/tech/gentoo_x/</guid>
-      <description>Xorg 最小安装 检测显卡, 配置make.conf #dmesg | grep video #lspci | grep -i VGA 设置/etc/portage/make.conf文件中两个重要的变量： filename: /etc/portage/make.conf INPUT_DEVICE=&amp;#34;evdev&amp;#34; VIDEO_CARDS=&amp;#34;intel i965&amp;#34;</description>
+      <description>Xorg 最小安装 检测显卡, 配置make.conf # dmesg | grep video # lspci | grep -i VGA 设置/etc/portage/make.conf文件中两个重要的变量： filename: /etc/portage/make.conf INPUT_DEVICE=&amp;#34;evdev&amp;#34;</description>
     </item>
     
   </channel>

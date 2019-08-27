@@ -50,7 +50,7 @@ $ echo apple1 apple3 apple1 apple2 botemo1 | sed &amp;#39;/apple./ { s/apple1/ap
       <pubDate>Sun, 18 Aug 2019 10:32:08 +0000</pubDate>
       
       <guid>/posts/futstock/futures-cheatsheet/</guid>
-      <description>Windows系统键盘 ALT + delete - Del键 LWIN + i - Ins键 LWIN + F12 - 屏幕拷贝 CTRL + ALT + F - 全屏 文化财经期货软件 ALT + r - 隐藏K线 ALT + c - 画线颜色切换 ALT</description>
+      <description>Windows系统键盘 ALT + delete - Del键 LWIN + i - Ins键 LWIN + F12 - 屏幕拷贝 CTRL + ALT + F - 全屏 文化财经期货软件 Alt + o - 显示持仓成本 ALT + r - 隐藏K线 ALT</description>
     </item>
     
     <item>
@@ -875,7 +875,7 @@ mklink /J “%APPDATA%\Apple Computer\MobileSync\Backup” “J:\My iPhone Backu
       <pubDate>Sun, 07 Jan 2018 17:39:15 +0000</pubDate>
       
       <guid>/posts/tech/gentoo_x/</guid>
-      <description>Xorg 最小安装 检测显卡, 配置make.conf #dmesg | grep video #lspci | grep -i VGA 设置/etc/portage/make.conf文件中两个重要的变量： filename: /etc/portage/make.conf INPUT_DEVICE=&amp;#34;evdev&amp;#34; VIDEO_CARDS=&amp;#34;intel i965&amp;#34;</description>
+      <description>Xorg 最小安装 检测显卡, 配置make.conf # dmesg | grep video # lspci | grep -i VGA 设置/etc/portage/make.conf文件中两个重要的变量： filename: /etc/portage/make.conf INPUT_DEVICE=&amp;#34;evdev&amp;#34;</description>
     </item>
     
     <item>
@@ -1056,7 +1056,7 @@ $ su - # cd /usr/src # cp /proc/config.gz . # gunzip config.gz # cd linux # make
       <pubDate>Thu, 16 Nov 2017 16:55:00 +0000</pubDate>
       
       <guid>/posts/tech/wifi_ap/</guid>
-      <description>Check hardware lspci -n | grep 14e4 Kernel config CONFIG_WLAN_VENDOR_BROADCOM=y CONFIG_B43=m CONFIG_B43_BCMA=y CONFIG_B43_SSB=y CONFIG_B43_BUSES_BCMA_AND_SSB=y # CONFIG_B43_BUSES_BCMA is not set # CONFIG_B43_BUSES_SSB is not set CONFIG_B43_PCI_AUTOSELECT=y CONFIG_B43_PCICORE_AUTOSELECT=y CONFIG_B43_SDIO=y CONFIG_B43_BCMA_PIO=y CONFIG_B43_PIO=y CONFIG_B43_PHY_G=y CONFIG_B43_PHY_N=y CONFIG_B43_PHY_LP=y CONFIG_B43_PHY_HT=y CONFIG_B43_HWRNG=y # CONFIG_B43_DEBUG is not set CONFIG_B43LEGACY=m CONFIG_B43LEGACY_PCI_AUTOSELECT=y CONFIG_B43LEGACY_PCICORE_AUTOSELECT=y CONFIG_B43LEGACY_HWRNG=y CONFIG_B43LEGACY_DEBUG=y CONFIG_B43LEGACY_DMA=y CONFIG_B43LEGACY_PIO=y CONFIG_B43LEGACY_DMA_AND_PIO_MODE=y # CONFIG_B43LEGACY_DMA_MODE is not set # CONFIG_B43LEGACY_PIO_MODE is not set CONFIG_BRCMUTIL=m CONFIG_BRCMSMAC=m CONFIG_BRCMFMAC=m CONFIG_BRCMFMAC_PROTO_BCDC=y CONFIG_BRCMFMAC_SDIO=y # CONFIG_BRCMFMAC_USB is not set # CONFIG_BRCMFMAC_PCIE is</description>
+      <description>Check hardware $ lspci -n | grep 14e4 Kernel config filename: kernel config CONFIG_WLAN_VENDOR_BROADCOM=y CONFIG_B43=m CONFIG_B43_BCMA=y CONFIG_B43_SSB=y CONFIG_B43_BUSES_BCMA_AND_SSB=y # CONFIG_B43_BUSES_BCMA is not set # CONFIG_B43_BUSES_SSB is not set CONFIG_B43_PCI_AUTOSELECT=y CONFIG_B43_PCICORE_AUTOSELECT=y CONFIG_B43_SDIO=y CONFIG_B43_BCMA_PIO=y CONFIG_B43_PIO=y CONFIG_B43_PHY_G=y CONFIG_B43_PHY_N=y CONFIG_B43_PHY_LP=y CONFIG_B43_PHY_HT=y CONFIG_B43_HWRNG=y # CONFIG_B43_DEBUG is not set CONFIG_B43LEGACY=m CONFIG_B43LEGACY_PCI_AUTOSELECT=y CONFIG_B43LEGACY_PCICORE_AUTOSELECT=y CONFIG_B43LEGACY_HWRNG=y CONFIG_B43LEGACY_DEBUG=y CONFIG_B43LEGACY_DMA=y CONFIG_B43LEGACY_PIO=y CONFIG_B43LEGACY_DMA_AND_PIO_MODE=y # CONFIG_B43LEGACY_DMA_MODE is not set # CONFIG_B43LEGACY_PIO_MODE is not set CONFIG_BRCMUTIL=m CONFIG_BRCMSMAC=m CONFIG_BRCMFMAC=m CONFIG_BRCMFMAC_PROTO_BCDC=y CONFIG_BRCMFMAC_SDIO=y # CONFIG_BRCMFMAC_USB is not</description>
     </item>
     
     <item>

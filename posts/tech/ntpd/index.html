@@ -43,12 +43,9 @@
 
     <hr><br><nav id="TableOfContents">
 <ul>
-<li>
-<ul>
 <li><a href="#install-ntp">Install ntp</a></li>
 <li><a href="#etc-conf-d-ntpd">/etc/conf.d/ntpd</a></li>
 <li><a href="#etc-ntpd-conf">/etc/ntpd.conf</a></li>
-</ul></li>
 </ul></li>
 </ul>
 </nav><article>
@@ -56,17 +53,17 @@
 
 <p>openntpd 不被widnows支持，所以用ntp比较通用。</p>
 
-<h3 id="install-ntp">Install ntp</h3>
+<h2 id="install-ntp">Install ntp</h2>
 
 <p>如果启动ntpd，就不需要ntp-client。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo emerge -avq net-misc/ntp
 sudo rc-service ntpd start
 sudo rc-update add ntpd default</code></pre></div>
-<h3 id="etc-conf-d-ntpd">/etc/conf.d/ntpd</h3>
+<h2 id="etc-conf-d-ntpd">/etc/conf.d/ntpd</h2>
 
 <p>&rdquo;-4&rdquo;强制使用ipv4，这样就不会使用ipv6了。ntpd启动后，会试图使用所有可用网络。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NTPD_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;-4 -g&#39;</span></code></pre></div>
-<h3 id="etc-ntpd-conf">/etc/ntpd.conf</h3>
+<h2 id="etc-ntpd-conf">/etc/ntpd.conf</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># DHCP clients can append or replace NTP configuration files.</span>
 <span style="color:#75715e"># You should consult your DHCP client documentation about its</span>
 <span style="color:#75715e"># default behaviour and how to change it.</span>
