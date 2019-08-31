@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Aug 2019 12:31:39 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 31 Aug 2019 23:26:07 +0800</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>futures</title>
+      <link>/categories/futures/</link>
+      <pubDate>Sat, 31 Aug 2019 23:26:07 +0800</pubDate>
+      
+      <guid>/categories/futures/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Tech</title>
