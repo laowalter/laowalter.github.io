@@ -13,19 +13,19 @@
     
     <item>
       <title>通达信常用公式</title>
-      <link>/posts/futstock/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/</link>
+      <link>/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/</link>
       <pubDate>Fri, 23 Mar 2018 10:44:12 +0000</pubDate>
       
-      <guid>/posts/futstock/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/</guid>
+      <guid>/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/</guid>
       <description>通达信m4(MACD)公式 [jtable] 参数,最小,最大,缺省 SHORT,2,200,12, LONG,2,200,26 MID,2,200,9 ISARROW,0,1,1 [/jtable] {SHORT 2,200,12;LONG 2,200,26;MID 2,200,9；ISARROW 0,1,1} DIFF:=EMA(CLOSE*100,SHORT)-EMA(CLOSE*100,LONG); DEA:=EMA(DIFF,MID); MACD2:=(DIFF - DEA)*2; DIF:DIFF; DEF:DEA; MACD:MACD2,NODRAW; 获利比:WINNER(C)</description>
     </item>
     
     <item>
       <title>通达信复权模型</title>
-      <link>/posts/futstock/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%A4%8D%E6%9D%83%E6%A8%A1%E5%9E%8B/</link>
+      <link>/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%A4%8D%E6%9D%83%E6%A8%A1%E5%9E%8B/</link>
       <pubDate>Wed, 25 Oct 2017 13:03:34 +0000</pubDate>
       
-      <guid>/posts/futstock/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%A4%8D%E6%9D%83%E6%A8%A1%E5%9E%8B/</guid>
+      <guid>/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%A4%8D%E6%9D%83%E6%A8%A1%E5%9E%8B/</guid>
       <description>通达信复权模型是建立在&amp;rdquo;股东财富不变&amp;rdquo;的原则上的。 交易所依据&amp;rdquo;股东财富不变&amp;rdquo;原则制定除权除息</description>
     </item>
     
@@ -40,28 +40,28 @@
     
     <item>
       <title>通达信使用</title>
-      <link>/posts/futstock/%E9%80%9A%E8%BE%BE%E4%BF%A1%E4%BD%BF%E7%94%A8/</link>
+      <link>/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Thu, 08 Jun 2017 09:55:15 +0000</pubDate>
       
-      <guid>/posts/futstock/%E9%80%9A%E8%BE%BE%E4%BF%A1%E4%BD%BF%E7%94%A8/</guid>
+      <guid>/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E4%BD%BF%E7%94%A8/</guid>
       <description>风格指数代码快查(8808**) [jtable] 指数名称,操作代码,指数名称,操作代码,指数名称,操作代码,指数名称,操作代码 基金重仓,880801,QF</description>
     </item>
     
     <item>
       <title>我的通达信公式</title>
-      <link>/posts/futstock/%E6%88%91%E7%9A%84%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%85%AC%E5%BC%8F/</link>
+      <link>/posts/futures/%E6%88%91%E7%9A%84%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%85%AC%E5%BC%8F/</link>
       <pubDate>Sat, 21 Jan 2017 21:22:13 +0000</pubDate>
       
-      <guid>/posts/futstock/%E6%88%91%E7%9A%84%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%85%AC%E5%BC%8F/</guid>
+      <guid>/posts/futures/%E6%88%91%E7%9A%84%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%85%AC%E5%BC%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>通达信公式手册</title>
-      <link>/posts/futstock/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%85%AC%E5%BC%8F%E6%89%8B%E5%86%8C/</link>
+      <link>/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%85%AC%E5%BC%8F%E6%89%8B%E5%86%8C/</link>
       <pubDate>Sat, 21 Jan 2017 16:51:13 +0000</pubDate>
       
-      <guid>/posts/futstock/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%85%AC%E5%BC%8F%E6%89%8B%E5%86%8C/</guid>
+      <guid>/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%85%AC%E5%BC%8F%E6%89%8B%E5%86%8C/</guid>
       <description>引用函数 1．DRAWNULL 无效数 返回无效数。 用法： DRAWNULL 例如：IF(CLOSE&amp;gt;REF(CLOSE，1)，CLOSE，DRAWNULL)</description>
     </item>
     

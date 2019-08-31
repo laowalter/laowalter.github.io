@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    
+    <link rel="stylesheet" href="/sass/main.min.b0163ad78a5d83e2d8dee2c2f33fa8b557711f0eb2b1ae412eca8874b7bfb72e.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    
+    <link href="/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Piwigo</h1> 
+            <p class="datetime">Sun, Jan 21, 2018</p>
+            <a class="tag tag--primary tag--small"   href="/"><font color="green">Home</font></a>
+
+            
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/photo">photo</a>
+                
+            
+          </div>
+      </div>
+
+    <hr><br><nav id="TableOfContents">
+<ul>
+<li><a href="#use-piwigo-注意事项">Use Piwigo 注意事项</a>
+<ul>
+<li><a href="#gentoo-nginx-php-fm">Gentoo Nginx / php-fm</a>
+<ul>
+<li><a href="#php">php</a></li>
+<li><a href="#config-nginx-to-support">config Nginx to support</a></li>
+<li><a href="#config-php-fpm">Config php-fpm</a>
+<ul>
+<li><a href="#config-www-conf">config www.conf</a></li>
+<li><a href="#adjust-upload-limited">adjust upload limited</a></li>
+<li><a href="#add-php-fpm-to-default-service">add php-fpm to default service</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#freebsd-freenas-nginx-php-fpm">Freebsd /Freenas Nginx php-fpm</a>
+<ul>
+<li><a href="#install">Install</a></li>
+<li><a href="#php-fpm">php-fpm</a></li>
+<li><a href="#nginx">nginx</a></li>
+<li><a href="#etc-rc-conf">/etc/rc.conf</a></li>
+</ul></li>
+<li><a href="#mysql-databases-prepaire">MySQL databases prepaire</a></li>
+<li><a href="#install-piwigo">install piwigo</a>
+<ul>
+<li><a href="#文件准备">文件准备</a>
+<ul>
+<li><a href="#gentoo">Gentoo</a></li>
+<li><a href="#freebsd-freenas">Freebsd/Freenas</a></li>
+</ul></li>
+<li><a href="#配置">配置</a></li>
+<li><a href="#official-install">Official install</a></li>
+</ul></li>
+<li><a href="#upgrade">Upgrade</a>
+<ul>
+<li><a href="#piwigo-selfupgrade-recommend">Piwigo selfupgrade (recommend)</a>
+<ul>
+<li><a href="#修改piwigo-upgrade-php-文件">修改piwigo/upgrade.php 文件</a></li>
+<li><a href="#确认-修改目录权限">确认/修改目录权限</a></li>
+</ul></li>
+<li><a href="#gentoo-的升级方式">Gentoo 的升级方式</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#piwigo-插件使用问题">Piwigo 插件使用问题</a>
+<ul>
+<li><a href="#read-metadata">Read metadata</a></li>
+<li><a href="#openstreetmap">OpenStreetMap</a></li>
+<li><a href="#maps-earth">Maps &amp; Earth</a></li>
+</ul></li>
+<li><a href="#导入照片">导入照片</a></li>
+<li><a href="#about-video">About Video</a>
+<ul>
+<li><a href="#mov">mov</a></li>
+<li><a href="#mpeg4-mp4">mpeg4 / mp4</a></li>
+<li><a href="#avi">avi</a></li>
+<li><a href="#mp4">mp4</a></li>
+<li><a href="#localfiles-editor">LocalFiles Editor</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h2 id="use-piwigo-注意事项">Use Piwigo 注意事项</h2>
+
+<p>所有的图片文件都放在 piwigo/upload/ 的目录中。</p>
+
+<h3 id="gentoo-nginx-php-fm">Gentoo Nginx / php-fm</h3>
+
+<h4 id="php">php</h4>
+
+<ul>
+<li><p>自2.9.5之后必须打开 mysql use，只打开 mysqli不行。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dev-lang/php curl mysql</code></pre></div></li>
+
+<li><p>安装必要的数据包，给插件使用</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq dev-php/pecl-imagick
+emerge -avq media-libs/libmediainfo
+emerge -avq  media-video/mediainfo
+emerge -avq media-libs/exiftool</code></pre></div></li>
+</ul>
+
+<h4 id="config-nginx-to-support">config Nginx to support</h4>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/etc/nginx/nginx.conf</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#66d9ef">...</span>
+ <span style="color:#e6db74">include</span> <span style="color:#e6db74">/etc/nginx/conf.d/*.conf</span>;
+ <span style="color:#66d9ef">...</span></code></pre></div>
+    </div>
+</div>
+
+<p><br></p>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/etc/nginx/conf.d/piwigo.conf</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#66d9ef">server</span> {
+    <span style="color:#f92672">listen</span> 0.0.0.0:<span style="color:#ae81ff">3128</span>;
+    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">photo</span>;
+    <span style="color:#75715e">#root /var/www/localhost/;
+</span><span style="color:#75715e"></span>  <span style="color:#f92672">root</span> <span style="color:#e6db74">/var/www/localhost/htdocs/piwigo</span>;
+
+
+    <span style="color:#f92672">location</span> ~ <span style="color:#e6db74">\.php$</span> {
+            <span style="color:#f92672">try_files</span> $uri =<span style="color:#ae81ff">404</span>;
+            <span style="color:#f92672">include</span> <span style="color:#e6db74">/etc/nginx/fastcgi.conf</span>;
+            <span style="color:#f92672">fastcgi_pass</span> <span style="color:#e6db74">unix:/run/php-fpm.socket</span>;
+    }
+ }</code></pre></div>
+    </div>
+</div>
+
+<p><br></p>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/etc/php/fpm-php7.2/php.ini</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">upload_max_filesize <span style="color:#f92672">=</span> 1000M
+post_max_size <span style="color:#f92672">=</span> 1000M
+max_file_uploads <span style="color:#f92672">=</span> <span style="color:#ae81ff">200</span> // Default是20，产生504 gateway time-out</code></pre></div>
+    </div>
+</div>
+
+<h4 id="config-php-fpm">Config php-fpm</h4>
+
+<h5 id="config-www-conf">config www.conf</h5>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/etc/php/fpm-php7.1/fpm.d/www.conf</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  user <span style="color:#f92672">=</span> nginx  //nobody 更安全，当更新结束之后建议改为nobody
+  group <span style="color:#f92672">=</span> nginx //nobody 更安全，当更新结束之后建议改为nobody
+
+  listen <span style="color:#f92672">=</span> /run/php-fpm.socket
+  listen.owner <span style="color:#f92672">=</span> nginx
+  listen.group <span style="color:#f92672">=</span> nginx
+  listen.mode <span style="color:#f92672">=</span> <span style="color:#ae81ff">0660</span></code></pre></div>
+    </div>
+</div>
+
+<h5 id="adjust-upload-limited">adjust upload limited</h5>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/etc/php/fpm-php7.1/php.ini</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">upload_tmp_dir <span style="color:#f92672">=</span> /tmp
+upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div>
+    </div>
+</div>
+
+<p><br></p>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/etc/ngnix/nginx.conf</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">client_max_body_size</span> <span style="color:#e6db74">20M</span>;
+<span style="color:#66d9ef">client_body_buffer_size</span> <span style="color:#ae81ff">128k</span>;</code></pre></div>
+    </div>
+</div>
+
+<h5 id="add-php-fpm-to-default-service">add php-fpm to default service</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> sudo  /etc/init.d/php-fpm start
+ rc-update add php-fpm default</code></pre></div>
+<h3 id="freebsd-freenas-nginx-php-fpm">Freebsd /Freenas Nginx php-fpm</h3>
+
+<h4 id="install">Install</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> pkg install nginx 
+ pkg install php-fpm</code></pre></div>
+<h4 id="php-fpm">php-fpm</h4>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/usr/local/etc/php-fpm.d/www.conf</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> user <span style="color:#f92672">=</span> www
+ group <span style="color:#f92672">=</span> www
+ listen <span style="color:#f92672">=</span> /var/run/php72-fpm.sock
+ listen.owner <span style="color:#f92672">=</span> www
+ listen.group <span style="color:#f92672">=</span> www
+ listen.mode <span style="color:#f92672">=</span> <span style="color:#ae81ff">0660</span></code></pre></div>
+    </div>
+</div>
+
+<h4 id="nginx">nginx</h4>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/usr/local/etc/nginx/nginx.conf</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#66d9ef">worker_processes</span>  <span style="color:#ae81ff">1</span>;
+
+ <span style="color:#66d9ef">events</span> {
+    <span style="color:#f92672">worker_connections</span>  <span style="color:#ae81ff">1024</span>;
+ }
+
+ 
+ <span style="color:#66d9ef">http</span> {
+    <span style="color:#f92672">include</span>       <span style="color:#e6db74">mime.types</span>;
+    <span style="color:#f92672">default_type</span>  <span style="color:#e6db74">application/octet-stream</span>;
+
+    <span style="color:#f92672">sendfile</span>        <span style="color:#66d9ef">on</span>;
+
+    <span style="color:#f92672">keepalive_timeout</span>  <span style="color:#ae81ff">65</span>;
+
+    <span style="color:#f92672">server</span> {
+        <span style="color:#f92672">listen</span> <span style="color:#ae81ff">0</span><span style="color:#e6db74">.0.0.0</span>;
+        <span style="color:#f92672">server_name</span> <span style="color:#e6db74">piwigo</span>;
+        <span style="color:#f92672">access_log</span>  <span style="color:#e6db74">/var/log/nginx/access.log</span>;
+        <span style="color:#f92672">error_log</span>  <span style="color:#e6db74">/var/log/nginx/error.log</span>;
+
+        <span style="color:#f92672">root</span> <span style="color:#e6db74">/usr/local/www/piwigo</span>;
+        <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
+            <span style="color:#f92672">index</span> <span style="color:#e6db74">index.php</span>;
+        }
+        <span style="color:#f92672">location</span> ~ <span style="color:#e6db74">[^/]\.php(/|$)</span> {
+            <span style="color:#f92672">fastcgi_split_path_info</span> <span style="color:#e6db74">^(.+?\.php)(/.*)</span>$;
+            <span style="color:#f92672">if</span> <span style="color:#e6db74">(!-f</span> $document_root$fastcgi_script_name<span style="color:#e6db74">)</span> {
+                    <span style="color:#f92672">return</span> <span style="color:#ae81ff">404</span>;
+            }
+
+            <span style="color:#f92672">fastcgi_param</span> <span style="color:#e6db74">HTTP_PROXY</span> <span style="color:#e6db74">&#34;&#34;</span>;
+
+            <span style="color:#f92672">fastcgi_pass</span> <span style="color:#e6db74">unix:/var/run/php72-fpm.sock</span>;
+            <span style="color:#f92672">fastcgi_index</span> <span style="color:#e6db74">index.php</span>;
+
+            <span style="color:#f92672">include</span> <span style="color:#e6db74">fastcgi_params</span>;
+
+            <span style="color:#f92672">fastcgi_param</span>  <span style="color:#e6db74">SCRIPT_FILENAME</span>   $document_root$fastcgi_script_name;
+        }
+    }
+ }</code></pre></div>
+    </div>
+</div>
+
+<h4 id="etc-rc-conf">/etc/rc.conf</h4>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/etc/rc.conf</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> nginx_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span>
+ php_fpm_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span>
+ mysql_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span></code></pre></div>
+    </div>
+</div>
+
+<h3 id="mysql-databases-prepaire">MySQL databases prepaire</h3>
+
+<ul>
+<li><p>photos 是mysql数据库名称</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql">mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> piwigo;
+mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">create</span> user <span style="color:#e6db74">&#39;walter&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;abcdef&#39;</span>;
+mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">all</span> privileges <span style="color:#66d9ef">on</span> piwigo . <span style="color:#f92672">*</span> <span style="color:#66d9ef">to</span> <span style="color:#e6db74">&#39;walter&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span>;
+mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">flush</span> privileges;
+mysql<span style="color:#f92672">&gt;</span> quit;</code></pre></div></li>
+</ul>
+
+<h3 id="install-piwigo">install piwigo</h3>
+
+<h4 id="文件准备">文件准备</h4>
+
+<h5 id="gentoo">Gentoo</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">su 
+webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</span>.9.2</code></pre></div>
+<h5 id="freebsd-freenas">Freebsd/Freenas</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pkg install piwigo</code></pre></div>
+<h4 id="配置">配置</h4>
+
+<h4 id="official-install">Official install</h4>
+
+<p><img src="/images/tech/piwigo.jpg" alt="piwigo.jpg" /></p>
+
+<h3 id="upgrade">Upgrade</h3>
+
+<h4 id="piwigo-selfupgrade-recommend">Piwigo selfupgrade (recommend)</h4>
+
+<h5 id="修改piwigo-upgrade-php-文件">修改piwigo/upgrade.php 文件</h5>
+
+<p><code>特别注意</code>：由于piwigo.org对中国地区屏蔽，所以要更换地区</p>
+
+<p>修改 piwigo/upgrade.php中的缺省语言为 zh-CN, 这样更新就会连接到cn.piwigo.org。</p>
+
+<ul>
+<li>需要修改</li>
+</ul>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>piwigo/upgrade.php</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"> // +-----------------------------------------------------------------------+
+ // |                             language                                  |
+ // +-----------------------------------------------------------------------+
+ include(PHPWG_ROOT_PATH . &#39;admin/include/languages.class.php&#39;);
+ $languages = new languages(&#39;utf-8&#39;);
+ if (isset($_GET[&#39;language&#39;]))
+ {
+   $language = strip_tags($_GET[&#39;language&#39;]);
+ 
+   if (!in_array($language, array_keys($languages-&gt;fs_languages)))
+   {
+     $language = PHPWG_DEFAULT_LANGUAGE;
+   }
+ }
+ else
+ {
+   $language = &#39;zh_CN&#39;; 就在这里，将原来的en_UK改为zh_CN
+   // Try to get browser language
+   foreach ($languages-&gt;fs_languages as $language_code =&gt; $fs_language)
+   {
+     if (substr($language_code,0,2) == @substr($_SERVER[&#34;HTTP_ACCEPT_LANGUAGE&#34;],0
+ ,2))
+     {
+       $language = $language_code;
+ </code></pre></div>
+    </div>
+</div>
+
+<ul>
+<li>暂时不需要修改</li>
+</ul>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>piwigo/include/common.inc.php</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+  define<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;PHPWG_DOMAIN&#39;</span>, <span style="color:#e6db74">&#39;cn.piwigo.org&#39;</span><span style="color:#f92672">)</span>;
+<span style="color:#f92672">}</span></code></pre></div>
+    </div>
+</div>
+
+<h5 id="确认-修改目录权限">确认/修改目录权限</h5>
+
+<ul>
+<li>piwigo 目录 再更新是，更新程序必须有写权限；先用ls查看权限，备份。</li>
+<li>Freenas中，chown -R www:www piwigo</li>
+</ul>
+
+<h4 id="gentoo-的升级方式">Gentoo 的升级方式</h4>
+
+<p>根据 /etc/vhosts/webapp-config 执行下列文件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo webapp-config -h localhost -d piwigo -U piwigo <span style="color:#ae81ff">2</span>.9.4</code></pre></div>
+<h2 id="piwigo-插件使用问题">Piwigo 插件使用问题</h2>
+
+<h3 id="read-metadata">Read metadata</h3>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/var/www/localhost/htdocs/piwigo/plugins/read_metadata/admin.php</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">--- $exif <span style="color:#f92672">=</span> read_exif_data<span style="color:#f92672">(</span>$filename<span style="color:#f92672">)</span>;
++++ $exif <span style="color:#f92672">=</span> exif_read_data<span style="color:#f92672">(</span>$filename<span style="color:#f92672">)</span>;</code></pre></div>
+    </div>
+</div>
+
+<h3 id="openstreetmap">OpenStreetMap</h3>
+
+<p><a href="https://github.com/xbgmsharp/piwigo-openstreetmap/wiki">OpenStreetMap Wiki</a></p>
+
+<p>创建以下文件</p>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/var/www/localhost/htdocs/piwigo/osmmap.php</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;PHPWG_ROOT_PATH&#39;</span>,<span style="color:#e6db74">&#39;./&#39;</span>);
+<span style="color:#66d9ef">include_once</span>( <span style="color:#a6e22e">PHPWG_ROOT_PATH</span><span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;plugins/piwigo-openstreetmap/osmmap2.php&#39;</span>);
+<span style="color:#75715e">?&gt;</span>
+</code></pre></div>
+    </div>
+</div>
+
+<h3 id="maps-earth">Maps &amp; Earth</h3>
+
+<p>创建以下文件</p>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/var/www/localhost/htdocs/piwigo/map.php</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"> <span style="color:#75715e">&lt;?php</span>
+ <span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;PHPWG_ROOT_PATH&#39;</span>,<span style="color:#e6db74">&#39;./&#39;</span>);
+ <span style="color:#66d9ef">include_once</span>( <span style="color:#a6e22e">PHPWG_ROOT_PATH</span><span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;plugins/rv_gmaps/map.php&#39;</span>);
+ <span style="color:#75715e">?&gt;</span>
+</code></pre></div>
+    </div>
+</div>
+
+<h2 id="导入照片">导入照片</h2>
+
+<ol>
+<li>把文件copy到 /var/www/localhost/htdocs/piwigo/galleries 或者 ln -s 到此目录中;</li>
+<li>在主页中以<code>admin</code>中登录，然后点击左列底部主菜单上的<code>Administraton</code>，选择 <code>Quick local synchronisation</code>;</li>
+<li>通过 top 可以查看exiftool是否还在运行，占用cpu，以确认同步是否结束。</li>
+</ol>
+
+<h2 id="about-video">About Video</h2>
+
+<h3 id="mov">mov</h3>
+
+<p>Just rename mov to mp4</p>
+
+<h3 id="mpeg4-mp4">mpeg4 / mp4</h3>
+
+<p>Convert mpeg4/mp4 to mp4</p>
+
+<ul>
+<li>检查编码格式</li>
+</ul>
+
+<p>mpeg4 不能正常播放，要转换成mp4</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> ffprobe -v error -show_format -show_streams file.mp4
+ 如果 codec_name<span style="color:#f92672">=</span>mpeg4 则是 mpeg4格式</code></pre></div>
+<ul>
+<li>转换</li>
+</ul>
+
+<h3 id="avi">avi</h3>
+
+<h3 id="mp4">mp4</h3>
+
+<h3 id="localfiles-editor">LocalFiles Editor</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"> <span style="color:#75715e">&lt;?php</span>
+ 
+ <span style="color:#75715e">/* The file does not exist until some information is entered 
+</span><span style="color:#75715e"> below. Once information is entered and saved, the file will be created. */</span>
+ 
+ <span style="color:#75715e">/* Change photo sort by date_creation */</span>
+ $conf[<span style="color:#e6db74">&#39;order_by_custom&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; ORDER BY date_creation DESC, file ASC, id ASC&#39;</span>;
+ $conf[<span style="color:#e6db74">&#39;order_by_inside_category_custom&#39;</span>] <span style="color:#f92672">=</span> $conf[<span style="color:#e6db74">&#39;order_by_custom&#39;</span>];
+ 
+ <span style="color:#75715e">/* Setup Proxy */</span>
+ $conf[<span style="color:#e6db74">&#39;use_proxy&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+ $conf[<span style="color:#e6db74">&#39;proxy_server&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;192.168.0.199:8128&#39;</span>;
+ 
+ <span style="color:#75715e">/* slideshow_period : waiting time in seconds before loading a new page 
+</span><span style="color:#75715e">    during automated slideshow slideshow_period_min, slideshow_period_max 
+</span><span style="color:#75715e">    are bounds of slideshow_period slideshow_period_step is the step of 
+</span><span style="color:#75715e">    navigation between min and max */</span>
+ $conf[<span style="color:#e6db74">&#39;slideshow_period_min&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+ $conf[<span style="color:#e6db74">&#39;slideshow_period_max&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
+ $conf[<span style="color:#e6db74">&#39;slideshow_period_step&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+ $conf[<span style="color:#e6db74">&#39;slideshow_period&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;
+ 
+ <span style="color:#75715e">/* plugin PersoFavicon, local/my.ico */</span>
+ $conf[<span style="color:#e6db74">&#39;PersoFavicon&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;my.ico&#39;</span>;
+ 
+ <span style="color:#75715e">/* https://github.com/xbgmsharp/piwigo-videojs/wiki/How-to-add-videos#step-1-configure */</span>
+ $conf[<span style="color:#e6db74">&#39;upload_form_all_types&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+ $conf[<span style="color:#e6db74">&#39;sync_chars_regex&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/^[a-zA-Z0-9-_. ]+$/&#39;</span>;
+ $conf[<span style="color:#e6db74">&#39;show_exif&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+ $conf[<span style="color:#e6db74">&#39;show_exif_fields&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+   <span style="color:#e6db74">&#39;Make&#39;</span>,
+   <span style="color:#e6db74">&#39;Model&#39;</span>,
+   <span style="color:#e6db74">&#39;ExifVersion&#39;</span>,
+   <span style="color:#e6db74">&#39;Software&#39;</span>,
+   <span style="color:#e6db74">&#39;DateTimeOriginal&#39;</span>,
+   <span style="color:#e6db74">&#39;FNumber&#39;</span>,
+   <span style="color:#e6db74">&#39;ExposureBiasValue&#39;</span>,
+   <span style="color:#e6db74">&#39;FILE;FileSize&#39;</span>,
+   <span style="color:#e6db74">&#39;ExposureTime&#39;</span>,
+   <span style="color:#e6db74">&#39;Flash&#39;</span>,
+   <span style="color:#e6db74">&#39;ISOSpeedRatings&#39;</span>,
+   <span style="color:#e6db74">&#39;FocalLength&#39;</span>,
+   <span style="color:#e6db74">&#39;FocalLengthIn35mmFilm&#39;</span>,
+   <span style="color:#e6db74">&#39;WhiteBalance&#39;</span>,
+   <span style="color:#e6db74">&#39;ExposureMode&#39;</span>,
+   <span style="color:#e6db74">&#39;MeteringMode&#39;</span>,
+   <span style="color:#e6db74">&#39;ExposureProgram&#39;</span>,
+   <span style="color:#e6db74">&#39;LightSource&#39;</span>,
+   <span style="color:#e6db74">&#39;Contrast&#39;</span>,
+   <span style="color:#e6db74">&#39;Saturation&#39;</span>,
+   <span style="color:#e6db74">&#39;Sharpness&#39;</span>,
+   <span style="color:#e6db74">&#39;bitrate&#39;</span>,
+   <span style="color:#e6db74">&#39;channel&#39;</span>,
+   <span style="color:#e6db74">&#39;date_creation&#39;</span>,
+   <span style="color:#e6db74">&#39;display_aspect_ratio&#39;</span>,
+   <span style="color:#e6db74">&#39;duration&#39;</span>,
+   <span style="color:#e6db74">&#39;filesize&#39;</span>,
+   <span style="color:#e6db74">&#39;format&#39;</span>,
+   <span style="color:#e6db74">&#39;formatprofile&#39;</span>,
+   <span style="color:#e6db74">&#39;codecid&#39;</span>,
+   <span style="color:#e6db74">&#39;frame_rate&#39;</span>,
+   <span style="color:#e6db74">&#39;latitude&#39;</span>,
+   <span style="color:#e6db74">&#39;longitude&#39;</span>,
+   <span style="color:#e6db74">&#39;make&#39;</span>,
+   <span style="color:#e6db74">&#39;model&#39;</span>,
+   <span style="color:#e6db74">&#39;playtime_seconds&#39;</span>,
+   <span style="color:#e6db74">&#39;sampling_rate&#39;</span>,
+   <span style="color:#e6db74">&#39;type&#39;</span>,
+   <span style="color:#e6db74">&#39;resolution&#39;</span>,
+   <span style="color:#e6db74">&#39;rotation&#39;</span>,
+   );
+  <span style="color:#75715e">?&gt;</span>
+</code></pre></div>
+</article>
+
+    </body>
+</html>

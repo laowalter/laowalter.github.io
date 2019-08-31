@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    
+    <link rel="stylesheet" href="/sass/main.min.b0163ad78a5d83e2d8dee2c2f33fa8b557711f0eb2b1ae412eca8874b7bfb72e.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    
+    <link href="/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Python_tips</h1> 
+            <p class="datetime">Tue, Sep 25, 2018</p>
+            <a class="tag tag--primary tag--small"   href="/"><font color="green">Home</font></a>
+
+            
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/python">python</a>
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/mongodb">mongodb</a>
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/panda">panda</a>
+                
+            
+          </div>
+      </div>
+
+    <hr><br><nav id="TableOfContents">
+<ul>
+<li><a href="#read-special-excel-like-xml">Read special excel like xml</a></li>
+<li><a href="#add-color-text-output-in-teminal">add color text output in teminal</a></li>
+<li><a href="#trading-date-list">trading date list</a></li>
+<li><a href="#print-full-dataframe">print full dataframe</a></li>
+<li><a href="#command-line-input">Command Line input</a></li>
+<li><a href="#date">Date</a></li>
+<li><a href="#log">Log</a></li>
+<li><a href="#mongodb">Mongodb</a></li>
+<li><a href="#pandas-and-monogodb">Pandas and Monogodb</a>
+<ul>
+<li><a href="#read-from-monogodb-get-pandas">Read from Monogodb get Pandas</a></li>
+<li><a href="#write-pandas-to-mongodb">Write Pandas to Mongodb</a></li>
+</ul></li>
+<li><a href="#query-by-date">Query by date</a></li>
+<li><a href="#pandas">Pandas</a></li>
+<li><a href="#matplotlib">Matplotlib</a></li>
+<li><a href="#webscrawler">webscrawler</a></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h2 id="read-special-excel-like-xml">Read special excel like xml</h2>
+
+<p><a href="http://www.swsindex.com/idx0530.aspx">Excel Address</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+dfs <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_html(<span style="color:#e6db74">&#39;swclass.xls&#39;</span>, flavor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;html5lib&#39;</span>)
+df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(dfs[<span style="color:#ae81ff">0</span>])
+df<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>iloc[<span style="color:#ae81ff">0</span>]
+df <span style="color:#f92672">=</span> df[<span style="color:#ae81ff">1</span>:]
+
+df_agg <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;行业名称&#39;</span>)<span style="color:#f92672">.</span>agg(<span style="color:#66d9ef">lambda</span> x: <span style="color:#e6db74">&#39;,&#39;</span><span style="color:#f92672">.</span>join(x))
+df_agg  <span style="color:#f92672">=</span> df_agg<span style="color:#f92672">.</span>reset_index()
+df_agg[df_agg[<span style="color:#e6db74">&#39;行业名称&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;电子&#39;</span>][<span style="color:#e6db74">&#39;股票代码&#39;</span>]<span style="color:#f92672">.</span>tolist()</code></pre></div>
+<h2 id="add-color-text-output-in-teminal">add color text output in teminal</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[1;32;40m Bright Green  </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[0;37;40m Normal text</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[2;37;40m Underlined text</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[0;37;40m </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[1;37;40m Bright Colour</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[0;37;40m </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[3;37;40m Negative Colour</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[0;37;40m </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[5;37;40m Negative Colour</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[0;37;40m</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)</code></pre></div>
+<p>The above ANSI escape code will set the text colour to bright green. The format is;</p>
+
+<p>\033[  Escape code, this is always the same</p>
+
+<p>1 = Style, 1 for normal.</p>
+
+<p>32 = Text colour, 32 for bright green.</p>
+
+<p>40m = Background colour, 40 is for black.</p>
+
+<p>This table shows some of the available formats;</p>
+
+<p>[jtable]
+Text color,Code,Text style,Code,Background color,Code
+Black 30,No effect,0,Black,40
+Red,31,Bold,1,Red,41
+Green,32,Underline,2,Green,42
+Yellow,33,Negative1,3,Yellow,43
+Blue,34,Negative2,5,Blue,44
+Purple,35,Purple,45
+Cyan,36,Cyan,46
+White,37,White,47
+[/jtable]</p>
+
+<h2 id="trading-date-list">trading date list</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> mylib.holiday_setting <span style="color:#f92672">import</span> holiday
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">trading_datelist</span>(date, num):
+    <span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">    date 是需要计算的最后日期, datetime.datetime，
+</span><span style="color:#e6db74">    num 是从date开始，包括date，向前num个交易日
+</span><span style="color:#e6db74">    返回从指定date的前num个交易日的datetime日期对象的List
+</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+    day_list <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">for</span> count <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, num<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
+        <span style="color:#66d9ef">while</span> (date<span style="color:#f92672">.</span>isoweekday() <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">6</span>)) <span style="color:#f92672">or</span> (date <span style="color:#f92672">in</span> holiday):
+            date <span style="color:#f92672">=</span> date <span style="color:#f92672">+</span> datetime<span style="color:#f92672">.</span>timedelta(days<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
+        day_list<span style="color:#f92672">.</span>append(date)
+        date <span style="color:#f92672">=</span> date <span style="color:#f92672">+</span> datetime<span style="color:#f92672">.</span>timedelta(days<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
+    <span style="color:#66d9ef">return</span> day_list</code></pre></div>
+<h2 id="print-full-dataframe">print full dataframe</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">print_full</span>(df):
+    pd<span style="color:#f92672">.</span>set_option(<span style="color:#e6db74">&#39;display.max_rows&#39;</span>, len(df))
+    <span style="color:#66d9ef">print</span>(df)
+    pd<span style="color:#f92672">.</span>reset_option(<span style="color:#e6db74">&#39;display.max_rows&#39;</span>)</code></pre></div>
+<h2 id="command-line-input">Command Line input</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_input</span>():
+    <span style="color:#75715e"># 获得命令行的输入参数</span>
+    today <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>today()<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>)
+ 
+    switch <span style="color:#f92672">=</span> argparse<span style="color:#f92672">.</span>ArgumentParser(description<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;指定日期在内的N个交易日的每笔价格的线性回归图。&#39;</span>)
+    switch<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;--date&#39;</span>, dest<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;date&#39;</span>, type<span style="color:#f92672">=</span>str, default<span style="color:#f92672">=</span>today,
+                        help<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;交易日的最后日期，格式：&#34;2016-03-25&#34;，缺省为“今日”&#39;</span>)
+    switch<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;--num&#39;</span>, dest<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;num&#39;</span>, type<span style="color:#f92672">=</span>int, default<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,
+                        help<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;交易日的数量，缺省为 1，即“当日”&#39;</span>)
+    switch<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;--code&#39;</span>, dest<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;code&#39;</span>, type<span style="color:#f92672">=</span>str, required<span style="color:#f92672">=</span>True,
+                        help<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;股票代码&#39;</span>)
+    switch<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;--realtime&#39;</span>, dest<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;realtime&#39;</span>, action<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;store_true&#39;</span>,
+                        help<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;从实时接口中取数据&#39;</span>)
+    switch<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;--no-realtime&#39;</span>, dest<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;realtime&#39;</span>, action<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;store_false&#39;</span>,
+                        help<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;从历史接口中取数据&#39;</span>)
+    switch<span style="color:#f92672">.</span>set_defaults(realtime<span style="color:#f92672">=</span>True)
+ 
+    args <span style="color:#f92672">=</span> switch<span style="color:#f92672">.</span>parse_args()
+    <span style="color:#66d9ef">return</span> args</code></pre></div>
+<h2 id="date">Date</h2>
+
+<ul>
+<li><p>parse date string to datetime object</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> dateutil.parser
+day <span style="color:#f92672">=</span> dateutil<span style="color:#f92672">.</span>parser<span style="color:#f92672">.</span>parse(<span style="color:#e6db74">&#34;Thu Sep 25 10:36:28 BRST 2003&#34;</span>)</code></pre></div></li>
+
+<li><p>只得到今天日期的datetime对象，不要时分秒的部分</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">date <span style="color:#f92672">=</span> dateutil<span style="color:#f92672">.</span>parser<span style="color:#f92672">.</span>parse(datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>today()<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>))</code></pre></div></li>
+
+<li><p>datetime to string</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> datetime
+datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>today()<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>)</code></pre></div></li>
+</ul>
+
+<h2 id="log">Log</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> logging
+
+logging<span style="color:#f92672">.</span>basicConfig(level<span style="color:#f92672">=</span>logging<span style="color:#f92672">.</span>DEBUG, 
+                format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%(asctime)s</span><span style="color:#e6db74"> </span><span style="color:#e6db74">%(static)s</span><span style="color:#e6db74">[line:</span><span style="color:#e6db74">%(lineno)d</span><span style="color:#e6db74">] </span><span style="color:#e6db74">%(levelname)s</span><span style="color:#e6db74"> </span><span style="color:#e6db74">%(message)s</span><span style="color:#e6db74">&#39;</span>,
+                datefmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;%a, </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %b %Y %H:%M:%S&#39;</span>, 
+                static<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;test.log&#39;</span>,
+                filemode<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;w&#39;</span>)
+                
+<span style="color:#75715e">#定义一个StreamHandler，将INFO级别或更高的日志信息打印到标准错误，并将其添加到当前的日志处理对象#</span>
+console <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>StreamHandler()
+console<span style="color:#f92672">.</span>setLevel(logging<span style="color:#f92672">.</span>INFO)
+formatter <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>Formatter(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%(name)-12s</span><span style="color:#e6db74">: </span><span style="color:#e6db74">%(levelname)-8s</span><span style="color:#e6db74"> </span><span style="color:#e6db74">%(message)s</span><span style="color:#e6db74">&#39;</span>)
+console<span style="color:#f92672">.</span>setFormatter(formatter)
+logging<span style="color:#f92672">.</span>getLogger(<span style="color:#e6db74">&#39;&#39;</span>)<span style="color:#f92672">.</span>addHandler(console)
+
+logging<span style="color:#f92672">.</span>debug(<span style="color:#e6db74">&#39;This is debug message&#39;</span>)
+logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#39;This is info message&#39;</span>)
+logging<span style="color:#f92672">.</span>warning(<span style="color:#e6db74">&#39;This is warning message&#39;</span>)</code></pre></div>
+<h2 id="mongodb">Mongodb</h2>
+
+<ul>
+<li><p>insert mongodb&rsquo;s native date</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">date_format {<span style="color:#e6db74">&#39;date&#39;</span>: datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2009</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">45</span>)}</code></pre></div>
+<p>or</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">datetime<span style="color:#f92672">.</span>strptime(date_string, format)</code></pre></div></li>
+
+<li><p><code>update_one</code>(filter, update, upsert=False, bypass_document_validation=False)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pymongo <span style="color:#f92672">as</span> py
+client <span style="color:#f92672">=</span> py<span style="color:#f92672">.</span>MongoClient(<span style="color:#e6db74">&#34;localhost&#34;</span>, <span style="color:#ae81ff">27017</span>)
+db <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>test
+collection <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>table
+mydict <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;name&#39;</span>:<span style="color:#e6db74">&#39;Lucy&#39;</span>, <span style="color:#e6db74">&#39;sex&#39;</span>:<span style="color:#e6db74">&#39;female&#39;</span>,<span style="color:#e6db74">&#39;job&#39;</span>:<span style="color:#e6db74">&#39;nurse&#39;</span>}
+collection<span style="color:#f92672">.</span>insert_one(mydict)
+mydict <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;name&#39;</span>:<span style="color:#e6db74">&#39;walter&#39;</span>, <span style="color:#e6db74">&#39;sex&#39;</span>:<span style="color:#e6db74">&#39;male&#39;</span>,<span style="color:#e6db74">&#39;job&#39;</span>:<span style="color:#e6db74">&#39;trader&#39;</span>}
+collection<span style="color:#f92672">.</span>update_one({<span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;walter&#39;</span>},{<span style="color:#e6db74">&#34;$set&#34;</span>:mydict}, upsert <span style="color:#f92672">=</span> True)</code></pre></div></li>
+
+<li><p><code>update_many</code>(filter, update, upsert=False, bypass_document_validation=False)¶</p></li>
+
+<li><p>select fields</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">conn <span style="color:#f92672">=</span> Querymongodb2(<span style="color:#e6db74">&#39;stock&#39;</span>, <span style="color:#e6db74">&#39;stockbasics&#39;</span>)
+query <span style="color:#f92672">=</span> {}
+fields <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;code&#39;</span>:<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;pe&#39;</span>:<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;_id&#39;</span>:<span style="color:#ae81ff">0</span>}
+cursor <span style="color:#f92672">=</span> conn<span style="color:#f92672">.</span>get_list_fields(query, fields)
+<span style="color:#66d9ef">print</span>(list(cursor))</code></pre></div></li>
+
+<li><p>查询结果cursor是dict，生成df</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">	df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(list(cursor))</code></pre></div></li>
+</ul>
+
+<h2 id="pandas-and-monogodb">Pandas and Monogodb</h2>
+
+<h3 id="read-from-monogodb-get-pandas">Read from Monogodb get Pandas</h3>
+
+<ul>
+<li><p>读行情数据</p>
+
+<ul>
+<li><p>Querymongodb</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">	<span style="color:#f92672">from</span> querymongodb <span style="color:#f92672">import</span> Querymongodb
+	conn <span style="color:#f92672">=</span> Querymongodb(db <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;stock&#39;</span>, collection <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;indexes&#39;</span>, 
+                code <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;000001&#39;</span>,
+                start <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;2015-10-1T0:0:0.000Z&#39;</span>,
+                end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;2016-1-12T0:0:0.00Z&#39;</span>)
+df <span style="color:#f92672">=</span> conn<span style="color:#f92672">.</span>get_df()
+	df<span style="color:#f92672">.</span>index <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>date
+	df<span style="color:#f92672">.</span>sort_index(ascending<span style="color:#f92672">=</span>True, inplace <span style="color:#f92672">=</span> True)
+	df <span style="color:#f92672">=</span> df[[<span style="color:#e6db74">&#39;date&#39;</span>, <span style="color:#e6db74">&#39;Open&#39;</span>, <span style="color:#e6db74">&#39;High&#39;</span>, <span style="color:#e6db74">&#39;Low&#39;</span>, <span style="color:#e6db74">&#39;Close&#39;</span>]]</code></pre></div></li>
+
+<li><p>Querymongodb2</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">	<span style="color:#f92672">from</span> mylib.querymongodb2 <span style="color:#f92672">import</span> Querymongodb2
+	db <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;stock&#39;</span>
+	table <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;stockbasics&#39;</span>
+	conn <span style="color:#f92672">=</span> Querymongodb2(db, table)</code></pre></div></li>
+</ul></li>
+
+<li><p>自写query读数据返回DataFrame</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> querymongodb2 <span style="color:#f92672">import</span> Querymongodb2
+
+<span style="color:#75715e"># 读入所有股票今天和昨天的数据，找出涨幅</span>
+table <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hist&#39;</span>
+conn <span style="color:#f92672">=</span> Querymongodb2(db <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;stock&#39;</span>, collection <span style="color:#f92672">=</span> table)
+start <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2016</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">24</span>)
+query <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;date&#39;</span>: {<span style="color:#e6db74">&#39;$gte&#39;</span>: start}}
+df <span style="color:#f92672">=</span> conn<span style="color:#f92672">.</span>get_df_by_query(query)</code></pre></div></li>
+</ul>
+
+<h3 id="write-pandas-to-mongodb">Write Pandas to Mongodb</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">	client <span style="color:#f92672">=</span> py<span style="color:#f92672">.</span>MongoClient(<span style="color:#e6db74">&#34;localhost&#34;</span>, <span style="color:#ae81ff">27017</span>)
+	db <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>stock
+	collection <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>classify
+	<span style="color:#75715e">#删除全部原数据库内容</span>
+	collection<span style="color:#f92672">.</span>delete_many({})
+	records <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(area<span style="color:#f92672">.</span>to_json(orient<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;records&#39;</span>, 	date_format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;iso&#39;</span>))
+	collection<span style="color:#f92672">.</span>insert_many(records)</code></pre></div>
+<h2 id="query-by-date">Query by date</h2>
+
+<ul>
+<li><p>example 1</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">db<span style="color:#f92672">.</span>getCollection(<span style="color:#e6db74">&#39;histfq&#39;</span>)<span style="color:#f92672">.</span>find({<span style="color:#e6db74">&#39;date&#39;</span>: {<span style="color:#960050;background-color:#1e0010">$</span>gte: ISODate(<span style="color:#e6db74">&#39;2016-03-21 00:00:00.000Z&#39;</span>)}})</code></pre></div></li>
+
+<li><p>example 2</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">	<span style="color:#f92672">import</span> datetime
+	<span style="color:#f92672">from</span> querymongodb2 <span style="color:#f92672">import</span> Querymongodb2
+	<span style="color:#75715e">#读入所有股票今天和昨天的数据，找出涨幅</span>
+	table <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;histfq&#39;</span>
+	conn <span style="color:#f92672">=</span> Querymongodb2(db <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;stock&#39;</span>, collection <span style="color:#f92672">=</span> table)
+	start <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2016</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">24</span>)
+	query <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;date&#39;</span>: {<span style="color:#e6db74">&#39;$gte&#39;</span>: start}}
+	df <span style="color:#f92672">=</span> conn<span style="color:#f92672">.</span>get_df_by_query(query)</code></pre></div></li>
+</ul>
+
+<h2 id="pandas">Pandas</h2>
+
+<ul>
+<li><p>rename a DataFrame column name</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">	df<span style="color:#f92672">.</span>rename(columns <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;close&#39;</span> : <span style="color:#e6db74">&#39;today&#39;</span>}, inplace <span style="color:#f92672">=</span> True)</code></pre></div></li>
+
+<li><p>remove a column from DataFrame</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">	df<span style="color:#f92672">.</span>drop([<span style="color:#e6db74">&#39;code&#39;</span>, <span style="color:#e6db74">&#39;name&#39;</span>], axis <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, inplace <span style="color:#f92672">=</span> True)</code></pre></div></li>
+
+<li><p>remove Nan or None and duplicates</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">	concept <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>concept<span style="color:#f92672">.</span>dropna()<span style="color:#f92672">.</span>drop_duplicates()</code></pre></div></li>
+
+<li><p>create a dataframe</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">conceptFrame <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(data <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+                       index <span style="color:#f92672">=</span> concept<span style="color:#f92672">.</span>values,
+                       columns <span style="color:#f92672">=</span> today)  <span style="color:#75715e"># 1st row as the column names</span></code></pre></div></li>
+</ul>
+
+<h2 id="matplotlib">Matplotlib</h2>
+
+<ul>
+<li><p>显示中文</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">plotbars</span>(df):
+
+df <span style="color:#f92672">=</span> df[:<span style="color:#ae81ff">10</span>]
+font <span style="color:#f92672">=</span> FontProperties(fname<span style="color:#f92672">=</span><span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;/Library/Fonts/simsun.ttc&#34;</span>, size<span style="color:#f92672">=</span><span style="color:#ae81ff">12</span>)  size可不用指定
+ax <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>plot(kind <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bar&#39;</span>, rot <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>)
+<span style="color:#75715e">#labels = [label.decode(&#34;utf-8&#34;) for label in df.index.values]</span>
+labels <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>index<span style="color:#f92672">.</span>values
+ax<span style="color:#f92672">.</span>set_xticklabels(labels, fontproperties<span style="color:#f92672">=</span>font)
+plt<span style="color:#f92672">.</span>xticks(rotation<span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">45</span>)
+plt<span style="color:#f92672">.</span>show()</code></pre></div></li>
+
+<li><p>显示中文(Gentoo)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib <span style="color:#f92672">as</span> mpl
+mpl<span style="color:#f92672">.</span>use(<span style="color:#e6db74">&#39;Agg&#39;</span>)
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39;font.sans-serif&#39;</span>]<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;SimHei&#39;</span>]</code></pre></div>
+<ul>
+<li>显示中文(Mac)</li>
+
+<li><p>install pyqt</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install pyqt</code></pre></div></li>
+
+<li><p>~/.matplotlib/matplotlibrc</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">backend: Qt5Agg
+font.sans-serif : STHeiti</code></pre></div></li>
+</ul></li>
+
+<li><p>测试支持中文字体</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#! /usr/bin/env python</span>
+<span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<span style="color:#f92672">from</span> matplotlib.font_manager <span style="color:#f92672">import</span> FontManager
+<span style="color:#f92672">import</span> subprocess
+
+fm <span style="color:#f92672">=</span> FontManager()
+mat_fonts <span style="color:#f92672">=</span> set(f<span style="color:#f92672">.</span>name <span style="color:#66d9ef">for</span> f <span style="color:#f92672">in</span> fm<span style="color:#f92672">.</span>ttflist)
+<span style="color:#75715e">#print(mat_fonts)</span>
+output <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>check_output(<span style="color:#e6db74">&#39;fc-list :lang=zh -f &#34;%{family}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;&#39;</span>, shell<span style="color:#f92672">=</span>True)
+<span style="color:#75715e">#print( &#39;*&#39; * 10, &#39;系统可用的中文字体&#39;, &#39;*&#39; * 10)</span>
+<span style="color:#75715e">#print (output)</span>
+zh_fonts <span style="color:#f92672">=</span> set(f<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;,&#39;</span>, <span style="color:#ae81ff">1</span>)[<span style="color:#ae81ff">0</span>] <span style="color:#66d9ef">for</span> f <span style="color:#f92672">in</span> output<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>))
+available <span style="color:#f92672">=</span> mat_fonts <span style="color:#f92672">&amp;</span> zh_fonts
+<span style="color:#66d9ef">print</span> (<span style="color:#e6db74">&#39;*&#39;</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;可用的字体&#39;</span>, <span style="color:#e6db74">&#39;*&#39;</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span>)
+<span style="color:#66d9ef">for</span> f <span style="color:#f92672">in</span> available:
+ <span style="color:#66d9ef">print</span> (f) </code></pre></div></li>
+</ul>
+
+<h2 id="webscrawler">webscrawler</h2>
+
+<ul>
+<li><p>bs4 beautifulsoup</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+	<span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
+	
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+	<span style="color:#e6db74">&#39;指数历史行情的地址，是按照季度和年份的组合获得的。&#39;</span>
+	<span style="color:#66d9ef">for</span> year <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1999</span>,<span style="color:#ae81ff">2017</span>):
+    	<span style="color:#66d9ef">for</span> quater <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">5</span>):
+
+      	baseUrl <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://vip.stock.finance.sina.com.cn/corp/go.php/vMS_MarketHistory/stockid/000001/&#39;</span>
+        	subUrl <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;year=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%i</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">%</span>year<span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&amp;jidu=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%i</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">%</span>quater
+
+        	response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get( baseUrl<span style="color:#f92672">+</span>subUrl )
+        	soup <span style="color:#f92672">=</span> BeautifulSoup( response<span style="color:#f92672">.</span>content, <span style="color:#e6db74">&#39;lxml&#39;</span> )
+
+        	<span style="color:#75715e">#对应行情的table的属性是id&#39;＝FundHoldSharesTable</span>
+        	<span style="color:#75715e">#首先判断能否获得table</span>
+        	table <span style="color:#f92672">=</span> soup<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;table&#39;</span>, attrs<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;id&#39;</span>:<span style="color:#e6db74">&#39;FundHoldSharesTable&#39;</span>})
+        	<span style="color:#66d9ef">if</span> table <span style="color:#f92672">is</span> None:
+            	display <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">年－</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">季度：没有找到数据表！&#39;</span> <span style="color:#f92672">%</span> (<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%i</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">%</span>year, <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%i</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">%</span>quater)
+            	<span style="color:#66d9ef">print</span> (display)
+
+        	<span style="color:#66d9ef">else</span>:
+            	df <span style="color:#f92672">=</span> parse_gen_index_df(table)
+            	df[<span style="color:#e6db74">&#39;code&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;000001&#39;</span>
+            	save <span style="color:#f92672">=</span> Df2mongo(df, <span style="color:#e6db74">&#39;localhost&#39;</span>, <span style="color:#e6db74">&#39;stock&#39;</span>, <span style="color:#e6db74">&#39;indexes&#39;</span>)
+            	save<span style="color:#f92672">.</span>store2db()
+            	display <span style="color:#f92672">=</span>  <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">年－</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">季度：数据表已经入库！&#39;</span> <span style="color:#f92672">%</span> (<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%i</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">%</span>year, <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%i</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">%</span>quater)
+            	<span style="color:#66d9ef">print</span> (display)</code></pre></div></li>
+
+<li><p>Some Resourses for javascript in webscrawler</p>
+
+<p><a href="https://impythonist.wordpress.com/2015/01/06/ultimate-guide-for-scraping-javascript-rendered-web-pages/">https://impythonist.wordpress.com/2015/01/06/ultimate-guide-for-scraping-javascript-rendered-web-pages/</a></p></li>
+</ul>
+
+</article>
+
+    </body>
+</html>

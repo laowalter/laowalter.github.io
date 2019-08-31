@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    
+    <link rel="stylesheet" href="/sass/main.min.b0163ad78a5d83e2d8dee2c2f33fa8b557711f0eb2b1ae412eca8874b7bfb72e.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    
+    <link href="/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>MySQL</h1> 
+            <p class="datetime">Thu, Apr 12, 2018</p>
+            <a class="tag tag--primary tag--small"   href="/"><font color="green">Home</font></a>
+
+            
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/db">DB</a>
+                
+            
+          </div>
+      </div>
+
+    <hr><br><nav id="TableOfContents">
+<ul>
+<li><a href="#mysql基本操作">MySQL基本操作</a>
+<ul>
+<li><a href="#增加用户-并赋予权限">增加用户，并赋予权限</a></li>
+<li><a href="#赋予个别用户特别权限-https-dev-mysql-com-doc-refman-5-7-en-adding-users-html"><a href="https://dev.mysql.com/doc/refman/5.7/en/adding-users.html">赋予个别用户特别权限</a></a></li>
+</ul></li>
+<li><a href="#python与mysql接口">Python与MySQL接口</a></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h2 id="mysql基本操作">MySQL基本操作</h2>
+
+<h3 id="增加用户-并赋予权限">增加用户，并赋予权限</h3>
+
+<ol>
+<li><p>创建本机用户stock@localhost，不能从其他机器访问,<code>即使grant all privileges 也没用</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">create user <span style="color:#e6db74">&#39;stock&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> identified by <span style="color:#e6db74">&#39;my_pass&#39;</span>;
+grant all privileges on *.* to <span style="color:#e6db74">&#39;stock&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> with grant option;
+flush privileges;</code></pre></div></li>
+
+<li><p>创建用户stock@%，可以在任何机器访问此数据库</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">create user <span style="color:#e6db74">&#39;stock&#39;</span>%<span style="color:#e6db74">&#39; identified by &#39;</span>my_pass<span style="color:#e6db74">&#39;;
+</span><span style="color:#e6db74">grant all privileges on *.* to &#39;</span>stock<span style="color:#e6db74">&#39;@&#39;</span>%<span style="color:#960050;background-color:#1e0010">&#39;</span> with grant option;
+flush privileges;</code></pre></div></li>
+</ol>
+
+<h3 id="赋予个别用户特别权限-https-dev-mysql-com-doc-refman-5-7-en-adding-users-html"><a href="https://dev.mysql.com/doc/refman/5.7/en/adding-users.html">赋予个别用户特别权限</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql&gt; CREATE USER <span style="color:#e6db74">&#39;custom&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;password&#39;</span>;
+mysql&gt; GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP
+    -&gt;     ON bankaccount.*
+    -&gt;     TO <span style="color:#e6db74">&#39;custom&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span>;
+mysql&gt; CREATE USER <span style="color:#e6db74">&#39;custom&#39;</span>@<span style="color:#e6db74">&#39;host47.example.com&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;password&#39;</span>;
+mysql&gt; GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP
+    -&gt;     ON expenses.*
+    -&gt;     TO <span style="color:#e6db74">&#39;custom&#39;</span>@<span style="color:#e6db74">&#39;host47.example.com&#39;</span>;
+mysql&gt; CREATE USER <span style="color:#e6db74">&#39;custom&#39;</span>@<span style="color:#e6db74">&#39;%.example.com&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;password&#39;</span>;
+mysql&gt; GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP
+    -&gt;     ON customer.*
+    -&gt;     TO <span style="color:#e6db74">&#39;custom&#39;</span>@<span style="color:#e6db74">&#39;%.example.com&#39;</span>;</code></pre></div>
+<h2 id="python与mysql接口">Python与MySQL接口</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install mysql-connector-python</code></pre></div>
+<p><a href="https://dev.mysql.com/doc/connector-python/en/connector-python-example-connecting.html">Tutorial of Mysql Official Site</a></p>
+
+</article>
+
+    </body>
+</html>

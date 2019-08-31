@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    
+    <link rel="stylesheet" href="/sass/main.min.b0163ad78a5d83e2d8dee2c2f33fa8b557711f0eb2b1ae412eca8874b7bfb72e.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    
+    <link href="/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Cups/Printer</h1> 
+            <p class="datetime">Wed, Nov 22, 2017</p>
+            <a class="tag tag--primary tag--small"   href="/"><font color="green">Home</font></a>
+
+            
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/linux">linux</a>
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/print">print</a>
+                
+            
+          </div>
+      </div>
+
+    <hr><br><nav id="TableOfContents">
+<ul>
+<li><a href="#hp-打印机">HP 打印机</a></li>
+<li><a href="#cups-打印机设置">CUPS 打印机设置</a>
+<ul>
+<li><a href="#安装软件-cups">安装软件 cups</a></li>
+<li><a href="#允许远程配置">允许远程配置</a></li>
+<li><a href="#远程通过浏览器">远程通过浏览器</a></li>
+<li><a href="#设置命令行">设置命令行</a></li>
+</ul></li>
+<li><a href="#cups-pdf-安装与设置">CUPS-PDF 安装与设置</a>
+<ul>
+<li><a href="#安装软件打开-ppds-use">安装软件打开 ppds use</a></li>
+<li><a href="#通过631端口添加打印机时选择上面的-ppd">通过631端口添加打印机时选择上面的 ppd</a></li>
+<li><a href="#windows10客户端">Windows10客户端</a></li>
+</ul></li>
+<li><a href="#lpr-lp-命令行打印机设置">lpr lp 命令行打印机设置</a></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h2 id="hp-打印机">HP 打印机</h2>
+
+<p>这是全面的的私有驱动程序, 包括打印、传真和扫描。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">net-print/hplip-plugin
+net-print/hplip</code></pre></div>
+<h2 id="cups-打印机设置">CUPS 打印机设置</h2>
+
+<h3 id="安装软件-cups">安装软件 cups</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq cups</code></pre></div>
+<h3 id="允许远程配置">允许远程配置</h3>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/etc/cups/cupsd.conf</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&lt;Location /&gt;
+  Order allow,deny
+  Allow localhost
+  Allow from <span style="color:#ae81ff">192</span>.168.0.*
+&lt;/Location&gt;
+&lt;Location /admin&gt;
+  Order allow,deny
+  Allow localhost
+  Allow from <span style="color:#ae81ff">192</span>.168.0.*
+&lt;/Location&gt;
+&lt;Location /admin/conf&gt;
+  Allow localhost
+  Allow from <span style="color:#ae81ff">192</span>.168.0.*
+ AuthType Default
+  Require user @SYSTEM
+  Order allow,deny
+&lt;/Location&gt;
+&lt;Location /admin/log&gt;
+  AuthType Default
+  Require user @SYSTEM
+  Order allow,deny
+&lt;/Location&gt;</code></pre></div>
+    </div>
+</div>
+
+<h3 id="远程通过浏览器">远程通过浏览器</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">添加打印机：http://192.168.0.3:631
+找到Admin，使用root登录，然后用find printer。</code></pre></div>
+<h3 id="设置命令行">设置命令行</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lpstat -p -d  <span style="color:#75715e">#列出打印机名称(hp-printer)</span>
+lpoptions -d hp-printer <span style="color:#75715e"># 设置缺省的打印机为hp-printer</span>
+lpstat -p -d  <span style="color:#75715e">#列出打印机名称(hp-printer)</span></code></pre></div>
+<h2 id="cups-pdf-安装与设置">CUPS-PDF 安装与设置</h2>
+
+<h3 id="安装软件打开-ppds-use">安装软件打开 ppds use</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq cups-pdf</code></pre></div>
+<p>这样会安装一个打印机驱动/usr/share/cups/model/CUPS-PDF_opt.ppd</p>
+
+<h3 id="通过631端口添加打印机时选择上面的-ppd">通过631端口添加打印机时选择上面的 ppd</h3>
+
+<ul>
+<li>Default name: Virtual PDF Printer</li>
+<li>Printer Type: Generic CUPS-PDF Printer (w/ options) (color)</li>
+<li>Change output directory: /etc/cups/cups-pdf.conf</li>
+</ul>
+
+<p>改变打印生成pdf文件的目录，为共享设置。</p>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/etc/cups/cups-pdf.conf</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Out /data/share/public/pdf_printed</code></pre></div>
+    </div>
+</div>
+
+<p><img src="/images/tech/add_printer-0.png" alt="add_printer-0" /></p>
+
+<h3 id="windows10客户端">Windows10客户端</h3>
+
+<ol>
+<li><p>添加打印机：</p>
+
+<p><img src="/images/tech/add_printer-1.png" alt="add_printer-1" /></p></li>
+
+<li><p>选择打印机型号：HP Color LaserJet 4550 PS Class Driver （选择其他的打的是空白页面)</p>
+
+<p><img src="/images/tech/add_printer-2.png" alt="add_printer-2" /></p></li>
+</ol>
+
+<h2 id="lpr-lp-命令行打印机设置">lpr lp 命令行打印机设置</h2>
+
+<ul>
+<li>检查/etc/printcap</li>
+</ul>
+
+<p>通过cups的设置，在/etc/printcap 被自动生成：</p>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/etc/printcap</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># This file was automatically generated by cupsd(8) from the</span>
+<span style="color:#75715e"># /etc/cups/printers.conf file.  All changes to this file</span>
+<span style="color:#75715e"># will be lost.</span>
+HP_M1536dnf|HP_M1536dnf:rm<span style="color:#f92672">=</span>mini:rp<span style="color:#f92672">=</span>HP_M1536dnf:
+Virtual_PDF_Printer|Virtual PDF Printer:rm<span style="color:#f92672">=</span>mini:rp<span style="color:#f92672">=</span>Virtual_PDF_Printer:</code></pre></div>
+    </div>
+</div>
+
+<ul>
+<li><p>安装用于打印UTF-8的软件包 app-text/paps</p></li>
+
+<li><p>打印命令举例</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">paps  修心.md |lp -d Virtual_PDF_Printer
+paps --columns<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> thinking.md |lp -d  Virtual_PDF_Printer
+paps --font<span style="color:#f92672">=</span>KaiTi thinking.md |lp -d  Virtual_PDF_Printer
+paps --font<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;KaiTi 12&#34;</span> thinking.md |lp -d  Virtual_PDF_Printer
+paps --font<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;WenQuanYi Zen Hei Sharp 2&#34;</span> thinking.md |lp -d  Virtual_PDF_Printer</code></pre></div></li>
+
+<li><p>字体通过 fc-list 命令可以查到，支持ttf字体。</p></li>
+</ul>
+
+</article>
+
+    </body>
+</html>

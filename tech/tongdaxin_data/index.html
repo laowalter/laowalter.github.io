@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    
+    <link rel="stylesheet" href="/sass/main.min.b0163ad78a5d83e2d8dee2c2f33fa8b557711f0eb2b1ae412eca8874b7bfb72e.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    
+    <link href="/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>通达信数据</h1> 
+            <p class="datetime">Tue, Sep 5, 2017</p>
+            <a class="tag tag--primary tag--small"   href="/"><font color="green">Home</font></a>
+
+            
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/%E9%80%9A%E8%BE%BE%E4%BF%A1">通达信</a>
+                
+            
+          </div>
+      </div>
+
+    <hr><br><nav id="TableOfContents">
+<ul>
+<li><a href="#通达信数据结构解析">通达信数据结构解析</a>
+<ul>
+<li><a href="#通达信自定义指数">通达信自定义指数</a></li>
+<li><a href="#行业板块">行业板块</a></li>
+<li><a href="#通达信自定义板块">通达信自定义板块</a></li>
+<li><a href="#用户自定义板块">用户自定义板块</a></li>
+<li><a href="#板块列表文件-blk">板块列表文件: *.blk</a></li>
+<li><a href="#通达信自定义指数-1">通达信自定义指数</a></li>
+<li><a href="#每个股票对应的申万行业和通达信行业">每个股票对应的申万行业和通达信行业</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h2 id="通达信数据结构解析">通达信数据结构解析</h2>
+
+<h3 id="通达信自定义指数">通达信自定义指数</h3>
+
+<ol>
+<li>相关文件：</li>
+</ol>
+
+<p>[jtable]
+incon.dat,证监会行业、通达信新行业、申万行业等描述信息
+T0002\hq_cache\block.dat,一般板块
+T0002\hq_cache\block_gn.dat,概念板块
+T0002\hq_cache\block_fg.dat,风格板块
+T0002\hq_cache\block_zs.dat,指数板块
+T0002\hq_cache\tdxhy.cfg,每个股票对应通达信行业和申万行业
+T0002\hq_cache\tdxzs.cfg,板块指数，部分板块的最后一个字段映射到incon.dat的TDXNHY和SWHY
+T0002\blocknew\blocknew.cfg,自定义板块概要描述文件
+[/jtable]</p>
+
+<h3 id="行业板块">行业板块</h3>
+
+<ol>
+<li><p>行业</p>
+
+<p>行业包括三个类别：证监会行业；申万行业；通达信新行业</p></li>
+
+<li><p>行业在文件“incon.dat”中定义。文件格式：</p>
+
+<ol>
+<li>文件包含多个行业分类：
+
+<ol>
+<li>证监会行业：开头#ZJHHY，结束######</li>
+<li>申万行业：开头#SWHY，结束######</li>
+<li>通达信新行业：开头#TDXNHY，结束######</li>
+</ol></li>
+<li>每个分类中，每一行包含一个细分行业的代码和名称，以“|”分隔
+
+<ol>
+<li>证监会行业：一级分类为A~M，二级分类A99，三级分类为A9999</li>
+<li>申万行业：一级分类为990000，二级分类为999900，三级分类为999999</li>
+<li>通达信新行业：一级分类为T99，二级分类为T9999，三级分类为T999999</li>
+</ol></li>
+</ol></li>
+
+<li><p>示例如下：</p>
+
+<pre><code>代码|名称
+#ZJHHY
+A|农业
+A01|农业
+A0101|种植业
+A0199|其他农业
+A03|林业
+A0301|林业
+……
+#TDXNHY
+T01|能源
+T0101|煤炭
+T010101|煤炭开采
+T010102|焦炭加工
+T0102|电力
+T010201|水力发电
+T010202|火力发电
+T010203|新型电力
+……
+#SWHY
+110000|农业
+110100|种植业
+110101|种子生产
+110102|粮食种植
+110103|其他种植业
+110200|渔业
+</code></pre></li>
+</ol>
+
+<h3 id="通达信自定义板块">通达信自定义板块</h3>
+
+<p>通达信定义的板块通过如下四个板块文件描述：</p>
+
+<p>[jtable]
+T0002\hq_cache\block.dat,一般板块
+T0002\hq_cache\block_gn.dat,概念板块
+T0002\hq_cache\block_fg.dat,风格板块
+T0002\hq_cache\block_zs.dat,指数板块
+[/jtable]</p>
+
+<p>数据格式的C语言描述如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 股票板块信息文件头格式，T0002/hq_cache/block.dat block_fg.dat block_gn.dat block_zs.dat
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> TTDXBlockHeader
+{
+    <span style="color:#66d9ef">char</span>         szVersion[<span style="color:#ae81ff">64</span>];        <span style="color:#75715e">// 0, Registry ver:1.0 (1999-9-28)
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nIndexOffset;            <span style="color:#75715e">// 64, 0x00000054
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nDataOffset;            <span style="color:#75715e">// 68, 0x00000180
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nData1;                <span style="color:#75715e">// 72, 0x00000003
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nData2;                <span style="color:#75715e">// 76, 0x00000000
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nData3;                <span style="color:#75715e">// 80, 0x00000003
+</span><span style="color:#75715e"></span>};
+
+<span style="color:#66d9ef">struct</span> TTDXBlockIndex
+{
+    <span style="color:#66d9ef">char</span>        szName[<span style="color:#ae81ff">64</span>];            <span style="color:#75715e">// 0, Root, Block, Val
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nData1;                <span style="color:#75715e">// 64
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nData2;                <span style="color:#75715e">// 68
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nLength;                <span style="color:#75715e">// 72, length of the block
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nOffset;                <span style="color:#75715e">// 76, offset of the data part
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nData3;                <span style="color:#75715e">// 80
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nData4;                <span style="color:#75715e">// 84
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nData5;                <span style="color:#75715e">// 88, root=-1,block=0,val=1
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nData6;                <span style="color:#75715e">// 92, root=1,block=2,val=-1
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nStatus;                <span style="color:#75715e">// 96, 1
+</span><span style="color:#75715e"></span>};
+
+<span style="color:#66d9ef">struct</span> TTDXBlockRecord
+{
+    <span style="color:#66d9ef">char</span>         szName[<span style="color:#ae81ff">9</span>];
+    <span style="color:#66d9ef">short</span>        nCount;
+    <span style="color:#66d9ef">short</span>        nLevel;
+    <span style="color:#66d9ef">char</span>         szCode[<span style="color:#ae81ff">400</span>][<span style="color:#ae81ff">7</span>];
+};</code></pre></div>
+<h3 id="用户自定义板块">用户自定义板块</h3>
+
+<p>基本目录：T0002\blocknew</p>
+
+<p>配置文件：blocknew.cfg        记录自定义的板块名称和文件头</p>
+
+<p>配置文件存储格式：</p>
+
+<p>1) 每个板块120字节
+2) 板块名称50字节
+3) 板块文件名头70字节</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 自定义板块概述文件格式，T0002\blocknew\blocknew.cfg
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> TTDXUserBlockRecord
+{
+    <span style="color:#66d9ef">char</span>        szName[<span style="color:#ae81ff">50</span>];
+    <span style="color:#66d9ef">char</span>        szAbbr[<span style="color:#ae81ff">70</span>];        <span style="color:#75715e">// 也是文件名称前缀 T0002\blocknew\xxxx.blk
+</span><span style="color:#75715e"></span>};</code></pre></div>
+<h3 id="板块列表文件-blk">板块列表文件: *.blk</h3>
+
+<p>每行一条记录：每个记录7个数字：</p>
+
+<ol>
+<li>市场代码1位：0 – 深市；1 – 沪市</li>
+<li>股票代码6位</li>
+<li>行结束符：\r\n</li>
+</ol>
+
+<p>T0002\blocknew\ZXG.blk</p>
+
+<p>[jtable]
+市场,股票代码
+1,999999
+0,399001
+0,399005
+0,399006
+1,000016
+1,000300
+0,399330
+[/jtable]</p>
+
+<h3 id="通达信自定义指数-1">通达信自定义指数</h3>
+
+<p>记录在文件T0002\hq_cache\tdxzs.cfg中，每行一条记录，每个记录包含6个字段，字段之间用“,”分隔。字段依次为：</p>
+
+<p>[jtable]
+指数名称,指数代码,类别<br />2-通达信行业板块<br />3-地区板块<br />4-概念板块<br />5-风格板块<br />8-申万行业,未知字段<br />(都为1),未知字段<br />(都为0),行业代码或板块代码<br />a) 类别为2时对应通达信行业代码<br />b) 类别为3对应地域编号，与base.dbf中的DY字段对应<br />c) 类别为4对应概念板块名称<br />d) 类别为5对应风格板块名称<br />e) 类别为8对应申万行业代码</p>
+
+<p>黑龙江,880201,3,1,0,1
+新疆板块,880202,3,1,0,2
+吉林板块,880203,3,1,0,3
+甘肃板块,880204,3,1,0,4
+……
+煤炭,880301,2,1,0,T0101
+煤炭开采,880302,2,1,1,T010101
+焦炭加工,880303,2,1,1,T010102
+电力,880305,2,1,0,T0102
+水力发电,880306,2,1,1,T010201
+[/jtable]</p>
+
+<h3 id="每个股票对应的申万行业和通达信行业">每个股票对应的申万行业和通达信行业</h3>
+
+<p>记录在文件T0002\hq_cache\tdxhy.cfg中：</p>
+
+<p>[jtable]
+市场,股票代码,通达信新行业代码,申万行业代码
+0,000001,T1001,440101
+0,000002,T110201,430101
+0,000004,T040502,370301
+0,000005,T110202,430101
+0,000006,T110202,430101
+0,000007,T0604,460201
+0,000008,T1301,510101
+0,000009,T110201,430101
+0,000010,T110101,250202
+0,000011,T110202,430101
+0,000012,T020603,250101
+0,000014,T110201,430101
+[/jtable]</p>
+
+</article>
+
+    </body>
+</html>

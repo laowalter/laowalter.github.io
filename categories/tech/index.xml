@@ -50,9 +50,7 @@ $ echo apple1 apple3 apple1 apple2 botemo1 | sed &amp;#39;/apple./ { s/apple1/ap
       <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
       
       <guid>/posts/tech/hugo_cheatsheet/</guid>
-      <description>Publish to github  Generate htmls
-docker exec -it hugo hugo  Find and replace wrong address like &amp;ldquo;:1313&amp;rdquo;
-$ cd public/ $ grep -ri :1313 * $ sudo find ./ -type f -exec sed -i -e &amp;#39;s/:1313//g&amp;#39; {} \; $ sudo find ./ -type f -exec sed -i -e &amp;#39;s/192\.168\.0\.199/laowalter.github.io/g&amp;#39; {} \;  Hugo markdown format Section number  default Section number is set to &amp;ldquo;true&amp;rdquo; add &amp;ldquo;section_number = false&amp;rdquo; to front matter if Dont Not want to add section_number in the content.</description>
+      <description>MMark (https://github.com/mmarkdown/mmark) Start mmark In Front Matter add markup = &amp;ldquo;mmark&amp;rdquo; then mmark started. MMark 语法说明 (https://mmark.miek.nl/post/syntax/) By now, MMark conflict with {{/* */}} MMark examples table, #ages means table id=ages Name | Age --------|-----: Bob | 27 Alice | 23 Table: This is the table caption. {#ages} code // test.go data Figure: A sample function. 块引用 {title=&amp;quot;The blockquote&amp;quot; #myid} &amp;gt; A blockquote with a</description>
     </item>
     
     <item>

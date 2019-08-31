@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    
+    <link rel="stylesheet" href="/sass/main.min.b0163ad78a5d83e2d8dee2c2f33fa8b557711f0eb2b1ae412eca8874b7bfb72e.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    
+    <link href="/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Webapp</h1> 
+            <p class="datetime">Sun, Jan 21, 2018</p>
+            <a class="tag tag--primary tag--small"   href="/"><font color="green">Home</font></a>
+
+            
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/gentoo">gentoo</a>
+                
+            
+          </div>
+      </div>
+
+    <hr><br><nav id="TableOfContents">
+<ul>
+<li><a href="#web-config-on-gentoo-wiki-https-wiki-gentoo-org-wiki-webapp-config"><a href="https://wiki.gentoo.org/wiki/Webapp-config">web-config on Gentoo wiki</a></a>
+<ul>
+<li><a href="#install">Install</a></li>
+</ul></li>
+<li><a href="#upgrade-through-webapp-config">Upgrade through webapp-config</a></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h2 id="web-config-on-gentoo-wiki-https-wiki-gentoo-org-wiki-webapp-config"><a href="https://wiki.gentoo.org/wiki/Webapp-config">web-config on Gentoo wiki</a></h2>
+
+<ul>
+<li><p>webconfig&rsquo;s config (/etc/vhosts/webapp-config)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">vhost_server</span>=<span style="color:#e6db74">&#34;nginx&#34;</span></code></pre></div></li>
+</ul>
+
+<h3 id="install">Install</h3>
+
+<ul>
+<li><p>Command</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">webapp-config -h mini -d piwigo -I piwigo <span style="color:#ae81ff">2</span>.9.2</code></pre></div></li>
+</ul>
+
+<p>or</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</span>.9.2</code></pre></div>
+<ul>
+<li><p>Position</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/var/www/</code></pre></div></li>
+</ul>
+
+<h2 id="upgrade-through-webapp-config">Upgrade through webapp-config</h2>
+
+<ol>
+<li><p>根据 /etc/vhosts/webapp-config 执行下列文件</p></li>
+
+<li><p>upgrade</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo webapp-config -h localhost -d piwigo -U piwigo <span style="color:#ae81ff">2</span>.9.4</code></pre></div></li>
+</ol>
+
+</article>
+
+    </body>
+</html>

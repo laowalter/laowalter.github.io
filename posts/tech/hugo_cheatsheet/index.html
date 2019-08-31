@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.b0163ad78a5d83e2d8dee2c2f33fa8b557711f0eb2b1ae412eca8874b7bfb72e.css">
+    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
 
 </head>
 
@@ -52,8 +52,13 @@
 
     <hr><br><nav id="TableOfContents">
 <ul>
-<li><a href="#publish-to-github">Publish to github</a></li>
-<li><a href="#hugo-markdown-format">Hugo markdown format</a>
+<li><a href="#mmark-https-github-com-mmarkdown-mmark">MMark (<a href="https://github.com/mmarkdown/mmark">https://github.com/mmarkdown/mmark</a>)</a>
+<ul>
+<li><a href="#start-mmark">Start mmark</a></li>
+<li><a href="#mmark-语法说明-https-mmark-miek-nl-post-syntax">MMark 语法说明 (<a href="https://mmark.miek.nl/post/syntax/">https://mmark.miek.nl/post/syntax/</a>)</a></li>
+<li><a href="#mmark-examples">MMark examples</a></li>
+</ul></li>
+<li><a href="#markdown-syntax">Markdown Syntax</a>
 <ul>
 <li><a href="#section-number">Section number</a></li>
 <li><a href="#syntax-highlight">Syntax Highlight</a></li>
@@ -69,20 +74,52 @@
 </nav><article>
     
 
-<h2 id="publish-to-github">Publish to github</h2>
+<h2 id="mmark-https-github-com-mmarkdown-mmark">MMark (<a href="https://github.com/mmarkdown/mmark">https://github.com/mmarkdown/mmark</a>)</h2>
 
-<ol>
-<li><p>Generate htmls</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker exec -it hugo hugo </code></pre></div></li>
+<h3 id="start-mmark">Start mmark</h3>
 
-<li><p>Find and replace wrong address like &ldquo;:1313&rdquo;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ cd public/
- $ grep -ri :1313 *
- $ sudo find ./ -type f -exec sed -i -e <span style="color:#e6db74">&#39;s/:1313//g&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
- $ sudo find ./ -type f -exec sed -i -e <span style="color:#e6db74">&#39;s/192\.168\.0\.199/laowalter.github.io/g&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></code></pre></div></li>
-</ol>
+<p>In Front Matter add <strong>markup = &ldquo;mmark&rdquo;</strong> then mmark started.</p>
 
-<h2 id="hugo-markdown-format">Hugo markdown format</h2>
+<h3 id="mmark-语法说明-https-mmark-miek-nl-post-syntax">MMark 语法说明 (<a href="https://mmark.miek.nl/post/syntax/">https://mmark.miek.nl/post/syntax/</a>)</h3>
+
+<ul>
+<li>By now, MMark conflict with <code>{{/* */}}</code></li>
+</ul>
+
+<h3 id="mmark-examples">MMark examples</h3>
+
+<ul>
+<li><p>table, #ages means table id=ages</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">Name    | Age
+--------|-----:
+Bob     | 27
+Alice   | 23
+Table: This is the table caption. {#ages}</code></pre></div></li>
+
+<li><p>code</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">//</span> <span style="color:#a6e22e">test</span>.<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">data</span></code></pre></div></li>
+</ul>
+
+<p>Figure: A sample function.</p>
+
+<ul>
+<li><p>块引用</p>
+
+<pre><code>{title=&quot;The blockquote&quot; #myid}
+&gt; A blockquote with a title
+</code></pre>
+
+<p>Gets expanded into:</p>
+
+<pre><code>&lt;blockquote anchor=&quot;myid&quot; title=&quot;The blockquote&quot;&gt;
+&lt;t&gt;A blockquote with a title&lt;/t&gt;
+&lt;/blockquote&gt;
+</code></pre></li>
+</ul>
+
+<hr>
+
+<h2 id="markdown-syntax">Markdown Syntax</h2>
 
 <h3 id="section-number">Section number</h3>
 

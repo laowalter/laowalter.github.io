@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    
+    <link rel="stylesheet" href="/sass/main.min.b0163ad78a5d83e2d8dee2c2f33fa8b557711f0eb2b1ae412eca8874b7bfb72e.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    
+    <link href="/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Quanta API</h1> 
+            <p class="datetime">Thu, Sep 22, 2016</p>
+            <a class="tag tag--primary tag--small"   href="/"><font color="green">Home</font></a>
+
+            
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/panda">panda</a>
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/quanta">quanta</a>
+                
+            
+          </div>
+      </div>
+
+    <hr><br><nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#查询股票总市值和流通市值">查询股票总市值和流通市值</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h3 id="查询股票总市值和流通市值">查询股票总市值和流通市值</h3>
+
+<p>总市值：mktcap</p>
+
+<p>流通市值：nmc</p>
+
+<pre><code>import tushare as ts
+df = ts.get_today_all()
+df.head()
+df = ts.get_today_all()
+
+code	name	changepercent	trade	open	high	low	settlement	volume	turnoverratio	amount	per	pb	mktcap	nmc
+0	601500	通用股份	10.035	9.43	9.43	9.43	9.43	8.57	24800	0.01418	233864	32.517	3.263	6.854847e+05	1.649487e+05
+1	300536	农尚环境	10.028	15.80	15.80	15.80	15.80	14.36	1500	0.00644	23700	23.235	3.789	1.471096e+05	3.677740e+04
+2	000656	金科股份	10.023	4.83	4.75	4.83	4.66	4.39	112474373	2.98000	540076374	17.889	1.575	2.089584e+06	1.822991e+06
+3	002633	申科股份	10.018	24.60	24.60	24.60	24.60	22.36	812529	0.93374	19988213	175.714	6.996	3.690000e+05	2.140661e+05
+4	300534	陇神戎发	10.017	31.63	31.63	31.63	31.63	28.75	700	0.00323	22141	33.883	4.778	2.741372e+05	6.854221e+04
+</code></pre>
+
+</article>
+
+    </body>
+</html>

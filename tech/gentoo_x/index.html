@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    
+    <link rel="stylesheet" href="/sass/main.min.b0163ad78a5d83e2d8dee2c2f33fa8b557711f0eb2b1ae412eca8874b7bfb72e.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    
+    <link href="/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Gentoo X / Xorg / X11</h1> 
+            <p class="datetime">Sun, Jan 7, 2018</p>
+            <a class="tag tag--primary tag--small"   href="/"><font color="green">Home</font></a>
+
+            
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/x11">x11</a>
+                
+            
+          </div>
+      </div>
+
+    <hr><br><nav id="TableOfContents">
+<ul>
+<li><a href="#xorg-最小安装">Xorg 最小安装</a>
+<ul>
+<li><a href="#检测显卡-配置make-conf">检测显卡, 配置make.conf</a></li>
+<li><a href="#安装xorg-server">安装xorg-server</a>
+<ul>
+<li><a href="#初始化环境变量">初始化环境变量</a></li>
+<li><a href="#使用startx-测试x-安装twm-xterm">使用startx： 测试X，安装twm xterm</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#remote-x-or-remote-vnc">Remote X or Remote VNC</a>
+<ul>
+<li><a href="#installation-guide-by-gentoo-wiki-https-wiki-gentoo-org-wiki-tigervnc"><a href="https://wiki.gentoo.org/wiki/TigerVNC">Installation Guide by Gentoo Wiki</a></a></li>
+<li><a href="#config-setup">Config / Setup</a></li>
+<li><a href="#running-vnc-service">Running vnc service</a></li>
+<li><a href="#windows-10">Windows 10</a>
+<ul>
+<li><a href="#download-tigervnc-from-official-site-https-www-tightvnc-com-download-html">Download tigervnc from <a href="https://www.tightvnc.com/download.html">official site</a></a></li>
+<li><a href="#install-and-run">Install and run</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#tune-x">Tune X</a>
+<ul>
+<li><a href="#xterm">xterm</a></li>
+</ul></li>
+<li><a href="#window-manager">Window Manager</a>
+<ul>
+<li><a href="#list-of-x11-wm-https-www-gilesorr-com-wm-table-html"><a href="https://www.gilesorr.com/wm/table.html">List of x11-wm</a></a></li>
+<li><a href="#fvwm-my-favorite">FVWM (My favorite)</a>
+<ul>
+<li><a href="#documents-http-fvwmforums-org-wiki-config"><a href="http://fvwmforums.org/wiki/Config/">Documents</a></a></li>
+</ul></li>
+</ul></li>
+<li><a href="#xcursor-鼠标光标">xcursor (鼠标光标)</a>
+<ul>
+<li><a href="#x-resources-的gentoo-wiki-https-wiki-gentoo-org-wiki-x-resources"><a href="https://wiki.gentoo.org/wiki/X_resources">X resources 的Gentoo Wiki</a></a></li>
+<li><a href="#关于光标的gentoo-wiki-https-wiki-gentoo-org-wiki-cursor-themes"><a href="https://wiki.gentoo.org/wiki/Cursor_themes">关于光标的Gentoo Wiki</a></a></li>
+<li><a href="#当前地设置过程https-wiki-gentoo-org-wiki-cursor-themes">当前地设置过程<a href="https://wiki.gentoo.org/wiki/Cursor_themes">https://wiki.gentoo.org/wiki/Cursor_themes</a></a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h2 id="xorg-最小安装">Xorg 最小安装</h2>
+
+<h3 id="检测显卡-配置make-conf">检测显卡, 配置make.conf</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#75715e"># dmesg | grep video</span>
+ <span style="color:#75715e"># lspci  | grep -i VGA</span></code></pre></div>
+<p>设置/etc/portage/make.conf文件中两个重要的变量：</p>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/etc/portage/make.conf</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> INPUT_DEVICE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;evdev&#34;</span>
+ VIDEO_CARDS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;intel i965&#34;</span></code></pre></div>
+    </div>
+</div>
+
+<h3 id="安装xorg-server">安装xorg-server</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#75715e"># emerge -pv xorg-server</span>
+ <span style="color:#75715e"># echo &#34;x11-base/xorg-server udev&#34; &gt;&gt; /etc/portage/package.use</span>
+ <span style="color:#75715e"># emerge xorg-server</span></code></pre></div>
+<h4 id="初始化环境变量">初始化环境变量</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#75715e"># env-update</span>
+ <span style="color:#75715e"># source /etc/profile</span></code></pre></div>
+<h4 id="使用startx-测试x-安装twm-xterm">使用startx： 测试X，安装twm xterm</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#75715e"># emerge twm</span>
+ <span style="color:#75715e"># emerge xterm</span>
+ <span style="color:#75715e"># startx</span></code></pre></div>
+<p>测试成功，卸载twm xterm</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#75715e"># emerge --unmerge twm xterm</span></code></pre></div>
+<p>注意事项
+现在比较新的版本的Xorg使用 evdev 替换了 keyboard 和 mouse ，确保 udev 标记在安装 xorg-server 时被启用：# echo &ldquo;x11-base/xorg-server udev&rdquo; &gt;&gt; /etc/portage/package.use</p>
+
+<h2 id="remote-x-or-remote-vnc">Remote X or Remote VNC</h2>
+
+<h3 id="installation-guide-by-gentoo-wiki-https-wiki-gentoo-org-wiki-tigervnc"><a href="https://wiki.gentoo.org/wiki/TigerVNC">Installation Guide by Gentoo Wiki</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ sudo echo <span style="color:#e6db74">&#34;net-misc/tigervnc dri3 drm gnutls nls opengl pam server xorgmodule -java -libressl -xinerama&#34;</span> &gt; /etc/portage/package.use/tigervnc
+ $ emerge -avq tigervnc</code></pre></div>
+<h3 id="config-setup">Config / Setup</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ vncpassword
+ $ vncserver  <span style="color:#f92672">(</span>Will generate a session named Xvnc<span style="color:#f92672">)</span>
+ $ pkill Xvnc</code></pre></div>
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>/etc/conf.d/tigervnc</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> DISPLAY:<span style="color:#e6db74">&#34;user_a:1 user_b:2&#34;</span></code></pre></div>
+    </div>
+</div>
+
+<p><br></p>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>~/.vnc/startup</b></p>
+        
+    </div>
+</div>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span>xrdb <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/.Xresources
+xsetroot -solid grey
+xterm -geometry 80x24+10+10 -ls -title <span style="color:#e6db74">&#34;</span>$VNCDESKTOP<span style="color:#e6db74"> Desktop&#34;</span> &amp;
+twm &amp;</code></pre></td></tr></table>
+</div>
+</div>
+
+<h3 id="running-vnc-service">Running vnc service</h3>
+
+<p><code>Default service port: 5901</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/etc/init.d/tigervnc start</code></pre></div>
+<h3 id="windows-10">Windows 10</h3>
+
+<h4 id="download-tigervnc-from-official-site-https-www-tightvnc-com-download-html">Download tigervnc from <a href="https://www.tightvnc.com/download.html">official site</a></h4>
+
+<h4 id="install-and-run">Install and run</h4>
+
+<ol>
+<li>Custom install the viewer part;</li>
+<li>Runing and specific port 5901;</li>
+</ol>
+
+<h2 id="tune-x">Tune X</h2>
+
+<h3 id="xterm">xterm</h3>
+
+<ol>
+<li><p><a href="http://futurile.net/2016/06/14/xterm-setup-and-truetype-font-configuration/">xterm 文档</a></p></li>
+
+<li><p>.Xresources</p></li>
+</ol>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>~/.Xresources</b></p>
+        
+    </div>
+</div>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xorg" data-lang="xorg"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xorg" data-lang="xorg"><span style="color:#960050;background-color:#1e0010">XTerm*preeditType:</span> Root
+<span style="color:#e6db74">xterm.termName: xterm-256color</span>
+<span style="color:#960050;background-color:#1e0010">xterm.geometry:</span> 80x36
+<span style="color:#e6db74">xterm*scrollBar: true</span>
+<span style="color:#960050;background-color:#1e0010">xterm*rightScrollBar:</span> true
+<span style="color:#e6db74">xterm*loginshell: true</span>
+<span style="color:#960050;background-color:#1e0010">xterm*cursorBlink:</span> true
+<span style="color:#e6db74">xterm*background:  black</span>
+<span style="color:#960050;background-color:#1e0010">xterm*foreground:</span>  gray
+<span style="color:#e6db74">xterm.borderLess: true</span>
+<span style="color:#960050;background-color:#1e0010">xterm.cursorBlink:</span> true
+<span style="color:#e6db74">xterm*colorUL: yellow</span>
+<span style="color:#960050;background-color:#1e0010">xterm*colorBD:</span> white
+
+<span style="color:#e6db74">!fix alt key input</span>
+<span style="color:#960050;background-color:#1e0010">xterm*eightBitInput:</span> false
+<span style="color:#e6db74">xterm*altSendsEscape: true</span>
+<span style="color:#960050;background-color:#1e0010">!</span>print <span style="color:#e6db74">color and bold/underline attributes</span>
+<span style="color:#960050;background-color:#1e0010">xterm*printAttributes:</span> 2
+<span style="color:#e6db74">xterm*printerCommand: cat &gt; ~/xtermdump</span>
+
+<span style="color:#960050;background-color:#1e0010">!</span>mouse <span style="color:#e6db74">selecting to copy, ctrl-v to paste</span>
+<span style="color:#960050;background-color:#1e0010">!</span>Ctrl <span style="color:#e6db74">p to print screen content to file</span>
+<span style="color:#960050;background-color:#1e0010">XTerm*VT100.Translations:</span> <span style="color:#75715e">#override \n\</span>
+    Ctrl <span style="color:#e6db74">&lt;KeyPress&gt; V: insert-selection(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\</span>
+    <span style="color:#960050;background-color:#1e0010">&lt;BtnUp&gt;:</span> <span style="color:#960050;background-color:#1e0010">select-end(CLIPBOARD,PRIMARY,CUT_BUFFER0)</span> <span style="color:#960050;background-color:#1e0010">\n\</span>
+   Ctrl <span style="color:#e6db74">&lt;KeyPress&gt; P: print() </span>
+
+
+<span style="color:#960050;background-color:#1e0010">xterm*locale:</span> true
+<span style="color:#e6db74">xterm.utf8: true</span>
+<span style="color:#960050;background-color:#1e0010">xterm*utf8Title:</span> true
+<span style="color:#e6db74">xterm*fontMenu*fontdefault*Label: Default</span>
+<span style="color:#960050;background-color:#1e0010">xterm*faceName:</span> Inconsolata <span style="color:#e6db74">LGC:pixelsize=14</span>
+<span style="color:#960050;background-color:#1e0010">!xterm*faceNameDoublesize:</span>Adobe <span style="color:#e6db74">Kaiti Std R:pixelsize=14</span>
+<span style="color:#960050;background-color:#1e0010">xterm*faceNameDoublesize:</span> WenQuanYi <span style="color:#e6db74">Zen Hei Mono:pixelsize=14</span>
+<span style="color:#960050;background-color:#1e0010">xterm*xftAntialias:</span> true
+<span style="color:#e6db74">xterm.cjkWidth: true</span>
+
+<span style="color:#960050;background-color:#1e0010">!--</span> Tango <span style="color:#e6db74">color scheme</span>
+<span style="color:#960050;background-color:#1e0010">*xterm*color0:</span> <span style="color:#75715e">#2e3436</span>
+<span style="color:#960050;background-color:#1e0010">*xterm*color1:</span> <span style="color:#75715e">#cc0000</span>
+<span style="color:#960050;background-color:#1e0010">*xterm*color2:</span> <span style="color:#75715e">#4e9a06</span>
+<span style="color:#960050;background-color:#1e0010">*xterm*color3:</span> <span style="color:#75715e">#c4a000</span>
+<span style="color:#960050;background-color:#1e0010">*xterm*color4:</span> <span style="color:#75715e">#3465a4</span>
+<span style="color:#960050;background-color:#1e0010">*xterm*color5:</span> <span style="color:#75715e">#75507b</span>
+<span style="color:#960050;background-color:#1e0010">*xterm*color6:</span> <span style="color:#75715e">#0b939b</span>
+<span style="color:#960050;background-color:#1e0010">*xterm*color7:</span> <span style="color:#75715e">#d3d7cf</span>
+<span style="color:#960050;background-color:#1e0010">*xterm*color8:</span> <span style="color:#75715e">#555753</span>
+<span style="color:#960050;background-color:#1e0010">*xterm*color9:</span> <span style="color:#75715e">#ef2929</span>
+<span style="color:#960050;background-color:#1e0010">*xterm*color10:</span> <span style="color:#75715e">#8ae234</span>
+<span style="color:#960050;background-color:#1e0010">*xterm*color11:</span> <span style="color:#75715e">#fce94f</span>
+<span style="color:#960050;background-color:#1e0010">*xterm*color12:</span> <span style="color:#75715e">#729fcf</span>
+<span style="color:#960050;background-color:#1e0010">*xterm*color13:</span> <span style="color:#75715e">#ad7fa8</span>
+<span style="color:#960050;background-color:#1e0010">*xterm*color14:</span> <span style="color:#75715e">#00f5e9</span>
+<span style="color:#960050;background-color:#1e0010">*xterm*color15:</span> <span style="color:#75715e">#eeeeec</span></code></pre></td></tr></table>
+</div>
+</div>
+
+<h2 id="window-manager">Window Manager</h2>
+
+<h3 id="list-of-x11-wm-https-www-gilesorr-com-wm-table-html"><a href="https://www.gilesorr.com/wm/table.html">List of x11-wm</a></h3>
+
+<h3 id="fvwm-my-favorite">FVWM (My favorite)</h3>
+
+<h4 id="documents-http-fvwmforums-org-wiki-config"><a href="http://fvwmforums.org/wiki/Config/">Documents</a></h4>
+
+<h2 id="xcursor-鼠标光标">xcursor (鼠标光标)</h2>
+
+<p>鼠标光标的在fvwm中的设置，有cursor-style，但是这个不能影响到应用程序（如firefox）的光标，因为应用成的光标是通过x11直接调用的，但是可以修改在fvwm桌面的光标。x11的光标是可以通过xsetroot决定的。</p>
+
+<h4 id="x-resources-的gentoo-wiki-https-wiki-gentoo-org-wiki-x-resources"><a href="https://wiki.gentoo.org/wiki/X_resources">X resources 的Gentoo Wiki</a></h4>
+
+<p>对于光标的设置：</p>
+
+<p>%Filename: ~/.Xresources</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> Xcursor.theme: ComixCursors-White
+ Xcursor.size: <span style="color:#ae81ff">48</span></code></pre></div>
+<p><em>每次都要重新启动X或者 /etc/init.d/tigervnc start</em></p>
+
+<h4 id="关于光标的gentoo-wiki-https-wiki-gentoo-org-wiki-cursor-themes"><a href="https://wiki.gentoo.org/wiki/Cursor_themes">关于光标的Gentoo Wiki</a></h4>
+
+<h4 id="当前地设置过程https-wiki-gentoo-org-wiki-cursor-themes">当前地设置过程<a href="https://wiki.gentoo.org/wiki/Cursor_themes">https://wiki.gentoo.org/wiki/Cursor_themes</a></h4>
+
+</article>
+
+    </body>
+</html>
