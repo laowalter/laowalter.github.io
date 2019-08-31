@@ -706,15 +706,6 @@ mklink /J “%APPDATA%\Apple Computer\MobileSync\Backup” “J:\My iPhone Backu
     </item>
     
     <item>
-      <title>Tor</title>
-      <link>/posts/tech/tor/</link>
-      <pubDate>Fri, 13 Apr 2018 10:36:08 +0000</pubDate>
-      
-      <guid>/posts/tech/tor/</guid>
-      <description>Install tor sudo emerge -avq tor Intall meek git clone https://git.torproject.org/pluggable-transports/meek.git 这里需要了解的一点是meek-client是基于Tor的一个库写的，在代码中也可以看到工程的头部引用了Tor的一个go</description>
-    </item>
-    
-    <item>
       <title>MySQL</title>
       <link>/posts/tech/mysql/</link>
       <pubDate>Thu, 12 Apr 2018 11:21:57 +0000</pubDate>

@@ -6,10 +6,19 @@
     <description>Recent content in gfw on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Apr 2018 10:36:08 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Apr 2019 16:28:06 +0000</lastBuildDate>
     
 	<atom:link href="/tags/gfw/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>V2RAY(websocket,tls,cdn,bbr)</title>
+      <link>/posts/tech/v2ray/</link>
+      <pubDate>Sun, 28 Apr 2019 16:28:06 +0000</pubDate>
+      
+      <guid>/posts/tech/v2ray/</guid>
+      <description>说明： Start from April 27, 2019 官方地址https://www.v2ray.com/ 下载文件https://www.v2ray.com/chapter_00</description>
+    </item>
     
     <item>
       <title>Tor</title>
