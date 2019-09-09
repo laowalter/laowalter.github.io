@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Aug 2019 23:26:07 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 04 Sep 2019 10:04:02 +0800</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>futures</title>
       <link>/tags/futures/</link>
-      <pubDate>Sat, 31 Aug 2019 23:26:07 +0800</pubDate>
+      <pubDate>Wed, 04 Sep 2019 10:04:02 +0800</pubDate>
       
       <guid>/tags/futures/</guid>
       <description></description>
@@ -233,15 +233,6 @@
       <pubDate>Tue, 19 Feb 2019 22:42:10 +0000</pubDate>
       
       <guid>/tags/diy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>video</title>
-      <link>/tags/video/</link>
-      <pubDate>Wed, 02 Jan 2019 12:04:48 +0000</pubDate>
-      
-      <guid>/tags/video/</guid>
       <description></description>
     </item>
     
@@ -539,6 +530,33 @@
       <pubDate>Sun, 11 Feb 2018 19:45:43 +0000</pubDate>
       
       <guid>/tags/pandas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ffmpeg</title>
+      <link>/tags/ffmpeg/</link>
+      <pubDate>Sat, 10 Feb 2018 13:55:13 +0000</pubDate>
+      
+      <guid>/tags/ffmpeg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>music</title>
+      <link>/tags/music/</link>
+      <pubDate>Sat, 10 Feb 2018 13:55:13 +0000</pubDate>
+      
+      <guid>/tags/music/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>video</title>
+      <link>/tags/video/</link>
+      <pubDate>Sat, 10 Feb 2018 13:55:13 +0000</pubDate>
+      
+      <guid>/tags/video/</guid>
       <description></description>
     </item>
     

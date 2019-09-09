@@ -3,37 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/posts/futures/1909%E5%90%88%E7%BA%A61hr%E9%87%8D%E7%82%B9%E5%88%86%E6%9E%90%E5%9B%BE/</loc>
-    <lastmod>2019-08-31T23:26:07+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/</loc>
-    <lastmod>2019-08-31T23:26:07+08:00</lastmod>
+    <lastmod>2019-09-04T10:04:02+08:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/futures/</loc>
-    <lastmod>2019-08-31T23:26:07+08:00</lastmod>
+    <lastmod>2019-09-04T10:04:02+08:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/futures/</loc>
-    <lastmod>2019-08-31T23:26:07+08:00</lastmod>
+    <lastmod>2019-09-04T10:04:02+08:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-08-31T23:26:07+08:00</lastmod>
+    <lastmod>2019-09-04T10:04:02+08:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2019-08-31T23:26:07+08:00</lastmod>
+    <lastmod>2019-09-04T10:04:02+08:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
+    <lastmod>2019-09-04T10:04:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/futures/%E8%87%AA%E7%94%A8%E4%BA%A4%E6%98%93%E8%BD%AF%E4%BB%B6/</loc>
+    <lastmod>2019-09-04T10:04:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/futures/%E5%BB%BA%E7%AB%8B%E5%BA%95%E4%BB%93/</loc>
+    <lastmod>2019-09-03T20:47:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/futures/1909%E5%90%88%E7%BA%A61hr%E9%87%8D%E7%82%B9%E5%88%86%E6%9E%90%E5%9B%BE/</loc>
     <lastmod>2019-08-31T23:26:07+08:00</lastmod>
   </url>
   
@@ -335,16 +345,6 @@
   <url>
     <loc>/posts/futures/%E6%9C%9F%E8%B4%A7%E4%BB%8A%E6%97%A5%E5%A4%8D%E7%9B%98/</loc>
     <lastmod>2019-01-21T15:37:58+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/tech/ffmpeg/</loc>
-    <lastmod>2019-01-02T12:04:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/video/</loc>
-    <lastmod>2019-01-02T12:04:48+00:00</lastmod>
   </url>
   
   <url>
@@ -788,7 +788,22 @@
   </url>
   
   <url>
+    <loc>/tags/ffmpeg/</loc>
+    <lastmod>2018-02-10T13:55:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/music/</loc>
+    <lastmod>2018-02-10T13:55:13+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/posts/tech/video/</loc>
+    <lastmod>2018-02-10T13:55:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/video/</loc>
     <lastmod>2018-02-10T13:55:13+00:00</lastmod>
   </url>
   
@@ -845,11 +860,6 @@
   <url>
     <loc>/posts/tech/jupyter_in_python/</loc>
     <lastmod>2017-12-07T15:07:58+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/life/bookmark/</loc>
-    <lastmod>2017-12-04T17:13:52+00:00</lastmod>
   </url>
   
   <url>

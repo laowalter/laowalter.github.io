@@ -37,6 +37,12 @@
                     
                     <a class="tag tag--primary tag--small" href="/tags/video">video</a>
                 
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/music">music</a>
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/ffmpeg">ffmpeg</a>
+                
             
           </div>
       </div>
@@ -46,7 +52,10 @@
 <li><a href="#video-combine">Video Combine</a>
 <ul>
 <li><a href="#combine-multiple-flvs-into-one">Combine multiple flvs into one</a></li>
-<li><a href="#spit-one-mp4-into-multiple-mp4">Spit One mp4 into multiple mp4</a></li>
+<li><a href="#spit-one-mp4-into-multiple-mp4">Spit One mp4 into multiple mp4</a>
+<ul>
+<li><a href="#split-videos-and-music-file-into-chunks">Split videos and music file into chunks</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#video-downloader">Video Downloader</a>
 <ul>
@@ -65,6 +74,28 @@
 mencoder -forceidx -of lavf -oac pcm -ovc copy -o film.flv <span style="color:#ae81ff">1</span>.flv <span style="color:#ae81ff">2</span>.flv <span style="color:#ae81ff">3</span>.flv <span style="color:#ae81ff">4</span>.flv <span style="color:#ae81ff">5</span>.flv <span style="color:#ae81ff">6</span>.flv <span style="color:#ae81ff">7</span>.flv <span style="color:#ae81ff">8</span>.flv <span style="color:#ae81ff">9</span>.flv</code></pre></div>
 <h3 id="spit-one-mp4-into-multiple-mp4">Spit One mp4 into multiple mp4</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffmpeg -i 5大運動傷害搶先知.mp4 -c copy -map <span style="color:#ae81ff">0</span> -segment_time <span style="color:#ae81ff">00</span>:01:30 -f segment -f segment output%03d.mp4</code></pre></div>
+<h4 id="split-videos-and-music-file-into-chunks">Split videos and music file into chunks</h4>
+
+<pre><code>* 可以是webm, mp3 或其他 video文件；
+* -segment_time 后面的参数是秒；
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffmpeg -i music.webm -f segment -segment_time <span style="color:#ae81ff">4000</span> -c copy output%03d.webm</code></pre></div>
+<ul>
+<li>把当前的目录内<strong>所有的mov文件转换成MP4</strong></li>
+</ul>
+
+<div class="file" >
+    
+    <div class="filename" >
+        <p style="padding:0; margin:0;">filename: <b>convert.sh</b></p>
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">for</span> i in *.mov; <span style="color:#66d9ef">do</span>
+    ffmpeg -i <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> -vcodec copy -acodec copy <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>i%.*<span style="color:#e6db74">}</span><span style="color:#e6db74">.mp4&#34;</span>k
+<span style="color:#66d9ef">done</span></code></pre></div>
+    </div>
+</div>
+
 <h2 id="video-downloader">Video Downloader</h2>
 
 <h3 id="youtube">youtube</h3>
