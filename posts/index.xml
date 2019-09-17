@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Sep 2019 10:04:02 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Sep 2019 13:32:25 +0800</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mac里的文件复制到 NTFS 格式的移动硬盘里</title>
+      <link>/posts/tech/macoswritetontfs/</link>
+      <pubDate>Tue, 17 Sep 2019 13:32:25 +0800</pubDate>
+      
+      <guid>/posts/tech/macoswritetontfs/</guid>
+      <description>Install Homebrew Install ntfs-3g brew update brew install ntfs-3g Install Fuse Box 在 https://osxfuse.github.io/ 下载安装 FUSE for macOS 3.10.2` 将原来系统的mount_nfs 备份为mount_nfs.orig sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.orig //将原系文件改名备份 如</description>
+    </item>
     
     <item>
       <title>自用交易软件</title>
@@ -17,7 +26,7 @@
       <pubDate>Wed, 04 Sep 2019 10:04:02 +0800</pubDate>
       
       <guid>/posts/futures/%E8%87%AA%E7%94%A8%E4%BA%A4%E6%98%93%E8%BD%AF%E4%BB%B6/</guid>
-      <description>文化交易软件的参考 持仓 品种 合约号 多空 开仓均价 总仓 浮盈 价值 保证金 资金占比 持仓均价 投保 玉米 c2001 多 2100 20 33831 20.69% 1879.50 成交 时间 合约 买卖 开平 成交价 平仓盈亏 （逐笔</description>
+      <description>当前软件实现 ./trans -o -l -ctr c2001 -p 1879.50 -vol 20 -fee 26.40 --mrg 33804 ./trans -o -l -ctr c2005 -p 1941.53 -vol 17 -fee 22.44 --mrg 29651 ./trans -o -l -ctr y2001 -p 6110 -vol 1 -fee 2.80 -tag 2 ./trans -c -s -ctr y2001 -p 6114 -vol 1 -fee 0.04 -pft 40 -tag 2 文化交易软件的参考 持</description>
     </item>
     
     <item>

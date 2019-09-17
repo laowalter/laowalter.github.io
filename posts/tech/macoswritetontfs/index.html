@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    
+    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+    
+    <link href="/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body>
+       <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Mac里的文件复制到 NTFS 格式的移动硬盘里</h1> 
+            <p class="datetime">Tue, Sep 17, 2019</p>
+            <a class="tag tag--primary tag--small"   href="/"><font color="green">Home</font></a>
+
+            
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/mac">mac</a>
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/ntfs">ntfs</a>
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/fuse">fuse</a>
+                
+            
+          </div>
+      </div>
+
+    <hr><br><nav id="TableOfContents">
+<ul>
+<li><a href="#install-homebrew">Install Homebrew</a></li>
+<li><a href="#install-ntfs-3g">Install ntfs-3g</a></li>
+<li><a href="#install-fuse-box">Install Fuse Box</a></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<h2 id="install-homebrew">Install Homebrew</h2>
+
+<h2 id="install-ntfs-3g">Install ntfs-3g</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew update
+brew install ntfs-3g</code></pre></div>
+<h2 id="install-fuse-box">Install Fuse Box</h2>
+
+<ol>
+<li><p>在 <a href="https://osxfuse.github.io/">https://osxfuse.github.io/</a> 下载安装 <code>FUSE for macOS 3.10.2</code>`</p></li>
+
+<li><p>将原来系统的mount_nfs 备份为mount_nfs.orig</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.orig  //将原系文件改名备份</code></pre></div>
+<p><em>如果遇到将系统自带挂载程序改名时提示 mv: rename mount_ntfs to mount_ntfs_orig: Operation not permitted. 的问题，可按 osx - Operation Not Permitted when on root El capitan (rootless disabled) 提到的方法解决，具体步骤如下</em></p>
+
+<p><em>重启 Mac，cmd+R 进入恢复（recovery）模式
+找到 terminal（在“XX工具”里面）
+打开后输入如下命令关闭安全限制</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">csrutil disable</code></pre></div>
+<p><em>输入如下命令重启，重复上面的步骤</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">reboot</code></pre></div></li>
+
+<li><p>用刚刚安装的ntfs-3g包中的mount_ntfs 替代。</p>
+
+<ul>
+<li><p>方法一：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo ln -s /usr/local/sbin/mount_ntfs/sbin/mount_ntfs </code></pre></div></li>
+
+<li><p>方法二：</p>
+
+<p>自建文件</p></li>
+</ul>
+
+<div class="file" >
+    
+<div class="filename" >
+    <p style="padding:0; margin:0;">filename: <b>/sbin/mount_nfs</b></p>
+    <code>bash
+#!/bin/sh
+    /sbin/mount_ntfs_orig -o rw,nobrowse &quot;$@&quot;
+</code>
+</div>
+</div></li>
+
+<li><p>在完成修改后，应该回到恢复模式里启用安全限制，避免其他安全隐患。具体操作同上，只是把 csrutil 后面改成 enable</p></li>
+</ol>
+
+</article>
+
+    </body>
+</html>

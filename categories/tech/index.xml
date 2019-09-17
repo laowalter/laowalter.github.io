@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tech on Just a Memo</title>
+    <title>Tech on Just a Memo</title>
     <link>/categories/tech/</link>
-    <description>Recent content in tech on Just a Memo</description>
+    <description>Recent content in Tech on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Aug 2019 12:31:39 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Sep 2019 13:32:25 +0800</lastBuildDate>
     
 	<atom:link href="/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mac里的文件复制到 NTFS 格式的移动硬盘里</title>
+      <link>/posts/tech/macoswritetontfs/</link>
+      <pubDate>Tue, 17 Sep 2019 13:32:25 +0800</pubDate>
+      
+      <guid>/posts/tech/macoswritetontfs/</guid>
+      <description>Install Homebrew Install ntfs-3g brew update brew install ntfs-3g Install Fuse Box 在 https://osxfuse.github.io/ 下载安装 FUSE for macOS 3.10.2` 将原来系统的mount_nfs 备份为mount_nfs.orig sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.orig //将原系文件改名备份 如</description>
+    </item>
     
     <item>
       <title>CSS</title>
