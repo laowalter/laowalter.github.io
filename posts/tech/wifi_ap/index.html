@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -66,7 +66,7 @@
 
 <h2 id="check-hardware">Check hardware</h2>
 
-<pre><code><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">     $ lspci -n | grep 14e4
+<pre><code><div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">     $ lspci -n | grep 14e4
     </code></pre></div>
 </code></pre>
 
@@ -76,7 +76,7 @@
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>kernel config</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-config" data-lang="config">    CONFIG_WLAN_VENDOR_BROADCOM=y
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-config" data-lang="config">    CONFIG_WLAN_VENDOR_BROADCOM=y
     CONFIG_B43=m
     CONFIG_B43_BCMA=y
     CONFIG_B43_SSB=y
@@ -117,7 +117,7 @@
 
 <h2 id="intall-package">Intall package</h2>
 
-<pre><code><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">       $ emerge -avq net-wireless/b43-fwcutter
+<pre><code><div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">       $ emerge -avq net-wireless/b43-fwcutter
        $ emerge -avq sys-firmware/b43-firmware
     </code></pre></div>
 </code></pre>
@@ -131,18 +131,18 @@
 <ul>
 <li><p>Find the hardware info</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ iw phy
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ iw phy
     </code></pre></div></li>
 
 <li><p>/etc/wpa_spplicant/wpa_supplicant.conf</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  network<span style="color:#f92672">={</span>
-      ssid<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;AP-NAME&#34;</span>
-      mode<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
-      key_mgmt<span style="color:#f92672">=</span>WPA-PSK
-      psk<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span>
-      frequency<span style="color:#f92672">=</span><span style="color:#ae81ff">2462</span>
-  <span style="color:#f92672">}</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  <span style="color:#fb660a">network</span>={
+      <span style="color:#fb660a">ssid</span>=<span style="color:#0086d2">&#34;AP-NAME&#34;</span>
+      <span style="color:#fb660a">mode</span>=<span style="color:#0086f7;font-weight:bold">2</span>
+      <span style="color:#fb660a">key_mgmt</span>=WPA-PSK
+      <span style="color:#fb660a">psk</span>=<span style="color:#0086d2">&#34;password&#34;</span>
+      <span style="color:#fb660a">frequency</span>=<span style="color:#0086f7;font-weight:bold">2462</span>
+  }
     </code></pre></div></li>
 </ul>
 
@@ -153,7 +153,7 @@
 <ul>
 <li><p>install dhcp with server use</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ su
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ su
  $ echo ‘net-misc/dhcp server’ | sudo tee -a /etc/portage/package.use
  $ emerge -avq net-misc/dhcp
     </code></pre></div></li>
@@ -168,34 +168,34 @@
 </div>
 </div>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /etc/conf.d/dhcpd: config file for /etc/init.d/dhcpd</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#080;background-color:#0f140f;font-style:italic"># /etc/conf.d/dhcpd: config file for /etc/init.d/dhcpd</span>
 
-<span style="color:#75715e"># If you require more than one instance of dhcpd you can create symbolic</span>
-<span style="color:#75715e"># links to dhcpd service like so</span>
-<span style="color:#75715e">#   cd /etc/init.d</span>
-<span style="color:#75715e">#   ln -s dhcpd dhcpd.foo</span>
-<span style="color:#75715e">#   cd ../conf.d</span>
-<span style="color:#75715e">#   cp dhcpd dhcpd.foo</span>
-<span style="color:#75715e"># Now you can edit dhcpd.foo and specify a different configuration file.</span>
-<span style="color:#75715e"># You&#39;ll also need to specify a pidfile in that dhcpd.conf file.</span>
-<span style="color:#75715e"># See the pid-file-name option in the dhcpd.conf man page for details.</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># If you require more than one instance of dhcpd you can create symbolic</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># links to dhcpd service like so</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#   cd /etc/init.d</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#   ln -s dhcpd dhcpd.foo</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#   cd ../conf.d</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#   cp dhcpd dhcpd.foo</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Now you can edit dhcpd.foo and specify a different configuration file.</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># You&#39;ll also need to specify a pidfile in that dhcpd.conf file.</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># See the pid-file-name option in the dhcpd.conf man page for details.</span>
 
-<span style="color:#75715e"># If you wish to run dhcpd in a chroot, uncomment the following line</span>
-<span style="color:#75715e"># DHCPD_CHROOT=&#34;/var/lib/dhcp/chroot&#34;</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># If you wish to run dhcpd in a chroot, uncomment the following line</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># DHCPD_CHROOT=&#34;/var/lib/dhcp/chroot&#34;</span>
 
-<span style="color:#75715e"># All file paths below are relative to the chroot.</span>
-<span style="color:#75715e"># You can specify a different chroot directory but MAKE SURE it&#39;s empty.</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># All file paths below are relative to the chroot.</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># You can specify a different chroot directory but MAKE SURE it&#39;s empty.</span>
 
-<span style="color:#75715e"># Specify a configuration file - the default is /etc/dhcp/dhcpd.conf</span>
-DHCPD_CONF<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/etc/dhcp/dhcpd.conf&#34;</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Specify a configuration file - the default is /etc/dhcp/dhcpd.conf</span>
+<span style="color:#fb660a">DHCPD_CONF</span>=<span style="color:#0086d2">&#34;/etc/dhcp/dhcpd.conf&#34;</span>
 
-<span style="color:#75715e"># Configure which interface or interfaces to for dhcpd to listen on.</span>
-<span style="color:#75715e"># List all interfaces space separated. If this is not specified then</span>
-<span style="color:#75715e"># we listen on all interfaces.</span>
-DHCPD_IFACE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wlan0&#34;</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Configure which interface or interfaces to for dhcpd to listen on.</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># List all interfaces space separated. If this is not specified then</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># we listen on all interfaces.</span>
+<span style="color:#fb660a">DHCPD_IFACE</span>=<span style="color:#0086d2">&#34;wlan0&#34;</span>
 
-<span style="color:#75715e"># Insert any other dhcpd options - see the man page for a full list.</span>
-<span style="color:#75715e"># DHCPD_OPTS=&#34;&#34;</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Insert any other dhcpd options - see the man page for a full list.</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># DHCPD_OPTS=&#34;&#34;</span>
     </code></pre></div></li>
 
 <li><p>Configure /etc/dhcp/dhcpd.conf</p>
@@ -206,24 +206,24 @@ DHCPD_IFACE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;
     
 <div class="filename" >
     <p style="padding:0; margin:0;">filename: <b>/etc/conf.d/dhcpd.conf</b></p>
-    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">subnet <span style="color:#ae81ff">192</span>.168.6.0 netmask <span style="color:#ae81ff">255</span>.255.255.0 <span style="color:#f92672">{</span>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">subnet <span style="color:#0086f7;font-weight:bold">192</span>.168.6.0 netmask <span style="color:#0086f7;font-weight:bold">255</span>.255.255.0 {
 interface wlan0;
-range <span style="color:#ae81ff">192</span>.168.6.20 <span style="color:#ae81ff">192</span>.168.6.30;
-option domain-name-servers <span style="color:#ae81ff">192</span>.168.0.199, <span style="color:#ae81ff">192</span>.168.0.1;
-option domain-search <span style="color:#e6db74">&#34;ghome&#34;</span>;
-option routers <span style="color:#ae81ff">192</span>.168.6.1;
-option broadcast-address <span style="color:#ae81ff">192</span>.168.6.255;
-default-lease-time <span style="color:#ae81ff">600</span>;
-max-lease-time <span style="color:#ae81ff">7200</span>;
-<span style="color:#f92672">}</span></code></pre></div>
+range <span style="color:#0086f7;font-weight:bold">192</span>.168.6.20 <span style="color:#0086f7;font-weight:bold">192</span>.168.6.30;
+option domain-name-servers <span style="color:#0086f7;font-weight:bold">192</span>.168.0.199, <span style="color:#0086f7;font-weight:bold">192</span>.168.0.1;
+option domain-search <span style="color:#0086d2">&#34;ghome&#34;</span>;
+option routers <span style="color:#0086f7;font-weight:bold">192</span>.168.6.1;
+option broadcast-address <span style="color:#0086f7;font-weight:bold">192</span>.168.6.255;
+default-lease-time <span style="color:#0086f7;font-weight:bold">600</span>;
+max-lease-time <span style="color:#0086f7;font-weight:bold">7200</span>;
+}</code></pre></div>
 </div>
 </div></li>
 </ul>
 
 <h3 id="start-wifi-interface-controlled-by-wpa-supplicant-and-dhcp-server">Start wifi interface, controlled by wpa_supplicant and DHCP server:</h3>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ sudo /etc/init.d/net.wifi start
- $ sudo ifconfig wifi <span style="color:#ae81ff">192</span>.168.6.1/24</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ sudo /etc/init.d/net.wifi start
+ $ sudo ifconfig wifi <span style="color:#0086f7;font-weight:bold">192</span>.168.6.1/24</code></pre></div>
 
 <h3 id="set-for-permanent-etc-conf-d-net">Set for permanent /etc/conf.d/net</h3>
 
@@ -231,14 +231,14 @@ max-lease-time <span style="color:#ae81ff">7200</span>;
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/conf.d/net</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">   <span style="color:#75715e">## WIRED to internet ##</span>
-   config_eth0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;192.168.0.199 netmask 255.255.255.0 brd 192.168.0.255&#34;</span>
-   routes_eth0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;default via 192.168.0.1&#34;</span>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">   <span style="color:#080;background-color:#0f140f;font-style:italic">## WIRED to internet ##</span>
+   <span style="color:#fb660a">config_eth0</span>=<span style="color:#0086d2">&#34;192.168.0.199 netmask 255.255.255.0 brd 192.168.0.255&#34;</span>
+   <span style="color:#fb660a">routes_eth0</span>=<span style="color:#0086d2">&#34;default via 192.168.0.1&#34;</span>
    
-   <span style="color:#75715e">## WIFI ##</span>
-   modules_wlan0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wpa_supplicant&#34;</span>
-   config_wlan0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;192.168.6.1/24&#34;</span>
-   wpa_supplicant_wlan0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-Dnl80211 -d -f /var/log/wpa_supplicant.log&#34;</span></code></pre></div>
+   <span style="color:#080;background-color:#0f140f;font-style:italic">## WIFI ##</span>
+   <span style="color:#fb660a">modules_wlan0</span>=<span style="color:#0086d2">&#34;wpa_supplicant&#34;</span>
+   <span style="color:#fb660a">config_wlan0</span>=<span style="color:#0086d2">&#34;192.168.6.1/24&#34;</span>
+   <span style="color:#fb660a">wpa_supplicant_wlan0</span>=<span style="color:#0086d2">&#34;-Dnl80211 -d -f /var/log/wpa_supplicant.log&#34;</span></code></pre></div>
     </div>
 </div>
 
@@ -246,8 +246,8 @@ max-lease-time <span style="color:#ae81ff">7200</span>;
 
 <p>假设192.168.0.199 wired to the Internet</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ sudo echo <span style="color:#ae81ff">1</span> &gt; /proc/sys/net/ipv4/ip_forward
- $ sudo iptables -t nat -A POSTROUTING --source <span style="color:#ae81ff">192</span>.168.6.0/24 -j SNAT --to <span style="color:#ae81ff">192</span>.168.0.199
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ sudo echo <span style="color:#0086f7;font-weight:bold">1</span> &gt; /proc/sys/net/ipv4/ip_forward
+ $ sudo iptables -t nat -A POSTROUTING --source <span style="color:#0086f7;font-weight:bold">192</span>.168.6.0/24 -j SNAT --to <span style="color:#0086f7;font-weight:bold">192</span>.168.0.199
  $ sudo /etc/init.d/iptables save
  $ sudo rc-update add iptables default</code></pre></div>
 
@@ -255,13 +255,13 @@ max-lease-time <span style="color:#ae81ff">7200</span>;
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/sysctl.conf</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">net.ipv4.ip_forward <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span></code></pre></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">net.ipv4.ip_forward = <span style="color:#0086f7;font-weight:bold">1</span></code></pre></div>
     </div>
 </div>
 
 <h2 id="default-services">Default services</h2>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ rc-update add wpa_supplicant default
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ rc-update add wpa_supplicant default
  $ rc-update add net.wlan0 default</code></pre></div>
 
 <h2 id="by-hostapd">By hostapd</h2>
@@ -277,9 +277,9 @@ max-lease-time <span style="color:#ae81ff">7200</span>;
 </div>
 </div>
 
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -291,15 +291,15 @@ max-lease-time <span style="color:#ae81ff">7200</span>;
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Disable wpa_supplicant first
-<span style="color:#75715e">## WIRED ##</span>
-config_eth0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;192.168.0.199 netmask 255.255.255.0 brd 192.168.0.255&#34;</span>
-routes_eth0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;default via 192.168.0.1&#34;</span>
+<pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Disable wpa_supplicant first
+<span style="color:#080;background-color:#0f140f;font-style:italic">## WIRED ##</span>
+<span style="color:#fb660a">config_eth0</span>=<span style="color:#0086d2">&#34;192.168.0.199 netmask 255.255.255.0 brd 192.168.0.255&#34;</span>
+<span style="color:#fb660a">routes_eth0</span>=<span style="color:#0086d2">&#34;default via 192.168.0.1&#34;</span>
 
-modules_wlan0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;!wpa_supplicant&#34;</span>
-<span style="color:#75715e">#wpa_supplicant_wlan0=&#34;-Dnl80211 -d -f /var/log/wpa_supplicant.log&#34;</span>
-config_wlan0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;192.168.6.1/24&#34;</span>
-routes_wlan0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;default via 192.168.0.1&#34;</span>
+<span style="color:#fb660a">modules_wlan0</span>=<span style="color:#0086d2">&#34;!wpa_supplicant&#34;</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#wpa_supplicant_wlan0=&#34;-Dnl80211 -d -f /var/log/wpa_supplicant.log&#34;</span>
+<span style="color:#fb660a">config_wlan0</span>=<span style="color:#0086d2">&#34;192.168.6.1/24&#34;</span>
+<span style="color:#fb660a">routes_wlan0</span>=<span style="color:#0086d2">&#34;default via 192.168.0.1&#34;</span>
     </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -314,9 +314,9 @@ routes_wlan0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34
 </div>
 </div>
 
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -368,55 +368,55 @@ routes_wlan0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">interface<span style="color:#f92672">=</span>wlan0
-driver<span style="color:#f92672">=</span>nl80211
-logger_syslog<span style="color:#f92672">=</span>-1
-logger_syslog_level<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
-logger_stdout<span style="color:#f92672">=</span>-1
-logger_stdout_level<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
-ctrl_interface<span style="color:#f92672">=</span>/var/run/hostapd
-ctrl_interface_group<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
-ssid<span style="color:#f92672">=</span>test
-hw_mode<span style="color:#f92672">=</span>g
-channel<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-beacon_int<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>
-dtim_period<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
-max_num_sta<span style="color:#f92672">=</span><span style="color:#ae81ff">255</span>
-rts_threshold<span style="color:#f92672">=</span>-1
-fragm_threshold<span style="color:#f92672">=</span>-1
-macaddr_acl<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
-auth_algs<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-ignore_broadcast_ssid<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
-wmm_enabled<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-wmm_ac_bk_cwmin<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
-wmm_ac_bk_cwmax<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
-wmm_ac_bk_aifs<span style="color:#f92672">=</span><span style="color:#ae81ff">7</span>
-wmm_ac_bk_txop_limit<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
-wmm_ac_bk_acm<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
-wmm_ac_be_aifs<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>
-wmm_ac_be_cwmin<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
-wmm_ac_be_cwmax<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
-wmm_ac_be_txop_limit<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
-wmm_ac_be_acm<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
-wmm_ac_vi_aifs<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
-wmm_ac_vi_cwmin<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>
-wmm_ac_vi_cwmax<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
-wmm_ac_vi_txop_limit<span style="color:#f92672">=</span><span style="color:#ae81ff">94</span>
-wmm_ac_vi_acm<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
-wmm_ac_vo_aifs<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
-wmm_ac_vo_cwmin<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
-wmm_ac_vo_cwmax<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>
-wmm_ac_vo_txop_limit<span style="color:#f92672">=</span><span style="color:#ae81ff">47</span>
-wmm_ac_vo_acm<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
-ht_capab<span style="color:#f92672">=[</span>SHORT-GI-40<span style="color:#f92672">]</span>
-eapol_key_index_workaround<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
-eap_server<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
-own_ip_addr<span style="color:#f92672">=</span><span style="color:#ae81ff">127</span>.0.0.1
-wpa<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
-wpa_passphrase<span style="color:#f92672">=</span>Helecomm1
-wpa_key_mgmt<span style="color:#f92672">=</span>WPA-PSK
-rsn_pairwise<span style="color:#f92672">=</span>CCMP
-ssid<span style="color:#f92672">=</span>ghome2
+<pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fb660a">interface</span>=wlan0
+<span style="color:#fb660a">driver</span>=nl80211
+<span style="color:#fb660a">logger_syslog</span>=-1
+<span style="color:#fb660a">logger_syslog_level</span>=<span style="color:#0086f7;font-weight:bold">2</span>
+<span style="color:#fb660a">logger_stdout</span>=-1
+<span style="color:#fb660a">logger_stdout_level</span>=<span style="color:#0086f7;font-weight:bold">2</span>
+<span style="color:#fb660a">ctrl_interface</span>=/var/run/hostapd
+<span style="color:#fb660a">ctrl_interface_group</span>=<span style="color:#0086f7;font-weight:bold">0</span>
+<span style="color:#fb660a">ssid</span>=test
+<span style="color:#fb660a">hw_mode</span>=g
+<span style="color:#fb660a">channel</span>=<span style="color:#0086f7;font-weight:bold">1</span>
+<span style="color:#fb660a">beacon_int</span>=<span style="color:#0086f7;font-weight:bold">100</span>
+<span style="color:#fb660a">dtim_period</span>=<span style="color:#0086f7;font-weight:bold">2</span>
+<span style="color:#fb660a">max_num_sta</span>=<span style="color:#0086f7;font-weight:bold">255</span>
+<span style="color:#fb660a">rts_threshold</span>=-1
+<span style="color:#fb660a">fragm_threshold</span>=-1
+<span style="color:#fb660a">macaddr_acl</span>=<span style="color:#0086f7;font-weight:bold">0</span>
+<span style="color:#fb660a">auth_algs</span>=<span style="color:#0086f7;font-weight:bold">1</span>
+<span style="color:#fb660a">ignore_broadcast_ssid</span>=<span style="color:#0086f7;font-weight:bold">0</span>
+<span style="color:#fb660a">wmm_enabled</span>=<span style="color:#0086f7;font-weight:bold">1</span>
+<span style="color:#fb660a">wmm_ac_bk_cwmin</span>=<span style="color:#0086f7;font-weight:bold">4</span>
+<span style="color:#fb660a">wmm_ac_bk_cwmax</span>=<span style="color:#0086f7;font-weight:bold">10</span>
+<span style="color:#fb660a">wmm_ac_bk_aifs</span>=<span style="color:#0086f7;font-weight:bold">7</span>
+<span style="color:#fb660a">wmm_ac_bk_txop_limit</span>=<span style="color:#0086f7;font-weight:bold">0</span>
+<span style="color:#fb660a">wmm_ac_bk_acm</span>=<span style="color:#0086f7;font-weight:bold">0</span>
+<span style="color:#fb660a">wmm_ac_be_aifs</span>=<span style="color:#0086f7;font-weight:bold">3</span>
+<span style="color:#fb660a">wmm_ac_be_cwmin</span>=<span style="color:#0086f7;font-weight:bold">4</span>
+<span style="color:#fb660a">wmm_ac_be_cwmax</span>=<span style="color:#0086f7;font-weight:bold">10</span>
+<span style="color:#fb660a">wmm_ac_be_txop_limit</span>=<span style="color:#0086f7;font-weight:bold">0</span>
+<span style="color:#fb660a">wmm_ac_be_acm</span>=<span style="color:#0086f7;font-weight:bold">0</span>
+<span style="color:#fb660a">wmm_ac_vi_aifs</span>=<span style="color:#0086f7;font-weight:bold">2</span>
+<span style="color:#fb660a">wmm_ac_vi_cwmin</span>=<span style="color:#0086f7;font-weight:bold">3</span>
+<span style="color:#fb660a">wmm_ac_vi_cwmax</span>=<span style="color:#0086f7;font-weight:bold">4</span>
+<span style="color:#fb660a">wmm_ac_vi_txop_limit</span>=<span style="color:#0086f7;font-weight:bold">94</span>
+<span style="color:#fb660a">wmm_ac_vi_acm</span>=<span style="color:#0086f7;font-weight:bold">0</span>
+<span style="color:#fb660a">wmm_ac_vo_aifs</span>=<span style="color:#0086f7;font-weight:bold">2</span>
+<span style="color:#fb660a">wmm_ac_vo_cwmin</span>=<span style="color:#0086f7;font-weight:bold">2</span>
+<span style="color:#fb660a">wmm_ac_vo_cwmax</span>=<span style="color:#0086f7;font-weight:bold">3</span>
+<span style="color:#fb660a">wmm_ac_vo_txop_limit</span>=<span style="color:#0086f7;font-weight:bold">47</span>
+<span style="color:#fb660a">wmm_ac_vo_acm</span>=<span style="color:#0086f7;font-weight:bold">0</span>
+<span style="color:#fb660a">ht_capab</span>=[SHORT-GI-40]
+<span style="color:#fb660a">eapol_key_index_workaround</span>=<span style="color:#0086f7;font-weight:bold">0</span>
+<span style="color:#fb660a">eap_server</span>=<span style="color:#0086f7;font-weight:bold">0</span>
+<span style="color:#fb660a">own_ip_addr</span>=<span style="color:#0086f7;font-weight:bold">127</span>.0.0.1
+<span style="color:#fb660a">wpa</span>=<span style="color:#0086f7;font-weight:bold">2</span>
+<span style="color:#fb660a">wpa_passphrase</span>=Helecomm1
+<span style="color:#fb660a">wpa_key_mgmt</span>=WPA-PSK
+<span style="color:#fb660a">rsn_pairwise</span>=CCMP
+<span style="color:#fb660a">ssid</span>=ghome2
     </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -424,11 +424,16 @@ ssid<span style="color:#f92672">=</span>ghome2
 
 <h2 id="default-service">Default service</h2>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ rc-update add hostapd default
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ rc-update add hostapd default
  $ rc-update add dhcpd default
  $ rc-update add net.wlan0 default</code></pre></div>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

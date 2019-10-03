@@ -6,10 +6,28 @@
     <description>Recent content in Categories on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Sep 2019 13:32:25 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Sep 2019 15:01:52 +0800</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>futures</title>
+      <link>/categories/futures/</link>
+      <pubDate>Thu, 26 Sep 2019 15:01:52 +0800</pubDate>
+      
+      <guid>/categories/futures/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>music</title>
+      <link>/categories/music/</link>
+      <pubDate>Tue, 17 Sep 2019 17:12:02 +0800</pubDate>
+      
+      <guid>/categories/music/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Tech</title>
@@ -17,15 +35,6 @@
       <pubDate>Tue, 17 Sep 2019 13:32:25 +0800</pubDate>
       
       <guid>/categories/tech/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>futures</title>
-      <link>/categories/futures/</link>
-      <pubDate>Wed, 04 Sep 2019 10:04:02 +0800</pubDate>
-      
-      <guid>/categories/futures/</guid>
       <description></description>
     </item>
     

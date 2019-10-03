@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -61,34 +61,39 @@
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>挤牌公式</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">KELT_:<span style="color:#f92672">=</span>KELT/10;
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">KELT_:=KELT/10;
 
-TR:<span style="color:#f92672">=</span>MAX<span style="color:#f92672">(</span>MAX<span style="color:#f92672">((</span>HIGH-LOW<span style="color:#f92672">)</span>,ABS<span style="color:#f92672">(</span>REF<span style="color:#f92672">(</span>CLOSE,1<span style="color:#f92672">)</span>-HIGH<span style="color:#f92672">))</span>,ABS<span style="color:#f92672">(</span>REF<span style="color:#f92672">(</span>CLOSE,1<span style="color:#f92672">)</span>-LOW<span style="color:#f92672">))</span>;
-ATR:<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>TR,N<span style="color:#f92672">)</span>;
-HIGHBBCHL:<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,N<span style="color:#f92672">)</span> + BOLBS*STD<span style="color:#f92672">(</span>C,N<span style="color:#f92672">)</span>,COLORYELLOW;
-LOWBBCHL:<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,N<span style="color:#f92672">)</span> - BOLBS*STD<span style="color:#f92672">(</span>C,N<span style="color:#f92672">)</span>,COLORYELLOW;
+TR:=MAX(MAX((HIGH-LOW),ABS(REF(CLOSE,1)-HIGH)),ABS(REF(CLOSE,1)-LOW));
+ATR:=MA(TR,N);
+HIGHBBCHL:=MA(C,N) + BOLBS*STD(C,N),COLORYELLOW;
+LOWBBCHL:=MA(C,N) - BOLBS*STD(C,N),COLORYELLOW;
 
-CENTERLINE:<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,N<span style="color:#f92672">)</span>;
-HIGHKELTN:<span style="color:#f92672">=</span>CENTERLINE+KELT_*ATR,COLORBLUE;
-LOWKELTN:<span style="color:#f92672">=</span>CENTERLINE-KELT_*ATR,COLORBLUE;
+CENTERLINE:=MA(C,N);
+HIGHKELTN:=CENTERLINE+KELT_*ATR,COLORBLUE;
+LOWKELTN:=CENTERLINE-KELT_*ATR,COLORBLUE;
 
-MOM:<span style="color:#f92672">=</span>CLOSE-REF<span style="color:#f92672">(</span>CLOSE,MOMP<span style="color:#f92672">)</span>;
-MOMHIST:<span style="color:#f92672">=</span>EMA<span style="color:#f92672">(</span>MOM,MOMEMA<span style="color:#f92672">)</span>;
+MOM:=CLOSE-REF(CLOSE,MOMP);
+MOMHIST:=EMA(MOM,MOMEMA);
 
-BBUP:<span style="color:#f92672">=</span>IF<span style="color:#f92672">(</span>HIGHBBCHL&gt;HIGHKELTN AND MOMHIST &gt;0, MOMHIST,0<span style="color:#f92672">)</span>;
-BBDO:<span style="color:#f92672">=</span>IF<span style="color:#f92672">(</span>LOWBBCHL&lt;LOWKELTN AND MOMHIST &lt;<span style="color:#ae81ff">0</span>, MOMHIST,0<span style="color:#f92672">)</span>;
-BBMID:<span style="color:#f92672">=</span>IF<span style="color:#f92672">(</span>BBUP<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> AND BBDO<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, MOMHIST,0<span style="color:#f92672">)</span>;
+BBUP:=IF(HIGHBBCHL&gt;HIGHKELTN AND MOMHIST &gt;0, MOMHIST,0);
+BBDO:=IF(LOWBBCHL&lt;LOWKELTN AND MOMHIST &lt;<span style="color:#0086f7;font-weight:bold">0</span>, MOMHIST,0);
+BBMID:=IF(<span style="color:#fb660a">BBUP</span>=<span style="color:#0086f7;font-weight:bold">0</span> AND <span style="color:#fb660a">BBDO</span>=<span style="color:#0086f7;font-weight:bold">0</span>, MOMHIST,0);
 
-BUY:<span style="color:#f92672">=</span>BBUP;
-SELL:<span style="color:#f92672">=</span>BBDO;
+BUY:=BBUP;
+SELL:=BBDO;
 MID:BBMID;
 
-BB:IF<span style="color:#f92672">(</span>BBUP OR BBDO,CROSSDOT,CIRCLEDOT<span style="color:#f92672">)</span>;
-MTM:MA<span style="color:#f92672">(</span>MOM, MOMEMA<span style="color:#f92672">)</span>,COLORSTICK;</code></pre></div>
+BB:IF(BBUP OR BBDO,CROSSDOT,CIRCLEDOT);
+MTM:MA(MOM, MOMEMA),COLORSTICK;</code></pre></div>
     </div>
 </div>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

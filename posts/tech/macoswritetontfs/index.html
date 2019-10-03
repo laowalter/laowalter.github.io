@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -60,7 +60,7 @@
 <h2 id="install-homebrew">Install Homebrew</h2>
 
 <h2 id="install-ntfs-3g">Install ntfs-3g</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew update
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew update
 brew install ntfs-3g</code></pre></div>
 <h2 id="install-fuse-box">Install Fuse Box</h2>
 
@@ -68,21 +68,21 @@ brew install ntfs-3g</code></pre></div>
 <li><p>在 <a href="https://osxfuse.github.io/">https://osxfuse.github.io/</a> 下载安装 <code>FUSE for macOS 3.10.2</code>`</p></li>
 
 <li><p>将原来系统的mount_nfs 备份为mount_nfs.orig</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.orig  //将原系文件改名备份</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.orig  //将原系文件改名备份</code></pre></div>
 <p><em>如果遇到将系统自带挂载程序改名时提示 mv: rename mount_ntfs to mount_ntfs_orig: Operation not permitted. 的问题，可按 osx - Operation Not Permitted when on root El capitan (rootless disabled) 提到的方法解决，具体步骤如下</em></p>
 
 <p><em>重启 Mac，cmd+R 进入恢复（recovery）模式
 找到 terminal（在“XX工具”里面）
 打开后输入如下命令关闭安全限制</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">csrutil disable</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">csrutil disable</code></pre></div>
 <p><em>输入如下命令重启，重复上面的步骤</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">reboot</code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">reboot</code></pre></div></li>
 
 <li><p>用刚刚安装的ntfs-3g包中的mount_ntfs 替代。</p>
 
 <ul>
 <li><p>方法一：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo ln -s /usr/local/sbin/mount_ntfs/sbin/mount_ntfs </code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo ln -s /usr/local/sbin/mount_ntfs/sbin/mount_ntfs </code></pre></div></li>
 
 <li><p>方法二：</p>
 
@@ -104,6 +104,11 @@ brew install ntfs-3g</code></pre></div>
 </ol>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -146,37 +146,37 @@ T0002\hq_cache\block_zs.dat,指数板块
 [/jtable]</p>
 
 <p>数据格式的C语言描述如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 股票板块信息文件头格式，T0002/hq_cache/block.dat block_fg.dat block_gn.dat block_zs.dat
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> TTDXBlockHeader
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#080;background-color:#0f140f;font-style:italic">// 股票板块信息文件头格式，T0002/hq_cache/block.dat block_fg.dat block_gn.dat block_zs.dat
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span><span style="color:#fb660a;font-weight:bold">struct</span> TTDXBlockHeader
 {
-    <span style="color:#66d9ef">char</span>         szVersion[<span style="color:#ae81ff">64</span>];        <span style="color:#75715e">// 0, Registry ver:1.0 (1999-9-28)
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nIndexOffset;            <span style="color:#75715e">// 64, 0x00000054
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nDataOffset;            <span style="color:#75715e">// 68, 0x00000180
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nData1;                <span style="color:#75715e">// 72, 0x00000003
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nData2;                <span style="color:#75715e">// 76, 0x00000000
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nData3;                <span style="color:#75715e">// 80, 0x00000003
-</span><span style="color:#75715e"></span>};
+    <span style="color:#cdcaa9;font-weight:bold">char</span>         szVersion[<span style="color:#0086f7;font-weight:bold">64</span>];        <span style="color:#080;background-color:#0f140f;font-style:italic">// 0, Registry ver:1.0 (1999-9-28)
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#cdcaa9;font-weight:bold">int</span>            nIndexOffset;            <span style="color:#080;background-color:#0f140f;font-style:italic">// 64, 0x00000054
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#cdcaa9;font-weight:bold">int</span>            nDataOffset;            <span style="color:#080;background-color:#0f140f;font-style:italic">// 68, 0x00000180
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#cdcaa9;font-weight:bold">int</span>            nData1;                <span style="color:#080;background-color:#0f140f;font-style:italic">// 72, 0x00000003
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#cdcaa9;font-weight:bold">int</span>            nData2;                <span style="color:#080;background-color:#0f140f;font-style:italic">// 76, 0x00000000
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#cdcaa9;font-weight:bold">int</span>            nData3;                <span style="color:#080;background-color:#0f140f;font-style:italic">// 80, 0x00000003
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>};
 
-<span style="color:#66d9ef">struct</span> TTDXBlockIndex
+<span style="color:#fb660a;font-weight:bold">struct</span> TTDXBlockIndex
 {
-    <span style="color:#66d9ef">char</span>        szName[<span style="color:#ae81ff">64</span>];            <span style="color:#75715e">// 0, Root, Block, Val
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nData1;                <span style="color:#75715e">// 64
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nData2;                <span style="color:#75715e">// 68
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nLength;                <span style="color:#75715e">// 72, length of the block
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nOffset;                <span style="color:#75715e">// 76, offset of the data part
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nData3;                <span style="color:#75715e">// 80
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nData4;                <span style="color:#75715e">// 84
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nData5;                <span style="color:#75715e">// 88, root=-1,block=0,val=1
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nData6;                <span style="color:#75715e">// 92, root=1,block=2,val=-1
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            nStatus;                <span style="color:#75715e">// 96, 1
-</span><span style="color:#75715e"></span>};
+    <span style="color:#cdcaa9;font-weight:bold">char</span>        szName[<span style="color:#0086f7;font-weight:bold">64</span>];            <span style="color:#080;background-color:#0f140f;font-style:italic">// 0, Root, Block, Val
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#cdcaa9;font-weight:bold">int</span>            nData1;                <span style="color:#080;background-color:#0f140f;font-style:italic">// 64
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#cdcaa9;font-weight:bold">int</span>            nData2;                <span style="color:#080;background-color:#0f140f;font-style:italic">// 68
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#cdcaa9;font-weight:bold">int</span>            nLength;                <span style="color:#080;background-color:#0f140f;font-style:italic">// 72, length of the block
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#cdcaa9;font-weight:bold">int</span>            nOffset;                <span style="color:#080;background-color:#0f140f;font-style:italic">// 76, offset of the data part
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#cdcaa9;font-weight:bold">int</span>            nData3;                <span style="color:#080;background-color:#0f140f;font-style:italic">// 80
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#cdcaa9;font-weight:bold">int</span>            nData4;                <span style="color:#080;background-color:#0f140f;font-style:italic">// 84
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#cdcaa9;font-weight:bold">int</span>            nData5;                <span style="color:#080;background-color:#0f140f;font-style:italic">// 88, root=-1,block=0,val=1
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#cdcaa9;font-weight:bold">int</span>            nData6;                <span style="color:#080;background-color:#0f140f;font-style:italic">// 92, root=1,block=2,val=-1
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#cdcaa9;font-weight:bold">int</span>            nStatus;                <span style="color:#080;background-color:#0f140f;font-style:italic">// 96, 1
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>};
 
-<span style="color:#66d9ef">struct</span> TTDXBlockRecord
+<span style="color:#fb660a;font-weight:bold">struct</span> TTDXBlockRecord
 {
-    <span style="color:#66d9ef">char</span>         szName[<span style="color:#ae81ff">9</span>];
-    <span style="color:#66d9ef">short</span>        nCount;
-    <span style="color:#66d9ef">short</span>        nLevel;
-    <span style="color:#66d9ef">char</span>         szCode[<span style="color:#ae81ff">400</span>][<span style="color:#ae81ff">7</span>];
+    <span style="color:#cdcaa9;font-weight:bold">char</span>         szName[<span style="color:#0086f7;font-weight:bold">9</span>];
+    <span style="color:#cdcaa9;font-weight:bold">short</span>        nCount;
+    <span style="color:#cdcaa9;font-weight:bold">short</span>        nLevel;
+    <span style="color:#cdcaa9;font-weight:bold">char</span>         szCode[<span style="color:#0086f7;font-weight:bold">400</span>][<span style="color:#0086f7;font-weight:bold">7</span>];
 };</code></pre></div>
 <h3 id="用户自定义板块">用户自定义板块</h3>
 
@@ -189,12 +189,12 @@ T0002\hq_cache\block_zs.dat,指数板块
 <p>1) 每个板块120字节
 2) 板块名称50字节
 3) 板块文件名头70字节</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 自定义板块概述文件格式，T0002\blocknew\blocknew.cfg
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> TTDXUserBlockRecord
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#080;background-color:#0f140f;font-style:italic">// 自定义板块概述文件格式，T0002\blocknew\blocknew.cfg
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span><span style="color:#fb660a;font-weight:bold">struct</span> TTDXUserBlockRecord
 {
-    <span style="color:#66d9ef">char</span>        szName[<span style="color:#ae81ff">50</span>];
-    <span style="color:#66d9ef">char</span>        szAbbr[<span style="color:#ae81ff">70</span>];        <span style="color:#75715e">// 也是文件名称前缀 T0002\blocknew\xxxx.blk
-</span><span style="color:#75715e"></span>};</code></pre></div>
+    <span style="color:#cdcaa9;font-weight:bold">char</span>        szName[<span style="color:#0086f7;font-weight:bold">50</span>];
+    <span style="color:#cdcaa9;font-weight:bold">char</span>        szAbbr[<span style="color:#0086f7;font-weight:bold">70</span>];        <span style="color:#080;background-color:#0f140f;font-style:italic">// 也是文件名称前缀 T0002\blocknew\xxxx.blk
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>};</code></pre></div>
 <h3 id="板块列表文件-blk">板块列表文件: *.blk</h3>
 
 <p>每行一条记录：每个记录7个数字：</p>
@@ -258,6 +258,11 @@ T0002\hq_cache\block_zs.dat,指数板块
 [/jtable]</p>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

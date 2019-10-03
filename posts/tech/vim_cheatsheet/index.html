@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -85,23 +85,23 @@
 <h2 id="vim">Vim</h2>
 
 <h3 id="全局">全局</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:saveas file - 另存为
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:saveas file - 另存为
 :close - 关闭当前窗口
-K - open man page <span style="color:#66d9ef">for</span> word under the cursor
+K - open man page <span style="color:#fb660a;font-weight:bold">for</span> word under the cursor
 
 H - 移动到当前页面顶部
 M - 移动到当前页面中间
 L - 移动到当前页面底部
 w - 移动到下个单词开头
-W - 移动到下个单词开头<span style="color:#f92672">(</span>单词含标点<span style="color:#f92672">)</span>
+W - 移动到下个单词开头(单词含标点)
 e - 移动到下个单词结尾
-E - 移动到下个单词结尾<span style="color:#f92672">(</span>单词含标点<span style="color:#f92672">)</span>
+E - 移动到下个单词结尾(单词含标点)
 b - 移动到上个单词结尾
-B - 移动到上个单词结尾<span style="color:#f92672">(</span>单词含标点<span style="color:#f92672">)</span>
+B - 移动到上个单词结尾(单词含标点)
 ------------------------------------------------------------------------------
-% - move to matching character <span style="color:#f92672">(</span>default supported pairs: <span style="color:#e6db74">&#39;()&#39;</span>, <span style="color:#e6db74">&#39;{}&#39;</span>, <span style="color:#e6db74">&#39;[]&#39;</span><span style="color:#f92672">)</span>
+% - move to matching character (default supported pairs: <span style="color:#0086d2">&#39;()&#39;</span>, <span style="color:#0086d2">&#39;{}&#39;</span>, <span style="color:#0086d2">&#39;[]&#39;</span>)
 
-<span style="color:#ae81ff">0</span> - 移动到行首
+<span style="color:#0086f7;font-weight:bold">0</span> - 移动到行首
 ^ - 移动到行首的非空白符
 $ - 移动到行尾
 g_ - 移动到行内最后一个非空白符
@@ -114,12 +114,12 @@ Fx - jump to previous occurence of character x
 Tx - jump to after previous occurence of character x
 ; - repeat previous f, t, F or T movement
 , - repeat previous f, t, F or T movement, backwards
-<span style="color:#f92672">}</span> - 移动到下一个段落 <span style="color:#f92672">(</span>当编辑代码时则为函数／代码块<span style="color:#f92672">)</span>
-<span style="color:#f92672">{</span> - 移动到上一个段落 <span style="color:#f92672">(</span>当编辑代码时则为函数／代码块<span style="color:#f92672">)</span>
+} - 移动到下一个段落 (当编辑代码时则为函数／代码块)
+{ - 移动到上一个段落 (当编辑代码时则为函数／代码块)
 
 ------------------------------------------------------------------------------
-CTRL + e - move screen down one line <span style="color:#f92672">(</span>without moving cursor<span style="color:#f92672">)</span>
-CTRL + y - move screen up one line <span style="color:#f92672">(</span>without moving cursor<span style="color:#f92672">)</span>
+CTRL + e - move screen down one line (without moving cursor)
+CTRL + y - move screen up one line (without moving cursor)
 CTRL + b - 向后滚动一屏
 CTRL + f - 向前滚动一屏
 CTRL + d - 向前滚动半屏
@@ -128,7 +128,7 @@ CTRL + u - 向后滚动半屏
 zz - 移动屏幕使光标居中
 zh zj zk zl 在超长行内移动光标</code></pre></div>
 <h3 id="插入模式-插入-追加文本">插入模式 - 插入/追加文本</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">i   - 从光标前开始插入字符
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">i   - 从光标前开始插入字符
 I   - 从行首开始插入字符
 a   - 从光标后开始插入字符
 A   - 从行尾开始插入字符
@@ -141,76 +141,76 @@ J    - 将下一行合并到当前行
 gJ   - join line below to the current one without space in between
 gwip - reflow paragraph
 cc   - 清空当前行, 然后进入插入模式
-C    - change <span style="color:#f92672">(</span>replace<span style="color:#f92672">)</span> to the end of the line
+C    - change (replace) to the end of the line
 c$   - 从光标位置开始, 修改当前行
-ciw  - change <span style="color:#f92672">(</span>replace<span style="color:#f92672">)</span> entire word
+ciw  - change (replace) entire word
 cw   - 从光标位置开始, 修改单词
 s    - 删除当前字符, 然后进入插入模式
-S    - 清空当前行, 然后进入插入模式 <span style="color:#f92672">(</span>同cc<span style="color:#f92672">)</span>
+S    - 清空当前行, 然后进入插入模式 (同cc)
 xp   - 当前字符后移
 u    - 撤销
 .    - 再次执行上个命令
 CTRL + r   - 重复</code></pre></div>
 <h3 id="文本-可视化模式">文本（可视化模式）</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">v   - 进入可视化模式, 移动光标高亮选择, 然后可以对选择的文本执行命令<span style="color:#f92672">(</span>比如y-复制<span style="color:#f92672">)</span>
-V   - 进入可视化模式<span style="color:#f92672">(</span>行粒度选择<span style="color:#f92672">)</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">v   - 进入可视化模式, 移动光标高亮选择, 然后可以对选择的文本执行命令(比如y-复制)
+V   - 进入可视化模式(行粒度选择)
 o   - 切换光标到选择区开头/结尾
-CTRL + v - 进入可视化模式<span style="color:#f92672">(</span>矩阵选择<span style="color:#f92672">)</span>
+CTRL + v - 进入可视化模式(矩阵选择)
 O   - 切换光标到选择区的角
 aw  - 选择当前单词
-ab  - 选择被 <span style="color:#f92672">()</span> 包裹的区域<span style="color:#f92672">(</span>含括号<span style="color:#f92672">)</span>
-aB  - 选择被 <span style="color:#f92672">{}</span> 包裹的区域<span style="color:#f92672">(</span>含花括号<span style="color:#f92672">)</span>
-ib  - 选择被 <span style="color:#f92672">()</span> 包裹的区域<span style="color:#f92672">(</span>不含括号<span style="color:#f92672">)</span>
-iB  - 选择被 <span style="color:#f92672">{}</span> 包裹的区域<span style="color:#f92672">(</span>不含花括号<span style="color:#f92672">)</span>
+ab  - 选择被 () 包裹的区域(含括号)
+aB  - 选择被 {} 包裹的区域(含花括号)
+ib  - 选择被 () 包裹的区域(不含括号)
+iB  - 选择被 {} 包裹的区域(不含花括号)
 Esc - 退出可视化模式</code></pre></div>
 <h3 id="化模式命令">化模式命令</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; - 向右缩进
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; - 向右缩进
 &lt; - 向左缩进
 y - 复制
 d - 剪切
 ~ - 大小写切换</code></pre></div>
 <h3 id="寄存器">寄存器</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:reg    - 显示寄存器内容
-<span style="color:#e6db74">&#34;xy     - 复制内容到寄存器 x
-</span><span style="color:#e6db74">&#34;</span>xp     - 粘贴寄存器 x 中的内容
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:reg    - 显示寄存器内容
+<span style="color:#0086d2">&#34;xy     - 复制内容到寄存器 x
+</span><span style="color:#0086d2">&#34;</span>xp     - 粘贴寄存器 x 中的内容
 
 寄存器被存储在 ~/.viminfo 中, 在下次重启vim时仍会加载
-寄存器 <span style="color:#ae81ff">0</span> 存储上一次复制的值</code></pre></div>
+寄存器 <span style="color:#0086f7;font-weight:bold">0</span> 存储上一次复制的值</code></pre></div>
 <h3 id="标记">标记</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:marks  - 标记列表
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:marks  - 标记列表
 ma      - 设置当前位置为标记 a
-<span style="color:#e6db74">`</span>a      - 跳转到标记 a 的位置
-y<span style="color:#e6db74">`</span>a     - 复制当前位置到标记 a 的内容</code></pre></div>
+<span style="color:#0086d2">`</span>a      - 跳转到标记 a 的位置
+y<span style="color:#0086d2">`</span>a     - 复制当前位置到标记 a 的内容</code></pre></div>
 <h3 id="复制-粘贴">复制, 粘贴</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yy  - 复制当前行
-2yy - 复制 <span style="color:#ae81ff">2</span> 行
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yy  - 复制当前行
+2yy - 复制 <span style="color:#0086f7;font-weight:bold">2</span> 行
 yw  - 复制当前单词
 y$  - 复制, 从光标位置到行末
 p   - 在光标后粘贴
 P   - 在光标前粘贴
 dd  - 剪切当前行
-2dd - 剪切 <span style="color:#ae81ff">2</span> 行
+2dd - 剪切 <span style="color:#0086f7;font-weight:bold">2</span> 行
 dw  - 剪切当前单词
 D   - 剪切, 从光标位置到行末
-d$  - 剪切, 从光标位置到行末 <span style="color:#f92672">(</span>同D<span style="color:#f92672">)</span>
+d$  - 剪切, 从光标位置到行末 (同D)
 x   - 剪切当前字符
 
 :w !sudo tee %  - 使用 sudo 保存当前文件
 :wq or :x or ZZ - 保存并退出
-:q              - 退出<span style="color:#f92672">(</span>修改未保存时警告<span style="color:#f92672">)</span>
+:q              - 退出(修改未保存时警告)
 :q! or ZQ       - 不保存强制退出
-:wqa            - write <span style="color:#f92672">(</span>save<span style="color:#f92672">)</span> and quit on all tabs</code></pre></div>
+:wqa            - write (save) and quit on all tabs</code></pre></div>
 <h3 id="替换">替换</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/pattern - 查找 pattern
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/pattern - 查找 pattern
 ?pattern - 向上查找 pattern
-<span style="color:#ae81ff">\v</span>pattern - pattern 中的非字母数字字符被视为正则表达式特殊字符 <span style="color:#f92672">(</span>不需转义字符<span style="color:#f92672">)</span>
+<span style="color:#0086d2">\v</span>pattern - pattern 中的非字母数字字符被视为正则表达式特殊字符 (不需转义字符)
 n - 查找下一个
 N - 查找上一个
 :%s/old/new/g - 替换全部
-:%s/old/new/gc - <span style="color:#f92672">(</span>逐个<span style="color:#f92672">)</span>替换
+:%s/old/new/gc - (逐个)替换
 :noh - 移除搜索结果的高亮显示</code></pre></div>
 <h3 id="多文件搜索">多文件搜索</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:vimgrep /pattern/ <span style="color:#f92672">{</span>file<span style="color:#f92672">}</span> - 在多个文件中搜索 pattern
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:vimgrep /pattern/ {file} - 在多个文件中搜索 pattern
 :vimgrep /foo/ **/*
 :cn     - 移动至下一个
 :cp     - 移动至上一个
@@ -226,10 +226,10 @@ N - 查找上一个
 <h3 id="窗口">窗口</h3>
 
 <h4 id="分割窗口">分割窗口</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CTRL + ws - 水平分割窗口
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CTRL + ws - 水平分割窗口
 CTRL + wv - 垂直分割窗口</code></pre></div>
 <h4 id="窗口切换">窗口切换</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:only       - 只包留当前窗口
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:only       - 只包留当前窗口
 CTRL + wq   - 关闭窗口
 CTRL + ww   - 在窗口间切换
 CTRL + wh   - 切换到右侧窗口
@@ -237,30 +237,30 @@ CTRL + wl   - 切换到左侧窗口
 CTRL + wj   - 切换到下侧窗口
 CTRL + wk   - 切换到上侧窗口</code></pre></div>
 <h4 id="调整窗口大小-help-vsp">调整窗口大小(: help vsp)</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:res +n             - 增加n行的高度 
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:res +n             - 增加n行的高度 
 :vertical res +n    - 增加n列的宽度
 10CTRL-w+           - 增加10行高度
 10CTRL-w-           - 减少10行高度
 10CTRL-w&gt;           - 增加10列宽度
 10CTRL-w&lt;           - 减少10列宽度</code></pre></div>
 <h3 id="标签">标签</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:tabnew or :tabnew file - 在新标签中打开文件
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:tabnew or :tabnew file - 在新标签中打开文件
 CTRL + wT               - 将窗口变成标签
 gt or :tabnext or :tabn - 切换到下一个标签
 gT or :tabprev or :tabp - 切换到上一个标签
-<span style="color:#75715e">#gt                     - 切换到第 # 个标签</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#gt                     - 切换到第 # 个标签</span>
 
-:tabmove <span style="color:#75715e">#          - 移动标签到第 # 位(下标从 0 开始)</span>
+:tabmove <span style="color:#080;background-color:#0f140f;font-style:italic">#          - 移动标签到第 # 位(下标从 0 开始)</span>
 :tabclose or :tabc  - 关闭当前标签
 :tabonly or :tabo   - 关闭其他标签
-:tabdo command      - 在所有标签中执行命令 <span style="color:#f92672">(</span>例如 :tabdo q 关闭所有标签<span style="color:#f92672">)</span></code></pre></div>
+:tabdo command      - 在所有标签中执行命令 (例如 :tabdo q 关闭所有标签)</code></pre></div>
 <h3 id="折叠">折叠</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">zc - 折叠
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">zc - 折叠
 zC - 对所在范围内所有嵌套的折叠点进行折叠
 zo - 展开折叠
 zO - 对所在范围内所有嵌套的折叠点展开
-<span style="color:#f92672">[</span>z - 到当前打开的折叠的开始处。
-<span style="color:#f92672">]</span>z - 到当前打开的折叠的末尾处。
+[z - 到当前打开的折叠的开始处。
+]z - 到当前打开的折叠的末尾处。
 zj - 向下移动。到达下一个折叠的开始处。关闭的折叠也被计入。
 zk - 向上移动到前一折叠的结束处。关闭的折叠也被计入。
 
@@ -268,34 +268,34 @@ zf                  - 创建折叠，比如在marker方式下：
 zf56G               - 创建从当前行起到56行的代码折叠；
 10zf或10zf+或zf10   - 创建从当前行起到后10行的代码折叠。
 10zf-或zf10↑        - 创建从当前行起到之前10行的代码折叠。
-在括号处zf%         - 创建从当前行起到对应的匹配的括号上去（（），<span style="color:#f92672">{}</span>，<span style="color:#f92672">[]</span>，&lt;&gt;等）。
+在括号处zf%         - 创建从当前行起到对应的匹配的括号上去（（），{}，[]，&lt;&gt;等）。
 
-zd - 删除 <span style="color:#f92672">(</span>delete<span style="color:#f92672">)</span> 在光标下的折叠，<span style="color:#e6db74">&#39;foldmethod&#39;</span> 为manual/marker时有效。
-zD - 循环删除 <span style="color:#f92672">(</span>Delete<span style="color:#f92672">)</span> 光标下的折叠，即嵌套删除折叠，<span style="color:#e6db74">&#39;foldmethod&#39;</span> 为manual/marker时有效。
-zE - 除去 <span style="color:#f92672">(</span>Eliminate<span style="color:#f92672">)</span> 窗口里“所有”的折叠， <span style="color:#e6db74">&#39;foldmethod&#39;</span> 为manual/marker时有效。</code></pre></div>
+zd - 删除 (delete) 在光标下的折叠，<span style="color:#0086d2">&#39;foldmethod&#39;</span> 为manual/marker时有效。
+zD - 循环删除 (Delete) 光标下的折叠，即嵌套删除折叠，<span style="color:#0086d2">&#39;foldmethod&#39;</span> 为manual/marker时有效。
+zE - 除去 (Eliminate) 窗口里“所有”的折叠， <span style="color:#0086d2">&#39;foldmethod&#39;</span> 为manual/marker时有效。</code></pre></div>
 <h2 id="vim-go-help-vim-go-或-vim-go-tutorial-in-github">Vim-Go (help vim-go 或 vim-go tutorial in github )</h2>
 
 <h3 id="debug">Debug</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:GoDebugStart . -someflag value - Start the debugger
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:GoDebugStart . -someflag value - Start the debugger
 :GoDebugTest                    - Start the debugger
-:GoDebugBreakpoint <span style="color:#f92672">(</span>&lt;F9&gt;<span style="color:#f92672">)</span>       - Set breakpoint
-:GoDebugContinue <span style="color:#f92672">(</span>&lt;F5&gt;<span style="color:#f92672">)</span>         - Run <span style="color:#66d9ef">continue</span>
-:GoDebugNext <span style="color:#f92672">(</span>&lt;F10&gt;<span style="color:#f92672">)</span>            - DebugNext
-:GoDebugStep <span style="color:#f92672">(</span>&lt;F11&gt;<span style="color:#f92672">)</span>            - DebugStep
+:GoDebugBreakpoint (&lt;F9&gt;)       - Set breakpoint
+:GoDebugContinue (&lt;F5&gt;)         - Run <span style="color:#fb660a;font-weight:bold">continue</span>
+:GoDebugNext (&lt;F10&gt;)            - DebugNext
+:GoDebugStep (&lt;F11&gt;)            - DebugStep
 :GoDebugStop                    - Stop debugger
 :GoDebugRestart                 - Stop debugger
 
 
-:GoDebugPrint <span style="color:#f92672">{</span>expr<span style="color:#f92672">}</span>            - Print the result of a expression
-:GoDebugSet <span style="color:#f92672">{</span>var<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>value<span style="color:#f92672">}</span>       - Set up a value
-:GoDebugBreakpoint <span style="color:#f92672">[</span>linenr<span style="color:#f92672">]</span>     - Default is current line.</code></pre></div>
+:GoDebugPrint {expr}            - Print the result of a expression
+:GoDebugSet {var} {value}       - Set up a value
+:GoDebugBreakpoint [linenr]     - Default is current line.</code></pre></div>
 <h2 id="windows系统键盘">Windows系统键盘</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ALT + delete   - Del键
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ALT + delete   - Del键
 LWIN + i       - Ins键
 LWIN + F12     - 屏幕拷贝
 CTRL + ALT + F - 全屏</code></pre></div>
 <h2 id="文化财经期货软件">文化财经期货软件</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ALT + r   - 隐藏K线
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ALT + r   - 隐藏K线
 ALT + c   - 画线颜色切换
 ALT + a   - K 线图背景颜色选白
 ALT + v   - 多级别坐标联动
@@ -304,18 +304,23 @@ SHIFT + F1      - 预警设置
 CTRL + R        - 反转坐标
 CTRL + Alt + o  - 截图
 
-<span style="color:#e6db74">`</span> - 显示资金信息</code></pre></div>
+<span style="color:#0086d2">`</span> - 显示资金信息</code></pre></div>
 <h2 id="期货代码">期货代码</h2>
 
 <h3 id="博易大师">博易大师</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">SOCC - 美豆油主 
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">SOCC - 美豆油主 
 SMCC - 美豆粕主</code></pre></div>
 <h3 id="文华财经">文华财经</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">3413</span> - 美豆油主
-<span style="color:#ae81ff">3313</span> - 美豆粕主
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#0086f7;font-weight:bold">3413</span> - 美豆油主
+<span style="color:#0086f7;font-weight:bold">3313</span> - 美豆粕主
 
-<span style="color:#ae81ff">6563</span> - 布伦特</code></pre></div>
+<span style="color:#0086f7;font-weight:bold">6563</span> - 布伦特</code></pre></div>
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

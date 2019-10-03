@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -78,13 +78,13 @@
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>.bashrc</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># SSH agent</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -S ~/.ssh/ssh_auth_sock <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-  eval <span style="color:#e6db74">`</span>ssh-agent<span style="color:#e6db74">`</span>
-  ln -sf <span style="color:#e6db74">&#34;</span>$SSH_AUTH_SOCK<span style="color:#e6db74">&#34;</span> ~/.ssh/ssh_auth_sock
-<span style="color:#66d9ef">fi</span>
-export SSH_AUTH_SOCK<span style="color:#f92672">=</span>~/.ssh/ssh_auth_sock
-ssh-add -l &gt; /dev/null <span style="color:#f92672">||</span> ssh-add</code></pre></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#080;background-color:#0f140f;font-style:italic"># SSH agent</span>
+<span style="color:#fb660a;font-weight:bold">if</span> [ ! -S ~/.ssh/ssh_auth_sock ]; <span style="color:#fb660a;font-weight:bold">then</span>
+  eval <span style="color:#0086d2">`</span>ssh-agent<span style="color:#0086d2">`</span>
+  ln -sf <span style="color:#0086d2">&#34;</span><span style="color:#fb660a">$SSH_AUTH_SOCK</span><span style="color:#0086d2">&#34;</span> ~/.ssh/ssh_auth_sock
+<span style="color:#fb660a;font-weight:bold">fi</span>
+export <span style="color:#fb660a">SSH_AUTH_SOCK</span>=~/.ssh/ssh_auth_sock
+ssh-add -l &gt; /dev/null || ssh-add</code></pre></div>
     </div>
 </div>
 
@@ -130,6 +130,11 @@ ssh-add -l &gt; /dev/null <span style="color:#f92672">||</span> ssh-add</code></
 <p><img src="/images/tech/putty-windows-6.png" alt="Putty" /></p>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

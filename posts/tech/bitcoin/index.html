@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -134,12 +134,12 @@ d192e819 d6990624 f40e3585 106aa070
 </code></pre>
 
 <p>（四）需要使用的函数</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CH（x, y, z<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>x AND y<span style="color:#f92672">)</span> XOR <span style="color:#f92672">(</span> <span style="color:#f92672">(</span>NOT x<span style="color:#f92672">)</span> AND z<span style="color:#f92672">)</span>
-       MAJ<span style="color:#f92672">(</span> x, y, z<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>x AND y<span style="color:#f92672">)</span> XOR <span style="color:#f92672">(</span>x AND z<span style="color:#f92672">)</span> XOR <span style="color:#f92672">(</span>y AND z<span style="color:#f92672">)</span>
-       BSIG0<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> ROTR^2<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span> XOR ROTR^13<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span> XOR ROTR^22<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span>
-       BSIG1<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> ROTR^6<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span> XOR ROTR^11<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span> XOR ROTR^25<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span>
-       SSIG0<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> ROTR^7<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span> XOR ROTR^18<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span> XOR SHR^3<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span>
-       SSIG1<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> ROTR^17<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span> XOR ROTR^19<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span> XOR SHR^10<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span></code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CH（x, y, z) = (x AND y) XOR ( (NOT x) AND z)
+       MAJ( x, y, z) = (x AND y) XOR (x AND z) XOR (y AND z)
+       BSIG0(x) = ROTR^2(x) XOR ROTR^13(x) XOR ROTR^22(x)
+       BSIG1(x) = ROTR^6(x) XOR ROTR^11(x) XOR ROTR^25(x)
+       SSIG0(x) = ROTR^7(x) XOR ROTR^18(x) XOR SHR^3(x)
+       SSIG1(x) = ROTR^17(x) XOR ROTR^19(x) XOR SHR^10(x)</code></pre></div>
 <pre><code>   其中x、y、z皆为32bit的字。
 
    ROTR^2(x)是对x进行循环右移2位。
@@ -153,14 +153,14 @@ d192e819 d6990624 f40e3585 106aa070
 
    SHA256算法中用到的哈希初值H（0）如下
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">       H<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span>0 <span style="color:#f92672">=</span> 6a09e667
-       H<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span>1 <span style="color:#f92672">=</span> bb67ae85
-       H<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span>2 <span style="color:#f92672">=</span> 3c6ef372
-       H<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span>3 <span style="color:#f92672">=</span> a54ff53a
-       H<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span>4 <span style="color:#f92672">=</span> 510e527f
-       H<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span>5 <span style="color:#f92672">=</span> 9b05688c
-       H<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span>6 <span style="color:#f92672">=</span> 1f83d9ab
-       H<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span>7 <span style="color:#f92672">=</span> 5be0cd19</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">       H(<span style="color:#0086f7;font-weight:bold">0</span>)<span style="color:#fb660a">0</span> = 6a09e667
+       H(<span style="color:#0086f7;font-weight:bold">0</span>)<span style="color:#fb660a">1</span> = bb67ae85
+       H(<span style="color:#0086f7;font-weight:bold">0</span>)<span style="color:#fb660a">2</span> = 3c6ef372
+       H(<span style="color:#0086f7;font-weight:bold">0</span>)<span style="color:#fb660a">3</span> = a54ff53a
+       H(<span style="color:#0086f7;font-weight:bold">0</span>)<span style="color:#fb660a">4</span> = 510e527f
+       H(<span style="color:#0086f7;font-weight:bold">0</span>)<span style="color:#fb660a">5</span> = 9b05688c
+       H(<span style="color:#0086f7;font-weight:bold">0</span>)<span style="color:#fb660a">6</span> = 1f83d9ab
+       H(<span style="color:#0086f7;font-weight:bold">0</span>)<span style="color:#fb660a">7</span> = 5be0cd19</code></pre></div>
 <p>注：这些初值是对自然数中前8个质数3、5、7、11等的平方根的小数部分取前32bit而来。</p>
 
 <pre><code>   II、 计算过程中用到的三种中间值
@@ -174,41 +174,41 @@ d192e819 d6990624 f40e3585 106aa070
 
    原始消息分为N个512bit的消息块。每个消息块分成16个32bit的字标记为M(i)0、M(i)1、M(i)2、…、M(i)15, 然后对这N个消息块依次进行如下处理
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">       For i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> to N
-        <span style="color:#ae81ff">1</span>）   For t <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> to <span style="color:#ae81ff">15</span>
-                    Wt <span style="color:#f92672">=</span> M<span style="color:#f92672">(</span>i<span style="color:#f92672">)</span>t
-              For t <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span> to <span style="color:#ae81ff">63</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">       For <span style="color:#fb660a">i</span>=<span style="color:#0086f7;font-weight:bold">1</span> to N
+        <span style="color:#0086f7;font-weight:bold">1</span>）   For <span style="color:#fb660a">t</span> = <span style="color:#0086f7;font-weight:bold">0</span> to <span style="color:#0086f7;font-weight:bold">15</span>
+                    <span style="color:#fb660a">Wt</span> = M(i)t
+              For <span style="color:#fb660a">t</span> = <span style="color:#0086f7;font-weight:bold">16</span> to <span style="color:#0086f7;font-weight:bold">63</span>
 
-                    Wt <span style="color:#f92672">=</span> SSIG1<span style="color:#f92672">(</span>W<span style="color:#f92672">(</span>t-2<span style="color:#f92672">))</span> + W<span style="color:#f92672">(</span>t-7<span style="color:#f92672">)</span> + SSIG0<span style="color:#f92672">(</span>t-15<span style="color:#f92672">)</span> + W<span style="color:#f92672">(</span>t-16<span style="color:#f92672">)</span>
-        <span style="color:#ae81ff">2</span>）  a <span style="color:#f92672">=</span> H<span style="color:#f92672">(</span>i-1<span style="color:#f92672">)</span><span style="color:#ae81ff">0</span>
-             b <span style="color:#f92672">=</span> H<span style="color:#f92672">(</span>i-1<span style="color:#f92672">)</span><span style="color:#ae81ff">1</span>
-             c <span style="color:#f92672">=</span> H<span style="color:#f92672">(</span>i-1<span style="color:#f92672">)</span><span style="color:#ae81ff">2</span>
-             d <span style="color:#f92672">=</span> H<span style="color:#f92672">(</span>i-1<span style="color:#f92672">)</span><span style="color:#ae81ff">3</span>
-             e <span style="color:#f92672">=</span> H<span style="color:#f92672">(</span>i-1<span style="color:#f92672">)</span><span style="color:#ae81ff">4</span>
-             f <span style="color:#f92672">=</span> H<span style="color:#f92672">(</span>i-1<span style="color:#f92672">)</span><span style="color:#ae81ff">5</span>
-             g <span style="color:#f92672">=</span> H<span style="color:#f92672">(</span>i-1<span style="color:#f92672">)</span><span style="color:#ae81ff">6</span>
-             h <span style="color:#f92672">=</span> H<span style="color:#f92672">(</span>i-1<span style="color:#f92672">)</span><span style="color:#ae81ff">7</span>
+                    <span style="color:#fb660a">Wt</span> = SSIG1(W(t-2)) + W(t-7) + SSIG0(t-15) + W(t-16)
+        <span style="color:#0086f7;font-weight:bold">2</span>）  <span style="color:#fb660a">a</span> = H(i-1)<span style="color:#0086f7;font-weight:bold">0</span>
+             <span style="color:#fb660a">b</span> = H(i-1)<span style="color:#0086f7;font-weight:bold">1</span>
+             <span style="color:#fb660a">c</span> = H(i-1)<span style="color:#0086f7;font-weight:bold">2</span>
+             <span style="color:#fb660a">d</span> = H(i-1)<span style="color:#0086f7;font-weight:bold">3</span>
+             <span style="color:#fb660a">e</span> = H(i-1)<span style="color:#0086f7;font-weight:bold">4</span>
+             <span style="color:#fb660a">f</span> = H(i-1)<span style="color:#0086f7;font-weight:bold">5</span>
+             <span style="color:#fb660a">g</span> = H(i-1)<span style="color:#0086f7;font-weight:bold">6</span>
+             <span style="color:#fb660a">h</span> = H(i-1)<span style="color:#0086f7;font-weight:bold">7</span>
 
-        <span style="color:#ae81ff">3</span>）For t <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> to <span style="color:#ae81ff">63</span>
-                   T1 <span style="color:#f92672">=</span> h + BSIG1<span style="color:#f92672">(</span>e<span style="color:#f92672">)</span> + CH<span style="color:#f92672">(</span>e,f,g<span style="color:#f92672">)</span> + Kt + Wt
-                   T2 <span style="color:#f92672">=</span> BSIG0<span style="color:#f92672">(</span>a<span style="color:#f92672">)</span> + MAJ<span style="color:#f92672">(</span>a,b,c<span style="color:#f92672">)</span>
-                   h <span style="color:#f92672">=</span> g
-                   g <span style="color:#f92672">=</span> f
-                   f <span style="color:#f92672">=</span> e
-                   e <span style="color:#f92672">=</span> d + T1
-                   d <span style="color:#f92672">=</span> c
-                   c <span style="color:#f92672">=</span> b
-                   b <span style="color:#f92672">=</span> a
-                   a <span style="color:#f92672">=</span> T1 + T2
+        <span style="color:#0086f7;font-weight:bold">3</span>）For <span style="color:#fb660a">t</span> = <span style="color:#0086f7;font-weight:bold">0</span> to <span style="color:#0086f7;font-weight:bold">63</span>
+                   <span style="color:#fb660a">T1</span> = h + BSIG1(e) + CH(e,f,g) + Kt + Wt
+                   <span style="color:#fb660a">T2</span> = BSIG0(a) + MAJ(a,b,c)
+                   <span style="color:#fb660a">h</span> = g
+                   <span style="color:#fb660a">g</span> = f
+                   <span style="color:#fb660a">f</span> = e
+                   <span style="color:#fb660a">e</span> = d + T1
+                   <span style="color:#fb660a">d</span> = c
+                   <span style="color:#fb660a">c</span> = b
+                   <span style="color:#fb660a">b</span> = a
+                   <span style="color:#fb660a">a</span> = T1 + T2
 
-          <span style="color:#ae81ff">4</span>）H<span style="color:#f92672">(</span>i<span style="color:#f92672">)</span>0 <span style="color:#f92672">=</span> a + H<span style="color:#f92672">(</span>i-1<span style="color:#f92672">)</span><span style="color:#ae81ff">0</span>
-                H<span style="color:#f92672">(</span>i<span style="color:#f92672">)</span>1 <span style="color:#f92672">=</span> b + H<span style="color:#f92672">(</span>i-1<span style="color:#f92672">)</span><span style="color:#ae81ff">1</span>
-                H<span style="color:#f92672">(</span>i<span style="color:#f92672">)</span>2 <span style="color:#f92672">=</span> c + H<span style="color:#f92672">(</span>i-1<span style="color:#f92672">)</span><span style="color:#ae81ff">2</span>
-                H<span style="color:#f92672">(</span>i<span style="color:#f92672">)</span>3 <span style="color:#f92672">=</span> d + H<span style="color:#f92672">(</span>i-1<span style="color:#f92672">)</span><span style="color:#ae81ff">3</span>
-                H<span style="color:#f92672">(</span>i<span style="color:#f92672">)</span>4 <span style="color:#f92672">=</span> e + H<span style="color:#f92672">(</span>i-1<span style="color:#f92672">)</span><span style="color:#ae81ff">4</span>
-                H<span style="color:#f92672">(</span>i<span style="color:#f92672">)</span>5 <span style="color:#f92672">=</span> f + H<span style="color:#f92672">(</span>i-1<span style="color:#f92672">)</span><span style="color:#ae81ff">5</span>
-                H<span style="color:#f92672">(</span>i<span style="color:#f92672">)</span>6 <span style="color:#f92672">=</span> g + H<span style="color:#f92672">(</span>i-1<span style="color:#f92672">)</span><span style="color:#ae81ff">6</span>
-                H<span style="color:#f92672">(</span>i<span style="color:#f92672">)</span>7 <span style="color:#f92672">=</span> h + H<span style="color:#f92672">(</span>i-1<span style="color:#f92672">)</span><span style="color:#ae81ff">7</span></code></pre></div>
+          <span style="color:#0086f7;font-weight:bold">4</span>）H(i)<span style="color:#fb660a">0</span> = a + H(i-1)<span style="color:#0086f7;font-weight:bold">0</span>
+                H(i)<span style="color:#fb660a">1</span> = b + H(i-1)<span style="color:#0086f7;font-weight:bold">1</span>
+                H(i)<span style="color:#fb660a">2</span> = c + H(i-1)<span style="color:#0086f7;font-weight:bold">2</span>
+                H(i)<span style="color:#fb660a">3</span> = d + H(i-1)<span style="color:#0086f7;font-weight:bold">3</span>
+                H(i)<span style="color:#fb660a">4</span> = e + H(i-1)<span style="color:#0086f7;font-weight:bold">4</span>
+                H(i)<span style="color:#fb660a">5</span> = f + H(i-1)<span style="color:#0086f7;font-weight:bold">5</span>
+                H(i)<span style="color:#fb660a">6</span> = g + H(i-1)<span style="color:#0086f7;font-weight:bold">6</span>
+                H(i)<span style="color:#fb660a">7</span> = h + H(i-1)<span style="color:#0086f7;font-weight:bold">7</span></code></pre></div>
 <p>对N个消息块依次进行以上四步操作后将最后得到的H(N)0、H(N)1、H(N)2、…、H(N)7串联起来即可得到最后的256bit消息摘要。</p>
 
 <p>三、SHA算法安全吗？</p>
@@ -230,6 +230,11 @@ NSA制造了sha256, 我们不相信NSA，他们不可能不留后门。
 </code></pre>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

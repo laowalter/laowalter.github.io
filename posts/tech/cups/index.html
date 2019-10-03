@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -69,31 +69,31 @@
 <h2 id="hp-打印机">HP 打印机</h2>
 
 <p>这是全面的的私有驱动程序, 包括打印、传真和扫描。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">net-print/hplip-plugin
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">net-print/hplip-plugin
 net-print/hplip</code></pre></div>
 <h2 id="cups-打印机设置">CUPS 打印机设置</h2>
 
 <h3 id="安装软件-cups">安装软件 cups</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq cups</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq cups</code></pre></div>
 <h3 id="允许远程配置">允许远程配置</h3>
 
 <div class="file" >
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/cups/cupsd.conf</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&lt;Location /&gt;
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&lt;Location /&gt;
   Order allow,deny
   Allow localhost
-  Allow from <span style="color:#ae81ff">192</span>.168.0.*
+  Allow from <span style="color:#0086f7;font-weight:bold">192</span>.168.0.*
 &lt;/Location&gt;
 &lt;Location /admin&gt;
   Order allow,deny
   Allow localhost
-  Allow from <span style="color:#ae81ff">192</span>.168.0.*
+  Allow from <span style="color:#0086f7;font-weight:bold">192</span>.168.0.*
 &lt;/Location&gt;
 &lt;Location /admin/conf&gt;
   Allow localhost
-  Allow from <span style="color:#ae81ff">192</span>.168.0.*
+  Allow from <span style="color:#0086f7;font-weight:bold">192</span>.168.0.*
  AuthType Default
   Require user @SYSTEM
   Order allow,deny
@@ -107,16 +107,16 @@ net-print/hplip</code></pre></div>
 </div>
 
 <h3 id="远程通过浏览器">远程通过浏览器</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">添加打印机：http://192.168.0.3:631
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">添加打印机：http://192.168.0.3:631
 找到Admin，使用root登录，然后用find printer。</code></pre></div>
 <h3 id="设置命令行">设置命令行</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lpstat -p -d  <span style="color:#75715e">#列出打印机名称(hp-printer)</span>
-lpoptions -d hp-printer <span style="color:#75715e"># 设置缺省的打印机为hp-printer</span>
-lpstat -p -d  <span style="color:#75715e">#列出打印机名称(hp-printer)</span></code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lpstat -p -d  <span style="color:#080;background-color:#0f140f;font-style:italic">#列出打印机名称(hp-printer)</span>
+lpoptions -d hp-printer <span style="color:#080;background-color:#0f140f;font-style:italic"># 设置缺省的打印机为hp-printer</span>
+lpstat -p -d  <span style="color:#080;background-color:#0f140f;font-style:italic">#列出打印机名称(hp-printer)</span></code></pre></div>
 <h2 id="cups-pdf-安装与设置">CUPS-PDF 安装与设置</h2>
 
 <h3 id="安装软件打开-ppds-use">安装软件打开 ppds use</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq cups-pdf</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq cups-pdf</code></pre></div>
 <p>这样会安装一个打印机驱动/usr/share/cups/model/CUPS-PDF_opt.ppd</p>
 
 <h3 id="通过631端口添加打印机时选择上面的-ppd">通过631端口添加打印机时选择上面的 ppd</h3>
@@ -133,7 +133,7 @@ lpstat -p -d  <span style="color:#75715e">#列出打印机名称(hp-printer)</sp
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/cups/cups-pdf.conf</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Out /data/share/public/pdf_printed</code></pre></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Out /data/share/public/pdf_printed</code></pre></div>
     </div>
 </div>
 
@@ -163,11 +163,11 @@ lpstat -p -d  <span style="color:#75715e">#列出打印机名称(hp-printer)</sp
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/printcap</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># This file was automatically generated by cupsd(8) from the</span>
-<span style="color:#75715e"># /etc/cups/printers.conf file.  All changes to this file</span>
-<span style="color:#75715e"># will be lost.</span>
-HP_M1536dnf|HP_M1536dnf:rm<span style="color:#f92672">=</span>mini:rp<span style="color:#f92672">=</span>HP_M1536dnf:
-Virtual_PDF_Printer|Virtual PDF Printer:rm<span style="color:#f92672">=</span>mini:rp<span style="color:#f92672">=</span>Virtual_PDF_Printer:</code></pre></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#080;background-color:#0f140f;font-style:italic"># This file was automatically generated by cupsd(8) from the</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># /etc/cups/printers.conf file.  All changes to this file</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># will be lost.</span>
+HP_M1536dnf|HP_M1536dnf:rm=mini:rp=HP_M1536dnf:
+Virtual_PDF_Printer|Virtual PDF Printer:rm=mini:rp=Virtual_PDF_Printer:</code></pre></div>
     </div>
 </div>
 
@@ -175,16 +175,21 @@ Virtual_PDF_Printer|Virtual PDF Printer:rm<span style="color:#f92672">=</span>mi
 <li><p>安装用于打印UTF-8的软件包 app-text/paps</p></li>
 
 <li><p>打印命令举例</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">paps  修心.md |lp -d Virtual_PDF_Printer
-paps --columns<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> thinking.md |lp -d  Virtual_PDF_Printer
-paps --font<span style="color:#f92672">=</span>KaiTi thinking.md |lp -d  Virtual_PDF_Printer
-paps --font<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;KaiTi 12&#34;</span> thinking.md |lp -d  Virtual_PDF_Printer
-paps --font<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;WenQuanYi Zen Hei Sharp 2&#34;</span> thinking.md |lp -d  Virtual_PDF_Printer</code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">paps  修心.md |lp -d Virtual_PDF_Printer
+paps --columns=<span style="color:#0086f7;font-weight:bold">2</span> thinking.md |lp -d  Virtual_PDF_Printer
+paps --font=KaiTi thinking.md |lp -d  Virtual_PDF_Printer
+paps --font=<span style="color:#0086d2">&#34;KaiTi 12&#34;</span> thinking.md |lp -d  Virtual_PDF_Printer
+paps --font=<span style="color:#0086d2">&#34;WenQuanYi Zen Hei Sharp 2&#34;</span> thinking.md |lp -d  Virtual_PDF_Printer</code></pre></div></li>
 
 <li><p>字体通过 fc-list 命令可以查到，支持ttf字体。</p></li>
 </ul>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

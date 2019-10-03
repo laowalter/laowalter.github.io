@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -67,45 +67,45 @@
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/nginx/nginx.conf</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server</span> {
-    <span style="color:#f92672">listen</span> 192.168.0.202:<span style="color:#ae81ff">80</span>;
-    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">gentoo</span>;
-    <span style="color:#f92672">charset</span> <span style="color:#e6db74">utf-8</span>;
-    <span style="color:#f92672">autoindex</span> <span style="color:#66d9ef">on</span>; <span style="color:#75715e">#开启nginx目录浏览功能
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">autoindex_exact_size</span> <span style="color:#66d9ef">off</span>; <span style="color:#75715e">#文件大小从KB开始显示
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">autoindex_localtime</span> <span style="color:#66d9ef">on</span>; <span style="color:#75715e">#显示文件修改时间为服务器本地时间
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">access_log</span> <span style="color:#e6db74">/var/log/nginx/localhost.access_log</span> <span style="color:#e6db74">main</span>;
-    <span style="color:#f92672">error_log</span> <span style="color:#e6db74">/var/log/nginx/localhost.error_log</span> <span style="color:#e6db74">info</span>;
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#fb660a;font-weight:bold">server</span> {
+    <span style="color:#fb660a;font-weight:bold">listen</span> 192.168.0.202:<span style="color:#0086f7;font-weight:bold">80</span>;
+    <span style="color:#fb660a;font-weight:bold">server_name</span> <span style="color:#0086d2">gentoo</span>;
+    <span style="color:#fb660a;font-weight:bold">charset</span> <span style="color:#0086d2">utf-8</span>;
+    <span style="color:#fb660a;font-weight:bold">autoindex</span> <span style="color:#0086d2">on</span>; <span style="color:#080;background-color:#0f140f;font-style:italic">#开启nginx目录浏览功能
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#fb660a;font-weight:bold">autoindex_exact_size</span> <span style="color:#0086d2">off</span>; <span style="color:#080;background-color:#0f140f;font-style:italic">#文件大小从KB开始显示
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#fb660a;font-weight:bold">autoindex_localtime</span> <span style="color:#0086d2">on</span>; <span style="color:#080;background-color:#0f140f;font-style:italic">#显示文件修改时间为服务器本地时间
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#fb660a;font-weight:bold">access_log</span> <span style="color:#0086d2">/var/log/nginx/localhost.access_log</span> <span style="color:#0086d2">main</span>;
+    <span style="color:#fb660a;font-weight:bold">error_log</span> <span style="color:#0086d2">/var/log/nginx/localhost.error_log</span> <span style="color:#0086d2">info</span>;
 
-    <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
-        <span style="color:#f92672">root</span> <span style="color:#e6db74">/home/walter/K</span>;
+    <span style="color:#fb660a;font-weight:bold">location</span> <span style="color:#0086d2">/</span> {
+        <span style="color:#fb660a;font-weight:bold">root</span> <span style="color:#0086d2">/home/walter/K</span>;
     }
 }
-<span style="color:#66d9ef">server</span> {
-    <span style="color:#f92672">listen</span> 192.168.0.202:<span style="color:#ae81ff">8000</span>;
-    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">blog</span>;
-    <span style="color:#f92672">access_log</span> <span style="color:#e6db74">/var/log/blog.log</span> <span style="color:#e6db74">main</span>;
-    <span style="color:#f92672">error_log</span> <span style="color:#e6db74">/var/log/blog.error</span> <span style="color:#e6db74">info</span>;
+<span style="color:#fb660a;font-weight:bold">server</span> {
+    <span style="color:#fb660a;font-weight:bold">listen</span> 192.168.0.202:<span style="color:#0086f7;font-weight:bold">8000</span>;
+    <span style="color:#fb660a;font-weight:bold">server_name</span> <span style="color:#0086d2">blog</span>;
+    <span style="color:#fb660a;font-weight:bold">access_log</span> <span style="color:#0086d2">/var/log/blog.log</span> <span style="color:#0086d2">main</span>;
+    <span style="color:#fb660a;font-weight:bold">error_log</span> <span style="color:#0086d2">/var/log/blog.error</span> <span style="color:#0086d2">info</span>;
 
-    <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
-        <span style="color:#f92672">root</span> <span style="color:#e6db74">/home/walter/blog/output</span>;
+    <span style="color:#fb660a;font-weight:bold">location</span> <span style="color:#0086d2">/</span> {
+        <span style="color:#fb660a;font-weight:bold">root</span> <span style="color:#0086d2">/home/walter/blog/output</span>;
     }
 }
 
-<span style="color:#66d9ef">server</span> {
-    <span style="color:#f92672">listen</span> 192.168.0.202:<span style="color:#ae81ff">8080</span>;
-    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">jupyter</span>;
-    <span style="color:#f92672">access_log</span> <span style="color:#e6db74">/tmp/bokeh.access.log</span>;
-    <span style="color:#f92672">error_log</span> <span style="color:#e6db74">/tmp/bokeh.error.log</span> <span style="color:#e6db74">debug</span>;
+<span style="color:#fb660a;font-weight:bold">server</span> {
+    <span style="color:#fb660a;font-weight:bold">listen</span> 192.168.0.202:<span style="color:#0086f7;font-weight:bold">8080</span>;
+    <span style="color:#fb660a;font-weight:bold">server_name</span> <span style="color:#0086d2">jupyter</span>;
+    <span style="color:#fb660a;font-weight:bold">access_log</span> <span style="color:#0086d2">/tmp/bokeh.access.log</span>;
+    <span style="color:#fb660a;font-weight:bold">error_log</span> <span style="color:#0086d2">/tmp/bokeh.error.log</span> <span style="color:#0086d2">debug</span>;
 
-    <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
-            <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://127.0.0.1:5006</span>;
-            <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Upgrade</span> $http_upgrade;
-            <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Connection</span> <span style="color:#e6db74">&#34;upgrade&#34;</span>;
-            <span style="color:#f92672">proxy_http_version</span> <span style="color:#ae81ff">1</span><span style="color:#e6db74">.1</span>;
-            <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-For</span> $proxy_add_x_forwarded_for;
-            <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> $host:$server_port;
-            <span style="color:#f92672">proxy_buffering</span> <span style="color:#66d9ef">off</span>;
+    <span style="color:#fb660a;font-weight:bold">location</span> <span style="color:#0086d2">/</span> {
+            <span style="color:#fb660a;font-weight:bold">proxy_pass</span> <span style="color:#0086d2">http://127.0.0.1:5006</span>;
+            <span style="color:#fb660a;font-weight:bold">proxy_set_header</span> <span style="color:#0086d2">Upgrade</span> <span style="color:#fb660a">$http_upgrade</span>;
+            <span style="color:#fb660a;font-weight:bold">proxy_set_header</span> <span style="color:#0086d2">Connection</span> <span style="color:#0086d2">&#34;upgrade&#34;</span>;
+            <span style="color:#fb660a;font-weight:bold">proxy_http_version</span> <span style="color:#0086f7;font-weight:bold">1</span><span style="color:#0086d2">.1</span>;
+            <span style="color:#fb660a;font-weight:bold">proxy_set_header</span> <span style="color:#0086d2">X-Forwarded-For</span> <span style="color:#fb660a">$proxy_add_x_forwarded_for</span>;
+            <span style="color:#fb660a;font-weight:bold">proxy_set_header</span> <span style="color:#0086d2">Host</span> <span style="color:#fb660a">$host:$server_port</span>;
+            <span style="color:#fb660a;font-weight:bold">proxy_buffering</span> <span style="color:#0086d2">off</span>;
         }
 }</code></pre></div>
     </div>
@@ -114,7 +114,7 @@
 <h2 id="nginx-on-mac">Nginx on MAC</h2>
 
 <h3 id="install">Install</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install nginx
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install nginx
 sudo nginx</code></pre></div>
 <h3 id="configuration">Configuration</h3>
 
@@ -122,32 +122,37 @@ sudo nginx</code></pre></div>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/usr/local/etc/nginx/nginx.conf</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">server</span> {<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>         <span style="color:#a6e22e">listen</span>       <span style="color:#ae81ff">8000</span>;<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>         <span style="color:#a6e22e">server_name</span>  <span style="color:#a6e22e">_</span>;<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>         <span style="color:#a6e22e">location</span> / {<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>            <span style="color:#a6e22e">root</span>   <span style="color:#e6db74">/Users/</span><span style="color:#a6e22e">walter</span><span style="color:#e6db74">/blog/</span><span style="color:#a6e22e">output</span>;<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>            <span style="color:#a6e22e">index</span>  <span style="color:#a6e22e">index</span>.<span style="color:#a6e22e">html</span> <span style="color:#a6e22e">index</span>.<span style="color:#a6e22e">htm</span>;<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>                 <span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>        }<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>}</code></pre></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">server {
+         listen       <span style="color:#0086f7;font-weight:bold">8000</span>;
+         server_name  _;
+
+         location / {
+            root   <span style="color:#0086d2">/Users/</span>walter<span style="color:#0086d2">/blog/</span>output;
+            index  index.html index.htm;
+                 
+        }
+
+}</code></pre></div>
     </div>
 </div>
 
 <h3 id="unblock-firewall-for-nginx">Unblock firewall for nginx</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /usr/local/Cellar/nginx/1.10.3/bin/nginx
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /usr/local/Cellar/nginx/1.10.3/bin/nginx
  sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp /usr/local/Cellar/nginx/1.10.3/bin/nginx</code></pre></div>
 <h3 id="start-nginx-为了配合firewall-不能直接运行-usr-local-bin-nginx">Start nginx, 为了配合firewall 不能直接运行/usr/local/bin/nginx</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> sudo /usr/local/Cellar/nginx/1.10.3/bin/nginx</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> sudo /usr/local/Cellar/nginx/1.10.3/bin/nginx</code></pre></div>
 <h3 id="stop-nginx">Stop nginx</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> sudo /usr/local/Cellar/nginx/1.10.3/bin/nginx -s stop</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> sudo /usr/local/Cellar/nginx/1.10.3/bin/nginx -s stop</code></pre></div>
 <h3 id="autostart">Autostart</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo cp /usr/local/opt/nginx/*.plist /Library/LaunchDaemons
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo cp /usr/local/opt/nginx/*.plist /Library/LaunchDaemons
 $ sudo chown root:wheel /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
 $ sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist</code></pre></div>
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

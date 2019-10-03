@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -86,63 +86,63 @@ df = mt.TradeCal(exchangeCD='XSHG', beginDate='20150928', endDate='20151010', fi
 
 <ul>
 <li><p>Call data_handler</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">self<span style="color:#f92672">.</span>events <span style="color:#f92672">=</span> queue<span style="color:#f92672">.</span>Queue()
-data_handler(self<span style="color:#f92672">.</span>pairs, self<span style="color:#f92672">.</span>events, self<span style="color:#f92672">.</span>csv_dir)</code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">self.events = queue.Queue()
+data_handler(self.pairs, self.events, self.csv_dir)</code></pre></div></li>
 </ul>
 
 <h3 id="2-debug">2 debug</h3>
 
 <ul>
 <li><p>start from <strong>mac.py</strong> :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">HistoricCSVPriceHandler <span style="color:#f92672">-&gt;</span>(data_handler)
-<span style="color:#f92672">=&gt;</span> backtest(<span style="color:#e6db74">`data_handler`</span>) 
-<span style="color:#f92672">=&gt;</span> price<span style="color:#f92672">.</span>py(<span style="color:#e6db74">`PriceHandler`</span>) 
-<span style="color:#f92672">=&gt;</span> _set_up_prices_dict(self) <span style="color:#f92672">=&gt;</span> 
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">HistoricCSVPriceHandler -&gt;(data_handler)
+=&gt; backtest(<span style="color:#0086d2">`data_handler`</span>) 
+=&gt; price.py(<span style="color:#0086d2">`PriceHandler`</span>) 
+=&gt; _set_up_prices_dict(self) =&gt; 
 
-prices_dict <span style="color:#f92672">=</span> {
-	<span style="color:#e6db74">&#39;USDGBP&#39;</span>: {<span style="color:#e6db74">&#39;ask&#39;</span>: None, <span style="color:#e6db74">&#39;bid&#39;</span>: None, <span style="color:#e6db74">&#39;time&#39;</span>: None}, 
-	<span style="color:#e6db74">&#39;EURUSD&#39;</span>: {<span style="color:#e6db74">&#39;ask&#39;</span>: None, <span style="color:#e6db74">&#39;bid&#39;</span>: None, <span style="color:#e6db74">&#39;time&#39;</span>: None}, 
-	<span style="color:#e6db74">&#39;GBPUSD&#39;</span>: {<span style="color:#e6db74">&#39;ask&#39;</span>: None, <span style="color:#e6db74">&#39;bid&#39;</span>: None, <span style="color:#e6db74">&#39;time&#39;</span>: None}, 
-	<span style="color:#e6db74">&#39;USDEUR&#39;</span>: {<span style="color:#e6db74">&#39;ask&#39;</span>: None, <span style="color:#e6db74">&#39;bid&#39;</span>: None, <span style="color:#e6db74">&#39;time&#39;</span>: None}
+prices_dict = {
+	<span style="color:#0086d2">&#39;USDGBP&#39;</span>: {<span style="color:#0086d2">&#39;ask&#39;</span>: None, <span style="color:#0086d2">&#39;bid&#39;</span>: None, <span style="color:#0086d2">&#39;time&#39;</span>: None}, 
+	<span style="color:#0086d2">&#39;EURUSD&#39;</span>: {<span style="color:#0086d2">&#39;ask&#39;</span>: None, <span style="color:#0086d2">&#39;bid&#39;</span>: None, <span style="color:#0086d2">&#39;time&#39;</span>: None}, 
+	<span style="color:#0086d2">&#39;GBPUSD&#39;</span>: {<span style="color:#0086d2">&#39;ask&#39;</span>: None, <span style="color:#0086d2">&#39;bid&#39;</span>: None, <span style="color:#0086d2">&#39;time&#39;</span>: None}, 
+	<span style="color:#0086d2">&#39;USDEUR&#39;</span>: {<span style="color:#0086d2">&#39;ask&#39;</span>: None, <span style="color:#0086d2">&#39;bid&#39;</span>: None, <span style="color:#0086d2">&#39;time&#39;</span>: None}
 }
 
-self<span style="color:#f92672">.</span>file_dates <span style="color:#f92672">=</span>
-[<span style="color:#e6db74">&#39;20140101&#39;</span>, <span style="color:#e6db74">&#39;20140102&#39;</span>, <span style="color:#e6db74">&#39;20140103&#39;</span>, <span style="color:#e6db74">&#39;20140106&#39;</span>, <span style="color:#e6db74">&#39;20140107&#39;</span>, <span style="color:#e6db74">&#39;20140108&#39;</span>, 
-<span style="color:#e6db74">&#39;20140109&#39;</span>, <span style="color:#e6db74">&#39;20140110&#39;</span>, <span style="color:#e6db74">&#39;20140113&#39;</span>, <span style="color:#e6db74">&#39;20140114&#39;</span>, <span style="color:#e6db74">&#39;20140115&#39;</span>, <span style="color:#e6db74">&#39;20140116&#39;</span>, 
-<span style="color:#e6db74">&#39;20140117&#39;</span>, <span style="color:#e6db74">&#39;20140120&#39;</span>, <span style="color:#e6db74">&#39;20140121&#39;</span>, <span style="color:#e6db74">&#39;20140122&#39;</span>, <span style="color:#e6db74">&#39;20140123&#39;</span>, <span style="color:#e6db74">&#39;20140124&#39;</span>, 
-<span style="color:#e6db74">&#39;20140127&#39;</span>, <span style="color:#e6db74">&#39;20140128&#39;</span>, <span style="color:#e6db74">&#39;20140129&#39;</span>, <span style="color:#e6db74">&#39;20140130&#39;</span>, <span style="color:#e6db74">&#39;20140131&#39;</span>]</code></pre></div></li>
+self.file_dates =
+[<span style="color:#0086d2">&#39;20140101&#39;</span>, <span style="color:#0086d2">&#39;20140102&#39;</span>, <span style="color:#0086d2">&#39;20140103&#39;</span>, <span style="color:#0086d2">&#39;20140106&#39;</span>, <span style="color:#0086d2">&#39;20140107&#39;</span>, <span style="color:#0086d2">&#39;20140108&#39;</span>, 
+<span style="color:#0086d2">&#39;20140109&#39;</span>, <span style="color:#0086d2">&#39;20140110&#39;</span>, <span style="color:#0086d2">&#39;20140113&#39;</span>, <span style="color:#0086d2">&#39;20140114&#39;</span>, <span style="color:#0086d2">&#39;20140115&#39;</span>, <span style="color:#0086d2">&#39;20140116&#39;</span>, 
+<span style="color:#0086d2">&#39;20140117&#39;</span>, <span style="color:#0086d2">&#39;20140120&#39;</span>, <span style="color:#0086d2">&#39;20140121&#39;</span>, <span style="color:#0086d2">&#39;20140122&#39;</span>, <span style="color:#0086d2">&#39;20140123&#39;</span>, <span style="color:#0086d2">&#39;20140124&#39;</span>, 
+<span style="color:#0086d2">&#39;20140127&#39;</span>, <span style="color:#0086d2">&#39;20140128&#39;</span>, <span style="color:#0086d2">&#39;20140129&#39;</span>, <span style="color:#0086d2">&#39;20140130&#39;</span>, <span style="color:#0086d2">&#39;20140131&#39;</span>]</code></pre></div></li>
 
 <li><p><strong>price.py</strong>(line:146)</p></li>
 </ul>
 
 <p>combine <code>EURUSD</code> and <code>GBPUSD</code> in one table</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">2014</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span> <span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">36.412</span>  <span style="color:#ae81ff">1.50100</span>  <span style="color:#ae81ff">1.49900</span>       <span style="color:#ae81ff">2.86</span>       <span style="color:#ae81ff">2.62</span>  EURUSD
-<span style="color:#ae81ff">2014</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span> <span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">37.903</span>  <span style="color:#ae81ff">1.50101</span>  <span style="color:#ae81ff">1.49901</span>       <span style="color:#ae81ff">2.61</span>       <span style="color:#ae81ff">1.37</span>  EURUSD
-<span style="color:#ae81ff">2014</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span> <span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">39.313</span>  <span style="color:#ae81ff">1.50103</span>  <span style="color:#ae81ff">1.49903</span>       <span style="color:#ae81ff">2.61</span>       <span style="color:#ae81ff">2.79</span>  EURUSD
-<span style="color:#ae81ff">2014</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span> <span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">40.643</span>  <span style="color:#ae81ff">1.50102</span>  <span style="color:#ae81ff">1.49902</span>       <span style="color:#ae81ff">1.46</span>       <span style="color:#ae81ff">1.85</span>  EURUSD
-<span style="color:#ae81ff">2014</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span> <span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">42.072</span>  <span style="color:#ae81ff">1.50103</span>  <span style="color:#ae81ff">1.49903</span>       <span style="color:#ae81ff">1.01</span>       <span style="color:#ae81ff">2.02</span>  EURUSD
-<span style="color:#ae81ff">2014</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span> <span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">43.331</span>  <span style="color:#ae81ff">1.50102</span>  <span style="color:#ae81ff">1.49902</span>       <span style="color:#ae81ff">1.24</span>       <span style="color:#ae81ff">1.68</span>  EURUSD
-                         <span style="color:#f92672">...</span>      <span style="color:#f92672">...</span>        <span style="color:#f92672">...</span>        <span style="color:#f92672">...</span>     <span style="color:#f92672">...</span>
-<span style="color:#ae81ff">2014</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">59</span>:<span style="color:#ae81ff">17.810</span>  <span style="color:#ae81ff">1.49935</span>  <span style="color:#ae81ff">1.49735</span>       <span style="color:#ae81ff">2.87</span>       <span style="color:#ae81ff">1.86</span>  GBPUSD
-<span style="color:#ae81ff">2014</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">59</span>:<span style="color:#ae81ff">19.094</span>  <span style="color:#ae81ff">1.49933</span>  <span style="color:#ae81ff">1.49733</span>       <span style="color:#ae81ff">1.41</span>       <span style="color:#ae81ff">2.97</span>  GBPUSD
-<span style="color:#ae81ff">2014</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">59</span>:<span style="color:#ae81ff">20.538</span>  <span style="color:#ae81ff">1.49935</span>  <span style="color:#ae81ff">1.49735</span>       <span style="color:#ae81ff">2.93</span>       <span style="color:#ae81ff">1.03</span>  GBPUSD
-<span style="color:#ae81ff">2014</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">59</span>:<span style="color:#ae81ff">21.896</span>  <span style="color:#ae81ff">1.49936</span>  <span style="color:#ae81ff">1.49736</span>       <span style="color:#ae81ff">2.72</span>       <span style="color:#ae81ff">2.91</span>  GBPUSD
-<span style="color:#ae81ff">2014</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">59</span>:<span style="color:#ae81ff">23.391</span>  <span style="color:#ae81ff">1.49933</span>  <span style="color:#ae81ff">1.49733</span>       <span style="color:#ae81ff">1.25</span>       <span style="color:#ae81ff">2.99</span>  GBPUSD</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#0086f7;font-weight:bold">2014</span>-<span style="color:#0086f7;font-weight:bold">01</span>-<span style="color:#0086f7;font-weight:bold">01</span> <span style="color:#0086f7;font-weight:bold">00</span>:<span style="color:#0086f7;font-weight:bold">00</span>:<span style="color:#0086f7;font-weight:bold">36.412</span>  <span style="color:#0086f7;font-weight:bold">1.50100</span>  <span style="color:#0086f7;font-weight:bold">1.49900</span>       <span style="color:#0086f7;font-weight:bold">2.86</span>       <span style="color:#0086f7;font-weight:bold">2.62</span>  EURUSD
+<span style="color:#0086f7;font-weight:bold">2014</span>-<span style="color:#0086f7;font-weight:bold">01</span>-<span style="color:#0086f7;font-weight:bold">01</span> <span style="color:#0086f7;font-weight:bold">00</span>:<span style="color:#0086f7;font-weight:bold">00</span>:<span style="color:#0086f7;font-weight:bold">37.903</span>  <span style="color:#0086f7;font-weight:bold">1.50101</span>  <span style="color:#0086f7;font-weight:bold">1.49901</span>       <span style="color:#0086f7;font-weight:bold">2.61</span>       <span style="color:#0086f7;font-weight:bold">1.37</span>  EURUSD
+<span style="color:#0086f7;font-weight:bold">2014</span>-<span style="color:#0086f7;font-weight:bold">01</span>-<span style="color:#0086f7;font-weight:bold">01</span> <span style="color:#0086f7;font-weight:bold">00</span>:<span style="color:#0086f7;font-weight:bold">00</span>:<span style="color:#0086f7;font-weight:bold">39.313</span>  <span style="color:#0086f7;font-weight:bold">1.50103</span>  <span style="color:#0086f7;font-weight:bold">1.49903</span>       <span style="color:#0086f7;font-weight:bold">2.61</span>       <span style="color:#0086f7;font-weight:bold">2.79</span>  EURUSD
+<span style="color:#0086f7;font-weight:bold">2014</span>-<span style="color:#0086f7;font-weight:bold">01</span>-<span style="color:#0086f7;font-weight:bold">01</span> <span style="color:#0086f7;font-weight:bold">00</span>:<span style="color:#0086f7;font-weight:bold">00</span>:<span style="color:#0086f7;font-weight:bold">40.643</span>  <span style="color:#0086f7;font-weight:bold">1.50102</span>  <span style="color:#0086f7;font-weight:bold">1.49902</span>       <span style="color:#0086f7;font-weight:bold">1.46</span>       <span style="color:#0086f7;font-weight:bold">1.85</span>  EURUSD
+<span style="color:#0086f7;font-weight:bold">2014</span>-<span style="color:#0086f7;font-weight:bold">01</span>-<span style="color:#0086f7;font-weight:bold">01</span> <span style="color:#0086f7;font-weight:bold">00</span>:<span style="color:#0086f7;font-weight:bold">00</span>:<span style="color:#0086f7;font-weight:bold">42.072</span>  <span style="color:#0086f7;font-weight:bold">1.50103</span>  <span style="color:#0086f7;font-weight:bold">1.49903</span>       <span style="color:#0086f7;font-weight:bold">1.01</span>       <span style="color:#0086f7;font-weight:bold">2.02</span>  EURUSD
+<span style="color:#0086f7;font-weight:bold">2014</span>-<span style="color:#0086f7;font-weight:bold">01</span>-<span style="color:#0086f7;font-weight:bold">01</span> <span style="color:#0086f7;font-weight:bold">00</span>:<span style="color:#0086f7;font-weight:bold">00</span>:<span style="color:#0086f7;font-weight:bold">43.331</span>  <span style="color:#0086f7;font-weight:bold">1.50102</span>  <span style="color:#0086f7;font-weight:bold">1.49902</span>       <span style="color:#0086f7;font-weight:bold">1.24</span>       <span style="color:#0086f7;font-weight:bold">1.68</span>  EURUSD
+                         ...      ...        ...        ...     ...
+<span style="color:#0086f7;font-weight:bold">2014</span>-<span style="color:#0086f7;font-weight:bold">01</span>-<span style="color:#0086f7;font-weight:bold">01</span> <span style="color:#0086f7;font-weight:bold">23</span>:<span style="color:#0086f7;font-weight:bold">59</span>:<span style="color:#0086f7;font-weight:bold">17.810</span>  <span style="color:#0086f7;font-weight:bold">1.49935</span>  <span style="color:#0086f7;font-weight:bold">1.49735</span>       <span style="color:#0086f7;font-weight:bold">2.87</span>       <span style="color:#0086f7;font-weight:bold">1.86</span>  GBPUSD
+<span style="color:#0086f7;font-weight:bold">2014</span>-<span style="color:#0086f7;font-weight:bold">01</span>-<span style="color:#0086f7;font-weight:bold">01</span> <span style="color:#0086f7;font-weight:bold">23</span>:<span style="color:#0086f7;font-weight:bold">59</span>:<span style="color:#0086f7;font-weight:bold">19.094</span>  <span style="color:#0086f7;font-weight:bold">1.49933</span>  <span style="color:#0086f7;font-weight:bold">1.49733</span>       <span style="color:#0086f7;font-weight:bold">1.41</span>       <span style="color:#0086f7;font-weight:bold">2.97</span>  GBPUSD
+<span style="color:#0086f7;font-weight:bold">2014</span>-<span style="color:#0086f7;font-weight:bold">01</span>-<span style="color:#0086f7;font-weight:bold">01</span> <span style="color:#0086f7;font-weight:bold">23</span>:<span style="color:#0086f7;font-weight:bold">59</span>:<span style="color:#0086f7;font-weight:bold">20.538</span>  <span style="color:#0086f7;font-weight:bold">1.49935</span>  <span style="color:#0086f7;font-weight:bold">1.49735</span>       <span style="color:#0086f7;font-weight:bold">2.93</span>       <span style="color:#0086f7;font-weight:bold">1.03</span>  GBPUSD
+<span style="color:#0086f7;font-weight:bold">2014</span>-<span style="color:#0086f7;font-weight:bold">01</span>-<span style="color:#0086f7;font-weight:bold">01</span> <span style="color:#0086f7;font-weight:bold">23</span>:<span style="color:#0086f7;font-weight:bold">59</span>:<span style="color:#0086f7;font-weight:bold">21.896</span>  <span style="color:#0086f7;font-weight:bold">1.49936</span>  <span style="color:#0086f7;font-weight:bold">1.49736</span>       <span style="color:#0086f7;font-weight:bold">2.72</span>       <span style="color:#0086f7;font-weight:bold">2.91</span>  GBPUSD
+<span style="color:#0086f7;font-weight:bold">2014</span>-<span style="color:#0086f7;font-weight:bold">01</span>-<span style="color:#0086f7;font-weight:bold">01</span> <span style="color:#0086f7;font-weight:bold">23</span>:<span style="color:#0086f7;font-weight:bold">59</span>:<span style="color:#0086f7;font-weight:bold">23.391</span>  <span style="color:#0086f7;font-weight:bold">1.49933</span>  <span style="color:#0086f7;font-weight:bold">1.49733</span>       <span style="color:#0086f7;font-weight:bold">1.25</span>       <span style="color:#0086f7;font-weight:bold">2.99</span>  GBPUSD</code></pre></div>
 <ul>
 <li><p>pause at <strong>backtest.py</strong> (line:29) (Feb,08)</p>
 
 <ul>
 <li><p><code>data_handler</code> return a price dataframe&rsquo;s iterrows() object, will deal with <code>next</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">self<span style="color:#f92672">.</span>ticker <span style="color:#f92672">=</span> data_handler(self<span style="color:#f92672">.</span>pairs, self<span style="color:#f92672">.</span>events, self<span style="color:#f92672">.</span>csv_dir)</code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">self.ticker = data_handler(self.pairs, self.events, self.csv_dir)</code></pre></div></li>
 </ul></li>
 
 <li><p>cont&rsquo;d at <strong>strategy.py:</strong></p>
 
 <ul>
 <li><p>init</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pairs_dict <span style="color:#f92672">=</span> {
-<span style="color:#e6db74">&#39;EURUSD&#39;</span>: {<span style="color:#e6db74">&#39;ticks&#39;</span>: <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;short_sma&#39;</span>: None, <span style="color:#e6db74">&#39;long_sma&#39;</span>: None, <span style="color:#e6db74">&#39;invested&#39;</span>: False}, 
-<span style="color:#e6db74">&#39;GBPUSD&#39;</span>: {<span style="color:#e6db74">&#39;ticks&#39;</span>: <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;short_sma&#39;</span>: None, <span style="color:#e6db74">&#39;long_sma&#39;</span>: None, <span style="color:#e6db74">&#39;invested&#39;</span>: False}
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pairs_dict = {
+<span style="color:#0086d2">&#39;EURUSD&#39;</span>: {<span style="color:#0086d2">&#39;ticks&#39;</span>: <span style="color:#0086f7;font-weight:bold">0</span>, <span style="color:#0086d2">&#39;short_sma&#39;</span>: None, <span style="color:#0086d2">&#39;long_sma&#39;</span>: None, <span style="color:#0086d2">&#39;invested&#39;</span>: False}, 
+<span style="color:#0086d2">&#39;GBPUSD&#39;</span>: {<span style="color:#0086d2">&#39;ticks&#39;</span>: <span style="color:#0086f7;font-weight:bold">0</span>, <span style="color:#0086d2">&#39;short_sma&#39;</span>: None, <span style="color:#0086d2">&#39;long_sma&#39;</span>: None, <span style="color:#0086d2">&#39;invested&#39;</span>: False}
 }</code></pre></div></li>
 </ul></li>
 
@@ -159,32 +159,32 @@ self<span style="color:#f92672">.</span>file_dates <span style="color:#f92672">=
 
 <ul>
 <li><p>line 180:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">getcontext()<span style="color:#f92672">.</span>rounding <span style="color:#f92672">=</span> ROUND_HALF_DOWN</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">self<span style="color:#f92672">.</span>prices[pair] <span style="color:#f92672">=</span> {
-<span style="color:#e6db74">&#39;bid&#39;</span>: Decimal(<span style="color:#e6db74">&#39;1.49899&#39;</span>), 
-<span style="color:#e6db74">&#39;ask&#39;</span>: Decimal(<span style="color:#e6db74">&#39;1.50099&#39;</span>), 
-<span style="color:#e6db74">&#39;time&#39;</span>: Timestamp(<span style="color:#e6db74">&#39;2014-01-01 00:00:02.826000&#39;</span>)
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">getcontext().rounding = ROUND_HALF_DOWN</code></pre></div><div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">self.prices[pair] = {
+<span style="color:#0086d2">&#39;bid&#39;</span>: Decimal(<span style="color:#0086d2">&#39;1.49899&#39;</span>), 
+<span style="color:#0086d2">&#39;ask&#39;</span>: Decimal(<span style="color:#0086d2">&#39;1.50099&#39;</span>), 
+<span style="color:#0086d2">&#39;time&#39;</span>: Timestamp(<span style="color:#0086d2">&#39;2014-01-01 00:00:02.826000&#39;</span>)
 }
 
-self<span style="color:#f92672">.</span>prices[inv_pair] <span style="color:#f92672">=</span> {
-<span style="color:#e6db74">&#39;bid&#39;</span>: Decimal(<span style="color:#e6db74">&#39;0.66712&#39;</span>), 
-<span style="color:#e6db74">&#39;ask&#39;</span>: Decimal(<span style="color:#e6db74">&#39;0.66623&#39;</span>), 
-<span style="color:#e6db74">&#39;time&#39;</span>: Timestamp(<span style="color:#e6db74">&#39;2014-01-01 00:00:02.826000&#39;</span>)
+self.prices[inv_pair] = {
+<span style="color:#0086d2">&#39;bid&#39;</span>: Decimal(<span style="color:#0086d2">&#39;0.66712&#39;</span>), 
+<span style="color:#0086d2">&#39;ask&#39;</span>: Decimal(<span style="color:#0086d2">&#39;0.66623&#39;</span>), 
+<span style="color:#0086d2">&#39;time&#39;</span>: Timestamp(<span style="color:#0086d2">&#39;2014-01-01 00:00:02.826000&#39;</span>)
 }</code></pre></div></li>
 </ul></li>
 
 <li><p>line 201:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">tev <span style="color:#f92672">=</span> TickEvent(pair, index, bid, ask)
-self<span style="color:#f92672">.</span>events_queue<span style="color:#f92672">.</span>put(tev)
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">tev = TickEvent(pair, index, bid, ask)
+self.events_queue.put(tev)
 
-tev <span style="color:#f92672">=</span>
-Type: TICK, Instrument: GBPUSD, Time: <span style="color:#ae81ff">2014</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span> <span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">02.826000</span>, Bid: <span style="color:#ae81ff">1.49899</span>, Ask: <span style="color:#ae81ff">1.50099</span></code></pre></div></li>
+tev =
+Type: TICK, Instrument: GBPUSD, Time: <span style="color:#0086f7;font-weight:bold">2014</span>-<span style="color:#0086f7;font-weight:bold">01</span>-<span style="color:#0086f7;font-weight:bold">01</span> <span style="color:#0086f7;font-weight:bold">00</span>:<span style="color:#0086f7;font-weight:bold">00</span>:<span style="color:#0086f7;font-weight:bold">02.826000</span>, Bid: <span style="color:#0086f7;font-weight:bold">1.49899</span>, Ask: <span style="color:#0086f7;font-weight:bold">1.50099</span></code></pre></div></li>
 
 <li><p><strong>backtest.py</strong></p>
 
 <ul>
 <li><p>line: 61</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">event:
-Type: TICK, Instrument: GBPUSD, Time: <span style="color:#ae81ff">2014</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span> <span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">02.826000</span>, Bid: <span style="color:#ae81ff">1.49899</span>, Ask: <span style="color:#ae81ff">1.50099</span></code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">event:
+Type: TICK, Instrument: GBPUSD, Time: <span style="color:#0086f7;font-weight:bold">2014</span>-<span style="color:#0086f7;font-weight:bold">01</span>-<span style="color:#0086f7;font-weight:bold">01</span> <span style="color:#0086f7;font-weight:bold">00</span>:<span style="color:#0086f7;font-weight:bold">00</span>:<span style="color:#0086f7;font-weight:bold">02.826000</span>, Bid: <span style="color:#0086f7;font-weight:bold">1.49899</span>, Ask: <span style="color:#0086f7;font-weight:bold">1.50099</span></code></pre></div></li>
 </ul></li>
 
 <li><p><strong>strategy.py</strong></p>
@@ -204,12 +204,12 @@ Type: TICK, Instrument: GBPUSD, Time: <span style="color:#ae81ff">2014</span><sp
 <p>The <code>execution()</code> was the <code>SimulatedExecution</code> in mac.py as the initialized parameter of backtest&rsquo;s <code>__init__</code>. The <code>SimulatedExecution</code> is from <code>qsforex.execution.execution</code></p>
 
 <p>line 61:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> event<span style="color:#f92672">.</span>type <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;TICK&#39;</span>:
-    self<span style="color:#f92672">.</span>strategy<span style="color:#f92672">.</span>calculate_signals(event)
-    self<span style="color:#f92672">.</span>portfolio<span style="color:#f92672">.</span>update_portfolio(event)</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fb660a;font-weight:bold">if</span> event.type == <span style="color:#0086d2">&#39;TICK&#39;</span>:
+    self.strategy.calculate_signals(event)
+    self.portfolio.update_portfolio(event)</code></pre></div>
 <p>line 53:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_run_backtest</span>(self)
-self<span style="color:#f92672">.</span>event<span style="color:#f92672">.</span>get</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fb660a;font-weight:bold">def</span> <span style="color:#ff0086;font-weight:bold">_run_backtest</span>(self)
+self.event.get</code></pre></div>
 <h3 id="understanding-queue-queue">understanding queue.Queue</h3>
 
 <ul>
@@ -217,6 +217,11 @@ self<span style="color:#f92672">.</span>event<span style="color:#f92672">.</span
 </ul>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -62,74 +62,79 @@
 <h2 id="install">Install</h2>
 
 <h3 id="install-package">Install package</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pip install jupyter
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pip install jupyter
 $ jupyter notebook --generate-config</code></pre></div>
 <h3 id="config-jupyter-jupyter-notebook-config-py">Config ~/.jupyter/jupyter_notebook_config.py</h3>
 
 <h4 id="edit-jupyter-jupyter-notebook-config-py">edit ~/.jupyter/jupyter_notebook_config.py</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c<span style="color:#f92672">.</span>NotebookApp<span style="color:#f92672">.</span>ip <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;192.168.0.199&#39;</span> </code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c.NotebookApp.ip = <span style="color:#0086d2">&#39;192.168.0.199&#39;</span> </code></pre></div>
 <ul>
 <li><p>Start jupyter</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ jupyter notebook --no-browser
-<span style="color:#f92672">[</span>I <span style="color:#ae81ff">16</span>:56:50.226 NotebookApp<span style="color:#f92672">]</span> Serving notebooks from local directory: /home/walter
-<span style="color:#f92672">[</span>I <span style="color:#ae81ff">16</span>:56:50.226 NotebookApp<span style="color:#f92672">]</span> <span style="color:#ae81ff">0</span> active kernels
-<span style="color:#f92672">[</span>I <span style="color:#ae81ff">16</span>:56:50.226 NotebookApp<span style="color:#f92672">]</span> The Jupyter Notebook is running at:
-<span style="color:#f92672">[</span>I <span style="color:#ae81ff">16</span>:56:50.226 NotebookApp<span style="color:#f92672">]</span> http://mini:8888/?token<span style="color:#f92672">=</span>6d97162c599bf9e0010b2bf886be238cdf60cf17b12edb62
-<span style="color:#f92672">[</span>I <span style="color:#ae81ff">16</span>:56:50.226 NotebookApp<span style="color:#f92672">]</span> Use Control-C to stop this server and shut down all kernels <span style="color:#f92672">(</span>twice to skip confirmation<span style="color:#f92672">)</span>.
-<span style="color:#f92672">[</span>C <span style="color:#ae81ff">16</span>:56:50.227 NotebookApp<span style="color:#f92672">]</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ jupyter notebook --no-browser
+[I <span style="color:#0086f7;font-weight:bold">16</span>:56:50.226 NotebookApp] Serving notebooks from local directory: /home/walter
+[I <span style="color:#0086f7;font-weight:bold">16</span>:56:50.226 NotebookApp] <span style="color:#0086f7;font-weight:bold">0</span> active kernels
+[I <span style="color:#0086f7;font-weight:bold">16</span>:56:50.226 NotebookApp] The Jupyter Notebook is running at:
+[I <span style="color:#0086f7;font-weight:bold">16</span>:56:50.226 NotebookApp] http://mini:8888/?token=6d97162c599bf9e0010b2bf886be238cdf60cf17b12edb62
+[I <span style="color:#0086f7;font-weight:bold">16</span>:56:50.226 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C <span style="color:#0086f7;font-weight:bold">16</span>:56:50.227 NotebookApp]
 
-Copy/paste this URL into your browser when you connect <span style="color:#66d9ef">for</span> the first time,
+Copy/paste this URL into your browser when you connect <span style="color:#fb660a;font-weight:bold">for</span> the first time,
 to login with a token:
-    http://mini:8888/?token<span style="color:#f92672">=</span>6d97162c599bf9e0010b2bf886be238cdf60cf17b12edb62</code></pre></div></li>
+    http://mini:8888/?token=6d97162c599bf9e0010b2bf886be238cdf60cf17b12edb62</code></pre></div></li>
 
 <li><p>Open a remote browser copy the above url</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">http://mini:8888/?token<span style="color:#f92672">=</span>6d97162c599bf9e0010b2bf886be238cdf60cf17b12edb62<span style="color:#e6db74">`</span></code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">http://mini:8888/?token=6d97162c599bf9e0010b2bf886be238cdf60cf17b12edb62<span style="color:#0086d2">`</span></code></pre></div></li>
 </ul>
 
 <h4 id="edit-jupyter-jupyter-notebook-config-py-1">edit  ~/.jupyter/jupyter_notebook_config.py</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c<span style="color:#f92672">.</span>NotebookApp<span style="color:#f92672">.</span>password_required <span style="color:#f92672">=</span> True</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ jupyter-notebook --no-browser
-<span style="color:#f92672">[</span>C <span style="color:#ae81ff">17</span>:51:26.974 NotebookApp<span style="color:#f92672">]</span> Notebook servers are configured to only be run with a password.
-<span style="color:#f92672">[</span>C <span style="color:#ae81ff">17</span>:51:26.974 NotebookApp<span style="color:#f92672">]</span> Hint: run the following command to set a password
-<span style="color:#f92672">[</span>C <span style="color:#ae81ff">17</span>:51:26.974 NotebookApp<span style="color:#f92672">]</span>    $ python -m notebook.auth password</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> python -m notebook.auth password</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c.NotebookApp.password_required = True</code></pre></div><div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ jupyter-notebook --no-browser
+[C <span style="color:#0086f7;font-weight:bold">17</span>:51:26.974 NotebookApp] Notebook servers are configured to only be run with a password.
+[C <span style="color:#0086f7;font-weight:bold">17</span>:51:26.974 NotebookApp] Hint: run the following command to set a password
+[C <span style="color:#0086f7;font-weight:bold">17</span>:51:26.974 NotebookApp]    $ python -m notebook.auth password</code></pre></div><div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> python -m notebook.auth password</code></pre></div>
 <h2 id="running-in-console">Running in console</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ jupyter notebook --port <span style="color:#ae81ff">9999</span> --ip<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>.0.0.0</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ jupyter notebook --port <span style="color:#0086f7;font-weight:bold">9999</span> --ip=<span style="color:#0086f7;font-weight:bold">0</span>.0.0.0</code></pre></div>
 <h2 id="start-stop-daemon-etc-init-d-jupyter">Start-stop-daemon /etc/init.d/jupyter</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/sbin/openrc-run</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#080;background-color:#0f140f;font-style:italic">#!/sbin/openrc-run</span>
 
 depend() {
   need net
-  <span style="color:#66d9ef">use</span> dns logger
+  <span style="color:#fb660a;font-weight:bold">use</span> dns logger
 }
 
-PIDFILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/var/run/${SVCNAME}.pid&#34;</span>
-PYENV<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/walter/.virtualenv/python3/bin/activate&#34;</span>
-NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;walter&#34;</span>
-CMD<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/walter/.virtualenv/python3/bin/jupyter-notebook&#34;</span>
-OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;--no-browser&#34;</span>
-WORKING_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/walter/chan&#34;</span>
+PIDFILE=<span style="color:#0086d2">&#34;/var/run/${SVCNAME}.pid&#34;</span>
+PYENV=<span style="color:#0086d2">&#34;/home/walter/.virtualenv/python3/bin/activate&#34;</span>
+NAME=<span style="color:#0086d2">&#34;walter&#34;</span>
+CMD=<span style="color:#0086d2">&#34;/home/walter/.virtualenv/python3/bin/jupyter-notebook&#34;</span>
+OPTS=<span style="color:#0086d2">&#34;--no-browser&#34;</span>
+WORKING_DIR=<span style="color:#0086d2">&#34;/home/walter/chan&#34;</span>
 
 start() {
-    ebegin <span style="color:#e6db74">&#34;Starting jupyter&#34;</span>
-    source $PYENV
-    start<span style="color:#f92672">-</span>stop<span style="color:#f92672">-</span>daemon <span style="color:#f92672">--</span>start <span style="color:#f92672">--</span>background <span style="color:#f92672">\</span>
-    <span style="color:#f92672">--</span>user $NAME <span style="color:#f92672">\</span>
-    <span style="color:#f92672">--</span>chdir $WORKING_DIR <span style="color:#f92672">\</span>
-    <span style="color:#f92672">--</span>make<span style="color:#f92672">-</span>pidfile <span style="color:#f92672">--</span>pidfile $PIDFILE <span style="color:#f92672">\</span>
-    <span style="color:#f92672">--</span>exec $CMD <span style="color:#f92672">\</span>
-    <span style="color:#f92672">--</span> $OPTS
+    ebegin <span style="color:#0086d2">&#34;Starting jupyter&#34;</span>
+    source <span style="color:#fb660a">$PYENV</span>
+    start-stop-daemon --start --background \
+    --user <span style="color:#fb660a">$NAME</span> \
+    --chdir <span style="color:#fb660a">$WORKING_DIR</span> \
+    --make-pidfile --pidfile <span style="color:#fb660a">$PIDFILE</span> \
+    --exec <span style="color:#fb660a">$CMD</span> \
+    -- <span style="color:#fb660a">$OPTS</span>
     eend $?
 }
 
 
 stop() {
-    ebegin <span style="color:#e6db74">&#34;Stopping jupyter&#34;</span>
-    start<span style="color:#f92672">-</span>stop<span style="color:#f92672">-</span>daemon <span style="color:#f92672">--</span>stop <span style="color:#f92672">\</span>
-    <span style="color:#f92672">--</span>pidfile $PIDFILE <span style="color:#f92672">\</span>
-    <span style="color:#f92672">--</span>user $NAME <span style="color:#f92672">\</span>
-    <span style="color:#f92672">--</span>exec $CMD <span style="color:#f92672">\</span>
+    ebegin <span style="color:#0086d2">&#34;Stopping jupyter&#34;</span>
+    start-stop-daemon --stop \
+    --pidfile <span style="color:#fb660a">$PIDFILE</span> \
+    --user <span style="color:#fb660a">$NAME</span> \
+    --exec <span style="color:#fb660a">$CMD</span> \
     eend $?
 }</code></pre></div>
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

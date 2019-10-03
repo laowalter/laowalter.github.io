@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -118,7 +118,7 @@
 <li>复制备份的2.0文件夹中的cache文件夹、data.dat文件（隐藏文件）以及tokens.dat文件到C:WindowsSystem32sppstore2.0中覆盖其中的同名文件。</li>
 
 <li><p>按Win+X快捷键，打开“命令提示符（管理员）”，输入下面的命令运行</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">slmgr.vbs -ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx</code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">slmgr.vbs -ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx</code></pre></div></li>
 
 <li><p>接着输入命令 slmgr -ato ，回车运行。如果还未显示激活，或水印还在尝试重启系统。</p></li>
 </ol>
@@ -127,7 +127,7 @@
 
 <ul>
 <li><p>run regedit</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">HKEY_LOCAL_MACHINE<span style="color:#ae81ff">\S</span>YSTEM<span style="color:#ae81ff">\C</span>ontrolSet001<span style="color:#ae81ff">\s</span>ervices<span style="color:#ae81ff">\W</span>32Time<span style="color:#ae81ff">\T</span>imeProviders<span style="color:#ae81ff">\N</span>tpClient</code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">HKEY_LOCAL_MACHINE<span style="color:#0086d2">\S</span>YSTEM<span style="color:#0086d2">\C</span>ontrolSet001<span style="color:#0086d2">\s</span>ervices<span style="color:#0086d2">\W</span>32Time<span style="color:#0086d2">\T</span>imeProviders<span style="color:#0086d2">\N</span>tpClient</code></pre></div></li>
 
 <li><p>改变 <code>SpecialPollInterval</code> 的值。</p></li>
 </ul>
@@ -161,29 +161,29 @@
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>mac_g6.ahk</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.</span>
-; <span style="color:#75715e">#Warn  ; Enable warnings to assist with detecting common errors.</span>
-SendMode Input  ; Recommended <span style="color:#66d9ef">for</span> new scripts due to its superior speed and reliability.
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#080;background-color:#0f140f;font-style:italic">#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.</span>
+; <span style="color:#080;background-color:#0f140f;font-style:italic">#Warn  ; Enable warnings to assist with detecting common errors.</span>
+SendMode Input  ; Recommended <span style="color:#fb660a;font-weight:bold">for</span> new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ;-----------------------------------------
 ; Mac keyboard to Windows Key Mappings
-;<span style="color:#f92672">=========================================</span>
+;=========================================
 
 ; --------------------------------------------------------------
 ; NOTES
 ; --------------------------------------------------------------
-; ! <span style="color:#f92672">=</span> ALT
-; ^ <span style="color:#f92672">=</span> CTRL
-; + <span style="color:#f92672">=</span> SHIFT
-; <span style="color:#75715e"># = WIN</span>
+; ! = ALT
+; ^ = CTRL
+; + = SHIFT
+; <span style="color:#080;background-color:#0f140f;font-style:italic"># = WIN</span>
 ;
-; Debug action snippet: MsgBox You pressed Control-A <span style="color:#66d9ef">while</span> Notepad is active.
+; Debug action snippet: MsgBox You pressed Control-A <span style="color:#fb660a;font-weight:bold">while</span> Notepad is active.
 
-<span style="color:#75715e">#Persistent</span>
-<span style="color:#75715e">#InstallKeybdHook</span>
-<span style="color:#75715e">#SingleInstance force</span>
-SetTitleMatchMode <span style="color:#ae81ff">2</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#Persistent</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#InstallKeybdHook</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#SingleInstance force</span>
+SetTitleMatchMode <span style="color:#0086f7;font-weight:bold">2</span>
 SendMode Input
 
 
@@ -191,83 +191,83 @@ SendMode Input
 ; Volume Control
 ; --------------------------------------------------------------
 
-F10::SendInput <span style="color:#f92672">{</span>Volume_Mute<span style="color:#f92672">}</span>
-F11::SendInput <span style="color:#f92672">{</span>Volume_Down<span style="color:#f92672">}</span>
-F12::SendInput <span style="color:#f92672">{</span>Volume_Up<span style="color:#f92672">}</span>
+F10::SendInput {Volume_Mute}
+F11::SendInput {Volume_Down}
+F12::SendInput {Volume_Up}
 
 ; swap left command/windows key with left alt
 ;LWin::LAlt
-;LAlt::LWin ; add a semicolon in front of this line <span style="color:#66d9ef">if</span> you want to disable the windows key
+;LAlt::LWin ; add a semicolon in front of this line <span style="color:#fb660a;font-weight:bold">if</span> you want to disable the windows key
 
 ; Eject Key
-;F20::SendInput <span style="color:#f92672">{</span>Insert<span style="color:#f92672">}</span> ; F20 doesn<span style="color:#960050;background-color:#1e0010">&#39;</span>t show up on AHK anymore, see <span style="color:#75715e">#3</span>
+;F20::SendInput {Insert} ; F20 doesn&#39;t show up on AHK anymore, see <span style="color:#080;background-color:#0f140f;font-style:italic">#3</span>
 
 ; F13-15, standard windows mapping
-F13::SendInput <span style="color:#f92672">{</span>PrintScreen<span style="color:#f92672">}</span>
-F14::SendInput <span style="color:#f92672">{</span>ScrollLock<span style="color:#f92672">}</span>
-F15::SendInput <span style="color:#f92672">{</span>Pause<span style="color:#f92672">}</span>
+F13::SendInput {PrintScreen}
+F14::SendInput {ScrollLock}
+F15::SendInput {Pause}
 
 ; --------------------------------------------------------------
-; Right Command <span style="color:#f92672">=</span>&gt; PgUp, Right Option <span style="color:#f92672">=</span>&gt; PgDn
+; Right <span style="color:#fb660a">Command</span> =&gt; PgUp, Right <span style="color:#fb660a">Option</span> =&gt; PgDn
 ; --------------------------------------------------------------
 
-LAlt &amp; backspace::sendinput, <span style="color:#f92672">{</span>delete<span style="color:#f92672">}</span>
-^E::Send ^<span style="color:#f92672">{</span>End<span style="color:#f92672">}</span>
-<span style="color:#75715e">#i::sendinput, {Insert}</span>
-RWin::Send <span style="color:#f92672">{</span>PgUp<span style="color:#f92672">}</span>
-RAlt::Send <span style="color:#f92672">{</span>PgDn<span style="color:#f92672">}</span>
+LAlt &amp; backspace::sendinput, {delete}
+^E::Send ^{End}
+<span style="color:#080;background-color:#0f140f;font-style:italic">#i::sendinput, {Insert}</span>
+RWin::Send {PgUp}
+RAlt::Send {PgDn}
 
 ; --------------------------------------------------------------
 ; Print Screen
 ; --------------------------------------------------------------
 
-LWin &amp; F12::send <span style="color:#f92672">{</span>PrintScreen<span style="color:#f92672">}</span>
+LWin &amp; F12::send {PrintScreen}
 
 ; --------------------------------------------------------------
-; Mac COMMAND key <span style="color:#f92672">=</span> Windows key
+; Mac COMMAND <span style="color:#fb660a">key</span> = Windows key
 ; --------------------------------------------------------------
 
-; Make Ctrl + S work with cmd <span style="color:#f92672">(</span>windows<span style="color:#f92672">)</span> key
-<span style="color:#75715e">#s::Send ^s</span>
+; Make Ctrl + S work with cmd (windows) key
+<span style="color:#080;background-color:#0f140f;font-style:italic">#s::Send ^s</span>
 
 ; Selecting
-<span style="color:#75715e">#a::^a</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#a::^a</span>
 
 ; Copying
-<span style="color:#75715e">#c::Send ^c</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#c::Send ^c</span>
 
 ; Pasting
-<span style="color:#75715e">#v::Send ^v</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#v::Send ^v</span>
 
 ; Cutting
-<span style="color:#75715e">#x::Send ^x</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#x::Send ^x</span>
 
 ; Opening
-<span style="color:#75715e">#o::Send ^o</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#o::Send ^o</span>
 
 ; Finding
-<span style="color:#75715e">#f::Send ^f</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#f::Send ^f</span>
 
 ; Undo
-<span style="color:#75715e">#z::Send ^z</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#z::Send ^z</span>
 
 ; Redo
-<span style="color:#75715e">#y::Send ^y</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#y::Send ^y</span>
 
 ; New tab
-<span style="color:#75715e">#t::Send ^t</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#t::Send ^t</span>
 
 ; close tab
-<span style="color:#75715e">#w::Send ^w</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#w::Send ^w</span>
 
-; Close windows <span style="color:#f92672">(</span>cmd + q to Alt + F4<span style="color:#f92672">)</span>
-<span style="color:#75715e">#q::Send !{F4}</span>
+; Close windows (cmd + q to Alt + F4)
+<span style="color:#080;background-color:#0f140f;font-style:italic">#q::Send !{F4}</span>
 
 ; Remap Windows + Tab to Alt + Tab.
 Lwin &amp; Tab::AltTab
 
 ; minimize windows
-<span style="color:#75715e">#m::WinMinimize,a</span></code></pre></div>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#m::WinMinimize,a</span></code></pre></div>
     </div>
 </div>
 
@@ -284,6 +284,11 @@ Lwin &amp; Tab::AltTab
 <p>Under about:config CREATE a boolean value security.enterprise_roots.enabled and set it to true</p>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

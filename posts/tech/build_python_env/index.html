@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -81,58 +81,58 @@
 <h3 id="download-tar-package-from-http-pypy-org">Download tar package from <a href="http://pypy.org/">http://pypy.org/</a></h3>
 
 <h3 id="extract-pakage-to-opt">Extract pakage to /opt</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar xvf pypy3.3-v5.2.0-alpha1-osx64.tar.bz2 /opt/</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar xvf pypy3.3-v5.2.0-alpha1-osx64.tar.bz2 /opt/</code></pre></div>
 <h3 id="create-virtualenv-manually">Create virtualenv manually</h3>
 
 <p><code>Notice</code>: For some reason, can not simplely run &lsquo;virtualenv&rsquo; -p to create one.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">source .bin/quanta.sh <span style="color:#75715e"># enter a python3 virtualenv already exist, this named &#39;quanta&#39;</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">source .bin/quanta.sh <span style="color:#080;background-color:#0f140f;font-style:italic"># enter a python3 virtualenv already exist, this named &#39;quanta&#39;</span>
 cd .virtualenv
 virtualenv -p /opt/pypy3.3-v5.2.0-alpha1-osx64/bin/pypy3 pypy3
-<span style="color:#75715e"># will got some ERRORS, and FORGET IT.</span> </code></pre></div>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># will got some ERRORS, and FORGET IT.</span> </code></pre></div>
 <h3 id="install-pip">Install pip</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd .virtualenv/pypy3
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd .virtualenv/pypy3
 ./pypy3 -m ensurepip
 ln -s pip3 pip
 ./pip install virtualenvwrapper</code></pre></div>
 <h3 id="manually-build-activate-shell-scripts">Manually build activate shell scripts</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/.virtualenv/pypy3/bin/
-cp ~/.virtualenv/quanta/bin/activate* .  <span style="color:#75715e"># copy all the activate scripts of quanta env</span></code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/.virtualenv/pypy3/bin/
+cp ~/.virtualenv/quanta/bin/activate* .  <span style="color:#080;background-color:#0f140f;font-style:italic"># copy all the activate scripts of quanta env</span></code></pre></div>
 <p>Edit  ~/.virtualenv/pypy3/bin/activate, activate.csh activate.fish and activate_this.py, replace &lsquo;quanta&rsquo; by &lsquo;pypy3&rsquo;</p>
 
 <h3 id="according-the-following-reference-to-create-a-bin-pypy-sh">According the following reference to create a ~/.bin/pypy.sh</h3>
 
 <h2 id="install-python-and-virtualenv">Install Python and Virtualenv</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install python
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install python
 brew install python3
-pip install virtualenv <span style="color:#f92672">(</span>pip3 install virtualenv<span style="color:#f92672">)</span>
+pip install virtualenv (pip3 install virtualenv)
 pip install virtualenvwrapper</code></pre></div>
 <p>or want to install gui tkinter with python3</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew uninstall python3
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew uninstall python3
 brew install homebrew/dupes/tcl-tk
 brew install python3 --with-tcl-tk --framework</code></pre></div>
 <h3 id="create-a-virtual-for-development">Create a virtual for development</h3>
 
 <p>1 create</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	$ mkdir .virtualenvs
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	$ mkdir .virtualenvs
 	$ cd .virtualenvs
-	$ virtualenv -p python3 quanta <span style="color:#f92672">(</span> or no site-package copyied virtualenv  --no-site-package -p python3 quanta<span style="color:#f92672">)</span>
-	export WORKON_HOME<span style="color:#f92672">=</span>~/.virtualenvs
+	$ virtualenv -p python3 quanta ( or no site-package copyied virtualenv  --no-site-package -p python3 quanta)
+	export <span style="color:#fb660a">WORKON_HOME</span>=~/.virtualenvs
 	source ~/.virtualenvs/quanta/bin/activate</code></pre></div>
 <p>2 modify .bashrc add the followings</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	export WORKON_HOME<span style="color:#f92672">=</span>~/.virtualenvs
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	export <span style="color:#fb660a">WORKON_HOME</span>=~/.virtualenvs
 	source ~/.virtualenvs/quanta/bin/activate</code></pre></div>
 <p>3 re-login, through the above <code>.bashrc</code></p>
 
 <p>(1) install virtualenvwrapper</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	pip install virtualenvwrapper</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	pip install virtualenvwrapper</code></pre></div>
 <p>(2)  edit ~/.bashrc add the following line</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	source ~/.virtualenvs/quanta/bin/virtualenvwrapper.sh</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	source ~/.virtualenvs/quanta/bin/virtualenvwrapper.sh</code></pre></div>
 <p>(3) export env</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	export WORKON_HOME<span style="color:#f92672">=</span>~/.virtualenvs
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	export <span style="color:#fb660a">WORKON_HOME</span>=~/.virtualenvs
 	source ~/.virtualenvs/quanta/bin/activate
 	source ~/.virtualenvs/quanta/bin/virtualenvwrapper.sh</code></pre></div>
 <p>4 add path to virtualenv</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	add2virtualenv directory1 directory2</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	add2virtualenv directory1 directory2</code></pre></div>
 <h2 id="build-for-proj-qsfrex-and-qstrader">Build for Proj: qsfrex and qstrader</h2>
 
 <p>1 make directory <code>Qsfrex</code> and <code>Qstrader</code>  under <code>~/quanta</code></p>
@@ -141,17 +141,17 @@ brew install python3 --with-tcl-tk --framework</code></pre></div>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>Edit requirements.txt</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">   ipython
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"> ipython
     matplotlib
     mock
     nose
     numpy
     pandas
     pyparsing
-    python<span style="color:#f92672">-</span>dateutil
+    python-dateutil
     pytz
     requests
-    scikit<span style="color:#f92672">-</span>learn
+    scikit-learn
     scipy
     seaborn
     six
@@ -160,14 +160,14 @@ brew install python3 --with-tcl-tk --framework</code></pre></div>
 </div>
 
 <p>2 Activate quanta env</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	source ~/.virtualenvs/quanta/bin/activate
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	source ~/.virtualenvs/quanta/bin/activate
 	pip3 install -r requirements.txt</code></pre></div>
 <p>3 Add searching path for all the directory under ~/quanta, because qsfrex, qstrader and other my development is under it.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	add2virtualenv ~/quanta</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	add2virtualenv ~/quanta</code></pre></div>
 <h3 id="install-spyder-ide">Install Spyder IDE</h3>
 
 <p>1 Install PyQt5 under virtualenv</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	brew install PyQt5 --with-python3
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	brew install PyQt5 --with-python3
 	brew install PyQt4 --with-python3
 	brew install sip --with-python3
 	pip install sphnix
@@ -175,7 +175,7 @@ brew install python3 --with-tcl-tk --framework</code></pre></div>
 	ln -s /usr/local/Cellar/pyqt/4.11.4/lib/python3.5/site-packages/PyQt4 ~/.virtualenvs/quanta/lib/python3.5/site-packages/
 	ln -s /usr/local/Cellar/sip/4.17/lib/python3.5/site-packages/* ~/.virtualenvs/quanta/lib/python3.5/site-packages/</code></pre></div>
 <p>2 Download and Run spyder</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	git clone https://github.com/spyder-ide/spyder
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	git clone https://github.com/spyder-ide/spyder
 	python bootstrap.py</code></pre></div>
 <p>3 max-line-length in pep8 setting for spyder</p>
 
@@ -189,7 +189,7 @@ brew install python3 --with-tcl-tk --framework</code></pre></div>
 <h3 id="matplotlib">Matplotlib</h3>
 
 <p>1 Install</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	brew install pygtk</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	brew install pygtk</code></pre></div>
 <p>Since already install PyQt5, so edit <code>./matplotlib/matplotlibrc</code></p>
 
 <pre><code>Fro UTF8 fonts
@@ -202,14 +202,14 @@ axes.unicode_minus  : False
 
 <ul>
 <li><p>Install</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	$ brew install ta-lib
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	$ brew install ta-lib
 	$ pip install TA-Lib</code></pre></div></li>
 
 <li><p><a href="http://mrjbq7.github.io/ta-lib/doc_index.html">Documents: http://mrjbq7.github.io/ta-lib/doc_index.html</a></p></li>
 </ul>
 
 <h2 id="install-other-libs">Install other libs</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	$ pip install statsmodels</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	$ pip install statsmodels</code></pre></div>
 <h2 id="vim-python-mode">vim  python-mode</h2>
 
 <h3 id="install">install</h3>
@@ -218,7 +218,7 @@ axes.unicode_minus  : False
 <li>vim，macvim need reinstall under the current active virtualenv</li>
 
 <li><p>macvim can only support either one of python2 and python3</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install macvim --with-python3
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install macvim --with-python3
 brew install vim --with-python3</code></pre></div></li>
 </ul>
 
@@ -233,6 +233,11 @@ brew install vim --with-python3</code></pre></div></li>
 <p>[<a href="http://stackoverflow.com/questions/15687170/start-python-pdb-with-multiple-arguments">http://stackoverflow.com/questions/15687170/start-python-pdb-with-multiple-arguments</a>]</p>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

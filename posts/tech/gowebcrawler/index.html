@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -70,98 +70,103 @@
 </ol>
 
 <h2 id="头部的包">头部的包</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> (
-    <span style="color:#e6db74">&#34;bytes&#34;</span>
-    <span style="color:#e6db74">&#34;fmt&#34;</span>
-    <span style="color:#e6db74">&#34;github.com/PuerkitoBio/goquery&#34;</span>
-    <span style="color:#e6db74">&#34;github.com/tebeka/selenium&#34;</span>
-    <span style="color:#e6db74">&#34;github.com/tebeka/selenium/chrome&#34;</span>
-    <span style="color:#e6db74">&#34;io/ioutil&#34;</span>
-    <span style="color:#e6db74">&#34;log&#34;</span>
-    <span style="color:#e6db74">&#34;strings&#34;</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#fb660a;font-weight:bold">import</span> (
+    <span style="color:#0086d2">&#34;bytes&#34;</span>
+    <span style="color:#0086d2">&#34;fmt&#34;</span>
+    <span style="color:#0086d2">&#34;github.com/PuerkitoBio/goquery&#34;</span>
+    <span style="color:#0086d2">&#34;github.com/tebeka/selenium&#34;</span>
+    <span style="color:#0086d2">&#34;github.com/tebeka/selenium/chrome&#34;</span>
+    <span style="color:#0086d2">&#34;io/ioutil&#34;</span>
+    <span style="color:#0086d2">&#34;log&#34;</span>
+    <span style="color:#0086d2">&#34;strings&#34;</span>
 )</code></pre></div>
 <h2 id="chrome-headless-配置">chrome headless 配置</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">port</span> = <span style="color:#ae81ff">9515</span> <span style="color:#75715e">// chromdriver service port
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">frameHtml</span> <span style="color:#66d9ef">string</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#fb660a;font-weight:bold">var</span> port = <span style="color:#0086f7;font-weight:bold">9515</span> <span style="color:#080;background-color:#0f140f;font-style:italic">// chromdriver service port
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#fb660a;font-weight:bold">var</span> frameHtml <span style="color:#cdcaa9;font-weight:bold">string</span>
 
-    <span style="color:#75715e">// 设置chrome的基本特性
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">caps</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">selenium</span>.<span style="color:#a6e22e">Capabilities</span>{<span style="color:#e6db74">&#34;browserName&#34;</span>: <span style="color:#e6db74">&#34;chrome&#34;</span>}
+    <span style="color:#080;background-color:#0f140f;font-style:italic">// 设置chrome的基本特性
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    caps := selenium.Capabilities{<span style="color:#0086d2">&#34;browserName&#34;</span>: <span style="color:#0086d2">&#34;chrome&#34;</span>}
 
-    <span style="color:#75715e">// 禁止加载图片，加快渲染速度
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">imgCaps</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">interface</span>{}{
-        <span style="color:#e6db74">&#34;profile.managed_default_content_settings.images&#34;</span>: <span style="color:#ae81ff">2</span>,
+    <span style="color:#080;background-color:#0f140f;font-style:italic">// 禁止加载图片，加快渲染速度
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    imgCaps := <span style="color:#fb660a;font-weight:bold">map</span>[<span style="color:#cdcaa9;font-weight:bold">string</span>]<span style="color:#fb660a;font-weight:bold">interface</span>{}{
+        <span style="color:#0086d2">&#34;profile.managed_default_content_settings.images&#34;</span>: <span style="color:#0086f7;font-weight:bold">2</span>,
     }
 
-    <span style="color:#a6e22e">chromeCaps</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">chrome</span>.<span style="color:#a6e22e">Capabilities</span>{
-        <span style="color:#a6e22e">Prefs</span>: <span style="color:#a6e22e">imgCaps</span>,
-        <span style="color:#a6e22e">Path</span>:  <span style="color:#e6db74">&#34;&#34;</span>,
-        <span style="color:#a6e22e">Args</span>: []<span style="color:#66d9ef">string</span>{
-            <span style="color:#e6db74">&#34;--headless&#34;</span>,
-            <span style="color:#e6db74">&#34;--start-maximized&#34;</span>,
-            <span style="color:#e6db74">&#34;--window-size=1920x1920&#34;</span>,
-            <span style="color:#e6db74">&#34;--no-sandbox&#34;</span>,
-            <span style="color:#e6db74">&#34;--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36&#34;</span>,
-            <span style="color:#e6db74">&#34;--disable-gpu&#34;</span>,
-            <span style="color:#e6db74">&#34;--disable-impl-side-painting&#34;</span>,
-            <span style="color:#e6db74">&#34;--disable-gpu-sandbox&#34;</span>,
-            <span style="color:#e6db74">&#34;--disable-accelerated-2d-canvas&#34;</span>,
-            <span style="color:#e6db74">&#34;--disable-accelerated-jpeg-decoding&#34;</span>,
-            <span style="color:#e6db74">&#34;--test-type=ui&#34;</span>,
+    chromeCaps := chrome.Capabilities{
+        Prefs: imgCaps,
+        Path:  <span style="color:#0086d2">&#34;&#34;</span>,
+        Args: []<span style="color:#cdcaa9;font-weight:bold">string</span>{
+            <span style="color:#0086d2">&#34;--headless&#34;</span>,
+            <span style="color:#0086d2">&#34;--start-maximized&#34;</span>,
+            <span style="color:#0086d2">&#34;--window-size=1920x1920&#34;</span>,
+            <span style="color:#0086d2">&#34;--no-sandbox&#34;</span>,
+            <span style="color:#0086d2">&#34;--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36&#34;</span>,
+            <span style="color:#0086d2">&#34;--disable-gpu&#34;</span>,
+            <span style="color:#0086d2">&#34;--disable-impl-side-painting&#34;</span>,
+            <span style="color:#0086d2">&#34;--disable-gpu-sandbox&#34;</span>,
+            <span style="color:#0086d2">&#34;--disable-accelerated-2d-canvas&#34;</span>,
+            <span style="color:#0086d2">&#34;--disable-accelerated-jpeg-decoding&#34;</span>,
+            <span style="color:#0086d2">&#34;--test-type=ui&#34;</span>,
         },
     }
-    <span style="color:#a6e22e">caps</span>.<span style="color:#a6e22e">AddChrome</span>(<span style="color:#a6e22e">chromeCaps</span>)</code></pre></div>
+    caps.<span style="color:#ff0086;font-weight:bold">AddChrome</span>(chromeCaps)</code></pre></div>
 <h2 id="启动chromedriver">启动chromedriver</h2>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#75715e">//selenium.NewChromeDriverService(&#34;chromedriver&#34;, port, opts...)
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">service</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">selenium</span>.<span style="color:#a6e22e">NewChromeDriverService</span>(<span style="color:#e6db74">&#34;chromedriver&#34;</span>, <span style="color:#a6e22e">port</span>)
-    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Error starting the ChromeDriver server: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#080;background-color:#0f140f;font-style:italic">//selenium.NewChromeDriverService(&#34;chromedriver&#34;, port, opts...)
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    service, err := selenium.<span style="color:#ff0086;font-weight:bold">NewChromeDriverService</span>(<span style="color:#0086d2">&#34;chromedriver&#34;</span>, port)
+    <span style="color:#fb660a;font-weight:bold">if</span> err != <span style="color:#fb660a;font-weight:bold">nil</span> {
+        log.<span style="color:#ff0086;font-weight:bold">Printf</span>(<span style="color:#0086d2">&#34;Error starting the ChromeDriver server: %v&#34;</span>, err)
     }
-    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">service</span>.<span style="color:#a6e22e">Stop</span>()
+    <span style="color:#fb660a;font-weight:bold">defer</span> service.<span style="color:#ff0086;font-weight:bold">Stop</span>()
 
-    <span style="color:#75715e">// 启动chromeless浏览器
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">wd</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">selenium</span>.<span style="color:#a6e22e">NewRemote</span>(<span style="color:#a6e22e">caps</span>, <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;http://localhost:%d/wd/hub&#34;</span>, <span style="color:#a6e22e">port</span>))
-    <span style="color:#a6e22e">check</span>(<span style="color:#a6e22e">err</span>)
-    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">wd</span>.<span style="color:#a6e22e">Quit</span>()</code></pre></div>
+    <span style="color:#080;background-color:#0f140f;font-style:italic">// 启动chromeless浏览器
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    wd, err := selenium.<span style="color:#ff0086;font-weight:bold">NewRemote</span>(caps, fmt.<span style="color:#ff0086;font-weight:bold">Sprintf</span>(<span style="color:#0086d2">&#34;http://localhost:%d/wd/hub&#34;</span>, port))
+    <span style="color:#ff0086;font-weight:bold">check</span>(err)
+    <span style="color:#fb660a;font-weight:bold">defer</span> wd.<span style="color:#ff0086;font-weight:bold">Quit</span>()</code></pre></div>
 
 <h2 id="加载一个网页地址是url">加载一个网页地址是url</h2>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">  <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">wd</span>.<span style="color:#a6e22e">Get</span>(<span style="color:#a6e22e">url</span>)
-  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-      <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;Failed to load page: %s\n&#34;</span>, <span style="color:#a6e22e">err</span>))
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">  err = wd.<span style="color:#ff0086;font-weight:bold">Get</span>(url)
+  <span style="color:#fb660a;font-weight:bold">if</span> err != <span style="color:#fb660a;font-weight:bold">nil</span> {
+      log.<span style="color:#ff0086;font-weight:bold">Println</span>(fmt.<span style="color:#ff0086;font-weight:bold">Sprintf</span>(<span style="color:#0086d2">&#34;Failed to load page: %s\n&#34;</span>, err))
   }
 
-  <span style="color:#75715e">// 运行页面的javascript，可能会出现无法执行或者执行错误的情况，直到timeout
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">jsRt</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">wd</span>.<span style="color:#a6e22e">ExecuteScript</span>(<span style="color:#e6db74">&#34;return document.readyState&#34;</span>, <span style="color:#66d9ef">nil</span>)
-  <span style="color:#a6e22e">check</span>(<span style="color:#a6e22e">err</span>)
-  <span style="color:#75715e">//fmt.Println(&#34;网页的Javascript加载: &#34;, jsRt)
-</span><span style="color:#75715e"></span>
-  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">jsRt</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;complete&#34;</span> {
-      <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;网页加载未完成&#34;</span>)
+  <span style="color:#080;background-color:#0f140f;font-style:italic">// 运行页面的javascript，可能会出现无法执行或者执行错误的情况，直到timeout
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>  jsRt, err := wd.<span style="color:#ff0086;font-weight:bold">ExecuteScript</span>(<span style="color:#0086d2">&#34;return document.readyState&#34;</span>, <span style="color:#fb660a;font-weight:bold">nil</span>)
+  <span style="color:#ff0086;font-weight:bold">check</span>(err)
+  <span style="color:#080;background-color:#0f140f;font-style:italic">//fmt.Println(&#34;网页的Javascript加载: &#34;, jsRt)
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>
+  <span style="color:#fb660a;font-weight:bold">if</span> jsRt != <span style="color:#0086d2">&#34;complete&#34;</span> {
+      log.<span style="color:#ff0086;font-weight:bold">Println</span>(<span style="color:#0086d2">&#34;网页加载未完成&#34;</span>)
   }</code></pre></div>
 
 <h2 id="解析html-文件">解析html 文件</h2>
 
 <h3 id="利用正则清洗-html-去掉特殊字符串等">利用正则清洗 html 去掉特殊字符串等。</h3>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    &lt;!<span style="color:#f92672">--</span>!<span style="color:#f92672">--</span>&gt; 
-    &lt;<span style="color:#a6e22e">script</span>&gt;
-    &lt;<span style="color:#a6e22e">header</span>&gt; </code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    &lt;!--!--&gt; 
+    &lt;script&gt;
+    &lt;header&gt; </code></pre></div>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"> <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">doc</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">Document</span>
- <span style="color:#a6e22e">doc</span>, <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">NewDocumentFromReader</span>(<span style="color:#a6e22e">bytes</span>.<span style="color:#a6e22e">NewReader</span>([]byte(<span style="color:#a6e22e">frameHtml</span>)))
- <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
- 	<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">err</span>)
- 	<span style="color:#66d9ef">return</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"> <span style="color:#fb660a;font-weight:bold">var</span> doc *goquery.Document
+ doc, err = goquery.<span style="color:#ff0086;font-weight:bold">NewDocumentFromReader</span>(bytes.<span style="color:#ff0086;font-weight:bold">NewReader</span>([]byte(frameHtml)))
+ <span style="color:#fb660a;font-weight:bold">if</span> err != <span style="color:#fb660a;font-weight:bold">nil</span> {
+ 	log.<span style="color:#ff0086;font-weight:bold">Println</span>(err)
+ 	<span style="color:#fb660a;font-weight:bold">return</span>
  }
  
- <span style="color:#a6e22e">doc</span> = <span style="color:#a6e22e">doc</span>.<span style="color:#a6e22e">body</span>() <span style="color:#75715e">//只解析&lt;body&gt;部分
-</span><span style="color:#75715e"></span> 
- <span style="color:#a6e22e">doc</span>.<span style="color:#a6e22e">Find</span>(<span style="color:#e6db74">&#34;li.s-result-item&#34;</span>).<span style="color:#a6e22e">Each</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">liIndex</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">liItem</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">Selection</span>) {
- 	<span style="color:#75715e">// do something
-</span><span style="color:#75715e"></span> })</code></pre></div>
+ doc = doc.<span style="color:#ff0086;font-weight:bold">body</span>() <span style="color:#080;background-color:#0f140f;font-style:italic">//只解析&lt;body&gt;部分
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span> 
+ doc.<span style="color:#ff0086;font-weight:bold">Find</span>(<span style="color:#0086d2">&#34;li.s-result-item&#34;</span>).<span style="color:#ff0086;font-weight:bold">Each</span>(<span style="color:#fb660a;font-weight:bold">func</span>(liIndex <span style="color:#cdcaa9;font-weight:bold">int</span>, liItem *goquery.Selection) {
+ 	<span style="color:#080;background-color:#0f140f;font-style:italic">// do something
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span> })</code></pre></div>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

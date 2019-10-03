@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -56,24 +56,29 @@
 
 <ul>
 <li><p>Create directory</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p /usr/local/portage/metadata
-echo <span style="color:#e6db74">&#34;masters = gentoo&#34;</span> &gt; /usr/local/portage/metadata/layout.conf
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p /usr/local/portage/metadata
+echo <span style="color:#0086d2">&#34;masters = gentoo&#34;</span> &gt; /usr/local/portage/metadata/layout.conf
 chown -R portage:portage /usr/local/portage/</code></pre></div></li>
 
 <li><p>Modify make.conf</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PORTDIR_OVERLAY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/portage/ </span><span style="color:#e6db74">${</span>PORTDIR_OVERLAY<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span></code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fb660a">PORTDIR_OVERLAY</span>=<span style="color:#0086d2">&#34;/usr/local/portage/ </span><span style="color:#0086d2">${</span><span style="color:#fb660a">PORTDIR_OVERLAY</span><span style="color:#0086d2">}</span><span style="color:#0086d2">&#34;</span></code></pre></div></li>
 
 <li><p>Add [local] part to /etc/portage/repos.conf/gentoo.conf</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>local<span style="color:#f92672">]</span>
-location <span style="color:#f92672">=</span> /usr/local/portage
-auto-syc <span style="color:#f92672">=</span> no</code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[local]
+<span style="color:#fb660a">location</span> = /usr/local/portage
+auto-syc = no</code></pre></div></li>
 </ul>
 
 <h3 id="add-a-local-ebuild">Add a local ebuild</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo cp -r /usr/portage/net-p2p/transmission /usr/local/portage
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo cp -r /usr/portage/net-p2p/transmission /usr/local/portage
 cd /usr/local/portage
 ebuild transmission-2.92-r2.ebuild manifest</code></pre></div>
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

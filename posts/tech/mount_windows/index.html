@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -71,7 +71,7 @@
 <h4 id="edit-etc-auto-master">Edit /etc/auto_master</h4>
 
 <p>/mnt/cifs is home of mount point</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-config" data-lang="config"># Automounter master map
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-config" data-lang="config"># Automounter master map
 #
 +auto_master		# Use directory service
 /net			-hosts		-nobrowse,hidefromfinder,nosuid
@@ -81,16 +81,16 @@
 
 /mnt/cifs	auto_nas</code></pre></div>
 <h4 id="edit-etc-auto-nas">Edit /etc/auto_nas</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-config" data-lang="config">new_tdx -fstype=smbfs,soft,noowners,noatime,nosuid ://user:passwd@192.168.0.18/new_tdx</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-config" data-lang="config">new_tdx -fstype=smbfs,soft,noowners,noatime,nosuid ://user:passwd@192.168.0.18/new_tdx</code></pre></div>
 <h4 id="optional-security">[OPTIONAL] Security</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo chmod <span style="color:#ae81ff">600</span> /etc/auto_nas</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo chmod <span style="color:#0086f7;font-weight:bold">600</span> /etc/auto_nas</code></pre></div>
 <p>####– Create mount directory</p>
 
 <pre><code>mkdir -p /mnt/cifs/new_tdx
 </code></pre>
 
 <h4 id="test-auto-mount">Test auto mount</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo automount -vc</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo automount -vc</code></pre></div>
 <p>Should see some output similar to this</p>
 
 <p>automount: /net updated
@@ -99,8 +99,13 @@ automount: /mnt/NAS mounted
 automount: no unmounts</p>
 
 <h2 id="gentoo">Gentoo</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-/etc/fstab" data-lang="/etc/fstab">//192.168.0.18/new_tdx /mnt/cifs/new_tdx cifs username=user,password=passwd,auto</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-/etc/fstab" data-lang="/etc/fstab">//192.168.0.18/new_tdx /mnt/cifs/new_tdx cifs username=user,password=passwd,auto</code></pre></div>
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

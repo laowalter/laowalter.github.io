@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -57,11 +57,11 @@
 <h2 id="install-perlbrew-to-gentoo-linux">Install perlbrew to Gentoo Linux</h2>
 
 <p><strong>Install to /opt/</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export PERLBREW_ROOT<span style="color:#f92672">=</span>/opt/perl5
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export <span style="color:#fb660a">PERLBREW_ROOT</span>=/opt/perl5
 curl -L https://install.perlbrew.pl | bash
 perlbrew lib create base;</code></pre></div>
 <h2 id="install-perlbrew-to-mac-osx">Install Perlbrew to Mac OSX</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	<span style="color:#ae81ff">\c</span>url -L http://install.perlbrew.pl | bash
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	<span style="color:#0086d2">\c</span>url -L http://install.perlbrew.pl | bash
 	perlbrew available
 	perlbrew install perl-5.23.3
 	perlbrew install-cpanm
@@ -74,30 +74,35 @@ perlbrew lib create base;</code></pre></div>
 
 <ul>
 <li><p>mysql</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/etc/my.cnf
-<span style="color:#f92672">[</span>client<span style="color:#f92672">]</span>
-default-character-set<span style="color:#f92672">=</span>utf8
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/etc/my.cnf
+[client]
+default-character-set=utf8
         
-<span style="color:#f92672">[</span>mysql<span style="color:#f92672">]</span>
-default-character-set<span style="color:#f92672">=</span>utf8
+[mysql]
+default-character-set=utf8
         
-<span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
-init-connect<span style="color:#f92672">=</span>’SET NAMES utf8’
-collation-server <span style="color:#f92672">=</span> utf8_unicode_ci
-character-set-server <span style="color:#f92672">=</span> utf8</code></pre></div></li>
+[mysqld]
+init-connect=’SET NAMES utf8’
+collation-server = utf8_unicode_ci
+character-set-server = utf8</code></pre></div></li>
 </ul></li>
 
 <li><p>Perl script:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">    binmode STDOUT, <span style="color:#e6db74">&#34;:utf8&#34;</span>; <span style="color:#e6db74">//</span>remove wide character warning<span style="color:#f92672">.</span></code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">    binmode STDOUT, <span style="color:#0086d2">&#34;:utf8&#34;</span>; <span style="color:#0086d2">//</span>remove wide character warning.</code></pre></div></li>
 
 <li><p>Connect to the database</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">    <span style="color:#66d9ef">my</span> $dbh <span style="color:#f92672">=</span> DBI<span style="color:#f92672">-&gt;</span>connect(<span style="color:#e6db74">&#34;DBI:mysql:database=nameofdb;host=localhost&#34;</span>,
-                   <span style="color:#e6db74">&#34;root&#34;</span>, <span style="color:#e6db74">&#34;password&#34;</span>,
-                   {<span style="color:#e6db74">&#39;RaiseError&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>,
-                   <span style="color:#e6db74">&#39;mysql_enable_utf8&#39;</span> <span style="color:#f92672">=&gt;</span><span style="color:#ae81ff">1</span>}); <span style="color:#e6db74">//</span> This is important to confirm utf8 connection<span style="color:#f92672">.</span></code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">    <span style="color:#fb660a;font-weight:bold">my</span> <span style="color:#fb660a">$dbh</span> = DBI-&gt;connect(<span style="color:#0086d2">&#34;DBI:mysql:database=nameofdb;host=localhost&#34;</span>,
+                   <span style="color:#0086d2">&#34;root&#34;</span>, <span style="color:#0086d2">&#34;password&#34;</span>,
+                   {<span style="color:#0086d2">&#39;RaiseError&#39;</span> =&gt; <span style="color:#0086f7;font-weight:bold">1</span>,
+                   <span style="color:#0086d2">&#39;mysql_enable_utf8&#39;</span> =&gt;<span style="color:#0086f7;font-weight:bold">1</span>}); <span style="color:#0086d2">//</span> This is important to confirm utf8 connection.</code></pre></div></li>
 </ol>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

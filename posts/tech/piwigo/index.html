@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -114,10 +114,10 @@
 
 <ul>
 <li><p>自2.9.5之后必须打开 mysql use，只打开 mysqli不行。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dev-lang/php curl mysql</code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dev-lang/php curl mysql</code></pre></div></li>
 
 <li><p>安装必要的数据包，给插件使用</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq dev-php/pecl-imagick
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq dev-php/pecl-imagick
 emerge -avq media-libs/libmediainfo
 emerge -avq  media-video/mediainfo
 emerge -avq media-libs/exiftool</code></pre></div></li>
@@ -129,9 +129,9 @@ emerge -avq media-libs/exiftool</code></pre></div></li>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/nginx/nginx.conf</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#66d9ef">...</span>
- <span style="color:#e6db74">include</span> <span style="color:#e6db74">/etc/nginx/conf.d/*.conf</span>;
- <span style="color:#66d9ef">...</span></code></pre></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#fb660a;font-weight:bold">...</span>
+ <span style="color:#0086d2">include</span> <span style="color:#0086d2">/etc/nginx/conf.d/*.conf</span>;
+ <span style="color:#fb660a;font-weight:bold">...</span></code></pre></div>
     </div>
 </div>
 
@@ -141,17 +141,17 @@ emerge -avq media-libs/exiftool</code></pre></div></li>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/nginx/conf.d/piwigo.conf</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#66d9ef">server</span> {
-    <span style="color:#f92672">listen</span> 0.0.0.0:<span style="color:#ae81ff">3128</span>;
-    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">photo</span>;
-    <span style="color:#75715e">#root /var/www/localhost/;
-</span><span style="color:#75715e"></span>  <span style="color:#f92672">root</span> <span style="color:#e6db74">/var/www/localhost/htdocs/piwigo</span>;
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#fb660a;font-weight:bold">server</span> {
+    <span style="color:#fb660a;font-weight:bold">listen</span> 0.0.0.0:<span style="color:#0086f7;font-weight:bold">3128</span>;
+    <span style="color:#fb660a;font-weight:bold">server_name</span> <span style="color:#0086d2">photo</span>;
+    <span style="color:#080;background-color:#0f140f;font-style:italic">#root /var/www/localhost/;
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>  <span style="color:#fb660a;font-weight:bold">root</span> <span style="color:#0086d2">/var/www/localhost/htdocs/piwigo</span>;
 
 
-    <span style="color:#f92672">location</span> ~ <span style="color:#e6db74">\.php$</span> {
-            <span style="color:#f92672">try_files</span> $uri =<span style="color:#ae81ff">404</span>;
-            <span style="color:#f92672">include</span> <span style="color:#e6db74">/etc/nginx/fastcgi.conf</span>;
-            <span style="color:#f92672">fastcgi_pass</span> <span style="color:#e6db74">unix:/run/php-fpm.socket</span>;
+    <span style="color:#fb660a;font-weight:bold">location</span> ~ <span style="color:#0086d2">\.php$</span> {
+            <span style="color:#fb660a;font-weight:bold">try_files</span> <span style="color:#fb660a">$uri</span> =<span style="color:#0086f7;font-weight:bold">404</span>;
+            <span style="color:#fb660a;font-weight:bold">include</span> <span style="color:#0086d2">/etc/nginx/fastcgi.conf</span>;
+            <span style="color:#fb660a;font-weight:bold">fastcgi_pass</span> <span style="color:#0086d2">unix:/run/php-fpm.socket</span>;
     }
  }</code></pre></div>
     </div>
@@ -163,9 +163,9 @@ emerge -avq media-libs/exiftool</code></pre></div></li>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/php/fpm-php7.2/php.ini</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">upload_max_filesize <span style="color:#f92672">=</span> 1000M
-post_max_size <span style="color:#f92672">=</span> 1000M
-max_file_uploads <span style="color:#f92672">=</span> <span style="color:#ae81ff">200</span> // Default是20，产生504 gateway time-out</code></pre></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fb660a">upload_max_filesize</span> = 1000M
+<span style="color:#fb660a">post_max_size</span> = 1000M
+<span style="color:#fb660a">max_file_uploads</span> = <span style="color:#0086f7;font-weight:bold">200</span> // Default是20，产生504 gateway time-out</code></pre></div>
     </div>
 </div>
 
@@ -177,13 +177,13 @@ max_file_uploads <span style="color:#f92672">=</span> <span style="color:#ae81ff
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/php/fpm-php7.1/fpm.d/www.conf</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  user <span style="color:#f92672">=</span> nginx  //nobody 更安全，当更新结束之后建议改为nobody
-  group <span style="color:#f92672">=</span> nginx //nobody 更安全，当更新结束之后建议改为nobody
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  <span style="color:#fb660a">user</span> = nginx  //nobody 更安全，当更新结束之后建议改为nobody
+  <span style="color:#fb660a">group</span> = nginx //nobody 更安全，当更新结束之后建议改为nobody
 
-  listen <span style="color:#f92672">=</span> /run/php-fpm.socket
-  listen.owner <span style="color:#f92672">=</span> nginx
-  listen.group <span style="color:#f92672">=</span> nginx
-  listen.mode <span style="color:#f92672">=</span> <span style="color:#ae81ff">0660</span></code></pre></div>
+  <span style="color:#fb660a">listen</span> = /run/php-fpm.socket
+  listen.owner = nginx
+  listen.group = nginx
+  listen.mode = <span style="color:#0086f7;font-weight:bold">0660</span></code></pre></div>
     </div>
 </div>
 
@@ -193,8 +193,8 @@ max_file_uploads <span style="color:#f92672">=</span> <span style="color:#ae81ff
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/php/fpm-php7.1/php.ini</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">upload_tmp_dir <span style="color:#f92672">=</span> /tmp
-upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fb660a">upload_tmp_dir</span> = /tmp
+<span style="color:#fb660a">upload_max_filesize</span> = 20M</code></pre></div>
     </div>
 </div>
 
@@ -204,18 +204,18 @@ upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/ngnix/nginx.conf</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">client_max_body_size</span> <span style="color:#e6db74">20M</span>;
-<span style="color:#66d9ef">client_body_buffer_size</span> <span style="color:#ae81ff">128k</span>;</code></pre></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#fb660a;font-weight:bold">client_max_body_size</span> <span style="color:#0086d2">20M</span>;
+<span style="color:#fb660a;font-weight:bold">client_body_buffer_size</span> <span style="color:#0086f7;font-weight:bold">128k</span>;</code></pre></div>
     </div>
 </div>
 
 <h5 id="add-php-fpm-to-default-service">add php-fpm to default service</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> sudo  /etc/init.d/php-fpm start
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> sudo  /etc/init.d/php-fpm start
  rc-update add php-fpm default</code></pre></div>
 <h3 id="freebsd-freenas-nginx-php-fpm">Freebsd /Freenas Nginx php-fpm</h3>
 
 <h4 id="install">Install</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> pkg install nginx 
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> pkg install nginx 
  pkg install php-fpm</code></pre></div>
 <h4 id="php-fpm">php-fpm</h4>
 
@@ -223,12 +223,12 @@ upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/usr/local/etc/php-fpm.d/www.conf</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> user <span style="color:#f92672">=</span> www
- group <span style="color:#f92672">=</span> www
- listen <span style="color:#f92672">=</span> /var/run/php72-fpm.sock
- listen.owner <span style="color:#f92672">=</span> www
- listen.group <span style="color:#f92672">=</span> www
- listen.mode <span style="color:#f92672">=</span> <span style="color:#ae81ff">0660</span></code></pre></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#fb660a">user</span> = www
+ <span style="color:#fb660a">group</span> = www
+ <span style="color:#fb660a">listen</span> = /var/run/php72-fpm.sock
+ listen.owner = www
+ listen.group = www
+ listen.mode = <span style="color:#0086f7;font-weight:bold">0660</span></code></pre></div>
     </div>
 </div>
 
@@ -238,45 +238,45 @@ upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/usr/local/etc/nginx/nginx.conf</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#66d9ef">worker_processes</span>  <span style="color:#ae81ff">1</span>;
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"> <span style="color:#fb660a;font-weight:bold">worker_processes</span>  <span style="color:#0086f7;font-weight:bold">1</span>;
 
- <span style="color:#66d9ef">events</span> {
-    <span style="color:#f92672">worker_connections</span>  <span style="color:#ae81ff">1024</span>;
+ <span style="color:#fb660a;font-weight:bold">events</span> {
+    <span style="color:#fb660a;font-weight:bold">worker_connections</span>  <span style="color:#0086f7;font-weight:bold">1024</span>;
  }
 
  
- <span style="color:#66d9ef">http</span> {
-    <span style="color:#f92672">include</span>       <span style="color:#e6db74">mime.types</span>;
-    <span style="color:#f92672">default_type</span>  <span style="color:#e6db74">application/octet-stream</span>;
+ <span style="color:#fb660a;font-weight:bold">http</span> {
+    <span style="color:#fb660a;font-weight:bold">include</span>       <span style="color:#0086d2">mime.types</span>;
+    <span style="color:#fb660a;font-weight:bold">default_type</span>  <span style="color:#0086d2">application/octet-stream</span>;
 
-    <span style="color:#f92672">sendfile</span>        <span style="color:#66d9ef">on</span>;
+    <span style="color:#fb660a;font-weight:bold">sendfile</span>        <span style="color:#0086d2">on</span>;
 
-    <span style="color:#f92672">keepalive_timeout</span>  <span style="color:#ae81ff">65</span>;
+    <span style="color:#fb660a;font-weight:bold">keepalive_timeout</span>  <span style="color:#0086f7;font-weight:bold">65</span>;
 
-    <span style="color:#f92672">server</span> {
-        <span style="color:#f92672">listen</span> <span style="color:#ae81ff">0</span><span style="color:#e6db74">.0.0.0</span>;
-        <span style="color:#f92672">server_name</span> <span style="color:#e6db74">piwigo</span>;
-        <span style="color:#f92672">access_log</span>  <span style="color:#e6db74">/var/log/nginx/access.log</span>;
-        <span style="color:#f92672">error_log</span>  <span style="color:#e6db74">/var/log/nginx/error.log</span>;
+    <span style="color:#fb660a;font-weight:bold">server</span> {
+        <span style="color:#fb660a;font-weight:bold">listen</span> <span style="color:#0086f7;font-weight:bold">0</span><span style="color:#0086d2">.0.0.0</span>;
+        <span style="color:#fb660a;font-weight:bold">server_name</span> <span style="color:#0086d2">piwigo</span>;
+        <span style="color:#fb660a;font-weight:bold">access_log</span>  <span style="color:#0086d2">/var/log/nginx/access.log</span>;
+        <span style="color:#fb660a;font-weight:bold">error_log</span>  <span style="color:#0086d2">/var/log/nginx/error.log</span>;
 
-        <span style="color:#f92672">root</span> <span style="color:#e6db74">/usr/local/www/piwigo</span>;
-        <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
-            <span style="color:#f92672">index</span> <span style="color:#e6db74">index.php</span>;
+        <span style="color:#fb660a;font-weight:bold">root</span> <span style="color:#0086d2">/usr/local/www/piwigo</span>;
+        <span style="color:#fb660a;font-weight:bold">location</span> <span style="color:#0086d2">/</span> {
+            <span style="color:#fb660a;font-weight:bold">index</span> <span style="color:#0086d2">index.php</span>;
         }
-        <span style="color:#f92672">location</span> ~ <span style="color:#e6db74">[^/]\.php(/|$)</span> {
-            <span style="color:#f92672">fastcgi_split_path_info</span> <span style="color:#e6db74">^(.+?\.php)(/.*)</span>$;
-            <span style="color:#f92672">if</span> <span style="color:#e6db74">(!-f</span> $document_root$fastcgi_script_name<span style="color:#e6db74">)</span> {
-                    <span style="color:#f92672">return</span> <span style="color:#ae81ff">404</span>;
+        <span style="color:#fb660a;font-weight:bold">location</span> ~ <span style="color:#0086d2">[^/]\.php(/|$)</span> {
+            <span style="color:#fb660a;font-weight:bold">fastcgi_split_path_info</span> <span style="color:#0086d2">^(.+?\.php)(/.*)</span>$;
+            <span style="color:#fb660a;font-weight:bold">if</span> <span style="color:#0086d2">(!-f</span> <span style="color:#fb660a">$document_root$fastcgi_script_name</span><span style="color:#0086d2">)</span> {
+                    <span style="color:#fb660a;font-weight:bold">return</span> <span style="color:#0086f7;font-weight:bold">404</span>;
             }
 
-            <span style="color:#f92672">fastcgi_param</span> <span style="color:#e6db74">HTTP_PROXY</span> <span style="color:#e6db74">&#34;&#34;</span>;
+            <span style="color:#fb660a;font-weight:bold">fastcgi_param</span> <span style="color:#0086d2">HTTP_PROXY</span> <span style="color:#0086d2">&#34;&#34;</span>;
 
-            <span style="color:#f92672">fastcgi_pass</span> <span style="color:#e6db74">unix:/var/run/php72-fpm.sock</span>;
-            <span style="color:#f92672">fastcgi_index</span> <span style="color:#e6db74">index.php</span>;
+            <span style="color:#fb660a;font-weight:bold">fastcgi_pass</span> <span style="color:#0086d2">unix:/var/run/php72-fpm.sock</span>;
+            <span style="color:#fb660a;font-weight:bold">fastcgi_index</span> <span style="color:#0086d2">index.php</span>;
 
-            <span style="color:#f92672">include</span> <span style="color:#e6db74">fastcgi_params</span>;
+            <span style="color:#fb660a;font-weight:bold">include</span> <span style="color:#0086d2">fastcgi_params</span>;
 
-            <span style="color:#f92672">fastcgi_param</span>  <span style="color:#e6db74">SCRIPT_FILENAME</span>   $document_root$fastcgi_script_name;
+            <span style="color:#fb660a;font-weight:bold">fastcgi_param</span>  <span style="color:#0086d2">SCRIPT_FILENAME</span>   <span style="color:#fb660a">$document_root$fastcgi_script_name</span>;
         }
     }
  }</code></pre></div>
@@ -289,9 +289,9 @@ upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div>
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/rc.conf</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> nginx_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span>
- php_fpm_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span>
- mysql_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span></code></pre></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#fb660a">nginx_enable</span>=<span style="color:#0086d2">&#34;YES&#34;</span>
+ <span style="color:#fb660a">php_fpm_enable</span>=<span style="color:#0086d2">&#34;YES&#34;</span>
+ <span style="color:#fb660a">mysql_enable</span>=<span style="color:#0086d2">&#34;YES&#34;</span></code></pre></div>
     </div>
 </div>
 
@@ -299,11 +299,11 @@ upload_max_filesize <span style="color:#f92672">=</span> 20M</code></pre></div>
 
 <ul>
 <li><p>photos 是mysql数据库名称</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql">mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> piwigo;
-mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">create</span> user <span style="color:#e6db74">&#39;walter&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;abcdef&#39;</span>;
-mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">all</span> privileges <span style="color:#66d9ef">on</span> piwigo . <span style="color:#f92672">*</span> <span style="color:#66d9ef">to</span> <span style="color:#e6db74">&#39;walter&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span>;
-mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">flush</span> privileges;
-mysql<span style="color:#f92672">&gt;</span> quit;</code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql">mysql&gt; <span style="color:#fb660a;font-weight:bold">create</span> <span style="color:#fb660a;font-weight:bold">database</span> piwigo;
+mysql&gt; <span style="color:#fb660a;font-weight:bold">create</span> user <span style="color:#0086d2">&#39;walter&#39;</span>@<span style="color:#0086d2">&#39;localhost&#39;</span> identified <span style="color:#fb660a;font-weight:bold">by</span> <span style="color:#0086d2">&#39;abcdef&#39;</span>;
+mysql&gt; <span style="color:#fb660a;font-weight:bold">grant</span> <span style="color:#fb660a;font-weight:bold">all</span> privileges <span style="color:#fb660a;font-weight:bold">on</span> piwigo . * <span style="color:#fb660a;font-weight:bold">to</span> <span style="color:#0086d2">&#39;walter&#39;</span>@<span style="color:#0086d2">&#39;localhost&#39;</span>;
+mysql&gt; <span style="color:#fb660a;font-weight:bold">flush</span> privileges;
+mysql&gt; quit;</code></pre></div></li>
 </ul>
 
 <h3 id="install-piwigo">install piwigo</h3>
@@ -311,10 +311,10 @@ mysql<span style="color:#f92672">&gt;</span> quit;</code></pre></div></li>
 <h4 id="文件准备">文件准备</h4>
 
 <h5 id="gentoo">Gentoo</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">su 
-webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</span>.9.2</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">su 
+webapp-config -h localhost -d piwigo -I piwigo <span style="color:#0086f7;font-weight:bold">2</span>.9.2</code></pre></div>
 <h5 id="freebsd-freenas">Freebsd/Freenas</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pkg install piwigo</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pkg install piwigo</code></pre></div>
 <h4 id="配置">配置</h4>
 
 <h4 id="official-install">Official install</h4>
@@ -339,7 +339,7 @@ webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</sp
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>piwigo/upgrade.php</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"> // +-----------------------------------------------------------------------+
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"> // +-----------------------------------------------------------------------+
  // |                             language                                  |
  // +-----------------------------------------------------------------------+
  include(PHPWG_ROOT_PATH . &#39;admin/include/languages.class.php&#39;);
@@ -375,9 +375,9 @@ webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</sp
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>piwigo/include/common.inc.php</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
-  define<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;PHPWG_DOMAIN&#39;</span>, <span style="color:#e6db74">&#39;cn.piwigo.org&#39;</span><span style="color:#f92672">)</span>;
-<span style="color:#f92672">}</span></code></pre></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fb660a;font-weight:bold">else</span> {
+  define(<span style="color:#0086d2">&#39;PHPWG_DOMAIN&#39;</span>, <span style="color:#0086d2">&#39;cn.piwigo.org&#39;</span>);
+}</code></pre></div>
     </div>
 </div>
 
@@ -391,7 +391,7 @@ webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</sp
 <h4 id="gentoo-的升级方式">Gentoo 的升级方式</h4>
 
 <p>根据 /etc/vhosts/webapp-config 执行下列文件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo webapp-config -h localhost -d piwigo -U piwigo <span style="color:#ae81ff">2</span>.9.4</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo webapp-config -h localhost -d piwigo -U piwigo <span style="color:#0086f7;font-weight:bold">2</span>.9.4</code></pre></div>
 <h2 id="piwigo-插件使用问题">Piwigo 插件使用问题</h2>
 
 <h3 id="read-metadata">Read metadata</h3>
@@ -400,8 +400,8 @@ webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</sp
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/var/www/localhost/htdocs/piwigo/plugins/read_metadata/admin.php</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">--- $exif <span style="color:#f92672">=</span> read_exif_data<span style="color:#f92672">(</span>$filename<span style="color:#f92672">)</span>;
-+++ $exif <span style="color:#f92672">=</span> exif_read_data<span style="color:#f92672">(</span>$filename<span style="color:#f92672">)</span>;</code></pre></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">--- <span style="color:#fb660a">$exif</span> = read_exif_data(<span style="color:#fb660a">$filename</span>);
++++ <span style="color:#fb660a">$exif</span> = exif_read_data(<span style="color:#fb660a">$filename</span>);</code></pre></div>
     </div>
 </div>
 
@@ -415,10 +415,10 @@ webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</sp
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/var/www/localhost/htdocs/piwigo/osmmap.php</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;PHPWG_ROOT_PATH&#39;</span>,<span style="color:#e6db74">&#39;./&#39;</span>);
-<span style="color:#66d9ef">include_once</span>( <span style="color:#a6e22e">PHPWG_ROOT_PATH</span><span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;plugins/piwigo-openstreetmap/osmmap2.php&#39;</span>);
-<span style="color:#75715e">?&gt;</span>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">&lt;?php</span>
+define(<span style="color:#0086d2">&#39;PHPWG_ROOT_PATH&#39;</span>,<span style="color:#0086d2">&#39;./&#39;</span>);
+<span style="color:#fb660a;font-weight:bold">include_once</span>( PHPWG_ROOT_PATH. <span style="color:#0086d2">&#39;plugins/piwigo-openstreetmap/osmmap2.php&#39;</span>);
+<span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">?&gt;</span>
 </code></pre></div>
     </div>
 </div>
@@ -431,10 +431,10 @@ webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</sp
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/var/www/localhost/htdocs/piwigo/map.php</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"> <span style="color:#75715e">&lt;?php</span>
- <span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;PHPWG_ROOT_PATH&#39;</span>,<span style="color:#e6db74">&#39;./&#39;</span>);
- <span style="color:#66d9ef">include_once</span>( <span style="color:#a6e22e">PHPWG_ROOT_PATH</span><span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;plugins/rv_gmaps/map.php&#39;</span>);
- <span style="color:#75715e">?&gt;</span>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"> <span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">&lt;?php</span>
+ define(<span style="color:#0086d2">&#39;PHPWG_ROOT_PATH&#39;</span>,<span style="color:#0086d2">&#39;./&#39;</span>);
+ <span style="color:#fb660a;font-weight:bold">include_once</span>( PHPWG_ROOT_PATH. <span style="color:#0086d2">&#39;plugins/rv_gmaps/map.php&#39;</span>);
+ <span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">?&gt;</span>
 </code></pre></div>
     </div>
 </div>
@@ -462,8 +462,8 @@ webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</sp
 </ul>
 
 <p>mpeg4 不能正常播放，要转换成mp4</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> ffprobe -v error -show_format -show_streams file.mp4
- 如果 codec_name<span style="color:#f92672">=</span>mpeg4 则是 mpeg4格式</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> ffprobe -v error -show_format -show_streams file.mp4
+ 如果 <span style="color:#fb660a">codec_name</span>=mpeg4 则是 mpeg4格式</code></pre></div>
 <ul>
 <li>转换</li>
 </ul>
@@ -473,80 +473,85 @@ webapp-config -h localhost -d piwigo -I piwigo <span style="color:#ae81ff">2</sp
 <h3 id="mp4">mp4</h3>
 
 <h3 id="localfiles-editor">LocalFiles Editor</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"> <span style="color:#75715e">&lt;?php</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"> <span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">&lt;?php</span>
  
- <span style="color:#75715e">/* The file does not exist until some information is entered 
-</span><span style="color:#75715e"> below. Once information is entered and saved, the file will be created. */</span>
+ <span style="color:#080;background-color:#0f140f;font-style:italic">/* The file does not exist until some information is entered 
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"> below. Once information is entered and saved, the file will be created. */</span>
  
- <span style="color:#75715e">/* Change photo sort by date_creation */</span>
- $conf[<span style="color:#e6db74">&#39;order_by_custom&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; ORDER BY date_creation DESC, file ASC, id ASC&#39;</span>;
- $conf[<span style="color:#e6db74">&#39;order_by_inside_category_custom&#39;</span>] <span style="color:#f92672">=</span> $conf[<span style="color:#e6db74">&#39;order_by_custom&#39;</span>];
+ <span style="color:#080;background-color:#0f140f;font-style:italic">/* Change photo sort by date_creation */</span>
+ <span style="color:#fb660a">$conf</span>[<span style="color:#0086d2">&#39;order_by_custom&#39;</span>] = <span style="color:#0086d2">&#39; ORDER BY date_creation DESC, file ASC, id ASC&#39;</span>;
+ <span style="color:#fb660a">$conf</span>[<span style="color:#0086d2">&#39;order_by_inside_category_custom&#39;</span>] = <span style="color:#fb660a">$conf</span>[<span style="color:#0086d2">&#39;order_by_custom&#39;</span>];
  
- <span style="color:#75715e">/* Setup Proxy */</span>
- $conf[<span style="color:#e6db74">&#39;use_proxy&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
- $conf[<span style="color:#e6db74">&#39;proxy_server&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;192.168.0.199:8128&#39;</span>;
+ <span style="color:#080;background-color:#0f140f;font-style:italic">/* Setup Proxy */</span>
+ <span style="color:#fb660a">$conf</span>[<span style="color:#0086d2">&#39;use_proxy&#39;</span>] = <span style="color:#fb660a;font-weight:bold">true</span>;
+ <span style="color:#fb660a">$conf</span>[<span style="color:#0086d2">&#39;proxy_server&#39;</span>] = <span style="color:#0086d2">&#39;192.168.0.199:8128&#39;</span>;
  
- <span style="color:#75715e">/* slideshow_period : waiting time in seconds before loading a new page 
-</span><span style="color:#75715e">    during automated slideshow slideshow_period_min, slideshow_period_max 
-</span><span style="color:#75715e">    are bounds of slideshow_period slideshow_period_step is the step of 
-</span><span style="color:#75715e">    navigation between min and max */</span>
- $conf[<span style="color:#e6db74">&#39;slideshow_period_min&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
- $conf[<span style="color:#e6db74">&#39;slideshow_period_max&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
- $conf[<span style="color:#e6db74">&#39;slideshow_period_step&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
- $conf[<span style="color:#e6db74">&#39;slideshow_period&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;
+ <span style="color:#080;background-color:#0f140f;font-style:italic">/* slideshow_period : waiting time in seconds before loading a new page 
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">    during automated slideshow slideshow_period_min, slideshow_period_max 
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">    are bounds of slideshow_period slideshow_period_step is the step of 
+</span><span style="color:#080;background-color:#0f140f;font-style:italic">    navigation between min and max */</span>
+ <span style="color:#fb660a">$conf</span>[<span style="color:#0086d2">&#39;slideshow_period_min&#39;</span>] = <span style="color:#0086f7;font-weight:bold">1</span>;
+ <span style="color:#fb660a">$conf</span>[<span style="color:#0086d2">&#39;slideshow_period_max&#39;</span>] = <span style="color:#0086f7;font-weight:bold">20</span>;
+ <span style="color:#fb660a">$conf</span>[<span style="color:#0086d2">&#39;slideshow_period_step&#39;</span>] = <span style="color:#0086f7;font-weight:bold">1</span>;
+ <span style="color:#fb660a">$conf</span>[<span style="color:#0086d2">&#39;slideshow_period&#39;</span>] = <span style="color:#0086f7;font-weight:bold">8</span>;
  
- <span style="color:#75715e">/* plugin PersoFavicon, local/my.ico */</span>
- $conf[<span style="color:#e6db74">&#39;PersoFavicon&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;my.ico&#39;</span>;
+ <span style="color:#080;background-color:#0f140f;font-style:italic">/* plugin PersoFavicon, local/my.ico */</span>
+ <span style="color:#fb660a">$conf</span>[<span style="color:#0086d2">&#39;PersoFavicon&#39;</span>] = <span style="color:#0086d2">&#39;my.ico&#39;</span>;
  
- <span style="color:#75715e">/* https://github.com/xbgmsharp/piwigo-videojs/wiki/How-to-add-videos#step-1-configure */</span>
- $conf[<span style="color:#e6db74">&#39;upload_form_all_types&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
- $conf[<span style="color:#e6db74">&#39;sync_chars_regex&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/^[a-zA-Z0-9-_. ]+$/&#39;</span>;
- $conf[<span style="color:#e6db74">&#39;show_exif&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
- $conf[<span style="color:#e6db74">&#39;show_exif_fields&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
-   <span style="color:#e6db74">&#39;Make&#39;</span>,
-   <span style="color:#e6db74">&#39;Model&#39;</span>,
-   <span style="color:#e6db74">&#39;ExifVersion&#39;</span>,
-   <span style="color:#e6db74">&#39;Software&#39;</span>,
-   <span style="color:#e6db74">&#39;DateTimeOriginal&#39;</span>,
-   <span style="color:#e6db74">&#39;FNumber&#39;</span>,
-   <span style="color:#e6db74">&#39;ExposureBiasValue&#39;</span>,
-   <span style="color:#e6db74">&#39;FILE;FileSize&#39;</span>,
-   <span style="color:#e6db74">&#39;ExposureTime&#39;</span>,
-   <span style="color:#e6db74">&#39;Flash&#39;</span>,
-   <span style="color:#e6db74">&#39;ISOSpeedRatings&#39;</span>,
-   <span style="color:#e6db74">&#39;FocalLength&#39;</span>,
-   <span style="color:#e6db74">&#39;FocalLengthIn35mmFilm&#39;</span>,
-   <span style="color:#e6db74">&#39;WhiteBalance&#39;</span>,
-   <span style="color:#e6db74">&#39;ExposureMode&#39;</span>,
-   <span style="color:#e6db74">&#39;MeteringMode&#39;</span>,
-   <span style="color:#e6db74">&#39;ExposureProgram&#39;</span>,
-   <span style="color:#e6db74">&#39;LightSource&#39;</span>,
-   <span style="color:#e6db74">&#39;Contrast&#39;</span>,
-   <span style="color:#e6db74">&#39;Saturation&#39;</span>,
-   <span style="color:#e6db74">&#39;Sharpness&#39;</span>,
-   <span style="color:#e6db74">&#39;bitrate&#39;</span>,
-   <span style="color:#e6db74">&#39;channel&#39;</span>,
-   <span style="color:#e6db74">&#39;date_creation&#39;</span>,
-   <span style="color:#e6db74">&#39;display_aspect_ratio&#39;</span>,
-   <span style="color:#e6db74">&#39;duration&#39;</span>,
-   <span style="color:#e6db74">&#39;filesize&#39;</span>,
-   <span style="color:#e6db74">&#39;format&#39;</span>,
-   <span style="color:#e6db74">&#39;formatprofile&#39;</span>,
-   <span style="color:#e6db74">&#39;codecid&#39;</span>,
-   <span style="color:#e6db74">&#39;frame_rate&#39;</span>,
-   <span style="color:#e6db74">&#39;latitude&#39;</span>,
-   <span style="color:#e6db74">&#39;longitude&#39;</span>,
-   <span style="color:#e6db74">&#39;make&#39;</span>,
-   <span style="color:#e6db74">&#39;model&#39;</span>,
-   <span style="color:#e6db74">&#39;playtime_seconds&#39;</span>,
-   <span style="color:#e6db74">&#39;sampling_rate&#39;</span>,
-   <span style="color:#e6db74">&#39;type&#39;</span>,
-   <span style="color:#e6db74">&#39;resolution&#39;</span>,
-   <span style="color:#e6db74">&#39;rotation&#39;</span>,
+ <span style="color:#080;background-color:#0f140f;font-style:italic">/* https://github.com/xbgmsharp/piwigo-videojs/wiki/How-to-add-videos#step-1-configure */</span>
+ <span style="color:#fb660a">$conf</span>[<span style="color:#0086d2">&#39;upload_form_all_types&#39;</span>] = <span style="color:#fb660a;font-weight:bold">true</span>;
+ <span style="color:#fb660a">$conf</span>[<span style="color:#0086d2">&#39;sync_chars_regex&#39;</span>] = <span style="color:#0086d2">&#39;/^[a-zA-Z0-9-_. ]+$/&#39;</span>;
+ <span style="color:#fb660a">$conf</span>[<span style="color:#0086d2">&#39;show_exif&#39;</span>] = <span style="color:#fb660a;font-weight:bold">true</span>;
+ <span style="color:#fb660a">$conf</span>[<span style="color:#0086d2">&#39;show_exif_fields&#39;</span>] = <span style="color:#fb660a;font-weight:bold">array</span>(
+   <span style="color:#0086d2">&#39;Make&#39;</span>,
+   <span style="color:#0086d2">&#39;Model&#39;</span>,
+   <span style="color:#0086d2">&#39;ExifVersion&#39;</span>,
+   <span style="color:#0086d2">&#39;Software&#39;</span>,
+   <span style="color:#0086d2">&#39;DateTimeOriginal&#39;</span>,
+   <span style="color:#0086d2">&#39;FNumber&#39;</span>,
+   <span style="color:#0086d2">&#39;ExposureBiasValue&#39;</span>,
+   <span style="color:#0086d2">&#39;FILE;FileSize&#39;</span>,
+   <span style="color:#0086d2">&#39;ExposureTime&#39;</span>,
+   <span style="color:#0086d2">&#39;Flash&#39;</span>,
+   <span style="color:#0086d2">&#39;ISOSpeedRatings&#39;</span>,
+   <span style="color:#0086d2">&#39;FocalLength&#39;</span>,
+   <span style="color:#0086d2">&#39;FocalLengthIn35mmFilm&#39;</span>,
+   <span style="color:#0086d2">&#39;WhiteBalance&#39;</span>,
+   <span style="color:#0086d2">&#39;ExposureMode&#39;</span>,
+   <span style="color:#0086d2">&#39;MeteringMode&#39;</span>,
+   <span style="color:#0086d2">&#39;ExposureProgram&#39;</span>,
+   <span style="color:#0086d2">&#39;LightSource&#39;</span>,
+   <span style="color:#0086d2">&#39;Contrast&#39;</span>,
+   <span style="color:#0086d2">&#39;Saturation&#39;</span>,
+   <span style="color:#0086d2">&#39;Sharpness&#39;</span>,
+   <span style="color:#0086d2">&#39;bitrate&#39;</span>,
+   <span style="color:#0086d2">&#39;channel&#39;</span>,
+   <span style="color:#0086d2">&#39;date_creation&#39;</span>,
+   <span style="color:#0086d2">&#39;display_aspect_ratio&#39;</span>,
+   <span style="color:#0086d2">&#39;duration&#39;</span>,
+   <span style="color:#0086d2">&#39;filesize&#39;</span>,
+   <span style="color:#0086d2">&#39;format&#39;</span>,
+   <span style="color:#0086d2">&#39;formatprofile&#39;</span>,
+   <span style="color:#0086d2">&#39;codecid&#39;</span>,
+   <span style="color:#0086d2">&#39;frame_rate&#39;</span>,
+   <span style="color:#0086d2">&#39;latitude&#39;</span>,
+   <span style="color:#0086d2">&#39;longitude&#39;</span>,
+   <span style="color:#0086d2">&#39;make&#39;</span>,
+   <span style="color:#0086d2">&#39;model&#39;</span>,
+   <span style="color:#0086d2">&#39;playtime_seconds&#39;</span>,
+   <span style="color:#0086d2">&#39;sampling_rate&#39;</span>,
+   <span style="color:#0086d2">&#39;type&#39;</span>,
+   <span style="color:#0086d2">&#39;resolution&#39;</span>,
+   <span style="color:#0086d2">&#39;rotation&#39;</span>,
    );
-  <span style="color:#75715e">?&gt;</span>
+  <span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">?&gt;</span>
 </code></pre></div>
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

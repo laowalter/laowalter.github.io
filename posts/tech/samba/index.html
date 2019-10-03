@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -57,57 +57,57 @@
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/samba/smb.conf</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>global<span style="color:#f92672">]</span>
-   workgroup <span style="color:#f92672">=</span> home
-   server string <span style="color:#f92672">=</span> mini
-   server role <span style="color:#f92672">=</span> standalone server
-   hosts allow <span style="color:#f92672">=</span> <span style="color:#ae81ff">192</span>.168.0. <span style="color:#ae81ff">192</span>.168.1. <span style="color:#ae81ff">192</span>.168.6. <span style="color:#ae81ff">127</span>.
-   security <span style="color:#f92672">=</span> user
-   log file <span style="color:#f92672">=</span> /var/log/samba/log.%m
-   max log size <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>
-   interfaces <span style="color:#f92672">=</span> <span style="color:#ae81ff">192</span>.168.0.199 <span style="color:#ae81ff">127</span>.0.0.1
-   dns proxy <span style="color:#f92672">=</span> no 
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[global]
+   <span style="color:#fb660a">workgroup</span> = home
+   server <span style="color:#fb660a">string</span> = mini
+   server <span style="color:#fb660a">role</span> = standalone server
+   hosts <span style="color:#fb660a">allow</span> = <span style="color:#0086f7;font-weight:bold">192</span>.168.0. <span style="color:#0086f7;font-weight:bold">192</span>.168.1. <span style="color:#0086f7;font-weight:bold">192</span>.168.6. <span style="color:#0086f7;font-weight:bold">127</span>.
+   <span style="color:#fb660a">security</span> = user
+   log <span style="color:#fb660a">file</span> = /var/log/samba/log.%m
+   max log <span style="color:#fb660a">size</span> = <span style="color:#0086f7;font-weight:bold">50</span>
+   <span style="color:#fb660a">interfaces</span> = <span style="color:#0086f7;font-weight:bold">192</span>.168.0.199 <span style="color:#0086f7;font-weight:bold">127</span>.0.0.1
+   dns <span style="color:#fb660a">proxy</span> = no 
 
-<span style="color:#f92672">[</span>homes<span style="color:#f92672">]</span>
-   comment <span style="color:#f92672">=</span> Home Directories
-   valid users <span style="color:#f92672">=</span> %S
-   read only <span style="color:#f92672">=</span> No
-   path <span style="color:#f92672">=</span> %H/samba
-   create mask <span style="color:#f92672">=</span> <span style="color:#ae81ff">0644</span>
-   directory mask <span style="color:#f92672">=</span> <span style="color:#ae81ff">0755</span>
-   browseable <span style="color:#f92672">=</span> No
+[homes]
+   <span style="color:#fb660a">comment</span> = Home Directories
+   valid <span style="color:#fb660a">users</span> = %S
+   read <span style="color:#fb660a">only</span> = No
+   <span style="color:#fb660a">path</span> = %H/samba
+   create <span style="color:#fb660a">mask</span> = <span style="color:#0086f7;font-weight:bold">0644</span>
+   directory <span style="color:#fb660a">mask</span> = <span style="color:#0086f7;font-weight:bold">0755</span>
+   <span style="color:#fb660a">browseable</span> = No
 
-<span style="color:#f92672">[</span>movies<span style="color:#f92672">]</span>
-   comment <span style="color:#f92672">=</span> Public Stuff
-   path <span style="color:#f92672">=</span> /data/share/movies
-   public <span style="color:#f92672">=</span> yes
-   writable <span style="color:#f92672">=</span> no
-   printable <span style="color:#f92672">=</span> no
-   write list <span style="color:#f92672">=</span> @staff
-   create mask <span style="color:#f92672">=</span> <span style="color:#ae81ff">0644</span>
-   directory mask <span style="color:#f92672">=</span> <span style="color:#ae81ff">0755</span>
+[movies]
+   <span style="color:#fb660a">comment</span> = Public Stuff
+   <span style="color:#fb660a">path</span> = /data/share/movies
+   <span style="color:#fb660a">public</span> = yes
+   <span style="color:#fb660a">writable</span> = no
+   <span style="color:#fb660a">printable</span> = no
+   write <span style="color:#fb660a">list</span> = @staff
+   create <span style="color:#fb660a">mask</span> = <span style="color:#0086f7;font-weight:bold">0644</span>
+   directory <span style="color:#fb660a">mask</span> = <span style="color:#0086f7;font-weight:bold">0755</span>
 
-<span style="color:#f92672">[</span>public<span style="color:#f92672">]</span>
-   comment <span style="color:#f92672">=</span> Public
-   path <span style="color:#f92672">=</span> /data/share/public
-   public <span style="color:#f92672">=</span> yes
-   writable <span style="color:#f92672">=</span> yes 
-   printable <span style="color:#f92672">=</span> no
-   write list <span style="color:#f92672">=</span> @staff
-   create mask <span style="color:#f92672">=</span> <span style="color:#ae81ff">0644</span>
-   directory mask <span style="color:#f92672">=</span> <span style="color:#ae81ff">0755</span>
-   force user <span style="color:#f92672">=</span> %U  ; Cups的pdf-printer的打印目录在这个public之下，所以加入用户权限。
+[public]
+   <span style="color:#fb660a">comment</span> = Public
+   <span style="color:#fb660a">path</span> = /data/share/public
+   <span style="color:#fb660a">public</span> = yes
+   <span style="color:#fb660a">writable</span> = yes 
+   <span style="color:#fb660a">printable</span> = no
+   write <span style="color:#fb660a">list</span> = @staff
+   create <span style="color:#fb660a">mask</span> = <span style="color:#0086f7;font-weight:bold">0644</span>
+   directory <span style="color:#fb660a">mask</span> = <span style="color:#0086f7;font-weight:bold">0755</span>
+   force <span style="color:#fb660a">user</span> = %U  ; Cups的pdf-printer的打印目录在这个public之下，所以加入用户权限。
 
-<span style="color:#f92672">[</span>downloads<span style="color:#f92672">]</span>
-   comment <span style="color:#f92672">=</span> Downloads
-   path <span style="color:#f92672">=</span> /data/share/downloads
-   create mask <span style="color:#f92672">=</span> <span style="color:#ae81ff">0644</span>
-   directory mask <span style="color:#f92672">=</span> <span style="color:#ae81ff">0755</span>
-   public <span style="color:#f92672">=</span> yes
-   writable <span style="color:#f92672">=</span> yes 
-   printable <span style="color:#f92672">=</span> no
-   guest ok <span style="color:#f92672">=</span> yes
-   force user <span style="color:#f92672">=</span> %U</code></pre></div>
+[downloads]
+   <span style="color:#fb660a">comment</span> = Downloads
+   <span style="color:#fb660a">path</span> = /data/share/downloads
+   create <span style="color:#fb660a">mask</span> = <span style="color:#0086f7;font-weight:bold">0644</span>
+   directory <span style="color:#fb660a">mask</span> = <span style="color:#0086f7;font-weight:bold">0755</span>
+   <span style="color:#fb660a">public</span> = yes
+   <span style="color:#fb660a">writable</span> = yes 
+   <span style="color:#fb660a">printable</span> = no
+   guest <span style="color:#fb660a">ok</span> = yes
+   force <span style="color:#fb660a">user</span> = %U</code></pre></div>
     </div>
 </div>
 
@@ -145,6 +145,11 @@
 <h2 id="samba-手册-https-www-samba-org-samba-docs-current-man-html-smb-conf-5-html"><a href="https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html">《Samba 手册》</a></h2>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

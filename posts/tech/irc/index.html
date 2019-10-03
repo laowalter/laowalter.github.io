@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -59,51 +59,56 @@
 
 <ul>
 <li><p>目前Weechat所有的script都能支持python2, 官方加以暂时都编译为python2。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat /etc/portage/package.use/weechat
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat /etc/portage/package.use/weechat
 net-irc/weechat  python_single_target_python2_7 -python_single_target_python3_6</code></pre></div></li>
 
 <li><p>OTR</p></li>
 </ul>
 
 <p>(1) Install OTR</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ebuild  N    <span style="color:#f92672">]</span> dev-python/pycrypto-2.6.1-r2  USE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gmp -doc -test&#34;</span> PYTHON_TARGETS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;python2_7 python3_6 -python3_4 -python3_5&#34;</span>
-<span style="color:#f92672">[</span>ebuild  N    <span style="color:#f92672">]</span> dev-python/potr-1.0.1  PYTHON_TARGETS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;python2_7 python3_6 -python3_4 -python3_5&#34;</span></code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[ebuild  N    ] dev-python/pycrypto-2.6.1-r2  <span style="color:#fb660a">USE</span>=<span style="color:#0086d2">&#34;gmp -doc -test&#34;</span> <span style="color:#fb660a">PYTHON_TARGETS</span>=<span style="color:#0086d2">&#34;python2_7 python3_6 -python3_4 -python3_5&#34;</span>
+[ebuild  N    ] dev-python/potr-1.0.1  <span style="color:#fb660a">PYTHON_TARGETS</span>=<span style="color:#0086d2">&#34;python2_7 python3_6 -python3_4 -python3_5&#34;</span></code></pre></div>
 <p>(2) 在weechat中安装 otr.py</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/script install ort.py</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/script install ort.py</code></pre></div>
 <p>Use OTR</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bas" data-lang="bas"><span style="color:#f92672">/</span>q somebody
-<span style="color:#f92672">/</span>otr start</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bas" data-lang="bas">/q<span style="color:#888"> </span>somebody
+/otr<span style="color:#888"> </span>start</code></pre></div>
 <h3 id="使用">使用</h3>
 
 <ul>
 <li><p>设置缺省的 nickname</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/set irc.server_default.nicks comma,separated,list,of,nicks
-/set irc.server.<span style="color:#f92672">[</span>SERVER_NAME<span style="color:#f92672">]</span>.nicks somename</code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/set irc.server_default.nicks comma,separated,list,of,nicks
+/set irc.server.[SERVER_NAME].nicks somename</code></pre></div></li>
 
 <li><p>连接freenode/关闭</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/connect freenode
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/connect freenode
 /close</code></pre></div></li>
 
 <li><p>连接irc服务器</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/set irc.server.freenode.autoconnect on <span style="color:#75715e"># 自动连接 freenode</span> 
-/set irc.server.freenode.command <span style="color:#e6db74">&#34;/msg nickserv identify xxxxxxx&#34;</span></code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/set irc.server.freenode.autoconnect on <span style="color:#080;background-color:#0f140f;font-style:italic"># 自动连接 freenode</span> 
+/set irc.server.freenode.command <span style="color:#0086d2">&#34;/msg nickserv identify xxxxxxx&#34;</span></code></pre></div></li>
 
 <li><p>删除 irc server</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/unset irc.server.freenode.nicks</code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/unset irc.server.freenode.nicks</code></pre></div></li>
 
 <li><p><code>SSL</code> 强制</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/set irc.server.freenode.addresses <span style="color:#e6db74">&#34;chat.freenode.net/7000&#34;</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/set irc.server.freenode.addresses <span style="color:#0086d2">&#34;chat.freenode.net/7000&#34;</span>
 /set irc.server.freenode.ssl on</code></pre></div></li>
 
 <li><p>Windows 管理</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/buffer
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/buffer
 /window
-/window splitv <span style="color:#ae81ff">33</span>
+/window splitv <span style="color:#0086f7;font-weight:bold">33</span>
 /window splith 
 /window merge</code></pre></div></li>
 </ul>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

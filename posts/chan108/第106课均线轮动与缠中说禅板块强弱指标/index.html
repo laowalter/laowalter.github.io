@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -154,33 +154,33 @@
 <p>下面的九条分句，是九个平均类别系数的选股公式，把“：”后面的内容帖到到条件选股的公式代码栏中，分别自建九条公式，名称，譬如PJLBS13，中文名平均类别数13</p>
 
 <p>MAX（这个是不受制于5　13　21　34　55　89　144  233的个股）：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,5<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,13<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,21<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,34<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,55<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,89<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,233<span style="color:#f92672">)</span>;</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">233</span>:
-C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,5<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,13<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,21<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,34<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,55<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,89<span style="color:#f92672">)</span> AND C&lt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,233<span style="color:#f92672">)</span>;
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">C&gt;=MA(C,5) AND C&gt;=MA(C,13) AND C&gt;=MA(C,21) AND C&gt;=MA(C,34) AND C&gt;=MA(C,55) AND C&gt;=MA(C,89) AND C&gt;=MA(C,233);</code></pre></div><div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#0086f7;font-weight:bold">233</span>:
+C&gt;=MA(C,5) AND C&gt;=MA(C,13) AND C&gt;=MA(C,21) AND C&gt;=MA(C,34) AND C&gt;=MA(C,55) AND C&gt;=MA(C,89) AND C&lt;=MA(C,233);
 
-<span style="color:#ae81ff">144</span>:
-C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,5<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,13<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,21<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,34<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,55<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,89<span style="color:#f92672">)</span> AND C&lt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,144<span style="color:#f92672">)</span> ;
+<span style="color:#0086f7;font-weight:bold">144</span>:
+C&gt;=MA(C,5) AND C&gt;=MA(C,13) AND C&gt;=MA(C,21) AND C&gt;=MA(C,34) AND C&gt;=MA(C,55) AND C&gt;=MA(C,89) AND C&lt;=MA(C,144) ;
 
-<span style="color:#ae81ff">89</span>:
-C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,5<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,13<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,21<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,34<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,55<span style="color:#f92672">)</span> AND C&lt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,89<span style="color:#f92672">)</span>
+<span style="color:#0086f7;font-weight:bold">89</span>:
+C&gt;=MA(C,5) AND C&gt;=MA(C,13) AND C&gt;=MA(C,21) AND C&gt;=MA(C,34) AND C&gt;=MA(C,55) AND C&lt;=MA(C,89)
 
-<span style="color:#ae81ff">55</span>:
-C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,5<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,13<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,21<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,34<span style="color:#f92672">)</span> AND C&lt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,55<span style="color:#f92672">)</span>
+<span style="color:#0086f7;font-weight:bold">55</span>:
+C&gt;=MA(C,5) AND C&gt;=MA(C,13) AND C&gt;=MA(C,21) AND C&gt;=MA(C,34) AND C&lt;=MA(C,55)
 
-<span style="color:#ae81ff">34</span>:
-C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,5<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,13<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,21<span style="color:#f92672">)</span> AND C&lt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,34<span style="color:#f92672">)</span>
+<span style="color:#0086f7;font-weight:bold">34</span>:
+C&gt;=MA(C,5) AND C&gt;=MA(C,13) AND C&gt;=MA(C,21) AND C&lt;=MA(C,34)
 
-<span style="color:#ae81ff">21</span>:
-C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,5<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,13<span style="color:#f92672">)</span> AND C&lt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,21<span style="color:#f92672">)</span>;
+<span style="color:#0086f7;font-weight:bold">21</span>:
+C&gt;=MA(C,5) AND C&gt;=MA(C,13) AND C&lt;=MA(C,21);
 
-<span style="color:#ae81ff">13</span>:
-C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,5<span style="color:#f92672">)</span> AND C&lt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,13<span style="color:#f92672">)</span>;
+<span style="color:#0086f7;font-weight:bold">13</span>:
+C&gt;=MA(C,5) AND C&lt;=MA(C,13);
 
-<span style="color:#ae81ff">5</span>:
-C＜MA<span style="color:#f92672">(</span>C,5<span style="color:#f92672">)</span> AND C＜MA<span style="color:#f92672">(</span>C,13<span style="color:#f92672">)</span> AND C＜MA<span style="color:#f92672">(</span>C,21<span style="color:#f92672">)</span> AND C＜MA<span style="color:#f92672">(</span>C,34<span style="color:#f92672">)</span>;</code></pre></div>
+<span style="color:#0086f7;font-weight:bold">5</span>:
+C＜MA(C,5) AND C＜MA(C,13) AND C＜MA(C,21) AND C＜MA(C,34);</code></pre></div>
 <p>二　自建选股公式
 如果建一个平均类别数144的
 代码栏里，就帖我上面的“144:”下面的那一行</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,5<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,13<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,21<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,34<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,55<span style="color:#f92672">)</span> AND C&gt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,89<span style="color:#f92672">)</span> AND C&lt;<span style="color:#f92672">=</span>MA<span style="color:#f92672">(</span>C,144<span style="color:#f92672">)</span> ;</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">C&gt;=MA(C,5) AND C&gt;=MA(C,13) AND C&gt;=MA(C,21) AND C&gt;=MA(C,34) AND C&gt;=MA(C,55) AND C&gt;=MA(C,89) AND C&lt;=MA(C,144) ;</code></pre></div>
 <p>这个选出来的结果，就是站上了5 13 21 34 55 89而受阻于平均类别数144日线的个股</p>
 
 <p>再譬如，我们说受阻于３４这个平均类别数的话，那么，相应的公式选出来的就是已经站上了5、13、21，但受阻于34的那种</p>
@@ -365,6 +365,11 @@ C＜MA<span style="color:#f92672">(</span>C,5<span style="color:#f92672">)</span
 <img src="/images/108class/106-20.gif" alt="Alt Text" /></p>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

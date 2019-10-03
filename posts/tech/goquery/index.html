@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -72,27 +72,27 @@
 <p>最近研究Go爬虫相关的知识，使用到goquery这个库比较多，尤其是对爬取到的HTML进行选择和查找匹配的内容时，goquery的选择器使用尤其多，而且还有很多不常用但又很有用的选择器，这里总结下，以供参考。</p>
 
 <p>如果大家以前做过前端开发，对jquery不会陌生，goquery类似jquery，它是jquery的go版本实现。使用它，可以很方便的对HTML进行处理。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#a6e22e">goquery</span>, <span style="color:#a6e22e">colly</span>, <span style="color:#a6e22e">chromedp</span>, <span style="color:#a6e22e">webloop</span></code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    goquery, colly, chromedp, webloop</code></pre></div>
 <h2 id="基于html-element-元素的选择器">基于HTML Element 元素的选择器</h2>
 
 <p>这个比较简单，就是基于a,p等这些HTML的基本元素进行选择，这种直接使用Element名称作为选择器即可。比如dom.Find(&ldquo;div&rdquo;)。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">html</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">`&lt;body&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">				&lt;div&gt;DIV1&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;div&gt;DIV2&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;span&gt;SPAN&lt;/span&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">			&lt;/body&gt;
-</span><span style="color:#e6db74">			`</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#fb660a;font-weight:bold">func</span> <span style="color:#ff0086;font-weight:bold">main</span>() {
+	html := <span style="color:#0086d2">`&lt;body&gt;
+</span><span style="color:#0086d2">
+</span><span style="color:#0086d2">				&lt;div&gt;DIV1&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;div&gt;DIV2&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;span&gt;SPAN&lt;/span&gt;
+</span><span style="color:#0086d2">
+</span><span style="color:#0086d2">			&lt;/body&gt;
+</span><span style="color:#0086d2">			`</span>
 
-	<span style="color:#a6e22e">dom</span>,<span style="color:#a6e22e">err</span><span style="color:#f92672">:=</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">NewDocumentFromReader</span>(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">html</span>))
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span><span style="color:#f92672">!=</span><span style="color:#66d9ef">nil</span>{
-		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalln</span>(<span style="color:#a6e22e">err</span>)
+	dom,err:=goquery.<span style="color:#ff0086;font-weight:bold">NewDocumentFromReader</span>(strings.<span style="color:#ff0086;font-weight:bold">NewReader</span>(html))
+	<span style="color:#fb660a;font-weight:bold">if</span> err!=<span style="color:#fb660a;font-weight:bold">nil</span>{
+		log.<span style="color:#ff0086;font-weight:bold">Fatalln</span>(err)
 	}
 
-	<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">Find</span>(<span style="color:#e6db74">&#34;div&#34;</span>).<span style="color:#a6e22e">Each</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">selection</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">Selection</span>) {
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">selection</span>.<span style="color:#a6e22e">Text</span>())
+	dom.<span style="color:#ff0086;font-weight:bold">Find</span>(<span style="color:#0086d2">&#34;div&#34;</span>).<span style="color:#ff0086;font-weight:bold">Each</span>(<span style="color:#fb660a;font-weight:bold">func</span>(i <span style="color:#cdcaa9;font-weight:bold">int</span>, selection *goquery.Selection) {
+		fmt.<span style="color:#ff0086;font-weight:bold">Println</span>(selection.<span style="color:#ff0086;font-weight:bold">Text</span>())
 	})
 }</code></pre></div>
 <p>以上示例，可以把div元素筛选出来，而body,span并不会被筛选。</p>
@@ -100,23 +100,23 @@
 <h2 id="id-选择器">ID 选择器</h2>
 
 <p>这个是使用频次最多的，类似于上面的例子，有两个div元素，其实我们只需要其中的一个，那么我们只需要给这个标记一个唯一的id即可，这样我们就可以使用id选择器，精确定位了。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">html</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">`&lt;body&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">				&lt;div id=&#34;div1&#34;&gt;DIV1&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;div&gt;DIV2&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;span&gt;SPAN&lt;/span&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">			&lt;/body&gt;
-</span><span style="color:#e6db74">			`</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#fb660a;font-weight:bold">func</span> <span style="color:#ff0086;font-weight:bold">main</span>() {
+	html := <span style="color:#0086d2">`&lt;body&gt;
+</span><span style="color:#0086d2">
+</span><span style="color:#0086d2">				&lt;div id=&#34;div1&#34;&gt;DIV1&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;div&gt;DIV2&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;span&gt;SPAN&lt;/span&gt;
+</span><span style="color:#0086d2">
+</span><span style="color:#0086d2">			&lt;/body&gt;
+</span><span style="color:#0086d2">			`</span>
 
-	<span style="color:#a6e22e">dom</span>,<span style="color:#a6e22e">err</span><span style="color:#f92672">:=</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">NewDocumentFromReader</span>(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">html</span>))
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span><span style="color:#f92672">!=</span><span style="color:#66d9ef">nil</span>{
-		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalln</span>(<span style="color:#a6e22e">err</span>)
+	dom,err:=goquery.<span style="color:#ff0086;font-weight:bold">NewDocumentFromReader</span>(strings.<span style="color:#ff0086;font-weight:bold">NewReader</span>(html))
+	<span style="color:#fb660a;font-weight:bold">if</span> err!=<span style="color:#fb660a;font-weight:bold">nil</span>{
+		log.<span style="color:#ff0086;font-weight:bold">Fatalln</span>(err)
 	}
 
-	<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">Find</span>(<span style="color:#e6db74">&#34;#div1&#34;</span>).<span style="color:#a6e22e">Each</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">selection</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">Selection</span>) {
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">selection</span>.<span style="color:#a6e22e">Text</span>())
+	dom.<span style="color:#ff0086;font-weight:bold">Find</span>(<span style="color:#0086d2">&#34;#div1&#34;</span>).<span style="color:#ff0086;font-weight:bold">Each</span>(<span style="color:#fb660a;font-weight:bold">func</span>(i <span style="color:#cdcaa9;font-weight:bold">int</span>, selection *goquery.Selection) {
+		fmt.<span style="color:#ff0086;font-weight:bold">Println</span>(selection.<span style="color:#ff0086;font-weight:bold">Text</span>())
 	})
 }</code></pre></div>
 <h2 id="element-id-选择器">Element ID 选择器</h2>
@@ -130,23 +130,23 @@
 <h2 id="class选择器">Class选择器</h2>
 
 <p>class也是HTML中常用的属性，我们可以通过class选择器来快速的筛选需要的HTML元素，它的用法和ID选择器类似，为Find(&ldquo;.class&rdquo;)。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">html</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">`&lt;body&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">				&lt;div id=&#34;div1&#34;&gt;DIV1&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;div class=&#34;name&#34;&gt;DIV2&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;span&gt;SPAN&lt;/span&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">			&lt;/body&gt;
-</span><span style="color:#e6db74">			`</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#fb660a;font-weight:bold">func</span> <span style="color:#ff0086;font-weight:bold">main</span>() {
+	html := <span style="color:#0086d2">`&lt;body&gt;
+</span><span style="color:#0086d2">
+</span><span style="color:#0086d2">				&lt;div id=&#34;div1&#34;&gt;DIV1&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;div class=&#34;name&#34;&gt;DIV2&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;span&gt;SPAN&lt;/span&gt;
+</span><span style="color:#0086d2">
+</span><span style="color:#0086d2">			&lt;/body&gt;
+</span><span style="color:#0086d2">			`</span>
 
-	<span style="color:#a6e22e">dom</span>,<span style="color:#a6e22e">err</span><span style="color:#f92672">:=</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">NewDocumentFromReader</span>(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">html</span>))
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span><span style="color:#f92672">!=</span><span style="color:#66d9ef">nil</span>{
-		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalln</span>(<span style="color:#a6e22e">err</span>)
+	dom,err:=goquery.<span style="color:#ff0086;font-weight:bold">NewDocumentFromReader</span>(strings.<span style="color:#ff0086;font-weight:bold">NewReader</span>(html))
+	<span style="color:#fb660a;font-weight:bold">if</span> err!=<span style="color:#fb660a;font-weight:bold">nil</span>{
+		log.<span style="color:#ff0086;font-weight:bold">Fatalln</span>(err)
 	}
 
-	<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">Find</span>(<span style="color:#e6db74">&#34;.name&#34;</span>).<span style="color:#a6e22e">Each</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">selection</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">Selection</span>) {
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">selection</span>.<span style="color:#a6e22e">Text</span>())
+	dom.<span style="color:#ff0086;font-weight:bold">Find</span>(<span style="color:#0086d2">&#34;.name&#34;</span>).<span style="color:#ff0086;font-weight:bold">Each</span>(<span style="color:#fb660a;font-weight:bold">func</span>(i <span style="color:#cdcaa9;font-weight:bold">int</span>, selection *goquery.Selection) {
+		fmt.<span style="color:#ff0086;font-weight:bold">Println</span>(selection.<span style="color:#ff0086;font-weight:bold">Text</span>())
 	})
 }</code></pre></div>
 <p>以上示例中，就筛选出来class为name的这个div元素。</p>
@@ -157,30 +157,30 @@
 属性选择器</p>
 
 <p>一个HTML元素都有自己的属性以及属性值，所以我们也可以通过属性和值筛选元素。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">html</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">`&lt;body&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">				&lt;div&gt;DIV1&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;div class=&#34;name&#34;&gt;DIV2&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;span&gt;SPAN&lt;/span&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">			&lt;/body&gt;
-</span><span style="color:#e6db74">			`</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#fb660a;font-weight:bold">func</span> <span style="color:#ff0086;font-weight:bold">main</span>() {
+	html := <span style="color:#0086d2">`&lt;body&gt;
+</span><span style="color:#0086d2">
+</span><span style="color:#0086d2">				&lt;div&gt;DIV1&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;div class=&#34;name&#34;&gt;DIV2&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;span&gt;SPAN&lt;/span&gt;
+</span><span style="color:#0086d2">
+</span><span style="color:#0086d2">			&lt;/body&gt;
+</span><span style="color:#0086d2">			`</span>
 
-	<span style="color:#a6e22e">dom</span>,<span style="color:#a6e22e">err</span><span style="color:#f92672">:=</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">NewDocumentFromReader</span>(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">html</span>))
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span><span style="color:#f92672">!=</span><span style="color:#66d9ef">nil</span>{
-		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalln</span>(<span style="color:#a6e22e">err</span>)
+	dom,err:=goquery.<span style="color:#ff0086;font-weight:bold">NewDocumentFromReader</span>(strings.<span style="color:#ff0086;font-weight:bold">NewReader</span>(html))
+	<span style="color:#fb660a;font-weight:bold">if</span> err!=<span style="color:#fb660a;font-weight:bold">nil</span>{
+		log.<span style="color:#ff0086;font-weight:bold">Fatalln</span>(err)
 	}
 
-	<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">Find</span>(<span style="color:#e6db74">&#34;div[class]&#34;</span>).<span style="color:#a6e22e">Each</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">selection</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">Selection</span>) {
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">selection</span>.<span style="color:#a6e22e">Text</span>())
+	dom.<span style="color:#ff0086;font-weight:bold">Find</span>(<span style="color:#0086d2">&#34;div[class]&#34;</span>).<span style="color:#ff0086;font-weight:bold">Each</span>(<span style="color:#fb660a;font-weight:bold">func</span>(i <span style="color:#cdcaa9;font-weight:bold">int</span>, selection *goquery.Selection) {
+		fmt.<span style="color:#ff0086;font-weight:bold">Println</span>(selection.<span style="color:#ff0086;font-weight:bold">Text</span>())
 	})
 }</code></pre></div>
 <p>示例中我们通过div[class]这个选择器，筛选出Element为div并且有class这个属性的，所以第一个div没有被筛选到。</p>
 
 <p>刚刚上面这个示例是采用是否存在某个属性为筛选器，同理，我们可以筛选出属性为某个值的元素。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">Find</span>(<span style="color:#e6db74">&#34;div[class=name]&#34;</span>).<span style="color:#a6e22e">Each</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">selection</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">Selection</span>) {
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">selection</span>.<span style="color:#a6e22e">Text</span>())
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    dom.<span style="color:#ff0086;font-weight:bold">Find</span>(<span style="color:#0086d2">&#34;div[class=name]&#34;</span>).<span style="color:#ff0086;font-weight:bold">Each</span>(<span style="color:#fb660a;font-weight:bold">func</span>(i <span style="color:#cdcaa9;font-weight:bold">int</span>, selection *goquery.Selection) {
+		fmt.<span style="color:#ff0086;font-weight:bold">Println</span>(selection.<span style="color:#ff0086;font-weight:bold">Text</span>())
 	})</code></pre></div>
 <p>这样我们就可以筛选出class这个属性值为name的div元素。</p>
 
@@ -205,59 +205,59 @@ Find(“div[lang^=zh]“),  筛选lang属性以zh开头的div元素，区分大�
 <h2 id="parent-child选择器">parent&gt;child选择器</h2>
 
 <p>如果我们想筛选出某个元素下符合条件的子元素，我们就可以使用子元素筛选器，它的语法为Find(&ldquo;parent&gt;child&rdquo;),表示筛选parent这个父元素下，符合child这个条件的最直接（一级）的子元素。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">html</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">`&lt;body&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">				&lt;div lang=&#34;ZH&#34;&gt;DIV1&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;div lang=&#34;zh-cn&#34;&gt;DIV2&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;div lang=&#34;en&#34;&gt;DIV3&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;span&gt;
-</span><span style="color:#e6db74">					&lt;div&gt;DIV4&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;/span&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">			&lt;/body&gt;
-</span><span style="color:#e6db74">			`</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#fb660a;font-weight:bold">func</span> <span style="color:#ff0086;font-weight:bold">main</span>() {
+	html := <span style="color:#0086d2">`&lt;body&gt;
+</span><span style="color:#0086d2">
+</span><span style="color:#0086d2">				&lt;div lang=&#34;ZH&#34;&gt;DIV1&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;div lang=&#34;zh-cn&#34;&gt;DIV2&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;div lang=&#34;en&#34;&gt;DIV3&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;span&gt;
+</span><span style="color:#0086d2">					&lt;div&gt;DIV4&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;/span&gt;
+</span><span style="color:#0086d2">
+</span><span style="color:#0086d2">			&lt;/body&gt;
+</span><span style="color:#0086d2">			`</span>
 
-	<span style="color:#a6e22e">dom</span>,<span style="color:#a6e22e">err</span><span style="color:#f92672">:=</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">NewDocumentFromReader</span>(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">html</span>))
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span><span style="color:#f92672">!=</span><span style="color:#66d9ef">nil</span>{
-		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalln</span>(<span style="color:#a6e22e">err</span>)
+	dom,err:=goquery.<span style="color:#ff0086;font-weight:bold">NewDocumentFromReader</span>(strings.<span style="color:#ff0086;font-weight:bold">NewReader</span>(html))
+	<span style="color:#fb660a;font-weight:bold">if</span> err!=<span style="color:#fb660a;font-weight:bold">nil</span>{
+		log.<span style="color:#ff0086;font-weight:bold">Fatalln</span>(err)
 	}
 
-	<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">Find</span>(<span style="color:#e6db74">&#34;body&gt;div&#34;</span>).<span style="color:#a6e22e">Each</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">selection</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">Selection</span>) {
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">selection</span>.<span style="color:#a6e22e">Text</span>())
+	dom.<span style="color:#ff0086;font-weight:bold">Find</span>(<span style="color:#0086d2">&#34;body&gt;div&#34;</span>).<span style="color:#ff0086;font-weight:bold">Each</span>(<span style="color:#fb660a;font-weight:bold">func</span>(i <span style="color:#cdcaa9;font-weight:bold">int</span>, selection *goquery.Selection) {
+		fmt.<span style="color:#ff0086;font-weight:bold">Println</span>(selection.<span style="color:#ff0086;font-weight:bold">Text</span>())
 	})
 }</code></pre></div>
 <p>以上示例，筛选出body这个父元素下，符合条件的最直接的子元素div，结果是DIV1、DIV2、DIV3，虽然DIV4也是body的子元素，但不是一级的，所以不会被筛选到。</p>
 
 <p>那么问题来了，我就是想把DIV4也筛选出来怎么办?就是要筛选body下所有的div元素，不管是一级、二级还是N级。有办法的，goquery考虑到了，只需要把大于号(&gt;)改为空格就好了。比如上面的例子，改为如下选择器即可。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">Find</span>(<span style="color:#e6db74">&#34;body div&#34;</span>).<span style="color:#a6e22e">Each</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">selection</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">Selection</span>) {
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">selection</span>.<span style="color:#a6e22e">Text</span>())
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    dom.<span style="color:#ff0086;font-weight:bold">Find</span>(<span style="color:#0086d2">&#34;body div&#34;</span>).<span style="color:#ff0086;font-weight:bold">Each</span>(<span style="color:#fb660a;font-weight:bold">func</span>(i <span style="color:#cdcaa9;font-weight:bold">int</span>, selection *goquery.Selection) {
+		fmt.<span style="color:#ff0086;font-weight:bold">Println</span>(selection.<span style="color:#ff0086;font-weight:bold">Text</span>())
 	})</code></pre></div>
 <p>prev+next相邻选择器</p>
 
 <p>假设我们要筛选的元素没有规律，但是该元素的上一个元素有规律，我们就可以使用这种下一个相邻选择器来进行选择。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">html</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">`&lt;body&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">				&lt;div lang=&#34;zh&#34;&gt;DIV1&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;p&gt;P1&lt;/p&gt;
-</span><span style="color:#e6db74">				&lt;div lang=&#34;zh-cn&#34;&gt;DIV2&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;div lang=&#34;en&#34;&gt;DIV3&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;span&gt;
-</span><span style="color:#e6db74">					&lt;div&gt;DIV4&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;/span&gt;
-</span><span style="color:#e6db74">				&lt;p&gt;P2&lt;/p&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">			&lt;/body&gt;
-</span><span style="color:#e6db74">			`</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#fb660a;font-weight:bold">func</span> <span style="color:#ff0086;font-weight:bold">main</span>() {
+	html := <span style="color:#0086d2">`&lt;body&gt;
+</span><span style="color:#0086d2">
+</span><span style="color:#0086d2">				&lt;div lang=&#34;zh&#34;&gt;DIV1&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;p&gt;P1&lt;/p&gt;
+</span><span style="color:#0086d2">				&lt;div lang=&#34;zh-cn&#34;&gt;DIV2&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;div lang=&#34;en&#34;&gt;DIV3&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;span&gt;
+</span><span style="color:#0086d2">					&lt;div&gt;DIV4&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;/span&gt;
+</span><span style="color:#0086d2">				&lt;p&gt;P2&lt;/p&gt;
+</span><span style="color:#0086d2">
+</span><span style="color:#0086d2">			&lt;/body&gt;
+</span><span style="color:#0086d2">			`</span>
 
-	<span style="color:#a6e22e">dom</span>,<span style="color:#a6e22e">err</span><span style="color:#f92672">:=</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">NewDocumentFromReader</span>(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">html</span>))
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span><span style="color:#f92672">!=</span><span style="color:#66d9ef">nil</span>{
-		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalln</span>(<span style="color:#a6e22e">err</span>)
+	dom,err:=goquery.<span style="color:#ff0086;font-weight:bold">NewDocumentFromReader</span>(strings.<span style="color:#ff0086;font-weight:bold">NewReader</span>(html))
+	<span style="color:#fb660a;font-weight:bold">if</span> err!=<span style="color:#fb660a;font-weight:bold">nil</span>{
+		log.<span style="color:#ff0086;font-weight:bold">Fatalln</span>(err)
 	}
 
-	<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">Find</span>(<span style="color:#e6db74">&#34;div[lang=zh]+p&#34;</span>).<span style="color:#a6e22e">Each</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">selection</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">Selection</span>) {
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">selection</span>.<span style="color:#a6e22e">Text</span>())
+	dom.<span style="color:#ff0086;font-weight:bold">Find</span>(<span style="color:#0086d2">&#34;div[lang=zh]+p&#34;</span>).<span style="color:#ff0086;font-weight:bold">Each</span>(<span style="color:#fb660a;font-weight:bold">func</span>(i <span style="color:#cdcaa9;font-weight:bold">int</span>, selection *goquery.Selection) {
+		fmt.<span style="color:#ff0086;font-weight:bold">Println</span>(selection.<span style="color:#ff0086;font-weight:bold">Text</span>())
 	})
 }</code></pre></div>
 <p>这个示例演示了这种用法，我们想选择<p>P1</p>这个元素，但是没啥规律，我们发现它前面的<div lang="zh">DIV1</div>很有规律，可以选择，所以我们就可以采用Find(&ldquo;div[lang=zh]+p&rdquo;)达到选择P元素的目的。</p>
@@ -267,8 +267,8 @@ Find(“div[lang^=zh]“),  筛选lang属性以zh开头的div元素，区分大�
 <h2 id="prev-next选择器">prev~next选择器</h2>
 
 <p>有相邻就有兄弟，兄弟选择器就不一定要求相邻了，只要他们共有一个父元素就可以。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">Find</span>(<span style="color:#e6db74">&#34;div[lang=zh]~p&#34;</span>).<span style="color:#a6e22e">Each</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">selection</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">Selection</span>) {
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">selection</span>.<span style="color:#a6e22e">Text</span>())
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	dom.<span style="color:#ff0086;font-weight:bold">Find</span>(<span style="color:#0086d2">&#34;div[lang=zh]~p&#34;</span>).<span style="color:#ff0086;font-weight:bold">Each</span>(<span style="color:#fb660a;font-weight:bold">func</span>(i <span style="color:#cdcaa9;font-weight:bold">int</span>, selection *goquery.Selection) {
+		fmt.<span style="color:#ff0086;font-weight:bold">Println</span>(selection.<span style="color:#ff0086;font-weight:bold">Text</span>())
 	})</code></pre></div>
 <p>刚刚的例子，只需要把+号换成~号,就可以把P2也筛选出来，因为P2、P1和DIV1都是兄弟。</p>
 
@@ -276,8 +276,8 @@ Find(“div[lang^=zh]“),  筛选lang属性以zh开头的div元素，区分大�
 内容过滤器</p>
 
 <p>有时候我们使用选择器选择出来后后，希望再过滤一下，这时候就用到过滤器了，过滤器有很多，我们先讲内容过滤器这一种。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">Find</span>(<span style="color:#e6db74">&#34;div:contains(DIV2)&#34;</span>).<span style="color:#a6e22e">Each</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">selection</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">Selection</span>) {
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">selection</span>.<span style="color:#a6e22e">Text</span>())
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	dom.<span style="color:#ff0086;font-weight:bold">Find</span>(<span style="color:#0086d2">&#34;div:contains(DIV2)&#34;</span>).<span style="color:#ff0086;font-weight:bold">Each</span>(<span style="color:#fb660a;font-weight:bold">func</span>(i <span style="color:#cdcaa9;font-weight:bold">int</span>, selection *goquery.Selection) {
+		fmt.<span style="color:#ff0086;font-weight:bold">Println</span>(selection.<span style="color:#ff0086;font-weight:bold">Text</span>())
 	})</code></pre></div>
 <p>Find(&rdquo;:contains(text)&ldquo;)表示筛选出的元素要包含指定的文本，我们例子中要求选择出的div元素要包含DIV2文本，那么只有一个DIV2元素满足要求。</p>
 
@@ -295,30 +295,30 @@ Find(“div[lang^=zh]“),  筛选lang属性以zh开头的div元素，区分大�
 <h2 id="first-child过滤器">:first-child过滤器</h2>
 
 <p>:first-child过滤器，语法为Find(&rdquo;:first-child&rdquo;)，表示筛选出的元素要是他们的父元素的第一个子元素，如果不是，则不会被筛选出来。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">html</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">`&lt;body&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">				&lt;div lang=&#34;zh&#34;&gt;DIV1&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;p&gt;P1&lt;/p&gt;
-</span><span style="color:#e6db74">				&lt;div lang=&#34;zh-cn&#34;&gt;DIV2&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;div lang=&#34;en&#34;&gt;DIV3&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;span&gt;
-</span><span style="color:#e6db74">					&lt;div style=&#34;display:none;&#34;&gt;DIV4&lt;/div&gt;
-</span><span style="color:#e6db74">					&lt;div&gt;DIV5&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;/span&gt;
-</span><span style="color:#e6db74">				&lt;p&gt;P2&lt;/p&gt;
-</span><span style="color:#e6db74">				&lt;div&gt;&lt;/div&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">			&lt;/body&gt;
-</span><span style="color:#e6db74">			`</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#fb660a;font-weight:bold">func</span> <span style="color:#ff0086;font-weight:bold">main</span>() {
+	html := <span style="color:#0086d2">`&lt;body&gt;
+</span><span style="color:#0086d2">
+</span><span style="color:#0086d2">				&lt;div lang=&#34;zh&#34;&gt;DIV1&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;p&gt;P1&lt;/p&gt;
+</span><span style="color:#0086d2">				&lt;div lang=&#34;zh-cn&#34;&gt;DIV2&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;div lang=&#34;en&#34;&gt;DIV3&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;span&gt;
+</span><span style="color:#0086d2">					&lt;div style=&#34;display:none;&#34;&gt;DIV4&lt;/div&gt;
+</span><span style="color:#0086d2">					&lt;div&gt;DIV5&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;/span&gt;
+</span><span style="color:#0086d2">				&lt;p&gt;P2&lt;/p&gt;
+</span><span style="color:#0086d2">				&lt;div&gt;&lt;/div&gt;
+</span><span style="color:#0086d2">
+</span><span style="color:#0086d2">			&lt;/body&gt;
+</span><span style="color:#0086d2">			`</span>
 
-	<span style="color:#a6e22e">dom</span>,<span style="color:#a6e22e">err</span><span style="color:#f92672">:=</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">NewDocumentFromReader</span>(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">html</span>))
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span><span style="color:#f92672">!=</span><span style="color:#66d9ef">nil</span>{
-		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalln</span>(<span style="color:#a6e22e">err</span>)
+	dom,err:=goquery.<span style="color:#ff0086;font-weight:bold">NewDocumentFromReader</span>(strings.<span style="color:#ff0086;font-weight:bold">NewReader</span>(html))
+	<span style="color:#fb660a;font-weight:bold">if</span> err!=<span style="color:#fb660a;font-weight:bold">nil</span>{
+		log.<span style="color:#ff0086;font-weight:bold">Fatalln</span>(err)
 	}
 
-	<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">Find</span>(<span style="color:#e6db74">&#34;div:first-child&#34;</span>).<span style="color:#a6e22e">Each</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">selection</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">Selection</span>) {
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">selection</span>.<span style="color:#a6e22e">Html</span>())
+	dom.<span style="color:#ff0086;font-weight:bold">Find</span>(<span style="color:#0086d2">&#34;div:first-child&#34;</span>).<span style="color:#ff0086;font-weight:bold">Each</span>(<span style="color:#fb660a;font-weight:bold">func</span>(i <span style="color:#cdcaa9;font-weight:bold">int</span>, selection *goquery.Selection) {
+		fmt.<span style="color:#ff0086;font-weight:bold">Println</span>(selection.<span style="color:#ff0086;font-weight:bold">Html</span>())
 	})
 }</code></pre></div>
 <p>以上例子中，我们使用Find(&ldquo;div&rdquo;)会筛选出所有的div元素，但是我们加了:first-child后，就只有DIV1和DIV4了，因为只有这两个是他们父元素的第一个子元素，其他的DIV都不满足。</p>
@@ -326,29 +326,29 @@ Find(“div[lang^=zh]“),  筛选lang属性以zh开头的div元素，区分大�
 <h2 id="first-of-type过滤器">:first-of-type过滤器</h2>
 
 <p>:first-child选择器限制的比较死，必须得是第一个子元素，如果该元素前有其他在前面，就不能用:first-child了，这时候:first-of-type就派上用场了，它要求只要是这个类型的第一个就可以，我们把上面的例子微调下。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">html</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">`&lt;body&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">				&lt;div lang=&#34;zh&#34;&gt;DIV1&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;p&gt;P1&lt;/p&gt;
-</span><span style="color:#e6db74">				&lt;div lang=&#34;zh-cn&#34;&gt;DIV2&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;div lang=&#34;en&#34;&gt;DIV3&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;span&gt;
-</span><span style="color:#e6db74">					&lt;p&gt;P2&lt;/p&gt;
-</span><span style="color:#e6db74">					&lt;div&gt;DIV5&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;/span&gt;
-</span><span style="color:#e6db74">				&lt;div&gt;&lt;/div&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">			&lt;/body&gt;
-</span><span style="color:#e6db74">			`</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#fb660a;font-weight:bold">func</span> <span style="color:#ff0086;font-weight:bold">main</span>() {
+	html := <span style="color:#0086d2">`&lt;body&gt;
+</span><span style="color:#0086d2">
+</span><span style="color:#0086d2">				&lt;div lang=&#34;zh&#34;&gt;DIV1&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;p&gt;P1&lt;/p&gt;
+</span><span style="color:#0086d2">				&lt;div lang=&#34;zh-cn&#34;&gt;DIV2&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;div lang=&#34;en&#34;&gt;DIV3&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;span&gt;
+</span><span style="color:#0086d2">					&lt;p&gt;P2&lt;/p&gt;
+</span><span style="color:#0086d2">					&lt;div&gt;DIV5&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;/span&gt;
+</span><span style="color:#0086d2">				&lt;div&gt;&lt;/div&gt;
+</span><span style="color:#0086d2">
+</span><span style="color:#0086d2">			&lt;/body&gt;
+</span><span style="color:#0086d2">			`</span>
 
-	<span style="color:#a6e22e">dom</span>,<span style="color:#a6e22e">err</span><span style="color:#f92672">:=</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">NewDocumentFromReader</span>(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">html</span>))
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span><span style="color:#f92672">!=</span><span style="color:#66d9ef">nil</span>{
-		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalln</span>(<span style="color:#a6e22e">err</span>)
+	dom,err:=goquery.<span style="color:#ff0086;font-weight:bold">NewDocumentFromReader</span>(strings.<span style="color:#ff0086;font-weight:bold">NewReader</span>(html))
+	<span style="color:#fb660a;font-weight:bold">if</span> err!=<span style="color:#fb660a;font-weight:bold">nil</span>{
+		log.<span style="color:#ff0086;font-weight:bold">Fatalln</span>(err)
 	}
 
-	<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">Find</span>(<span style="color:#e6db74">&#34;div:first-of-type&#34;</span>).<span style="color:#a6e22e">Each</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">selection</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">Selection</span>) {
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">selection</span>.<span style="color:#a6e22e">Html</span>())
+	dom.<span style="color:#ff0086;font-weight:bold">Find</span>(<span style="color:#0086d2">&#34;div:first-of-type&#34;</span>).<span style="color:#ff0086;font-weight:bold">Each</span>(<span style="color:#fb660a;font-weight:bold">func</span>(i <span style="color:#cdcaa9;font-weight:bold">int</span>, selection *goquery.Selection) {
+		fmt.<span style="color:#ff0086;font-weight:bold">Println</span>(selection.<span style="color:#ff0086;font-weight:bold">Html</span>())
 	})
 }</code></pre></div>
 <p>改动很简单，把原来的DIV4换成了P2，如果我们还使用:first-child,DIV5是不能被筛选出来的，因为它不是第一个子元素，它前面还有一个P2。这时候我们使用:first-of-type就可以达到目的，因为它要求是同类型第一个就可以。DIV5就是这个div类型的第一个元素，P2不是div类型，被忽略。
@@ -359,29 +359,29 @@ Find(“div[lang^=zh]“),  筛选lang属性以zh开头的div元素，区分大�
 <h2 id="nth-child-n-过滤器">:nth-child(n) 过滤器</h2>
 
 <p>这个表示筛选出的元素是其父元素的第n个元素，n以1开始。所以我们可以知道:first-child和:nth-child(1)是相等的。通过指定n，我们就很灵活的筛选出我们需要的元素。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">html</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">`&lt;body&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">				&lt;div lang=&#34;zh&#34;&gt;DIV1&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;p&gt;P1&lt;/p&gt;
-</span><span style="color:#e6db74">				&lt;div lang=&#34;zh-cn&#34;&gt;DIV2&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;div lang=&#34;en&#34;&gt;DIV3&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;span&gt;
-</span><span style="color:#e6db74">					&lt;p&gt;P2&lt;/p&gt;
-</span><span style="color:#e6db74">					&lt;div&gt;DIV5&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;/span&gt;
-</span><span style="color:#e6db74">				&lt;div&gt;&lt;/div&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">			&lt;/body&gt;
-</span><span style="color:#e6db74">			`</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#fb660a;font-weight:bold">func</span> <span style="color:#ff0086;font-weight:bold">main</span>() {
+	html := <span style="color:#0086d2">`&lt;body&gt;
+</span><span style="color:#0086d2">
+</span><span style="color:#0086d2">				&lt;div lang=&#34;zh&#34;&gt;DIV1&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;p&gt;P1&lt;/p&gt;
+</span><span style="color:#0086d2">				&lt;div lang=&#34;zh-cn&#34;&gt;DIV2&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;div lang=&#34;en&#34;&gt;DIV3&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;span&gt;
+</span><span style="color:#0086d2">					&lt;p&gt;P2&lt;/p&gt;
+</span><span style="color:#0086d2">					&lt;div&gt;DIV5&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;/span&gt;
+</span><span style="color:#0086d2">				&lt;div&gt;&lt;/div&gt;
+</span><span style="color:#0086d2">
+</span><span style="color:#0086d2">			&lt;/body&gt;
+</span><span style="color:#0086d2">			`</span>
 
-	<span style="color:#a6e22e">dom</span>,<span style="color:#a6e22e">err</span><span style="color:#f92672">:=</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">NewDocumentFromReader</span>(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">html</span>))
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span><span style="color:#f92672">!=</span><span style="color:#66d9ef">nil</span>{
-		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalln</span>(<span style="color:#a6e22e">err</span>)
+	dom,err:=goquery.<span style="color:#ff0086;font-weight:bold">NewDocumentFromReader</span>(strings.<span style="color:#ff0086;font-weight:bold">NewReader</span>(html))
+	<span style="color:#fb660a;font-weight:bold">if</span> err!=<span style="color:#fb660a;font-weight:bold">nil</span>{
+		log.<span style="color:#ff0086;font-weight:bold">Fatalln</span>(err)
 	}
 
-	<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">Find</span>(<span style="color:#e6db74">&#34;div:nth-child(3)&#34;</span>).<span style="color:#a6e22e">Each</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">selection</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">Selection</span>) {
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">selection</span>.<span style="color:#a6e22e">Html</span>())
+	dom.<span style="color:#ff0086;font-weight:bold">Find</span>(<span style="color:#0086d2">&#34;div:nth-child(3)&#34;</span>).<span style="color:#ff0086;font-weight:bold">Each</span>(<span style="color:#fb660a;font-weight:bold">func</span>(i <span style="color:#cdcaa9;font-weight:bold">int</span>, selection *goquery.Selection) {
+		fmt.<span style="color:#ff0086;font-weight:bold">Println</span>(selection.<span style="color:#ff0086;font-weight:bold">Html</span>())
 	})
 }</code></pre></div>
 <p>这个示例会筛选出DIV2，因为DIV2是其父元素body的第三个子元素。</p>
@@ -395,23 +395,23 @@ nth-last-child(n) 和:nth-last-of-type(n) 过滤器</p>
 :only-child 过滤器</p>
 
 <p>Find(&rdquo;:only-child&rdquo;) 过滤器，从字面上看，可以猜测出来，它表示筛选的元素，在其父元素中，只有它自己，它的父元素没有其他子元素，才会被匹配筛选出来。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">html</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">`&lt;body&gt;
-</span><span style="color:#e6db74">				&lt;div lang=&#34;zh&#34;&gt;DIV1&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;span&gt;
-</span><span style="color:#e6db74">					&lt;div&gt;DIV5&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;/span&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">			&lt;/body&gt;
-</span><span style="color:#e6db74">			`</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#fb660a;font-weight:bold">func</span> <span style="color:#ff0086;font-weight:bold">main</span>() {
+	html := <span style="color:#0086d2">`&lt;body&gt;
+</span><span style="color:#0086d2">				&lt;div lang=&#34;zh&#34;&gt;DIV1&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;span&gt;
+</span><span style="color:#0086d2">					&lt;div&gt;DIV5&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;/span&gt;
+</span><span style="color:#0086d2">
+</span><span style="color:#0086d2">			&lt;/body&gt;
+</span><span style="color:#0086d2">			`</span>
 
-	<span style="color:#a6e22e">dom</span>,<span style="color:#a6e22e">err</span><span style="color:#f92672">:=</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">NewDocumentFromReader</span>(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">html</span>))
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span><span style="color:#f92672">!=</span><span style="color:#66d9ef">nil</span>{
-		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalln</span>(<span style="color:#a6e22e">err</span>)
+	dom,err:=goquery.<span style="color:#ff0086;font-weight:bold">NewDocumentFromReader</span>(strings.<span style="color:#ff0086;font-weight:bold">NewReader</span>(html))
+	<span style="color:#fb660a;font-weight:bold">if</span> err!=<span style="color:#fb660a;font-weight:bold">nil</span>{
+		log.<span style="color:#ff0086;font-weight:bold">Fatalln</span>(err)
 	}
 
-	<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">Find</span>(<span style="color:#e6db74">&#34;div:only-child&#34;</span>).<span style="color:#a6e22e">Each</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">selection</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">Selection</span>) {
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">selection</span>.<span style="color:#a6e22e">Html</span>())
+	dom.<span style="color:#ff0086;font-weight:bold">Find</span>(<span style="color:#0086d2">&#34;div:only-child&#34;</span>).<span style="color:#ff0086;font-weight:bold">Each</span>(<span style="color:#fb660a;font-weight:bold">func</span>(i <span style="color:#cdcaa9;font-weight:bold">int</span>, selection *goquery.Selection) {
+		fmt.<span style="color:#ff0086;font-weight:bold">Println</span>(selection.<span style="color:#ff0086;font-weight:bold">Html</span>())
 	})
 }</code></pre></div>
 <p>示例中DIV5就可以被筛选出来，因为它是它的父元素span达到唯一子元素，但DIV1就不是，所以不能呗筛选出来。</p>
@@ -422,23 +422,23 @@ nth-last-child(n) 和:nth-last-of-type(n) 过滤器</p>
 选择器或(|)运算</p>
 
 <p>如果我们想同时筛选出div,span等元素怎么办？这时候可以采用多个选择器进行组合使用，并且以逗号(,)分割，Find(&ldquo;selector1, selector2, selectorN&rdquo;)表示，只要满足其中一个选择器就可以被筛选出来，也就是选择器的或(|)运算操作。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">html</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">`&lt;body&gt;
-</span><span style="color:#e6db74">				&lt;div lang=&#34;zh&#34;&gt;DIV1&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;span&gt;
-</span><span style="color:#e6db74">					&lt;div&gt;DIV5&lt;/div&gt;
-</span><span style="color:#e6db74">				&lt;/span&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">			&lt;/body&gt;
-</span><span style="color:#e6db74">			`</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#fb660a;font-weight:bold">func</span> <span style="color:#ff0086;font-weight:bold">main</span>() {
+	html := <span style="color:#0086d2">`&lt;body&gt;
+</span><span style="color:#0086d2">				&lt;div lang=&#34;zh&#34;&gt;DIV1&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;span&gt;
+</span><span style="color:#0086d2">					&lt;div&gt;DIV5&lt;/div&gt;
+</span><span style="color:#0086d2">				&lt;/span&gt;
+</span><span style="color:#0086d2">
+</span><span style="color:#0086d2">			&lt;/body&gt;
+</span><span style="color:#0086d2">			`</span>
 
-	<span style="color:#a6e22e">dom</span>,<span style="color:#a6e22e">err</span><span style="color:#f92672">:=</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">NewDocumentFromReader</span>(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">html</span>))
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span><span style="color:#f92672">!=</span><span style="color:#66d9ef">nil</span>{
-		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalln</span>(<span style="color:#a6e22e">err</span>)
+	dom,err:=goquery.<span style="color:#ff0086;font-weight:bold">NewDocumentFromReader</span>(strings.<span style="color:#ff0086;font-weight:bold">NewReader</span>(html))
+	<span style="color:#fb660a;font-weight:bold">if</span> err!=<span style="color:#fb660a;font-weight:bold">nil</span>{
+		log.<span style="color:#ff0086;font-weight:bold">Fatalln</span>(err)
 	}
 
-	<span style="color:#a6e22e">dom</span>.<span style="color:#a6e22e">Find</span>(<span style="color:#e6db74">&#34;div,span&#34;</span>).<span style="color:#a6e22e">Each</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">selection</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">goquery</span>.<span style="color:#a6e22e">Selection</span>) {
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">selection</span>.<span style="color:#a6e22e">Html</span>())
+	dom.<span style="color:#ff0086;font-weight:bold">Find</span>(<span style="color:#0086d2">&#34;div,span&#34;</span>).<span style="color:#ff0086;font-weight:bold">Each</span>(<span style="color:#fb660a;font-weight:bold">func</span>(i <span style="color:#cdcaa9;font-weight:bold">int</span>, selection *goquery.Selection) {
+		fmt.<span style="color:#ff0086;font-weight:bold">Println</span>(selection.<span style="color:#ff0086;font-weight:bold">Html</span>())
 	})
 }</code></pre></div>
 <h2 id="小结">小结</h2>
@@ -446,6 +446,11 @@ nth-last-child(n) 和:nth-last-of-type(n) 过滤器</p>
 <p>goquery 是解析HTML网页必备的利器，在爬虫抓取网页的过程中，灵活的使用goquery不同的选择器，可以让我们的抓取工作事半功倍，大大提升爬虫的效率。</p>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

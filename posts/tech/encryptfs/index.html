@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -76,12 +76,12 @@
 <h3 id="数据包准备">数据包准备</h3>
 
 <h4 id="安装">安装</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> root# emerge -avq sys-fs/lvm2 
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> root# emerge -avq sys-fs/lvm2 
  root# emerge -avq sys-fs/cryptsetup</code></pre></div>
 <h4 id="检查dm-crpyt是否已经加载">检查dm-crpyt是否已经加载</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ ls -l /dev/mapper/control <span style="color:#75715e"># 接下来加载dm-crypt内核模块：</span>
- $ sudo modprobe dm-crypt <span style="color:#75715e"># dm-crypt加载后，它会用device-mapper自动注册。</span>
- $ sudo dmsetup targets <span style="color:#75715e"># 应该看到crypt的下列输出：</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ ls -l /dev/mapper/control <span style="color:#080;background-color:#0f140f;font-style:italic"># 接下来加载dm-crypt内核模块：</span>
+ $ sudo modprobe dm-crypt <span style="color:#080;background-color:#0f140f;font-style:italic"># dm-crypt加载后，它会用device-mapper自动注册。</span>
+ $ sudo dmsetup targets <span style="color:#080;background-color:#0f140f;font-style:italic"># 应该看到crypt的下列输出：</span>
  crypt            v1.1.0
  striped          v1.0.2
  linear           v1.0.1
@@ -92,20 +92,20 @@
 
 <ul>
 <li><p>bsxcount=100M</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/zero of<span style="color:#f92672">=</span>~/secret.img bs<span style="color:#f92672">=</span>1M count<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span></code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dd <span style="color:#fb660a;font-weight:bold">if</span>=/dev/zero <span style="color:#fb660a">of</span>=~/secret.img <span style="color:#fb660a">bs</span>=1M <span style="color:#fb660a">count</span>=<span style="color:#0086f7;font-weight:bold">100</span></code></pre></div></li>
 
 <li><p>连接 dev/loop0 到加密镜像文件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo losetup /dev/loop0 ~/secret.img</code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo losetup /dev/loop0 ~/secret.img</code></pre></div></li>
 </ul>
 
 <h4 id="挂载">挂载</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ sudo cryptsetup -y create encryptfs /dev/loop0
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ sudo cryptsetup -y create encryptfs /dev/loop0
  $ sudo dmsetup ls
  $ sudo mkfs.ext4 /dev/mapper/encryptfs
  $ mkdir encryptfs
  $ sudo mount /dev/mapper/encryptfs ~/encrypfs</code></pre></div>
 <h4 id="卸载">卸载</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ sudo umount ~/encrypfs
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ sudo umount ~/encrypfs
  $ sudo crpytsetup remove encryptfs
  $ sudo losetup -d /dev/loop0</code></pre></div>
 <h3 id="建立两个batch文件">建立两个batch文件</h3>
@@ -114,7 +114,7 @@
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>~/.bin/loadEncryptFilesystem.sh</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#75715e">#!/bin/sh</span>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#080;background-color:#0f140f;font-style:italic">#!/bin/sh</span>
  
  sudo losetup /dev/loop0 /data/encryptimg/secret.img
  sudo cryptsetup create encryptfs /dev/loop0
@@ -128,8 +128,8 @@
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>~/.bin/unloadEncryptFilesystem.sh</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#!/bin/bash
+</span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic"></span>
 sudo umount /home/walter/encryptfs
 sudo cryptsetup remove encryptfs
 sudo losetup -d /dev/loop0</code></pre></div>
@@ -141,20 +141,25 @@ sudo losetup -d /dev/loop0</code></pre></div>
 <p>为了让指定用户可以访问加密系统，可以通过udev rules 的设置赋予指定用户权限。</p>
 
 <h4 id="find-the-uuid">Find the &ldquo;UUID&rdquo;</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo blkid /dev/mapper/encryptfs
-/dev/mapper/encryptfs: UUID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;c086c30c-bea0-452f-8616-0a3a6d9f48b3&#34;</span> TYPE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ext4&#34;</span></code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo blkid /dev/mapper/encryptfs
+/dev/mapper/encryptfs: <span style="color:#fb660a">UUID</span>=<span style="color:#0086d2">&#34;c086c30c-bea0-452f-8616-0a3a6d9f48b3&#34;</span> <span style="color:#fb660a">TYPE</span>=<span style="color:#0086d2">&#34;ext4&#34;</span></code></pre></div>
 <h3 id="etc-udev-rules-d-99-myencryptfs-rules">/etc/udev/rules.d/99-myencryptfs.rules</h3>
 
 <div class="file" >
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/udev/rules.d/99-myencryptfs.rules</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">KERNEL<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;loop0&#34;</span> ENV<span style="color:#f92672">{</span>ID_FS_UUID<span style="color:#f92672">}==</span><span style="color:#e6db74">&#34;c086c30c-bea0-452f-8616-0afa9848b3&#34;</span> MODE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0600&#34;</span> OWNER<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;user&#34;</span> GROUP<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;group&#34;</span>
-<span style="color:#75715e">#KERNEL==&#34;loop5&#34; MODE=&#34;0600&#34; OWNER=&#34;MyUser&#34; GROUP=&#34;MyGroupUser&#34; ENV{UDISKS_IGNORE}=&#34;1&#34; ENV{UDISKS_PRESENTATION_HIDE}=&#34;1&#34; ENV{ID_DRIVE_EJECTABLE}=&#34;0&#34;</span></code></pre></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fb660a">KERNEL</span>==<span style="color:#0086d2">&#34;loop0&#34;</span> ENV{ID_FS_UUID}==<span style="color:#0086d2">&#34;c086c30c-bea0-452f-8616-0afa9848b3&#34;</span> <span style="color:#fb660a">MODE</span>=<span style="color:#0086d2">&#34;0600&#34;</span> <span style="color:#fb660a">OWNER</span>=<span style="color:#0086d2">&#34;user&#34;</span> <span style="color:#fb660a">GROUP</span>=<span style="color:#0086d2">&#34;group&#34;</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#KERNEL==&#34;loop5&#34; MODE=&#34;0600&#34; OWNER=&#34;MyUser&#34; GROUP=&#34;MyGroupUser&#34; ENV{UDISKS_IGNORE}=&#34;1&#34; ENV{UDISKS_PRESENTATION_HIDE}=&#34;1&#34; ENV{ID_DRIVE_EJECTABLE}=&#34;0&#34;</span></code></pre></div>
     </div>
 </div>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

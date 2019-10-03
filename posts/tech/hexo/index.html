@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -67,8 +67,8 @@
 
 <ul>
 <li><p><code>start.sh</code> (~/note/myblog/start.sh)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>hexo s -i <span style="color:#ae81ff">192</span>.168.0.99 -p <span style="color:#ae81ff">5000</span></code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#!/bin/bash
+</span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic"></span>hexo s -i <span style="color:#0086f7;font-weight:bold">192</span>.168.0.99 -p <span style="color:#0086f7;font-weight:bold">5000</span></code></pre></div></li>
 </ul>
 
 <h2 id="config-yml">_config.yml</h2>
@@ -81,12 +81,12 @@
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>_config.yml</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">13</span> <span style="color:#75715e"># URL</span>
-<span style="color:#ae81ff">14</span> <span style="color:#75715e">## If your site is put in a subdirectory, set url as &#39;http://yoursite.com/child&#39; and root as     &#39;/child/&#39;</span>
-<span style="color:#ae81ff">15</span> url: http:<span style="color:#f92672">//</span><span style="color:#ae81ff">192.168</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0.99</span>:<span style="color:#ae81ff">5000</span>
-<span style="color:#ae81ff">16</span> root: <span style="color:#f92672">/</span>
-<span style="color:#ae81ff">17</span> permalink: :year<span style="color:#f92672">/</span>:month<span style="color:#f92672">/</span>:day<span style="color:#f92672">/</span>:title<span style="color:#f92672">/</span>
-<span style="color:#ae81ff">18</span> permalink_defaults:</code></pre></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#0086f7;font-weight:bold">13</span> <span style="color:#080;background-color:#0f140f;font-style:italic"># URL</span>
+<span style="color:#0086f7;font-weight:bold">14</span> <span style="color:#080;background-color:#0f140f;font-style:italic">## If your site is put in a subdirectory, set url as &#39;http://yoursite.com/child&#39; and root as     &#39;/child/&#39;</span>
+<span style="color:#0086f7;font-weight:bold">15</span> url: http://<span style="color:#0086f7;font-weight:bold">192.168</span>.<span style="color:#0086f7;font-weight:bold">0.99</span>:<span style="color:#0086f7;font-weight:bold">5000</span>
+<span style="color:#0086f7;font-weight:bold">16</span> root: /
+<span style="color:#0086f7;font-weight:bold">17</span> permalink: :year/:month/:day/:title/
+<span style="color:#0086f7;font-weight:bold">18</span> permalink_defaults:</code></pre></div>
     </div>
 </div>
 
@@ -98,34 +98,34 @@
 <p>I have to add a string.trim () in layout/_partial/after_footer.ejs, then search works.</p>
 
 <p><code>layout/_partial/after_footer.ejs</code> line 28:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;%- config.root %&gt;&#34;</span>
-<span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">trim</span>()
-<span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">search_path</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#fb660a;font-weight:bold">var</span> path = <span style="color:#0086d2">&#34;&lt;%- config.root %&gt;&#34;</span>
+path = path.trim()
+path = path + search_path
 </code></pre></div></li>
 
 <li><p><code>_config.yml</code> under freemind theme</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">...<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#ae81ff">3</span> <span style="color:#a6e22e">theme</span>: <span style="color:#a6e22e">cerulean</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#ae81ff">4</span> <span style="color:#a6e22e">inverse</span>: <span style="color:#a6e22e">true</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>...</code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">...
+<span style="color:#0086f7;font-weight:bold">3</span> theme: cerulean
+<span style="color:#0086f7;font-weight:bold">4</span> inverse: true
+...</code></pre></div></li>
 </ul>
 
 <h2 id="quick-start">Quick Start</h2>
 
 <h3 id="create-a-new-post">Create a new post</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hexo new <span style="color:#e6db74">&#34;My New Post&#34;</span></code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hexo new <span style="color:#0086d2">&#34;My New Post&#34;</span></code></pre></div>
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
 
 <h3 id="run-server">Run server</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hexo server</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hexo server</code></pre></div>
 <p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
 
 <h3 id="autorun-at-boot-in-mac">Autorun at boot in Mac</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo vi /Library/LaunchDaemons/com.localhost.hexo.plist
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo vi /Library/LaunchDaemons/com.localhost.hexo.plist
 
-&lt;?xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>?&gt;
-&lt;!DOCTYPE plist PUBLIC <span style="color:#e6db74">&#34;-//Apple//DTD PLIST 1.0//EN&#34;</span> <span style="color:#e6db74">&#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;</span>&gt;
-&lt;plist version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span>&gt;
+&lt;?xml <span style="color:#fb660a">version</span>=<span style="color:#0086d2">&#34;1.0&#34;</span> <span style="color:#fb660a">encoding</span>=<span style="color:#0086d2">&#34;UTF-8&#34;</span>?&gt;
+&lt;!DOCTYPE plist PUBLIC <span style="color:#0086d2">&#34;-//Apple//DTD PLIST 1.0//EN&#34;</span> <span style="color:#0086d2">&#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;</span>&gt;
+&lt;plist <span style="color:#fb660a">version</span>=<span style="color:#0086d2">&#34;1.0&#34;</span>&gt;
 &lt;dict&gt;
   &lt;key&gt;Label&lt;/key&gt;
   &lt;string&gt;com.localhost.hexo&lt;/string&gt;
@@ -142,14 +142,19 @@
 &lt;/dict&gt;
 &lt;/plist&gt;</code></pre></div>
 <h3 id="generate-static-files">Generate static files</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hexo generate</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hexo generate</code></pre></div>
 <p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
 
 <h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hexo deploy</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hexo deploy</code></pre></div>
 <p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a></p>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

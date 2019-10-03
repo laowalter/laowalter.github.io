@@ -4,16 +4,61 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2019-09-17T13:32:25+08:00</lastmod>
+    <lastmod>2019-09-26T15:01:52+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/fuse/</loc>
-    <lastmod>2019-09-17T13:32:25+08:00</lastmod>
+    <loc>/tags/futures/</loc>
+    <lastmod>2019-09-26T15:01:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/futures/</loc>
+    <lastmod>2019-09-26T15:01:52+08:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
+    <lastmod>2019-09-26T15:01:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2019-09-26T15:01:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2019-09-26T15:01:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/futures/%E5%86%8D%E8%AF%BB%E4%B8%93%E4%B8%9A%E6%8A%95%E6%9C%BA%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2019-09-26T15:01:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/music/lovecds/</loc>
+    <lastmod>2019-09-17T17:12:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/music/</loc>
+    <lastmod>2019-09-17T17:12:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/%E5%8F%A4%E7%90%B4/</loc>
+    <lastmod>2019-09-17T17:12:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/%E7%AE%AB/</loc>
+    <lastmod>2019-09-17T17:12:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/fuse/</loc>
     <lastmod>2019-09-17T13:32:25+08:00</lastmod>
   </url>
   
@@ -33,28 +78,8 @@
   </url>
   
   <url>
-    <loc>/posts/</loc>
-    <lastmod>2019-09-17T13:32:25+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2019-09-17T13:32:25+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/tech/</loc>
     <lastmod>2019-09-17T13:32:25+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/futures/</loc>
-    <lastmod>2019-09-04T10:04:02+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/futures/</loc>
-    <lastmod>2019-09-04T10:04:02+08:00</lastmod>
   </url>
   
   <url>

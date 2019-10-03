@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -77,35 +77,35 @@
 
 <ul>
 <li><p>删除branch</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push origin --delete gh-pages  <span style="color:#75715e"># 删除远程库中的分支gh-pages</span>
-git branch -D gh-pages <span style="color:#75715e"># 删除本地分支gh-pages</span></code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push origin --delete gh-pages  <span style="color:#080;background-color:#0f140f;font-style:italic"># 删除远程库中的分支gh-pages</span>
+git branch -D gh-pages <span style="color:#080;background-color:#0f140f;font-style:italic"># 删除本地分支gh-pages</span></code></pre></div></li>
 
 <li><p>不同的git client出现冲突，无法pull</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git fetch --all  <span style="color:#75715e"># 从远程仓库中下载最新的内容，但是不在本地合并</span>
-git reset --hard origin/master <span style="color:#75715e"># 重置master，--hard 指全部文件</span></code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git fetch --all  <span style="color:#080;background-color:#0f140f;font-style:italic"># 从远程仓库中下载最新的内容，但是不在本地合并</span>
+git reset --hard origin/master <span style="color:#080;background-color:#0f140f;font-style:italic"># 重置master，--hard 指全部文件</span></code></pre></div></li>
 
 <li><p>删除branch</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch -d the_local_brach  <span style="color:#75715e"># 删除本地的</span>
-git push origin: the_remote_branch <span style="color:#75715e"># 删除远程的</span>
-git push origin --delete the_remote_branch <span style="color:#75715e"># 删除远程的</span></code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch -d the_local_brach  <span style="color:#080;background-color:#0f140f;font-style:italic"># 删除本地的</span>
+git push origin: the_remote_branch <span style="color:#080;background-color:#0f140f;font-style:italic"># 删除远程的</span>
+git push origin --delete the_remote_branch <span style="color:#080;background-color:#0f140f;font-style:italic"># 删除远程的</span></code></pre></div></li>
 </ul>
 
 <h2 id="about-github">About Github</h2>
 
 <h3 id="generate-ssh-key">Generate ssh key</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/.ssh
-ssh-keygen -t rsa -C <span style="color:#e6db74">&#34;your@email.com&#34;</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/.ssh
+ssh-keygen -t rsa -C <span style="color:#0086d2">&#34;your@email.com&#34;</span>
 cat ~/.ssh/id_rsa.pub</code></pre></div>
 <h3 id="copy-cat-result-of-id-ras-pub-to-github-site">Copy cat result of id_ras.pub to Github Site</h3>
 
 <h3 id="clone-with-ssh">Clone with ssh</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -T git@github
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -T git@github
 git clone git://github.com/Laowalter/project.git ./</code></pre></div>
 <h2 id="problems">Problems:</h2>
 
 <ol>
 <li><p>Ask password phrase again and again</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eval <span style="color:#e6db74">`</span>ssh-agent -s<span style="color:#e6db74">`</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eval <span style="color:#0086d2">`</span>ssh-agent -s<span style="color:#0086d2">`</span>
 ssh-add</code></pre></div></li>
 </ol>
 
@@ -120,11 +120,11 @@ ssh-add</code></pre></div></li>
 <li>(1) Create a new user named &ldquo;git&rdquo;</li>
 
 <li><p>(2) Evennable web sharing</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config receive.denyCurrentBranch updateInstead</code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config receive.denyCurrentBranch updateInstead</code></pre></div></li>
 </ul></li>
 
 <li><p>Initialise a git directory</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir something.git
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir something.git
 cd something.git
 git init --bare</code></pre></div></li>
 </ol>
@@ -132,14 +132,14 @@ git init --bare</code></pre></div></li>
 <h3 id="client-computer">Client Computer</h3>
 
 <h4 id="new-repo">new repo</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir repo <span style="color:#f92672">&amp;&amp;</span> cd repo
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir repo &amp;&amp; cd repo
 git init
 git remote add origin ssh://git@localhost/~/something.git
 git add .
-git commit -m <span style="color:#e6db74">&#39;initial commit&#39;</span>
+git commit -m <span style="color:#0086d2">&#39;initial commit&#39;</span>
 git push origin master</code></pre></div>
 <h4 id="clone-an-existed-repo">clone an existed repo</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone ssh://git@192.168.0.199/~/quanta.git</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone ssh://git@192.168.0.199/~/quanta.git</code></pre></div>
 <h2 id="比较清晰的git使用说明">比较清晰的git使用说明</h2>
 
 <ul>
@@ -166,12 +166,17 @@ Sometimes you want to have a subdirectory on the master branch be the root direc
 <h3 id="step-2">Step 2</h3>
 
 <p>Make sure git knows about your subtree (the subfolder with your site).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add dist <span style="color:#f92672">&amp;&amp;</span> git commit -m <span style="color:#e6db74">&#34;Initial dist subtree commit&#34;</span></code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add dist &amp;&amp; git commit -m <span style="color:#0086d2">&#34;Initial dist subtree commit&#34;</span></code></pre></div>
 <h3 id="step-3">Step 3</h3>
 
 <p>Use subtree push to send it to the gh-pages branch on GitHub.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git subtree push --prefix dist origin gh-pages</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git subtree push --prefix dist origin gh-pages</code></pre></div>
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

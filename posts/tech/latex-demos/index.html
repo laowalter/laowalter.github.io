@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -59,7 +59,7 @@
     
 
 <h2 id="常用的latex宏包">常用的latex宏包</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex">CJK        中文支持，现不推荐这种方式
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex">CJK        中文支持，现不推荐这种方式
 CJKfntef        CJK 下的中文下划线、浪线、加点等标记。xeCJK 沿用
 CJKpunct        CJK 下的中文标点压缩
 CJKnumber        CJK 下的数字。在 ctex 宏包中被替代为更方便的命令。xeCJK 沿用
@@ -75,7 +75,7 @@ beamer        幻灯片最常用的文档类之一
 amsmath        数学公式，必备
 amssymb        数学字体与符号，必备。注意此宏包已经包括了 amsfonts，不要重复使用
 amsthm        数学定理格式控制。也可以考虑用 theorem 宏包
-bm        数字粗体。是 <span style="color:#66d9ef">\boldsymbol</span> 和 <span style="color:#66d9ef">\pmb</span> 的新一代替代品。常用
+bm        数字粗体。是 <span style="color:#fb660a;font-weight:bold">\boldsymbol</span> 和 <span style="color:#fb660a;font-weight:bold">\pmb</span> 的新一代替代品。常用
 extarrows        可延长上下写文字的箭头、等号等
 latexsym        一些符号。功能被 amssymb 代码，不必使用
 upgreek        直立体希腊字母
@@ -113,7 +113,7 @@ makecell        许多方便的表格控制，部分可代替 slashbox 宏包功
 hhline        双线表格交点的精细控制。建议不要使用双线，也不要使用此宏包
 
 listings        代码抄录并语法高亮。常用
-shortvrb        提供 <span style="color:#66d9ef">\verb</span> 命令的简写形式。此功能 listings 宏包也可提供
+shortvrb        提供 <span style="color:#fb660a;font-weight:bold">\verb</span> 命令的简写形式。此功能 listings 宏包也可提供
 verbatim        标准 verbatim 功能的少量扩展，功能不强，主要用其中的大段注释功能。不常用
 
 doc        提供了写 LaTeX 宏包文档需要的一些功能
@@ -142,15 +142,15 @@ tikz        功能最强大的绘图宏包之一
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>.tex</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex">-------------preamble-------
-<span style="color:#66d9ef">\usepakage</span> xcolor
-<span style="color:#66d9ef">\definecolor</span>{ballblue}{rgb}{0.13, 0.67, 0.8}
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex">-------------preamble-------
+<span style="color:#fb660a;font-weight:bold">\usepakage</span> xcolor
+<span style="color:#fb660a;font-weight:bold">\definecolor</span>{ballblue}{rgb}{0.13, 0.67, 0.8}
 --------------content--------
-<span style="color:#66d9ef">\color</span>{ballblue}
+<span style="color:#fb660a;font-weight:bold">\color</span>{ballblue}
 
 or 
 
-<span style="color:#66d9ef">\textcolor</span>{red}{the read text}</code></pre></div>
+<span style="color:#fb660a;font-weight:bold">\textcolor</span>{red}{the read text}</code></pre></div>
     </div>
 </div>
 
@@ -162,39 +162,39 @@ or
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>模板一</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#66d9ef">\documentclass</span>{article}
-<span style="color:#66d9ef">\usepackage</span>{geometry}
-<span style="color:#66d9ef">\geometry</span>{b5paper,left=2.5cm,right=2.5cm,top=3cm,bottom=1cm}
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#fb660a;font-weight:bold">\documentclass</span>{article}
+<span style="color:#fb660a;font-weight:bold">\usepackage</span>{geometry}
+<span style="color:#fb660a;font-weight:bold">\geometry</span>{b5paper,left=2.5cm,right=2.5cm,top=3cm,bottom=1cm}
 
-<span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[slantfont,boldfont]</span>{xeCJK}
-<span style="color:#66d9ef">\setCJKmainfont</span><span style="color:#a6e22e">[BoldFont=Adobe Heiti Std,ItalicFont=Adobe Kaiti Std]</span>{Adobe Song Std}
-<span style="color:#75715e">%\setCJKmainfont[BoldFont=Adobe Heiti Std,ItalicFont=Adobe Kaiti Std]{Adobe Ming Std}
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">\setCJKsansfont</span>{Adobe Heiti Std}
-<span style="color:#75715e">%\setCJKsansfont{Adobe Fan Heiti Std}
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">\setCJKmonofont</span>{Adobe Song Std}
+<span style="color:#fb660a;font-weight:bold">\usepackage</span><span style="color:#ff0086;font-weight:bold">[slantfont,boldfont]</span>{xeCJK}
+<span style="color:#fb660a;font-weight:bold">\setCJKmainfont</span><span style="color:#ff0086;font-weight:bold">[BoldFont=Adobe Heiti Std,ItalicFont=Adobe Kaiti Std]</span>{Adobe Song Std}
+<span style="color:#080;background-color:#0f140f;font-style:italic">%\setCJKmainfont[BoldFont=Adobe Heiti Std,ItalicFont=Adobe Kaiti Std]{Adobe Ming Std}
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span><span style="color:#fb660a;font-weight:bold">\setCJKsansfont</span>{Adobe Heiti Std}
+<span style="color:#080;background-color:#0f140f;font-style:italic">%\setCJKsansfont{Adobe Fan Heiti Std}
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span><span style="color:#fb660a;font-weight:bold">\setCJKmonofont</span>{Adobe Song Std}
 
-<span style="color:#75715e">%\setCJKfamilyfont{song}{Adobe Ming Std}
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">\setCJKfamilyfont</span>{song}{Adobe Song Std}
-<span style="color:#66d9ef">\setCJKfamilyfont</span>{hei}{Adobe Heiti Std}
-<span style="color:#75715e">%\setCJKfamilyfont{hei}{Adobe Fan Heiti Std}
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">\setCJKfamilyfont</span>{kai}{Adobe Kaiti Std}
+<span style="color:#080;background-color:#0f140f;font-style:italic">%\setCJKfamilyfont{song}{Adobe Ming Std}
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span><span style="color:#fb660a;font-weight:bold">\setCJKfamilyfont</span>{song}{Adobe Song Std}
+<span style="color:#fb660a;font-weight:bold">\setCJKfamilyfont</span>{hei}{Adobe Heiti Std}
+<span style="color:#080;background-color:#0f140f;font-style:italic">%\setCJKfamilyfont{hei}{Adobe Fan Heiti Std}
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span><span style="color:#fb660a;font-weight:bold">\setCJKfamilyfont</span>{kai}{Adobe Kaiti Std}
 
-<span style="color:#66d9ef">\newcommand</span>{<span style="color:#66d9ef">\hei</span>}{<span style="color:#66d9ef">\CJKfamily</span>{hei}}
-<span style="color:#66d9ef">\newcommand</span>{<span style="color:#66d9ef">\song</span>}{<span style="color:#66d9ef">\CJKfamily</span>{song}}
-<span style="color:#66d9ef">\newcommand</span>{<span style="color:#66d9ef">\kai</span>}{<span style="color:#66d9ef">\CJKfamily</span>{kai}}
+<span style="color:#fb660a;font-weight:bold">\newcommand</span>{<span style="color:#fb660a;font-weight:bold">\hei</span>}{<span style="color:#fb660a;font-weight:bold">\CJKfamily</span>{hei}}
+<span style="color:#fb660a;font-weight:bold">\newcommand</span>{<span style="color:#fb660a;font-weight:bold">\song</span>}{<span style="color:#fb660a;font-weight:bold">\CJKfamily</span>{song}}
+<span style="color:#fb660a;font-weight:bold">\newcommand</span>{<span style="color:#fb660a;font-weight:bold">\kai</span>}{<span style="color:#fb660a;font-weight:bold">\CJKfamily</span>{kai}}
 
-<span style="color:#66d9ef">\begin</span>{document}
-<span style="color:#66d9ef">\thispagestyle</span>{empty}
-<span style="color:#66d9ef">\begin</span>{center}
-    <span style="color:#66d9ef">\hei</span>{<span style="color:#66d9ef">\Huge</span> 修心十七条}
-<span style="color:#66d9ef">\end</span>{center}
-<span style="color:#66d9ef">\hfill</span>
+<span style="color:#fb660a;font-weight:bold">\begin</span>{document}
+<span style="color:#fb660a;font-weight:bold">\thispagestyle</span>{empty}
+<span style="color:#fb660a;font-weight:bold">\begin</span>{center}
+    <span style="color:#fb660a;font-weight:bold">\hei</span>{<span style="color:#fb660a;font-weight:bold">\Huge</span> 修心十七条}
+<span style="color:#fb660a;font-weight:bold">\end</span>{center}
+<span style="color:#fb660a;font-weight:bold">\hfill</span>
 
-<span style="color:#66d9ef">\large\selectfont</span>
-<span style="color:#66d9ef">\begin</span>{enumerate}
-<span style="color:#66d9ef">\item</span> 修心沒有終點，了願了，要再來，來了還要再來，吃苦了，苦而已，唯有隨喜自在才是真自在。
-<span style="color:#66d9ef">\end</span>{enumerate}
-<span style="color:#66d9ef">\end</span>{document}</code></pre></div>
+<span style="color:#fb660a;font-weight:bold">\large\selectfont</span>
+<span style="color:#fb660a;font-weight:bold">\begin</span>{enumerate}
+<span style="color:#fb660a;font-weight:bold">\item</span> 修心沒有終點，了願了，要再來，來了還要再來，吃苦了，苦而已，唯有隨喜自在才是真自在。
+<span style="color:#fb660a;font-weight:bold">\end</span>{enumerate}
+<span style="color:#fb660a;font-weight:bold">\end</span>{document}</code></pre></div>
     </div>
 </div>
 
@@ -204,45 +204,50 @@ or
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>模板二(table)</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[justification=centering]</span>{caption}
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#fb660a;font-weight:bold">\usepackage</span><span style="color:#ff0086;font-weight:bold">[justification=centering]</span>{caption}
 
-<span style="color:#66d9ef">\begin</span>{document}
-<span style="color:#66d9ef">\thispagestyle</span>{empty}
-<span style="color:#66d9ef">\begin</span>{center}
-    <span style="color:#66d9ef">\hei</span> {<span style="color:#66d9ef">\Huge</span> 作息时间表}
-<span style="color:#66d9ef">\end</span>{center}
-<span style="color:#66d9ef">\hfill</span>
+<span style="color:#fb660a;font-weight:bold">\begin</span>{document}
+<span style="color:#fb660a;font-weight:bold">\thispagestyle</span>{empty}
+<span style="color:#fb660a;font-weight:bold">\begin</span>{center}
+    <span style="color:#fb660a;font-weight:bold">\hei</span> {<span style="color:#fb660a;font-weight:bold">\Huge</span> 作息时间表}
+<span style="color:#fb660a;font-weight:bold">\end</span>{center}
+<span style="color:#fb660a;font-weight:bold">\hfill</span>
 
-<span style="color:#66d9ef">\begin</span>{table}[!hbt]
-<span style="color:#66d9ef">\centering</span>
-<span style="color:#66d9ef">\large\selectfont</span>
-<span style="color:#66d9ef">\begin</span>{tabular}{|l|l|l|}<span style="color:#66d9ef">\hline</span>
-<span style="color:#66d9ef">\multicolumn</span>{3}{|c|}{上午}<span style="color:#66d9ef">\\</span>
-<span style="color:#66d9ef">\hline</span>
-<span style="color:#66d9ef">\hei</span>{时间}&amp; <span style="color:#66d9ef">\hei</span>{安排} &amp; <span style="color:#66d9ef">\hei</span>{备注}<span style="color:#66d9ef">\\</span>
-<span style="color:#66d9ef">\hline</span>
-6:30am-7:00am&amp;  起床&amp;   洗漱<span style="color:#66d9ef">\\</span>
-<span style="color:#66d9ef">\hline</span>
-7:00am-7:30am&amp;  锻炼&amp;   易筋经<span style="color:#66d9ef">\\</span>
-<span style="color:#66d9ef">\hline</span>
-7:30am-8:00am&amp;  早餐&amp;<span style="color:#66d9ef">\\</span>
-<span style="color:#66d9ef">\hline</span>
-8:00am-8:15am&amp;  工作环境准备&amp;   备水、擦桌子屏幕<span style="color:#66d9ef">\\</span>
-<span style="color:#66d9ef">\hline</span>
-8:15am-8:55am&amp;  盘前准备&amp;<span style="color:#66d9ef">\\</span>
-<span style="color:#66d9ef">\hline</span>
-9:00am-11:30am&amp; 期货交易&amp;<span style="color:#66d9ef">\\</span>
-<span style="color:#66d9ef">\hline</span>
-11:30am-12:30pm&amp;    午餐&amp;<span style="color:#66d9ef">\\</span>
-<span style="color:#66d9ef">\hline</span>
-<span style="color:#66d9ef">\end</span>{tabular}
-<span style="color:#66d9ef">\end</span>{table}
+<span style="color:#fb660a;font-weight:bold">\begin</span>{table}[!hbt]
+<span style="color:#fb660a;font-weight:bold">\centering</span>
+<span style="color:#fb660a;font-weight:bold">\large\selectfont</span>
+<span style="color:#fb660a;font-weight:bold">\begin</span>{tabular}{|l|l|l|}<span style="color:#fb660a;font-weight:bold">\hline</span>
+<span style="color:#fb660a;font-weight:bold">\multicolumn</span>{3}{|c|}{上午}<span style="color:#fb660a;font-weight:bold">\\</span>
+<span style="color:#fb660a;font-weight:bold">\hline</span>
+<span style="color:#fb660a;font-weight:bold">\hei</span>{时间}&amp; <span style="color:#fb660a;font-weight:bold">\hei</span>{安排} &amp; <span style="color:#fb660a;font-weight:bold">\hei</span>{备注}<span style="color:#fb660a;font-weight:bold">\\</span>
+<span style="color:#fb660a;font-weight:bold">\hline</span>
+6:30am-7:00am&amp;  起床&amp;   洗漱<span style="color:#fb660a;font-weight:bold">\\</span>
+<span style="color:#fb660a;font-weight:bold">\hline</span>
+7:00am-7:30am&amp;  锻炼&amp;   易筋经<span style="color:#fb660a;font-weight:bold">\\</span>
+<span style="color:#fb660a;font-weight:bold">\hline</span>
+7:30am-8:00am&amp;  早餐&amp;<span style="color:#fb660a;font-weight:bold">\\</span>
+<span style="color:#fb660a;font-weight:bold">\hline</span>
+8:00am-8:15am&amp;  工作环境准备&amp;   备水、擦桌子屏幕<span style="color:#fb660a;font-weight:bold">\\</span>
+<span style="color:#fb660a;font-weight:bold">\hline</span>
+8:15am-8:55am&amp;  盘前准备&amp;<span style="color:#fb660a;font-weight:bold">\\</span>
+<span style="color:#fb660a;font-weight:bold">\hline</span>
+9:00am-11:30am&amp; 期货交易&amp;<span style="color:#fb660a;font-weight:bold">\\</span>
+<span style="color:#fb660a;font-weight:bold">\hline</span>
+11:30am-12:30pm&amp;    午餐&amp;<span style="color:#fb660a;font-weight:bold">\\</span>
+<span style="color:#fb660a;font-weight:bold">\hline</span>
+<span style="color:#fb660a;font-weight:bold">\end</span>{tabular}
+<span style="color:#fb660a;font-weight:bold">\end</span>{table}
 
-<span style="color:#66d9ef">\end</span>{document}</code></pre></div>
+<span style="color:#fb660a;font-weight:bold">\end</span>{document}</code></pre></div>
     </div>
 </div>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

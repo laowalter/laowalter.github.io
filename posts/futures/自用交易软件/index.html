@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -43,10 +43,10 @@
 
     <hr><br><article>
     <h2 id="当前软件实现">当前软件实现</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./trans -o -l -ctr c2001 -p <span style="color:#ae81ff">1879</span>.50 -vol <span style="color:#ae81ff">20</span> -fee <span style="color:#ae81ff">26</span>.40 --mrg <span style="color:#ae81ff">33804</span>
-./trans -o -l -ctr c2005 -p <span style="color:#ae81ff">1941</span>.53 -vol <span style="color:#ae81ff">17</span> -fee <span style="color:#ae81ff">22</span>.44 --mrg <span style="color:#ae81ff">29651</span>
-./trans -o -l -ctr y2001 -p <span style="color:#ae81ff">6110</span> -vol <span style="color:#ae81ff">1</span> -fee <span style="color:#ae81ff">2</span>.80  -tag <span style="color:#ae81ff">2</span>
-./trans -c -s -ctr y2001 -p <span style="color:#ae81ff">6114</span> -vol <span style="color:#ae81ff">1</span> -fee <span style="color:#ae81ff">0</span>.04  -pft <span style="color:#ae81ff">40</span> -tag <span style="color:#ae81ff">2</span></code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./trans -o -l -ctr c2001 -p <span style="color:#0086f7;font-weight:bold">1879</span>.50 -vol <span style="color:#0086f7;font-weight:bold">20</span> -fee <span style="color:#0086f7;font-weight:bold">26</span>.40 --mrg <span style="color:#0086f7;font-weight:bold">33804</span>
+./trans -o -l -ctr c2005 -p <span style="color:#0086f7;font-weight:bold">1941</span>.53 -vol <span style="color:#0086f7;font-weight:bold">17</span> -fee <span style="color:#0086f7;font-weight:bold">22</span>.44 --mrg <span style="color:#0086f7;font-weight:bold">29651</span>
+./trans -o -l -ctr y2001 -p <span style="color:#0086f7;font-weight:bold">6110</span> -vol <span style="color:#0086f7;font-weight:bold">1</span> -fee <span style="color:#0086f7;font-weight:bold">2</span>.80  -tag <span style="color:#0086f7;font-weight:bold">2</span>
+./trans -c -s -ctr y2001 -p <span style="color:#0086f7;font-weight:bold">6114</span> -vol <span style="color:#0086f7;font-weight:bold">1</span> -fee <span style="color:#0086f7;font-weight:bold">0</span>.04  -pft <span style="color:#0086f7;font-weight:bold">40</span> -tag <span style="color:#0086f7;font-weight:bold">2</span></code></pre></div>
 <h2 id="文化交易软件的参考">文化交易软件的参考</h2>
 
 <table>
@@ -181,17 +181,17 @@
 <li>合约 c2001 多单 价格1879  数量5 手续费999 保证金33831</li>
 <li>-n</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ cost -n c2001 --long -p <span style="color:#ae81ff">1879</span> -v <span style="color:#ae81ff">5</span> -f999 -m33831 </code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ cost -n c2001 --long -p <span style="color:#0086f7;font-weight:bold">1879</span> -v <span style="color:#0086f7;font-weight:bold">5</span> -f999 -m33831 </code></pre></div>
 <h4 id="平仓">平仓</h4>
 
 <ul>
 <li>合约 c2001 多单(long) 平仓5手 手续费1.10 利润999</li>
 <li>-c clear</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ cost -c c2001 --long  <span style="color:#ae81ff">5</span> --f <span style="color:#ae81ff">1</span>.10 --profit <span style="color:#ae81ff">999</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ cost -c c2001 --long  <span style="color:#0086f7;font-weight:bold">5</span> --f <span style="color:#0086f7;font-weight:bold">1</span>.10 --profit <span style="color:#0086f7;font-weight:bold">999</span>
  Index  品种 合约  多空 总仓 成本 保证金 id
- <span style="color:#ae81ff">1</span>      玉米 c2001  多   <span style="color:#ae81ff">20</span>  <span style="color:#ae81ff">1879</span> <span style="color:#ae81ff">33</span>,831 <span style="color:#ae81ff">1</span>      <span style="color:#e6db74">```</span>
- <span style="color:#ae81ff">2</span>      玉米 c2001  空   <span style="color:#ae81ff">5</span>   <span style="color:#ae81ff">1920</span> <span style="color:#ae81ff">33</span>,831 <span style="color:#ae81ff">1</span>        </code></pre></div>
+ <span style="color:#0086f7;font-weight:bold">1</span>      玉米 c2001  多   <span style="color:#0086f7;font-weight:bold">20</span>  <span style="color:#0086f7;font-weight:bold">1879</span> <span style="color:#0086f7;font-weight:bold">33</span>,831 <span style="color:#0086f7;font-weight:bold">1</span>      <span style="color:#0086d2">```</span>
+ <span style="color:#0086f7;font-weight:bold">2</span>      玉米 c2001  空   <span style="color:#0086f7;font-weight:bold">5</span>   <span style="color:#0086f7;font-weight:bold">1920</span> <span style="color:#0086f7;font-weight:bold">33</span>,831 <span style="color:#0086f7;font-weight:bold">1</span>        </code></pre></div>
 <h4 id="列出合约汇总">列出合约汇总</h4>
 
 <ul>
@@ -201,43 +201,48 @@
 <li>同一品种，不同合约方向，id可以相同也可以不同；
 <br></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ cost
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ cost
  Index 品种 合约  多空 总仓 成本 保证金 id
- <span style="color:#ae81ff">1</span>     玉米 c2001  多   <span style="color:#ae81ff">20</span>  <span style="color:#ae81ff">1879</span> <span style="color:#ae81ff">33</span>,831 <span style="color:#ae81ff">1</span>
- <span style="color:#ae81ff">2</span>     玉米 c2001  空   <span style="color:#ae81ff">5</span>   <span style="color:#ae81ff">1920</span> <span style="color:#ae81ff">33</span>,831 <span style="color:#ae81ff">1</span>
- <span style="color:#ae81ff">3</span>     PTA  ta001  多   <span style="color:#ae81ff">10</span>  <span style="color:#ae81ff">5230</span> <span style="color:#ae81ff">52</span>,301 <span style="color:#ae81ff">2</span>
+ <span style="color:#0086f7;font-weight:bold">1</span>     玉米 c2001  多   <span style="color:#0086f7;font-weight:bold">20</span>  <span style="color:#0086f7;font-weight:bold">1879</span> <span style="color:#0086f7;font-weight:bold">33</span>,831 <span style="color:#0086f7;font-weight:bold">1</span>
+ <span style="color:#0086f7;font-weight:bold">2</span>     玉米 c2001  空   <span style="color:#0086f7;font-weight:bold">5</span>   <span style="color:#0086f7;font-weight:bold">1920</span> <span style="color:#0086f7;font-weight:bold">33</span>,831 <span style="color:#0086f7;font-weight:bold">1</span>
+ <span style="color:#0086f7;font-weight:bold">3</span>     PTA  ta001  多   <span style="color:#0086f7;font-weight:bold">10</span>  <span style="color:#0086f7;font-weight:bold">5230</span> <span style="color:#0086f7;font-weight:bold">52</span>,301 <span style="color:#0086f7;font-weight:bold">2</span>
 
- $ cost id <span style="color:#ae81ff">1</span>
+ $ cost id <span style="color:#0086f7;font-weight:bold">1</span>
  Index 品种 合约  多空 总仓 成本 保证金 id
- <span style="color:#ae81ff">1</span>     玉米 c2001  多   <span style="color:#ae81ff">20</span>  <span style="color:#ae81ff">1879</span> <span style="color:#ae81ff">33</span>,831 <span style="color:#ae81ff">1</span>
- <span style="color:#ae81ff">2</span>     玉米 c2001  空   <span style="color:#ae81ff">5</span>   <span style="color:#ae81ff">1920</span> <span style="color:#ae81ff">33</span>,831 <span style="color:#ae81ff">1</span></code></pre></div>
+ <span style="color:#0086f7;font-weight:bold">1</span>     玉米 c2001  多   <span style="color:#0086f7;font-weight:bold">20</span>  <span style="color:#0086f7;font-weight:bold">1879</span> <span style="color:#0086f7;font-weight:bold">33</span>,831 <span style="color:#0086f7;font-weight:bold">1</span>
+ <span style="color:#0086f7;font-weight:bold">2</span>     玉米 c2001  空   <span style="color:#0086f7;font-weight:bold">5</span>   <span style="color:#0086f7;font-weight:bold">1920</span> <span style="color:#0086f7;font-weight:bold">33</span>,831 <span style="color:#0086f7;font-weight:bold">1</span></code></pre></div>
 <h4 id="指定删除第几号合约">指定删除第几号合约</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ cost
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ cost
  Index 品种 合约  多空 总仓 成本 保证金 id
- <span style="color:#ae81ff">1</span>     玉米 c2001  多   <span style="color:#ae81ff">20</span>  <span style="color:#ae81ff">1879</span> <span style="color:#ae81ff">33</span>,831 <span style="color:#ae81ff">1</span>
- <span style="color:#ae81ff">2</span>     玉米 c2001  空   <span style="color:#ae81ff">5</span>   <span style="color:#ae81ff">1920</span> <span style="color:#ae81ff">33</span>,831 <span style="color:#ae81ff">1</span>
- <span style="color:#ae81ff">3</span>     PTA  ta001  多   <span style="color:#ae81ff">10</span>  <span style="color:#ae81ff">5230</span> <span style="color:#ae81ff">52</span>,301 <span style="color:#ae81ff">2</span>
+ <span style="color:#0086f7;font-weight:bold">1</span>     玉米 c2001  多   <span style="color:#0086f7;font-weight:bold">20</span>  <span style="color:#0086f7;font-weight:bold">1879</span> <span style="color:#0086f7;font-weight:bold">33</span>,831 <span style="color:#0086f7;font-weight:bold">1</span>
+ <span style="color:#0086f7;font-weight:bold">2</span>     玉米 c2001  空   <span style="color:#0086f7;font-weight:bold">5</span>   <span style="color:#0086f7;font-weight:bold">1920</span> <span style="color:#0086f7;font-weight:bold">33</span>,831 <span style="color:#0086f7;font-weight:bold">1</span>
+ <span style="color:#0086f7;font-weight:bold">3</span>     PTA  ta001  多   <span style="color:#0086f7;font-weight:bold">10</span>  <span style="color:#0086f7;font-weight:bold">5230</span> <span style="color:#0086f7;font-weight:bold">52</span>,301 <span style="color:#0086f7;font-weight:bold">2</span>
 
- $ cost del <span style="color:#ae81ff">3</span>
+ $ cost del <span style="color:#0086f7;font-weight:bold">3</span>
  Index 品种 合约  多空 总仓 成本 保证金 id
- <span style="color:#ae81ff">1</span>     玉米 c2001  多   <span style="color:#ae81ff">20</span>  <span style="color:#ae81ff">1879</span> <span style="color:#ae81ff">33</span>,831 <span style="color:#ae81ff">1</span>
- <span style="color:#ae81ff">2</span>     玉米 c2001  空   <span style="color:#ae81ff">5</span>   <span style="color:#ae81ff">1920</span> <span style="color:#ae81ff">33</span>,831 <span style="color:#ae81ff">1</span></code></pre></div>
+ <span style="color:#0086f7;font-weight:bold">1</span>     玉米 c2001  多   <span style="color:#0086f7;font-weight:bold">20</span>  <span style="color:#0086f7;font-weight:bold">1879</span> <span style="color:#0086f7;font-weight:bold">33</span>,831 <span style="color:#0086f7;font-weight:bold">1</span>
+ <span style="color:#0086f7;font-weight:bold">2</span>     玉米 c2001  空   <span style="color:#0086f7;font-weight:bold">5</span>   <span style="color:#0086f7;font-weight:bold">1920</span> <span style="color:#0086f7;font-weight:bold">33</span>,831 <span style="color:#0086f7;font-weight:bold">1</span></code></pre></div>
 <h4 id="清除已完成的合约">清除已完成的合约</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ cost --clear <span style="color:#ae81ff">1</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ cost --clear <span style="color:#0086f7;font-weight:bold">1</span>
  品种 合约  多空 总仓 成本 保证金 id NA
- 玉米 c2001  多   <span style="color:#ae81ff">20</span>  <span style="color:#ae81ff">1879</span> <span style="color:#ae81ff">33</span>,831 <span style="color:#ae81ff">1</span>  true
- 玉米 c2001  空   <span style="color:#ae81ff">5</span>   <span style="color:#ae81ff">1920</span> <span style="color:#ae81ff">33</span>,831 <span style="color:#ae81ff">1</span>  true
- PTA  ta001  多   <span style="color:#ae81ff">10</span>  <span style="color:#ae81ff">5230</span> <span style="color:#ae81ff">52</span>,301 <span style="color:#ae81ff">2</span>
+ 玉米 c2001  多   <span style="color:#0086f7;font-weight:bold">20</span>  <span style="color:#0086f7;font-weight:bold">1879</span> <span style="color:#0086f7;font-weight:bold">33</span>,831 <span style="color:#0086f7;font-weight:bold">1</span>  true
+ 玉米 c2001  空   <span style="color:#0086f7;font-weight:bold">5</span>   <span style="color:#0086f7;font-weight:bold">1920</span> <span style="color:#0086f7;font-weight:bold">33</span>,831 <span style="color:#0086f7;font-weight:bold">1</span>  true
+ PTA  ta001  多   <span style="color:#0086f7;font-weight:bold">10</span>  <span style="color:#0086f7;font-weight:bold">5230</span> <span style="color:#0086f7;font-weight:bold">52</span>,301 <span style="color:#0086f7;font-weight:bold">2</span>
 
- $ cost --remove id <span style="color:#ae81ff">1</span> 
- PTA  ta001  多   <span style="color:#ae81ff">10</span>  <span style="color:#ae81ff">5230</span> <span style="color:#ae81ff">52</span>,301 <span style="color:#ae81ff">2</span></code></pre></div>
+ $ cost --remove id <span style="color:#0086f7;font-weight:bold">1</span> 
+ PTA  ta001  多   <span style="color:#0086f7;font-weight:bold">10</span>  <span style="color:#0086f7;font-weight:bold">5230</span> <span style="color:#0086f7;font-weight:bold">52</span>,301 <span style="color:#0086f7;font-weight:bold">2</span></code></pre></div>
 <h2 id="实际交易数据">实际交易数据</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">09</span>:10:00 c2001 买 开 <span style="color:#ae81ff">1879</span>.50    <span style="color:#ae81ff">6</span>.60    <span style="color:#ae81ff">20</span>
-<span style="color:#ae81ff">10</span>:37:33 c2005 买 开 <span style="color:#ae81ff">1944</span>       <span style="color:#ae81ff">1</span>.32    <span style="color:#ae81ff">1</span> 
-<span style="color:#ae81ff">10</span>:37:33 c2005 买 开 <span style="color:#ae81ff">1944</span>       <span style="color:#ae81ff">1</span>.32    <span style="color:#ae81ff">1</span> 
-<span style="color:#ae81ff">10</span>:37:33 c2005 买 开 <span style="color:#ae81ff">1944</span>       <span style="color:#ae81ff">1</span>.32    <span style="color:#ae81ff">1</span> 
-<span style="color:#ae81ff">21</span>:03:47 c2005 卖 平 <span style="color:#ae81ff">1947</span>       <span style="color:#ae81ff">3</span>.96    <span style="color:#ae81ff">3</span>   <span style="color:#ae81ff">90</span><span style="color:#f92672">(</span>平仓盈亏<span style="color:#f92672">)</span></code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#0086f7;font-weight:bold">09</span>:10:00 c2001 买 开 <span style="color:#0086f7;font-weight:bold">1879</span>.50    <span style="color:#0086f7;font-weight:bold">6</span>.60    <span style="color:#0086f7;font-weight:bold">20</span>
+<span style="color:#0086f7;font-weight:bold">10</span>:37:33 c2005 买 开 <span style="color:#0086f7;font-weight:bold">1944</span>       <span style="color:#0086f7;font-weight:bold">1</span>.32    <span style="color:#0086f7;font-weight:bold">1</span> 
+<span style="color:#0086f7;font-weight:bold">10</span>:37:33 c2005 买 开 <span style="color:#0086f7;font-weight:bold">1944</span>       <span style="color:#0086f7;font-weight:bold">1</span>.32    <span style="color:#0086f7;font-weight:bold">1</span> 
+<span style="color:#0086f7;font-weight:bold">10</span>:37:33 c2005 买 开 <span style="color:#0086f7;font-weight:bold">1944</span>       <span style="color:#0086f7;font-weight:bold">1</span>.32    <span style="color:#0086f7;font-weight:bold">1</span> 
+<span style="color:#0086f7;font-weight:bold">21</span>:03:47 c2005 卖 平 <span style="color:#0086f7;font-weight:bold">1947</span>       <span style="color:#0086f7;font-weight:bold">3</span>.96    <span style="color:#0086f7;font-weight:bold">3</span>   <span style="color:#0086f7;font-weight:bold">90</span>(平仓盈亏)</code></pre></div>
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

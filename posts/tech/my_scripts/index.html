@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -56,39 +56,44 @@
 <h3 id="rysnc-cif-to-local">rysnc cif to local</h3>
 
 <p>~/.bin/rysnc_cifs.sh</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>
-sudo umount -f /mnt/cifs/* <span style="color:#f92672">||</span>true
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#!/bin/bash
+</span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic"></span>
+sudo umount -f /mnt/cifs/* ||true
 
 sudo mount /mnt/cifs/vipdoc 
-<span style="color:#66d9ef">if</span> test $? -eq <span style="color:#ae81ff">0</span>; <span style="color:#66d9ef">then</span>   <span style="color:#75715e">#sucessfull mount</span>
-    echo <span style="color:#e6db74">&#34;mounted /mnt/cifs/vipdoc&#34;</span>
-    echo <span style="color:#e6db74">&#34;rsync /mnt/cifs/vipdoc to /backup/tdx&#34;</span>
+<span style="color:#fb660a;font-weight:bold">if</span> test <span style="color:#fb660a">$?</span> -eq <span style="color:#0086f7;font-weight:bold">0</span>; <span style="color:#fb660a;font-weight:bold">then</span>   <span style="color:#080;background-color:#0f140f;font-style:italic">#sucessfull mount</span>
+    echo <span style="color:#0086d2">&#34;mounted /mnt/cifs/vipdoc&#34;</span>
+    echo <span style="color:#0086d2">&#34;rsync /mnt/cifs/vipdoc to /backup/tdx&#34;</span>
     rsync -az /mnt/cifs/vipdoc /backup/tdx
-    echo <span style="color:#e6db74">&#34;umount vipdoc&#34;</span>
+    echo <span style="color:#0086d2">&#34;umount vipdoc&#34;</span>
     sudo umount /mnt/cifs/vipdoc
-<span style="color:#66d9ef">fi</span>
+<span style="color:#fb660a;font-weight:bold">fi</span>
 
 sudo mount /mnt/cifs/hq_cache 
-<span style="color:#66d9ef">if</span> test $? -eq <span style="color:#ae81ff">0</span>; <span style="color:#66d9ef">then</span>   <span style="color:#75715e"># sucessfull mount</span>
-    echo <span style="color:#e6db74">&#34;mounted /mnt/cifs/hq_cache&#34;</span>
-    echo <span style="color:#e6db74">&#34;rysnc /mnt/cifs/hq_cache  to /backup/tdx&#34;</span>
+<span style="color:#fb660a;font-weight:bold">if</span> test <span style="color:#fb660a">$?</span> -eq <span style="color:#0086f7;font-weight:bold">0</span>; <span style="color:#fb660a;font-weight:bold">then</span>   <span style="color:#080;background-color:#0f140f;font-style:italic"># sucessfull mount</span>
+    echo <span style="color:#0086d2">&#34;mounted /mnt/cifs/hq_cache&#34;</span>
+    echo <span style="color:#0086d2">&#34;rysnc /mnt/cifs/hq_cache  to /backup/tdx&#34;</span>
     rsync -az /mnt/cifs/hq_cache /backup/tdx 
-    echo <span style="color:#e6db74">&#34;umount hq_cache&#34;</span>
+    echo <span style="color:#0086d2">&#34;umount hq_cache&#34;</span>
     sudo umount /mnt/cifs/hq_cache
-<span style="color:#66d9ef">fi</span></code></pre></div>
+<span style="color:#fb660a;font-weight:bold">fi</span></code></pre></div>
 <h3 id="生成板块分析图-for-crontab">生成板块分析图 for crontab</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#!/bin/bash
+</span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic"></span>
 . ~/.bin/python3.sh
 cd ~/chan/k/output
-DATE<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>date +%Y-%m-%d<span style="color:#e6db74">`</span><span style="color:#e6db74">&#39;*&#39;</span>
-find . -type f ! -name <span style="color:#e6db74">${</span>DATE<span style="color:#e6db74">}</span> -delete
+<span style="color:#fb660a">DATE</span>=<span style="color:#0086d2">`</span>date +%Y-%m-%d<span style="color:#0086d2">`</span><span style="color:#0086d2">&#39;*&#39;</span>
+find . -type f ! -name <span style="color:#0086d2">${</span><span style="color:#fb660a">DATE</span><span style="color:#0086d2">}</span> -delete
 cd ~/chan/k
 ./compare_stocks.py -f selected
 ./compare_stocks.py -f index_focused
 ./compare_stocks.py -f all_index</code></pre></div>
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

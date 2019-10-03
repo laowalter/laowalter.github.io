@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -85,9 +85,9 @@
 <h2 id="auto-run-自动执行-启动执行">Auto run 自动执行/启动执行</h2>
 
 <h3 id="etc-local-d-ipforward-start">/etc/local.d/ipforward.start</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span><span style="color:#75715e"># for hostapd</span>
-/sbin/iptables -t nat -A POSTROUTING --source <span style="color:#ae81ff">192</span>.168.6.0/24 -j SNAT --to <span style="color:#ae81ff">192</span>.168.0.199</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#!/bin/bash
+</span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic"></span><span style="color:#080;background-color:#0f140f;font-style:italic"># for hostapd</span>
+/sbin/iptables -t nat -A POSTROUTING --source <span style="color:#0086f7;font-weight:bold">192</span>.168.6.0/24 -j SNAT --to <span style="color:#0086f7;font-weight:bold">192</span>.168.0.199</code></pre></div>
 <p><strong>必须是可执行文件</strong></p>
 
 <pre><code>chmod +x /etc/local.d/ipforward.start
@@ -96,18 +96,18 @@
 <h3 id="执行-etc-init-d-local-restart">执行 /etc/init.d/local restart</h3>
 
 <h2 id="emerge">Emerge</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ACCEPT_KEYWORDS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~amd64&#34;</span> emerge Something</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fb660a">ACCEPT_KEYWORDS</span>=<span style="color:#0086d2">&#34;~amd64&#34;</span> emerge Something</code></pre></div>
 <h2 id="cron">Cron</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq sys-process/dcron
-sudo usermod -a -G cron someuser  <span style="color:#75715e"># 为someuser用户增加cron功能</span></code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq sys-process/dcron
+sudo usermod -a -G cron someuser  <span style="color:#080;background-color:#0f140f;font-style:italic"># 为someuser用户增加cron功能</span></code></pre></div>
 <h2 id="rename-back-to-net-eth0-net-wlan0-改名网络接口">Rename back to net.eth0 net.wlan0 改名网络接口</h2>
 
 <p>create a file /etc/udev/rules.d/10-rename-network.rules with the content:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">SUBSYSTEM<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;net&#34;</span>, ACTION<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;add&#34;</span>, ATTR<span style="color:#f92672">{</span>address<span style="color:#f92672">}==</span><span style="color:#e6db74">&#34;ff:ff:ff:ff:ff:ff&#34;</span>, NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;eth0&#34;</span></code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fb660a">SUBSYSTEM</span>==<span style="color:#0086d2">&#34;net&#34;</span>, <span style="color:#fb660a">ACTION</span>==<span style="color:#0086d2">&#34;add&#34;</span>, ATTR{address}==<span style="color:#0086d2">&#34;ff:ff:ff:ff:ff:ff&#34;</span>, <span style="color:#fb660a">NAME</span>=<span style="color:#0086d2">&#34;eth0&#34;</span></code></pre></div>
 <p>举例：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">SUBSYSTEM<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;net&#34;</span>, ACTION<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;add&#34;</span>, ATTR<span style="color:#f92672">{</span>address<span style="color:#f92672">}==</span><span style="color:#e6db74">&#34;a8:22:66:1e:0a:bf&#34;</span>, NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;eth0&#34;</span>
-SUBSYSTEM<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;net&#34;</span>, ACTION<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;add&#34;</span>, ATTR<span style="color:#f92672">{</span>address<span style="color:#f92672">}==</span><span style="color:#e6db74">&#34;00:e1:4c:36:42:0e&#34;</span>, NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;eth1&#34;</span>
-SUBSYSTEM<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;net&#34;</span>, ACTION<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;add&#34;</span>, ATTR<span style="color:#f92672">{</span>address<span style="color:#f92672">}==</span><span style="color:#e6db74">&#34;20:c9:dc:92:92:6d&#34;</span>, NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wlan0&#34;</span></code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fb660a">SUBSYSTEM</span>==<span style="color:#0086d2">&#34;net&#34;</span>, <span style="color:#fb660a">ACTION</span>==<span style="color:#0086d2">&#34;add&#34;</span>, ATTR{address}==<span style="color:#0086d2">&#34;a8:22:66:1e:0a:bf&#34;</span>, <span style="color:#fb660a">NAME</span>=<span style="color:#0086d2">&#34;eth0&#34;</span>
+<span style="color:#fb660a">SUBSYSTEM</span>==<span style="color:#0086d2">&#34;net&#34;</span>, <span style="color:#fb660a">ACTION</span>==<span style="color:#0086d2">&#34;add&#34;</span>, ATTR{address}==<span style="color:#0086d2">&#34;00:e1:4c:36:42:0e&#34;</span>, <span style="color:#fb660a">NAME</span>=<span style="color:#0086d2">&#34;eth1&#34;</span>
+<span style="color:#fb660a">SUBSYSTEM</span>==<span style="color:#0086d2">&#34;net&#34;</span>, <span style="color:#fb660a">ACTION</span>==<span style="color:#0086d2">&#34;add&#34;</span>, ATTR{address}==<span style="color:#0086d2">&#34;20:c9:dc:92:92:6d&#34;</span>, <span style="color:#fb660a">NAME</span>=<span style="color:#0086d2">&#34;wlan0&#34;</span></code></pre></div>
 <h2 id="upgrade-kernel">Upgrade Kernel</h2>
 
 <ul>
@@ -115,31 +115,31 @@ SUBSYSTEM<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;n
 </ul>
 
 <h3 id="get-the-current-running-kernel-config">Get the current running kernel config</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">zcat /proc/config.gz &gt; config</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">zcat /proc/config.gz &gt; config</code></pre></div>
 <h3 id="config-by-genkernel">Config by genkernel</h3>
 
 <h4 id="load-the-above-config-file-in-genkernel">Load the above <strong>config</strong> file in genkernel`</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">genkernel --menuconfig all</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">genkernel --menuconfig all</code></pre></div>
 <h4 id="generate-grub2-config">Generate Grub2 config</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">grub-mkconfig -o /boot/grub/grub.cfg</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">grub-mkconfig -o /boot/grub/grub.cfg</code></pre></div>
 <h2 id="repair">Repair</h2>
 
 <h3 id="chroot">Chroot</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mount /dev/sda4 /mnt/gentoo</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mount -t proc proc /mnt/gentoo/proc
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mount /dev/sda4 /mnt/gentoo</code></pre></div><div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mount -t proc proc /mnt/gentoo/proc
 mount --rbind /sys /mnt/gentoo/sys
 mount --make-rslave /mnt/gentoo/sys
 mount --rbind /dev /mnt/gentoo/dev
 mount --make-rslave /mnt/gentoo/dev
 chroot /mnt/gentoo /bin/bash
 source /etc/profile
-export PS1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;(chroot) </span>$PS1<span style="color:#e6db74">&#34;</span></code></pre></div>
+export <span style="color:#fb660a">PS1</span>=<span style="color:#0086d2">&#34;(chroot) </span><span style="color:#fb660a">$PS1</span><span style="color:#0086d2">&#34;</span></code></pre></div>
 <h3 id="repair-boot">Repair boot</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mount /boot</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mount /boot</code></pre></div>
 <h4 id="compile-kernel">Compile kernel</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /usr/linux/src
-make <span style="color:#f92672">&amp;&amp;</span> make modules_install &amp; make install</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /usr/linux/src
+make &amp;&amp; make modules_install &amp; make install</code></pre></div>
 <p>or</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">genkernel --menuconfig all</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">genkernel --menuconfig all</code></pre></div>
 <h3 id="grub2">grub2</h3>
 
 <h4 id="specify-root-filesystem-type">specify root filesystem type</h4>
@@ -155,17 +155,17 @@ make <span style="color:#f92672">&amp;&amp;</span> make modules_install &amp; ma
     
     <div class="filename" >
         <p style="padding:0; margin:0;">filename: <b>/etc/defult/grub</b></p>
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GRUB_TIMEOUT<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span></code></pre></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fb660a">GRUB_TIMEOUT</span>=<span style="color:#0086f7;font-weight:bold">2</span></code></pre></div>
     </div>
 </div>
 
 <h3 id="generate-grub-cfg-based-on-etc-default-grub">generate grub.cfg based on /etc/default/grub</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">grub-mkconfig -o /boot/grub/grub.cfg</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">grub-mkconfig -o /boot/grub/grub.cfg</code></pre></div>
 <h3 id="reboot">reboot</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exit
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exit
 cd
-umount -l /mnt/gentoo/dev<span style="color:#f92672">{</span>/shm,/pts,<span style="color:#f92672">}</span>
-umount /mnt/gentoo<span style="color:#f92672">{</span>/boot,/sys,/proc,<span style="color:#f92672">}</span>
+umount -l /mnt/gentoo/dev{/shm,/pts,}
+umount /mnt/gentoo{/boot,/sys,/proc,}
 reboot</code></pre></div>
 <h3 id="emerge-things">emerge things</h3>
 
@@ -181,6 +181,11 @@ reboot</code></pre></div>
 </ol>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

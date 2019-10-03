@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -49,17 +49,22 @@
 <li><p><a href="https://www.grymoire.com/Unix/Sed.html">Sed Reference</a></p></li>
 
 <li><p>Directory Recursively</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ find ./ -type f -exec sed -i -e <span style="color:#e6db74">&#39;s/:1313//g&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
-$ find ./ -type f -exec sed -i -e <span style="color:#e6db74">&#39;s/192\.168\.0\.199/laowalter.github.io/g&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ find ./ -type f -exec sed -i -e <span style="color:#0086d2">&#39;s/:1313//g&#39;</span> {} <span style="color:#0086d2">\;</span>
+$ find ./ -type f -exec sed -i -e <span style="color:#0086d2">&#39;s/192\.168\.0\.199/laowalter.github.io/g&#39;</span> {} <span style="color:#0086d2">\;</span></code></pre></div></li>
 
 <li><p>Search and Replace</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sed -i <span style="color:#e6db74">&#39;s/^tag/tags/g&#39;</span></code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sed -i <span style="color:#0086d2">&#39;s/^tag/tags/g&#39;</span></code></pre></div></li>
 
 <li><p>Search in matched</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ echo apple1 apple3 apple1 apple2 botemo1 | sed <span style="color:#e6db74">&#39;/apple./ { s/apple1/apple2/g; }&#39;</span></code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ echo apple1 apple3 apple1 apple2 botemo1 | sed <span style="color:#0086d2">&#39;/apple./ { s/apple1/apple2/g; }&#39;</span></code></pre></div></li>
 </ul>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

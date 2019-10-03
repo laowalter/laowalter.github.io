@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -68,12 +68,12 @@
 <h2 id="install">Install</h2>
 
 <h3 id="gentoo">Gentoo</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ sudo layman -a foxiverlay
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ sudo layman -a foxiverlay
     $ sudo eix-update
     $ emerge -avq net-p2p/go-ethereum
     $ emerge -avq net-p2p/ethminer</code></pre></div>
 <h3 id="create-get-account">Create get account</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">   $ geth account new</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">   $ geth account new</code></pre></div>
 <h3 id="create-ethereum-wallet">Create ethereum wallet</h3>
 
 <ol>
@@ -92,7 +92,7 @@
 <li><a href="https://ethermine.org">ethermine.org</a> server list</li>
 
 <li><p>Command line</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ethminer.exe -G -P stratum+ssl://0x3DC7F73Ad59e55f41fc8a40F0304F9e243358f9a.miner1@asia1.ethermine.org:5555</code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ethminer.exe -G -P stratum+ssl://0x3DC7F73Ad59e55f41fc8a40F0304F9e243358f9a.miner1@asia1.ethermine.org:5555</code></pre></div></li>
 </ul>
 
 <h4 id="with-geth">With geth</h4>
@@ -101,24 +101,29 @@
 
 <ul>
 <li><p>linux</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">geth --mine --minerthreads<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span> --cache <span style="color:#ae81ff">4096</span></code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">geth --mine --minerthreads=<span style="color:#0086f7;font-weight:bold">4</span> --cache <span style="color:#0086f7;font-weight:bold">4096</span></code></pre></div></li>
 </ul>
 
 <h5 id="gpu-mining">GPU Mining</h5>
 
 <h4 id="with-ethermine">With ethermine</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/ethereum-mining/ethminer/releases</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/ethereum-mining/ethminer/releases</code></pre></div>
 <ul>
 <li>windows</li>
 </ul>
 
 <p><code>Note: 0.14rc3版本 -F 开关说是过时了，用-P替代，但是用-P程序就崩溃了。所以只能用-F</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ethminer.exe -G -F http://192.168.0.199:8545/?miner<span style="color:#f92672">=</span>0x3DC7F73Ad59e55f41fc8a40F0304F9e243358f9a</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ethminer.exe -G -F http://192.168.0.199:8545/?miner=0x3DC7F73Ad59e55f41fc8a40F0304F9e243358f9a</code></pre></div>
 <h4 id="multi-machine-mini">Multi Machine Mini</h4>
 
 <p>Start as a server</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ethminer --rpc --rpcaddr <span style="color:#ae81ff">192</span>.168.0.199 --rpcport <span style="color:#ae81ff">8545</span></code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ethminer --rpc --rpcaddr <span style="color:#0086f7;font-weight:bold">192</span>.168.0.199 --rpcport <span style="color:#0086f7;font-weight:bold">8545</span></code></pre></div>
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

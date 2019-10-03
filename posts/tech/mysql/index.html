@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -60,34 +60,39 @@
 
 <ol>
 <li><p>创建本机用户stock@localhost，不能从其他机器访问,<code>即使grant all privileges 也没用</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">create user <span style="color:#e6db74">&#39;stock&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> identified by <span style="color:#e6db74">&#39;my_pass&#39;</span>;
-grant all privileges on *.* to <span style="color:#e6db74">&#39;stock&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> with grant option;
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">create user <span style="color:#0086d2">&#39;stock&#39;</span>@<span style="color:#0086d2">&#39;localhost&#39;</span> identified by <span style="color:#0086d2">&#39;my_pass&#39;</span>;
+grant all privileges on *.* to <span style="color:#0086d2">&#39;stock&#39;</span>@<span style="color:#0086d2">&#39;localhost&#39;</span> with grant option;
 flush privileges;</code></pre></div></li>
 
 <li><p>创建用户stock@%，可以在任何机器访问此数据库</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">create user <span style="color:#e6db74">&#39;stock&#39;</span>%<span style="color:#e6db74">&#39; identified by &#39;</span>my_pass<span style="color:#e6db74">&#39;;
-</span><span style="color:#e6db74">grant all privileges on *.* to &#39;</span>stock<span style="color:#e6db74">&#39;@&#39;</span>%<span style="color:#960050;background-color:#1e0010">&#39;</span> with grant option;
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">create user <span style="color:#0086d2">&#39;stock&#39;</span>%<span style="color:#0086d2">&#39; identified by &#39;</span>my_pass<span style="color:#0086d2">&#39;;
+</span><span style="color:#0086d2">grant all privileges on *.* to &#39;</span>stock<span style="color:#0086d2">&#39;@&#39;</span>%&#39; with grant option;
 flush privileges;</code></pre></div></li>
 </ol>
 
 <h3 id="赋予个别用户特别权限-https-dev-mysql-com-doc-refman-5-7-en-adding-users-html"><a href="https://dev.mysql.com/doc/refman/5.7/en/adding-users.html">赋予个别用户特别权限</a></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql&gt; CREATE USER <span style="color:#e6db74">&#39;custom&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;password&#39;</span>;
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql&gt; CREATE USER <span style="color:#0086d2">&#39;custom&#39;</span>@<span style="color:#0086d2">&#39;localhost&#39;</span> IDENTIFIED BY <span style="color:#0086d2">&#39;password&#39;</span>;
 mysql&gt; GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP
     -&gt;     ON bankaccount.*
-    -&gt;     TO <span style="color:#e6db74">&#39;custom&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span>;
-mysql&gt; CREATE USER <span style="color:#e6db74">&#39;custom&#39;</span>@<span style="color:#e6db74">&#39;host47.example.com&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;password&#39;</span>;
+    -&gt;     TO <span style="color:#0086d2">&#39;custom&#39;</span>@<span style="color:#0086d2">&#39;localhost&#39;</span>;
+mysql&gt; CREATE USER <span style="color:#0086d2">&#39;custom&#39;</span>@<span style="color:#0086d2">&#39;host47.example.com&#39;</span> IDENTIFIED BY <span style="color:#0086d2">&#39;password&#39;</span>;
 mysql&gt; GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP
     -&gt;     ON expenses.*
-    -&gt;     TO <span style="color:#e6db74">&#39;custom&#39;</span>@<span style="color:#e6db74">&#39;host47.example.com&#39;</span>;
-mysql&gt; CREATE USER <span style="color:#e6db74">&#39;custom&#39;</span>@<span style="color:#e6db74">&#39;%.example.com&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;password&#39;</span>;
+    -&gt;     TO <span style="color:#0086d2">&#39;custom&#39;</span>@<span style="color:#0086d2">&#39;host47.example.com&#39;</span>;
+mysql&gt; CREATE USER <span style="color:#0086d2">&#39;custom&#39;</span>@<span style="color:#0086d2">&#39;%.example.com&#39;</span> IDENTIFIED BY <span style="color:#0086d2">&#39;password&#39;</span>;
 mysql&gt; GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP
     -&gt;     ON customer.*
-    -&gt;     TO <span style="color:#e6db74">&#39;custom&#39;</span>@<span style="color:#e6db74">&#39;%.example.com&#39;</span>;</code></pre></div>
+    -&gt;     TO <span style="color:#0086d2">&#39;custom&#39;</span>@<span style="color:#0086d2">&#39;%.example.com&#39;</span>;</code></pre></div>
 <h2 id="python与mysql接口">Python与MySQL接口</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install mysql-connector-python</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install mysql-connector-python</code></pre></div>
 <p><a href="https://dev.mysql.com/doc/connector-python/en/connector-python-example-connecting.html">Tutorial of Mysql Official Site</a></p>
 
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

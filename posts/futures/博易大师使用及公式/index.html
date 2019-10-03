@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -63,42 +63,47 @@ NO,参数名,类型,缺省值,最小值,最大值,步长
 3,MID,数值型,9,2,200,0
 4,ISARROW,数值型,1,0,1,0
 [/jtable]</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">DIFF:<span style="color:#f92672">=</span>EMA<span style="color:#f92672">(</span>CLOSE,SHORT<span style="color:#f92672">)</span>-EMA<span style="color:#f92672">(</span>CLOSE,LONG<span style="color:#f92672">)</span>;
-DEA:<span style="color:#f92672">=</span>EMA<span style="color:#f92672">(</span>DIFF,MID<span style="color:#f92672">)</span>;
-MACD2:<span style="color:#f92672">=(</span>DIFF - DEA<span style="color:#f92672">)</span>*2;
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">DIFF:=EMA(CLOSE,SHORT)-EMA(CLOSE,LONG);
+DEA:=EMA(DIFF,MID);
+MACD2:=(DIFF - DEA)*2;
 DIF:DIFF;
 DEF:DEA;
 
-获利比:WINNER<span style="color:#f92672">(</span>C<span style="color:#f92672">)</span>,NODRAW;
-STICKLINE<span style="color:#f92672">((</span>MACD2&gt;<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span>,0,MACD2,0,1<span style="color:#f92672">)</span>,COLORRED;
-STICKLINE<span style="color:#f92672">(((</span>MACD2&gt;<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span> AND <span style="color:#f92672">(</span>MACD2 &lt; REF<span style="color:#f92672">(</span>MACD2,1<span style="color:#f92672">)))</span>,0,MACD2,0,0<span style="color:#f92672">)</span>,COLORWHITE;
-STICKLINE<span style="color:#f92672">((</span>MACD2&lt;<span style="color:#ae81ff">0</span><span style="color:#f92672">)</span>,0,MACD2,0,0<span style="color:#f92672">)</span>,COLORGREEN;
-STICKLINE<span style="color:#f92672">(((</span>MACD2&lt;<span style="color:#ae81ff">0</span><span style="color:#f92672">)</span> AND <span style="color:#f92672">(</span>MACD2 &gt; REF<span style="color:#f92672">(</span>MACD2,1<span style="color:#f92672">)))</span>,0,MACD2,0,1<span style="color:#f92672">)</span>,COLORWHITE;
+获利比:WINNER(C),NODRAW;
+STICKLINE((MACD2&gt;=<span style="color:#0086f7;font-weight:bold">0</span>),0,MACD2,0,1),COLORRED;
+STICKLINE(((MACD2&gt;=<span style="color:#0086f7;font-weight:bold">0</span>) AND (MACD2 &lt; REF(MACD2,1))),0,MACD2,0,0),COLORWHITE;
+STICKLINE((MACD2&lt;<span style="color:#0086f7;font-weight:bold">0</span>),0,MACD2,0,0),COLORGREEN;
+STICKLINE(((MACD2&lt;<span style="color:#0086f7;font-weight:bold">0</span>) AND (MACD2 &gt; REF(MACD2,1))),0,MACD2,0,1),COLORWHITE;
 
-A1:<span style="color:#f92672">=</span>IF<span style="color:#f92672">(</span>MACD2&gt;0,1,-1<span style="color:#f92672">)</span>;
-A2:<span style="color:#f92672">=</span>REF<span style="color:#f92672">(</span>A1,1<span style="color:#f92672">)</span>;
-A3:<span style="color:#f92672">=</span>A1*A2;
-A4:<span style="color:#f92672">=</span>BARSLAST<span style="color:#f92672">(</span>A3&lt;<span style="color:#ae81ff">0</span><span style="color:#f92672">)</span>;<span style="color:#f92672">{</span>MACD发生变化，从红到绿，或者从绿到红<span style="color:#f92672">}</span>
-A5:<span style="color:#f92672">=</span>A4+1;
-累计面积:SUM<span style="color:#f92672">(</span>MACD2,A5<span style="color:#f92672">)</span>,NODRAW;
-平均力度:SUM<span style="color:#f92672">(</span>MACD2,A5<span style="color:#f92672">)</span>/A5,NODRAW;
+A1:=IF(MACD2&gt;0,1,-1);
+A2:=REF(A1,1);
+A3:=A1*A2;
+A4:=BARSLAST(A3&lt;<span style="color:#0086f7;font-weight:bold">0</span>);{MACD发生变化，从红到绿，或者从绿到红}
+A5:=A4+1;
+累计面积:SUM(MACD2,A5),NODRAW;
+平均力度:SUM(MACD2,A5)/A5,NODRAW;
 
-BV:<span style="color:#f92672">=</span>SUM<span style="color:#f92672">(</span>MACD2,0<span style="color:#f92672">)</span>; <span style="color:#f92672">{</span>0表示从第一个有效的MACD2开始求和<span style="color:#f92672">}</span>
-BA:<span style="color:#f92672">=</span>IF<span style="color:#f92672">(</span>MAX<span style="color:#f92672">(</span>BV,REF<span style="color:#f92672">(</span>BV,2<span style="color:#f92672">))</span>&lt;REF<span style="color:#f92672">(</span>BV,1<span style="color:#f92672">)</span> OR MIN<span style="color:#f92672">(</span>BV,REF<span style="color:#f92672">(</span>BV,2<span style="color:#f92672">))</span>&gt;REF<span style="color:#f92672">(</span>BV,1<span style="color:#f92672">)</span>,1,0<span style="color:#f92672">)</span>;
-BC:<span style="color:#f92672">=</span>BARSLAST<span style="color:#f92672">(</span>BA<span style="color:#f92672">)</span>+1;
-SMACD:<span style="color:#f92672">=</span>BV-REF<span style="color:#f92672">(</span>BV,BC<span style="color:#f92672">)</span>;
-VAR3:<span style="color:#f92672">=</span>IF<span style="color:#f92672">(</span>MACD2&gt;0,HHV<span style="color:#f92672">(</span>ABS<span style="color:#f92672">(</span>MACD2<span style="color:#f92672">)</span>,BC<span style="color:#f92672">)</span>,LLV<span style="color:#f92672">(</span>MACD2,BC<span style="color:#f92672">))</span>;
-VAR4:<span style="color:#f92672">=(</span>MACD2<span style="color:#f92672">)</span>/1;<span style="color:#f92672">{</span>图形比例缩小1/20,可修改<span style="color:#f92672">}</span>
+BV:=SUM(MACD2,0); {0表示从第一个有效的MACD2开始求和}
+BA:=IF(MAX(BV,REF(BV,2))&lt;REF(BV,1) OR MIN(BV,REF(BV,2))&gt;REF(BV,1),1,0);
+BC:=BARSLAST(BA)+1;
+SMACD:=BV-REF(BV,BC);
+VAR3:=IF(MACD2&gt;0,HHV(ABS(MACD2),BC),LLV(MACD2,BC));
+VAR4:=(MACD2)/1;{图形比例缩小1/20,可修改}
 
-<span style="color:#f92672">{</span><span style="color:#ae81ff">0</span>.9是文字的垂直位置在最长的macd线的比例<span style="color:#f92672">}</span>
-DRAWNUMBER<span style="color:#f92672">(</span>REF<span style="color:#f92672">(</span>VAR4,1<span style="color:#f92672">)</span>&gt;0 AND VAR4&lt;<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,REF<span style="color:#f92672">(</span>VAR3,1<span style="color:#f92672">)</span>*0.9,REF<span style="color:#f92672">(</span>累计面积,1<span style="color:#f92672">)</span>,2<span style="color:#f92672">)</span>,COLORMAGENTA;
-DRAWNUMBER<span style="color:#f92672">(</span>REF<span style="color:#f92672">(</span>VAR4,1<span style="color:#f92672">)</span>&lt;<span style="color:#ae81ff">0</span> AND VAR4&gt;<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,REF<span style="color:#f92672">(</span>VAR3,1<span style="color:#f92672">)</span>*0.9,REF<span style="color:#f92672">(</span>ABS<span style="color:#f92672">(</span>累计面积<span style="color:#f92672">)</span>,1<span style="color:#f92672">)</span>,2<span style="color:#f92672">)</span>,COLORGREEN;
-DRAWNUMBER<span style="color:#f92672">(</span>ISLASTBAR AND VAR4&lt;<span style="color:#ae81ff">0</span>,REF<span style="color:#f92672">(</span>VAR3,1<span style="color:#f92672">)</span>*0.9,ABS<span style="color:#f92672">(</span>累计面积<span style="color:#f92672">)</span>,2<span style="color:#f92672">)</span>,COLORMAGENTA;
-DRAWNUMBER<span style="color:#f92672">(</span>ISLASTBAR AND VAR4&gt;0,REF<span style="color:#f92672">(</span>VAR3,1<span style="color:#f92672">)</span>*0.9,累计面积,2<span style="color:#f92672">)</span>,COLORGREEN;
+{<span style="color:#0086f7;font-weight:bold">0</span>.9是文字的垂直位置在最长的macd线的比例}
+DRAWNUMBER(REF(VAR4,1)&gt;0 AND VAR4&lt;=<span style="color:#0086f7;font-weight:bold">0</span>,REF(VAR3,1)*0.9,REF(累计面积,1),2),COLORMAGENTA;
+DRAWNUMBER(REF(VAR4,1)&lt;<span style="color:#0086f7;font-weight:bold">0</span> AND VAR4&gt;=<span style="color:#0086f7;font-weight:bold">0</span>,REF(VAR3,1)*0.9,REF(ABS(累计面积),1),2),COLORGREEN;
+DRAWNUMBER(ISLASTBAR AND VAR4&lt;<span style="color:#0086f7;font-weight:bold">0</span>,REF(VAR3,1)*0.9,ABS(累计面积),2),COLORMAGENTA;
+DRAWNUMBER(ISLASTBAR AND VAR4&gt;0,REF(VAR3,1)*0.9,累计面积,2),COLORGREEN;
 
-前MACD:REF<span style="color:#f92672">(</span>MACD2,1<span style="color:#f92672">)</span>,NODRAW;
+前MACD:REF(MACD2,1),NODRAW;
 现MACD:MACD2,NODRAW,COLORRED;</code></pre></div>
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>

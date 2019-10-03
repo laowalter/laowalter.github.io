@@ -9,7 +9,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.d730938796ec074fbc9cb8504acba78236118680f970a6dcdfabedc55fd25160.css">
+    <link rel="stylesheet" href="/sass/main.min.07425c1d13e589b079e57d7ab2012293a666c01db6d55603a710971b12d5d67f.css">
 
 </head>
 
@@ -56,7 +56,7 @@
 <h2 id="bokeh">Bokeh</h2>
 
 <h3 id="bokeh-server-for-nginx">Bokeh Server for Nginx</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bokeh serve --allow-websocket-origin<span style="color:#f92672">=</span><span style="color:#ae81ff">192</span>.168.0.202:8080 a_directory</code></pre></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bokeh serve --allow-websocket-origin=<span style="color:#0086f7;font-weight:bold">192</span>.168.0.202:8080 a_directory</code></pre></div>
 <ol>
 <li>If add &ndash;show will start a local default browser.</li>
 <li>Above 192.168.0.202:8080 is the nginx serice port.</li>
@@ -66,23 +66,28 @@
 <h3 id="nginx">Nginx</h3>
 
 <p>/etc/nginx/nginx.conf</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server</span> {
-     <span style="color:#f92672">listen</span> 192.168.0.202:<span style="color:#ae81ff">8080</span>;
-     <span style="color:#f92672">server_name</span> <span style="color:#e6db74">gentoo</span>;
-     <span style="color:#f92672">access_log</span> <span style="color:#e6db74">/tmp/bokeh.access.log</span>;
-     <span style="color:#f92672">error_log</span> <span style="color:#e6db74">/tmp/bokeh.error.log</span> <span style="color:#e6db74">debug</span>;
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#fb660a;font-weight:bold">server</span> {
+     <span style="color:#fb660a;font-weight:bold">listen</span> 192.168.0.202:<span style="color:#0086f7;font-weight:bold">8080</span>;
+     <span style="color:#fb660a;font-weight:bold">server_name</span> <span style="color:#0086d2">gentoo</span>;
+     <span style="color:#fb660a;font-weight:bold">access_log</span> <span style="color:#0086d2">/tmp/bokeh.access.log</span>;
+     <span style="color:#fb660a;font-weight:bold">error_log</span> <span style="color:#0086d2">/tmp/bokeh.error.log</span> <span style="color:#0086d2">debug</span>;
 
-     <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
-             <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://127.0.0.1:5006</span>;
-             <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Upgrade</span> $http_upgrade;
-             <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Connection</span> <span style="color:#e6db74">&#34;upgrade&#34;</span>;
-             <span style="color:#f92672">proxy_http_version</span> <span style="color:#ae81ff">1</span><span style="color:#e6db74">.1</span>;
-             <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-For</span> $proxy_add_x_forwarded_for;
-             <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> $host:$server_port;
-             <span style="color:#f92672">proxy_buffering</span> <span style="color:#66d9ef">off</span>;
+     <span style="color:#fb660a;font-weight:bold">location</span> <span style="color:#0086d2">/</span> {
+             <span style="color:#fb660a;font-weight:bold">proxy_pass</span> <span style="color:#0086d2">http://127.0.0.1:5006</span>;
+             <span style="color:#fb660a;font-weight:bold">proxy_set_header</span> <span style="color:#0086d2">Upgrade</span> <span style="color:#fb660a">$http_upgrade</span>;
+             <span style="color:#fb660a;font-weight:bold">proxy_set_header</span> <span style="color:#0086d2">Connection</span> <span style="color:#0086d2">&#34;upgrade&#34;</span>;
+             <span style="color:#fb660a;font-weight:bold">proxy_http_version</span> <span style="color:#0086f7;font-weight:bold">1</span><span style="color:#0086d2">.1</span>;
+             <span style="color:#fb660a;font-weight:bold">proxy_set_header</span> <span style="color:#0086d2">X-Forwarded-For</span> <span style="color:#fb660a">$proxy_add_x_forwarded_for</span>;
+             <span style="color:#fb660a;font-weight:bold">proxy_set_header</span> <span style="color:#0086d2">Host</span> <span style="color:#fb660a">$host:$server_port</span>;
+             <span style="color:#fb660a;font-weight:bold">proxy_buffering</span> <span style="color:#0086d2">off</span>;
          }
  }</code></pre></div>
 </article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     </body>
 </html>
