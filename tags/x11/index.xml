@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>x11 on Just a Memo</title>
-    <link>http://laowalter.github.io/tags/x11/</link>
+    <link>https://laowalter.github.io/tags/x11/</link>
     <description>Recent content in x11 on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 22 Feb 2019 10:51:44 +0000</lastBuildDate>
     
-	<atom:link href="http://laowalter.github.io/tags/x11/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://laowalter.github.io/tags/x11/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>FVWM</title>
-      <link>http://laowalter.github.io/posts/tech/fvwm/</link>
+      <link>https://laowalter.github.io/posts/tech/fvwm/</link>
       <pubDate>Fri, 22 Feb 2019 10:51:44 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/fvwm/</guid>
+      <guid>https://laowalter.github.io/posts/tech/fvwm/</guid>
       <description>mouse cursor filename: ~/.Xresources 18 19 18 Xcursor.theme: ComixCursors-White 19 Xcursor.size: 64 Fvwm console font setup filename: ~/.Xresources 40 41 40 FvwmConsole*VT100*geometry: 40x4 41 FvwmConsole*font: xft:Inconsolata LGC:pixelsize=16 Windows Title Bar 等各种中文字体支持 安装字体 $ emerge -avq media-fonts/wqy-zenhei $ fc-list|grep WenQuanYi /usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc: WenQuanYi Zen Hei:style=Regular /usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc: WenQuanYi Zen Hei Sharp,文泉驛點陣正</description>
     </item>
     
     <item>
       <title>Gentoo X / Xorg / X11</title>
-      <link>http://laowalter.github.io/posts/tech/gentoo_x/</link>
+      <link>https://laowalter.github.io/posts/tech/gentoo_x/</link>
       <pubDate>Sun, 07 Jan 2018 17:39:15 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/gentoo_x/</guid>
+      <guid>https://laowalter.github.io/posts/tech/gentoo_x/</guid>
       <description>Xorg 最小安装 检测显卡, 配置make.conf # dmesg | grep video # lspci | grep -i VGA 设置/etc/portage/make.conf文件中两个重要的变量： filename: /etc/portage/make.conf INPUT_DEVICE=&amp;#34;evdev&amp;#34;</description>
     </item>
     

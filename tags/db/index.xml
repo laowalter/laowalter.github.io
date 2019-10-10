@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DB on Just a Memo</title>
-    <link>http://laowalter.github.io/tags/db/</link>
+    <link>https://laowalter.github.io/tags/db/</link>
     <description>Recent content in DB on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 12 Apr 2018 11:21:57 +0000</lastBuildDate>
     
-	<atom:link href="http://laowalter.github.io/tags/db/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://laowalter.github.io/tags/db/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>MySQL</title>
-      <link>http://laowalter.github.io/posts/tech/mysql/</link>
+      <link>https://laowalter.github.io/posts/tech/mysql/</link>
       <pubDate>Thu, 12 Apr 2018 11:21:57 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/mysql/</guid>
+      <guid>https://laowalter.github.io/posts/tech/mysql/</guid>
       <description>MySQL基本操作 增加用户，并赋予权限 创建本机用户stock@localhost，不能从其他机器访问,即使grant all privileges 也没用 create user &amp;#39;stock&amp;#39;@&amp;#39;localhost&amp;#39; identified by &amp;#39;my_pass&amp;#39;; grant</description>
     </item>
     
     <item>
       <title>Ntpd</title>
-      <link>http://laowalter.github.io/posts/tech/ntpd/</link>
+      <link>https://laowalter.github.io/posts/tech/ntpd/</link>
       <pubDate>Fri, 30 Mar 2018 13:02:05 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/ntpd/</guid>
+      <guid>https://laowalter.github.io/posts/tech/ntpd/</guid>
       <description>openntpd 不被widnows支持，所以用ntp比较通用。 Install ntp 如果启动ntpd，就不需要ntp-client。 sudo emerge -avq net-misc/ntp sudo rc-service ntpd start sudo rc-update add ntpd default /etc/conf.d/ntpd &amp;rdquo</description>
     </item>
     
