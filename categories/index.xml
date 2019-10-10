@@ -2,84 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Just a Memo</title>
-    <link>/categories/</link>
+    <link>http://192.168.0.199:8000/categories/</link>
     <description>Recent content in Categories on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Oct 2019 20:50:38 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 Oct 2019 07:02:31 +0000</lastBuildDate>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://192.168.0.199:8000/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>futures</title>
-      <link>/categories/futures/</link>
-      <pubDate>Fri, 04 Oct 2019 20:50:38 +0800</pubDate>
+      <title>Fut&amp;Stock</title>
+      <link>http://192.168.0.199:8000/categories/futstock/</link>
+      <pubDate>Thu, 10 Oct 2019 07:02:31 +0000</pubDate>
       
-      <guid>/categories/futures/</guid>
+      <guid>http://192.168.0.199:8000/categories/futstock/</guid>
       <description></description>
     </item>
     
     <item>
       <title>music</title>
-      <link>/categories/music/</link>
+      <link>http://192.168.0.199:8000/categories/music/</link>
       <pubDate>Tue, 17 Sep 2019 17:12:02 +0800</pubDate>
       
-      <guid>/categories/music/</guid>
+      <guid>http://192.168.0.199:8000/categories/music/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tech</title>
-      <link>/categories/tech/</link>
+      <link>http://192.168.0.199:8000/categories/tech/</link>
       <pubDate>Tue, 17 Sep 2019 13:32:25 +0800</pubDate>
       
-      <guid>/categories/tech/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fut&amp;Stock</title>
-      <link>/categories/futstock/</link>
-      <pubDate>Sun, 18 Aug 2019 10:32:08 +0000</pubDate>
-      
-      <guid>/categories/futstock/</guid>
+      <guid>http://192.168.0.199:8000/categories/tech/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Eli</title>
-      <link>/categories/eli/</link>
+      <link>http://192.168.0.199:8000/categories/eli/</link>
       <pubDate>Mon, 22 Apr 2019 17:40:41 +0000</pubDate>
       
-      <guid>/categories/eli/</guid>
+      <guid>http://192.168.0.199:8000/categories/eli/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Life</title>
-      <link>/categories/life/</link>
+      <link>http://192.168.0.199:8000/categories/life/</link>
       <pubDate>Fri, 01 Mar 2019 07:18:53 +0000</pubDate>
       
-      <guid>/categories/life/</guid>
+      <guid>http://192.168.0.199:8000/categories/life/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Eco</title>
-      <link>/categories/eco/</link>
+      <link>http://192.168.0.199:8000/categories/eco/</link>
       <pubDate>Tue, 16 Oct 2018 08:19:00 +0000</pubDate>
       
-      <guid>/categories/eco/</guid>
+      <guid>http://192.168.0.199:8000/categories/eco/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Chan108</title>
-      <link>/categories/chan108/</link>
+      <link>http://192.168.0.199:8000/categories/chan108/</link>
       <pubDate>Mon, 12 Jun 2017 21:06:42 +0000</pubDate>
       
-      <guid>/categories/chan108/</guid>
+      <guid>http://192.168.0.199:8000/categories/chan108/</guid>
       <description></description>
     </item>
     

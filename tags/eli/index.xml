@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>eli on Just a Memo</title>
-    <link>/tags/eli/</link>
+    <link>http://192.168.0.199:8000/tags/eli/</link>
     <description>Recent content in eli on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 22 Apr 2019 17:40:41 +0000</lastBuildDate>
     
-	<atom:link href="/tags/eli/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://192.168.0.199:8000/tags/eli/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>高中数学计算能力专题训练班</title>
-      <link>/posts/eli/gaozhongcal/</link>
+      <link>http://192.168.0.199:8000/posts/eli/gaozhongcal/</link>
       <pubDate>Mon, 22 Apr 2019 17:40:41 +0000</pubDate>
       
-      <guid>/posts/eli/gaozhongcal/</guid>
+      <guid>http://192.168.0.199:8000/posts/eli/gaozhongcal/</guid>
       <description>柳堤风景 从事数学教学16年，擅长复杂的概念教学，提倡“把数学当语文学习”，“溯根求源，探究本质”等教学理念。 联系方式: 高考数学答疑互助群 群号</description>
     </item>
     
     <item>
       <title>儿子学习</title>
-      <link>/posts/eli/elistudy/</link>
+      <link>http://192.168.0.199:8000/posts/eli/elistudy/</link>
       <pubDate>Sat, 09 Mar 2019 11:00:00 +0000</pubDate>
       
-      <guid>/posts/eli/elistudy/</guid>
+      <guid>http://192.168.0.199:8000/posts/eli/elistudy/</guid>
       <description>说明： 这些文档无法正常下载，但是可以直接在屏幕上使用，也可以打印出来。 如果要打印，建议在firefox中安装&amp;rdquo;Print Edit WE&amp;</description>
     </item>
     

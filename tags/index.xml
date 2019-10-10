@@ -2,804 +2,804 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Just a Memo</title>
-    <link>/tags/</link>
+    <link>http://192.168.0.199:8000/tags/</link>
     <description>Recent content in Tags on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Oct 2019 20:50:38 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 Oct 2019 07:02:31 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://192.168.0.199:8000/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>futures</title>
-      <link>/tags/futures/</link>
-      <pubDate>Fri, 04 Oct 2019 20:50:38 +0800</pubDate>
+      <link>http://192.168.0.199:8000/tags/futures/</link>
+      <pubDate>Thu, 10 Oct 2019 07:02:31 +0000</pubDate>
       
-      <guid>/tags/futures/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>古琴</title>
-      <link>/tags/%E5%8F%A4%E7%90%B4/</link>
-      <pubDate>Tue, 17 Sep 2019 17:12:02 +0800</pubDate>
-      
-      <guid>/tags/%E5%8F%A4%E7%90%B4/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>箫</title>
-      <link>/tags/%E7%AE%AB/</link>
-      <pubDate>Tue, 17 Sep 2019 17:12:02 +0800</pubDate>
-      
-      <guid>/tags/%E7%AE%AB/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>fuse</title>
-      <link>/tags/fuse/</link>
-      <pubDate>Tue, 17 Sep 2019 13:32:25 +0800</pubDate>
-      
-      <guid>/tags/fuse/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mac</title>
-      <link>/tags/mac/</link>
-      <pubDate>Tue, 17 Sep 2019 13:32:25 +0800</pubDate>
-      
-      <guid>/tags/mac/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ntfs</title>
-      <link>/tags/ntfs/</link>
-      <pubDate>Tue, 17 Sep 2019 13:32:25 +0800</pubDate>
-      
-      <guid>/tags/ntfs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>css</title>
-      <link>/tags/css/</link>
-      <pubDate>Fri, 23 Aug 2019 12:31:39 +0800</pubDate>
-      
-      <guid>/tags/css/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ebuild</title>
-      <link>/tags/ebuild/</link>
-      <pubDate>Thu, 22 Aug 2019 12:38:01 +0800</pubDate>
-      
-      <guid>/tags/ebuild/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gentoo</title>
-      <link>/tags/gentoo/</link>
-      <pubDate>Thu, 22 Aug 2019 12:38:01 +0800</pubDate>
-      
-      <guid>/tags/gentoo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>/tags/hugo/</link>
-      <pubDate>Thu, 22 Aug 2019 12:38:01 +0800</pubDate>
-      
-      <guid>/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>regex</title>
-      <link>/tags/regex/</link>
-      <pubDate>Wed, 21 Aug 2019 07:49:35 +0800</pubDate>
-      
-      <guid>/tags/regex/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vim</title>
-      <link>/tags/vim/</link>
-      <pubDate>Wed, 21 Aug 2019 07:49:35 +0800</pubDate>
-      
-      <guid>/tags/vim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>blog</title>
-      <link>/tags/blog/</link>
-      <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
-      
-      <guid>/tags/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cheatsheet</title>
-      <link>/tags/cheatsheet/</link>
-      <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
-      
-      <guid>/tags/cheatsheet/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>/tags/docker/</link>
-      <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
-      
-      <guid>/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>go</title>
-      <link>/tags/go/</link>
-      <pubDate>Fri, 28 Jun 2019 16:16:18 +0000</pubDate>
-      
-      <guid>/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>webcrawler</title>
-      <link>/tags/webcrawler/</link>
-      <pubDate>Fri, 28 Jun 2019 09:36:52 +0000</pubDate>
-      
-      <guid>/tags/webcrawler/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>/tags/linux/</link>
-      <pubDate>Thu, 25 Apr 2019 09:40:45 +0000</pubDate>
-      
-      <guid>/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>eli</title>
-      <link>/tags/eli/</link>
-      <pubDate>Mon, 22 Apr 2019 17:40:41 +0000</pubDate>
-      
-      <guid>/tags/eli/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>nas</title>
-      <link>/tags/nas/</link>
-      <pubDate>Wed, 17 Apr 2019 12:14:17 +0000</pubDate>
-      
-      <guid>/tags/nas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>装机</title>
-      <link>/tags/%E8%A3%85%E6%9C%BA/</link>
-      <pubDate>Tue, 26 Mar 2019 20:03:53 +0000</pubDate>
-      
-      <guid>/tags/%E8%A3%85%E6%9C%BA/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>dns</title>
-      <link>/tags/dns/</link>
-      <pubDate>Sun, 24 Mar 2019 11:29:42 +0000</pubDate>
-      
-      <guid>/tags/dns/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>net</title>
-      <link>/tags/net/</link>
-      <pubDate>Fri, 22 Mar 2019 13:00:42 +0000</pubDate>
-      
-      <guid>/tags/net/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>download</title>
-      <link>/tags/download/</link>
-      <pubDate>Mon, 18 Mar 2019 18:01:15 +0000</pubDate>
-      
-      <guid>/tags/download/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>encrypt</title>
-      <link>/tags/encrypt/</link>
-      <pubDate>Wed, 13 Mar 2019 11:36:10 +0000</pubDate>
-      
-      <guid>/tags/encrypt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>bluetooth</title>
-      <link>/tags/bluetooth/</link>
-      <pubDate>Fri, 01 Mar 2019 23:42:48 +0000</pubDate>
-      
-      <guid>/tags/bluetooth/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>appid</title>
-      <link>/tags/appid/</link>
-      <pubDate>Fri, 01 Mar 2019 07:18:53 +0000</pubDate>
-      
-      <guid>/tags/appid/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>life</title>
-      <link>/tags/life/</link>
-      <pubDate>Fri, 01 Mar 2019 07:18:53 +0000</pubDate>
-      
-      <guid>/tags/life/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>x11</title>
-      <link>/tags/x11/</link>
-      <pubDate>Fri, 22 Feb 2019 10:51:44 +0000</pubDate>
-      
-      <guid>/tags/x11/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>diy</title>
-      <link>/tags/diy/</link>
-      <pubDate>Tue, 19 Feb 2019 22:42:10 +0000</pubDate>
-      
-      <guid>/tags/diy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>bike</title>
-      <link>/tags/bike/</link>
-      <pubDate>Mon, 24 Dec 2018 20:40:19 +0000</pubDate>
-      
-      <guid>/tags/bike/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>latex</title>
-      <link>/tags/latex/</link>
-      <pubDate>Fri, 14 Dec 2018 16:16:19 +0000</pubDate>
-      
-      <guid>/tags/latex/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>manual</title>
-      <link>/tags/manual/</link>
-      <pubDate>Tue, 11 Dec 2018 10:28:19 +0000</pubDate>
-      
-      <guid>/tags/manual/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>nginx</title>
-      <link>/tags/nginx/</link>
-      <pubDate>Sun, 02 Dec 2018 11:45:29 +0000</pubDate>
-      
-      <guid>/tags/nginx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>php</title>
-      <link>/tags/php/</link>
-      <pubDate>Sun, 02 Dec 2018 11:45:29 +0000</pubDate>
-      
-      <guid>/tags/php/</guid>
+      <guid>http://192.168.0.199:8000/tags/futures/</guid>
       <description></description>
     </item>
     
     <item>
       <title>stock</title>
-      <link>/tags/stock/</link>
-      <pubDate>Sun, 18 Nov 2018 09:35:04 +0000</pubDate>
+      <link>http://192.168.0.199:8000/tags/stock/</link>
+      <pubDate>Tue, 08 Oct 2019 23:01:52 +0800</pubDate>
       
-      <guid>/tags/stock/</guid>
+      <guid>http://192.168.0.199:8000/tags/stock/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>古琴</title>
+      <link>http://192.168.0.199:8000/tags/%E5%8F%A4%E7%90%B4/</link>
+      <pubDate>Tue, 17 Sep 2019 17:12:02 +0800</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/%E5%8F%A4%E7%90%B4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>箫</title>
+      <link>http://192.168.0.199:8000/tags/%E7%AE%AB/</link>
+      <pubDate>Tue, 17 Sep 2019 17:12:02 +0800</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/%E7%AE%AB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fuse</title>
+      <link>http://192.168.0.199:8000/tags/fuse/</link>
+      <pubDate>Tue, 17 Sep 2019 13:32:25 +0800</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/fuse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mac</title>
+      <link>http://192.168.0.199:8000/tags/mac/</link>
+      <pubDate>Tue, 17 Sep 2019 13:32:25 +0800</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ntfs</title>
+      <link>http://192.168.0.199:8000/tags/ntfs/</link>
+      <pubDate>Tue, 17 Sep 2019 13:32:25 +0800</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/ntfs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>css</title>
+      <link>http://192.168.0.199:8000/tags/css/</link>
+      <pubDate>Fri, 23 Aug 2019 12:31:39 +0800</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ebuild</title>
+      <link>http://192.168.0.199:8000/tags/ebuild/</link>
+      <pubDate>Thu, 22 Aug 2019 12:38:01 +0800</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/ebuild/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gentoo</title>
+      <link>http://192.168.0.199:8000/tags/gentoo/</link>
+      <pubDate>Thu, 22 Aug 2019 12:38:01 +0800</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/gentoo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>http://192.168.0.199:8000/tags/hugo/</link>
+      <pubDate>Thu, 22 Aug 2019 12:38:01 +0800</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regex</title>
+      <link>http://192.168.0.199:8000/tags/regex/</link>
+      <pubDate>Wed, 21 Aug 2019 07:49:35 +0800</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/regex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>http://192.168.0.199:8000/tags/vim/</link>
+      <pubDate>Wed, 21 Aug 2019 07:49:35 +0800</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blog</title>
+      <link>http://192.168.0.199:8000/tags/blog/</link>
+      <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cheatsheet</title>
+      <link>http://192.168.0.199:8000/tags/cheatsheet/</link>
+      <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/cheatsheet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>http://192.168.0.199:8000/tags/docker/</link>
+      <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>http://192.168.0.199:8000/tags/go/</link>
+      <pubDate>Fri, 28 Jun 2019 16:16:18 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webcrawler</title>
+      <link>http://192.168.0.199:8000/tags/webcrawler/</link>
+      <pubDate>Fri, 28 Jun 2019 09:36:52 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/webcrawler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>http://192.168.0.199:8000/tags/linux/</link>
+      <pubDate>Thu, 25 Apr 2019 09:40:45 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>eli</title>
+      <link>http://192.168.0.199:8000/tags/eli/</link>
+      <pubDate>Mon, 22 Apr 2019 17:40:41 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/eli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nas</title>
+      <link>http://192.168.0.199:8000/tags/nas/</link>
+      <pubDate>Wed, 17 Apr 2019 12:14:17 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/nas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>装机</title>
+      <link>http://192.168.0.199:8000/tags/%E8%A3%85%E6%9C%BA/</link>
+      <pubDate>Tue, 26 Mar 2019 20:03:53 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/%E8%A3%85%E6%9C%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dns</title>
+      <link>http://192.168.0.199:8000/tags/dns/</link>
+      <pubDate>Sun, 24 Mar 2019 11:29:42 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>net</title>
+      <link>http://192.168.0.199:8000/tags/net/</link>
+      <pubDate>Fri, 22 Mar 2019 13:00:42 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/net/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>download</title>
+      <link>http://192.168.0.199:8000/tags/download/</link>
+      <pubDate>Mon, 18 Mar 2019 18:01:15 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/download/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>encrypt</title>
+      <link>http://192.168.0.199:8000/tags/encrypt/</link>
+      <pubDate>Wed, 13 Mar 2019 11:36:10 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/encrypt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bluetooth</title>
+      <link>http://192.168.0.199:8000/tags/bluetooth/</link>
+      <pubDate>Fri, 01 Mar 2019 23:42:48 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/bluetooth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>appid</title>
+      <link>http://192.168.0.199:8000/tags/appid/</link>
+      <pubDate>Fri, 01 Mar 2019 07:18:53 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/appid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>life</title>
+      <link>http://192.168.0.199:8000/tags/life/</link>
+      <pubDate>Fri, 01 Mar 2019 07:18:53 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>x11</title>
+      <link>http://192.168.0.199:8000/tags/x11/</link>
+      <pubDate>Fri, 22 Feb 2019 10:51:44 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/x11/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>diy</title>
+      <link>http://192.168.0.199:8000/tags/diy/</link>
+      <pubDate>Tue, 19 Feb 2019 22:42:10 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/diy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bike</title>
+      <link>http://192.168.0.199:8000/tags/bike/</link>
+      <pubDate>Mon, 24 Dec 2018 20:40:19 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/bike/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>latex</title>
+      <link>http://192.168.0.199:8000/tags/latex/</link>
+      <pubDate>Fri, 14 Dec 2018 16:16:19 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/latex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>manual</title>
+      <link>http://192.168.0.199:8000/tags/manual/</link>
+      <pubDate>Tue, 11 Dec 2018 10:28:19 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/manual/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>http://192.168.0.199:8000/tags/nginx/</link>
+      <pubDate>Sun, 02 Dec 2018 11:45:29 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>php</title>
+      <link>http://192.168.0.199:8000/tags/php/</link>
+      <pubDate>Sun, 02 Dec 2018 11:45:29 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/tags/php/</guid>
       <description></description>
     </item>
     
     <item>
       <title>缠论</title>
-      <link>/tags/%E7%BC%A0%E8%AE%BA/</link>
+      <link>http://192.168.0.199:8000/tags/%E7%BC%A0%E8%AE%BA/</link>
       <pubDate>Sun, 18 Nov 2018 09:35:04 +0000</pubDate>
       
-      <guid>/tags/%E7%BC%A0%E8%AE%BA/</guid>
+      <guid>http://192.168.0.199:8000/tags/%E7%BC%A0%E8%AE%BA/</guid>
       <description></description>
     </item>
     
     <item>
       <title>samba</title>
-      <link>/tags/samba/</link>
+      <link>http://192.168.0.199:8000/tags/samba/</link>
       <pubDate>Sat, 17 Nov 2018 10:17:08 +0000</pubDate>
       
-      <guid>/tags/samba/</guid>
+      <guid>http://192.168.0.199:8000/tags/samba/</guid>
       <description></description>
     </item>
     
     <item>
       <title>chat</title>
-      <link>/tags/chat/</link>
+      <link>http://192.168.0.199:8000/tags/chat/</link>
       <pubDate>Sat, 10 Nov 2018 09:15:44 +0000</pubDate>
       
-      <guid>/tags/chat/</guid>
+      <guid>http://192.168.0.199:8000/tags/chat/</guid>
       <description></description>
     </item>
     
     <item>
       <title>search</title>
-      <link>/tags/search/</link>
+      <link>http://192.168.0.199:8000/tags/search/</link>
       <pubDate>Sun, 04 Nov 2018 11:36:41 +0000</pubDate>
       
-      <guid>/tags/search/</guid>
+      <guid>http://192.168.0.199:8000/tags/search/</guid>
       <description></description>
     </item>
     
     <item>
       <title>browser</title>
-      <link>/tags/browser/</link>
+      <link>http://192.168.0.199:8000/tags/browser/</link>
       <pubDate>Sun, 04 Nov 2018 11:23:50 +0000</pubDate>
       
-      <guid>/tags/browser/</guid>
+      <guid>http://192.168.0.199:8000/tags/browser/</guid>
       <description></description>
     </item>
     
     <item>
       <title>iphone</title>
-      <link>/tags/iphone/</link>
+      <link>http://192.168.0.199:8000/tags/iphone/</link>
       <pubDate>Sun, 04 Nov 2018 08:53:42 +0000</pubDate>
       
-      <guid>/tags/iphone/</guid>
+      <guid>http://192.168.0.199:8000/tags/iphone/</guid>
       <description></description>
     </item>
     
     <item>
       <title>itunes</title>
-      <link>/tags/itunes/</link>
+      <link>http://192.168.0.199:8000/tags/itunes/</link>
       <pubDate>Sun, 04 Nov 2018 08:53:42 +0000</pubDate>
       
-      <guid>/tags/itunes/</guid>
+      <guid>http://192.168.0.199:8000/tags/itunes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>trading_digest</title>
-      <link>/tags/trading_digest/</link>
+      <link>http://192.168.0.199:8000/tags/trading_digest/</link>
       <pubDate>Fri, 26 Oct 2018 21:45:03 +0000</pubDate>
       
-      <guid>/tags/trading_digest/</guid>
+      <guid>http://192.168.0.199:8000/tags/trading_digest/</guid>
       <description></description>
     </item>
     
     <item>
       <title>english</title>
-      <link>/tags/english/</link>
+      <link>http://192.168.0.199:8000/tags/english/</link>
       <pubDate>Mon, 15 Oct 2018 12:13:33 +0000</pubDate>
       
-      <guid>/tags/english/</guid>
+      <guid>http://192.168.0.199:8000/tags/english/</guid>
       <description></description>
     </item>
     
     <item>
       <title>dict</title>
-      <link>/tags/dict/</link>
+      <link>http://192.168.0.199:8000/tags/dict/</link>
       <pubDate>Sat, 13 Oct 2018 08:10:51 +0000</pubDate>
       
-      <guid>/tags/dict/</guid>
+      <guid>http://192.168.0.199:8000/tags/dict/</guid>
       <description></description>
     </item>
     
     <item>
       <title>translate</title>
-      <link>/tags/translate/</link>
+      <link>http://192.168.0.199:8000/tags/translate/</link>
       <pubDate>Sat, 13 Oct 2018 08:10:51 +0000</pubDate>
       
-      <guid>/tags/translate/</guid>
+      <guid>http://192.168.0.199:8000/tags/translate/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mongodb</title>
-      <link>/tags/mongodb/</link>
+      <link>http://192.168.0.199:8000/tags/mongodb/</link>
       <pubDate>Tue, 25 Sep 2018 08:44:25 +0000</pubDate>
       
-      <guid>/tags/mongodb/</guid>
+      <guid>http://192.168.0.199:8000/tags/mongodb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>panda</title>
-      <link>/tags/panda/</link>
+      <link>http://192.168.0.199:8000/tags/panda/</link>
       <pubDate>Tue, 25 Sep 2018 08:44:25 +0000</pubDate>
       
-      <guid>/tags/panda/</guid>
+      <guid>http://192.168.0.199:8000/tags/panda/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>/tags/python/</link>
+      <link>http://192.168.0.199:8000/tags/python/</link>
       <pubDate>Tue, 25 Sep 2018 08:44:25 +0000</pubDate>
       
-      <guid>/tags/python/</guid>
+      <guid>http://192.168.0.199:8000/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>others</title>
-      <link>/tags/others/</link>
+      <link>http://192.168.0.199:8000/tags/others/</link>
       <pubDate>Mon, 16 Jul 2018 22:00:26 +0000</pubDate>
       
-      <guid>/tags/others/</guid>
+      <guid>http://192.168.0.199:8000/tags/others/</guid>
       <description></description>
     </item>
     
     <item>
       <title>thinking</title>
-      <link>/tags/thinking/</link>
+      <link>http://192.168.0.199:8000/tags/thinking/</link>
       <pubDate>Sat, 14 Jul 2018 14:32:44 +0000</pubDate>
       
-      <guid>/tags/thinking/</guid>
+      <guid>http://192.168.0.199:8000/tags/thinking/</guid>
       <description></description>
     </item>
     
     <item>
       <title>修心</title>
-      <link>/tags/%E4%BF%AE%E5%BF%83/</link>
+      <link>http://192.168.0.199:8000/tags/%E4%BF%AE%E5%BF%83/</link>
       <pubDate>Thu, 17 May 2018 14:52:39 +0000</pubDate>
       
-      <guid>/tags/%E4%BF%AE%E5%BF%83/</guid>
+      <guid>http://192.168.0.199:8000/tags/%E4%BF%AE%E5%BF%83/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cron</title>
-      <link>/tags/cron/</link>
+      <link>http://192.168.0.199:8000/tags/cron/</link>
       <pubDate>Fri, 04 May 2018 17:58:52 +0000</pubDate>
       
-      <guid>/tags/cron/</guid>
+      <guid>http://192.168.0.199:8000/tags/cron/</guid>
       <description></description>
     </item>
     
     <item>
       <title>输入法</title>
-      <link>/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+      <link>http://192.168.0.199:8000/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</link>
       <pubDate>Fri, 13 Apr 2018 15:30:54 +0000</pubDate>
       
-      <guid>/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
+      <guid>http://192.168.0.199:8000/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DB</title>
-      <link>/tags/db/</link>
+      <link>http://192.168.0.199:8000/tags/db/</link>
       <pubDate>Thu, 12 Apr 2018 11:21:57 +0000</pubDate>
       
-      <guid>/tags/db/</guid>
+      <guid>http://192.168.0.199:8000/tags/db/</guid>
       <description></description>
     </item>
     
     <item>
       <title>firefox</title>
-      <link>/tags/firefox/</link>
+      <link>http://192.168.0.199:8000/tags/firefox/</link>
       <pubDate>Thu, 05 Apr 2018 09:30:39 +0000</pubDate>
       
-      <guid>/tags/firefox/</guid>
+      <guid>http://192.168.0.199:8000/tags/firefox/</guid>
       <description></description>
     </item>
     
     <item>
       <title>通达信</title>
-      <link>/tags/%E9%80%9A%E8%BE%BE%E4%BF%A1/</link>
+      <link>http://192.168.0.199:8000/tags/%E9%80%9A%E8%BE%BE%E4%BF%A1/</link>
       <pubDate>Fri, 23 Mar 2018 10:44:12 +0000</pubDate>
       
-      <guid>/tags/%E9%80%9A%E8%BE%BE%E4%BF%A1/</guid>
+      <guid>http://192.168.0.199:8000/tags/%E9%80%9A%E8%BE%BE%E4%BF%A1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>network</title>
-      <link>/tags/network/</link>
+      <link>http://192.168.0.199:8000/tags/network/</link>
       <pubDate>Wed, 07 Mar 2018 15:33:51 +0000</pubDate>
       
-      <guid>/tags/network/</guid>
+      <guid>http://192.168.0.199:8000/tags/network/</guid>
       <description></description>
     </item>
     
     <item>
       <title>blockchain</title>
-      <link>/tags/blockchain/</link>
+      <link>http://192.168.0.199:8000/tags/blockchain/</link>
       <pubDate>Sun, 04 Mar 2018 12:31:44 +0000</pubDate>
       
-      <guid>/tags/blockchain/</guid>
+      <guid>http://192.168.0.199:8000/tags/blockchain/</guid>
       <description></description>
     </item>
     
     <item>
       <title>data</title>
-      <link>/tags/data/</link>
+      <link>http://192.168.0.199:8000/tags/data/</link>
       <pubDate>Sun, 11 Feb 2018 19:45:43 +0000</pubDate>
       
-      <guid>/tags/data/</guid>
+      <guid>http://192.168.0.199:8000/tags/data/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pandas</title>
-      <link>/tags/pandas/</link>
+      <link>http://192.168.0.199:8000/tags/pandas/</link>
       <pubDate>Sun, 11 Feb 2018 19:45:43 +0000</pubDate>
       
-      <guid>/tags/pandas/</guid>
+      <guid>http://192.168.0.199:8000/tags/pandas/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ffmpeg</title>
-      <link>/tags/ffmpeg/</link>
+      <link>http://192.168.0.199:8000/tags/ffmpeg/</link>
       <pubDate>Sat, 10 Feb 2018 13:55:13 +0000</pubDate>
       
-      <guid>/tags/ffmpeg/</guid>
+      <guid>http://192.168.0.199:8000/tags/ffmpeg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>music</title>
-      <link>/tags/music/</link>
+      <link>http://192.168.0.199:8000/tags/music/</link>
       <pubDate>Sat, 10 Feb 2018 13:55:13 +0000</pubDate>
       
-      <guid>/tags/music/</guid>
+      <guid>http://192.168.0.199:8000/tags/music/</guid>
       <description></description>
     </item>
     
     <item>
       <title>video</title>
-      <link>/tags/video/</link>
+      <link>http://192.168.0.199:8000/tags/video/</link>
       <pubDate>Sat, 10 Feb 2018 13:55:13 +0000</pubDate>
       
-      <guid>/tags/video/</guid>
+      <guid>http://192.168.0.199:8000/tags/video/</guid>
       <description></description>
     </item>
     
     <item>
       <title>photo</title>
-      <link>/tags/photo/</link>
+      <link>http://192.168.0.199:8000/tags/photo/</link>
       <pubDate>Sun, 21 Jan 2018 15:21:16 +0000</pubDate>
       
-      <guid>/tags/photo/</guid>
+      <guid>http://192.168.0.199:8000/tags/photo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>iptables</title>
-      <link>/tags/iptables/</link>
+      <link>http://192.168.0.199:8000/tags/iptables/</link>
       <pubDate>Sat, 09 Dec 2017 22:42:57 +0000</pubDate>
       
-      <guid>/tags/iptables/</guid>
+      <guid>http://192.168.0.199:8000/tags/iptables/</guid>
       <description></description>
     </item>
     
     <item>
       <title>movies</title>
-      <link>/tags/movies/</link>
+      <link>http://192.168.0.199:8000/tags/movies/</link>
       <pubDate>Sat, 02 Dec 2017 19:01:24 +0000</pubDate>
       
-      <guid>/tags/movies/</guid>
+      <guid>http://192.168.0.199:8000/tags/movies/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shell</title>
-      <link>/tags/shell/</link>
+      <link>http://192.168.0.199:8000/tags/shell/</link>
       <pubDate>Fri, 01 Dec 2017 23:30:08 +0000</pubDate>
       
-      <guid>/tags/shell/</guid>
+      <guid>http://192.168.0.199:8000/tags/shell/</guid>
       <description></description>
     </item>
     
     <item>
       <title>media</title>
-      <link>/tags/media/</link>
+      <link>http://192.168.0.199:8000/tags/media/</link>
       <pubDate>Fri, 24 Nov 2017 19:53:08 +0000</pubDate>
       
-      <guid>/tags/media/</guid>
+      <guid>http://192.168.0.199:8000/tags/media/</guid>
       <description></description>
     </item>
     
     <item>
       <title>print</title>
-      <link>/tags/print/</link>
+      <link>http://192.168.0.199:8000/tags/print/</link>
       <pubDate>Wed, 22 Nov 2017 23:45:16 +0000</pubDate>
       
-      <guid>/tags/print/</guid>
+      <guid>http://192.168.0.199:8000/tags/print/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kernel</title>
-      <link>/tags/kernel/</link>
+      <link>http://192.168.0.199:8000/tags/kernel/</link>
       <pubDate>Tue, 21 Nov 2017 10:26:07 +0000</pubDate>
       
-      <guid>/tags/kernel/</guid>
+      <guid>http://192.168.0.199:8000/tags/kernel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>wifi</title>
-      <link>/tags/wifi/</link>
+      <link>http://192.168.0.199:8000/tags/wifi/</link>
       <pubDate>Thu, 16 Nov 2017 16:55:00 +0000</pubDate>
       
-      <guid>/tags/wifi/</guid>
+      <guid>http://192.168.0.199:8000/tags/wifi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>device</title>
-      <link>/tags/device/</link>
+      <link>http://192.168.0.199:8000/tags/device/</link>
       <pubDate>Sun, 05 Nov 2017 20:40:58 +0000</pubDate>
       
-      <guid>/tags/device/</guid>
+      <guid>http://192.168.0.199:8000/tags/device/</guid>
       <description></description>
     </item>
     
     <item>
       <title>书法</title>
-      <link>/tags/%E4%B9%A6%E6%B3%95/</link>
+      <link>http://192.168.0.199:8000/tags/%E4%B9%A6%E6%B3%95/</link>
       <pubDate>Sun, 19 Mar 2017 20:57:07 +0000</pubDate>
       
-      <guid>/tags/%E4%B9%A6%E6%B3%95/</guid>
+      <guid>http://192.168.0.199:8000/tags/%E4%B9%A6%E6%B3%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>操作</title>
-      <link>/tags/%E6%93%8D%E4%BD%9C/</link>
+      <link>http://192.168.0.199:8000/tags/%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Thu, 09 Feb 2017 12:20:14 +0000</pubDate>
       
-      <guid>/tags/%E6%93%8D%E4%BD%9C/</guid>
+      <guid>http://192.168.0.199:8000/tags/%E6%93%8D%E4%BD%9C/</guid>
       <description></description>
     </item>
     
     <item>
       <title>matplotlib</title>
-      <link>/tags/matplotlib/</link>
+      <link>http://192.168.0.199:8000/tags/matplotlib/</link>
       <pubDate>Thu, 02 Feb 2017 22:00:18 +0000</pubDate>
       
-      <guid>/tags/matplotlib/</guid>
+      <guid>http://192.168.0.199:8000/tags/matplotlib/</guid>
       <description></description>
     </item>
     
     <item>
       <title>webserver</title>
-      <link>/tags/webserver/</link>
+      <link>http://192.168.0.199:8000/tags/webserver/</link>
       <pubDate>Thu, 02 Feb 2017 22:00:18 +0000</pubDate>
       
-      <guid>/tags/webserver/</guid>
+      <guid>http://192.168.0.199:8000/tags/webserver/</guid>
       <description></description>
     </item>
     
     <item>
       <title>window</title>
-      <link>/tags/window/</link>
+      <link>http://192.168.0.199:8000/tags/window/</link>
       <pubDate>Fri, 09 Dec 2016 22:02:20 +0000</pubDate>
       
-      <guid>/tags/window/</guid>
+      <guid>http://192.168.0.199:8000/tags/window/</guid>
       <description></description>
     </item>
     
     <item>
       <title>image</title>
-      <link>/tags/image/</link>
+      <link>http://192.168.0.199:8000/tags/image/</link>
       <pubDate>Wed, 07 Dec 2016 20:14:58 +0000</pubDate>
       
-      <guid>/tags/image/</guid>
+      <guid>http://192.168.0.199:8000/tags/image/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>/tags/git/</link>
+      <link>http://192.168.0.199:8000/tags/git/</link>
       <pubDate>Thu, 29 Sep 2016 10:06:20 +0000</pubDate>
       
-      <guid>/tags/git/</guid>
+      <guid>http://192.168.0.199:8000/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>quanta</title>
-      <link>/tags/quanta/</link>
+      <link>http://192.168.0.199:8000/tags/quanta/</link>
       <pubDate>Thu, 22 Sep 2016 10:00:00 +0000</pubDate>
       
-      <guid>/tags/quanta/</guid>
+      <guid>http://192.168.0.199:8000/tags/quanta/</guid>
       <description></description>
     </item>
     
     <item>
       <title>iptable</title>
-      <link>/tags/iptable/</link>
+      <link>http://192.168.0.199:8000/tags/iptable/</link>
       <pubDate>Tue, 19 Apr 2016 23:27:55 +0000</pubDate>
       
-      <guid>/tags/iptable/</guid>
+      <guid>http://192.168.0.199:8000/tags/iptable/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hexo</title>
-      <link>/tags/hexo/</link>
+      <link>http://192.168.0.199:8000/tags/hexo/</link>
       <pubDate>Sun, 27 Mar 2016 19:38:35 +0000</pubDate>
       
-      <guid>/tags/hexo/</guid>
+      <guid>http://192.168.0.199:8000/tags/hexo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>apache</title>
-      <link>/tags/apache/</link>
+      <link>http://192.168.0.199:8000/tags/apache/</link>
       <pubDate>Mon, 29 Feb 2016 10:40:40 +0000</pubDate>
       
-      <guid>/tags/apache/</guid>
+      <guid>http://192.168.0.199:8000/tags/apache/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mysql</title>
-      <link>/tags/mysql/</link>
+      <link>http://192.168.0.199:8000/tags/mysql/</link>
       <pubDate>Mon, 29 Feb 2016 10:40:40 +0000</pubDate>
       
-      <guid>/tags/mysql/</guid>
+      <guid>http://192.168.0.199:8000/tags/mysql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>perl</title>
-      <link>/tags/perl/</link>
+      <link>http://192.168.0.199:8000/tags/perl/</link>
       <pubDate>Mon, 29 Feb 2016 10:40:40 +0000</pubDate>
       
-      <guid>/tags/perl/</guid>
+      <guid>http://192.168.0.199:8000/tags/perl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>virtualbox</title>
-      <link>/tags/virtualbox/</link>
+      <link>http://192.168.0.199:8000/tags/virtualbox/</link>
       <pubDate>Mon, 29 Feb 2016 09:52:41 +0000</pubDate>
       
-      <guid>/tags/virtualbox/</guid>
+      <guid>http://192.168.0.199:8000/tags/virtualbox/</guid>
       <description></description>
     </item>
     

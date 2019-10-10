@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>iptable on Just a Memo</title>
-    <link>/tags/iptable/</link>
+    <link>http://192.168.0.199:8000/tags/iptable/</link>
     <description>Recent content in iptable on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 19 Apr 2016 23:27:55 +0000</lastBuildDate>
     
-	<atom:link href="/tags/iptable/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://192.168.0.199:8000/tags/iptable/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux_Server</title>
-      <link>/posts/tech/linux_server/</link>
+      <link>http://192.168.0.199:8000/posts/tech/linux_server/</link>
       <pubDate>Tue, 19 Apr 2016 23:27:55 +0000</pubDate>
       
-      <guid>/posts/tech/linux_server/</guid>
+      <guid>http://192.168.0.199:8000/posts/tech/linux_server/</guid>
       <description> iptables (https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules)  List Chains with number
 sudo iptables -L -n -v --line-numbers Delete Chains
 sudo iptables -D INPUT 7  </description>

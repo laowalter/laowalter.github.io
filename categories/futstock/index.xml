@@ -2,309 +2,354 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fut&amp;Stock on Just a Memo</title>
-    <link>/categories/futstock/</link>
+    <link>http://192.168.0.199:8000/categories/futstock/</link>
     <description>Recent content in Fut&amp;Stock on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Aug 2019 10:32:08 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Oct 2019 07:02:31 +0000</lastBuildDate>
     
-	<atom:link href="/categories/futstock/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://192.168.0.199:8000/categories/futstock/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>成功案例</title>
+      <link>http://192.168.0.199:8000/posts/futures/%E6%88%90%E5%8A%9F%E6%A1%88%E4%BE%8B/</link>
+      <pubDate>Thu, 10 Oct 2019 07:02:31 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/posts/futures/%E6%88%90%E5%8A%9F%E6%A1%88%E4%BE%8B/</guid>
+      <description>反转 级别 说明 图形 3min 1. 出现巨量巨幅K线，然后回调到其中位，此时不能确定方向，但因为是在长期下跌通道中，估计可能是多头入场。 2. 入场位置(1901</description>
+    </item>
+    
+    <item>
+      <title>2B准则/2B Pattern</title>
+      <link>http://192.168.0.199:8000/posts/futures/2bpattern/</link>
+      <pubDate>Tue, 08 Oct 2019 23:01:52 +0800</pubDate>
+      
+      <guid>http://192.168.0.199:8000/posts/futures/2bpattern/</guid>
+      <description>什么是2B准则？ 在上升趋势中，如果价格已经创新高而未能持续上生，稍后又跌破先前的高点，则趋势很可能会发生反转。下降趋&amp;gt;势也是如此。该准</description>
+    </item>
+    
+    <item>
+      <title>《道氏理论》</title>
+      <link>http://192.168.0.199:8000/posts/futures/%E9%81%93%E6%B0%8F%E7%90%86%E8%AE%BA/</link>
+      <pubDate>Fri, 04 Oct 2019 20:50:38 +0800</pubDate>
+      
+      <guid>http://192.168.0.199:8000/posts/futures/%E9%81%93%E6%B0%8F%E7%90%86%E8%AE%BA/</guid>
+      <description>汉密尔顿的《道氏理论》 三个假设 三种运动 (1)市场操纵 (2)股市得平均价格指数消溶了一切 (3)道氏理论并非不错 主要运动： 次级反向运动： 日间波动</description>
+    </item>
+    
+    <item>
+      <title>再读《专业投机原理》</title>
+      <link>http://192.168.0.199:8000/posts/futures/%E5%86%8D%E8%AF%BB%E4%B8%93%E4%B8%9A%E6%8A%95%E6%9C%BA%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Thu, 26 Sep 2019 15:01:52 +0800</pubDate>
+      
+      <guid>http://192.168.0.199:8000/posts/futures/%E5%86%8D%E8%AF%BB%E4%B8%93%E4%B8%9A%E6%8A%95%E6%9C%BA%E5%8E%9F%E7%90%86/</guid>
+      <description>从赌徒到市场宗师 一位专业投机者的历程 交易类型： 时间 交易类型 数分钟~数星期 交易者、投机者 数星期~数月 投机者、投资者 数月~数年 投资者 交易状态 初期</description>
+    </item>
+    
+    <item>
+      <title>自用交易软件</title>
+      <link>http://192.168.0.199:8000/posts/futures/%E8%87%AA%E7%94%A8%E4%BA%A4%E6%98%93%E8%BD%AF%E4%BB%B6/</link>
+      <pubDate>Wed, 04 Sep 2019 10:04:02 +0800</pubDate>
+      
+      <guid>http://192.168.0.199:8000/posts/futures/%E8%87%AA%E7%94%A8%E4%BA%A4%E6%98%93%E8%BD%AF%E4%BB%B6/</guid>
+      <description>当前软件实现 ./trans -o -l -ctr c2001 -p 1879.50 -vol 20 -fee 26.40 --mrg 33804 ./trans -o -l -ctr c2005 -p 1941.53 -vol 17 -fee 22.44 --mrg 29651 ./trans -o -l -ctr y2001 -p 6110 -vol 1 -fee 2.80 -tag 2 ./trans -c -s -ctr y2001 -p 6114 -vol 1 -fee 0.04 -pft 40 -tag 2 文化交易软件的参考 持</description>
+    </item>
+    
+    <item>
+      <title>建立底仓</title>
+      <link>http://192.168.0.199:8000/posts/futures/%E5%BB%BA%E7%AB%8B%E5%BA%95%E4%BB%93/</link>
+      <pubDate>Tue, 03 Sep 2019 20:47:32 +0800</pubDate>
+      
+      <guid>http://192.168.0.199:8000/posts/futures/%E5%BB%BA%E7%AB%8B%E5%BA%95%E4%BB%93/</guid>
+      <description>我的理解： 何为底仓：稳定获利之后的仓位才叫底仓，否则都是在底舱的建立过程之中。 仓位 底仓因该逐步建立，在建立过程中不断增加仓位，达到20%-4</description>
+    </item>
+    
+    <item>
       <title>Futures Cheatsheet</title>
-      <link>/posts/futures/futures-cheatsheet/</link>
+      <link>http://192.168.0.199:8000/posts/futures/futures-cheatsheet/</link>
       <pubDate>Sun, 18 Aug 2019 10:32:08 +0000</pubDate>
       
-      <guid>/posts/futures/futures-cheatsheet/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/futures-cheatsheet/</guid>
       <description>国际行情网址 用户名：alup1 S&amp;amp;P500 标准普尔 交易代码 类别 说明 主连 一月 二月 三月 四月 五月 六月 七月 八月 九月 十月 十一月 十二月 美豆粉 x SMCC SMCF - SMCH - SMCK - SMCN SMCQ SMCU</description>
     </item>
     
     <item>
       <title>期货交易基本信息</title>
-      <link>/posts/futures/%E6%9C%9F%E8%B4%A7%E4%BA%A4%E6%98%93%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E6%9C%9F%E8%B4%A7%E4%BA%A4%E6%98%93%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF/</link>
       <pubDate>Thu, 14 Mar 2019 11:53:37 +0000</pubDate>
       
-      <guid>/posts/futures/%E6%9C%9F%E8%B4%A7%E4%BA%A4%E6%98%93%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E6%9C%9F%E8%B4%A7%E4%BA%A4%E6%98%93%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF/</guid>
       <description>保证金比例/手续费 品种 保证金比例 价格变动/点 手续费(开+平今) 数量/手 最小变动 玉米 9% 10 1.32+0.011 10吨 1元 豆油 11% 20 2.80+0.03 10吨 1元 豆粕 13% 10 1.65+0.02 10吨 1元 菜</description>
     </item>
     
     <item>
       <title>文华公式</title>
-      <link>/posts/futures/%E6%96%87%E5%8D%8E%E5%85%AC%E5%BC%8F/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E6%96%87%E5%8D%8E%E5%85%AC%E5%BC%8F/</link>
       <pubDate>Sat, 26 Jan 2019 12:00:29 +0000</pubDate>
       
-      <guid>/posts/futures/%E6%96%87%E5%8D%8E%E5%85%AC%E5%BC%8F/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E6%96%87%E5%8D%8E%E5%85%AC%E5%BC%8F/</guid>
       <description>挤牌公式 挤牌指标（TTM Squeeze）,来自约翰.F.卡特《驾驭交易》，即两个通道：布林通道和肯特纳通道（Keltner Channel），</description>
     </item>
     
     <item>
       <title>期货今日复盘</title>
-      <link>/posts/futures/%E6%9C%9F%E8%B4%A7%E4%BB%8A%E6%97%A5%E5%A4%8D%E7%9B%98/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E6%9C%9F%E8%B4%A7%E4%BB%8A%E6%97%A5%E5%A4%8D%E7%9B%98/</link>
       <pubDate>Mon, 21 Jan 2019 15:37:58 +0000</pubDate>
       
-      <guid>/posts/futures/%E6%9C%9F%E8%B4%A7%E4%BB%8A%E6%97%A5%E5%A4%8D%E7%9B%98/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E6%9C%9F%E8%B4%A7%E4%BB%8A%E6%97%A5%E5%A4%8D%E7%9B%98/</guid>
       <description>操作逻辑调整：1F CCI在趋势中，会出现背了背的情况。如果是强趋势，做CCI背离必定亏损，因此必须区分是在趋势中还是在横盘中；在趋势中是强趋</description>
     </item>
     
     <item>
       <title>期货日内交易</title>
-      <link>/posts/futures/%E6%9C%9F%E8%B4%A7%E6%97%A5%E5%86%85%E4%BA%A4%E6%98%93/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E6%9C%9F%E8%B4%A7%E6%97%A5%E5%86%85%E4%BA%A4%E6%98%93/</link>
       <pubDate>Fri, 21 Dec 2018 15:14:16 +0000</pubDate>
       
-      <guid>/posts/futures/%E6%9C%9F%E8%B4%A7%E6%97%A5%E5%86%85%E4%BA%A4%E6%98%93/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E6%9C%9F%E8%B4%A7%E6%97%A5%E5%86%85%E4%BA%A4%E6%98%93/</guid>
       <description>技巧 均线判断多空底部 5分钟交易图(观察此时在一分钟不ma5和ma10的相交) 平行线 平行线 盘被是怎么慢慢的不盘被的:均线平行区 平行线 MA5和M</description>
     </item>
     
     <item>
       <title>期货文摘</title>
-      <link>/posts/futures/%E6%9C%9F%E8%B4%A7%E6%96%87%E6%91%98/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E6%9C%9F%E8%B4%A7%E6%96%87%E6%91%98/</link>
       <pubDate>Tue, 11 Dec 2018 21:29:20 +0000</pubDate>
       
-      <guid>/posts/futures/%E6%9C%9F%E8%B4%A7%E6%96%87%E6%91%98/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E6%9C%9F%E8%B4%A7%E6%96%87%E6%91%98/</guid>
       <description>微信公众号：开始聊聊交易 微信公众号：开始聊聊交易 kslljy654 期货交易之所以困难，个人认为难得不在方法，而在于心态。 做期货大概有10年时间了，那个时候一</description>
     </item>
     
     <item>
       <title>日内交易成功经验</title>
-      <link>/posts/futures/%E6%97%A5%E5%86%85%E4%BA%A4%E6%98%93%E6%88%90%E5%8A%9F%E7%BB%8F%E9%AA%8C/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E6%97%A5%E5%86%85%E4%BA%A4%E6%98%93%E6%88%90%E5%8A%9F%E7%BB%8F%E9%AA%8C/</link>
       <pubDate>Wed, 05 Dec 2018 10:37:33 +0000</pubDate>
       
-      <guid>/posts/futures/%E6%97%A5%E5%86%85%E4%BA%A4%E6%98%93%E6%88%90%E5%8A%9F%E7%BB%8F%E9%AA%8C/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E6%97%A5%E5%86%85%E4%BA%A4%E6%98%93%E6%88%90%E5%8A%9F%E7%BB%8F%E9%AA%8C/</guid>
       <description>大成交量标志K线 说明： 根据缠论认为这是第一个15分钟反弹，而且横盘的位置还在15F的顶分型中，有空的可能； 根据15F, 5F成交量4504-4</description>
     </item>
     
     <item>
       <title>趋势与趋势力度</title>
-      <link>/posts/futures/%E8%B6%8B%E5%8A%BF%E4%B8%8E%E8%B6%8B%E5%8A%BF%E5%8A%9B%E5%BA%A6/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E8%B6%8B%E5%8A%BF%E4%B8%8E%E8%B6%8B%E5%8A%BF%E5%8A%9B%E5%BA%A6/</link>
       <pubDate>Sun, 18 Nov 2018 09:35:04 +0000</pubDate>
       
-      <guid>/posts/futures/%E8%B6%8B%E5%8A%BF%E4%B8%8E%E8%B6%8B%E5%8A%BF%E5%8A%9B%E5%BA%A6/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E8%B6%8B%E5%8A%BF%E4%B8%8E%E8%B6%8B%E5%8A%BF%E5%8A%9B%E5%BA%A6/</guid>
       <description>趋势：包含两个中枢；盘整包含一个中枢； 趋势力度：快线(MA5)和慢线(MA10)交叉之后的形成的面积对比 没有趋势，不谈趋势力度，所以在横盘是</description>
     </item>
     
     <item>
       <title>农大期货的课程模块</title>
-      <link>/posts/futures/%E5%86%9C%E5%A4%A7%E6%9C%9F%E8%B4%A7%E7%9A%84%E8%AF%BE%E7%A8%8B%E6%A8%A1%E5%9D%97/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E5%86%9C%E5%A4%A7%E6%9C%9F%E8%B4%A7%E7%9A%84%E8%AF%BE%E7%A8%8B%E6%A8%A1%E5%9D%97/</link>
       <pubDate>Fri, 26 Oct 2018 21:53:39 +0000</pubDate>
       
-      <guid>/posts/futures/%E5%86%9C%E5%A4%A7%E6%9C%9F%E8%B4%A7%E7%9A%84%E8%AF%BE%E7%A8%8B%E6%A8%A1%E5%9D%97/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E5%86%9C%E5%A4%A7%E6%9C%9F%E8%B4%A7%E7%9A%84%E8%AF%BE%E7%A8%8B%E6%A8%A1%E5%9D%97/</guid>
       <description></description>
     </item>
     
     <item>
       <title>揭密：人工高频交易强手的实战攻心计</title>
-      <link>/posts/futures/%E4%BA%BA%E5%B7%A5%E9%AB%98%E9%A2%91%E4%BA%A4%E6%98%93%E5%BC%BA%E6%89%8B%E7%9A%84%E5%AE%9E%E6%88%98%E6%94%BB%E5%BF%83%E8%AE%A1/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E4%BA%BA%E5%B7%A5%E9%AB%98%E9%A2%91%E4%BA%A4%E6%98%93%E5%BC%BA%E6%89%8B%E7%9A%84%E5%AE%9E%E6%88%98%E6%94%BB%E5%BF%83%E8%AE%A1/</link>
       <pubDate>Fri, 26 Oct 2018 21:45:03 +0000</pubDate>
       
-      <guid>/posts/futures/%E4%BA%BA%E5%B7%A5%E9%AB%98%E9%A2%91%E4%BA%A4%E6%98%93%E5%BC%BA%E6%89%8B%E7%9A%84%E5%AE%9E%E6%88%98%E6%94%BB%E5%BF%83%E8%AE%A1/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E4%BA%BA%E5%B7%A5%E9%AB%98%E9%A2%91%E4%BA%A4%E6%98%93%E5%BC%BA%E6%89%8B%E7%9A%84%E5%AE%9E%E6%88%98%E6%94%BB%E5%BF%83%E8%AE%A1/</guid>
       <description>原文地址 我对日内高频交易手法的定义是：根据市场行情盘口的变化，凭直觉尽可能多地捕捉交易机会，闪电交易，博取差价，积少成多，达到总体盈利稳定的</description>
     </item>
     
     <item>
       <title>级别</title>
-      <link>/posts/futures/%E7%BA%A7%E5%88%AB/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E7%BA%A7%E5%88%AB/</link>
       <pubDate>Tue, 02 Oct 2018 09:44:26 +0000</pubDate>
       
-      <guid>/posts/futures/%E7%BA%A7%E5%88%AB/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E7%BA%A7%E5%88%AB/</guid>
       <description>概述 级别是最总要的《缠论》概念，由于原文描述不清晰，又经常以笔画中枢，导致对于级别的称呼和原文的称呼混乱，所以在读第三遍《缠论》时，再次总结</description>
     </item>
     
     <item>
       <title>三买总结</title>
-      <link>/posts/futures/%E4%B8%89%E4%B9%B0%E6%80%BB%E7%BB%93/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E4%B8%89%E4%B9%B0%E6%80%BB%E7%BB%93/</link>
       <pubDate>Mon, 01 Oct 2018 21:54:55 +0000</pubDate>
       
-      <guid>/posts/futures/%E4%B8%89%E4%B9%B0%E6%80%BB%E7%BB%93/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E4%B8%89%E4%B9%B0%E6%80%BB%E7%BB%93/</guid>
       <description>第三类买卖点定理 |cr|一个次级别走势类型向上离开缠中说禅走势中枢然后以一个次级别走势类型回试其低点不跌破ZG则构成第三类买点；一个次级别走</description>
     </item>
     
     <item>
       <title>申万期货</title>
-      <link>/posts/futures/%E7%94%B3%E4%B8%87%E6%9C%9F%E8%B4%A7/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E7%94%B3%E4%B8%87%E6%9C%9F%E8%B4%A7/</link>
       <pubDate>Wed, 26 Sep 2018 11:36:11 +0000</pubDate>
       
-      <guid>/posts/futures/%E7%94%B3%E4%B8%87%E6%9C%9F%E8%B4%A7/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E7%94%B3%E4%B8%87%E6%9C%9F%E8%B4%A7/</guid>
       <description>保证金查询 [jtable] 品种,保证金比例,交易所 玉米1901,5.00%(交易所)9.00%(申万),DCE [/jtable] 公司标准手续费 [jtable] 品种,每手量,开仓,当日平</description>
     </item>
     
     <item>
       <title>博易大师使用及公式</title>
-      <link>/posts/futures/%E5%8D%9A%E6%98%93%E5%A4%A7%E5%B8%88%E4%BD%BF%E7%94%A8%E5%8F%8A%E5%85%AC%E5%BC%8F/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E5%8D%9A%E6%98%93%E5%A4%A7%E5%B8%88%E4%BD%BF%E7%94%A8%E5%8F%8A%E5%85%AC%E5%BC%8F/</link>
       <pubDate>Wed, 26 Sep 2018 09:32:03 +0000</pubDate>
       
-      <guid>/posts/futures/%E5%8D%9A%E6%98%93%E5%A4%A7%E5%B8%88%E4%BD%BF%E7%94%A8%E5%8F%8A%E5%85%AC%E5%BC%8F/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E5%8D%9A%E6%98%93%E5%A4%A7%E5%B8%88%E4%BD%BF%E7%94%A8%E5%8F%8A%E5%85%AC%E5%BC%8F/</guid>
       <description>公式 m9 （MACD 变色\面积公式） [jtable] NO,参数名,类型,缺省值,最小值,最大值,步长 1,SHORT,数值型,12,2,200,0 2,LONG,</description>
     </item>
     
     <item>
       <title>浮动止损使用技巧(临时文件)</title>
-      <link>/posts/futures/%E6%B5%AE%E5%8A%A8%E6%AD%A2%E6%8D%9F%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E6%B5%AE%E5%8A%A8%E6%AD%A2%E6%8D%9F%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</link>
       <pubDate>Tue, 25 Sep 2018 18:39:06 +0000</pubDate>
       
-      <guid>/posts/futures/%E6%B5%AE%E5%8A%A8%E6%AD%A2%E6%8D%9F%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E6%B5%AE%E5%8A%A8%E6%AD%A2%E6%8D%9F%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</guid>
       <description>将交易简单化，除去繁杂且不具正向意义的主观判断，才能将交易融进自身的行为习惯当中，将客观信号的交易方式变成和吃饭睡觉一样自然熟练。 交易的唯一</description>
     </item>
     
     <item>
       <title>操作tip</title>
-      <link>/posts/futures/%E6%93%8D%E4%BD%9Ctip/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E6%93%8D%E4%BD%9Ctip/</link>
       <pubDate>Thu, 13 Sep 2018 13:26:24 +0000</pubDate>
       
-      <guid>/posts/futures/%E6%93%8D%E4%BD%9Ctip/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E6%93%8D%E4%BD%9Ctip/</guid>
       <description>操作有大级别背驰保证的次级别均线背驰; 买点正确之后，等待大级别的次级别二卖，如果大盘不好，考虑减仓位置，但不要全部止盈； 大盘不好，再好的股票</description>
     </item>
     
     <item>
       <title>大小级别重叠的理解和操作思路</title>
-      <link>/posts/futures/%E5%A4%A7%E5%B0%8F%E7%BA%A7%E5%88%AB%E9%87%8D%E5%8F%A0/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E5%A4%A7%E5%B0%8F%E7%BA%A7%E5%88%AB%E9%87%8D%E5%8F%A0/</link>
       <pubDate>Fri, 07 Sep 2018 12:57:25 +0000</pubDate>
       
-      <guid>/posts/futures/%E5%A4%A7%E5%B0%8F%E7%BA%A7%E5%88%AB%E9%87%8D%E5%8F%A0/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E5%A4%A7%E5%B0%8F%E7%BA%A7%E5%88%AB%E9%87%8D%E5%8F%A0/</guid>
       <description>20180907的大盘走势出现大小级别重叠的分析： 小级别走势延申，形成大小级别重叠的操作方法： 大小级别重叠，但如果小级别走的距离足够长，比如</description>
     </item>
     
     <item>
       <title>特殊形态(V反、奔走)</title>
-      <link>/posts/futures/%E7%89%B9%E6%AE%8A%E5%BD%A2%E6%80%81/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E7%89%B9%E6%AE%8A%E5%BD%A2%E6%80%81/</link>
       <pubDate>Sat, 25 Aug 2018 10:50:49 +0000</pubDate>
       
-      <guid>/posts/futures/%E7%89%B9%E6%AE%8A%E5%BD%A2%E6%80%81/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E7%89%B9%E6%AE%8A%E5%BD%A2%E6%80%81/</guid>
       <description>V 型反转 注意观察均线的对应关系并没有背驰，相反越来越大。历史同日大盘, 大盘反转，带动此同仁堂V型反转。 %caption: V型反转 5 分钟的V型反转始于1分钟奔</description>
     </item>
     
     <item>
       <title>缠论第三遍</title>
-      <link>/posts/futures/%E7%BC%A0%E8%AE%BA%E7%AC%AC%E4%B8%89%E9%81%8D/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E7%BC%A0%E8%AE%BA%E7%AC%AC%E4%B8%89%E9%81%8D/</link>
       <pubDate>Wed, 13 Jun 2018 08:17:36 +0000</pubDate>
       
-      <guid>/posts/futures/%E7%BC%A0%E8%AE%BA%E7%AC%AC%E4%B8%89%E9%81%8D/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E7%BC%A0%E8%AE%BA%E7%AC%AC%E4%B8%89%E9%81%8D/</guid>
       <description>读了这么久，这才是真谛技术只是最粗浅的东西，同样的技术，在纯技术的层面，在不同人的理解中，只要能正确地理解里面的逻辑关系，把握是没有问题的，</description>
     </item>
     
     <item>
       <title>自选股</title>
-      <link>/posts/futures/%E8%87%AA%E9%80%89%E8%82%A1/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E8%87%AA%E9%80%89%E8%82%A1/</link>
       <pubDate>Tue, 01 May 2018 08:47:34 +0000</pubDate>
       
-      <guid>/posts/futures/%E8%87%AA%E9%80%89%E8%82%A1/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E8%87%AA%E9%80%89%E8%82%A1/</guid>
       <description>2018-05-01 元器板块880492 精选 300155 0 安居宝 300162 0 雷曼股份 603380 0 易德龙 300144 0 中光防雷 600563 0 法拉电子 002859 0 洁美科技 002587 0 奥拓电子 603633 0 徕木股份 002446 0 兴森科技 002402 0 和而泰</description>
     </item>
     
     <item>
       <title>股票书签</title>
-      <link>/posts/futures/%E8%82%A1%E7%A5%A8%E4%B9%A6%E7%AD%BE/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E8%82%A1%E7%A5%A8%E4%B9%A6%E7%AD%BE/</link>
       <pubDate>Tue, 03 Apr 2018 18:11:27 +0000</pubDate>
       
-      <guid>/posts/futures/%E8%82%A1%E7%A5%A8%E4%B9%A6%E7%AD%BE/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E8%82%A1%E7%A5%A8%E4%B9%A6%E7%AD%BE/</guid>
       <description>行情数据 沪A 当日涨幅排行</description>
     </item>
     
     <item>
       <title>通达信常用公式</title>
-      <link>/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/</link>
       <pubDate>Fri, 23 Mar 2018 10:44:12 +0000</pubDate>
       
-      <guid>/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/</guid>
       <description>通达信m4(MACD)公式 [jtable] 参数,最小,最大,缺省 SHORT,2,200,12, LONG,2,200,26 MID,2,200,9 ISARROW,0,1,1 [/jtable] {SHORT 2,200,12;LONG 2,200,26;MID 2,200,9；ISARROW 0,1,1} DIFF:=EMA(CLOSE*100,SHORT)-EMA(CLOSE*100,LONG); DEA:=EMA(DIFF,MID); MACD2:=(DIFF - DEA)*2; DIF:DIFF; DEF:DEA; MACD:MACD2,NODRAW; 获利比:WINNER(C)</description>
     </item>
     
     <item>
       <title>江恩理论</title>
-      <link>/posts/futures/%E6%B1%9F%E6%81%A9%E7%90%86%E8%AE%BA/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E6%B1%9F%E6%81%A9%E7%90%86%E8%AE%BA/</link>
       <pubDate>Sat, 02 Dec 2017 22:00:15 +0000</pubDate>
       
-      <guid>/posts/futures/%E6%B1%9F%E6%81%A9%E7%90%86%E8%AE%BA/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E6%B1%9F%E6%81%A9%E7%90%86%E8%AE%BA/</guid>
       <description>原文链接：www.maofou.com/jsfx/Gann Reference: 《江恩华尔街四十五年》 《股票行情的真谛》 第一章 序 言 投资大师——江恩 威廉·江恩（W</description>
     </item>
     
     <item>
-      <title>盘口</title>
-      <link>/posts/futures/%E7%9B%98%E5%8F%A3/</link>
-      <pubDate>Thu, 30 Nov 2017 14:23:27 +0000</pubDate>
-      
-      <guid>/posts/futures/%E7%9B%98%E5%8F%A3/</guid>
-      <description>大单挂在盘口的现象 大单托单 下跌开始之初 此时，大单挂在盘口是托单假象，将有较大幅度下跌。 下跌过程中： 此时，大单挂在盘口是托单假象，还将有下跌。</description>
-    </item>
-    
-    <item>
       <title>通达信复权模型</title>
-      <link>/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%A4%8D%E6%9D%83%E6%A8%A1%E5%9E%8B/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%A4%8D%E6%9D%83%E6%A8%A1%E5%9E%8B/</link>
       <pubDate>Wed, 25 Oct 2017 13:03:34 +0000</pubDate>
       
-      <guid>/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%A4%8D%E6%9D%83%E6%A8%A1%E5%9E%8B/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%A4%8D%E6%9D%83%E6%A8%A1%E5%9E%8B/</guid>
       <description>通达信复权模型是建立在&amp;rdquo;股东财富不变&amp;rdquo;的原则上的。 交易所依据&amp;rdquo;股东财富不变&amp;rdquo;原则制定除权除息</description>
     </item>
     
     <item>
       <title>通达信使用</title>
-      <link>/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E4%BD%BF%E7%94%A8/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Thu, 08 Jun 2017 09:55:15 +0000</pubDate>
       
-      <guid>/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E4%BD%BF%E7%94%A8/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E4%BD%BF%E7%94%A8/</guid>
       <description>风格指数代码快查(8808**) [jtable] 指数名称,操作代码,指数名称,操作代码,指数名称,操作代码,指数名称,操作代码 基金重仓,880801,QF</description>
     </item>
     
     <item>
       <title>DailyOperation</title>
-      <link>/posts/futures/dailyoperation/</link>
+      <link>http://192.168.0.199:8000/posts/futures/dailyoperation/</link>
       <pubDate>Wed, 31 May 2017 17:05:59 +0000</pubDate>
       
-      <guid>/posts/futures/dailyoperation/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/dailyoperation/</guid>
       <description>通达信备份与回复 [jtable] 说明,位置/操作 通达信公式备份的位置,E:\股票\tongdaxin 克隆通达信公式,git clone ssh://git@mini/~/tongdaxin.git [/jtable]</description>
     </item>
     
     <item>
       <title>缠论总结</title>
-      <link>/posts/futures/%E7%BC%A0%E8%AE%BA%E6%80%BB%E7%BB%93/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E7%BC%A0%E8%AE%BA%E6%80%BB%E7%BB%93/</link>
       <pubDate>Sun, 30 Apr 2017 23:02:31 +0000</pubDate>
       
-      <guid>/posts/futures/%E7%BC%A0%E8%AE%BA%E6%80%BB%E7%BB%93/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E7%BC%A0%E8%AE%BA%E6%80%BB%E7%BB%93/</guid>
       <description>关于级别： 中枢从大看小，还是从小看大 中枢的定义是指次级别三段走势重叠。缠师在操作角度上看中枢是从小到大，这有实战意义。在一个级别的图中，可以</description>
     </item>
     
     <item>
       <title>一买操作</title>
-      <link>/posts/futures/%E4%B8%80%E4%B9%B0%E6%93%8D%E4%BD%9C/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E4%B8%80%E4%B9%B0%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Thu, 09 Feb 2017 12:20:14 +0000</pubDate>
       
-      <guid>/posts/futures/%E4%B8%80%E4%B9%B0%E6%93%8D%E4%BD%9C/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E4%B8%80%E4%B9%B0%E6%93%8D%E4%BD%9C/</guid>
       <description>一买操作 第一类买卖点是缠论买卖点的核心，第二、三类买卖点都是此级别的第一类买点。 操作级别上的不同，在大小，应该有所不同定操作级别</description>
     </item>
     
     <item>
       <title>我的通达信公式</title>
-      <link>/posts/futures/%E6%88%91%E7%9A%84%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%85%AC%E5%BC%8F/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E6%88%91%E7%9A%84%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%85%AC%E5%BC%8F/</link>
       <pubDate>Sat, 21 Jan 2017 21:22:13 +0000</pubDate>
       
-      <guid>/posts/futures/%E6%88%91%E7%9A%84%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%85%AC%E5%BC%8F/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E6%88%91%E7%9A%84%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%85%AC%E5%BC%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>通达信公式手册</title>
-      <link>/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%85%AC%E5%BC%8F%E6%89%8B%E5%86%8C/</link>
+      <link>http://192.168.0.199:8000/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%85%AC%E5%BC%8F%E6%89%8B%E5%86%8C/</link>
       <pubDate>Sat, 21 Jan 2017 16:51:13 +0000</pubDate>
       
-      <guid>/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%85%AC%E5%BC%8F%E6%89%8B%E5%86%8C/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/%E9%80%9A%E8%BE%BE%E4%BF%A1%E5%85%AC%E5%BC%8F%E6%89%8B%E5%86%8C/</guid>
       <description>引用函数 1．DRAWNULL 无效数 返回无效数。 用法： DRAWNULL 例如：IF(CLOSE&amp;gt;REF(CLOSE，1)，CLOSE，DRAWNULL)</description>
     </item>
     
     <item>
       <title>Quanta Program</title>
-      <link>/posts/futures/quanta-program/</link>
+      <link>http://192.168.0.199:8000/posts/futures/quanta-program/</link>
       <pubDate>Mon, 29 Feb 2016 11:13:01 +0000</pubDate>
       
-      <guid>/posts/futures/quanta-program/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/quanta-program/</guid>
       <description>toc: true IsOpen (Holiday) #!/usr/bin/env python &amp;quot;&amp;quot;&amp;quot; 股市日历，没费接口 &amp;quot;&amp;quot;&amp;quot; import pandas as pd import tushare as ts ts.set_token(&#39;88888888888888888&#39;) mt = ts.Master() df = mt.TradeCal(exchangeCD=&#39;XSHG&#39;, beginDate=&#39;20150928&#39;, endDate=&#39;20151010&#39;, field=&#39;calendarDate,isOpen,prevTradeDate&#39;) Understandings 1 Notes Call data_handler self.events = queue.Queue() data_handler(self.pairs, self.events, self.csv_dir) 2 debug start from mac.py : HistoricCSVPriceHandler -&amp;gt;(data_handler) =&amp;gt; backtest(`data_handler`) =&amp;gt; price.py(`PriceHandler`) =&amp;gt; _set_up_prices_dict(self) =&amp;gt; prices_dict = { &amp;#39;USDGBP&amp;#39;: {&amp;#39;ask&amp;#39;: None, &amp;#39;bid&amp;#39;: None, &amp;#39;time&amp;#39;:</description>
     </item>
     
     <item>
       <title>Quanta Resources</title>
-      <link>/posts/futures/quanta-resources/</link>
+      <link>http://192.168.0.199:8000/posts/futures/quanta-resources/</link>
       <pubDate>Mon, 29 Feb 2016 11:11:09 +0000</pubDate>
       
-      <guid>/posts/futures/quanta-resources/</guid>
+      <guid>http://192.168.0.199:8000/posts/futures/quanta-resources/</guid>
       <description>toc: true CTP 接口资料 https://www.citicsf.com/download/ctp http://www.sfit.com.cn/5_2_DocumentDown.htm 国内量化交易接口 easytrader 基于python程序 smurfyquant.com 基于同花顺、通达信的客户端 Quanta Resourses: www.reddit.com www.joinquant.com Forex Trading Demo Project Forex Sign in repo in github List Forex Trading Diary #1 - Automated Forex Trading with the OANDA API Forex</description>
     </item>
     

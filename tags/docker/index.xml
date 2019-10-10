@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>docker on Just a Memo</title>
-    <link>/tags/docker/</link>
+    <link>http://192.168.0.199:8000/tags/docker/</link>
     <description>Recent content in docker on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 18 Aug 2019 10:30:29 +0000</lastBuildDate>
     
-	<atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://192.168.0.199:8000/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo Cheatsheet</title>
-      <link>/posts/tech/hugo_cheatsheet/</link>
+      <link>http://192.168.0.199:8000/posts/tech/hugo_cheatsheet/</link>
       <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
       
-      <guid>/posts/tech/hugo_cheatsheet/</guid>
+      <guid>http://192.168.0.199:8000/posts/tech/hugo_cheatsheet/</guid>
       <description>MMark (https://github.com/mmarkdown/mmark) Start mmark In Front Matter add markup = &amp;ldquo;mmark&amp;rdquo; then mmark started. MMark 语法说明 (https://mmark.miek.nl/post/syntax/) By now, MMark conflict with {{/* */}} MMark examples table, #ages means table id=ages Name | Age --------|-----: Bob | 27 Alice | 23 Table: This is the table caption. {#ages} code // test.go data Figure: A sample function. 块引用 {title=&amp;quot;The blockquote&amp;quot; #myid} &amp;gt; A blockquote with a</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>thinking on Just a Memo</title>
-    <link>/tags/thinking/</link>
+    <link>http://192.168.0.199:8000/tags/thinking/</link>
     <description>Recent content in thinking on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Jul 2018 14:32:44 +0000</lastBuildDate>
     
-	<atom:link href="/tags/thinking/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://192.168.0.199:8000/tags/thinking/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Thinking</title>
-      <link>/posts/life/thinking/</link>
+      <link>http://192.168.0.199:8000/posts/life/thinking/</link>
       <pubDate>Sat, 14 Jul 2018 14:32:44 +0000</pubDate>
       
-      <guid>/posts/life/thinking/</guid>
+      <guid>http://192.168.0.199:8000/posts/life/thinking/</guid>
       <description>孔子曰:德薄而位尊,知小而谋大,力小而任重,鲜不及矣,易曰:鼎折足,覆公餗,其形渥,凶.言不胜其任也.</description>
     </item>
     

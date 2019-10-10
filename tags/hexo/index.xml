@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hexo on Just a Memo</title>
-    <link>/tags/hexo/</link>
+    <link>http://192.168.0.199:8000/tags/hexo/</link>
     <description>Recent content in hexo on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 27 Mar 2016 19:38:35 +0000</lastBuildDate>
     
-	<atom:link href="/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://192.168.0.199:8000/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hexo</title>
-      <link>/posts/tech/hexo/</link>
+      <link>http://192.168.0.199:8000/posts/tech/hexo/</link>
       <pubDate>Sun, 27 Mar 2016 19:38:35 +0000</pubDate>
       
-      <guid>/posts/tech/hexo/</guid>
+      <guid>http://192.168.0.199:8000/posts/tech/hexo/</guid>
       <description>关于Hexo的使用 start start.sh (~/note/myblog/start.sh) #!/bin/bash hexo s -i 192.168.0.99 -p 5000 _config.yml main _config.yml filename: _config.yml 13 # URL 14 ## If your site is put in a subdirectory, set url as &amp;#39;http://yoursite.com/child&amp;#39; and root as &amp;#39;/child/&amp;#39; 15 url: http://192.168.0.99:5000 16 root: / 17 permalink: :year/:month/:day/:title/ 18 permalink_defaults: freemind theme&amp;rsquo; bug bug for search I have to add a string.trim () in</description>
     </item>
     
