@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>virtualbox on Just a Memo</title>
-    <link>http://192.168.0.199:8000/tags/virtualbox/</link>
+    <link>http://laowalter.github.io/tags/virtualbox/</link>
     <description>Recent content in virtualbox on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 29 Feb 2016 09:52:41 +0000</lastBuildDate>
     
-	<atom:link href="http://192.168.0.199:8000/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://laowalter.github.io/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Mac Operations</title>
-      <link>http://192.168.0.199:8000/posts/tech/mac_operatoins/</link>
+      <link>http://laowalter.github.io/posts/tech/mac_operatoins/</link>
       <pubDate>Mon, 29 Feb 2016 09:52:41 +0000</pubDate>
       
-      <guid>http://192.168.0.199:8000/posts/tech/mac_operatoins/</guid>
+      <guid>http://laowalter.github.io/posts/tech/mac_operatoins/</guid>
       <description>Mac Operation create bootable mac usb In Application Download High Sierra apps Format usb stick with mac external file system In terminal: $ sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install\ macOS\ High\ Sierra.app brew install with proxy export ALL_PROXY=127.0.0.1:8087 brew install chromedriver set HostName set /etc/hosts set hostname sudo scutil --set ComputerName newname sudo scutil --set LocalHostName newname sudo scutil --set HostName newname dscacheutil -flushcache find and replace</description>
     </item>
     

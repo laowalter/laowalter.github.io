@@ -11,7 +11,7 @@
     
     
     
-    <link rel="stylesheet" href="http://192.168.0.199:8000/sass/main.min.91fe23d298c61475f6a6ebc821ec21692e755f60b6ae426b7b3462333eefce36.css">
+    <link rel="stylesheet" href="http://laowalter.github.io/sass/main.min.91fe23d298c61475f6a6ebc821ec21692e755f60b6ae426b7b3462333eefce36.css">
 
 </head>
 
@@ -23,7 +23,7 @@
     
     
     
-    <link href="http://192.168.0.199:8000/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    <link href="http://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
     
 </head>
 
@@ -93,15 +93,35 @@
 <li><p>New a post</p>
 <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker exec -it hugo hugo new posts/tech/abc.md</code></pre></div></li>
 
-<li><p>Gen Publish to public</p>
+<li><p>发布</p>
+
+<ul>
+<li>本地发布
+<br /></li>
+</ul>
+
+<p>192.168.0.99上的目录/home/walter/blog/public，这个目录连接到nginx 192.168.0.199:800</p>
 <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker stop hugo
 $ docker run --rm --name <span style="color:#0086d2">&#34;hugo&#34;</span> -p1313:1313 <span style="color:#0086d2">\
 </span><span style="color:#0086d2"></span>    -v /home/walter/blog:/src <span style="color:#0086d2">\
 </span><span style="color:#0086d2"></span>    -v /home/walter/blog/public:/public <span style="color:#0086d2">\
 </span><span style="color:#0086d2"></span>    -v /tmp/hugo-build-output:/output <span style="color:#0086d2">\
+</span><span style="color:#0086d2"></span>    -e <span style="color:#fb660a">HUGO_BASEURL</span>=<span style="color:#0086d2">&#34;http://192.168.0.199:8000&#34;</span> <span style="color:#0086d2">\
 </span><span style="color:#0086d2"></span>    -e <span style="color:#fb660a">HUGO_THEME</span>=<span style="color:#0086d2">&#34;walter&#34;</span> <span style="color:#0086d2">\
 </span><span style="color:#0086d2"></span>    -e <span style="color:#fb660a">HUGO_WATCH</span>=<span style="color:#0086d2">&#34;true&#34;</span> jojomi/hugo
+$ docker exec -it hugo hugo </code></pre></div>
+<ul>
+<li><p>发布到github</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker stop hugo
+$ docker run --rm --name <span style="color:#0086d2">&#34;hugo&#34;</span> -p1313:1313 <span style="color:#0086d2">\
+</span><span style="color:#0086d2"></span>-v /home/walter/blog:/src <span style="color:#0086d2">\
+</span><span style="color:#0086d2"></span>-v /home/walter/blog/public:/public <span style="color:#0086d2">\
+</span><span style="color:#0086d2"></span>-v /tmp/hugo-build-output:/output <span style="color:#0086d2">\
+</span><span style="color:#0086d2"></span>-e <span style="color:#fb660a">HUGO_BASEURL</span>=<span style="color:#0086d2">&#34;http://laowalter.github.io&#34;</span> <span style="color:#0086d2">\
+</span><span style="color:#0086d2"></span>-e <span style="color:#fb660a">HUGO_THEME</span>=<span style="color:#0086d2">&#34;walter&#34;</span> <span style="color:#0086d2">\
+</span><span style="color:#0086d2"></span>-e <span style="color:#fb660a">HUGO_WATCH</span>=<span style="color:#0086d2">&#34;true&#34;</span> jojomi/hugo
 $ docker exec -it hugo hugo </code></pre></div></li>
+</ul></li>
 
 <li><p>Check docker hugo version</p>
 <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker exec -it hugo hugo version</code></pre></div></li>

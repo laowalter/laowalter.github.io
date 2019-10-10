@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>iphone on Just a Memo</title>
-    <link>http://192.168.0.199:8000/tags/iphone/</link>
+    <link>http://laowalter.github.io/tags/iphone/</link>
     <description>Recent content in iphone on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 04 Nov 2018 08:53:42 +0000</lastBuildDate>
     
-	<atom:link href="http://192.168.0.199:8000/tags/iphone/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://laowalter.github.io/tags/iphone/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>iTunes</title>
-      <link>http://192.168.0.199:8000/posts/tech/itunes/</link>
+      <link>http://laowalter.github.io/posts/tech/itunes/</link>
       <pubDate>Sun, 04 Nov 2018 08:53:42 +0000</pubDate>
       
-      <guid>http://192.168.0.199:8000/posts/tech/itunes/</guid>
+      <guid>http://laowalter.github.io/posts/tech/itunes/</guid>
       <description> Change iTunes Backup directory
  Default backup directory  Move to “J:\My iPhone Backup\Backup”, Just create a softlink
 mklink /J “%APPDATA%\Apple Computer\MobileSync\Backup” “J:\My iPhone Backup\Backup”   </description>
@@ -24,10 +24,10 @@ mklink /J “%APPDATA%\Apple Computer\MobileSync\Backup” “J:\My iPhone Backu
     
     <item>
       <title>IPHONE linux backup</title>
-      <link>http://192.168.0.199:8000/posts/tech/iphone/</link>
+      <link>http://laowalter.github.io/posts/tech/iphone/</link>
       <pubDate>Sat, 17 Feb 2018 17:04:34 +0000</pubDate>
       
-      <guid>http://192.168.0.199:8000/posts/tech/iphone/</guid>
+      <guid>http://laowalter.github.io/posts/tech/iphone/</guid>
       <description>Connect to linux sudo emerge -avq app-pda/ifuse sudo emerge -avq app-pda/usbmuxdsuod usbmuxd -f -vsudo idevicepair pair Backup whole iphone idevicebackup -i backup --full backupdir Mount / umount setup /etc/fuse.conf ifuse 定义的目录就是 /media/iPhone, 这是一个固定名称目录 user_allow_other mkdir /media/iPhone make /media/iPhone chmod 777 /media/iPhone/ Mount iphone ifuse /media/iPhone --root Umount iphone 普通用户即可 fusermount</description>
     </item>
     

@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>quanta on Just a Memo</title>
-    <link>http://192.168.0.199:8000/tags/quanta/</link>
+    <link>http://laowalter.github.io/tags/quanta/</link>
     <description>Recent content in quanta on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 22 Sep 2016 10:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://192.168.0.199:8000/tags/quanta/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://laowalter.github.io/tags/quanta/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Quanta API</title>
-      <link>http://192.168.0.199:8000/posts/tech/quanta_api/</link>
+      <link>http://laowalter.github.io/posts/tech/quanta_api/</link>
       <pubDate>Thu, 22 Sep 2016 10:00:00 +0000</pubDate>
       
-      <guid>http://192.168.0.199:8000/posts/tech/quanta_api/</guid>
+      <guid>http://laowalter.github.io/posts/tech/quanta_api/</guid>
       <description>查询股票总市值和流通市值 总市值：mktcap 流通市值：nmc import tushare as ts df = ts.get_today_all() df.head() df = ts.get_today_all() code name changepercent trade open high low settlement volume turnoverratio amount per pb mktcap nmc 0 601500 通用股份 10.035 9.43 9.43 9.43 9.43 8.57 24800 0.01418</description>
     </item>
     
     <item>
       <title>VNPY安装和使用</title>
-      <link>http://192.168.0.199:8000/posts/tech/vnpy/</link>
+      <link>http://laowalter.github.io/posts/tech/vnpy/</link>
       <pubDate>Thu, 01 Sep 2016 08:32:00 +0000</pubDate>
       
-      <guid>http://192.168.0.199:8000/posts/tech/vnpy/</guid>
+      <guid>http://laowalter.github.io/posts/tech/vnpy/</guid>
       <description>安装VNPY 安装python 2 and virtualenv (1) python2 brew install python then ~/.bashrc PATH=/usr/local/bin::$PATH then 退出，在重新进入 iterm2 (2) virtualenv pip install virtualenv ### 建立virtualenvs bash mkdir .virtualenvs cd .virtualenvs virtualenv -p python vnpy export WORKON_HOME=~/.virtualenvs source ~/.virtualenvs/vnpy/bin/activate pip install virtualenvwrapper</description>
     </item>
     
     <item>
       <title>Quanta Program</title>
-      <link>http://192.168.0.199:8000/posts/futures/quanta-program/</link>
+      <link>http://laowalter.github.io/posts/futures/quanta-program/</link>
       <pubDate>Mon, 29 Feb 2016 11:13:01 +0000</pubDate>
       
-      <guid>http://192.168.0.199:8000/posts/futures/quanta-program/</guid>
+      <guid>http://laowalter.github.io/posts/futures/quanta-program/</guid>
       <description>toc: true IsOpen (Holiday) #!/usr/bin/env python &amp;quot;&amp;quot;&amp;quot; 股市日历，没费接口 &amp;quot;&amp;quot;&amp;quot; import pandas as pd import tushare as ts ts.set_token(&#39;88888888888888888&#39;) mt = ts.Master() df = mt.TradeCal(exchangeCD=&#39;XSHG&#39;, beginDate=&#39;20150928&#39;, endDate=&#39;20151010&#39;, field=&#39;calendarDate,isOpen,prevTradeDate&#39;) Understandings 1 Notes Call data_handler self.events = queue.Queue() data_handler(self.pairs, self.events, self.csv_dir) 2 debug start from mac.py : HistoricCSVPriceHandler -&amp;gt;(data_handler) =&amp;gt; backtest(`data_handler`) =&amp;gt; price.py(`PriceHandler`) =&amp;gt; _set_up_prices_dict(self) =&amp;gt; prices_dict = { &amp;#39;USDGBP&amp;#39;: {&amp;#39;ask&amp;#39;: None, &amp;#39;bid&amp;#39;: None, &amp;#39;time&amp;#39;:</description>
     </item>
     
     <item>
       <title>Quanta Resources</title>
-      <link>http://192.168.0.199:8000/posts/futures/quanta-resources/</link>
+      <link>http://laowalter.github.io/posts/futures/quanta-resources/</link>
       <pubDate>Mon, 29 Feb 2016 11:11:09 +0000</pubDate>
       
-      <guid>http://192.168.0.199:8000/posts/futures/quanta-resources/</guid>
+      <guid>http://laowalter.github.io/posts/futures/quanta-resources/</guid>
       <description>toc: true CTP 接口资料 https://www.citicsf.com/download/ctp http://www.sfit.com.cn/5_2_DocumentDown.htm 国内量化交易接口 easytrader 基于python程序 smurfyquant.com 基于同花顺、通达信的客户端 Quanta Resourses: www.reddit.com www.joinquant.com Forex Trading Demo Project Forex Sign in repo in github List Forex Trading Diary #1 - Automated Forex Trading with the OANDA API Forex</description>
     </item>
     

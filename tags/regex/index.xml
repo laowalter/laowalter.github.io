@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>regex on Just a Memo</title>
-    <link>http://192.168.0.199:8000/tags/regex/</link>
+    <link>http://laowalter.github.io/tags/regex/</link>
     <description>Recent content in regex on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 21 Aug 2019 07:49:35 +0800</lastBuildDate>
     
-	<atom:link href="http://192.168.0.199:8000/tags/regex/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://laowalter.github.io/tags/regex/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Sed</title>
-      <link>http://192.168.0.199:8000/posts/tech/sed/</link>
+      <link>http://laowalter.github.io/posts/tech/sed/</link>
       <pubDate>Wed, 21 Aug 2019 07:49:35 +0800</pubDate>
       
-      <guid>http://192.168.0.199:8000/posts/tech/sed/</guid>
+      <guid>http://laowalter.github.io/posts/tech/sed/</guid>
       <description> Sed Reference
  Directory Recursively
 $ find ./ -type f -exec sed -i -e &amp;#39;s/:1313//g&amp;#39; {} \; $ find ./ -type f -exec sed -i -e &amp;#39;s/192\.168\.0\.199/laowalter.github.io/g&amp;#39; {} \; Search and Replace
@@ -26,19 +26,19 @@ $ echo apple1 apple3 apple1 apple2 botemo1 | sed &amp;#39;/apple./ { s/apple1/ap
     
     <item>
       <title>Go Regex</title>
-      <link>http://192.168.0.199:8000/posts/tech/goregex/</link>
+      <link>http://laowalter.github.io/posts/tech/goregex/</link>
       <pubDate>Fri, 28 Jun 2019 16:16:18 +0000</pubDate>
       
-      <guid>http://192.168.0.199:8000/posts/tech/goregex/</guid>
+      <guid>http://laowalter.github.io/posts/tech/goregex/</guid>
       <description>Golang中的正则表达式(链接) 如下代码使用golang的正则表达式regexp：去除HTML，CSS，SCRIPT代码，仅保留页面文字 1</description>
     </item>
     
     <item>
       <title>goQuery</title>
-      <link>http://192.168.0.199:8000/posts/tech/goquery/</link>
+      <link>http://laowalter.github.io/posts/tech/goquery/</link>
       <pubDate>Fri, 28 Jun 2019 09:36:52 +0000</pubDate>
       
-      <guid>http://192.168.0.199:8000/posts/tech/goquery/</guid>
+      <guid>http://laowalter.github.io/posts/tech/goquery/</guid>
       <description>from https://www.51hint.com/posts/goquery/ 最近研究Go爬虫相关的知识，使用到goquery这个库比较多，尤其是对爬取到的HTML进行选择和查找匹配的内容时，goquery的选择器</description>
     </item>
     

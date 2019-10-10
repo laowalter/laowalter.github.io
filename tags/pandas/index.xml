@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>pandas on Just a Memo</title>
-    <link>http://192.168.0.199:8000/tags/pandas/</link>
+    <link>http://laowalter.github.io/tags/pandas/</link>
     <description>Recent content in pandas on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 11 Feb 2018 19:45:43 +0000</lastBuildDate>
     
-	<atom:link href="http://192.168.0.199:8000/tags/pandas/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://laowalter.github.io/tags/pandas/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Pandas CheatSheet</title>
-      <link>http://192.168.0.199:8000/posts/tech/pandas_cheatsheet/</link>
+      <link>http://laowalter.github.io/posts/tech/pandas_cheatsheet/</link>
       <pubDate>Sun, 11 Feb 2018 19:45:43 +0000</pubDate>
       
-      <guid>http://192.168.0.199:8000/posts/tech/pandas_cheatsheet/</guid>
+      <guid>http://laowalter.github.io/posts/tech/pandas_cheatsheet/</guid>
       <description>** df : DataFrame ** ** s : Series ** 导入数据 pd.read_csv(static) # 读入csv文件 pd.read_table(static) # From a delimited text file (like TSV) pd.read_excel(static) pd.read_sql(query, connection_object) # 从SQl表或者数据库读入 pd.read_json(json_string) # Reads from a JSON formatted string, URL or file. pd.read_html(url) # Parses an html URL, string or file and extracts</description>
     </item>
     
     <item>
       <title>Quanta Program</title>
-      <link>http://192.168.0.199:8000/posts/futures/quanta-program/</link>
+      <link>http://laowalter.github.io/posts/futures/quanta-program/</link>
       <pubDate>Mon, 29 Feb 2016 11:13:01 +0000</pubDate>
       
-      <guid>http://192.168.0.199:8000/posts/futures/quanta-program/</guid>
+      <guid>http://laowalter.github.io/posts/futures/quanta-program/</guid>
       <description>toc: true IsOpen (Holiday) #!/usr/bin/env python &amp;quot;&amp;quot;&amp;quot; 股市日历，没费接口 &amp;quot;&amp;quot;&amp;quot; import pandas as pd import tushare as ts ts.set_token(&#39;88888888888888888&#39;) mt = ts.Master() df = mt.TradeCal(exchangeCD=&#39;XSHG&#39;, beginDate=&#39;20150928&#39;, endDate=&#39;20151010&#39;, field=&#39;calendarDate,isOpen,prevTradeDate&#39;) Understandings 1 Notes Call data_handler self.events = queue.Queue() data_handler(self.pairs, self.events, self.csv_dir) 2 debug start from mac.py : HistoricCSVPriceHandler -&amp;gt;(data_handler) =&amp;gt; backtest(`data_handler`) =&amp;gt; price.py(`PriceHandler`) =&amp;gt; _set_up_prices_dict(self) =&amp;gt; prices_dict = { &amp;#39;USDGBP&amp;#39;: {&amp;#39;ask&amp;#39;: None, &amp;#39;bid&amp;#39;: None, &amp;#39;time&amp;#39;:</description>
     </item>
     

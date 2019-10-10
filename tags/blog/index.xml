@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>blog on Just a Memo</title>
-    <link>http://192.168.0.199:8000/tags/blog/</link>
+    <link>http://laowalter.github.io/tags/blog/</link>
     <description>Recent content in blog on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 18 Aug 2019 10:30:29 +0000</lastBuildDate>
     
-	<atom:link href="http://192.168.0.199:8000/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://laowalter.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo Cheatsheet</title>
-      <link>http://192.168.0.199:8000/posts/tech/hugo_cheatsheet/</link>
+      <link>http://laowalter.github.io/posts/tech/hugo_cheatsheet/</link>
       <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
       
-      <guid>http://192.168.0.199:8000/posts/tech/hugo_cheatsheet/</guid>
+      <guid>http://laowalter.github.io/posts/tech/hugo_cheatsheet/</guid>
       <description>MMark (https://github.com/mmarkdown/mmark) Start mmark In Front Matter add markup = &amp;ldquo;mmark&amp;rdquo; then mmark started. MMark 语法说明 (https://mmark.miek.nl/post/syntax/) By now, MMark conflict with {{/* */}} MMark examples table, #ages means table id=ages Name | Age --------|-----: Bob | 27 Alice | 23 Table: This is the table caption. {#ages} code // test.go data Figure: A sample function. 块引用 {title=&amp;quot;The blockquote&amp;quot; #myid} &amp;gt; A blockquote with a</description>
     </item>
     
     <item>
       <title>Hugo Theme Development</title>
-      <link>http://192.168.0.199:8000/posts/tech/hugo_theme_develop/</link>
+      <link>http://laowalter.github.io/posts/tech/hugo_theme_develop/</link>
       <pubDate>Thu, 08 Aug 2019 23:29:12 +0800</pubDate>
       
-      <guid>http://192.168.0.199:8000/posts/tech/hugo_theme_develop/</guid>
+      <guid>http://laowalter.github.io/posts/tech/hugo_theme_develop/</guid>
       <description>Youtube Tutorial https://www.youtube.com/watch?v=qtIqKaDlqXo&amp;amp;list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3 有特别帮助的网址 关于整体结构和简单的theme设置 https://www.zeolearn.com/magazine/develop-a-theme-for-hugo 中文网站 https://bwaycer.github.io/hugo_tutorial.hugo/overview/introduction/ 语法高亮的支持 Paginator用法 使用思维导图 Hexo 脑图 Insert javascript into hugo by partial Create custom Shortcodes</description>
     </item>
     
     <item>
       <title>jekyll</title>
-      <link>http://192.168.0.199:8000/posts/tech/jekyll/</link>
+      <link>http://laowalter.github.io/posts/tech/jekyll/</link>
       <pubDate>Sat, 22 Sep 2018 11:53:35 +0000</pubDate>
       
-      <guid>http://192.168.0.199:8000/posts/tech/jekyll/</guid>
+      <guid>http://laowalter.github.io/posts/tech/jekyll/</guid>
       <description> Jekyll Install $ sudo emerge -av dev-ruby/rubygems $ gem install bundler jekyll $ echo &amp;#34;export PATH=$PATH:~/.gem/ruby/2.3.0/bin&amp;#34; &amp;gt; ~/.bashrc &amp;#34; $source ~/.bashrc $jekyll new blog $cd blog $bundle install ~/blog/ $bundle exec jekyll serve</description>
     </item>
     
     <item>
       <title>Pelican</title>
-      <link>http://192.168.0.199:8000/posts/tech/pelican/</link>
+      <link>http://laowalter.github.io/posts/tech/pelican/</link>
       <pubDate>Sat, 14 May 2016 19:13:49 +0000</pubDate>
       
-      <guid>http://192.168.0.199:8000/posts/tech/pelican/</guid>
+      <guid>http://laowalter.github.io/posts/tech/pelican/</guid>
       <description>Github 阅读文档注意： 使用http://username.github.io/ 作为blog是指 User and Organization Pages sites 使用http://username.git</description>
     </item>
     
