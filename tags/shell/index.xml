@@ -17,7 +17,7 @@
       <pubDate>Fri, 01 Dec 2017 23:30:08 +0000</pubDate>
       
       <guid>/posts/tech/bash/</guid>
-      <description>Linux .bashrc if [[ $- != *i* ]] ; then # Shell is non-interactive. Be done now! return fi # Locale export TERM=xterm-256color export LC_ALL=zh_CN.UTF-8 export LANG=zh_CN.UTF-8 # Perlbrew export PERLBREW_ROOT=/opt/perl5 PATH=$PATH:~/.bin:/opt/perl5/bin # Ssh login need password phrase once if [ ! -S ~/.ssh/ssh_auth_sock ]; then eval `ssh-agent` ln -sf &amp;#34;$SSH_AUTH_SOCK&amp;#34; ~/.ssh/ssh_auth_sock fi export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock ssh-add -l &amp;gt; /dev/null || ssh-add Mac OS .bashrc ######### #Alias # alias ls=&amp;#34;ls -G&amp;#34; alias rm=&amp;#39;rm -i&amp;#39; alias mv=&amp;#39;mv -i&amp;#39; alias cp=&amp;#39;cp -i&amp;#39; alias grep=&amp;#39;grep --color=auto&amp;#39; alias vi=&amp;#39;/usr/local/bin/vim&amp;#39; alias vim=&amp;#39;/usr/local/bin/vim&amp;#39; #enviroment export LC_ALL=zh_CN.</description>
+      <description>Bash设置 Linux .bashrc if [[ $- != *i* ]] ; then # Shell is non-interactive. Be done now! return fi # Locale export TERM=xterm-256color export LC_ALL=zh_CN.UTF-8 export LANG=zh_CN.UTF-8 # Perlbrew export PERLBREW_ROOT=/opt/perl5 PATH=$PATH:~/.bin:/opt/perl5/bin # Ssh login need password phrase once if [ ! -S ~/.ssh/ssh_auth_sock ]; then eval `ssh-agent` ln -sf &amp;#34;$SSH_AUTH_SOCK&amp;#34; ~/.ssh/ssh_auth_sock fi export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock ssh-add -l &amp;gt; /dev/null || ssh-add Mac OS .bashrc</description>
     </item>
     
     <item>

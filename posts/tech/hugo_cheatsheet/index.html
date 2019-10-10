@@ -3,13 +3,15 @@
     
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;  user-scalable=0;" >
+
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
 
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.8f39b5d006aa293f9163a9b31cac251566f9f9c39851544ff045aec0efe492d0.css">
+    <link rel="stylesheet" href="/sass/main.min.91fe23d298c61475f6a6ebc821ec21692e755f60b6ae426b7b3462333eefce36.css">
 
 </head>
 
@@ -25,7 +27,7 @@
     
 </head>
 
-    <body>
+    <body width="device-width">
        <div class="homepage-header">
           <div class="homepage-left">
             <h1>Hugo Cheatsheet</h1> 
@@ -66,7 +68,8 @@
 <ul>
 <li><a href="#pygmentscodefences-format">PygmentsCodeFences format</a></li>
 <li><a href="#hugo-format">Hugo format</a></li>
-<li><a href="#mindmap">mindmap</a></li>
+<li><a href="#mindmap">Mindmap</a></li>
+<li><a href="#important">Important</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -128,15 +131,14 @@ Table: This is the table caption. {#ages}</code></pre></div></li>
 
 <li><p>add &ldquo;<strong>section_number = false</strong>&rdquo; to front matter if Dont Not want to add section_number in the content.</p>
 
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">      +++
-      title = <span style="color:#0086d2">&#34;Hugo Cheatsheet&#34;</span>
-      date = 2019-08-18T10:30:29Z
-      description = <span style="color:#0086d2">&#34;&#34;</span>
-      tags = [<span style="color:#0086d2">&#34;hugo&#34;</span>, <span style="color:#0086d2">&#34;cheatsheet&#34;</span>, <span style="color:#0086d2">&#34;docker&#34;</span>, <span style="color:#0086d2">&#34;blog&#34;</span>]
-      categories = [<span style="color:#0086d2">&#34;tech&#34;</span>]
-<span style="display:block;width:100%;background-color:#282828">      section_number = <span style="color:#fb660a;font-weight:bold">false</span>
-</span>      +++
-    </code></pre></div></li>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">+++
+title = <span style="color:#0086d2">&#34;Hugo Cheatsheet&#34;</span>
+date = 2019-08-18T10:30:29Z
+description = <span style="color:#0086d2">&#34;&#34;</span>
+tags = [<span style="color:#0086d2">&#34;hugo&#34;</span>, <span style="color:#0086d2">&#34;cheatsheet&#34;</span>, <span style="color:#0086d2">&#34;docker&#34;</span>, <span style="color:#0086d2">&#34;blog&#34;</span>]
+categories = [<span style="color:#0086d2">&#34;tech&#34;</span>]
+<span style="display:block;width:100%;background-color:#282828">section_number = <span style="color:#fb660a;font-weight:bold">false</span>
+</span>+++</code></pre></div></li>
 </ol>
 
 <h3 id="syntax-highlight">Syntax Highlight</h3>
@@ -146,9 +148,11 @@ Table: This is the table caption. {#ages}</code></pre></div></li>
 
 <li><p>General format</p>
 
-<p>{{&lt; highlight go &ldquo;linenos=table,hl_lines=8 15-17,linenostart=199&rdquo; &gt;}}
- &hellip; code
-{{&lt; /highlight &gt;}}</p></li>
+<p>{{&lt; highlight go &ldquo;linenos=inline,hl_lines=8 15-17,linenostart=199&rdquo; &gt;}}</p>
+
+<p>&hellip; code</p>
+
+<p>{{&lt; /highlight &gt;}}</p></li>
 </ul>
 
 <h3 id="file-format">file format</h3>
@@ -168,14 +172,14 @@ something g&lt;br&gt;
 
 <pre><code>{{% file &quot;layout/partial/single-head.html&quot; %}}
 {{% /file %}}
-{{&lt; highlight html &quot;linenos=table, linenostart=1, hl_lines=11&quot; &gt;}}
+{{&lt; highlight html &quot;linenos=inline, linenostart=1, hl_lines=11&quot; &gt;}}
 &lt;head&gt;
    &lt;link href=&quot;{{.Site.BaseURL}}css/section_number/section_number.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
 &lt;/head&gt;
 {{&lt; /highlight &gt;}}
 </code></pre>
 
-<h4 id="mindmap">mindmap</h4>
+<h4 id="mindmap">Mindmap</h4>
 
 <pre><code>{{% mindmap mindname %}}
 - root
@@ -183,6 +187,20 @@ something g&lt;br&gt;
     - c2
 {{% /mindmap %}}
 </code></pre>
+
+<h4 id="important">Important</h4>
+
+<ul>
+<li>如果参数为<code>1</code>则表示内容被markdown引擎解析；</li>
+
+<li><p>如果参数为<code>0</code>则表示内容不被markdown引擎解析，即当作非markdown的普通文本处理。</p>
+
+<p>{{% important 1 %}}</p>
+
+<p>Content</p>
+
+<p>{{% /important %}}</p></li>
+</ul>
 
 </article>
 

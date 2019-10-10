@@ -17,7 +17,7 @@
       <pubDate>Thu, 22 Aug 2019 12:38:01 +0800</pubDate>
       
       <guid>/posts/tech/hugo_install/</guid>
-      <description>Find hugo ebuild Click Here to Search HUGO in Gentoo Overlays Here is what I found: https://gohugo.io hugo-0.57.2 ~amd64 ~x86 debug pie +sass Overlay: NuLL3rr0r (outside) Install hugo ebuild in to local portage &amp;ldquo;/usr/local/portage/www-apps/hugo&amp;rdquo; cp hugo ebuid $ cp hugo-0.57.2 /usr/local/portage/www-apps/hugo modify hego-0.57.2.ebuild Replace line 202 with line 203 filename: /usr/local/portage/www-apps/hugo/hugo-0.57.2.ebuild 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19</description>
+      <description>Docker docker pull jojomi/hugo Start hugo local server Start once $ docker run --rm --name &amp;#34;hugo&amp;#34; -p1313:1313 \ -v /home/walter/blog:/src \ -v /home/walter/blog/public:/public \ -v /tmp/hugo-build-output:/output \ -e HUGO_BASEURL=&amp;#34;192.168.0.199&amp;#34; \ -e HUGO_THEME=&amp;#34;walter&amp;#34; \ -e HUGO_WATCH=&amp;#34;true&amp;#34; jojomi/hugo Auto start unless stopped $ docker run --restart=unless-stopped --name &amp;#34;hugo&amp;#34; -p1313:1313 \ -v /home/walter/blog:/src \ -v /home/walter/blog/public:/public \ -v /tmp/hugo-build-output:/output \ -e HUGO_BASEURL=&amp;#34;192.168.0.199&amp;#34; \ -e HUGO_THEME=&amp;#34;walter&amp;#34; \ -e HUGO_WATCH=&amp;#34;true&amp;#34; jojomi/hugo New a post $</description>
     </item>
     
     <item>

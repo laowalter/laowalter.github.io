@@ -3,13 +3,15 @@
     
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;  user-scalable=0;" >
+
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
 
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.8f39b5d006aa293f9163a9b31cac251566f9f9c39851544ff045aec0efe492d0.css">
+    <link rel="stylesheet" href="/sass/main.min.91fe23d298c61475f6a6ebc821ec21692e755f60b6ae426b7b3462333eefce36.css">
 
 </head>
 
@@ -25,7 +27,7 @@
     
 </head>
 
-    <body>
+    <body width="device-width">
        <div class="homepage-header">
           <div class="homepage-left">
             <h1>Nginx</h1> 
@@ -64,9 +66,7 @@
 <h2 id="nginx-on-gentoo">Nginx on Gentoo</h2>
 
 <div class="file" >
-    
-    <div class="filename" >
-        <p style="padding:0; margin:0;">filename: <b>/etc/nginx/nginx.conf</b></p>
+    <div class="filename"> filename: <b>/etc/nginx/nginx.conf</b></div>
         <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#fb660a;font-weight:bold">server</span> {
     <span style="color:#fb660a;font-weight:bold">listen</span> 192.168.0.202:<span style="color:#0086f7;font-weight:bold">80</span>;
     <span style="color:#fb660a;font-weight:bold">server_name</span> <span style="color:#0086d2">gentoo</span>;
@@ -108,7 +108,6 @@
             <span style="color:#fb660a;font-weight:bold">proxy_buffering</span> <span style="color:#0086d2">off</span>;
         }
 }</code></pre></div>
-    </div>
 </div>
 
 <h2 id="nginx-on-mac">Nginx on MAC</h2>
@@ -119,9 +118,7 @@ sudo nginx</code></pre></div>
 <h3 id="configuration">Configuration</h3>
 
 <div class="file" >
-    
-    <div class="filename" >
-        <p style="padding:0; margin:0;">filename: <b>/usr/local/etc/nginx/nginx.conf</b></p>
+    <div class="filename"> filename: <b>/usr/local/etc/nginx/nginx.conf</b></div>
         <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">server {
          listen       <span style="color:#0086f7;font-weight:bold">8000</span>;
          server_name  _;
@@ -133,7 +130,6 @@ sudo nginx</code></pre></div>
         }
 
 }</code></pre></div>
-    </div>
 </div>
 
 <h3 id="unblock-firewall-for-nginx">Unblock firewall for nginx</h3>

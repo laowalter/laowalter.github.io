@@ -3,13 +3,15 @@
     
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;  user-scalable=0;" >
+
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
 
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.8f39b5d006aa293f9163a9b31cac251566f9f9c39851544ff045aec0efe492d0.css">
+    <link rel="stylesheet" href="/sass/main.min.91fe23d298c61475f6a6ebc821ec21692e755f60b6ae426b7b3462333eefce36.css">
 
 </head>
 
@@ -25,7 +27,7 @@
     
 </head>
 
-    <body>
+    <body width="device-width">
        <div class="homepage-header">
           <div class="homepage-left">
             <h1>Encrypt Filesystem / 加密文件系统</h1> 
@@ -111,29 +113,23 @@
 <h3 id="建立两个batch文件">建立两个batch文件</h3>
 
 <div class="file" >
-    
-    <div class="filename" >
-        <p style="padding:0; margin:0;">filename: <b>~/.bin/loadEncryptFilesystem.sh</b></p>
+    <div class="filename"> filename: <b>~/.bin/loadEncryptFilesystem.sh</b></div>
         <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#080;background-color:#0f140f;font-style:italic">#!/bin/sh</span>
  
  sudo losetup /dev/loop0 /data/encryptimg/secret.img
  sudo cryptsetup create encryptfs /dev/loop0
  sudo mount /dev/mapper/encryptfs /home/walter/encryptfs</code></pre></div>
-    </div>
 </div>
 
 <p><br></p>
 
 <div class="file" >
-    
-    <div class="filename" >
-        <p style="padding:0; margin:0;">filename: <b>~/.bin/unloadEncryptFilesystem.sh</b></p>
+    <div class="filename"> filename: <b>~/.bin/unloadEncryptFilesystem.sh</b></div>
         <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#!/bin/bash
 </span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic"></span>
 sudo umount /home/walter/encryptfs
 sudo cryptsetup remove encryptfs
 sudo losetup -d /dev/loop0</code></pre></div>
-    </div>
 </div>
 
 <h3 id="权限设置">权限设置</h3>
@@ -146,12 +142,9 @@ sudo losetup -d /dev/loop0</code></pre></div>
 <h3 id="etc-udev-rules-d-99-myencryptfs-rules">/etc/udev/rules.d/99-myencryptfs.rules</h3>
 
 <div class="file" >
-    
-    <div class="filename" >
-        <p style="padding:0; margin:0;">filename: <b>/etc/udev/rules.d/99-myencryptfs.rules</b></p>
+    <div class="filename"> filename: <b>/etc/udev/rules.d/99-myencryptfs.rules</b></div>
         <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fb660a">KERNEL</span>==<span style="color:#0086d2">&#34;loop0&#34;</span> ENV{ID_FS_UUID}==<span style="color:#0086d2">&#34;c086c30c-bea0-452f-8616-0afa9848b3&#34;</span> <span style="color:#fb660a">MODE</span>=<span style="color:#0086d2">&#34;0600&#34;</span> <span style="color:#fb660a">OWNER</span>=<span style="color:#0086d2">&#34;user&#34;</span> <span style="color:#fb660a">GROUP</span>=<span style="color:#0086d2">&#34;group&#34;</span>
 <span style="color:#080;background-color:#0f140f;font-style:italic">#KERNEL==&#34;loop5&#34; MODE=&#34;0600&#34; OWNER=&#34;MyUser&#34; GROUP=&#34;MyGroupUser&#34; ENV{UDISKS_IGNORE}=&#34;1&#34; ENV{UDISKS_PRESENTATION_HIDE}=&#34;1&#34; ENV{ID_DRIVE_EJECTABLE}=&#34;0&#34;</span></code></pre></div>
-    </div>
 </div>
 
 </article>

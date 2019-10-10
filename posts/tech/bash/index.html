@@ -3,13 +3,15 @@
     
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;  user-scalable=0;" >
+
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
 
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.8f39b5d006aa293f9163a9b31cac251566f9f9c39851544ff045aec0efe492d0.css">
+    <link rel="stylesheet" href="/sass/main.min.91fe23d298c61475f6a6ebc821ec21692e755f60b6ae426b7b3462333eefce36.css">
 
 </head>
 
@@ -25,7 +27,7 @@
     
 </head>
 
-    <body>
+    <body width="device-width">
        <div class="homepage-header">
           <div class="homepage-left">
             <h1>Bash</h1> 
@@ -43,18 +45,32 @@
 
     <hr><br><nav id="TableOfContents">
 <ul>
-<li>
+<li><a href="#bash设置">Bash设置</a>
 <ul>
 <li><a href="#linux-bashrc">Linux .bashrc</a></li>
 <li><a href="#mac-os-bashrc">Mac OS  .bashrc</a></li>
+</ul></li>
+<li><a href="#运行脚本举例">运行脚本举例</a>
+<ul>
 <li><a href="#run-python-script">Run python script</a></li>
+</ul></li>
+<li><a href="#bash使用技巧之移动光标">Bash使用技巧之移动光标</a>
+<ul>
+<li><a href="#basic-moves">Basic moves</a></li>
+<li><a href="#moving-faster">Moving faster</a></li>
+<li><a href="#cut-and-paste-kill-and-yank-for-old-schoolers">Cut and paste (‘Kill and yank’ for old schoolers)</a></li>
+<li><a href="#search-the-command-history">Search the command history</a></li>
+<li><a href="#need-more">Need more?</a></li>
 </ul></li>
 </ul></li>
 </ul>
 </nav><article>
     
 
+<h2 id="bash设置">Bash设置</h2>
+
 <h3 id="linux-bashrc">Linux .bashrc</h3>
+
 <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fb660a;font-weight:bold">if</span> [[ <span style="color:#fb660a">$-</span> != *i* ]] ; <span style="color:#fb660a;font-weight:bold">then</span>
     <span style="color:#080;background-color:#0f140f;font-style:italic"># Shell is non-interactive.  Be done now!</span>
     <span style="color:#fb660a;font-weight:bold">return</span>
@@ -76,8 +92,9 @@ export <span style="color:#fb660a">PERLBREW_ROOT</span>=/opt/perl5
 <span style="color:#fb660a;font-weight:bold">fi</span>
 export <span style="color:#fb660a">SSH_AUTH_SOCK</span>=~/.ssh/ssh_auth_sock
 ssh-add -l &gt; /dev/null || ssh-add</code></pre></div>
+
 <h3 id="mac-os-bashrc">Mac OS  .bashrc</h3>
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#080;background-color:#0f140f;font-style:italic">#########</span>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#080;background-color:#0f140f;font-style:italic">######</span>
 <span style="color:#080;background-color:#0f140f;font-style:italic">#Alias</span>
 #                                                                    
 alias <span style="color:#fb660a">ls</span>=<span style="color:#0086d2">&#34;ls -G&#34;</span>
@@ -99,7 +116,7 @@ bind <span style="color:#0086d2">&#39;&#34;\e[6~&#34;:history-search-forward&#39
 
 <span style="color:#fb660a">PATH</span>=~/.bin:/usr/local/bin:/usr/local/mysql/bin:<span style="color:#fb660a">$PATH</span>
 
-<span style="color:#080;background-color:#0f140f;font-style:italic">###########</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">########</span>
 <span style="color:#080;background-color:#0f140f;font-style:italic">#Prompt</span>
 #
 
@@ -142,6 +159,8 @@ set_prompt () {
 <span style="color:#fb660a;font-weight:bold">fi</span>
 export <span style="color:#fb660a">SSH_AUTH_SOCK</span>=~/.ssh/ssh_auth_sock
 ssh-add -l &gt; /dev/null || ssh-add</code></pre></div>
+<h2 id="运行脚本举例">运行脚本举例</h2>
+
 <h3 id="run-python-script">Run python script</h3>
 
 <p>gen_graph.sh</p>
@@ -165,6 +184,59 @@ cd ~/chan/k
 ./compare_stocks.py -f 3all_index  -n <span style="color:#0086f7;font-weight:bold">25</span> -k <span style="color:#0086f7;font-weight:bold">450</span>
 
 ./compare_stocks.py -f all_index -n <span style="color:#0086f7;font-weight:bold">25</span> -k <span style="color:#0086f7;font-weight:bold">450</span></code></pre></div>
+<h2 id="bash使用技巧之移动光标">Bash使用技巧之移动光标</h2>
+
+<h3 id="basic-moves">Basic moves</h3>
+
+<ul>
+<li>Move back one character. Ctrl + b</li>
+<li>Move forward one character. Ctrl + f</li>
+<li>Delete current character. Ctrl + d</li>
+<li>Delete previous character. Backspace</li>
+<li>Undo. Ctrl + -</li>
+</ul>
+
+<h3 id="moving-faster">Moving faster</h3>
+
+<ul>
+<li>Move to the start of line. Ctrl + a</li>
+<li>Move to the end of line. Ctrl + e</li>
+<li>Move forward a word. Meta + f (a word contains alphabets and digits, no symbols)</li>
+<li>Move backward a word. Meta + b</li>
+<li>Clear the screen. Ctrl + l</li>
+</ul>
+
+<p>Meta is your Alt key, normally. For Mac OSX user, you need to enable it yourself. Open Terminal &gt; Preferences &gt; Settings &gt; Keyboard, and enable Use option as meta key.</p>
+
+<h3 id="cut-and-paste-kill-and-yank-for-old-schoolers">Cut and paste (‘Kill and yank’ for old schoolers)</h3>
+
+<ul>
+<li>Cut from cursor to the end of line. Ctrl + k</li>
+<li>Cut from cursor to the end of word. Meta + d</li>
+<li>Cut from cursor to the start of word. Meta + Backspace</li>
+<li>Cut from cursor to previous whitespace. Ctrl + w</li>
+<li>Paste the last cut text. Ctrl + y</li>
+<li>Loop through and paste previously cut text. Meta + y (use it after Ctrl + y)</li>
+<li>Loop through and paste the last argument of previous commands. Meta + .</li>
+</ul>
+
+<h3 id="search-the-command-history">Search the command history</h3>
+
+<ul>
+<li>Search as you type. Ctrl + r and type the search term; Repeat Ctrl + r to loop through results.</li>
+<li>Search the last remembered search term. Ctrl + r twice.</li>
+<li>End the search at current history entry. Ctrl + j</li>
+<li>Cancel the search and restore original line. Ctrl + g</li>
+</ul>
+
+<h3 id="need-more">Need more?</h3>
+
+<p>A comprehensive <a href="http://www.catonmat.net/blog/bash-emacs-editing-mode-cheat-sheet/">bash editing mode cheatsheet</a> by Peteris Krumin (catonmat.net).</p>
+
+<p>Vim users! Do you know you can switch to Vi-style editing mode? Here: vi-style cheatsheet.</p>
+
+<p>Bash command line editing is actually handled by GNU Readline Library. So just dive into Readline manual for everything else.</p>
+
 </article>
 
     <hr><br>

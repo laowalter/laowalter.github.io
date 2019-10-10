@@ -17,8 +17,7 @@
       <pubDate>Fri, 22 Mar 2019 13:00:42 +0000</pubDate>
       
       <guid>/posts/tech/ipv6/</guid>
-      <description> Disable ipv6 on Gentoo filename: /etc/sysctl.conf
-net.ipv6.conf.eth0.disable_ipv6=1   </description>
+      <description> Disable ipv6 on Gentoo filename: /etc/sysctl.conf net.ipv6.conf.eth0.disable_ipv6=1  </description>
     </item>
     
     <item>

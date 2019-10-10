@@ -19,11 +19,9 @@
       <guid>/posts/tech/databases/</guid>
       <description>Mongodb Enter mongo shell mongo 192.168.0.25 Start mongodb  Upgrade
 brew upgrade mongodb brew info mongdb ln -s /usr/local/Cellar/mongodb/3.2.4/bin/* /usr/local/bin/ config: /usr/local/etc/mongod.conf, Dont forget touh /usr/local/var/log/mongodb/mongo.log
-  filename:  /usr/local/etc/mongod.conf
-systemLog: destination: file path: /usr/local/var/log/mongodb/mongo.log logAppend: true storage: dbPath: /Volumes/Home/Walter/mongodb net: bindIp: 192.168.0.99    manual start
+  filename:  /usr/local/etc/mongod.conf systemLog: destination: file path: /usr/local/var/log/mongodb/mongo.log logAppend: true storage: dbPath: /Volumes/Home/Walter/mongodb net: bindIp: 192.168.0.99   manual start
 mongod --config /usr/local/etc/mongod.conf Mac autostart
- /Library/LaunchDaemons/org.mongo.mongod.plist   filename: /Library/LaunchDaemons/org.mongo.mongod.plist
-&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE plist PUBLIC &amp;#34;-//Apple//DTD PLIST 1.0//EN&amp;#34; &amp;#34;http://www.</description>
+ /Library/LaunchDaemons/org.mongo.mongod.plist   filename: /Library/LaunchDaemons/org.mongo.mongod.plist &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE plist PUBLIC &amp;#34;-//Apple//DTD PLIST 1.0//EN&amp;#34; &amp;#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&amp;#34;&amp;gt; &amp;lt;plist version=&amp;#34;1.</description>
     </item>
     
     <item>
