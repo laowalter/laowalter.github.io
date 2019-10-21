@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ebuild on Just a Memo</title>
-    <link>http://laowalter.github.io/tags/ebuild/</link>
+    <link>https://laowalter.github.io/tags/ebuild/</link>
     <description>Recent content in ebuild on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 22 Aug 2019 12:38:01 +0800</lastBuildDate>
     
-	<atom:link href="http://laowalter.github.io/tags/ebuild/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://laowalter.github.io/tags/ebuild/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo Install In Gentoo</title>
-      <link>http://laowalter.github.io/posts/tech/hugo_install/</link>
+      <link>https://laowalter.github.io/posts/tech/hugo_install/</link>
       <pubDate>Thu, 22 Aug 2019 12:38:01 +0800</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/hugo_install/</guid>
+      <guid>https://laowalter.github.io/posts/tech/hugo_install/</guid>
       <description>Docker docker pull alup0/hugo Start hugo local server Start once $ docker run --rm --name &amp;#34;hugo&amp;#34; -p1313:1313 \ -v /home/walter/blog:/src \ -v /home/walter/blog/public:/public \ -v /tmp/hugo-build-output:/output \ -e HUGO_BASEURL=&amp;#34;192.168.0.199&amp;#34; \ -e HUGO_THEME=&amp;#34;walter&amp;#34; \ -e HUGO_WATCH=&amp;#34;true&amp;#34; alup0/hugo Auto start unless stopped $ docker run --restart=unless-stopped --name &amp;#34;hugo&amp;#34; -p1313:1313 \ -v /home/walter/blog:/src \ -v /home/walter/blog/public:/public \ -v /tmp/hugo-build-output:/output \ -e HUGO_BASEURL=&amp;#34;192.168.0.199&amp;#34; \ -e HUGO_THEME=&amp;#34;walter&amp;#34; \ -e HUGO_DRAFT=&amp;#34;true&amp;#34; \ -e HUGO_WATCH=&amp;#34;true&amp;#34; alup0/hugo New</description>
     </item>
     
     <item>
       <title>Ebuild</title>
-      <link>http://laowalter.github.io/posts/tech/ebuild/</link>
+      <link>https://laowalter.github.io/posts/tech/ebuild/</link>
       <pubDate>Thu, 28 Mar 2019 17:51:15 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/ebuild/</guid>
+      <guid>https://laowalter.github.io/posts/tech/ebuild/</guid>
       <description>一个简单例子 net-dns/dnsmasq-2.80是官方的，但是不具备regex支持功能，https://github.com/laowa</description>
     </item>
     

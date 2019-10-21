@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Eco on Just a Memo</title>
-    <link>http://laowalter.github.io/categories/eco/</link>
+    <link>https://laowalter.github.io/categories/eco/</link>
     <description>Recent content in Eco on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 16 Oct 2018 08:19:00 +0000</lastBuildDate>
     
-	<atom:link href="http://laowalter.github.io/categories/eco/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://laowalter.github.io/categories/eco/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Economic Data</title>
-      <link>http://laowalter.github.io/posts/eco/economic/</link>
+      <link>https://laowalter.github.io/posts/eco/economic/</link>
       <pubDate>Tue, 16 Oct 2018 08:19:00 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/eco/economic/</guid>
+      <guid>https://laowalter.github.io/posts/eco/economic/</guid>
       <description>世界经济数据 中国经济数据 中国外汇储备 香港外汇储备</description>
     </item>
     

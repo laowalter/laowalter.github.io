@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>webcrawler on Just a Memo</title>
-    <link>http://laowalter.github.io/tags/webcrawler/</link>
+    <link>https://laowalter.github.io/tags/webcrawler/</link>
     <description>Recent content in webcrawler on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 28 Jun 2019 09:36:52 +0000</lastBuildDate>
     
-	<atom:link href="http://laowalter.github.io/tags/webcrawler/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://laowalter.github.io/tags/webcrawler/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>goQuery</title>
-      <link>http://laowalter.github.io/posts/tech/goquery/</link>
+      <link>https://laowalter.github.io/posts/tech/goquery/</link>
       <pubDate>Fri, 28 Jun 2019 09:36:52 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/goquery/</guid>
+      <guid>https://laowalter.github.io/posts/tech/goquery/</guid>
       <description>from https://www.51hint.com/posts/goquery/ 最近研究Go爬虫相关的知识，使用到goquery这个库比较多，尤其是对爬取到的HTML进行选择和查找匹配的内容时，goquery的选择器</description>
     </item>
     
     <item>
       <title>Golang Webcrawler</title>
-      <link>http://laowalter.github.io/posts/tech/gowebcrawler/</link>
+      <link>https://laowalter.github.io/posts/tech/gowebcrawler/</link>
       <pubDate>Wed, 26 Jun 2019 22:12:05 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/gowebcrawler/</guid>
+      <guid>https://laowalter.github.io/posts/tech/gowebcrawler/</guid>
       <description>使用Golang+selenium 驱动 chrome headless 模式，再用 goquery 解析html 字符。 首先在服务器上安装最新版本的chrome 和 chromedriver emerge -avq www-cient/google-chrome 下载对应的chro</description>
     </item>
     

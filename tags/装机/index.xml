@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>装机 on Just a Memo</title>
-    <link>http://laowalter.github.io/tags/%E8%A3%85%E6%9C%BA/</link>
+    <link>https://laowalter.github.io/tags/%E8%A3%85%E6%9C%BA/</link>
     <description>Recent content in 装机 on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 26 Mar 2019 20:03:53 +0000</lastBuildDate>
     
-	<atom:link href="http://laowalter.github.io/tags/%E8%A3%85%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://laowalter.github.io/tags/%E8%A3%85%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>装机</title>
-      <link>http://laowalter.github.io/posts/tech/makeup_pc/</link>
+      <link>https://laowalter.github.io/posts/tech/makeup_pc/</link>
       <pubDate>Tue, 26 Mar 2019 20:03:53 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/makeup_pc/</guid>
+      <guid>https://laowalter.github.io/posts/tech/makeup_pc/</guid>
       <description>软路由 配件 网卡(拆机的原装网卡) BCM 5709c 4口千兆，价格约100元； CPU 第四代 CPU i3 4170 + B85主板 NAS CPU E3-1234LV5 311 主板 ASROCK/永擎 C236 WSI 1565 内存 金士顿ECC</description>
     </item>
     

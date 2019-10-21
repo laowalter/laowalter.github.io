@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>nginx on Just a Memo</title>
-    <link>http://laowalter.github.io/tags/nginx/</link>
+    <link>https://laowalter.github.io/tags/nginx/</link>
     <description>Recent content in nginx on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 02 Dec 2018 11:45:29 +0000</lastBuildDate>
     
-	<atom:link href="http://laowalter.github.io/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://laowalter.github.io/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Php-fpm</title>
-      <link>http://laowalter.github.io/posts/tech/php-fpm/</link>
+      <link>https://laowalter.github.io/posts/tech/php-fpm/</link>
       <pubDate>Sun, 02 Dec 2018 11:45:29 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/php-fpm/</guid>
+      <guid>https://laowalter.github.io/posts/tech/php-fpm/</guid>
       <description>Install /Upgrade php-fpm Config /etc/php/fpm-php7.2/fpm.d/www.conf Filename: /etc/php/fpm-php7.2/fpm.d/www.conf listen = /run/php-fpm.socket listen.owner = nginx listen.group = nginx listen.mode = 0660 Adjust upload limited Filename: /etc/php/fpm-php7.2/php.ini upload_tmp_dir = /tmp upload_max_filesize = 20M /etc/ngnix/nginx.conf Filename: /etc/ngnix/nginx.conf client_max_body_size 20M; client_body_buffer_size 128k; Add php-fpm to default service # sudo /etc/init.d/php-fpm start # rc-update add php-fpm default Setup php-fpm in nginx 简单的只用一个nginx.co</description>
     </item>
     
     <item>
       <title>Nginx</title>
-      <link>http://laowalter.github.io/posts/tech/nginx/</link>
+      <link>https://laowalter.github.io/posts/tech/nginx/</link>
       <pubDate>Thu, 02 Feb 2017 22:00:18 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/nginx/</guid>
+      <guid>https://laowalter.github.io/posts/tech/nginx/</guid>
       <description>Nginx on Gentoo Filename: /etc/nginx/nginx.conf server { listen 192.168.0.202:80; server_name gentoo; charset utf-8; autoindex on; #开启nginx目录浏览功能 autoindex_exact_size off; #文件大小从KB开始显示 autoindex_localtime on; #显示文件修改时间为服务器本地时间 access_log /var/log/nginx/localhost.access_log main; error_log /var/log/nginx/localhost.error_log info; location /</description>
     </item>
     

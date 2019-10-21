@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mongodb on Just a Memo</title>
-    <link>http://laowalter.github.io/tags/mongodb/</link>
+    <link>https://laowalter.github.io/tags/mongodb/</link>
     <description>Recent content in mongodb on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Sep 2018 08:44:25 +0000</lastBuildDate>
     
-	<atom:link href="http://laowalter.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://laowalter.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Python_tips</title>
-      <link>http://laowalter.github.io/posts/tech/python-tips/</link>
+      <link>https://laowalter.github.io/posts/tech/python-tips/</link>
       <pubDate>Tue, 25 Sep 2018 08:44:25 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/python-tips/</guid>
+      <guid>https://laowalter.github.io/posts/tech/python-tips/</guid>
       <description>Read special excel like xml Excel Address import pandas as pd dfs = pd.read_html(&amp;#39;swclass.xls&amp;#39;, flavor=&amp;#39;html5lib&amp;#39;) df = pd.DataFrame(dfs[0]) df.columns = df.iloc[0] df = df[1:] df_agg = df.groupby(&amp;#39;行业名称&amp;#39;).agg(lambda x: &amp;#39;,&amp;#39;.join(x)) df_agg = df_agg.reset_index() df</description>
     </item>
     
     <item>
       <title>DataBases</title>
-      <link>http://laowalter.github.io/posts/tech/databases/</link>
+      <link>https://laowalter.github.io/posts/tech/databases/</link>
       <pubDate>Mon, 29 Feb 2016 10:40:40 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/databases/</guid>
+      <guid>https://laowalter.github.io/posts/tech/databases/</guid>
       <description>Mongodb Enter mongo shell mongo 192.168.0.25 Start mongodb  Upgrade
 brew upgrade mongodb brew info mongdb ln -s /usr/local/Cellar/mongodb/3.2.4/bin/* /usr/local/bin/ config: /usr/local/etc/mongod.conf, Dont forget touh /usr/local/var/log/mongodb/mongo.log
   Filename:  /usr/local/etc/mongod.conf systemLog: destination: file path: /usr/local/var/log/mongodb/mongo.log logAppend: true storage: dbPath: /Volumes/Home/Walter/mongodb net: bindIp: 192.168.0.99   manual start
