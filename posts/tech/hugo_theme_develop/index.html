@@ -11,7 +11,12 @@
     
     
     
-    <link rel="stylesheet" href="https://laowalter.github.io/sass/main.min.91fe23d298c61475f6a6ebc821ec21692e755f60b6ae426b7b3462333eefce36.css">
+    <link rel="stylesheet" href="http://laowalter.github.io/sass/main.min.efb631bfd6d06f69412228c8e8394e1b0993664013282ad6d79b7aba11a9efd0.css">
+
+    <link rel="preload" as="font" href="/fonts/AdobeKaiStd-Regular.otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/AdobeHeitiStd-Regular.otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/Lobster-Regular.ttf" crossorigin="anonymous">
+
 
 </head>
 
@@ -19,26 +24,25 @@
 <head>
     
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
-
-    
-    <link href="css/mindmap/kityminder.core.css.Permalink" rel="stylesheet" type="text/css">
-    
-    <link href="https://laowalter.github.io/css/mindmap/mindmap.css" rel="stylesheet" type="text/css">
-    <script src="/js/mindmap/kity.min.js"></script>
-    <script src="/js/mindmap/kityminder.core.min.js"></script>
-    <script src="/js/mindmap/mindmap.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+        
+        <link href="css/mindmap/kityminder.core.css.Permalink" rel="stylesheet" type="text/css">
+        
+        <link href="http://laowalter.github.io/css/mindmap/mindmap.css" rel="stylesheet" type="text/css">
+        <script src="/js/mindmap/kity.min.js"></script>
+        <script src="/js/mindmap/kityminder.core.min.js"></script>
+        <script src="/js/mindmap/mindmap.js"></script>
 	
 
     
     
-    
-    <link href="https://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+        
+        <link href="http://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
     
 </head>
 
-    <body width="device-width">
-       <div class="homepage-header">
+    <body width="device-width" >
+      <div class="homepage-header">
           <div class="homepage-left">
             <h1>Hugo Theme Development</h1> 
             <p class="datetime">Thu, Aug 8, 2019</p>
@@ -80,7 +84,11 @@
 </ul></li>
 <li><a href="#配置文件格式">配置文件格式</a></li>
 <li><a href="#修改-syntax-highlight">修改 Syntax Highlight</a></li>
-<li><a href="#table-of-content">Table of Content</a></li>
+<li><a href="#table-of-content">Table of Content</a>
+<ul>
+<li><a href="#目前在-paritial-single-html中">目前在 paritial/single.html中</a></li>
+<li><a href="#todo-由于这种-toc对于mmark-down无效-准备用如下方法">ToDo 由于这种 toc对于mmark down无效，准备用如下方法</a></li>
+</ul></li>
 <li><a href="#add-section-number">Add Section Number</a></li>
 </ul></li>
 </ul>
@@ -220,7 +228,7 @@
 <li><p>/themes/&lt;theme_name&gt;/layout/shortcodes</p>
 
 <div class="file" >
-<div class="filename"> filename: <b>themes/&lt;theme_name&gt;/layout/shortcodes/mind.html</b></div>
+<div class="filename"> Filename: <b>themes/&lt;theme_name&gt;/layout/shortcodes/mind.html</b></div>
     <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#fb660a;font-weight:bold">div</span> <span style="color:#ff0086;font-weight:bold">id</span>=<span style="color:#0086d2">&#34;{{ .Get 0 }}&#34;</span> <span style="color:#ff0086;font-weight:bold">class</span>=<span style="color:#0086d2">&#34;mindmap&#34;</span>&gt;
 {{ .Inner | markdownify }}
 &lt;/<span style="color:#fb660a;font-weight:bold">div</span>&gt;</code></pre></div>
@@ -231,7 +239,7 @@
 <li><p>/themes/&lt;theme_name&gt;/layouts/partial/</p>
 
 <div class="file" >
-<div class="filename"> filename: <b>/themes/&lt;theme_name&gt;/layouts/partial/mindmap.html</b></div>
+<div class="filename"> Filename: <b>/themes/&lt;theme_name&gt;/layouts/partial/mindmap.html</b></div>
     <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"> <span style="color:#080;background-color:#0f140f;font-style:italic">&lt;!-- layouts/partials --&gt;</span>
 &lt;<span style="color:#fb660a;font-weight:bold">head</span>&gt;
  &lt;<span style="color:#fb660a;font-weight:bold">meta</span> <span style="color:#ff0086;font-weight:bold">charset</span>=<span style="color:#0086d2">&#34;UTF-8&#34;</span>&gt;
@@ -269,7 +277,7 @@
 <h2 id="配置文件格式">配置文件格式</h2>
 
 <div class="file" >
-    <div class="filename"> filename: <b>/etc/conf.d/net</b></div>
+    <div class="filename"> Filename: <b>/etc/conf.d/net</b></div>
         <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> 
  <span style="color:#080;background-color:#0f140f;font-style:italic">### DNS ###</span>
  
@@ -300,7 +308,7 @@
 </ul>
 
 <div class="file" >
-    <div class="filename"> filename: <b>config.toml</b></div>
+    <div class="filename"> Filename: <b>config.toml</b></div>
         <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hugo" data-lang="hugo">PygmentsCodeFences = true
 PygmentsStyle = &#34;monokai&#34;</code></pre></div>
 </div>
@@ -311,7 +319,7 @@ PygmentsStyle = &#34;monokai&#34;</code></pre></div>
 </ul>
 
 <div class="file" >
-    <div class="filename"> filename: <b>themes/hyde/static/css/override.css</b></div>
+    <div class="filename"> Filename: <b>themes/hyde/static/css/override.css</b></div>
         <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#fb660a;font-weight:bold">pre</span> {
   <span style="color:#fb660a;font-weight:bold">background-color</span>: <span style="color:#0086f7;font-weight:bold">#23241f</span>;
 }
@@ -329,14 +337,26 @@ PygmentsStyle = &#34;monokai&#34;</code></pre></div>
 
 <p><a href="https://github.com/gohugoio/hugo/issues/1778">参考链接</a></p>
 
-<p>目前在 paritial/single.html中</p>
+<h3 id="目前在-paritial-single-html中">目前在 paritial/single.html中</h3>
 
 <div class="file" >
-    <div class="filename"> filename: <b>paritial/single.html</b></div>
+    <div class="filename"> Filename: <b>paritial/single.html</b></div>
         <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"> 22 {{- $toc := .TableOfContents -}}
  23 {{- $toc := replaceRE `&lt;<span style="color:#fb660a;font-weight:bold">ul</span>&gt;\n&lt;<span style="color:#fb660a;font-weight:bold">li</span>&gt;\n&lt;<span style="color:#fb660a;font-weight:bold">ul</span>&gt;` `&lt;<span style="color:#fb660a;font-weight:bold">ul</span>&gt;` $toc -}}
  24 {{- safeHTML $toc -}}</code></pre></div>
 </div>
+
+<h3 id="todo-由于这种-toc对于mmark-down无效-准备用如下方法">ToDo 由于这种 toc对于mmark down无效，准备用如下方法</h3>
+
+<ol>
+<li>但是还没有实验成功，参考连接(<a href="https://discourse.gohugo.io/t/create-a-custom-page-toc-mini-toc-with-javascript/16665">https://discourse.gohugo.io/t/create-a-custom-page-toc-mini-toc-with-javascript/16665</a>)</li>
+<li>这个方案要先调入jqury.
+<script
+          src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+          integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+          crossorigin="anonymous">
+</script></li>
+</ol>
 
 <h2 id="add-section-number">Add Section Number</h2>
 
@@ -347,7 +367,7 @@ PygmentsStyle = &#34;monokai&#34;</code></pre></div>
 </ol>
 
 <div class="file" >
-    <div class="filename"> filename: <b>_default/single.html</b></div>
+    <div class="filename"> Filename: <b>_default/single.html</b></div>
         <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">&lt;<span style="color:#fb660a;font-weight:bold">article</span>&gt;
     {{ .Content }}
 &lt;/<span style="color:#fb660a;font-weight:bold">article</span>&gt; </code></pre></div>
@@ -356,7 +376,7 @@ PygmentsStyle = &#34;monokai&#34;</code></pre></div>
 <p><br></p>
 
 <div class="file" >
-    <div class="filename"> filename: <b>static/css/section_number/section_number.css</b></div>
+    <div class="filename"> Filename: <b>static/css/section_number/section_number.css</b></div>
         <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">&lt;<span style="color:#fb660a;font-weight:bold">div</span> <span style="color:#fb660a;font-weight:bold">class</span>=<span style="color:#0086d2">&#34;highlight&#34;</span>&gt;&lt;<span style="color:#fb660a;font-weight:bold">div</span> <span style="color:#fb660a;font-weight:bold">style</span>=<span style="color:#0086d2">&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;
 &lt;<span style="color:#fb660a;font-weight:bold">table</span> <span style="color:#fb660a;font-weight:bold">style</span>=<span style="color:#0086d2">&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;</span>&gt;&lt;<span style="color:#fb660a;font-weight:bold">tr</span>&gt;&lt;<span style="color:#fb660a;font-weight:bold">td</span> <span style="color:#fb660a;font-weight:bold">style</span>=<span style="color:#0086d2">&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;</span>&gt;
 &lt;<span style="color:#fb660a;font-weight:bold">pre</span> <span style="color:#fb660a;font-weight:bold">style</span>=<span style="color:#0086d2">&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;<span style="color:#fb660a;font-weight:bold">code</span> <span style="color:#fb660a;font-weight:bold">class</span>=<span style="color:#0086d2">&#34;language-css&#34;</span> <span style="color:#fb660a;font-weight:bold">data-lang</span>=<span style="color:#0086d2">&#34;css&#34;</span>&gt;&lt;<span style="color:#fb660a;font-weight:bold">span</span> <span style="color:#fb660a;font-weight:bold">style</span>=<span style="color:#0086d2">&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;</span>&gt; <span style="color:#fb660a;font-weight:bold">1</span>
@@ -468,7 +488,7 @@ PygmentsStyle = &#34;monokai&#34;</code></pre></div>
 <br></p>
 
 <div class="file" >
-    <div class="filename"> filename: <b>layout/partial/single-head.html</b></div>
+    <div class="filename"> Filename: <b>layout/partial/single-head.html</b></div>
         <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">&lt;<span style="color:#fb660a;font-weight:bold">head</span>&gt;
     &lt;!<span style="color:#fb660a;font-weight:bold">--</span> <span style="color:#fb660a;font-weight:bold">Insert</span> <span style="color:#fb660a;font-weight:bold">for</span> <span style="color:#fb660a;font-weight:bold">mindmap</span> <span style="color:#fb660a;font-weight:bold">--</span>&gt;
     &lt;<span style="color:#fb660a;font-weight:bold">script</span> <span style="color:#fb660a;font-weight:bold">src</span>=<span style="color:#0086d2">&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js&#34;</span>&gt;&lt;/<span style="color:#fb660a;font-weight:bold">script</span>&gt;

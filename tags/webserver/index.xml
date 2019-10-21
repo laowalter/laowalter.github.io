@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>webserver on Just a Memo</title>
-    <link>https://laowalter.github.io/tags/webserver/</link>
+    <link>http://laowalter.github.io/tags/webserver/</link>
     <description>Recent content in webserver on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Feb 2017 22:00:18 +0000</lastBuildDate>
     
-	<atom:link href="https://laowalter.github.io/tags/webserver/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://laowalter.github.io/tags/webserver/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Nginx</title>
-      <link>https://laowalter.github.io/posts/tech/nginx/</link>
+      <link>http://laowalter.github.io/posts/tech/nginx/</link>
       <pubDate>Thu, 02 Feb 2017 22:00:18 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/nginx/</guid>
-      <description>Nginx on Gentoo filename: /etc/nginx/nginx.conf server { listen 192.168.0.202:80; server_name gentoo; charset utf-8; autoindex on; #开启nginx目录浏览功能 autoindex_exact_size off; #文件大小从KB开始显示 autoindex_localtime on; #显示文件修改时间为服务器本地时间 access_log /var/log/nginx/localhost.access_log main; error_log /var/log/nginx/localhost.error_log info; location /</description>
+      <guid>http://laowalter.github.io/posts/tech/nginx/</guid>
+      <description>Nginx on Gentoo Filename: /etc/nginx/nginx.conf server { listen 192.168.0.202:80; server_name gentoo; charset utf-8; autoindex on; #开启nginx目录浏览功能 autoindex_exact_size off; #文件大小从KB开始显示 autoindex_localtime on; #显示文件修改时间为服务器本地时间 access_log /var/log/nginx/localhost.access_log main; error_log /var/log/nginx/localhost.error_log info; location /</description>
     </item>
     
   </channel>

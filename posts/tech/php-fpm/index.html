@@ -11,7 +11,12 @@
     
     
     
-    <link rel="stylesheet" href="https://laowalter.github.io/sass/main.min.91fe23d298c61475f6a6ebc821ec21692e755f60b6ae426b7b3462333eefce36.css">
+    <link rel="stylesheet" href="http://laowalter.github.io/sass/main.min.efb631bfd6d06f69412228c8e8394e1b0993664013282ad6d79b7aba11a9efd0.css">
+
+    <link rel="preload" as="font" href="/fonts/AdobeKaiStd-Regular.otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/AdobeHeitiStd-Regular.otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/Lobster-Regular.ttf" crossorigin="anonymous">
+
 
 </head>
 
@@ -22,13 +27,13 @@
 
     
     
-    
-    <link href="https://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+        
+        <link href="http://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
     
 </head>
 
-    <body width="device-width">
-       <div class="homepage-header">
+    <body width="device-width" >
+      <div class="homepage-header">
           <div class="homepage-left">
             <h1>Php-fpm</h1> 
             <p class="datetime">Sun, Dec 2, 2018</p>
@@ -70,7 +75,7 @@
 <h3 id="config-etc-php-fpm-php7-2-fpm-d-www-conf">Config /etc/php/fpm-php7.2/fpm.d/www.conf</h3>
 
 <div class="file" >
-    <div class="filename"> filename: <b>/etc/php/fpm-php7.2/fpm.d/www.conf</b></div>
+    <div class="filename"> Filename: <b>/etc/php/fpm-php7.2/fpm.d/www.conf</b></div>
         <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  <span style="color:#fb660a">listen</span> = /run/php-fpm.socket
   listen.owner = nginx
   listen.group = nginx
@@ -80,7 +85,7 @@
 <h3 id="adjust-upload-limited">Adjust upload limited</h3>
 
 <div class="file" >
-    <div class="filename"> filename: <b>/etc/php/fpm-php7.2/php.ini</b></div>
+    <div class="filename"> Filename: <b>/etc/php/fpm-php7.2/php.ini</b></div>
         <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fb660a">upload_tmp_dir</span> = /tmp
 <span style="color:#fb660a">upload_max_filesize</span> = 20M</code></pre></div>
 </div>
@@ -88,7 +93,7 @@
 <h3 id="etc-ngnix-nginx-conf">/etc/ngnix/nginx.conf</h3>
 
 <div class="file" >
-    <div class="filename"> filename: <b>/etc/ngnix/nginx.conf</b></div>
+    <div class="filename"> Filename: <b>/etc/ngnix/nginx.conf</b></div>
         <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">client_max_body_size 20M;
 client_body_buffer_size 128k;</code></pre></div>
 </div>
@@ -103,7 +108,7 @@ client_body_buffer_size 128k;</code></pre></div>
 <h3 id="简单的只用一个nginx-conf的做法">简单的只用一个nginx.conf的做法</h3>
 
 <div class="file" >
-    <div class="filename"> filename: <b>/etc/ngnix/nginx.conf</b></div>
+    <div class="filename"> Filename: <b>/etc/ngnix/nginx.conf</b></div>
         <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#fb660a;font-weight:bold">server</span> {
     <span style="color:#fb660a;font-weight:bold">listen</span> 0.0.0.0:<span style="color:#0086f7;font-weight:bold">7001</span>;
     <span style="color:#fb660a;font-weight:bold">server_name</span> <span style="color:#0086d2">pannel</span>;
@@ -138,7 +143,7 @@ client_body_buffer_size 128k;</code></pre></div>
 </ul>
 
 <div class="file" >
-    <div class="filename"> filename: <b>/etc/ngnix/nginx.conf</b></div>
+    <div class="filename"> Filename: <b>/etc/ngnix/nginx.conf</b></div>
         
 
 <p></div></p>
@@ -253,7 +258,7 @@ client_body_buffer_size 128k;</code></pre></div>
 <p><br></p>
 
 <div class="file" >
-    <div class="filename"> filename: <b>/etc/nginx/conf.d/piwigo.conf</b></div>
+    <div class="filename"> Filename: <b>/etc/nginx/conf.d/piwigo.conf</b></div>
         
 
 <p></div></p>

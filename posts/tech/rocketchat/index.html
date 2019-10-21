@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" >
+
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://192.168.0.199:8000/sass/main.min.efb631bfd6d06f69412228c8e8394e1b0993664013282ad6d79b7aba11a9efd0.css">
+
+    <link rel="preload" as="font" href="/fonts/AdobeKaiStd-Regular.otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/AdobeHeitiStd-Regular.otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/Lobster-Regular.ttf" crossorigin="anonymous">
+
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+        
+        <link href="http://192.168.0.199:8000/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body width="device-width" >
+      <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Rocketchat</h1> 
+            <p class="datetime">Thu, Sep 19, 2019</p>
+            <a class="tag tag--primary tag--small"   href="/"><font color="green">Home</font></a>
+
+            
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/chat">chat</a>
+                
+            
+          </div>
+      </div>
+
+    <hr><br><article>
+    <h2 id="install">Install</h2>
+
+<p><a href="https://github.com/RocketChat">Rocket.Chat on github</a></p>
+
+<h3 id="gentoo-安装成功">Gentoo 安装成功</h3>
+
+<h4 id="mongodb-配置">Mongodb 配置</h4>
+
+<div class="file" >
+    <div class="filename"> Filename: <b>/etc/mongodb.conf</b></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mongodb" data-lang="mongodb">storage:
+    dbPath: &#34;/var/lib/mongodb&#34;
+    #engine: wiredTiger
+
+systemLog:
+    destination: file
+    path: &#34;/var/log/mongodb/mongodb.log&#34;
+    quiet: true
+    logAppend: true
+
+net:
+    port: 27017
+    bindIp: 127.0.0.1
+    #ssl:
+    #    mode: disabled
+
+processManagement:
+    timeZoneInfo: /usr/share/zoneinfo
+
+replication:
+    replSetName: rs01
+    oplogSizeMB: 128</code></pre></div>
+</div>
+
+<h4 id="rocketchat">Rocket.Chat</h4>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-baah" data-lang="baah"> $ curl -L https://releases.rocket.chat/latest/download -o /tmp/rocket.chat.tgz
+ $ tar -xzf /tmp/rocket.chat.tgz -C /tmp
+ $ cd /tmp/bundle/programs/server &amp;&amp; npm install
+ $ sudo mv /tmp/bundle /opt/Rocket.Chat
+ $ cd /opt/Rocket.Chat
+ $ node main.js</code></pre></div>
+<h3 id="debian-方案">Debian 方案？</h3>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo systemctl start rocketchat.service
+sudo systemctl status rocketchat.service
+sudo systemctl restart rocketchat.service
+sudo vi /lib/systemd/system/rocketchat.service</code></pre></div><div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export <span style="color:#fb660a">MONGO_URL</span>=mongodb://localhost:27017/rocketchat?replicaSet=rs01
+export <span style="color:#fb660a">MONGO_OPLOG_URL</span>=mongodb://localhost:27017/local?replicaSet=rs01
+export <span style="color:#fb660a">ROOT_URL</span>=http://localhost:3000/
+export <span style="color:#fb660a">PORT</span>=<span style="color:#0086f7;font-weight:bold">3000</span></code></pre></div>
+<h3 id="docker-方案">Docker 方案</h3>
+
+<h4 id="方案一rocketchat采用docker-mongodb非docker方式">方案一：Rocket.Chat采用Docker, Mongodb非Docker方式</h4>
+
+<h4 id="方案二rocketchat和mongodb都采用docker方式">方案二：Rocket.Chat和Mongodb都采用Docker方式</h4>
+
+<ol>
+<li>docker-compose.yml 配置文件</li>
+</ol>
+
+<p>采用 <a href="https://github.com/RocketChat/Rocket.Chat中的docker-compose.yml注释掉hubbot部分">https://github.com/RocketChat/Rocket.Chat中的docker-compose.yml注释掉hubbot部分</a></p>
+
+<div class="file" >
+    <div class="filename"> Filename: <b>docker-compose.yml</b></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-docker-compose" data-lang="docker-compose">version: &#39;2&#39;
+
+services:
+  rocketchat:
+    image: rocketchat/rocket.chat:latest
+    command: &gt;
+      bash -c
+        &#34;for i in `seq 1 30`; do
+          node main.js &amp;&amp;
+          s=$$? &amp;&amp; break || s=$$?;
+          echo \&#34;Tried $$i times. Waiting 5 secs...\&#34;;
+          sleep 5;
+        done; (exit $$s)&#34;
+    restart: unless-stopped
+    volumes:
+      - ./uploads:/app/uploads
+    environment:
+      - PORT=3000
+      - ROOT_URL=http://localhost:3000
+      - MONGO_URL=mongodb://mongo:27017/rocketchat
+      - MONGO_OPLOG_URL=mongodb://mongo:27017/local
+      - MAIL_URL=smtp://smtp.email
+#       - HTTP_PROXY=http://proxy.domain.com
+#       - HTTPS_PROXY=http://proxy.domain.com
+    depends_on:
+      - mongo
+    ports:
+      - 3000:3000
+    labels:
+      - &#34;traefik.backend=rocketchat&#34;
+      - &#34;traefik.frontend.rule=Host: your.domain.tld&#34;
+
+  mongo:
+    image: mongo:4.0
+    restart: unless-stopped
+    volumes:
+     - ./data/db:/data/db
+     #- ./data/dump:/dump
+    command: mongod --smallfiles --oplogSize 128 --replSet rs0 --storageEngine=mmapv1
+    labels:
+      - &#34;traefik.enable=false&#34;
+
+  # this container&#39;s job is just run the command to initialize the replica set.
+  # it will run the command and remove himself (it will not stay running)
+  mongo-init-replica:
+    image: mongo:4.0
+    command: &gt;
+      bash -c
+        &#34;for i in `seq 1 30`; do
+          mongo mongo/rocketchat --eval \&#34;
+            rs.initiate({
+              _id: &#39;rs0&#39;,
+              members: [ { _id: 0, host: &#39;localhost:27017&#39; } ]})\&#34; &amp;&amp;
+          s=$$? &amp;&amp; break || s=$$?;
+          echo \&#34;Tried $$i times. Waiting 5 secs...\&#34;;
+          sleep 5;
+        done; (exit $$s)&#34;
+    depends_on:
+      - mongo</code></pre></div>
+</div>
+
+<ol start="2">
+<li>安装：
+<br></li>
+</ol>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ 准备文件  /opt/rocketchat/docker-compose.yml
+$ cd /opt/rocketchat/
+$ docker-compose up //安装和启动都用此命令
+$ docker-compose stop //停止服务</code></pre></div>
+<ol start="3">
+<li><p>配置nginx</p>
+
+<ol>
+<li><p>生成 SSL certificate file</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ sudo openssl req -new -x509 -days <span style="color:#0086f7;font-weight:bold">365</span> -nodes -out /etc/nginx/ssl/mini.crt -keyout /etc/nginx/ssl/mini.key</code></pre></div></li>
+
+<li><p>/etc/nginx/rocket</p></li>
+</ol></li>
+</ol>
+
+<h4 id="方案三-官方docker安装文档httpsrocketchatdocsinstallationdockercontainersdockercompose">方案三 <a href="https://rocket.chat/docs/installation/docker-containers/docker-compose/">官方DOCKER安装文档</a></h4>
+
+</article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    </body>
+</html>

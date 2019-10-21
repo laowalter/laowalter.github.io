@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" >
+
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://192.168.0.199:8000/sass/main.min.efb631bfd6d06f69412228c8e8394e1b0993664013282ad6d79b7aba11a9efd0.css">
+
+    <link rel="preload" as="font" href="/fonts/AdobeKaiStd-Regular.otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/AdobeHeitiStd-Regular.otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/Lobster-Regular.ttf" crossorigin="anonymous">
+
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+        
+        <link href="http://192.168.0.199:8000/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body width="device-width" >
+      <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Docker 相关内容</h1> 
+            <p class="datetime">Wed, Sep 18, 2019</p>
+            <a class="tag tag--primary tag--small"   href="/"><font color="green">Home</font></a>
+
+            
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/docker">docker</a>
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/mongo">mongo</a>
+                
+            
+          </div>
+      </div>
+
+    <hr><br><article>
+    <h2 id="学习-docker资料">学习 Docker资料</h2>
+
+<ul>
+<li><a href="https://docs.docker.com/">Docker Document</a></li>
+<li><a href="https://docs.docker.com/compose/compose-file/">Docker-compose 官方资料</a></li>
+<li><a href="https://www.youtube.com/watch?v=bU2NNFJ-UXA">Docker Swarm</a></li>
+</ul>
+
+<h2 id="命令分析">命令分析</h2>
+
+<ul>
+<li><p>ENTRYPOINT 和 CMD</p>
+
+<ul>
+<li>CMD是拿docker run 提供的参数完全覆盖CMD内容</li>
+
+<li><p>ENTRYPOINT是把参数附加到ENTRYPOINT内容后面。</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ docker run --rm -it echotest:entrypoint param1
+        
+ defaultParam param1</code></pre></div></li>
+
+<li><p>如果想替换 ENTRYPONT 的内容，可以使用docker run --entrypointdocker</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ docker run --rm -it --entrypoint /bin/ping echotest:entrypoint param1
+            
+ ping: unknown host param1
+            
+ $ docker run --rm -it --entrypoint /bin/ping echotest:entrypoint localhost</code></pre></div></li>
+</ul></li>
+</ul>
+
+<h2 id="running-mongodb">Running mongodb</h2>
+
+<p><a href="https://www.youtube.com/watch?v=D5Q5WhGT0w8">Reference LINK in youtube</a></p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#080;background-color:#0f140f;font-style:italic"># Install</span>
+ $ docker pull mongo
+
+ <span style="color:#080;background-color:#0f140f;font-style:italic"># Start</span>
+ $ docker run -d -p <span style="color:#0086f7;font-weight:bold">27017</span>-27019:27017-27019 --name mongodb mongo 
+ $ docker run --name mongodb -d mongo:latest
+
+ <span style="color:#080;background-color:#0f140f;font-style:italic"># bash in container</span>
+ $ docker exec -it mongo bash</code></pre></div>
+<p>docker run -d -v /opt/Dockers/mongodb/etc/mongo.conf:/etc/mongo.conf -p 27017:27017 mongo:latest
+docker run -d -v /opt/Dockers/mongodb/etc:/etc/mongo.conf -p 27017:27017 mongo:latest</p>
+
+</article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    </body>
+</html>

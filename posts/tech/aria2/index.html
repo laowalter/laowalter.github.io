@@ -11,7 +11,12 @@
     
     
     
-    <link rel="stylesheet" href="https://laowalter.github.io/sass/main.min.91fe23d298c61475f6a6ebc821ec21692e755f60b6ae426b7b3462333eefce36.css">
+    <link rel="stylesheet" href="http://laowalter.github.io/sass/main.min.efb631bfd6d06f69412228c8e8394e1b0993664013282ad6d79b7aba11a9efd0.css">
+
+    <link rel="preload" as="font" href="/fonts/AdobeKaiStd-Regular.otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/AdobeHeitiStd-Regular.otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/Lobster-Regular.ttf" crossorigin="anonymous">
+
 
 </head>
 
@@ -22,13 +27,13 @@
 
     
     
-    
-    <link href="https://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+        
+        <link href="http://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
     
 </head>
 
-    <body width="device-width">
-       <div class="homepage-header">
+    <body width="device-width" >
+      <div class="homepage-header">
           <div class="homepage-left">
             <h1>Aria2 / 百度网盘</h1> 
             <p class="datetime">Fri, Nov 2, 2018</p>
@@ -75,56 +80,8 @@
 <p><a href="https://aria2.github.io/manual/en/html/aria2c.html">配置文件说明</a></p>
 
 <div class="file" >
-    <div class="filename"> filename: <b>~/.aria2/aria2.conf</b></div>
-        
-
-<p></div></p>
-
-<div class="highlight"><div style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="display:block;width:100%;background-color:#282828"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="display:block;width:100%;background-color:#282828"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="display:block;width:100%;background-color:#282828"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="display:block;width:100%;background-color:#282828"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span></span><span style="display:block;width:100%;background-color:#282828"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span></span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#080;background-color:#0f140f;font-style:italic">## 全局设置 ## ===========================</span>
+    <div class="filename"> Filename: <b>~/.aria2/aria2.conf</b></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#080;background-color:#0f140f;font-style:italic">## 全局设置 ## ===========================</span>
 <span style="color:#080;background-color:#0f140f;font-style:italic"># 下载位置, 默认: 当前启动位置</span>
 <span style="color:#fb660a">dir</span>=/data/share/downloads/aria2
 
@@ -163,8 +120,7 @@ rpc-listen-all=true
 
 <span style="color:#080;background-color:#0f140f;font-style:italic"># RPC监听端口, 端口被占用时可以修改, 默认:6800</span>
 <span style="display:block;width:100%;background-color:#282828"><span style="color:#080;background-color:#0f140f;font-style:italic"># 有了RPC的后台监听，aria2 才能在后台真正运行</span>
-</span><span style="display:block;width:100%;background-color:#282828">rpc-listen-port=<span style="color:#0086f7;font-weight:bold">6800</span></span></code></pre></td></tr></table>
-</div>
+</span><span style="display:block;width:100%;background-color:#282828">rpc-listen-port=<span style="color:#0086f7;font-weight:bold">6800</span></span></code></pre></div>
 </div>
 
 <h3 id="基于firefox前端aria2-download-manager-integration管理器">基于Firefox前端Aria2 Download Manager Integration管理器</h3>

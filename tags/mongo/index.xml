@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mongo on Just a Memo</title>
+    <link>http://192.168.0.199:8000/tags/mongo/</link>
+    <description>Recent content in mongo on Just a Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Sep 2019 21:48:56 +0800</lastBuildDate>
+    
+	<atom:link href="http://192.168.0.199:8000/tags/mongo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker 相关内容</title>
+      <link>http://192.168.0.199:8000/posts/tech/docker/</link>
+      <pubDate>Wed, 18 Sep 2019 21:48:56 +0800</pubDate>
+      
+      <guid>http://192.168.0.199:8000/posts/tech/docker/</guid>
+      <description>学习 Docker资料 Docker Document Docker-compose 官方资料 Docker Swarm 命令分析 ENTRYPOINT 和 CMD CMD是拿docker run 提供的参数完全覆盖CMD内容 ENTRYPOINT是把参数附加到E</description>
+    </item>
+    
+  </channel>
+</rss>

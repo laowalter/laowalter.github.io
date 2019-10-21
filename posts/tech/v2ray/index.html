@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" >
+
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://192.168.0.199:8000/sass/main.min.efb631bfd6d06f69412228c8e8394e1b0993664013282ad6d79b7aba11a9efd0.css">
+
+    <link rel="preload" as="font" href="/fonts/AdobeKaiStd-Regular.otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/AdobeHeitiStd-Regular.otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/Lobster-Regular.ttf" crossorigin="anonymous">
+
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+        
+        <link href="http://192.168.0.199:8000/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body width="device-width" >
+      <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>V2RAY(websocket,tls,cdn,bbr)</h1> 
+            <p class="datetime">Sun, Apr 28, 2019</p>
+            <a class="tag tag--primary tag--small"   href="/"><font color="green">Home</font></a>
+
+            
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/gfw">gfw</a>
+                
+            
+          </div>
+      </div>
+
+    <hr><br><nav id="TableOfContents">
+<ul>
+<li><a href="#准备工作">准备工作：</a></li>
+<li><a href="#安装配置服务器">安装配置服务器</a>
+<ul>
+<li><a href="#新服务器添加用户">新服务器添加用户</a></li>
+<li><a href="#nginx">Nginx</a>
+<ul>
+<li><a href="#一切以-default-的安装为准-不做任何改变">一切以 default 的安装为准，不做任何改变</a></li>
+<li><a href="#为nginx申请let-s-encrypt-ssl-证书">为nginx申请let&rsquo;s encrypt ssl 证书</a></li>
+<li><a href="#配置-nginx">配置 nginx</a></li>
+</ul></li>
+<li><a href="#服务端-iptables-rules">服务端 Iptables rules</a></li>
+<li><a href="#v2ray">v2ray</a></li>
+</ul></li>
+<li><a href="#安装客户端">安装客户端</a>
+<ul>
+<li><a href="#启动客户端">启动客户端</a></li>
+</ul></li>
+<li><a href="#privoxy-提供sockket5转换https的代理">privoxy 提供sockket5转换https的代理</a></li>
+<li><a href="#cdn部分">CDN部分</a>
+<ul>
+<li><a href="#apply-dns-https-my-freenom-com">Apply DNS <a href="https://my.freenom.com/">https://my.freenom.com/</a></a></li>
+<li><a href="#cloudware-cdn-https-www-cloudflare-com">Cloudware CDN <a href="https://www.cloudflare.com/">https://www.cloudflare.com/</a></a></li>
+</ul></li>
+<li><a href="#v2ray-升级">V2ray 升级</a></li>
+<li><a href="#how-to-enable-tls-1-3-in-nginx-on-debian-9">How to Enable TLS 1.3 in Nginx on Debian 9</a></li>
+</ul></li>
+</ul>
+</nav><article>
+    
+
+<p><strong>说明：</strong></p>
+
+<ol>
+<li>Start from April 27, 2019</li>
+<li>官方地址<a href="https://www.v2ray.com/">https://www.v2ray.com/</a></li>
+<li>下载文件<a href="https://www.v2ray.com/chapter_00/install.html">https://www.v2ray.com/chapter_00/install.html</a></li>
+<li><a href="https://github.com/2dust/v2rayN/releases">Windows v2rayN</a></li>
+<li>配置教程<a href="https://toutyrater.github.io/">https://toutyrater.github.io/</a></li>
+</ol>
+
+<h2 id="准备工作">准备工作：</h2>
+
+<pre><code>1. vultr.com 申请vps
+2. 在 freenome.com 申请域名，解析到服务器ip地址
+3. 在 cloudware 申请账号准备做CDN用
+</code></pre>
+
+<h2 id="安装配置服务器">安装配置服务器</h2>
+
+<h3 id="新服务器添加用户">新服务器添加用户</h3>
+
+<ol>
+<li><p>添加普通用户you，并加入sudo组</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ usermod -G sudo you</code></pre></div></li>
+
+<li><p>Disable root 用户登录</p>
+
+<div class="file" >
+<div class="filename"> Filename: <b>/etc/ssh/sshd_config</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ssh" data-lang="ssh">PermitRootLogin no</code></pre></div>
+</div></li>
+
+<li><p>启动/停止sshd服务</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ sudo update-rc.d ssh disable
+ or 
+ $ sudo /etc/init.d/ssh start/stop/restart</code></pre></div></li>
+</ol>
+
+<h3 id="nginx">Nginx</h3>
+
+<h4 id="一切以-default-的安装为准-不做任何改变">一切以 default 的安装为准，不做任何改变</h4>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  $ apt-get install nginx </code></pre></div>
+
+<h4 id="为nginx申请let-s-encrypt-ssl-证书">为nginx申请let&rsquo;s encrypt ssl 证书</h4>
+
+<ul>
+<li><p>参考网址：<a href="https://certbot.eff.org/lets-encrypt/debianstretch-nginx">https://certbot.eff.org/lets-encrypt/debianstretch-nginx</a></p></li>
+
+<li><p>实际申请/安装证书的过程</p>
+
+<ol>
+<li>添加 &ldquo;deb <a href="http://deb.debian.org/debian">http://deb.debian.org/debian</a> stretch-backports main&rdquo;  /etc/apt/sources.list 中;</li>
+<li>执行 apt-get update;</li>
+<li>执行 apt-get install certbot python-certbot-nginx -t stretch-backports;</li>
+<li>certbot &ndash;nginx</li>
+</ol></li>
+</ul>
+
+<p>第三部分根据要求填写，我是直接用 yourdomain(比如 www.abcyourdomain(比如 www.abc.com)：</p>
+
+<ul>
+<li><p>另外根据<a href="https://www.vultr.com/docs/how-to-enable-tls-1-3-in-nginx-on-debian-9#Install_the_Acme_sh_client_and_obtain_a_TLS_certificate_from_Let_s_Encrypt">此处</a>的描述，也可以，但未尝试。</p>
+
+<p>Download and install <a href="https://github.com/Neilpang/acme.sh">Acme.sh</a>.</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo mkdir /etc/letsencrypt
+$ sudo git clone https://github.com/Neilpang/acme.sh.git
+$ cd acme.sh
+$ sudo ./acme.sh --install --home /etc/letsencrypt --accountemail your_email@example.com
+$ cd ~
+$ source ~/.bashrc</code></pre></div></li>
+</ul>
+
+<h4 id="配置-nginx">配置 nginx</h4>
+
+<p>首先前面部分中，Let&rsquo;s encrypt的脚本已经配置好了 /etc/nginx/sites-available/default，可以直接实现https和http 自动跳到 https</p>
+
+<p>然后，增加 nginx网站伪装(在用)，比如，将所都对yourdomain的访问转移到cctv.com, 参考<a href="https://zorz.cc/post/nginx-tlswebsocket-web-v2ray.html">https://zorz.cc/post/nginx-tlswebsocket-web-v2ray.html</a>。</p>
+
+<div class="file" >
+    <div class="filename"> Filename: <b>/etc/nginx/sites-available/default</b></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#fb660a;font-weight:bold">server</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    <span style="color:#fb660a;font-weight:bold">listen</span> <span style="color:#0086f7;font-weight:bold">80</span> <span style="color:#0086d2">default_server</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="color:#fb660a;font-weight:bold">listen</span> <span style="color:#0086d2">[::]:80</span> <span style="color:#0086d2">default_server</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#fb660a;font-weight:bold">root</span> <span style="color:#0086d2">/var/www/html</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#fb660a;font-weight:bold">index</span> <span style="color:#0086d2">index.html</span> <span style="color:#0086d2">index.htm</span> <span style="color:#0086d2">index.nginx-debian.html</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#fb660a;font-weight:bold">server_name</span> <span style="color:#0086d2">_</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#fb660a;font-weight:bold">location</span> <span style="color:#0086d2">/</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>        <span style="color:#fb660a;font-weight:bold">try_files</span> <span style="color:#fb660a">$uri</span> <span style="color:#fb660a">$uri/</span> =<span style="color:#0086f7;font-weight:bold">404</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#fb660a;font-weight:bold">server</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="color:#fb660a;font-weight:bold">root</span> <span style="color:#0086d2">/var/www/html</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    <span style="color:#fb660a;font-weight:bold">index</span> <span style="color:#0086d2">index.html</span> <span style="color:#0086d2">index.htm</span> <span style="color:#0086d2">index.nginx-debian.html</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    <span style="color:#fb660a;font-weight:bold">location</span> <span style="color:#0086d2">/</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>        <span style="color:#fb660a;font-weight:bold">proxy_set_header</span> <span style="color:#0086d2">X-Real-IP</span> <span style="color:#fb660a">$remote_addr</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>        <span style="color:#fb660a;font-weight:bold">proxy_set_header</span> <span style="color:#0086d2">X-Forwarded-For</span> <span style="color:#fb660a">$proxy_add_x_forwarded_for</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>        <span style="color:#fb660a;font-weight:bold">proxy_pass</span> <span style="color:#0086d2">http://www.cctv.com/</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>        <span style="color:#fb660a;font-weight:bold">sub_filter</span> <span style="color:#0086d2">&#39;www.cctv.com&#39;</span> <span style="color:#0086d2">&#39;yourdomain&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>    <span style="color:#fb660a;font-weight:bold">location</span> <span style="color:#0086d2">/piwigo</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>        <span style="color:#fb660a;font-weight:bold">proxy_redirect</span> <span style="color:#0086d2">off</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        <span style="color:#fb660a;font-weight:bold">proxy_set_header</span> <span style="color:#0086d2">Upgrade</span> <span style="color:#fb660a">$http_upgrade</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>        <span style="color:#fb660a;font-weight:bold">proxy_set_header</span> <span style="color:#0086d2">Connection</span> <span style="color:#0086d2">&#34;upgrade&#34;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>        <span style="color:#fb660a;font-weight:bold">proxy_set_header</span> <span style="color:#0086d2">Host</span> <span style="color:#fb660a">$http_host</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>        <span style="color:#fb660a;font-weight:bold">if</span> <span style="color:#0086d2">(</span><span style="color:#fb660a">$http_upgrade</span> = <span style="color:#0086d2">&#34;websocket&#34;)</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>            <span style="color:#fb660a;font-weight:bold">proxy_pass</span> <span style="color:#0086d2">http://127.0.0.1:57989</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>        <span style="color:#fb660a;font-weight:bold">try_files</span> <span style="color:#fb660a">$uri</span> <span style="color:#fb660a">$uri/</span> =<span style="color:#0086f7;font-weight:bold">404</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span style="color:#fb660a;font-weight:bold">server</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>    <span style="color:#fb660a;font-weight:bold">if</span> <span style="color:#0086d2">(</span><span style="color:#fb660a">$host</span> = <span style="color:#0086d2">yourdomain)</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>        <span style="color:#fb660a;font-weight:bold">return</span> <span style="color:#0086f7;font-weight:bold">301</span> <span style="color:#0086d2">https://</span><span style="color:#fb660a">$host$request_uri</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>    <span style="color:#fb660a;font-weight:bold">listen</span> <span style="color:#0086f7;font-weight:bold">80</span> ;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>    <span style="color:#fb660a;font-weight:bold">listen</span> <span style="color:#0086d2">[::]:80</span> ;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>    <span style="color:#fb660a;font-weight:bold">server_name</span> <span style="color:#0086d2">yourdomain</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>}</code></pre></div>
+</div>
+
+<h3 id="服务端-iptables-rules">服务端 Iptables rules</h3>
+
+<pre><code><div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>    <span style="color:#080;background-color:#0f140f;font-style:italic">#!/bin/sh</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    <span style="color:#fb660a">IPT</span>=<span style="color:#0086d2">&#34;/sbin/iptables&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    echo -n <span style="color:#0086d2">&#34;Loading iptables rules...&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#080;background-color:#0f140f;font-style:italic"># Flush old rules</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#fb660a">$IPT</span> –flush
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#fb660a">$IPT</span> –delete-chain
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#080;background-color:#0f140f;font-style:italic"># By default, drop everything except outgoing traffic</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#fb660a">$IPT</span> -P INPUT DROP
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    <span style="color:#fb660a">$IPT</span> -P FORWARD DROP
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="color:#fb660a">$IPT</span> -P OUTPUT ACCEPT
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    iptables -A INPUT -p icmp --icmp-type echo-request -j REJECT
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    iptables -A OUTPUT -p icmp --icmp-type echo-request -j ACCEPT
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    iptables -A INPUT -p icmp --icmp-type echo-reply -j ACCEPT
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    iptables -A INPUT -p tcp --dport <span style="color:#0086f7;font-weight:bold">443</span> -j ACCEPT
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    iptables -A INPUT -p tcp --dport <span style="color:#0086f7;font-weight:bold">80</span> -j ACCEPT
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>    iptables -A INPUT -p tcp --dport <span style="color:#0086f7;font-weight:bold">22</span> -j ACCEPT
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>    
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>    echo “rules loaded.”
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>    </code></pre></div>
+</code></pre>
+
+<p><a href="/downloads/tech/etc_nginx.tar.bz2"><strong>目前 /etc/nginx/ 备份文件</strong></a></p>
+
+<h3 id="v2ray">v2ray</h3>
+
+<ol>
+<li><p>安装</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ bash &lt; (curl -L -s https://install.direct/go.sh)</code></pre></div></li>
+
+<li><p>服务器端 /etc/v2ray/config.json</p>
+
+<div class="file" >
+<div class="filename"> Filename: <b>/etc/v2ray/config.json</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>    {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>        <span style="color:#fb660a;font-weight:bold">&#34;log&#34;</span>: {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>            <span style="color:#fb660a;font-weight:bold">&#34;access&#34;</span>: <span style="color:#0086d2">&#34;/var/log/v2ray/access.log&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>            <span style="color:#fb660a;font-weight:bold">&#34;error&#34;</span>: <span style="color:#0086d2">&#34;/var/log/v2ray/error.log&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>            <span style="color:#fb660a;font-weight:bold">&#34;loglevel&#34;</span>: <span style="color:#0086d2">&#34;warning&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>        },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        <span style="color:#fb660a;font-weight:bold">&#34;inbounds&#34;</span>: [
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>            {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>                <span style="color:#fb660a;font-weight:bold">&#34;port&#34;</span>: <span style="color:#0086f7;font-weight:bold">58989</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>                <span style="color:#fb660a;font-weight:bold">&#34;listen&#34;</span>: <span style="color:#0086d2">&#34;127.0.0.1&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>                <span style="color:#fb660a;font-weight:bold">&#34;protocol&#34;</span>: <span style="color:#0086d2">&#34;vmess&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>                <span style="color:#fb660a;font-weight:bold">&#34;settings&#34;</span>: {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>                    <span style="color:#fb660a;font-weight:bold">&#34;clients&#34;</span>: [
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>                        {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>                            <span style="color:#fb660a;font-weight:bold">&#34;id&#34;</span>: <span style="color:#0086d2">&#34;a08f55b8-4d02-43ab-a8fe-b57f12e9e543&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>                            <span style="color:#fb660a;font-weight:bold">&#34;level&#34;</span>: <span style="color:#0086f7;font-weight:bold">1</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>                            <span style="color:#fb660a;font-weight:bold">&#34;alterId&#34;</span>: <span style="color:#0086f7;font-weight:bold">127</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>                        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>                    ]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>                },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>                <span style="color:#fb660a;font-weight:bold">&#34;streamSettings&#34;</span>: {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>                    <span style="color:#fb660a;font-weight:bold">&#34;network&#34;</span>: <span style="color:#0086d2">&#34;ws&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>                    <span style="color:#fb660a;font-weight:bold">&#34;wsSettings&#34;</span>: {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>                        <span style="color:#fb660a;font-weight:bold">&#34;path&#34;</span>: <span style="color:#0086d2">&#34;/piwigo&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>                    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>                },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>                <span style="color:#fb660a;font-weight:bold">&#34;sniffing&#34;</span>: {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>                    <span style="color:#fb660a;font-weight:bold">&#34;enabled&#34;</span>: <span style="color:#fb660a;font-weight:bold">true</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>                    <span style="color:#fb660a;font-weight:bold">&#34;destOverride&#34;</span>: [
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>                        <span style="color:#0086d2">&#34;http&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>                        <span style="color:#0086d2">&#34;tls&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>                    ]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>                }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>            }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>        ],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>        <span style="color:#fb660a;font-weight:bold">&#34;outbounds&#34;</span>: [
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>            {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>                <span style="color:#fb660a;font-weight:bold">&#34;protocol&#34;</span>: <span style="color:#0086d2">&#34;freedom&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>                <span style="color:#fb660a;font-weight:bold">&#34;settings&#34;</span>: {}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>            }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>        ]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>    </code></pre></div>
+</div></li>
+</ol>
+
+<h2 id="安装客户端">安装客户端</h2>
+
+<ol>
+<li><p>客户端下载地址<a href="https://github.com/v2ray/v2ray-core/releases">https://github.com/v2ray/v2ray-core/releases</a></p></li>
+
+<li><p>客户端配置文件 config.json</p>
+
+<div class="file" >
+<div class="filename"> Filename: <b>config.json</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>    {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>      <span style="color:#fb660a;font-weight:bold">&#34;log&#34;</span>: {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        <span style="color:#fb660a;font-weight:bold">&#34;loglevel&#34;</span>: <span style="color:#0086d2">&#34;warning&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>      },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>      <span style="color:#fb660a;font-weight:bold">&#34;inbounds&#34;</span>: [{
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>        <span style="color:#fb660a;font-weight:bold">&#34;port&#34;</span>: <span style="color:#0086f7;font-weight:bold">1080</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        <span style="color:#fb660a;font-weight:bold">&#34;listen&#34;</span>: <span style="color:#0086d2">&#34;0.0.0.0&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>        <span style="color:#fb660a;font-weight:bold">&#34;tag&#34;</span>: <span style="color:#0086d2">&#34;socks-inbound&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>        <span style="color:#fb660a;font-weight:bold">&#34;protocol&#34;</span>: <span style="color:#0086d2">&#34;socks&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>        <span style="color:#fb660a;font-weight:bold">&#34;settings&#34;</span>: {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>          <span style="color:#fb660a;font-weight:bold">&#34;auth&#34;</span>: <span style="color:#0086d2">&#34;noauth&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>          <span style="color:#fb660a;font-weight:bold">&#34;udp&#34;</span>: <span style="color:#fb660a;font-weight:bold">false</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>        },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>        <span style="color:#fb660a;font-weight:bold">&#34;sniffing&#34;</span>: {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>          <span style="color:#fb660a;font-weight:bold">&#34;enabled&#34;</span>: <span style="color:#fb660a;font-weight:bold">true</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>          <span style="color:#fb660a;font-weight:bold">&#34;destOverride&#34;</span>: [<span style="color:#0086d2">&#34;http&#34;</span>, <span style="color:#0086d2">&#34;tls&#34;</span>]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>      }],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>      <span style="color:#fb660a;font-weight:bold">&#34;outbounds&#34;</span>: [{
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>        <span style="color:#fb660a;font-weight:bold">&#34;protocol&#34;</span>: <span style="color:#0086d2">&#34;vmess&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        <span style="color:#fb660a;font-weight:bold">&#34;settings&#34;</span>: {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>          <span style="color:#fb660a;font-weight:bold">&#34;vnext&#34;</span>: [{
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>            <span style="color:#fb660a;font-weight:bold">&#34;address&#34;</span>: <span style="color:#0086d2">&#34;yourdomain&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>            <span style="color:#fb660a;font-weight:bold">&#34;port&#34;</span>: <span style="color:#0086f7;font-weight:bold">443</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>            <span style="color:#fb660a;font-weight:bold">&#34;users&#34;</span>: [{
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>              <span style="color:#fb660a;font-weight:bold">&#34;id&#34;</span>: <span style="color:#0086d2">&#34;7a08f55b8-4d02-43ab-a8fe-b57f12e9e543&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>              <span style="color:#fb660a;font-weight:bold">&#34;alterId&#34;</span>: <span style="color:#0086f7;font-weight:bold">127</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>            }]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>          }]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>        },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>        <span style="color:#fb660a;font-weight:bold">&#34;mux&#34;</span>: {<span style="color:#fb660a;font-weight:bold">&#34;enable&#34;</span>: <span style="color:#fb660a;font-weight:bold">true</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>        },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>        <span style="color:#fb660a;font-weight:bold">&#34;streamSettings&#34;</span>: {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>            <span style="color:#fb660a;font-weight:bold">&#34;network&#34;</span>: <span style="color:#0086d2">&#34;ws&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>            <span style="color:#fb660a;font-weight:bold">&#34;security&#34;</span>: <span style="color:#0086d2">&#34;tls&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>            <span style="color:#fb660a;font-weight:bold">&#34;wsSettings&#34;</span>:{
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>              <span style="color:#fb660a;font-weight:bold">&#34;path&#34;</span>:<span style="color:#0086d2">&#34;/piwigo&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>            }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>      },{
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>        <span style="color:#fb660a;font-weight:bold">&#34;protocol&#34;</span>: <span style="color:#0086d2">&#34;freedom&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>        <span style="color:#fb660a;font-weight:bold">&#34;settings&#34;</span>: {},
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>        <span style="color:#fb660a;font-weight:bold">&#34;tag&#34;</span>: <span style="color:#0086d2">&#34;direct&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>      },{
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>        <span style="color:#fb660a;font-weight:bold">&#34;protocol&#34;</span>: <span style="color:#0086d2">&#34;blackhole&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>        <span style="color:#fb660a;font-weight:bold">&#34;settings&#34;</span>: {},
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>        <span style="color:#fb660a;font-weight:bold">&#34;tag&#34;</span>: <span style="color:#0086d2">&#34;blocked&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>      }],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span>    
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>    
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span>      <span style="color:#fb660a;font-weight:bold">&#34;routing&#34;</span>: {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span>        <span style="color:#fb660a;font-weight:bold">&#34;domainStrategy&#34;</span>: <span style="color:#0086d2">&#34;IPOnDemand&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span>        <span style="color:#fb660a;font-weight:bold">&#34;rules&#34;</span>:[
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span>         {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span>            <span style="color:#fb660a;font-weight:bold">&#34;type&#34;</span>: <span style="color:#0086d2">&#34;field&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span>            <span style="color:#fb660a;font-weight:bold">&#34;ip&#34;</span>: [<span style="color:#0086d2">&#34;geoip:private&#34;</span>],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58</span>            <span style="color:#fb660a;font-weight:bold">&#34;outboundTag&#34;</span>: <span style="color:#0086d2">&#34;blocked&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59</span>          },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60</span>          {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61</span>            <span style="color:#fb660a;font-weight:bold">&#34;type&#34;</span>: <span style="color:#0086d2">&#34;field&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62</span>            <span style="color:#fb660a;font-weight:bold">&#34;domain&#34;</span>: [<span style="color:#0086d2">&#34;geosite:category-ads&#34;</span>],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63</span>            <span style="color:#fb660a;font-weight:bold">&#34;outboundTag&#34;</span>: <span style="color:#0086d2">&#34;blocked&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64</span>          },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65</span>          {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66</span>            <span style="color:#fb660a;font-weight:bold">&#34;type&#34;</span>: <span style="color:#0086d2">&#34;field&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67</span>            <span style="color:#fb660a;font-weight:bold">&#34;domain&#34;</span>: [<span style="color:#0086d2">&#34;geosite:cn&#34;</span>],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68</span>            <span style="color:#fb660a;font-weight:bold">&#34;ip&#34;</span>: [<span style="color:#0086d2">&#34;192.168.0.0/24&#34;</span>],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69</span>            <span style="color:#fb660a;font-weight:bold">&#34;outboundTag&#34;</span>: <span style="color:#0086d2">&#34;direct&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70</span>          }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71</span>     
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72</span>        ]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73</span>      }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75</span>    </code></pre></div>
+</div></li>
+</ol>
+
+<h3 id="启动客户端">启动客户端</h3>
+
+<ul>
+<li><p>命令行启动</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ v2ray -config config.json</code></pre></div></li>
+
+<li><p>Gentoo 客户端启动脚本</p>
+
+<div class="file" >
+<div class="filename"> Filename: <b>/etc/init.d/v2ray</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-openrc" data-lang="openrc"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>    #!/sbin/openrc-run
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    depend() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>        need net.eth0
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    PIDFILE=/var/run/${SVCNAME}.pid
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    DIR=/home/walter/.v2ray
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    CMD=$DIR/v2ray
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    NAME=v2ray
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    OPTS=&#34;-config $DIR/config.json&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    start() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>        ebegin &#34;Starting v2ray ...&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>        start-stop-daemon --start --background \
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>        --chdir $DIR \
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>        --user $NAME \
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>        --make-pidfile --pidfile $PIDFILE \
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>        --exec $CMD &gt; /var/log/v2ray.log
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>        eend $?
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>    
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>    
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    stop() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>        ebegin &#34;Stopping v2ray&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>        start-stop-daemon --stop \
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>        --pidfile $PIDFILE \
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>        --user $NAME \
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>        --exec $CMD \
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>        --signal 2
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>        eend $?
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>    </code></pre></div>
+</div></li>
+</ul>
+
+<h2 id="privoxy-提供sockket5转换https的代理">privoxy 提供sockket5转换https的代理</h2>
+
+<div class="file" >
+    <div class="filename"> Filename: <b>/etc/privoxy/config</b></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-config" data-lang="config"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>user-manual /usr/share/doc/privoxy-3.0.28/user-manual/
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>confdir /etc/privoxy
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>logdir /var/log/privoxy
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>filterfile default.filter
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>logfile privoxy.log
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>listen-address  0.0.0.0:8128
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>toggle  1
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>enable-remote-toggle  0
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>enable-remote-http-toggle  0
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>enable-edit-actions 0
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>enforce-blocks 0
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>buffer-limit 4096
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>enable-proxy-authentication-forwarding 0
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>trusted-cgi-referer http://www.example.org/
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>        forward-socks5  /      127.0.0.1:1080 .
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>        forward         192.168.*.*/     .
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>        forward            10.*.*.*/     .
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>        forward           127.*.*.*/     .
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>       forward           localhost/     .
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>forwarded-connect-retries  0
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>accept-intercepted-requests 0
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>allow-cgi-request-crunching 0
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>split-large-forms 0
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>keep-alive-timeout 5
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>tolerate-pipelining 1
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>socket-timeout 300</code></pre></div>
+</div>
+
+<h2 id="cdn部分">CDN部分</h2>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/-GH7DOlqe-M" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<h3 id="apply-dns-https-my-freenom-com">Apply DNS <a href="https://my.freenom.com/">https://my.freenom.com/</a></h3>
+
+<ol>
+<li>Search a unused domain</li>
+<li>Apply for a 12year free domain</li>
+</ol>
+
+<h3 id="cloudware-cdn-https-www-cloudflare-com">Cloudware CDN <a href="https://www.cloudflare.com/">https://www.cloudflare.com/</a></h3>
+
+<ol>
+<li>Add a domain want to CDN</li>
+<li>Go back to freenom.com, under service -&gt; Management Tools -&gt; Nameservers -&gt; fill out the two dns provide by Cloudware.</li>
+</ol>
+
+<h2 id="v2ray-升级">V2ray 升级</h2>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ wget https://install.direct/go.sh
+ $ sudo bash go.sh</code></pre></div>
+<h2 id="how-to-enable-tls-1-3-in-nginx-on-debian-9">How to Enable TLS 1.3 in Nginx on Debian 9</h2>
+
+<ul>
+<li><a href="https://www.vultr.com/docs/how-to-enable-tls-1-3-in-nginx-on-debian-9">参考文档</a></li>
+
+<li><p>对于nginx编译</p>
+
+<ol>
+<li><p>补充安装必要的库</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ apt-get install pcre pcre-devel
+ $ apt-get install zlib1g zlib1g-dev</code></pre></div></li>
+
+<li><p>采用如下配置编译</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ ./configure --prefix=/etc/nginx
+    --sbin-path=/usr/sbin/nginx
+    --modules-path=/usr/lib/nginx/modules
+    --conf-path=/etc/nginx/nginx.conf
+    --error-log-path=/var/log/nginx/error.log
+    --pid-path=/var/run/nginx.pid
+    --lock-path=/var/run/nginx.lock
+    --user=nginx
+    --group=nginx
+    --build=Debian
+    --builddir=nginx-1.17.0
+    --http-log-path=/var/log/nginx/access.log
+    --http-client-body-temp-path=/var/cache/nginx/client_temp
+    --http-proxy-temp-path=/var/cache/nginx/proxy_temp
+    --http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp
+    --http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp
+    --http-scgi-temp-path=/var/cache/nginx/scgi_temp
+    --with-compat
+    --with-http_ssl_module
+    --with-http_v2_module
+    --with-openssl=../openssl-1.1.1c
+    --with-openssl-opt=no-nextprotoneg
+    --with-http_gzip_static_module
+    --with-http_sub_module  //因为 site_avaliable/default中有subdir的设置，故打开此项。
+    --with-stream</code></pre></div></li>
+</ol></li>
+</ul>
+
+<p>注意</p>
+
+<ol>
+<li>其实通过上面的编译在 /usr/lib/nginx/modules 并没有实际生成模块文件</li>
+<li>在nginx.conf中，是default的配置。核心内容是在<code>site-avaliable/default</code>中。</li>
+</ol>
+
+</article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    </body>
+</html>

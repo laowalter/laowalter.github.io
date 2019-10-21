@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" >
+
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://192.168.0.199:8000/sass/main.min.efb631bfd6d06f69412228c8e8394e1b0993664013282ad6d79b7aba11a9efd0.css">
+
+    <link rel="preload" as="font" href="/fonts/AdobeKaiStd-Regular.otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/AdobeHeitiStd-Regular.otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/Lobster-Regular.ttf" crossorigin="anonymous">
+
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+        
+        <link href="http://192.168.0.199:8000/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+    <body width="device-width" >
+      <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Debian</h1> 
+            <p class="datetime">Fri, Sep 20, 2019</p>
+            <a class="tag tag--primary tag--small"   href="/"><font color="green">Home</font></a>
+
+            
+          </div>
+      </div>
+
+    <hr><br><article>
+    <h2 id="vim-mouse">vim mouse</h2>
+
+<p>/usr/share/vim/vim80/defaults.vim I commented out the mouse specific detection as in:</p>
+
+<div class="file" >
+    <div class="filename"> Filename: <b>/usr/share/vim/vim80/defaults.vim</b></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#0086d2">&#34; In many terminal emulators the mouse works just fine.  By enabling it you
+</span><span style="color:#0086d2">&#34;</span> can position the cursor, Visually <span style="color:#fb660a;font-weight:bold">select</span> and scroll with the mouse.
+<span style="color:#0086d2">&#34;if has(&#39;mouse&#39;)
+</span><span style="color:#0086d2">&#34;</span>  set <span style="color:#fb660a">mouse</span>=r
+<span style="color:#0086d2">&#34;endif</span></code></pre></div>
+</div>
+
+<h2 id="root-color">root color</h2>
+
+<div class="file" >
+    <div class="filename"> Filename: <b>.profile</b></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#080;background-color:#0f140f;font-style:italic"># ~/.profile: executed by Bourne-compatible login shells.</span>
+<span style="color:#fb660a;font-weight:bold">if</span> [ -f ~/.bashrc ]; <span style="color:#fb660a;font-weight:bold">then</span>
+    . ~/.bashrc
+<span style="color:#fb660a;font-weight:bold">fi</span>
+mesg n || true</code></pre></div>
+</div>
+
+<div class="file" >
+    <div class="filename"> Filename: <b>.bashrc</b></div>
+        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#080;background-color:#0f140f;font-style:italic"># ~/.bashrc: executed by bash(1) for non-login shells.</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Note: PS1 and umask are already set in /etc/profile. You should not</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># need this unless you want different defaults for root.</span>
+<span style="color:#fb660a">PS1</span>=<span style="color:#0086d2">&#39;${debian_chroot:+($debian_chroot)}\h:\w\$ &#39;</span>
+umask <span style="color:#0086f7;font-weight:bold">022</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># You may uncomment the following lines if you want `ls&#39; to be colorized:</span>
+export <span style="color:#fb660a">LS_OPTIONS</span>=<span style="color:#0086d2">&#39;--color=auto&#39;</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#eval &#34;`dircolors`&#34;</span>
+alias <span style="color:#fb660a">ls</span>=<span style="color:#0086d2">&#39;ls $LS_OPTIONS&#39;</span>
+alias <span style="color:#fb660a">ll</span>=<span style="color:#0086d2">&#39;ls $LS_OPTIONS -l&#39;</span>
+alias <span style="color:#fb660a">l</span>=<span style="color:#0086d2">&#39;ls $LS_OPTIONS -lA&#39;</span>
+#
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Some more alias to avoid making mistakes:</span>
+alias <span style="color:#fb660a">rm</span>=<span style="color:#0086d2">&#39;rm -i&#39;</span>
+alias <span style="color:#fb660a">cp</span>=<span style="color:#0086d2">&#39;cp -i&#39;</span>
+alias <span style="color:#fb660a">mv</span>=<span style="color:#0086d2">&#39;mv -i&#39;</span></code></pre></div>
+</div>
+
+</article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    </body>
+</html>

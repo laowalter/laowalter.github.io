@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hugo on Just a Memo</title>
-    <link>https://laowalter.github.io/tags/hugo/</link>
+    <link>http://laowalter.github.io/tags/hugo/</link>
     <description>Recent content in hugo on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 22 Aug 2019 12:38:01 +0800</lastBuildDate>
     
-	<atom:link href="https://laowalter.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://laowalter.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo Install In Gentoo</title>
-      <link>https://laowalter.github.io/posts/tech/hugo_install/</link>
+      <link>http://laowalter.github.io/posts/tech/hugo_install/</link>
       <pubDate>Thu, 22 Aug 2019 12:38:01 +0800</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/hugo_install/</guid>
-      <description>Docker docker pull jojomi/hugo Start hugo local server Start once $ docker run --rm --name &amp;#34;hugo&amp;#34; -p1313:1313 \ -v /home/walter/blog:/src \ -v /home/walter/blog/public:/public \ -v /tmp/hugo-build-output:/output \ -e HUGO_BASEURL=&amp;#34;192.168.0.199&amp;#34; \ -e HUGO_THEME=&amp;#34;walter&amp;#34; \ -e HUGO_WATCH=&amp;#34;true&amp;#34; jojomi/hugo Auto start unless stopped $ docker run --restart=unless-stopped --name &amp;#34;hugo&amp;#34; -p1313:1313 \ -v /home/walter/blog:/src \ -v /home/walter/blog/public:/public \ -v /tmp/hugo-build-output:/output \ -e HUGO_BASEURL=&amp;#34;192.168.0.199&amp;#34; \ -e HUGO_THEME=&amp;#34;walter&amp;#34; \ -e HUGO_WATCH=&amp;#34;true&amp;#34; jojomi/hugo New a post $</description>
+      <guid>http://laowalter.github.io/posts/tech/hugo_install/</guid>
+      <description>Docker docker pull alup0/hugo Start hugo local server Start once $ docker run --rm --name &amp;#34;hugo&amp;#34; -p1313:1313 \ -v /home/walter/blog:/src \ -v /home/walter/blog/public:/public \ -v /tmp/hugo-build-output:/output \ -e HUGO_BASEURL=&amp;#34;192.168.0.199&amp;#34; \ -e HUGO_THEME=&amp;#34;walter&amp;#34; \ -e HUGO_WATCH=&amp;#34;true&amp;#34; alup0/hugo Auto start unless stopped $ docker run --restart=unless-stopped --name &amp;#34;hugo&amp;#34; -p1313:1313 \ -v /home/walter/blog:/src \ -v /home/walter/blog/public:/public \ -v /tmp/hugo-build-output:/output \ -e HUGO_BASEURL=&amp;#34;192.168.0.199&amp;#34; \ -e HUGO_THEME=&amp;#34;walter&amp;#34; \ -e HUGO_DRAFT=&amp;#34;true&amp;#34; \ -e HUGO_WATCH=&amp;#34;true&amp;#34; alup0/hugo New</description>
     </item>
     
     <item>
       <title>Hugo Cheatsheet</title>
-      <link>https://laowalter.github.io/posts/tech/hugo_cheatsheet/</link>
+      <link>http://laowalter.github.io/posts/tech/hugo_cheatsheet/</link>
       <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/hugo_cheatsheet/</guid>
+      <guid>http://laowalter.github.io/posts/tech/hugo_cheatsheet/</guid>
       <description>MMark (https://github.com/mmarkdown/mmark) Start mmark In Front Matter add markup = &amp;ldquo;mmark&amp;rdquo; then mmark started. MMark 语法说明 (https://mmark.miek.nl/post/syntax/) By now, MMark conflict with {{/* */}} MMark examples table, #ages means table id=ages Name | Age --------|-----: Bob | 27 Alice | 23 Table: This is the table caption. {#ages} code // test.go data Figure: A sample function. 块引用 {title=&amp;quot;The blockquote&amp;quot; #myid} &amp;gt; A blockquote with a</description>
     </item>
     
     <item>
       <title>Hugo Theme Development</title>
-      <link>https://laowalter.github.io/posts/tech/hugo_theme_develop/</link>
+      <link>http://laowalter.github.io/posts/tech/hugo_theme_develop/</link>
       <pubDate>Thu, 08 Aug 2019 23:29:12 +0800</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/hugo_theme_develop/</guid>
+      <guid>http://laowalter.github.io/posts/tech/hugo_theme_develop/</guid>
       <description>Youtube Tutorial https://www.youtube.com/watch?v=qtIqKaDlqXo&amp;amp;list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3 有特别帮助的网址 关于整体结构和简单的theme设置 https://www.zeolearn.com/magazine/develop-a-theme-for-hugo 中文网站 https://bwaycer.github.io/hugo_tutorial.hugo/overview/introduction/ 语法高亮的支持 Paginator用法 使用思维导图 Hexo 脑图 Insert javascript into hugo by partial Create custom Shortcodes</description>
     </item>
     

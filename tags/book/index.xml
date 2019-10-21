@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>book on Just a Memo</title>
+    <link>http://192.168.0.199:8000/tags/book/</link>
+    <description>Recent content in book on Just a Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 16 Oct 2019 05:25:28 +0000</lastBuildDate>
+    
+	<atom:link href="http://192.168.0.199:8000/tags/book/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Books_recommand(曹長青)</title>
+      <link>http://192.168.0.199:8000/posts/life/books_recommand/</link>
+      <pubDate>Wed, 16 Oct 2019 05:25:28 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/posts/life/books_recommand/</guid>
+      <description>读什么书非常重要。读错了书是很严重的事情，很有可能误导人生。我这篇文章所推荐的书目，相信不仅绝不会误导你的人生，且可让你清楚自己以后应该读什</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>todo on Just a Memo</title>
+    <link>http://192.168.0.199:8000/tags/todo/</link>
+    <description>Recent content in todo on Just a Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 30 Aug 2019 16:19:39 +0800</lastBuildDate>
+    
+	<atom:link href="http://192.168.0.199:8000/tags/todo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Todo</title>
+      <link>http://192.168.0.199:8000/posts/todo/</link>
+      <pubDate>Fri, 30 Aug 2019 16:19:39 +0800</pubDate>
+      
+      <guid>http://192.168.0.199:8000/posts/todo/</guid>
+      <description>Week Aug 30 期货技术形态研究 比较研究：（豆粕、菜粕）和（豆油、棕榈）2001/1909上涨特点； 复习前面的的总结； 完成第一步《建立底仓》 完成第一步</description>
+    </item>
+    
+  </channel>
+</rss>

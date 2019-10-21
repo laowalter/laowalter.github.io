@@ -11,7 +11,12 @@
     
     
     
-    <link rel="stylesheet" href="https://laowalter.github.io/sass/main.min.91fe23d298c61475f6a6ebc821ec21692e755f60b6ae426b7b3462333eefce36.css">
+    <link rel="stylesheet" href="http://laowalter.github.io/sass/main.min.efb631bfd6d06f69412228c8e8394e1b0993664013282ad6d79b7aba11a9efd0.css">
+
+    <link rel="preload" as="font" href="/fonts/AdobeKaiStd-Regular.otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/AdobeHeitiStd-Regular.otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/Lobster-Regular.ttf" crossorigin="anonymous">
+
 
 </head>
 
@@ -22,13 +27,13 @@
 
     
     
-    
-    <link href="https://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+        
+        <link href="http://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
     
 </head>
 
-    <body width="device-width">
-       <div class="homepage-header">
+    <body width="device-width" >
+      <div class="homepage-header">
           <div class="homepage-left">
             <h1>Nginx</h1> 
             <p class="datetime">Thu, Feb 2, 2017</p>
@@ -66,7 +71,7 @@
 <h2 id="nginx-on-gentoo">Nginx on Gentoo</h2>
 
 <div class="file" >
-    <div class="filename"> filename: <b>/etc/nginx/nginx.conf</b></div>
+    <div class="filename"> Filename: <b>/etc/nginx/nginx.conf</b></div>
         <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#fb660a;font-weight:bold">server</span> {
     <span style="color:#fb660a;font-weight:bold">listen</span> 192.168.0.202:<span style="color:#0086f7;font-weight:bold">80</span>;
     <span style="color:#fb660a;font-weight:bold">server_name</span> <span style="color:#0086d2">gentoo</span>;
@@ -118,7 +123,7 @@ sudo nginx</code></pre></div>
 <h3 id="configuration">Configuration</h3>
 
 <div class="file" >
-    <div class="filename"> filename: <b>/usr/local/etc/nginx/nginx.conf</b></div>
+    <div class="filename"> Filename: <b>/usr/local/etc/nginx/nginx.conf</b></div>
         <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">server {
          listen       <span style="color:#0086f7;font-weight:bold">8000</span>;
          server_name  _;

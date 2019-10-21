@@ -11,7 +11,12 @@
     
     
     
-    <link rel="stylesheet" href="https://laowalter.github.io/sass/main.min.91fe23d298c61475f6a6ebc821ec21692e755f60b6ae426b7b3462333eefce36.css">
+    <link rel="stylesheet" href="http://laowalter.github.io/sass/main.min.efb631bfd6d06f69412228c8e8394e1b0993664013282ad6d79b7aba11a9efd0.css">
+
+    <link rel="preload" as="font" href="/fonts/AdobeKaiStd-Regular.otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/AdobeHeitiStd-Regular.otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/Lobster-Regular.ttf" crossorigin="anonymous">
+
 
 </head>
 
@@ -22,13 +27,13 @@
 
     
     
-    
-    <link href="https://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+        
+        <link href="http://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
     
 </head>
 
-    <body width="device-width">
-       <div class="homepage-header">
+    <body width="device-width" >
+      <div class="homepage-header">
           <div class="homepage-left">
             <h1>Gentoo X / Xorg / X11</h1> 
             <p class="datetime">Sun, Jan 7, 2018</p>
@@ -97,7 +102,7 @@
 <p>设置/etc/portage/make.conf文件中两个重要的变量：</p>
 
 <div class="file" >
-    <div class="filename"> filename: <b>/etc/portage/make.conf</b></div>
+    <div class="filename"> Filename: <b>/etc/portage/make.conf</b></div>
         <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#fb660a">INPUT_DEVICE</span>=<span style="color:#0086d2">&#34;evdev&#34;</span>
  <span style="color:#fb660a">VIDEO_CARDS</span>=<span style="color:#0086d2">&#34;intel i965&#34;</span></code></pre></div>
 </div>
@@ -128,14 +133,14 @@
  $ vncserver  (Will generate a session named Xvnc)
  $ pkill Xvnc</code></pre></div>
 <div class="file" >
-    <div class="filename"> filename: <b>/etc/conf.d/tigervnc</b></div>
+    <div class="filename"> Filename: <b>/etc/conf.d/tigervnc</b></div>
         <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> DISPLAY:<span style="color:#0086d2">&#34;user_a:1 user_b:2&#34;</span></code></pre></div>
 </div>
 
 <p><br></p>
 
 <div class="file" >
-    <div class="filename"> filename: <b>~/.vnc/startup</b></div>
+    <div class="filename"> Filename: <b>~/.vnc/startup</b></div>
         
 
 <p></div></p>
@@ -183,7 +188,7 @@ twm &amp;</code></pre></td></tr></table>
 </ol>
 
 <div class="file" >
-    <div class="filename"> filename: <b>~/.Xresources</b></div>
+    <div class="filename"> Filename: <b>~/.Xresources</b></div>
         
 
 <p></div></p>

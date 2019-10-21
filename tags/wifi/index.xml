@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>wifi on Just a Memo</title>
-    <link>https://laowalter.github.io/tags/wifi/</link>
+    <link>http://laowalter.github.io/tags/wifi/</link>
     <description>Recent content in wifi on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 16 Nov 2017 16:55:00 +0000</lastBuildDate>
     
-	<atom:link href="https://laowalter.github.io/tags/wifi/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://laowalter.github.io/tags/wifi/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>WiFi-AP</title>
-      <link>https://laowalter.github.io/posts/tech/wifi_ap/</link>
+      <link>http://laowalter.github.io/posts/tech/wifi_ap/</link>
       <pubDate>Thu, 16 Nov 2017 16:55:00 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/wifi_ap/</guid>
-      <description>Check hardware $ lspci -n | grep 14e4 Kernel config filename: kernel config CONFIG_WLAN_VENDOR_BROADCOM=y CONFIG_B43=m CONFIG_B43_BCMA=y CONFIG_B43_SSB=y CONFIG_B43_BUSES_BCMA_AND_SSB=y # CONFIG_B43_BUSES_BCMA is not set # CONFIG_B43_BUSES_SSB is not set CONFIG_B43_PCI_AUTOSELECT=y CONFIG_B43_PCICORE_AUTOSELECT=y CONFIG_B43_SDIO=y CONFIG_B43_BCMA_PIO=y CONFIG_B43_PIO=y CONFIG_B43_PHY_G=y CONFIG_B43_PHY_N=y CONFIG_B43_PHY_LP=y CONFIG_B43_PHY_HT=y CONFIG_B43_HWRNG=y # CONFIG_B43_DEBUG is not set CONFIG_B43LEGACY=m CONFIG_B43LEGACY_PCI_AUTOSELECT=y CONFIG_B43LEGACY_PCICORE_AUTOSELECT=y CONFIG_B43LEGACY_HWRNG=y CONFIG_B43LEGACY_DEBUG=y CONFIG_B43LEGACY_DMA=y CONFIG_B43LEGACY_PIO=y CONFIG_B43LEGACY_DMA_AND_PIO_MODE=y # CONFIG_B43LEGACY_DMA_MODE is not set # CONFIG_B43LEGACY_PIO_MODE is not set CONFIG_BRCMUTIL=m CONFIG_BRCMSMAC=m CONFIG_BRCMFMAC=m CONFIG_BRCMFMAC_PROTO_BCDC=y CONFIG_BRCMFMAC_SDIO=y # CONFIG_BRCMFMAC_USB is not</description>
+      <guid>http://laowalter.github.io/posts/tech/wifi_ap/</guid>
+      <description>Check hardware $ lspci -n | grep 14e4 Kernel config Filename: kernel config CONFIG_WLAN_VENDOR_BROADCOM=y CONFIG_B43=m CONFIG_B43_BCMA=y CONFIG_B43_SSB=y CONFIG_B43_BUSES_BCMA_AND_SSB=y # CONFIG_B43_BUSES_BCMA is not set # CONFIG_B43_BUSES_SSB is not set CONFIG_B43_PCI_AUTOSELECT=y CONFIG_B43_PCICORE_AUTOSELECT=y CONFIG_B43_SDIO=y CONFIG_B43_BCMA_PIO=y CONFIG_B43_PIO=y CONFIG_B43_PHY_G=y CONFIG_B43_PHY_N=y CONFIG_B43_PHY_LP=y CONFIG_B43_PHY_HT=y CONFIG_B43_HWRNG=y # CONFIG_B43_DEBUG is not set CONFIG_B43LEGACY=m CONFIG_B43LEGACY_PCI_AUTOSELECT=y CONFIG_B43LEGACY_PCICORE_AUTOSELECT=y CONFIG_B43LEGACY_HWRNG=y CONFIG_B43LEGACY_DEBUG=y CONFIG_B43LEGACY_DMA=y CONFIG_B43LEGACY_PIO=y CONFIG_B43LEGACY_DMA_AND_PIO_MODE=y # CONFIG_B43LEGACY_DMA_MODE is not set # CONFIG_B43LEGACY_PIO_MODE is not set CONFIG_BRCMUTIL=m CONFIG_BRCMSMAC=m CONFIG_BRCMFMAC=m CONFIG_BRCMFMAC_PROTO_BCDC=y CONFIG_BRCMFMAC_SDIO=y # CONFIG_BRCMFMAC_USB is not</description>
     </item>
     
     <item>
       <title>Wifi-Bridge</title>
-      <link>https://laowalter.github.io/posts/tech/wifi_bridge/</link>
+      <link>http://laowalter.github.io/posts/tech/wifi_bridge/</link>
       <pubDate>Thu, 16 Nov 2017 16:51:15 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/wifi_bridge/</guid>
+      <guid>http://laowalter.github.io/posts/tech/wifi_bridge/</guid>
       <description>Description  The device(Mac mini) has a wired(eth0) interface and a wifi(wlan0) interface; eth0 connected to lan with a static ip address, whilewlan0 is used as an access point(ap); Wireless device, such as iphone will connected to lan through wlan0 by access the ap  Package prepare Notice: Be sure to set use=&amp;lsquo;ap &amp;hellip;&amp;rsquo;
 emerge -avq net-wireless/wpa_supplicant emerge -avq net-misc/bridge-utils Configuration /etc/conf.d/net # The bridge will take the ip address, so the individual interfaces don&amp;#39;t need any config_eth0=&amp;#34;null&amp;#34; config_wlan0=&amp;#34;null&amp;#34; modules_wlan0=&amp;#34;wpa_supplicant&amp;#34; wpa_supplicant_wlan0=&amp;#34;-b br0 -Dnl80211 -d -f /var/log/wpa_supplicant.</description>
     </item>

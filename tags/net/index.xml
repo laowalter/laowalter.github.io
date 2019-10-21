@@ -2,57 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>net on Just a Memo</title>
-    <link>https://laowalter.github.io/tags/net/</link>
+    <link>http://laowalter.github.io/tags/net/</link>
     <description>Recent content in net on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 22 Mar 2019 13:00:42 +0000</lastBuildDate>
     
-	<atom:link href="https://laowalter.github.io/tags/net/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://laowalter.github.io/tags/net/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>IPv6</title>
-      <link>https://laowalter.github.io/posts/tech/ipv6/</link>
+      <link>http://laowalter.github.io/posts/tech/ipv6/</link>
       <pubDate>Fri, 22 Mar 2019 13:00:42 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/ipv6/</guid>
-      <description> Disable ipv6 on Gentoo filename: /etc/sysctl.conf net.ipv6.conf.eth0.disable_ipv6=1  </description>
+      <guid>http://laowalter.github.io/posts/tech/ipv6/</guid>
+      <description> Disable ipv6 on Gentoo Filename: /etc/sysctl.conf net.ipv6.conf.eth0.disable_ipv6=1  </description>
     </item>
     
     <item>
       <title>Openwrt</title>
-      <link>https://laowalter.github.io/posts/tech/openwrt/</link>
+      <link>http://laowalter.github.io/posts/tech/openwrt/</link>
       <pubDate>Mon, 13 Aug 2018 13:50:47 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/openwrt/</guid>
+      <guid>http://laowalter.github.io/posts/tech/openwrt/</guid>
       <description>Gentoo Enviroment prepare. Official gentoo package required Gentoo official script Compile openwrt Official compile wiki 编译结果在 bin 的 target 目录中 Install openwrt to TP-Link TL-WR720N TL-WR720N Bin file on openwrt.org 第一次刷机： Reset TL-WR720N，然后在&amp;rdquo;系统工具&amp;rd</description>
     </item>
     
     <item>
       <title>Ethereum</title>
-      <link>https://laowalter.github.io/posts/tech/ethereum/</link>
+      <link>http://laowalter.github.io/posts/tech/ethereum/</link>
       <pubDate>Tue, 27 Mar 2018 22:03:46 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/ethereum/</guid>
+      <guid>http://laowalter.github.io/posts/tech/ethereum/</guid>
       <description>Install Gentoo $ sudo layman -a foxiverlay $ sudo eix-update $ emerge -avq net-p2p/go-ethereum $ emerge -avq net-p2p/ethminer Create get account $ geth account new Create ethereum wallet Go to https://github.com/ethereum/mist/releases Download windows version, tutotialhttps://medium.com/@attores/step-by-step-guide-getting-started-with-ethereum etherminerhttps://github.com/ethereum-mining/ethminer/releases Mining Use Internet Server ethermine.org server list Command line ethminer.exe -G -P stratum+ssl://0x3DC7F73Ad59e55f41fc8a40F0304F9e243358f9a.miner1@asia1.ethermine.org:5555 With geth CPU Mining linux geth --mine --minerthreads=4 --cache 4096 GPU Mining With ethermine https://github.com/ethereum-mining/ethminer/releases windows Note: 0.14</description>
     </item>
     
     <item>
       <title>TCP/IP</title>
-      <link>https://laowalter.github.io/posts/tech/tcpip/</link>
+      <link>http://laowalter.github.io/posts/tech/tcpip/</link>
       <pubDate>Mon, 15 Jan 2018 18:11:16 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/tcpip/</guid>
+      <guid>http://laowalter.github.io/posts/tech/tcpip/</guid>
       <description>Learn Detail Explaination of TCP handshake and Data Transfer</description>
     </item>
     
     <item>
       <title>IPTABLES (Mini Server)</title>
-      <link>https://laowalter.github.io/posts/tech/iptables_mini_server/</link>
+      <link>http://laowalter.github.io/posts/tech/iptables_mini_server/</link>
       <pubDate>Sat, 09 Dec 2017 22:42:57 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/iptables_mini_server/</guid>
+      <guid>http://laowalter.github.io/posts/tech/iptables_mini_server/</guid>
       <description>参考资料 iptables常用规则：屏蔽IP地址、禁用ping、协议设置、NAT与转发、负载平衡、自定义链 各种iptables中文资料 Most Frequently Used Linux</description>
     </item>
     
