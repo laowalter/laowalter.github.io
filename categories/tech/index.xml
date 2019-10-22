@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tech on Just a Memo</title>
-    <link>https://laowalter.github.io/categories/tech/</link>
+    <link>http://laowalter.github.io/categories/tech/</link>
     <description>Recent content in Tech on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Sep 2019 13:32:25 +0800</lastBuildDate>
     
-	<atom:link href="https://laowalter.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://laowalter.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Mac里的文件复制到 NTFS 格式的移动硬盘里</title>
-      <link>https://laowalter.github.io/posts/tech/macoswritetontfs/</link>
+      <link>http://laowalter.github.io/posts/tech/macoswritetontfs/</link>
       <pubDate>Tue, 17 Sep 2019 13:32:25 +0800</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/macoswritetontfs/</guid>
+      <guid>http://laowalter.github.io/posts/tech/macoswritetontfs/</guid>
       <description>Install Homebrew Install ntfs-3g brew update brew install ntfs-3g Install Fuse Box 在 https://osxfuse.github.io/ 下载安装 FUSE for macOS 3.10.2` 将原来系统的mount_nfs 备份为mount_nfs.orig sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.orig //将原系文件改名备份 如</description>
     </item>
     
     <item>
       <title>CSS</title>
-      <link>https://laowalter.github.io/posts/tech/css/</link>
+      <link>http://laowalter.github.io/posts/tech/css/</link>
       <pubDate>Fri, 23 Aug 2019 12:31:39 +0800</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/css/</guid>
+      <guid>http://laowalter.github.io/posts/tech/css/</guid>
       <description> @font-face
 @font-face { font-family: Lobster; src: url(&amp;#34;../fonts/Lobster-Regular.ttf&amp;#34;); } @font-face { font-family: Lobster; src: url(&amp;#34;../fonts/Lobster-Regular.ttf&amp;#34;); } .datetime { font-family: Lobster, cursive; color: #003366; } Google Fonts
   </description>
@@ -33,19 +33,19 @@
     
     <item>
       <title>Hugo Install In Gentoo</title>
-      <link>https://laowalter.github.io/posts/tech/hugo_install/</link>
+      <link>http://laowalter.github.io/posts/tech/hugo_install/</link>
       <pubDate>Thu, 22 Aug 2019 12:38:01 +0800</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/hugo_install/</guid>
+      <guid>http://laowalter.github.io/posts/tech/hugo_install/</guid>
       <description>Docker docker pull alup0/hugo Start hugo local server Start once $ docker run --rm --name &amp;#34;hugo&amp;#34; -p1313:1313 \ -v /home/walter/blog:/src \ -v /home/walter/blog/public:/public \ -v /tmp/hugo-build-output:/output \ -e HUGO_BASEURL=&amp;#34;192.168.0.199&amp;#34; \ -e HUGO_THEME=&amp;#34;walter&amp;#34; \ -e HUGO_WATCH=&amp;#34;true&amp;#34; alup0/hugo Auto start unless stopped $ docker run --restart=unless-stopped --name &amp;#34;hugo&amp;#34; -p1313:1313 \ -v /home/walter/blog:/src \ -v /home/walter/blog/public:/public \ -v /tmp/hugo-build-output:/output \ -e HUGO_BASEURL=&amp;#34;192.168.0.199&amp;#34; \ -e HUGO_THEME=&amp;#34;walter&amp;#34; \ -e HUGO_DRAFT=&amp;#34;true&amp;#34; \ -e HUGO_WATCH=&amp;#34;true&amp;#34; alup0/hugo New</description>
     </item>
     
     <item>
       <title>Sed</title>
-      <link>https://laowalter.github.io/posts/tech/sed/</link>
+      <link>http://laowalter.github.io/posts/tech/sed/</link>
       <pubDate>Wed, 21 Aug 2019 07:49:35 +0800</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/sed/</guid>
+      <guid>http://laowalter.github.io/posts/tech/sed/</guid>
       <description> Sed Reference
  Directory Recursively
 $ find ./ -type f -exec sed -i -e &amp;#39;s/:1313//g&amp;#39; {} \; $ find ./ -type f -exec sed -i -e &amp;#39;s/192\.168\.0\.199/laowalter.github.io/g&amp;#39; {} \; Search and Replace
@@ -55,253 +55,253 @@ $ echo apple1 apple3 apple1 apple2 botemo1 | sed &amp;#39;/apple./ { s/apple1/ap
     
     <item>
       <title>Hugo Cheatsheet</title>
-      <link>https://laowalter.github.io/posts/tech/hugo_cheatsheet/</link>
+      <link>http://laowalter.github.io/posts/tech/hugo_cheatsheet/</link>
       <pubDate>Sun, 18 Aug 2019 10:30:29 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/hugo_cheatsheet/</guid>
+      <guid>http://laowalter.github.io/posts/tech/hugo_cheatsheet/</guid>
       <description>MMark (https://github.com/mmarkdown/mmark) Start mmark In Front Matter add markup = &amp;ldquo;mmark&amp;rdquo; then mmark started. MMark 语法说明 (https://mmark.miek.nl/post/syntax/) By now, MMark conflict with {{/* */}} MMark examples table, #ages means table id=ages Name | Age --------|-----: Bob | 27 Alice | 23 Table: This is the table caption. {#ages} code // test.go data Figure: A sample function. 块引用 {title=&amp;quot;The blockquote&amp;quot; #myid} &amp;gt; A blockquote with a</description>
     </item>
     
     <item>
       <title>Hugo Theme Development</title>
-      <link>https://laowalter.github.io/posts/tech/hugo_theme_develop/</link>
+      <link>http://laowalter.github.io/posts/tech/hugo_theme_develop/</link>
       <pubDate>Thu, 08 Aug 2019 23:29:12 +0800</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/hugo_theme_develop/</guid>
+      <guid>http://laowalter.github.io/posts/tech/hugo_theme_develop/</guid>
       <description>Youtube Tutorial https://www.youtube.com/watch?v=qtIqKaDlqXo&amp;amp;list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3 有特别帮助的网址 关于整体结构和简单的theme设置 https://www.zeolearn.com/magazine/develop-a-theme-for-hugo 中文网站 https://bwaycer.github.io/hugo_tutorial.hugo/overview/introduction/ 语法高亮的支持 Paginator用法 使用思维导图 Hexo 脑图 Insert javascript into hugo by partial Create custom Shortcodes</description>
     </item>
     
     <item>
       <title>Vim Cheatsheet</title>
-      <link>https://laowalter.github.io/posts/tech/vim_cheatsheet/</link>
+      <link>http://laowalter.github.io/posts/tech/vim_cheatsheet/</link>
       <pubDate>Mon, 22 Jul 2019 08:42:27 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/vim_cheatsheet/</guid>
+      <guid>http://laowalter.github.io/posts/tech/vim_cheatsheet/</guid>
       <description>Vim 全局 :saveas file - 另存为 :close - 关闭当前窗口 K - open man page for word under the cursor H - 移动到当前页面顶部 M - 移动到当前页面中间 L - 移动到当前页面底部 w - 移动到下个单词开</description>
     </item>
     
     <item>
       <title>Go Regex</title>
-      <link>https://laowalter.github.io/posts/tech/goregex/</link>
+      <link>http://laowalter.github.io/posts/tech/goregex/</link>
       <pubDate>Fri, 28 Jun 2019 16:16:18 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/goregex/</guid>
+      <guid>http://laowalter.github.io/posts/tech/goregex/</guid>
       <description>Golang中的正则表达式(链接) 如下代码使用golang的正则表达式regexp：去除HTML，CSS，SCRIPT代码，仅保留页面文字 1</description>
     </item>
     
     <item>
       <title>goQuery</title>
-      <link>https://laowalter.github.io/posts/tech/goquery/</link>
+      <link>http://laowalter.github.io/posts/tech/goquery/</link>
       <pubDate>Fri, 28 Jun 2019 09:36:52 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/goquery/</guid>
+      <guid>http://laowalter.github.io/posts/tech/goquery/</guid>
       <description>from https://www.51hint.com/posts/goquery/ 最近研究Go爬虫相关的知识，使用到goquery这个库比较多，尤其是对爬取到的HTML进行选择和查找匹配的内容时，goquery的选择器</description>
     </item>
     
     <item>
       <title>Golang Webcrawler</title>
-      <link>https://laowalter.github.io/posts/tech/gowebcrawler/</link>
+      <link>http://laowalter.github.io/posts/tech/gowebcrawler/</link>
       <pubDate>Wed, 26 Jun 2019 22:12:05 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/gowebcrawler/</guid>
+      <guid>http://laowalter.github.io/posts/tech/gowebcrawler/</guid>
       <description>使用Golang+selenium 驱动 chrome headless 模式，再用 goquery 解析html 字符。 首先在服务器上安装最新版本的chrome 和 chromedriver emerge -avq www-cient/google-chrome 下载对应的chro</description>
     </item>
     
     <item>
       <title>Go Env Setting</title>
-      <link>https://laowalter.github.io/posts/tech/goenvsetting/</link>
+      <link>http://laowalter.github.io/posts/tech/goenvsetting/</link>
       <pubDate>Tue, 21 May 2019 10:32:29 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/goenvsetting/</guid>
+      <guid>http://laowalter.github.io/posts/tech/goenvsetting/</guid>
       <description>vim-go 安装 解决GoInstallBinaries 安装超时 $ export http_proxy=192.168.0.199:8128 $ export https_proxy=192.168.0.199:8128 然后在vim安装 :GoInstallBinaries Go 环境设置 关于GOPATH，有文章建议一个项目使用一个go</description>
     </item>
     
     <item>
       <title>Patch / Diff (not finish)</title>
-      <link>https://laowalter.github.io/posts/tech/patch/</link>
+      <link>http://laowalter.github.io/posts/tech/patch/</link>
       <pubDate>Thu, 25 Apr 2019 09:40:45 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/patch/</guid>
+      <guid>http://laowalter.github.io/posts/tech/patch/</guid>
       <description>diff 是用来生成文件之间的*不同之处*。把原始文件放到前面 diff -up origal-file modified file patch 打补丁是要明确指出把区别文件作用于哪个文件。 patch -R</description>
     </item>
     
     <item>
       <title>Freenas</title>
-      <link>https://laowalter.github.io/posts/tech/freenas/</link>
+      <link>http://laowalter.github.io/posts/tech/freenas/</link>
       <pubDate>Wed, 17 Apr 2019 12:14:17 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/freenas/</guid>
+      <guid>http://laowalter.github.io/posts/tech/freenas/</guid>
       <description>Terminal / Console 对普通永户和root此方法都适用 Step one Filename: ~/.login_conf me:\ :charset=UTF-8:\ :lang=zh_CN.UTF-8: Step two cd cp .profile .bash_profile 然后再最后添加如下内容: PS1=&amp;#34;\e[0;32m[\u@\h:\e[m\e[1;33m\w\e[m\e[0;32m]\e[m &amp;#34; case `id -u` in *) PS1=&amp;#34;${PS1}$&amp;#34;;; esac alias ls=&amp;#39;ls -G&amp;#39;; Jail Errors Metadata corrupt after fetch rm -fr /var/db/portsnap/* portsnap fetch Jail initialize pkg</description>
     </item>
     
     <item>
       <title>ASRock j3455说明书（摘要）</title>
-      <link>https://laowalter.github.io/posts/tech/asrock_j3455/</link>
+      <link>http://laowalter.github.io/posts/tech/asrock_j3455/</link>
       <pubDate>Mon, 15 Apr 2019 09:11:01 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/asrock_j3455/</guid>
+      <guid>http://laowalter.github.io/posts/tech/asrock_j3455/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ebuild</title>
-      <link>https://laowalter.github.io/posts/tech/ebuild/</link>
+      <link>http://laowalter.github.io/posts/tech/ebuild/</link>
       <pubDate>Thu, 28 Mar 2019 17:51:15 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/ebuild/</guid>
+      <guid>http://laowalter.github.io/posts/tech/ebuild/</guid>
       <description>一个简单例子 net-dns/dnsmasq-2.80是官方的，但是不具备regex支持功能，https://github.com/laowa</description>
     </item>
     
     <item>
       <title>装机</title>
-      <link>https://laowalter.github.io/posts/tech/makeup_pc/</link>
+      <link>http://laowalter.github.io/posts/tech/makeup_pc/</link>
       <pubDate>Tue, 26 Mar 2019 20:03:53 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/makeup_pc/</guid>
+      <guid>http://laowalter.github.io/posts/tech/makeup_pc/</guid>
       <description>软路由 配件 网卡(拆机的原装网卡) BCM 5709c 4口千兆，价格约100元； CPU 第四代 CPU i3 4170 + B85主板 NAS CPU E3-1234LV5 311 主板 ASROCK/永擎 C236 WSI 1565 内存 金士顿ECC</description>
     </item>
     
     <item>
       <title>DNS Server List</title>
-      <link>https://laowalter.github.io/posts/tech/dns_server_list/</link>
+      <link>http://laowalter.github.io/posts/tech/dns_server_list/</link>
       <pubDate>Sun, 24 Mar 2019 11:29:42 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/dns_server_list/</guid>
+      <guid>http://laowalter.github.io/posts/tech/dns_server_list/</guid>
       <description>DNS Server Provider Server1 Server2 Cloudflare 1.1.1.1 1.0.0.1 Google 8.8.8.8 8.8.4.4 Quad9 9.9.9.9 149.112.112.112 OpenDNS Home 208.67.222.222 208.67.220.220 Comodo Secure 8.26.56.26 8.20.247.20 CleanBrowsing 185.228.168.9 185.228.169.9 Verisign 64.6.64.6 64.6.65.6 Alternate 198.101.242.72 23.253.163.53 AdGuard 176.103.130.130 176.103.130.131 新加坡 DNS Server https://public-dns.info/nameserver/sg.html</description>
     </item>
     
     <item>
       <title>IPv6</title>
-      <link>https://laowalter.github.io/posts/tech/ipv6/</link>
+      <link>http://laowalter.github.io/posts/tech/ipv6/</link>
       <pubDate>Fri, 22 Mar 2019 13:00:42 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/ipv6/</guid>
+      <guid>http://laowalter.github.io/posts/tech/ipv6/</guid>
       <description> Disable ipv6 on Gentoo Filename: /etc/sysctl.conf net.ipv6.conf.eth0.disable_ipv6=1  </description>
     </item>
     
     <item>
       <title>Mldonkey 电驴</title>
-      <link>https://laowalter.github.io/posts/tech/mldonkey/</link>
+      <link>http://laowalter.github.io/posts/tech/mldonkey/</link>
       <pubDate>Mon, 18 Mar 2019 18:01:15 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/mldonkey/</guid>
+      <guid>http://laowalter.github.io/posts/tech/mldonkey/</guid>
       <description>安装 $ sudo emerge -avq net-p2p/mldonkey 配置 第一启动后台服务不要更改任何配置； 安装过程会自动创建一个用户“p2p”， $ sud /etc/init.d/mldonkey start 修改配置文件 首先停止服务 /etc/init.d/mldonkey stop 修改配置文件 Filename:</description>
     </item>
     
     <item>
       <title>Encrypt Filesystem / 加密文件系统</title>
-      <link>https://laowalter.github.io/posts/tech/encryptfs/</link>
+      <link>http://laowalter.github.io/posts/tech/encryptfs/</link>
       <pubDate>Wed, 13 Mar 2019 11:36:10 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/encryptfs/</guid>
+      <guid>http://laowalter.github.io/posts/tech/encryptfs/</guid>
       <description>Dm-crypt 加密文件系统镜像 数据包准备 安装 root# emerge -avq sys-fs/lvm2 root# emerge -avq sys-fs/cryptsetup 检查dm-crpyt是否已经加载 $ ls -l /dev/mapper/control # 接下来加载dm-crypt内核模块： $ sudo modprobe dm-crypt # dm</description>
     </item>
     
     <item>
       <title>Bluetooth (linux) / 蓝牙</title>
-      <link>https://laowalter.github.io/posts/tech/bluetooth/</link>
+      <link>http://laowalter.github.io/posts/tech/bluetooth/</link>
       <pubDate>Fri, 01 Mar 2019 23:42:48 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/bluetooth/</guid>
+      <guid>http://laowalter.github.io/posts/tech/bluetooth/</guid>
       <description>文档 * [Gentoo Wiki 蓝牙](https://wiki.gentoo.org/wiki/Bluetooth) * [Gentoo wiki 蓝牙 bluez-alsa](https://wiki.gentoo.org/wiki/Bluetooth_Headset) * [Github blue-alsa 包含使用方法](https</description>
     </item>
     
     <item>
       <title>密码生成程序</title>
-      <link>https://laowalter.github.io/posts/tech/genpasswd/</link>
+      <link>http://laowalter.github.io/posts/tech/genpasswd/</link>
       <pubDate>Wed, 27 Feb 2019 14:04:48 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/genpasswd/</guid>
+      <guid>http://laowalter.github.io/posts/tech/genpasswd/</guid>
       <description>Gentoo Wiki 密码生成 Command ranpwd 随机生成密码 mkpasswd 随机生成密码</description>
     </item>
     
     <item>
       <title>FVWM</title>
-      <link>https://laowalter.github.io/posts/tech/fvwm/</link>
+      <link>http://laowalter.github.io/posts/tech/fvwm/</link>
       <pubDate>Fri, 22 Feb 2019 10:51:44 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/fvwm/</guid>
+      <guid>http://laowalter.github.io/posts/tech/fvwm/</guid>
       <description>mouse cursor Filename: ~/.Xresources 18 19 18 Xcursor.theme: ComixCursors-White 19 Xcursor.size: 64 Fvwm console font setup Filename: ~/.Xresources 40 41 40 FvwmConsole*VT100*geometry: 40x4 41 FvwmConsole*font: xft:Inconsolata LGC:pixelsize=16 Windows Title Bar 等各种中文字体支持 安装字体 $ emerge -avq media-fonts/wqy-zenhei $ fc-list|grep WenQuanYi /usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc: WenQuanYi Zen Hei:style=Regular /usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc: WenQuanYi Zen Hei Sharp,文泉驛點陣正</description>
     </item>
     
     <item>
       <title>VLC 播放器</title>
-      <link>https://laowalter.github.io/posts/tech/vlc/</link>
+      <link>http://laowalter.github.io/posts/tech/vlc/</link>
       <pubDate>Tue, 05 Feb 2019 19:35:26 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/vlc/</guid>
+      <guid>http://laowalter.github.io/posts/tech/vlc/</guid>
       <description>Hotkeys During playback you can press g or h to adjust subtitle delay (adjust step is 50 ms). OS X v2.2.1 keys: &amp;ldquo;h&amp;rdquo; (decrease delay, subtitles display after sound) and &amp;ldquo;j&amp;rdquo; (increase delay, subtitles display before sound). If subtitle is ahead of sound, press g If subtitle is behind sound, press h Extended Settings You can also set a specific delay. Go to Tools &amp;gt; Track Synchronization and set the</description>
     </item>
     
     <item>
       <title>Latex Demos and Templates</title>
-      <link>https://laowalter.github.io/posts/tech/latex-demos/</link>
+      <link>http://laowalter.github.io/posts/tech/latex-demos/</link>
       <pubDate>Fri, 14 Dec 2018 16:16:19 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/latex-demos/</guid>
+      <guid>http://laowalter.github.io/posts/tech/latex-demos/</guid>
       <description>常用的latex宏包 CJK 中文支持，现不推荐这种方式 CJKfntef CJK 下的中文下划线、浪线、加点等标记。xeCJK 沿用 CJKpunct CJK 下的中文标点压缩 CJKnumber CJK 下的数字。在 ctex 宏</description>
     </item>
     
     <item>
       <title>Php-fpm</title>
-      <link>https://laowalter.github.io/posts/tech/php-fpm/</link>
+      <link>http://laowalter.github.io/posts/tech/php-fpm/</link>
       <pubDate>Sun, 02 Dec 2018 11:45:29 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/php-fpm/</guid>
+      <guid>http://laowalter.github.io/posts/tech/php-fpm/</guid>
       <description>Install /Upgrade php-fpm Config /etc/php/fpm-php7.2/fpm.d/www.conf Filename: /etc/php/fpm-php7.2/fpm.d/www.conf listen = /run/php-fpm.socket listen.owner = nginx listen.group = nginx listen.mode = 0660 Adjust upload limited Filename: /etc/php/fpm-php7.2/php.ini upload_tmp_dir = /tmp upload_max_filesize = 20M /etc/ngnix/nginx.conf Filename: /etc/ngnix/nginx.conf client_max_body_size 20M; client_body_buffer_size 128k; Add php-fpm to default service # sudo /etc/init.d/php-fpm start # rc-update add php-fpm default Setup php-fpm in nginx 简单的只用一个nginx.co</description>
     </item>
     
     <item>
       <title>Xetex/Latex/Xelatex</title>
-      <link>https://laowalter.github.io/posts/tech/latex/</link>
+      <link>http://laowalter.github.io/posts/tech/latex/</link>
       <pubDate>Thu, 22 Nov 2018 21:44:41 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/latex/</guid>
+      <guid>http://laowalter.github.io/posts/tech/latex/</guid>
       <description>使用xelatex 模板一 Filename: 模板一(简体) \documentclass[11pt,a4paper]{article} \usepackage{fontspec,xltxtra,xunicode} \usepackage[slantfont,boldfont]{xeCJK} \setCJKmainfont[BoldFont=Adobe Heiti Std,ItalicFont=Adobe Kaiti Std]{Adobe Song Std} \setCJKsansfont{Adobe Heiti Std} \setCJKmonofont{Adobe Song Std} \setCJKfamilyfont{song}{Adobe Song Std} \setCJKfamilyfont{hei}{Adobe Heiti Std} \setCJKfamilyfont{kai}{Adobe Kaiti Std} \newcommand{\hei}{\CJKfamily{hei}} \newcommand{\song}{\CJKfamily{song}} \newcommand{\kai}{\CJKfamily{kai}} \title{\LaTeX中文博客模板} \author{wangl393} \date{\today}</description>
     </item>
     
     <item>
       <title>Samba</title>
-      <link>https://laowalter.github.io/posts/tech/samba/</link>
+      <link>http://laowalter.github.io/posts/tech/samba/</link>
       <pubDate>Sat, 17 Nov 2018 10:17:08 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/samba/</guid>
+      <guid>http://laowalter.github.io/posts/tech/samba/</guid>
       <description>配置文件 smb.conf Filename: /etc/samba/smb.conf [global] workgroup = home server string = mini server role = standalone server hosts allow = 192.168.0. 192.168.1. 192.168.6. 127. security = user log file = /var/log/samba/log.%m max log size = 50 interfaces = 192.168.0.199 127.0.0.1 dns proxy = no [homes] comment = Home Directories valid users = %S read only = No path = %H/samba create mask = 0644 directory mask =</description>
     </item>
     
     <item>
       <title>IRC/Weechat</title>
-      <link>https://laowalter.github.io/posts/tech/irc/</link>
+      <link>http://laowalter.github.io/posts/tech/irc/</link>
       <pubDate>Sat, 10 Nov 2018 09:15:44 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/irc/</guid>
+      <guid>http://laowalter.github.io/posts/tech/irc/</guid>
       <description>Weechat 安装 目前Weechat所有的script都能支持python2, 官方加以暂时都编译为python2。 $ cat /etc/portage/package.use/weechat net-irc/weechat python_single_target_python2_7 -python_single_target_python3_6 OTR (1) Install OTR [ebuild N ] dev-python/pycrypto-2.6.1-r2 USE=&amp;#34;gmp -doc -test&amp;#34; PYTHON_TARGETS=&amp;#34;python2_7 python3_6</description>
     </item>
     
     <item>
       <title>Search Engine</title>
-      <link>https://laowalter.github.io/posts/tech/searchengine/</link>
+      <link>http://laowalter.github.io/posts/tech/searchengine/</link>
       <pubDate>Sun, 04 Nov 2018 11:36:41 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/searchengine/</guid>
+      <guid>http://laowalter.github.io/posts/tech/searchengine/</guid>
       <description>pipl Pipl是一款为搜索网络上的人物信息而生的搜索引擎。不同于传统意义上的搜索引擎，Pipl是专为检索“深网”上的信息而设计的。Pipl的爬虫</description>
     </item>
     
     <item>
       <title>Opera</title>
-      <link>https://laowalter.github.io/posts/tech/opera/</link>
+      <link>http://laowalter.github.io/posts/tech/opera/</link>
       <pubDate>Sun, 04 Nov 2018 11:23:50 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/opera/</guid>
+      <guid>http://laowalter.github.io/posts/tech/opera/</guid>
       <description>更改Opera的区域/更改缺省浏览器 在资源管理器的地址栏中键入%appData%在定位到&amp;rdquo;Roaming\Opera Software\Opera Stable&amp;rdquo; 找到文件</description>
     </item>
     
     <item>
       <title>iTunes</title>
-      <link>https://laowalter.github.io/posts/tech/itunes/</link>
+      <link>http://laowalter.github.io/posts/tech/itunes/</link>
       <pubDate>Sun, 04 Nov 2018 08:53:42 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/itunes/</guid>
+      <guid>http://laowalter.github.io/posts/tech/itunes/</guid>
       <description> Change iTunes Backup directory
  Default backup directory  Move to “J:\My iPhone Backup\Backup”, Just create a softlink
 mklink /J “%APPDATA%\Apple Computer\MobileSync\Backup” “J:\My iPhone Backup\Backup”   </description>
@@ -309,244 +309,244 @@ mklink /J “%APPDATA%\Apple Computer\MobileSync\Backup” “J:\My iPhone Backu
     
     <item>
       <title>Aria2 / 百度网盘</title>
-      <link>https://laowalter.github.io/posts/tech/aria2/</link>
+      <link>http://laowalter.github.io/posts/tech/aria2/</link>
       <pubDate>Fri, 02 Nov 2018 20:49:37 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/aria2/</guid>
+      <guid>http://laowalter.github.io/posts/tech/aria2/</guid>
       <description>Linux 使用 aria 安装 manual: man aria2c emerge net-misc/aria2 config file $HOME/.aria2/aria2.conf 配置 $HOME/.aria2/aria2.conf 配置文件说明 Filename: ~/.aria2/aria2.conf ## 全局设置 ## =========================== # 下载位置, 默认: 当前启动位置 dir=/data/share/downloads/aria2 # 断点续传 continue=true # 日志 路径必须是全局路径 log-level=warn log=/home/walter/.aria2/aria2.log # 从</description>
     </item>
     
     <item>
       <title>Linux 命令行字典</title>
-      <link>https://laowalter.github.io/posts/tech/dict/</link>
+      <link>http://laowalter.github.io/posts/tech/dict/</link>
       <pubDate>Sat, 13 Oct 2018 08:10:51 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/dict/</guid>
+      <guid>http://laowalter.github.io/posts/tech/dict/</guid>
       <description>网络字典（推荐方案） Install $ sudo emerge -avq app-i18n/translate-shell Config Filename: .translate-shell/init.trans 1 2 3 4 5 { :tl [&amp;#34;zh-CN&amp;#34;] :user-agent &amp;#34;Mozilla/5.0 (X11; Linux x86_64; rv:33.0) Gecko/20100101 Firefox/63.0&amp;#34; :proxy &amp;#34;http://192.168.0.199:8087&amp;#34; } USE $ trans en:zh good $ trans good $ trans zh:en 好 $ trans 好 :en $ trans holster :ja // to japanese $ trans -x http://192.168.0.199:8087 good // by a proxy</description>
     </item>
     
     <item>
       <title>Python_tips</title>
-      <link>https://laowalter.github.io/posts/tech/python-tips/</link>
+      <link>http://laowalter.github.io/posts/tech/python-tips/</link>
       <pubDate>Tue, 25 Sep 2018 08:44:25 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/python-tips/</guid>
+      <guid>http://laowalter.github.io/posts/tech/python-tips/</guid>
       <description>Read special excel like xml Excel Address import pandas as pd dfs = pd.read_html(&amp;#39;swclass.xls&amp;#39;, flavor=&amp;#39;html5lib&amp;#39;) df = pd.DataFrame(dfs[0]) df.columns = df.iloc[0] df = df[1:] df_agg = df.groupby(&amp;#39;行业名称&amp;#39;).agg(lambda x: &amp;#39;,&amp;#39;.join(x)) df_agg = df_agg.reset_index() df</description>
     </item>
     
     <item>
       <title>jekyll</title>
-      <link>https://laowalter.github.io/posts/tech/jekyll/</link>
+      <link>http://laowalter.github.io/posts/tech/jekyll/</link>
       <pubDate>Sat, 22 Sep 2018 11:53:35 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/jekyll/</guid>
+      <guid>http://laowalter.github.io/posts/tech/jekyll/</guid>
       <description> Jekyll Install $ sudo emerge -av dev-ruby/rubygems $ gem install bundler jekyll $ echo &amp;#34;export PATH=$PATH:~/.gem/ruby/2.3.0/bin&amp;#34; &amp;gt; ~/.bashrc &amp;#34; $source ~/.bashrc $jekyll new blog $cd blog $bundle install ~/blog/ $bundle exec jekyll serve</description>
     </item>
     
     <item>
       <title>Stocktools Installation</title>
-      <link>https://laowalter.github.io/posts/tech/stocktools/</link>
+      <link>http://laowalter.github.io/posts/tech/stocktools/</link>
       <pubDate>Wed, 29 Aug 2018 10:14:22 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/stocktools/</guid>
+      <guid>http://laowalter.github.io/posts/tech/stocktools/</guid>
       <description>Matplotlib Install brew install pygtk Since already install PyQt5, so edit ./matplotlib/matplotlibrc Fro UTF8 fonts backend: Qt5Agg font.sans-serif : STHeiti axes.unicode_minus : False TA-Lib Install Gentoo emerge -avq sci-libs/ta-lib-0.4.0 pip install TA-lib Mac $ brew install ta-lib $ pip install TA-Lib 使用： Documents: http://mrjbq7.github.io/ta-lib/doc_index.html TA-Lib MA_Type 参数类型的意义 import talib from talib import MA_Type MA_Type: 0=SMA, 1=EMA, 2=WMA, 3=DEMA, 4=TEMA, 5=TRIMA, 6=KAMA, 7=MAMA,</description>
     </item>
     
     <item>
       <title>Openwrt</title>
-      <link>https://laowalter.github.io/posts/tech/openwrt/</link>
+      <link>http://laowalter.github.io/posts/tech/openwrt/</link>
       <pubDate>Mon, 13 Aug 2018 13:50:47 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/openwrt/</guid>
+      <guid>http://laowalter.github.io/posts/tech/openwrt/</guid>
       <description>Gentoo Enviroment prepare. Official gentoo package required Gentoo official script Compile openwrt Official compile wiki 编译结果在 bin 的 target 目录中 Install openwrt to TP-Link TL-WR720N TL-WR720N Bin file on openwrt.org 第一次刷机： Reset TL-WR720N，然后在&amp;rdquo;系统工具&amp;rd</description>
     </item>
     
     <item>
       <title>parted</title>
-      <link>https://laowalter.github.io/posts/tech/parted/</link>
+      <link>http://laowalter.github.io/posts/tech/parted/</link>
       <pubDate>Mon, 16 Jul 2018 22:00:26 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/parted/</guid>
+      <guid>http://laowalter.github.io/posts/tech/parted/</guid>
       <description>Parted 分区 Partition parted /dev/sdc mkpart primary fat32 0% 100% set 1 boot on Format partition mkfs.vfat -F 32 /dev/sdc1 mount iso sudo mkdir /mnt/windows10/ sudo mount -t auto -o -loop /path/to/windows.iso /mnt/windows10 Copy all files in /mnt/windows10 to usbstick mount /dev/sdc1 /mnt/usb screen -S cp cd /mnt/usb/ sudo cp -fr /mnt/windows10/* .</description>
     </item>
     
     <item>
       <title>Adduser to Linux</title>
-      <link>https://laowalter.github.io/posts/tech/adduser/</link>
+      <link>http://laowalter.github.io/posts/tech/adduser/</link>
       <pubDate>Wed, 16 May 2018 21:23:57 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/adduser/</guid>
+      <guid>http://laowalter.github.io/posts/tech/adduser/</guid>
       <description> Add user to linux useradd -m -G users,wheel username passwd username Add user to Samba smbpasswd -a user Add a user to a group usermod -a -G examplegroup exampleusername Convert a user to nologin shell usermod -s /sbin/nologin exampleusername</description>
     </item>
     
     <item>
       <title>Cron</title>
-      <link>https://laowalter.github.io/posts/tech/cron/</link>
+      <link>http://laowalter.github.io/posts/tech/cron/</link>
       <pubDate>Fri, 04 May 2018 17:58:52 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/cron/</guid>
+      <guid>http://laowalter.github.io/posts/tech/cron/</guid>
       <description> Install emerge -avq vixie-cron  Crontab Filename: Crontab * * * * * command to be executed - - - - - | | | | | | | | | +----- day of week (0 - 6) (Sunday=0) | | | +------- month (1 - 12) | | +--------- day of month (1 - 31) | +----------- hour (0 - 23) +------------- min (0 - 59)  </description>
     </item>
     
     <item>
       <title>Input 输入法（未测试）</title>
-      <link>https://laowalter.github.io/posts/tech/input/</link>
+      <link>http://laowalter.github.io/posts/tech/input/</link>
       <pubDate>Fri, 13 Apr 2018 15:30:54 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/input/</guid>
+      <guid>http://laowalter.github.io/posts/tech/input/</guid>
       <description>Windows Linux Input 安装文档 https://fcitx-im.org Terminal Console emerge -avq fcitx Filename: .bashrc export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx If you do not enable the gtk and gtk3 USE flags, the first line should be: export GTK_IM_MODULE=xim If you do not enable the qt USE flag, the second line should be: export QT_IM_MODULE=xim Session Mode (~/.xprofile) Filename: ~/.xprofile export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx startx (~/.xinitrc) Filename: ~/.xprofile</description>
     </item>
     
     <item>
       <title>MySQL</title>
-      <link>https://laowalter.github.io/posts/tech/mysql/</link>
+      <link>http://laowalter.github.io/posts/tech/mysql/</link>
       <pubDate>Thu, 12 Apr 2018 11:21:57 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/mysql/</guid>
+      <guid>http://laowalter.github.io/posts/tech/mysql/</guid>
       <description>MySQL基本操作 增加用户，并赋予权限 创建本机用户stock@localhost，不能从其他机器访问,即使grant all privileges 也没用 create user &amp;#39;stock&amp;#39;@&amp;#39;localhost&amp;#39; identified by &amp;#39;my_pass&amp;#39;; grant</description>
     </item>
     
     <item>
       <title>Firefox Add-On Develop</title>
-      <link>https://laowalter.github.io/posts/tech/firefox_addons/</link>
+      <link>http://laowalter.github.io/posts/tech/firefox_addons/</link>
       <pubDate>Thu, 05 Apr 2018 09:30:39 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/firefox_addons/</guid>
+      <guid>http://laowalter.github.io/posts/tech/firefox_addons/</guid>
       <description>Multi Profile （多个火狐） Windows Create Profiles &amp;#34;C:\Program Files\Mozilla Firefox\firefox.exe&amp;#34; --Profilemanager Create shortcut for specific profile &amp;ldquo;direct&amp;rdquo; (ex.) &amp;#34;C:\Program Files\Mozilla Firefox\firefox.exe&amp;#34; -P direct --no-remote My firefox plugins %caption: 常用插件 Develop Extension / Addons 开发文档</description>
     </item>
     
     <item>
       <title>Ntpd</title>
-      <link>https://laowalter.github.io/posts/tech/ntpd/</link>
+      <link>http://laowalter.github.io/posts/tech/ntpd/</link>
       <pubDate>Fri, 30 Mar 2018 13:02:05 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/ntpd/</guid>
+      <guid>http://laowalter.github.io/posts/tech/ntpd/</guid>
       <description>openntpd 不被widnows支持，所以用ntp比较通用。 Install ntp 如果启动ntpd，就不需要ntp-client。 sudo emerge -avq net-misc/ntp sudo rc-service ntpd start sudo rc-update add ntpd default /etc/conf.d/ntpd &amp;rdquo</description>
     </item>
     
     <item>
       <title>Ethereum</title>
-      <link>https://laowalter.github.io/posts/tech/ethereum/</link>
+      <link>http://laowalter.github.io/posts/tech/ethereum/</link>
       <pubDate>Tue, 27 Mar 2018 22:03:46 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/ethereum/</guid>
+      <guid>http://laowalter.github.io/posts/tech/ethereum/</guid>
       <description>Install Gentoo $ sudo layman -a foxiverlay $ sudo eix-update $ emerge -avq net-p2p/go-ethereum $ emerge -avq net-p2p/ethminer Create get account $ geth account new Create ethereum wallet Go to https://github.com/ethereum/mist/releases Download windows version, tutotialhttps://medium.com/@attores/step-by-step-guide-getting-started-with-ethereum etherminerhttps://github.com/ethereum-mining/ethminer/releases Mining Use Internet Server ethermine.org server list Command line ethminer.exe -G -P stratum+ssl://0x3DC7F73Ad59e55f41fc8a40F0304F9e243358f9a.miner1@asia1.ethermine.org:5555 With geth CPU Mining linux geth --mine --minerthreads=4 --cache 4096 GPU Mining With ethermine https://github.com/ethereum-mining/ethminer/releases windows Note: 0.14</description>
     </item>
     
     <item>
       <title>DNS_Server Config</title>
-      <link>https://laowalter.github.io/posts/tech/dns_server_config/</link>
+      <link>http://laowalter.github.io/posts/tech/dns_server_config/</link>
       <pubDate>Fri, 09 Mar 2018 18:30:08 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/dns_server_config/</guid>
+      <guid>http://laowalter.github.io/posts/tech/dns_server_config/</guid>
       <description>Install emerge -aqv bind bind-tools Config /* * Refer to the named.conf(5) and named(8) man pages, and the documentation * in /usr/share/doc/bind-* for more details. * Online versions of the documentation can be found here: * https://kb.isc.org/article/AA-01031 * * If you are going to set up an authoritative server, make sure you * understand the hairy details of how DNS works. Even with simple mistakes, * you can break connectivity</description>
     </item>
     
     <item>
       <title>Network</title>
-      <link>https://laowalter.github.io/posts/tech/network/</link>
+      <link>http://laowalter.github.io/posts/tech/network/</link>
       <pubDate>Wed, 07 Mar 2018 15:33:51 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/network/</guid>
+      <guid>http://laowalter.github.io/posts/tech/network/</guid>
       <description>About IPV6 things OpenWRT IPv6 三种配置方式 List opened ports and program own them. sudo lsof -i sudo netstat -lptu sudo netstat -tulpn Which port bounded to port 22 sudo lsof -i :22 多网卡 Ref.1:多网卡配置使用ip route Gentoo 多网卡、静态路由</description>
     </item>
     
     <item>
       <title>BlockChain 区块链</title>
-      <link>https://laowalter.github.io/posts/tech/blockchain/</link>
+      <link>http://laowalter.github.io/posts/tech/blockchain/</link>
       <pubDate>Sun, 04 Mar 2018 12:31:44 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/blockchain/</guid>
+      <guid>http://laowalter.github.io/posts/tech/blockchain/</guid>
       <description>Ref. on Block Chain Merkle Tree（默克尔树）算法解析 Reading BlockChain 的生态系统 相互依赖、互锁的三要素 (1) 区块链安全 (2) 健康的挖矿系统 (3) 加密货币与显示货币的汇率 BlockChain 安全性 * 51%</description>
     </item>
     
     <item>
       <title>BitCoin</title>
-      <link>https://laowalter.github.io/posts/tech/bitcoin/</link>
+      <link>http://laowalter.github.io/posts/tech/bitcoin/</link>
       <pubDate>Wed, 28 Feb 2018 16:51:31 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/bitcoin/</guid>
+      <guid>http://laowalter.github.io/posts/tech/bitcoin/</guid>
       <description>(SHA256)[http://blog.sina.com.cn/s/blog_d66494300102wz0z.html] 新浪博客 SHA256是安全散列算法SHA（Secure Hash Algorithm）系列算法之一，其摘要长度为256bits，即32个字节，故称S</description>
     </item>
     
     <item>
       <title>IPHONE linux backup</title>
-      <link>https://laowalter.github.io/posts/tech/iphone/</link>
+      <link>http://laowalter.github.io/posts/tech/iphone/</link>
       <pubDate>Sat, 17 Feb 2018 17:04:34 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/iphone/</guid>
+      <guid>http://laowalter.github.io/posts/tech/iphone/</guid>
       <description>Connect to linux sudo emerge -avq app-pda/ifuse sudo emerge -avq app-pda/usbmuxdsuod usbmuxd -f -vsudo idevicepair pair Backup whole iphone idevicebackup -i backup --full backupdir Mount / umount setup /etc/fuse.conf ifuse 定义的目录就是 /media/iPhone, 这是一个固定名称目录 user_allow_other mkdir /media/iPhone make /media/iPhone chmod 777 /media/iPhone/ Mount iphone ifuse /media/iPhone --root Umount iphone 普通用户即可 fusermount</description>
     </item>
     
     <item>
       <title>Pandas CheatSheet</title>
-      <link>https://laowalter.github.io/posts/tech/pandas_cheatsheet/</link>
+      <link>http://laowalter.github.io/posts/tech/pandas_cheatsheet/</link>
       <pubDate>Sun, 11 Feb 2018 19:45:43 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/pandas_cheatsheet/</guid>
+      <guid>http://laowalter.github.io/posts/tech/pandas_cheatsheet/</guid>
       <description>** df : DataFrame ** ** s : Series ** 导入数据 pd.read_csv(static) # 读入csv文件 pd.read_table(static) # From a delimited text file (like TSV) pd.read_excel(static) pd.read_sql(query, connection_object) # 从SQl表或者数据库读入 pd.read_json(json_string) # Reads from a JSON formatted string, URL or file. pd.read_html(url) # Parses an html URL, string or file and extracts</description>
     </item>
     
     <item>
       <title>Video</title>
-      <link>https://laowalter.github.io/posts/tech/video/</link>
+      <link>http://laowalter.github.io/posts/tech/video/</link>
       <pubDate>Sat, 10 Feb 2018 13:55:13 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/video/</guid>
+      <guid>http://laowalter.github.io/posts/tech/video/</guid>
       <description>Video Combine Combine multiple flvs into one emerge -avq mplayer mencoder -forceidx -of lavf -oac pcm -ovc copy -o film.flv 1.flv 2.flv 3.flv 4.flv 5.flv 6.flv 7.flv 8.flv 9.flv Spit One mp4 into multiple mp4 ffmpeg -i 5大運動傷害搶先知.mp4 -c copy -map 0 -segment_time 00:01:30 -f segment -f segment output%03d.mp4 Split videos and music file into chunks * 可</description>
     </item>
     
     <item>
       <title>Piwigo</title>
-      <link>https://laowalter.github.io/posts/tech/piwigo/</link>
+      <link>http://laowalter.github.io/posts/tech/piwigo/</link>
       <pubDate>Sun, 21 Jan 2018 15:21:16 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/piwigo/</guid>
+      <guid>http://laowalter.github.io/posts/tech/piwigo/</guid>
       <description>Use Piwigo 注意事项 所有的图片文件都放在 piwigo/upload/ 的目录中。 Gentoo Nginx / php-fm php 自2.9.5之后必须打开 mysql use，只打开 mysqli不行。 dev-lang/php curl mysql 安装必要的数据包，给插</description>
     </item>
     
     <item>
       <title>Webapp</title>
-      <link>https://laowalter.github.io/posts/tech/webapp/</link>
+      <link>http://laowalter.github.io/posts/tech/webapp/</link>
       <pubDate>Sun, 21 Jan 2018 13:56:56 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/webapp/</guid>
+      <guid>http://laowalter.github.io/posts/tech/webapp/</guid>
       <description>web-config on Gentoo wiki webconfig&amp;rsquo;s config (/etc/vhosts/webapp-config) vhost_server=&amp;#34;nginx&amp;#34; Install Command webapp-config -h mini -d piwigo -I piwigo 2.9.2 or webapp-config -h localhost -d piwigo -I piwigo 2.9.2 Position /var/www/ Upgrade through webapp-config 根据 /etc/vhosts/webapp-config 执行下列文件 upgrade sudo webapp-config -h localhost -d piwigo -U piwigo 2.9.4</description>
     </item>
     
     <item>
       <title>TCP/IP</title>
-      <link>https://laowalter.github.io/posts/tech/tcpip/</link>
+      <link>http://laowalter.github.io/posts/tech/tcpip/</link>
       <pubDate>Mon, 15 Jan 2018 18:11:16 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/tcpip/</guid>
+      <guid>http://laowalter.github.io/posts/tech/tcpip/</guid>
       <description>Learn Detail Explaination of TCP handshake and Data Transfer</description>
     </item>
     
     <item>
       <title>通达信 Hack</title>
-      <link>https://laowalter.github.io/posts/tech/tongdaxin_hack/</link>
+      <link>http://laowalter.github.io/posts/tech/tongdaxin_hack/</link>
       <pubDate>Thu, 11 Jan 2018 22:16:36 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/tongdaxin_hack/</guid>
+      <guid>http://laowalter.github.io/posts/tech/tongdaxin_hack/</guid>
       <description>Server Mac server 61.152.107.168 port 7721</description>
     </item>
     
     <item>
       <title>Gentoo X / Xorg / X11</title>
-      <link>https://laowalter.github.io/posts/tech/gentoo_x/</link>
+      <link>http://laowalter.github.io/posts/tech/gentoo_x/</link>
       <pubDate>Sun, 07 Jan 2018 17:39:15 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/gentoo_x/</guid>
+      <guid>http://laowalter.github.io/posts/tech/gentoo_x/</guid>
       <description>Xorg 最小安装 检测显卡, 配置make.conf # dmesg | grep video # lspci | grep -i VGA 设置/etc/portage/make.conf文件中两个重要的变量： Filename: /etc/portage/make.conf INPUT_DEVICE=&amp;#34;evdev&amp;#34;</description>
     </item>
     
     <item>
       <title>GPG</title>
-      <link>https://laowalter.github.io/posts/tech/gpg/</link>
+      <link>http://laowalter.github.io/posts/tech/gpg/</link>
       <pubDate>Wed, 13 Dec 2017 22:04:53 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/gpg/</guid>
+      <guid>http://laowalter.github.io/posts/tech/gpg/</guid>
       <description> GPG setup  .bashrc
 GPG_TTY=$(tty) export GPG_TTY import public key
 gpg --import sone.bin check finger print
@@ -560,47 +560,47 @@ gpg --output doc --decrypt doc.gpg  </description>
     
     <item>
       <title>IPTABLES (Mini Server)</title>
-      <link>https://laowalter.github.io/posts/tech/iptables_mini_server/</link>
+      <link>http://laowalter.github.io/posts/tech/iptables_mini_server/</link>
       <pubDate>Sat, 09 Dec 2017 22:42:57 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/iptables_mini_server/</guid>
+      <guid>http://laowalter.github.io/posts/tech/iptables_mini_server/</guid>
       <description>参考资料 iptables常用规则：屏蔽IP地址、禁用ping、协议设置、NAT与转发、负载平衡、自定义链 各种iptables中文资料 Most Frequently Used Linux</description>
     </item>
     
     <item>
       <title>Jupyter in Python</title>
-      <link>https://laowalter.github.io/posts/tech/jupyter_in_python/</link>
+      <link>http://laowalter.github.io/posts/tech/jupyter_in_python/</link>
       <pubDate>Thu, 07 Dec 2017 15:07:58 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/jupyter_in_python/</guid>
+      <guid>http://laowalter.github.io/posts/tech/jupyter_in_python/</guid>
       <description>Install Install package $ pip install jupyter $ jupyter notebook --generate-config Config ~/.jupyter/jupyter_notebook_config.py edit ~/.jupyter/jupyter_notebook_config.py c.NotebookApp.ip = &amp;#39;192.168.0.199&amp;#39;   Start jupyter
 $ jupyter notebook --no-browser [I 16:56:50.226 NotebookApp] Serving notebooks from local directory: /home/walter [I 16:56:50.226 NotebookApp] 0 active kernels [I 16:56:50.226 NotebookApp] The Jupyter Notebook is running at: [I 16:56:50.226 NotebookApp] http://mini:8888/?token=6d97162c599bf9e0010b2bf886be238cdf60cf17b12edb62 [I 16:56:50.226 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).</description>
     </item>
     
     <item>
       <title>Bash</title>
-      <link>https://laowalter.github.io/posts/tech/bash/</link>
+      <link>http://laowalter.github.io/posts/tech/bash/</link>
       <pubDate>Fri, 01 Dec 2017 23:30:08 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/bash/</guid>
+      <guid>http://laowalter.github.io/posts/tech/bash/</guid>
       <description>Bash设置 Linux .bashrc if [[ $- != *i* ]] ; then # Shell is non-interactive. Be done now! return fi # Locale export TERM=xterm-256color export LC_ALL=zh_CN.UTF-8 export LANG=zh_CN.UTF-8 # Perlbrew export PERLBREW_ROOT=/opt/perl5 PATH=$PATH:~/.bin:/opt/perl5/bin # Ssh login need password phrase once if [ ! -S ~/.ssh/ssh_auth_sock ]; then eval `ssh-agent` ln -sf &amp;#34;$SSH_AUTH_SOCK&amp;#34; ~/.ssh/ssh_auth_sock fi export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock ssh-add -l &amp;gt; /dev/null || ssh-add Mac OS .bashrc</description>
     </item>
     
     <item>
       <title>Encrypt</title>
-      <link>https://laowalter.github.io/posts/tech/encrypt/</link>
+      <link>http://laowalter.github.io/posts/tech/encrypt/</link>
       <pubDate>Wed, 29 Nov 2017 22:42:39 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/encrypt/</guid>
+      <guid>http://laowalter.github.io/posts/tech/encrypt/</guid>
       <description> Encrypt a partiton with dm-crypt Reference  Gentoo dm-crypt wiki  Encrypt files with Gnupg </description>
     </item>
     
     <item>
       <title>Gentoo_Overlay</title>
-      <link>https://laowalter.github.io/posts/tech/gentoo_overlay/</link>
+      <link>http://laowalter.github.io/posts/tech/gentoo_overlay/</link>
       <pubDate>Sat, 25 Nov 2017 09:50:11 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/gentoo_overlay/</guid>
+      <guid>http://laowalter.github.io/posts/tech/gentoo_overlay/</guid>
       <description> Add local overlay  Create directory
 mkdir -p /usr/local/portage/metadata echo &amp;#34;masters = gentoo&amp;#34; &amp;gt; /usr/local/portage/metadata/layout.conf chown -R portage:portage /usr/local/portage/ Modify make.conf
 PORTDIR_OVERLAY=&amp;#34;/usr/local/portage/ ${PORTDIR_OVERLAY}&amp;#34; Add [local] part to /etc/portage/repos.conf/gentoo.conf
@@ -609,10 +609,10 @@ PORTDIR_OVERLAY=&amp;#34;/usr/local/portage/ ${PORTDIR_OVERLAY}&amp;#34; Add [lo
     
     <item>
       <title>Transmission</title>
-      <link>https://laowalter.github.io/posts/tech/transmission/</link>
+      <link>http://laowalter.github.io/posts/tech/transmission/</link>
       <pubDate>Fri, 24 Nov 2017 19:57:30 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/transmission/</guid>
+      <guid>http://laowalter.github.io/posts/tech/transmission/</guid>
       <description>Notice
 BE SURE to stop transmission daemon first before change the follow setting.
 ** if disable ipv6 set &amp;ldquo;bind-address-ipv6&amp;rdquo;: &amp;ldquo;fe80::&amp;rdquo; **
@@ -621,94 +621,94 @@ Filename: /var/lib/transmission/config/settings.json { &amp;#34;alt-speed-down&a
     
     <item>
       <title>Mpd</title>
-      <link>https://laowalter.github.io/posts/tech/mpd/</link>
+      <link>http://laowalter.github.io/posts/tech/mpd/</link>
       <pubDate>Fri, 24 Nov 2017 19:53:08 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/mpd/</guid>
+      <guid>http://laowalter.github.io/posts/tech/mpd/</guid>
       <description>Install mpd $ eix -e mpd [I] media-sound/mpd Available versions: 0.19.19 ~0.19.21 ~0.19.21-r1 ~0.20.4 ~0.20.6 ~0.20.8 ~0.20.9 (~)0.20.10 {adplug +alsa ao audiofile bzip2 cdio +curl debug +eventfd expat faad +ffmpeg +fifo flac fluidsynth +glib gme +icu +id3tag +inotify +ipv6 jack lame libav libmpdclient libsamplerate libsoxr +mad mikmod mms modplug mpg123 musepack +network nfs ogg openal opus oss pipe pulseaudio recorder samba selinux sid +signalfd sndfile soundcloud sqlite systemd tcpd twolame</description>
     </item>
     
     <item>
       <title>Sound driver in Linux</title>
-      <link>https://laowalter.github.io/posts/tech/sounddriver/</link>
+      <link>http://laowalter.github.io/posts/tech/sounddriver/</link>
       <pubDate>Thu, 23 Nov 2017 23:41:48 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/sounddriver/</guid>
+      <guid>http://laowalter.github.io/posts/tech/sounddriver/</guid>
       <description> Mac mini Sound Chip: CONFIG_SND_HDA_CODEC_CIRRUS=y
  es9018 https://volumio.org/forum/es9018k2m-t1218-20.html  </description>
     </item>
     
     <item>
       <title>Cups/Printer</title>
-      <link>https://laowalter.github.io/posts/tech/cups/</link>
+      <link>http://laowalter.github.io/posts/tech/cups/</link>
       <pubDate>Wed, 22 Nov 2017 23:45:16 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/cups/</guid>
+      <guid>http://laowalter.github.io/posts/tech/cups/</guid>
       <description>HP 打印机 这是全面的的私有驱动程序, 包括打印、传真和扫描。 net-print/hplip-plugin net-print/hplip CUPS 打印机设置 安装软件 cups emerge -avq cups 允许远程配置 Filename: /etc/cups/cupsd.conf &amp;lt;Location /&amp;gt; Order allow,deny Allow localhost Allow from 192.168.0.* &amp;lt;/Location&amp;gt; &amp;lt;Location /admin&amp;gt; Order allow,deny Allow localhost Allow from</description>
     </item>
     
     <item>
       <title>Kernel Config</title>
-      <link>https://laowalter.github.io/posts/tech/kernel_config/</link>
+      <link>http://laowalter.github.io/posts/tech/kernel_config/</link>
       <pubDate>Tue, 21 Nov 2017 10:26:07 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/kernel_config/</guid>
+      <guid>http://laowalter.github.io/posts/tech/kernel_config/</guid>
       <description>Upgrade kernel Offical Document
 $ su - # cd /usr/src # cp /proc/config.gz . # gunzip config.gz # cd linux # make menuconfig, load /usr/src/config, save to /usr/src/linux/.config # make &amp;amp;&amp;amp; make modules_install # cp arch/x86_64/boot/bzImage /boot/efi/boot/bzimage.efi  Mac-mini Kernel config Filename: Kernel config # # Automatically generated file; DO NOT EDIT. # Linux/x86 4.19.66-gentoo Kernel Configuration # # # Compiler: gcc (Gentoo 8.3.0-r1 p1.1) 8.3.0 # CONFIG_CC_IS_GCC=y CONFIG_GCC_VERSION=80300 CONFIG_CLANG_VERSION=0 CONFIG_CC_HAS_ASM_GOTO=y CONFIG_IRQ_WORK=y CONFIG_BUILDTIME_EXTABLE_SORT=y CONFIG_THREAD_INFO_IN_TASK=y # # General setup # CONFIG_INIT_ENV_ARG_LIMIT=32 # CONFIG_COMPILE_TEST is not set CONFIG_LOCALVERSION=&amp;#34;&amp;#34; # CONFIG_LOCALVERSION_AUTO is not set CONFIG_BUILD_SALT=&amp;#34;&amp;#34; CONFIG_HAVE_KERNEL_GZIP=y CONFIG_HAVE_KERNEL_BZIP2=y CONFIG_HAVE_KERNEL_LZMA=y CONFIG_HAVE_KERNEL_XZ=y CONFIG_HAVE_KERNEL_LZO=y CONFIG_HAVE_KERNEL_LZ4=y CONFIG_KERNEL_GZIP=y # CONFIG_KERNEL_BZIP2 is not set # CONFIG_KERNEL_LZMA is not set # CONFIG_KERNEL_XZ is not set # CONFIG_KERNEL_LZO is not set # CONFIG_KERNEL_LZ4 is not set CONFIG_DEFAULT_HOSTNAME=&amp;#34;(none)&amp;#34; CONFIG_SWAP=y CONFIG_SYSVIPC=y CONFIG_SYSVIPC_SYSCTL=y CONFIG_POSIX_MQUEUE=y CONFIG_POSIX_MQUEUE_SYSCTL=y CONFIG_CROSS_MEMORY_ATTACH=y CONFIG_USELIB=y CONFIG_AUDIT=y CONFIG_HAVE_ARCH_AUDITSYSCALL=y CONFIG_AUDITSYSCALL=y CONFIG_AUDIT_WATCH=y CONFIG_AUDIT_TREE=y # # IRQ subsystem # CONFIG_GENERIC_IRQ_PROBE=y CONFIG_GENERIC_IRQ_SHOW=y CONFIG_GENERIC_IRQ_EFFECTIVE_AFF_MASK=y CONFIG_GENERIC_PENDING_IRQ=y CONFIG_GENERIC_IRQ_MIGRATION=y CONFIG_IRQ_DOMAIN=y CONFIG_IRQ_DOMAIN_HIERARCHY=y CONFIG_GENERIC_MSI_IRQ=y CONFIG_GENERIC_MSI_IRQ_DOMAIN=y CONFIG_GENERIC_IRQ_MATRIX_ALLOCATOR=y CONFIG_GENERIC_IRQ_RESERVATION_MODE=y CONFIG_IRQ_FORCED_THREADING=y CONFIG_SPARSE_IRQ=y # CONFIG_GENERIC_IRQ_DEBUGFS is not set CONFIG_CLOCKSOURCE_WATCHDOG=y CONFIG_ARCH_CLOCKSOURCE_DATA=y CONFIG_CLOCKSOURCE_VALIDATE_LAST_CYCLE=y CONFIG_GENERIC_TIME_VSYSCALL=y CONFIG_GENERIC_CLOCKEVENTS=y CONFIG_GENERIC_CLOCKEVENTS_BROADCAST=y CONFIG_GENERIC_CLOCKEVENTS_MIN_ADJUST=y CONFIG_GENERIC_CMOS_UPDATE=y # # Timers subsystem # CONFIG_TICK_ONESHOT=y CONFIG_NO_HZ_COMMON=y # CONFIG_HZ_PERIODIC is not set CONFIG_NO_HZ_IDLE=y # CONFIG_NO_HZ_FULL is not set CONFIG_NO_HZ=y CONFIG_HIGH_RES_TIMERS=y # CONFIG_PREEMPT_NONE is not set CONFIG_PREEMPT_VOLUNTARY=y # CONFIG_PREEMPT is not set # # CPU/Task time and stats accounting # CONFIG_TICK_CPU_ACCOUNTING=y # CONFIG_VIRT_CPU_ACCOUNTING_GEN is not set # CONFIG_IRQ_TIME_ACCOUNTING is not set CONFIG_BSD_PROCESS_ACCT=y # CONFIG_BSD_PROCESS_ACCT_V3 is not set CONFIG_TASKSTATS=y CONFIG_TASK_DELAY_ACCT=y CONFIG_TASK_XACCT=y CONFIG_TASK_IO_ACCOUNTING=y CONFIG_CPU_ISOLATION=y # # RCU Subsystem # CONFIG_TREE_RCU=y # CONFIG_RCU_EXPERT is not set CONFIG_SRCU=y CONFIG_TREE_SRCU=y CONFIG_RCU_STALL_COMMON=y CONFIG_RCU_NEED_SEGCBLIST=y CONFIG_BUILD_BIN2C=y CONFIG_IKCONFIG=y CONFIG_IKCONFIG_PROC=y CONFIG_LOG_BUF_SHIFT=18 CONFIG_LOG_CPU_MAX_BUF_SHIFT=12 CONFIG_PRINTK_SAFE_LOG_BUF_SHIFT=13 CONFIG_HAVE_UNSTABLE_SCHED_CLOCK=y CONFIG_ARCH_SUPPORTS_NUMA_BALANCING=y CONFIG_ARCH_WANT_BATCHED_UNMAP_TLB_FLUSH=y CONFIG_ARCH_SUPPORTS_INT128=y # CONFIG_NUMA_BALANCING is not set CONFIG_CGROUPS=y CONFIG_PAGE_COUNTER=y CONFIG_MEMCG=y CONFIG_MEMCG_SWAP=y CONFIG_MEMCG_SWAP_ENABLED=y CONFIG_MEMCG_KMEM=y CONFIG_BLK_CGROUP=y # CONFIG_DEBUG_BLK_CGROUP is not set CONFIG_CGROUP_WRITEBACK=y CONFIG_CGROUP_SCHED=y CONFIG_FAIR_GROUP_SCHED=y CONFIG_CFS_BANDWIDTH=y CONFIG_RT_GROUP_SCHED=y CONFIG_CGROUP_PIDS=y # CONFIG_CGROUP_RDMA is not set CONFIG_CGROUP_FREEZER=y CONFIG_CGROUP_HUGETLB=y CONFIG_CPUSETS=y CONFIG_PROC_PID_CPUSET=y CONFIG_CGROUP_DEVICE=y CONFIG_CGROUP_CPUACCT=y CONFIG_CGROUP_PERF=y # CONFIG_CGROUP_DEBUG is not set CONFIG_SOCK_CGROUP_DATA=y CONFIG_NAMESPACES=y CONFIG_UTS_NS=y CONFIG_IPC_NS=y CONFIG_USER_NS=y CONFIG_PID_NS=y CONFIG_NET_NS=y # CONFIG_CHECKPOINT_RESTORE is not set # CONFIG_SCHED_AUTOGROUP is not set # CONFIG_SYSFS_DEPRECATED is not set CONFIG_RELAY=y CONFIG_BLK_DEV_INITRD=y CONFIG_INITRAMFS_SOURCE=&amp;#34;&amp;#34; CONFIG_RD_GZIP=y CONFIG_RD_BZIP2=y CONFIG_RD_LZMA=y CONFIG_RD_XZ=y CONFIG_RD_LZO=y CONFIG_RD_LZ4=y CONFIG_CC_OPTIMIZE_FOR_PERFORMANCE=y # CONFIG_CC_OPTIMIZE_FOR_SIZE is not set CONFIG_SYSCTL=y CONFIG_ANON_INODES=y CONFIG_HAVE_UID16=y CONFIG_SYSCTL_EXCEPTION_TRACE=y CONFIG_HAVE_PCSPKR_PLATFORM=y CONFIG_BPF=y # CONFIG_EXPERT is not set CONFIG_UID16=y CONFIG_MULTIUSER=y CONFIG_SGETMASK_SYSCALL=y CONFIG_SYSFS_SYSCALL=y CONFIG_FHANDLE=y CONFIG_POSIX_TIMERS=y CONFIG_PRINTK=y CONFIG_PRINTK_NMI=y CONFIG_BUG=y CONFIG_ELF_CORE=y CONFIG_PCSPKR_PLATFORM=y CONFIG_BASE_FULL=y CONFIG_FUTEX=y CONFIG_FUTEX_PI=y CONFIG_EPOLL=y CONFIG_SIGNALFD=y CONFIG_TIMERFD=y CONFIG_EVENTFD=y CONFIG_SHMEM=y CONFIG_AIO=y CONFIG_ADVISE_SYSCALLS=y CONFIG_MEMBARRIER=y CONFIG_KALLSYMS=y # CONFIG_KALLSYMS_ALL is not set CONFIG_KALLSYMS_ABSOLUTE_PERCPU=y CONFIG_KALLSYMS_BASE_RELATIVE=y # CONFIG_BPF_SYSCALL is not set # CONFIG_USERFAULTFD is not set CONFIG_ARCH_HAS_MEMBARRIER_SYNC_CORE=y CONFIG_RSEQ=y # CONFIG_EMBEDDED is not set CONFIG_HAVE_PERF_EVENTS=y # # Kernel Performance Events And Counters # CONFIG_PERF_EVENTS=y # CONFIG_DEBUG_PERF_USE_VMALLOC is not set CONFIG_VM_EVENT_COUNTERS=y CONFIG_SLUB_DEBUG=y # CONFIG_COMPAT_BRK is not set # CONFIG_SLAB is not set CONFIG_SLUB=y CONFIG_SLAB_MERGE_DEFAULT=y # CONFIG_SLAB_FREELIST_RANDOM is not set # CONFIG_SLAB_FREELIST_HARDENED is not set CONFIG_SLUB_CPU_PARTIAL=y CONFIG_SYSTEM_DATA_VERIFICATION=y CONFIG_PROFILING=y CONFIG_TRACEPOINTS=y CONFIG_64BIT=y CONFIG_X86_64=y CONFIG_X86=y CONFIG_INSTRUCTION_DECODER=y CONFIG_OUTPUT_FORMAT=&amp;#34;elf64-x86-64&amp;#34; CONFIG_ARCH_DEFCONFIG=&amp;#34;arch/x86/configs/x86_64_defconfig&amp;#34; CONFIG_LOCKDEP_SUPPORT=y CONFIG_STACKTRACE_SUPPORT=y CONFIG_MMU=y CONFIG_ARCH_MMAP_RND_BITS_MIN=28 CONFIG_ARCH_MMAP_RND_BITS_MAX=32 CONFIG_ARCH_MMAP_RND_COMPAT_BITS_MIN=8 CONFIG_ARCH_MMAP_RND_COMPAT_BITS_MAX=16 CONFIG_GENERIC_ISA_DMA=y CONFIG_GENERIC_BUG=y CONFIG_GENERIC_BUG_RELATIVE_POINTERS=y CONFIG_GENERIC_HWEIGHT=y CONFIG_ARCH_MAY_HAVE_PC_FDC=y CONFIG_RWSEM_XCHGADD_ALGORITHM=y CONFIG_GENERIC_CALIBRATE_DELAY=y CONFIG_ARCH_HAS_CPU_RELAX=y CONFIG_ARCH_HAS_CACHE_LINE_SIZE=y CONFIG_ARCH_HAS_FILTER_PGPROT=y CONFIG_HAVE_SETUP_PER_CPU_AREA=y CONFIG_NEED_PER_CPU_EMBED_FIRST_CHUNK=y CONFIG_NEED_PER_CPU_PAGE_FIRST_CHUNK=y CONFIG_ARCH_HIBERNATION_POSSIBLE=y CONFIG_ARCH_SUSPEND_POSSIBLE=y CONFIG_ARCH_WANT_HUGE_PMD_SHARE=y CONFIG_ARCH_WANT_GENERAL_HUGETLB=y CONFIG_ZONE_DMA32=y CONFIG_AUDIT_ARCH=y CONFIG_ARCH_SUPPORTS_OPTIMIZED_INLINING=y CONFIG_ARCH_SUPPORTS_DEBUG_PAGEALLOC=y CONFIG_HAVE_INTEL_TXT=y CONFIG_X86_64_SMP=y CONFIG_ARCH_SUPPORTS_UPROBES=y CONFIG_FIX_EARLYCON_MEM=y CONFIG_PGTABLE_LEVELS=4 CONFIG_CC_HAS_SANE_STACKPROTECTOR=y # # Processor type and features # CONFIG_ZONE_DMA=y CONFIG_SMP=y CONFIG_X86_FEATURE_NAMES=y CONFIG_X86_MPPARSE=y # CONFIG_GOLDFISH is not set CONFIG_RETPOLINE=y # CONFIG_INTEL_RDT is not set CONFIG_X86_EXTENDED_PLATFORM=y # CONFIG_X86_VSMP is not set # CONFIG_X86_GOLDFISH is not set CONFIG_X86_INTEL_MID=y CONFIG_X86_INTEL_LPSS=y # CONFIG_X86_AMD_PLATFORM_DEVICE is not set CONFIG_IOSF_MBI=y CONFIG_IOSF_MBI_DEBUG=y CONFIG_X86_SUPPORTS_MEMORY_FAILURE=y CONFIG_SCHED_OMIT_FRAME_POINTER=y # CONFIG_HYPERVISOR_GUEST is not set CONFIG_NO_BOOTMEM=y # CONFIG_MK8 is not set # CONFIG_MPSC is not set CONFIG_MCORE2=y # CONFIG_MATOM is not set # CONFIG_GENERIC_CPU is not set CONFIG_X86_INTERNODE_CACHE_SHIFT=6 CONFIG_X86_L1_CACHE_SHIFT=6 CONFIG_X86_INTEL_USERCOPY=y CONFIG_X86_USE_PPRO_CHECKSUM=y CONFIG_X86_P6_NOP=y CONFIG_X86_TSC=y CONFIG_X86_CMPXCHG64=y CONFIG_X86_CMOV=y CONFIG_X86_MINIMUM_CPU_FAMILY=64 CONFIG_X86_DEBUGCTLMSR=y CONFIG_CPU_SUP_INTEL=y CONFIG_CPU_SUP_AMD=y CONFIG_CPU_SUP_CENTAUR=y CONFIG_HPET_TIMER=y CONFIG_HPET_EMULATE_RTC=y CONFIG_APB_TIMER=y CONFIG_DMI=y # CONFIG_GART_IOMMU is not set # CONFIG_CALGARY_IOMMU is not set CONFIG_MAXSMP=y CONFIG_NR_CPUS_RANGE_BEGIN=8192 CONFIG_NR_CPUS_RANGE_END=8192 CONFIG_NR_CPUS_DEFAULT=8192 CONFIG_NR_CPUS=8192 CONFIG_SCHED_SMT=y CONFIG_SCHED_MC=y CONFIG_SCHED_MC_PRIO=y CONFIG_X86_LOCAL_APIC=y CONFIG_X86_IO_APIC=y CONFIG_X86_REROUTE_FOR_BROKEN_BOOT_IRQS=y CONFIG_X86_MCE=y # CONFIG_X86_MCELOG_LEGACY is not set CONFIG_X86_MCE_INTEL=y # CONFIG_X86_MCE_AMD is not set CONFIG_X86_MCE_THRESHOLD=y # CONFIG_X86_MCE_INJECT is not set CONFIG_X86_THERMAL_VECTOR=y # # Performance monitoring # CONFIG_PERF_EVENTS_INTEL_UNCORE=y CONFIG_PERF_EVENTS_INTEL_RAPL=y CONFIG_PERF_EVENTS_INTEL_CSTATE=y # CONFIG_PERF_EVENTS_AMD_POWER is not set CONFIG_X86_16BIT=y CONFIG_X86_ESPFIX64=y CONFIG_X86_VSYSCALL_EMULATION=y # CONFIG_I8K is not set CONFIG_MICROCODE=y CONFIG_MICROCODE_INTEL=y # CONFIG_MICROCODE_AMD is not set CONFIG_MICROCODE_OLD_INTERFACE=y CONFIG_X86_MSR=y CONFIG_X86_CPUID=y # CONFIG_X86_5LEVEL is not set CONFIG_X86_DIRECT_GBPAGES=y CONFIG_ARCH_HAS_MEM_ENCRYPT=y # CONFIG_AMD_MEM_ENCRYPT is not set CONFIG_NUMA=y CONFIG_AMD_NUMA=y CONFIG_X86_64_ACPI_NUMA=y CONFIG_NODES_SPAN_OTHER_NODES=y # CONFIG_NUMA_EMU is not set CONFIG_NODES_SHIFT=10 CONFIG_ARCH_SPARSEMEM_ENABLE=y CONFIG_ARCH_SPARSEMEM_DEFAULT=y CONFIG_ARCH_SELECT_MEMORY_MODEL=y CONFIG_ARCH_PROC_KCORE_TEXT=y CONFIG_ILLEGAL_POINTER_VALUE=0xdead000000000000 # CONFIG_X86_PMEM_LEGACY is not set CONFIG_X86_CHECK_BIOS_CORRUPTION=y CONFIG_X86_BOOTPARAM_MEMORY_CORRUPTION_CHECK=y CONFIG_X86_RESERVE_LOW=64 CONFIG_MTRR=y CONFIG_MTRR_SANITIZER=y CONFIG_MTRR_SANITIZER_ENABLE_DEFAULT=0 CONFIG_MTRR_SANITIZER_SPARE_REG_NR_DEFAULT=1 CONFIG_X86_PAT=y CONFIG_ARCH_USES_PG_UNCACHED=y CONFIG_ARCH_RANDOM=y CONFIG_X86_SMAP=y CONFIG_X86_INTEL_UMIP=y CONFIG_X86_INTEL_MPX=y CONFIG_X86_INTEL_MEMORY_PROTECTION_KEYS=y CONFIG_EFI=y CONFIG_EFI_STUB=y # CONFIG_EFI_MIXED is not set CONFIG_SECCOMP=y # CONFIG_HZ_100 is not set # CONFIG_HZ_250 is not set # CONFIG_HZ_300 is not set CONFIG_HZ_1000=y CONFIG_HZ=1000 CONFIG_SCHED_HRTICK=y CONFIG_KEXEC=y # CONFIG_KEXEC_FILE is not set CONFIG_CRASH_DUMP=y # CONFIG_KEXEC_JUMP is not set CONFIG_PHYSICAL_START=0x1000000 CONFIG_RELOCATABLE=y CONFIG_RANDOMIZE_BASE=y CONFIG_X86_NEED_RELOCS=y CONFIG_PHYSICAL_ALIGN=0x200000 CONFIG_DYNAMIC_MEMORY_LAYOUT=y CONFIG_RANDOMIZE_MEMORY=y CONFIG_RANDOMIZE_MEMORY_PHYSICAL_PADDING=0x0 CONFIG_HOTPLUG_CPU=y # CONFIG_BOOTPARAM_HOTPLUG_CPU0 is not set # CONFIG_DEBUG_HOTPLUG_CPU0 is not set # CONFIG_COMPAT_VDSO is not set CONFIG_LEGACY_VSYSCALL_EMULATE=y # CONFIG_LEGACY_VSYSCALL_NONE is not set CONFIG_CMDLINE_BOOL=y CONFIG_CMDLINE=&amp;#34;root=/dev/sdb2&amp;#34; # CONFIG_CMDLINE_OVERRIDE is not set CONFIG_MODIFY_LDT_SYSCALL=y CONFIG_HAVE_LIVEPATCH=y CONFIG_ARCH_HAS_ADD_PAGES=y CONFIG_ARCH_ENABLE_MEMORY_HOTPLUG=y CONFIG_USE_PERCPU_NUMA_NODE_ID=y CONFIG_ARCH_ENABLE_SPLIT_PMD_PTLOCK=y CONFIG_ARCH_ENABLE_HUGEPAGE_MIGRATION=y # # Power management and ACPI options # CONFIG_ARCH_HIBERNATION_HEADER=y CONFIG_SUSPEND=y CONFIG_SUSPEND_FREEZER=y CONFIG_HIBERNATE_CALLBACKS=y CONFIG_HIBERNATION=y CONFIG_PM_STD_PARTITION=&amp;#34;&amp;#34; CONFIG_PM_SLEEP=y CONFIG_PM_SLEEP_SMP=y # CONFIG_PM_AUTOSLEEP is not set # CONFIG_PM_WAKELOCKS is not set CONFIG_PM=y CONFIG_PM_DEBUG=y # CONFIG_PM_ADVANCED_DEBUG is not set # CONFIG_PM_TEST_SUSPEND is not set CONFIG_PM_SLEEP_DEBUG=y CONFIG_PM_TRACE=y CONFIG_PM_TRACE_RTC=y CONFIG_PM_CLK=y # CONFIG_WQ_POWER_EFFICIENT_DEFAULT is not set CONFIG_ARCH_SUPPORTS_ACPI=y CONFIG_ACPI=y CONFIG_ACPI_LEGACY_TABLES_LOOKUP=y CONFIG_ARCH_MIGHT_HAVE_ACPI_PDC=y CONFIG_ACPI_SYSTEM_POWER_STATES_SUPPORT=y # CONFIG_ACPI_DEBUGGER is not set CONFIG_ACPI_SPCR_TABLE=y CONFIG_ACPI_LPIT=y CONFIG_ACPI_SLEEP=y # CONFIG_ACPI_PROCFS_POWER is not set CONFIG_ACPI_REV_OVERRIDE_POSSIBLE=y # CONFIG_ACPI_EC_DEBUGFS is not set CONFIG_ACPI_AC=y # CONFIG_ACPI_BATTERY is not set CONFIG_ACPI_BUTTON=y CONFIG_ACPI_VIDEO=y CONFIG_ACPI_FAN=y # CONFIG_ACPI_TAD is not set # CONFIG_ACPI_DOCK is not set CONFIG_ACPI_CPU_FREQ_PSS=y CONFIG_ACPI_PROCESSOR_CSTATE=y CONFIG_ACPI_PROCESSOR_IDLE=y CONFIG_ACPI_CPPC_LIB=y CONFIG_ACPI_PROCESSOR=y CONFIG_ACPI_HOTPLUG_CPU=y # CONFIG_ACPI_PROCESSOR_AGGREGATOR is not set CONFIG_ACPI_THERMAL=y CONFIG_ACPI_NUMA=y CONFIG_ARCH_HAS_ACPI_TABLE_UPGRADE=y CONFIG_ACPI_TABLE_UPGRADE=y # CONFIG_ACPI_DEBUG is not set # CONFIG_ACPI_PCI_SLOT is not set CONFIG_ACPI_CONTAINER=y CONFIG_ACPI_HOTPLUG_IOAPIC=y # CONFIG_ACPI_SBS is not set # CONFIG_ACPI_HED is not set # CONFIG_ACPI_CUSTOM_METHOD is not set # CONFIG_ACPI_BGRT is not set # CONFIG_ACPI_NFIT is not set CONFIG_HAVE_ACPI_APEI=y CONFIG_HAVE_ACPI_APEI_NMI=y # CONFIG_ACPI_APEI is not set # CONFIG_DPTF_POWER is not set # CONFIG_ACPI_EXTLOG is not set # CONFIG_PMIC_OPREGION is not set # CONFIG_ACPI_CONFIGFS is not set CONFIG_X86_PM_TIMER=y CONFIG_SFI=y # # CPU Frequency scaling # CONFIG_CPU_FREQ=y CONFIG_CPU_FREQ_GOV_ATTR_SET=y CONFIG_CPU_FREQ_GOV_COMMON=y # CONFIG_CPU_FREQ_STAT is not set # CONFIG_CPU_FREQ_DEFAULT_GOV_PERFORMANCE is not set CONFIG_CPU_FREQ_DEFAULT_GOV_POWERSAVE=y # CONFIG_CPU_FREQ_DEFAULT_GOV_USERSPACE is not set # CONFIG_CPU_FREQ_DEFAULT_GOV_ONDEMAND is not set # CONFIG_CPU_FREQ_DEFAULT_GOV_CONSERVATIVE is not set # CONFIG_CPU_FREQ_DEFAULT_GOV_SCHEDUTIL is not set CONFIG_CPU_FREQ_GOV_PERFORMANCE=y CONFIG_CPU_FREQ_GOV_POWERSAVE=y CONFIG_CPU_FREQ_GOV_USERSPACE=y CONFIG_CPU_FREQ_GOV_ONDEMAND=y CONFIG_CPU_FREQ_GOV_CONSERVATIVE=y CONFIG_CPU_FREQ_GOV_SCHEDUTIL=y # # CPU frequency scaling drivers # # CONFIG_CPUFREQ_DT is not set CONFIG_X86_INTEL_PSTATE=y CONFIG_X86_PCC_CPUFREQ=m CONFIG_X86_ACPI_CPUFREQ=y # CONFIG_X86_ACPI_CPUFREQ_CPB is not set # CONFIG_X86_SFI_CPUFREQ is not set # CONFIG_X86_POWERNOW_K8 is not set # CONFIG_X86_AMD_FREQ_SENSITIVITY is not set # CONFIG_X86_SPEEDSTEP_CENTRINO is not set # CONFIG_X86_P4_CLOCKMOD is not set # # shared options # # # CPU Idle # CONFIG_CPU_IDLE=y # CONFIG_CPU_IDLE_GOV_LADDER is not set CONFIG_CPU_IDLE_GOV_MENU=y CONFIG_INTEL_IDLE=y # # Bus options (PCI etc.</description>
     </item>
     
     <item>
       <title>My_Scripts</title>
-      <link>https://laowalter.github.io/posts/tech/my_scripts/</link>
+      <link>http://laowalter.github.io/posts/tech/my_scripts/</link>
       <pubDate>Tue, 21 Nov 2017 10:21:01 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/my_scripts/</guid>
+      <guid>http://laowalter.github.io/posts/tech/my_scripts/</guid>
       <description>rysnc cif to local ~/.bin/rysnc_cifs.sh #!/bin/bash sudo umount -f /mnt/cifs/* ||true sudo mount /mnt/cifs/vipdoc if test $? -eq 0; then #sucessfull mount echo &amp;#34;mounted /mnt/cifs/vipdoc&amp;#34; echo &amp;#34;rsync /mnt/cifs/vipdoc to /backup/tdx&amp;#34; rsync -az /mnt/cifs/vipdoc /backup/tdx echo &amp;#34;umount vipdoc&amp;#34; sudo umount /mnt/cifs/vipdoc fi sudo mount /mnt/cifs/hq_cache if test $? -eq 0; then # sucessfull mount echo &amp;#34;mounted /mnt/cifs/hq_cache&amp;#34; echo &amp;#34;rysnc /mnt/cifs/hq_cache to /backup/tdx&amp;#34; rsync -az /mnt/cifs/hq_cache /backup/tdx echo &amp;#34;umount hq_cache&amp;#34; sudo umount</description>
     </item>
     
     <item>
       <title>WiFi-AP</title>
-      <link>https://laowalter.github.io/posts/tech/wifi_ap/</link>
+      <link>http://laowalter.github.io/posts/tech/wifi_ap/</link>
       <pubDate>Thu, 16 Nov 2017 16:55:00 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/wifi_ap/</guid>
+      <guid>http://laowalter.github.io/posts/tech/wifi_ap/</guid>
       <description>Check hardware $ lspci -n | grep 14e4 Kernel config Filename: kernel config CONFIG_WLAN_VENDOR_BROADCOM=y CONFIG_B43=m CONFIG_B43_BCMA=y CONFIG_B43_SSB=y CONFIG_B43_BUSES_BCMA_AND_SSB=y # CONFIG_B43_BUSES_BCMA is not set # CONFIG_B43_BUSES_SSB is not set CONFIG_B43_PCI_AUTOSELECT=y CONFIG_B43_PCICORE_AUTOSELECT=y CONFIG_B43_SDIO=y CONFIG_B43_BCMA_PIO=y CONFIG_B43_PIO=y CONFIG_B43_PHY_G=y CONFIG_B43_PHY_N=y CONFIG_B43_PHY_LP=y CONFIG_B43_PHY_HT=y CONFIG_B43_HWRNG=y # CONFIG_B43_DEBUG is not set CONFIG_B43LEGACY=m CONFIG_B43LEGACY_PCI_AUTOSELECT=y CONFIG_B43LEGACY_PCICORE_AUTOSELECT=y CONFIG_B43LEGACY_HWRNG=y CONFIG_B43LEGACY_DEBUG=y CONFIG_B43LEGACY_DMA=y CONFIG_B43LEGACY_PIO=y CONFIG_B43LEGACY_DMA_AND_PIO_MODE=y # CONFIG_B43LEGACY_DMA_MODE is not set # CONFIG_B43LEGACY_PIO_MODE is not set CONFIG_BRCMUTIL=m CONFIG_BRCMSMAC=m CONFIG_BRCMFMAC=m CONFIG_BRCMFMAC_PROTO_BCDC=y CONFIG_BRCMFMAC_SDIO=y # CONFIG_BRCMFMAC_USB is not</description>
     </item>
     
     <item>
       <title>Wifi-Bridge</title>
-      <link>https://laowalter.github.io/posts/tech/wifi_bridge/</link>
+      <link>http://laowalter.github.io/posts/tech/wifi_bridge/</link>
       <pubDate>Thu, 16 Nov 2017 16:51:15 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/wifi_bridge/</guid>
+      <guid>http://laowalter.github.io/posts/tech/wifi_bridge/</guid>
       <description>Description  The device(Mac mini) has a wired(eth0) interface and a wifi(wlan0) interface; eth0 connected to lan with a static ip address, whilewlan0 is used as an access point(ap); Wireless device, such as iphone will connected to lan through wlan0 by access the ap  Package prepare Notice: Be sure to set use=&amp;lsquo;ap &amp;hellip;&amp;rsquo;
 emerge -avq net-wireless/wpa_supplicant emerge -avq net-misc/bridge-utils Configuration /etc/conf.d/net # The bridge will take the ip address, so the individual interfaces don&amp;#39;t need any config_eth0=&amp;#34;null&amp;#34; config_wlan0=&amp;#34;null&amp;#34; modules_wlan0=&amp;#34;wpa_supplicant&amp;#34; wpa_supplicant_wlan0=&amp;#34;-b br0 -Dnl80211 -d -f /var/log/wpa_supplicant.</description>
     </item>
     
     <item>
       <title>Mac-mini Gentoo Linux Single Boot with Kernel Stub Installation</title>
-      <link>https://laowalter.github.io/posts/tech/mac_mini_gentoo/</link>
+      <link>http://laowalter.github.io/posts/tech/mac_mini_gentoo/</link>
       <pubDate>Thu, 09 Nov 2017 10:02:58 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/mac_mini_gentoo/</guid>
+      <guid>http://laowalter.github.io/posts/tech/mac_mini_gentoo/</guid>
       <description>Mac Mini(late 2012) Install Gentoo Linux(single boot, kernel stub) USB Download admin iso Create Linux bootable usb stick Partiton (GPT must) [jtable] Device, Mount Point,Filesystem,Description /dev/sda1,not mounted,(bootloader),BIOS boot partition /dev/sda2,/boot/efi,fat32,EFI System Partition (ESP) where the EFI files will be held to boot into the bootloader 0xEE /dev/sda3,/,ext4,root partition for your system [/jtable] list partition $ parted (parted) print devices /dev/sda (500GB) /dev/sdb (250GB) /dev/sdc (15.6GB) $ select /dev/sda (parted) print</description>
     </item>
     
     <item>
       <title>Devices</title>
-      <link>https://laowalter.github.io/posts/tech/devices/</link>
+      <link>http://laowalter.github.io/posts/tech/devices/</link>
       <pubDate>Sun, 05 Nov 2017 20:40:58 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/devices/</guid>
+      <guid>http://laowalter.github.io/posts/tech/devices/</guid>
       <description>Mac mini Linux Filename: 设备清单 mini description: Lunch Box Computer product: Macmini6,1 (System SKU#) vendor: Apple Inc. version: 1.0 serial: C07JG233DWYL width: 4294967295 bits capabilities: smbios-2.4 dmi-2.4 smp vsyscall32 configuration: boot=normal chassis=lunchbox family=Macmini sku=System SKU# uuid=DCB7B2B4-68E8-025F-868F-EEAA28F047DF *-core description: Motherboard product: Mac-031AEE4D24BFF0B1 vendor: Apple Inc. physical id: 0 version: Macmini6,1 serial: C07237706JXF1HCAL slot: Part Component *-cpu:0 description: CPU product: Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz vendor: Intel Corp.</description>
     </item>
     
     <item>
       <title>MountWindow</title>
-      <link>https://laowalter.github.io/posts/tech/mount_windows/</link>
+      <link>http://laowalter.github.io/posts/tech/mount_windows/</link>
       <pubDate>Sat, 04 Nov 2017 19:56:15 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/mount_windows/</guid>
+      <guid>http://laowalter.github.io/posts/tech/mount_windows/</guid>
       <description>On MAC System Keep Network Drives Mounted on Mac OS X using Autofs Copy from
 Edit /etc/auto_master /mnt/cifs is home of mount point
 # Automounter master map # +auto_master	# Use directory service /net	-hosts	-nobrowse,hidefromfinder,nosuid /home	auto_home	-nobrowse,hidefromfinder /Network/Servers	-fstab /-	-static /mnt/cifs	auto_nas Edit /etc/auto_nas new_tdx -fstype=smbfs,soft,noowners,noatime,nosuid ://user:passwd@192.168.0.18/new_tdx [OPTIONAL] Security sudo chmod 600 /etc/auto_nas ####– Create mount directory
@@ -717,56 +717,56 @@ mkdir -p /mnt/cifs/new_tdx  Test auto mount sudo automount -vc Should see some o
     
     <item>
       <title>Topo</title>
-      <link>https://laowalter.github.io/posts/tech/topo/</link>
+      <link>http://laowalter.github.io/posts/tech/topo/</link>
       <pubDate>Fri, 03 Nov 2017 11:12:10 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/topo/</guid>
+      <guid>http://laowalter.github.io/posts/tech/topo/</guid>
       <description>Network config [jtable] 192.168.1.1,电信网关 192.168.1.2, Mac-Mini-Linux eth1 192.168.0.199, Mac-Mini-Linux eth0 192.168.0.1, 移动网关 192.168.0.2, lhome 路由器 192.168.0.5, ghome1 路由器 192.168.0.9, ghome3 路由器(目前是布法罗路由器) 192.168.0.131, 扩展点1 192.168.0.234, 扩展点2 192.168.0.64, 打印机</description>
     </item>
     
     <item>
       <title>SSH</title>
-      <link>https://laowalter.github.io/posts/tech/ssh/</link>
+      <link>http://laowalter.github.io/posts/tech/ssh/</link>
       <pubDate>Fri, 13 Oct 2017 18:22:24 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/ssh/</guid>
+      <guid>http://laowalter.github.io/posts/tech/ssh/</guid>
       <description>Linux SSH agent .bashrc 关于ssh部分 Filename: .bashrc # SSH agent if [ ! -S ~/.ssh/ssh_auth_sock ]; then eval `ssh-agent` ln -sf &amp;#34;$SSH_AUTH_SOCK&amp;#34; ~/.ssh/ssh_auth_sock fi export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock ssh-add -l &amp;gt; /dev/null || ssh-add Windows Putty Putty程序组 第一步运行PuttyGen 设置远程机器 ~/.ssh/authorized_keys 把上</description>
     </item>
     
     <item>
       <title>Bokeh</title>
-      <link>https://laowalter.github.io/posts/tech/bokeh/</link>
+      <link>http://laowalter.github.io/posts/tech/bokeh/</link>
       <pubDate>Wed, 11 Oct 2017 21:52:18 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/bokeh/</guid>
+      <guid>http://laowalter.github.io/posts/tech/bokeh/</guid>
       <description> Bokeh Bokeh Server for Nginx bokeh serve --allow-websocket-origin=192.168.0.202:8080 a_directory  If add &amp;ndash;show will start a local default browser. Above 192.168.0.202:8080 is the nginx serice port. a_directory must have a file named: main.py  Nginx /etc/nginx/nginx.conf
 server { listen 192.168.0.202:8080; server_name gentoo; access_log /tmp/bokeh.access.log; error_log /tmp/bokeh.error.log debug; location / { proxy_pass http://127.0.0.1:5006; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection &amp;#34;upgrade&amp;#34;; proxy_http_version 1.1; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header Host $host:$server_port; proxy_buffering off; } }</description>
     </item>
     
     <item>
       <title>通达信数据</title>
-      <link>https://laowalter.github.io/posts/tech/tongdaxin_data/</link>
+      <link>http://laowalter.github.io/posts/tech/tongdaxin_data/</link>
       <pubDate>Tue, 05 Sep 2017 18:18:00 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/tongdaxin_data/</guid>
+      <guid>http://laowalter.github.io/posts/tech/tongdaxin_data/</guid>
       <description>通达信数据结构解析 通达信自定义指数 相关文件： [jtable] incon.dat,证监会行业、通达信新行业、申万行业等描述信息 T0002\hq_cache\</description>
     </item>
     
     <item>
       <title>书法大字典平台</title>
-      <link>https://laowalter.github.io/posts/tech/shufadazidian/</link>
+      <link>http://laowalter.github.io/posts/tech/shufadazidian/</link>
       <pubDate>Sun, 19 Mar 2017 20:57:07 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/shufadazidian/</guid>
+      <guid>http://laowalter.github.io/posts/tech/shufadazidian/</guid>
       <description>书法大字典维护日志 Sun 28 Jul 2019 11:19:03 AM CST 书法字典报警，重启apache，但是发现数据库无法通过 service mysqld start, 后直接在终端上运行 mysqld 后访问正常，就先这样了。 书法</description>
     </item>
     
     <item>
       <title>Matplotlib</title>
-      <link>https://laowalter.github.io/posts/tech/matplotlib/</link>
+      <link>http://laowalter.github.io/posts/tech/matplotlib/</link>
       <pubDate>Thu, 02 Feb 2017 22:00:18 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/matplotlib/</guid>
+      <guid>http://laowalter.github.io/posts/tech/matplotlib/</guid>
       <description>Matplot chinese font  Problem  /home/walter/.virtualenv/python3/lib/python3.6/site-packages/matplotlib/font_manager.py:1316: UserWarning: findfont: Font family [&amp;lsquo;sans-serif&amp;rsquo;] not found. Falling back to DejaVu Sans (prop.get_family(), self.defaultFamily[fontext]))
  Add Chinese font
  Add font to system
@@ -778,55 +778,55 @@ or just change ~/.config/matplotlib/matplotlibrc  config mpl.rccParams[&amp;lsqu
     
     <item>
       <title>Nginx</title>
-      <link>https://laowalter.github.io/posts/tech/nginx/</link>
+      <link>http://laowalter.github.io/posts/tech/nginx/</link>
       <pubDate>Thu, 02 Feb 2017 22:00:18 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/nginx/</guid>
+      <guid>http://laowalter.github.io/posts/tech/nginx/</guid>
       <description>Nginx on Gentoo Filename: /etc/nginx/nginx.conf server { listen 192.168.0.202:80; server_name gentoo; charset utf-8; autoindex on; #开启nginx目录浏览功能 autoindex_exact_size off; #文件大小从KB开始显示 autoindex_localtime on; #显示文件修改时间为服务器本地时间 access_log /var/log/nginx/localhost.access_log main; error_log /var/log/nginx/localhost.error_log info; location /</description>
     </item>
     
     <item>
       <title>Windows 10</title>
-      <link>https://laowalter.github.io/posts/tech/windows10/</link>
+      <link>http://laowalter.github.io/posts/tech/windows10/</link>
       <pubDate>Fri, 09 Dec 2016 22:02:20 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/windows10/</guid>
+      <guid>http://laowalter.github.io/posts/tech/windows10/</guid>
       <description>BlueTooth蓝牙问题 CSR 4.0 USB蓝牙适配器出现偶尔断开的问题。 解决方法：安装 Generic Bluetooth Adapter 选择 Generic Bluetooth Adapter Driver 系统启动相关 主板进入BIOS 开机 按ESC 进</description>
     </item>
     
     <item>
       <title>Imagemagick</title>
-      <link>https://laowalter.github.io/posts/tech/imagemagick/</link>
+      <link>http://laowalter.github.io/posts/tech/imagemagick/</link>
       <pubDate>Wed, 07 Dec 2016 20:14:58 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/imagemagick/</guid>
+      <guid>http://laowalter.github.io/posts/tech/imagemagick/</guid>
       <description> Take photo with iphone  Take photo and adjust selection by iphone upload to linux by weixin browser  convet jpeg to bmp by Imagemagick if error mogrify -set comment &amp;#39;Extraneous bytes removed&amp;#39; *.jpg Corrupt JPEG data: 1130 extraneous bytes before marker 0xd9for i in *.jpg; do convert ${i} ${i%jpg}bmp; done vectorization potrace -i *.bmp -s </description>
     </item>
     
     <item>
       <title>Gentoo</title>
-      <link>https://laowalter.github.io/posts/tech/gentoo/</link>
+      <link>http://laowalter.github.io/posts/tech/gentoo/</link>
       <pubDate>Tue, 29 Nov 2016 18:05:14 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/gentoo/</guid>
+      <guid>http://laowalter.github.io/posts/tech/gentoo/</guid>
       <description>Auto run 自动执行/启动执行 /etc/local.d/ipforward.start #!/bin/bash # for hostapd /sbin/iptables -t nat -A POSTROUTING --source 192.168.6.0/24 -j SNAT --to 192.168.0.199 必须是可执行文件 chmod +x /etc/local.d/ipforward.start 执行 /etc/init.d/local restart Emerge ACCEPT_KEYWORDS=&amp;#34;~amd64&amp;#34; emerge Something Cron emerge -avq sys-process/dcron sudo usermod -a -G cron someuser # 为someuser用户增加</description>
     </item>
     
     <item>
       <title>Git</title>
-      <link>https://laowalter.github.io/posts/tech/git/</link>
+      <link>http://laowalter.github.io/posts/tech/git/</link>
       <pubDate>Thu, 29 Sep 2016 10:06:20 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/git/</guid>
+      <guid>http://laowalter.github.io/posts/tech/git/</guid>
       <description>Use Git 删除branch git push origin --delete gh-pages # 删除远程库中的分支gh-pages git branch -D gh-pages # 删除本地分支gh-pages 不同的git client出现冲突，无</description>
     </item>
     
     <item>
       <title>Build python ENV</title>
-      <link>https://laowalter.github.io/posts/tech/build_python_env/</link>
+      <link>http://laowalter.github.io/posts/tech/build_python_env/</link>
       <pubDate>Tue, 27 Sep 2016 10:59:26 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/build_python_env/</guid>
+      <guid>http://laowalter.github.io/posts/tech/build_python_env/</guid>
       <description>Install pypy Notice：This situation is install pypy3 after another virtualenv for python3 has already installed.
 Download tar package from http://pypy.org/ Extract pakage to /opt tar xvf pypy3.3-v5.2.0-alpha1-osx64.tar.bz2 /opt/ Create virtualenv manually Notice: For some reason, can not simplely run &amp;lsquo;virtualenv&amp;rsquo; -p to create one.
 source .bin/quanta.sh # enter a python3 virtualenv already exist, this named &amp;#39;quanta&amp;#39; cd .virtualenv virtualenv -p /opt/pypy3.3-v5.2.0-alpha1-osx64/bin/pypy3 pypy3 # will got some ERRORS, and FORGET IT.</description>
@@ -834,28 +834,28 @@ source .bin/quanta.sh # enter a python3 virtualenv already exist, this named &am
     
     <item>
       <title>Quanta API</title>
-      <link>https://laowalter.github.io/posts/tech/quanta_api/</link>
+      <link>http://laowalter.github.io/posts/tech/quanta_api/</link>
       <pubDate>Thu, 22 Sep 2016 10:00:00 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/quanta_api/</guid>
+      <guid>http://laowalter.github.io/posts/tech/quanta_api/</guid>
       <description>查询股票总市值和流通市值 总市值：mktcap 流通市值：nmc import tushare as ts df = ts.get_today_all() df.head() df = ts.get_today_all() code name changepercent trade open high low settlement volume turnoverratio amount per pb mktcap nmc 0 601500 通用股份 10.035 9.43 9.43 9.43 9.43 8.57 24800 0.01418</description>
     </item>
     
     <item>
       <title>VNPY安装和使用</title>
-      <link>https://laowalter.github.io/posts/tech/vnpy/</link>
+      <link>http://laowalter.github.io/posts/tech/vnpy/</link>
       <pubDate>Thu, 01 Sep 2016 08:32:00 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/vnpy/</guid>
+      <guid>http://laowalter.github.io/posts/tech/vnpy/</guid>
       <description>安装VNPY 安装python 2 and virtualenv (1) python2 brew install python then ~/.bashrc PATH=/usr/local/bin::$PATH then 退出，在重新进入 iterm2 (2) virtualenv pip install virtualenv ### 建立virtualenvs bash mkdir .virtualenvs cd .virtualenvs virtualenv -p python vnpy export WORKON_HOME=~/.virtualenvs source ~/.virtualenvs/vnpy/bin/activate pip install virtualenvwrapper</description>
     </item>
     
     <item>
       <title>Win10onMac</title>
-      <link>https://laowalter.github.io/posts/tech/win10onmac/</link>
+      <link>http://laowalter.github.io/posts/tech/win10onmac/</link>
       <pubDate>Tue, 30 Aug 2016 15:06:20 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/win10onmac/</guid>
+      <guid>http://laowalter.github.io/posts/tech/win10onmac/</guid>
       <description> Partition on Mac mini.  Just only one SSD while install win10 and osx After finish installation, add the second HDD  Notice: other wise, windows 10 can not recognzied the partition.
 Apple bluetooth keyboard. Under Device Manager, find the Broadcom wireless adapter,
  enable the bluetooth collaboration Hold ctrl+w while searhing bluetooth devices.  </description>
@@ -863,19 +863,19 @@ Apple bluetooth keyboard. Under Device Manager, find the Broadcom wireless adapt
     
     <item>
       <title>Pelican</title>
-      <link>https://laowalter.github.io/posts/tech/pelican/</link>
+      <link>http://laowalter.github.io/posts/tech/pelican/</link>
       <pubDate>Sat, 14 May 2016 19:13:49 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/pelican/</guid>
+      <guid>http://laowalter.github.io/posts/tech/pelican/</guid>
       <description>Github 阅读文档注意： 使用http://username.github.io/ 作为blog是指 User and Organization Pages sites 使用http://username.git</description>
     </item>
     
     <item>
       <title>Linux_Server</title>
-      <link>https://laowalter.github.io/posts/tech/linux_server/</link>
+      <link>http://laowalter.github.io/posts/tech/linux_server/</link>
       <pubDate>Tue, 19 Apr 2016 23:27:55 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/linux_server/</guid>
+      <guid>http://laowalter.github.io/posts/tech/linux_server/</guid>
       <description> iptables (https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules)  List Chains with number
 sudo iptables -L -n -v --line-numbers Delete Chains
 sudo iptables -D INPUT 7  </description>
@@ -883,19 +883,19 @@ sudo iptables -D INPUT 7  </description>
     
     <item>
       <title>Hexo</title>
-      <link>https://laowalter.github.io/posts/tech/hexo/</link>
+      <link>http://laowalter.github.io/posts/tech/hexo/</link>
       <pubDate>Sun, 27 Mar 2016 19:38:35 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/hexo/</guid>
+      <guid>http://laowalter.github.io/posts/tech/hexo/</guid>
       <description>关于Hexo的使用 start start.sh (~/note/myblog/start.sh) #!/bin/bash hexo s -i 192.168.0.99 -p 5000 _config.yml main _config.yml Filename: _config.yml 13 # URL 14 ## If your site is put in a subdirectory, set url as &amp;#39;http://yoursite.com/child&amp;#39; and root as &amp;#39;/child/&amp;#39; 15 url: http://192.168.0.99:5000 16 root: / 17 permalink: :year/:month/:day/:title/ 18 permalink_defaults: freemind theme&amp;rsquo; bug bug for search I have to add a string.trim () in</description>
     </item>
     
     <item>
       <title>DataBases</title>
-      <link>https://laowalter.github.io/posts/tech/databases/</link>
+      <link>http://laowalter.github.io/posts/tech/databases/</link>
       <pubDate>Mon, 29 Feb 2016 10:40:40 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/databases/</guid>
+      <guid>http://laowalter.github.io/posts/tech/databases/</guid>
       <description>Mongodb Enter mongo shell mongo 192.168.0.25 Start mongodb  Upgrade
 brew upgrade mongodb brew info mongdb ln -s /usr/local/Cellar/mongodb/3.2.4/bin/* /usr/local/bin/ config: /usr/local/etc/mongod.conf, Dont forget touh /usr/local/var/log/mongodb/mongo.log
   Filename:  /usr/local/etc/mongod.conf systemLog: destination: file path: /usr/local/var/log/mongodb/mongo.log logAppend: true storage: dbPath: /Volumes/Home/Walter/mongodb net: bindIp: 192.168.0.99   manual start
@@ -905,19 +905,19 @@ mongod --config /usr/local/etc/mongod.conf Mac autostart
     
     <item>
       <title>VIM</title>
-      <link>https://laowalter.github.io/posts/tech/vim/</link>
+      <link>http://laowalter.github.io/posts/tech/vim/</link>
       <pubDate>Mon, 29 Feb 2016 10:28:24 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/vim/</guid>
+      <guid>http://laowalter.github.io/posts/tech/vim/</guid>
       <description>Vim BundleUpdate 之后出现的问题 YcM(YouCompleteMe) server 启动失败 解决办法重新执行install.py cd ~/.vim/bundle/YouCompleteMe ./install.py 使用技巧 文件编码 :set fenc=gbk :set fenc=utf-8 DOS UNIX 转换 set ff=unix Swap character xp Xp Global Replace, $ says &amp;ldquo;put vim in last-line mode&amp;rdquo;. :1,$s/George Bush/Barack Obama/g</description>
     </item>
     
     <item>
       <title>Perl</title>
-      <link>https://laowalter.github.io/posts/tech/perl/</link>
+      <link>http://laowalter.github.io/posts/tech/perl/</link>
       <pubDate>Mon, 29 Feb 2016 10:20:56 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/perl/</guid>
+      <guid>http://laowalter.github.io/posts/tech/perl/</guid>
       <description>Install perlbrew to Gentoo Linux Install to /opt/
 export PERLBREW_ROOT=/opt/perl5 curl -L https://install.perlbrew.pl | bash perlbrew lib create base; Install Perlbrew to Mac OSX \curl -L http://install.perlbrew.pl | bash perlbrew available perlbrew install perl-5.23.3 perlbrew install-cpanm perlbrew lib create base; perlbrew switch perl-5.23.3@base Perl mysql utf8  First of all, make sure your locale is in UTF8
  mysql
@@ -926,10 +926,10 @@ export PERLBREW_ROOT=/opt/perl5 curl -L https://install.perlbrew.pl | bash perlb
     
     <item>
       <title>Mac Operations</title>
-      <link>https://laowalter.github.io/posts/tech/mac_operatoins/</link>
+      <link>http://laowalter.github.io/posts/tech/mac_operatoins/</link>
       <pubDate>Mon, 29 Feb 2016 09:52:41 +0000</pubDate>
       
-      <guid>https://laowalter.github.io/posts/tech/mac_operatoins/</guid>
+      <guid>http://laowalter.github.io/posts/tech/mac_operatoins/</guid>
       <description>Mac Operation create bootable mac usb In Application Download High Sierra apps Format usb stick with mac external file system In terminal: $ sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install\ macOS\ High\ Sierra.app brew install with proxy export ALL_PROXY=127.0.0.1:8087 brew install chromedriver set HostName set /etc/hosts set hostname sudo scutil --set ComputerName newname sudo scutil --set LocalHostName newname sudo scutil --set HostName newname dscacheutil -flushcache find and replace</description>
     </item>
     
