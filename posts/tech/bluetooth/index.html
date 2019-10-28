@@ -11,7 +11,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.efb631bfd6d06f69412228c8e8394e1b0993664013282ad6d79b7aba11a9efd0.css">
+    <link rel="stylesheet" href="/sass/main.min.cf87833c8cd6c406030556aca5d4815ff3b9a77d78fc86455d12f542cc2401f4.css">
 
     <link rel="preload" as="font" href="/fonts/AdobeKaiStd-Regular.otf" crossorigin="anonymous">
     <link rel="preload" as="font" href="/fonts/AdobeHeitiStd-Regular.otf" crossorigin="anonymous">
@@ -28,7 +28,7 @@
     
     
         
-        <link href="http://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+        <link href="https://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
     
 </head>
 
@@ -83,26 +83,20 @@
 
 <h3 id="emerge-数据包">emerge 数据包</h3>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>/etc/portage/package.use/bluez</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">net-wireless/bluez alsa btpclient</code></pre></div>
-</div>
+<div class="file" ><div class="filename"> Filename: <b>/etc/portage/package.use/bluez</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">net-wireless/bluez alsa btpclient</code></pre></div> </div>
 
 <p><br></p>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>/etc/portage/package.use/pulseaudio</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">media-sound/pulseaudio bluetooth dbus equalizer</code></pre></div>
-</div>
+<div class="file" ><div class="filename"> Filename: <b>/etc/portage/package.use/pulseaudio</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">media-sound/pulseaudio bluetooth dbus equalizer</code></pre></div> </div>
 
 <p><br></p>
 <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq net-wireless/bluez  
 emerge -avq media-sound/pulseaudio</code></pre></div>
-<div class="file" >
-    <div class="filename"> Filename: <b>/etc/bluetooth/main.conf</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[Policy]
-<span style="color:#fb660a">AutoEnable</span>=true</code></pre></div>
-</div>
+<div class="file" ><div class="filename"> Filename: <b>/etc/bluetooth/main.conf</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[Policy]
+<span style="color:#fb660a">AutoEnable</span>=true</code></pre></div> </div>
 
 <h3 id="启动蓝牙服务-授权用户">启动蓝牙服务，授权用户</h3>
 
@@ -123,23 +117,19 @@ rc-update add bluetooth default</code></pre></div>
 
 <h3 id="bluez-有个bug">bluez 有个bug</h3>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>/etc/pulse/default.pa</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">把 load-module module-bluetooth-discover 注释掉，改为 
-   <span style="color:#080;background-color:#0f140f;font-style:italic">#load-module module-bluetooth-discover</span></code></pre></div>
-</div>
+<div class="file" ><div class="filename"> Filename: <b>/etc/pulse/default.pa</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">把 load-module module-bluetooth-discover 注释掉，改为 
+   <span style="color:#080;background-color:#0f140f;font-style:italic">#load-module module-bluetooth-discover</span></code></pre></div> </div>
 
 <p><br></p>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>/usr/bin/start-pulseaudio-x11</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">在这句后面
+<div class="file" ><div class="filename"> Filename: <b>/usr/bin/start-pulseaudio-x11</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">在这句后面
     <span style="color:#fb660a;font-weight:bold">if</span> [ x<span style="color:#0086d2">&#34;</span><span style="color:#fb660a">$SESSION_MANAGER</span><span style="color:#0086d2">&#34;</span> != x ] ; <span style="color:#fb660a;font-weight:bold">then</span>
         /usr/bin/pactl load-module module-x11-xsmp <span style="color:#0086d2">&#34;display=</span><span style="color:#fb660a">$DISPLAY</span><span style="color:#0086d2"> session_manager=</span><span style="color:#fb660a">$SESSION_MANAGER</span><span style="color:#0086d2">&#34;</span> &gt; /dev/null
     <span style="color:#fb660a;font-weight:bold">fi</span>
 加入一行
-    /usr/bin/pactl load-module module-bluetooth-discover</code></pre></div>
-</div>
+    /usr/bin/pactl load-module module-bluetooth-discover</code></pre></div> </div>
 
 <h3 id="配对-连接">配对、连接</h3>
 <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> mini ~/blog $ bluetoothctl

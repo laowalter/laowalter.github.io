@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>image on Just a Memo</title>
-    <link>http://laowalter.github.io/tags/image/</link>
+    <link>https://laowalter.github.io/tags/image/</link>
     <description>Recent content in image on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 07 Dec 2016 20:14:58 +0000</lastBuildDate>
     
-	<atom:link href="http://laowalter.github.io/tags/image/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://laowalter.github.io/tags/image/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Imagemagick</title>
-      <link>http://laowalter.github.io/posts/tech/imagemagick/</link>
+      <link>https://laowalter.github.io/posts/tech/imagemagick/</link>
       <pubDate>Wed, 07 Dec 2016 20:14:58 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/imagemagick/</guid>
+      <guid>https://laowalter.github.io/posts/tech/imagemagick/</guid>
       <description> Take photo with iphone  Take photo and adjust selection by iphone upload to linux by weixin browser  convet jpeg to bmp by Imagemagick if error mogrify -set comment &amp;#39;Extraneous bytes removed&amp;#39; *.jpg Corrupt JPEG data: 1130 extraneous bytes before marker 0xd9for i in *.jpg; do convert ${i} ${i%jpg}bmp; done vectorization potrace -i *.bmp -s </description>
     </item>
     

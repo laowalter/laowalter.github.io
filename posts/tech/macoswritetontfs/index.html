@@ -11,7 +11,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.efb631bfd6d06f69412228c8e8394e1b0993664013282ad6d79b7aba11a9efd0.css">
+    <link rel="stylesheet" href="/sass/main.min.cf87833c8cd6c406030556aca5d4815ff3b9a77d78fc86455d12f542cc2401f4.css">
 
     <link rel="preload" as="font" href="/fonts/AdobeKaiStd-Regular.otf" crossorigin="anonymous">
     <link rel="preload" as="font" href="/fonts/AdobeHeitiStd-Regular.otf" crossorigin="anonymous">
@@ -28,7 +28,7 @@
     
     
         
-        <link href="http://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+        <link href="https://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
     
 </head>
 
@@ -96,13 +96,11 @@ brew install ntfs-3g</code></pre></div>
 <p>自建文件</p></li>
 </ul>
 
-<div class="file" >
-<div class="filename"> Filename: <b>/sbin/mount_nfs</b></div>
-    <code>bash
+<div class="file" ><div class="filename"> Filename: <b>/sbin/mount_nfs</b></div>
+<code>bash
 #!/bin/sh
     /sbin/mount_ntfs_orig -o rw,nobrowse &quot;$@&quot;
-</code>
-</div></li>
+</code> </div></li>
 
 <li><p>在完成修改后，应该回到恢复模式里启用安全限制，避免其他安全隐患。具体操作同上，只是把 csrutil 后面改成 enable</p></li>
 </ol>

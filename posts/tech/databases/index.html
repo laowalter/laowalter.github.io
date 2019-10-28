@@ -11,7 +11,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.efb631bfd6d06f69412228c8e8394e1b0993664013282ad6d79b7aba11a9efd0.css">
+    <link rel="stylesheet" href="/sass/main.min.cf87833c8cd6c406030556aca5d4815ff3b9a77d78fc86455d12f542cc2401f4.css">
 
     <link rel="preload" as="font" href="/fonts/AdobeKaiStd-Regular.otf" crossorigin="anonymous">
     <link rel="preload" as="font" href="/fonts/AdobeHeitiStd-Regular.otf" crossorigin="anonymous">
@@ -28,7 +28,7 @@
     
     
         
-        <link href="http://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+        <link href="https://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
     
 </head>
 
@@ -91,17 +91,15 @@ ln -s /usr/local/Cellar/mongodb/3.2.4/bin/* /usr/local/bin/</code></pre></div></
 <li><p>config: /usr/local/etc/mongod.conf, Dont forget touh <code>/usr/local/var/log/mongodb/mongo.log</code></p></li>
 </ul>
 
-<div class="file" >
-    <div class="filename"> Filename: <b> /usr/local/etc/mongod.conf</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">   systemLog:
+<div class="file" ><div class="filename"> Filename: <b> /usr/local/etc/mongod.conf</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">   systemLog:
         destination: file
         path: <span style="color:#0086d2">/usr/</span>local<span style="color:#0086d2">/var/</span>log<span style="color:#0086d2">/mongodb/</span>mongo.log
         logAppend: true
     storage:
         dbPath: <span style="color:#0086d2">/Volumes/</span>Home<span style="color:#0086d2">/Walter/</span>mongodb
     net:
-        bindIp: <span style="color:#0086f7;font-weight:bold">192</span>.<span style="color:#0086f7;font-weight:bold">168</span>.<span style="color:#0086f7;font-weight:bold">0</span>.<span style="color:#0086f7;font-weight:bold">99</span></code></pre></div>
-</div>
+        bindIp: <span style="color:#0086f7;font-weight:bold">192</span>.<span style="color:#0086f7;font-weight:bold">168</span>.<span style="color:#0086f7;font-weight:bold">0</span>.<span style="color:#0086f7;font-weight:bold">99</span></code></pre></div> </div>
 
 <ul>
 <li><p>manual start</p>
@@ -114,9 +112,8 @@ ln -s /usr/local/Cellar/mongodb/3.2.4/bin/* /usr/local/bin/</code></pre></div></
 </ul></li>
 </ul>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>/Library/LaunchDaemons/org.mongo.mongod.plist</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">       <span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>  
+<div class="file" ><div class="filename"> Filename: <b>/Library/LaunchDaemons/org.mongo.mongod.plist</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">       <span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>  
         <span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">&lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt;</span>  
         <span style="color:#fb660a;font-weight:bold">&lt;plist</span> <span style="color:#ff0086;font-weight:bold">version=</span><span style="color:#0086d2">&#34;1.0&#34;</span><span style="color:#fb660a;font-weight:bold">&gt;</span>  
         <span style="color:#fb660a;font-weight:bold">&lt;dict&gt;</span>  
@@ -131,8 +128,7 @@ ln -s /usr/local/Cellar/mongodb/3.2.4/bin/* /usr/local/bin/</code></pre></div></
             <span style="color:#fb660a;font-weight:bold">&lt;string&gt;</span>/usr/local/etc/mongod.conf<span style="color:#fb660a;font-weight:bold">&lt;/string&gt;</span>
         <span style="color:#fb660a;font-weight:bold">&lt;/array&gt;</span>
         <span style="color:#fb660a;font-weight:bold">&lt;/dict&gt;</span>  
-        <span style="color:#fb660a;font-weight:bold">&lt;/plist&gt;</span></code></pre></div>
-</div>
+        <span style="color:#fb660a;font-weight:bold">&lt;/plist&gt;</span></code></pre></div> </div>
 
 <pre><code>* Add to launchctl
 </code></pre>

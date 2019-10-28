@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>输入法 on Just a Memo</title>
-    <link>http://laowalter.github.io/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+    <link>https://laowalter.github.io/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</link>
     <description>Recent content in 输入法 on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 13 Apr 2018 15:30:54 +0000</lastBuildDate>
     
-	<atom:link href="http://laowalter.github.io/tags/%E8%BE%93%E5%85%A5%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://laowalter.github.io/tags/%E8%BE%93%E5%85%A5%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Input 输入法（未测试）</title>
-      <link>http://laowalter.github.io/posts/tech/input/</link>
+      <link>https://laowalter.github.io/posts/tech/input/</link>
       <pubDate>Fri, 13 Apr 2018 15:30:54 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/input/</guid>
+      <guid>https://laowalter.github.io/posts/tech/input/</guid>
       <description>Windows Linux Input 安装文档 https://fcitx-im.org Terminal Console emerge -avq fcitx Filename: .bashrc export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx If you do not enable the gtk and gtk3 USE flags, the first line should be: export GTK_IM_MODULE=xim If you do not enable the qt USE flag, the second line should be: export QT_IM_MODULE=xim Session Mode (~/.xprofile) Filename: ~/.xprofile export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx startx (~/.xinitrc) Filename: ~/.xprofile</description>
     </item>
     

@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>css on Just a Memo</title>
-    <link>http://laowalter.github.io/tags/css/</link>
+    <link>https://laowalter.github.io/tags/css/</link>
     <description>Recent content in css on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 23 Aug 2019 12:31:39 +0800</lastBuildDate>
     
-	<atom:link href="http://laowalter.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://laowalter.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CSS</title>
-      <link>http://laowalter.github.io/posts/tech/css/</link>
+      <link>https://laowalter.github.io/posts/tech/css/</link>
       <pubDate>Fri, 23 Aug 2019 12:31:39 +0800</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/css/</guid>
+      <guid>https://laowalter.github.io/posts/tech/css/</guid>
       <description> @font-face
 @font-face { font-family: Lobster; src: url(&amp;#34;../fonts/Lobster-Regular.ttf&amp;#34;); } @font-face { font-family: Lobster; src: url(&amp;#34;../fonts/Lobster-Regular.ttf&amp;#34;); } .datetime { font-family: Lobster, cursive; color: #003366; } Google Fonts
   </description>
@@ -24,10 +24,10 @@
     
     <item>
       <title>Hugo Theme Development</title>
-      <link>http://laowalter.github.io/posts/tech/hugo_theme_develop/</link>
+      <link>https://laowalter.github.io/posts/tech/hugo_theme_develop/</link>
       <pubDate>Thu, 08 Aug 2019 23:29:12 +0800</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/hugo_theme_develop/</guid>
+      <guid>https://laowalter.github.io/posts/tech/hugo_theme_develop/</guid>
       <description>Youtube Tutorial https://www.youtube.com/watch?v=qtIqKaDlqXo&amp;amp;list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3 有特别帮助的网址 关于整体结构和简单的theme设置 https://www.zeolearn.com/magazine/develop-a-theme-for-hugo 中文网站 https://bwaycer.github.io/hugo_tutorial.hugo/overview/introduction/ 语法高亮的支持 Paginator用法 使用思维导图 Hexo 脑图 Insert javascript into hugo by partial Create custom Shortcodes</description>
     </item>
     

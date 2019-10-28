@@ -1,31 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>nas on Just a Memo</title>
-    <link>http://laowalter.github.io/tags/nas/</link>
+    <link>https://laowalter.github.io/tags/nas/</link>
     <description>Recent content in nas on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 17 Apr 2019 12:14:17 +0000</lastBuildDate>
     
-	<atom:link href="http://laowalter.github.io/tags/nas/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://laowalter.github.io/tags/nas/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Freenas</title>
-      <link>http://laowalter.github.io/posts/tech/freenas/</link>
+      <link>https://laowalter.github.io/posts/tech/freenas/</link>
       <pubDate>Wed, 17 Apr 2019 12:14:17 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/freenas/</guid>
+      <guid>https://laowalter.github.io/posts/tech/freenas/</guid>
       <description>Terminal / Console 对普通永户和root此方法都适用 Step one Filename: ~/.login_conf me:\ :charset=UTF-8:\ :lang=zh_CN.UTF-8: Step two cd cp .profile .bash_profile 然后再最后添加如下内容: PS1=&amp;#34;\e[0;32m[\u@\h:\e[m\e[1;33m\w\e[m\e[0;32m]\e[m &amp;#34; case `id -u` in *) PS1=&amp;#34;${PS1}$&amp;#34;;; esac alias ls=&amp;#39;ls -G&amp;#39;; Jail Errors Metadata corrupt after fetch rm -fr /var/db/portsnap/* portsnap fetch Jail initialize pkg</description>
     </item>
     
     <item>
       <title>ASRock j3455说明书（摘要）</title>
-      <link>http://laowalter.github.io/posts/tech/asrock_j3455/</link>
+      <link>https://laowalter.github.io/posts/tech/asrock_j3455/</link>
       <pubDate>Mon, 15 Apr 2019 09:11:01 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/asrock_j3455/</guid>
+      <guid>https://laowalter.github.io/posts/tech/asrock_j3455/</guid>
       <description></description>
     </item>
     

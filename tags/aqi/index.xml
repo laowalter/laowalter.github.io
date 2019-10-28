@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>aqi on Just a Memo</title>
-    <link>http://laowalter.github.io/tags/aqi/</link>
+    <link>https://laowalter.github.io/tags/aqi/</link>
     <description>Recent content in aqi on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 13 Oct 2019 11:56:17 +0000</lastBuildDate>
     
-	<atom:link href="http://laowalter.github.io/tags/aqi/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://laowalter.github.io/tags/aqi/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>AQI</title>
-      <link>http://laowalter.github.io/posts/life/aqi/</link>
+      <link>https://laowalter.github.io/posts/life/aqi/</link>
       <pubDate>Sun, 13 Oct 2019 11:56:17 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/life/aqi/</guid>
+      <guid>https://laowalter.github.io/posts/life/aqi/</guid>
       <description>北京空气污染指数 北京 http://ios.aqicn.org/?1451 上海 http://ios.aqicn.org/?1437</description>
     </item>
     

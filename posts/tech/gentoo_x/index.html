@@ -11,7 +11,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.efb631bfd6d06f69412228c8e8394e1b0993664013282ad6d79b7aba11a9efd0.css">
+    <link rel="stylesheet" href="/sass/main.min.cf87833c8cd6c406030556aca5d4815ff3b9a77d78fc86455d12f542cc2401f4.css">
 
     <link rel="preload" as="font" href="/fonts/AdobeKaiStd-Regular.otf" crossorigin="anonymous">
     <link rel="preload" as="font" href="/fonts/AdobeHeitiStd-Regular.otf" crossorigin="anonymous">
@@ -28,7 +28,7 @@
     
     
         
-        <link href="http://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+        <link href="https://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
     
 </head>
 
@@ -101,11 +101,9 @@
  <span style="color:#080;background-color:#0f140f;font-style:italic"># lspci  | grep -i VGA</span></code></pre></div>
 <p>设置/etc/portage/make.conf文件中两个重要的变量：</p>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>/etc/portage/make.conf</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#fb660a">INPUT_DEVICE</span>=<span style="color:#0086d2">&#34;evdev&#34;</span>
- <span style="color:#fb660a">VIDEO_CARDS</span>=<span style="color:#0086d2">&#34;intel i965&#34;</span></code></pre></div>
-</div>
+<div class="file" ><div class="filename"> Filename: <b>/etc/portage/make.conf</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#fb660a">INPUT_DEVICE</span>=<span style="color:#0086d2">&#34;evdev&#34;</span>
+ <span style="color:#fb660a">VIDEO_CARDS</span>=<span style="color:#0086d2">&#34;intel i965&#34;</span></code></pre></div> </div>
 
 <h3 id="安装xorg-server">安装xorg-server</h3>
 <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#080;background-color:#0f140f;font-style:italic"># emerge -pv xorg-server</span>
@@ -132,18 +130,13 @@
 <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ vncpassword
  $ vncserver  (Will generate a session named Xvnc)
  $ pkill Xvnc</code></pre></div>
-<div class="file" >
-    <div class="filename"> Filename: <b>/etc/conf.d/tigervnc</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> DISPLAY:<span style="color:#0086d2">&#34;user_a:1 user_b:2&#34;</span></code></pre></div>
-</div>
+<div class="file" ><div class="filename"> Filename: <b>/etc/conf.d/tigervnc</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> DISPLAY:<span style="color:#0086d2">&#34;user_a:1 user_b:2&#34;</span></code></pre></div> </div>
 
 <p><br></p>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>~/.vnc/startup</b></div>
-        
-
-<p></div></p>
+<div class="file" ><div class="filename"> Filename: <b>~/.vnc/startup</b></div>
+     </div>
 
 <div class="highlight"><div style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -153,7 +146,7 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#!/bin/sh
 </span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic"></span>xrdb <span style="color:#0086d2">${</span><span style="color:#fb660a">HOME</span><span style="color:#0086d2">}</span>/.Xresources
 xsetroot -solid grey
@@ -187,11 +180,8 @@ twm &amp;</code></pre></td></tr></table>
 <li><p>.Xresources</p></li>
 </ol>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>~/.Xresources</b></div>
-        
-
-<p></div></p>
+<div class="file" ><div class="filename"> Filename: <b>~/.Xresources</b></div>
+     </div>
 
 <div class="highlight"><div style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -252,7 +242,7 @@ twm &amp;</code></pre></td></tr></table>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xorg" data-lang="xorg">XTerm*preeditType:<span style="color:#888"> </span>Root<span style="color:#888">
 </span><span style="color:#888"></span><span style="color:#0086d2">xterm.termName: xterm-256color</span><span style="color:#888">
 </span><span style="color:#888"></span>xterm.geometry:<span style="color:#888"> </span>80x36<span style="color:#888">

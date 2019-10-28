@@ -1,31 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mac on Just a Memo</title>
-    <link>http://laowalter.github.io/tags/mac/</link>
+    <link>https://laowalter.github.io/tags/mac/</link>
     <description>Recent content in mac on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Sep 2019 13:32:25 +0800</lastBuildDate>
     
-	<atom:link href="http://laowalter.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://laowalter.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Mac里的文件复制到 NTFS 格式的移动硬盘里</title>
-      <link>http://laowalter.github.io/posts/tech/macoswritetontfs/</link>
+      <link>https://laowalter.github.io/posts/tech/macoswritetontfs/</link>
       <pubDate>Tue, 17 Sep 2019 13:32:25 +0800</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/macoswritetontfs/</guid>
+      <guid>https://laowalter.github.io/posts/tech/macoswritetontfs/</guid>
       <description>Install Homebrew Install ntfs-3g brew update brew install ntfs-3g Install Fuse Box 在 https://osxfuse.github.io/ 下载安装 FUSE for macOS 3.10.2` 将原来系统的mount_nfs 备份为mount_nfs.orig sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.orig //将原系文件改名备份 如</description>
     </item>
     
     <item>
       <title>iTunes</title>
-      <link>http://laowalter.github.io/posts/tech/itunes/</link>
+      <link>https://laowalter.github.io/posts/tech/itunes/</link>
       <pubDate>Sun, 04 Nov 2018 08:53:42 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/itunes/</guid>
+      <guid>https://laowalter.github.io/posts/tech/itunes/</guid>
       <description> Change iTunes Backup directory
  Default backup directory  Move to “J:\My iPhone Backup\Backup”, Just create a softlink
 mklink /J “%APPDATA%\Apple Computer\MobileSync\Backup” “J:\My iPhone Backup\Backup”   </description>
@@ -33,19 +33,19 @@ mklink /J “%APPDATA%\Apple Computer\MobileSync\Backup” “J:\My iPhone Backu
     
     <item>
       <title>Mac-mini Gentoo Linux Single Boot with Kernel Stub Installation</title>
-      <link>http://laowalter.github.io/posts/tech/mac_mini_gentoo/</link>
+      <link>https://laowalter.github.io/posts/tech/mac_mini_gentoo/</link>
       <pubDate>Thu, 09 Nov 2017 10:02:58 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/mac_mini_gentoo/</guid>
+      <guid>https://laowalter.github.io/posts/tech/mac_mini_gentoo/</guid>
       <description>Mac Mini(late 2012) Install Gentoo Linux(single boot, kernel stub) USB Download admin iso Create Linux bootable usb stick Partiton (GPT must) [jtable] Device, Mount Point,Filesystem,Description /dev/sda1,not mounted,(bootloader),BIOS boot partition /dev/sda2,/boot/efi,fat32,EFI System Partition (ESP) where the EFI files will be held to boot into the bootloader 0xEE /dev/sda3,/,ext4,root partition for your system [/jtable] list partition $ parted (parted) print devices /dev/sda (500GB) /dev/sdb (250GB) /dev/sdc (15.6GB) $ select /dev/sda (parted) print</description>
     </item>
     
     <item>
       <title>Mac Operations</title>
-      <link>http://laowalter.github.io/posts/tech/mac_operatoins/</link>
+      <link>https://laowalter.github.io/posts/tech/mac_operatoins/</link>
       <pubDate>Mon, 29 Feb 2016 09:52:41 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/mac_operatoins/</guid>
+      <guid>https://laowalter.github.io/posts/tech/mac_operatoins/</guid>
       <description>Mac Operation create bootable mac usb In Application Download High Sierra apps Format usb stick with mac external file system In terminal: $ sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install\ macOS\ High\ Sierra.app brew install with proxy export ALL_PROXY=127.0.0.1:8087 brew install chromedriver set HostName set /etc/hosts set hostname sudo scutil --set ComputerName newname sudo scutil --set LocalHostName newname sudo scutil --set HostName newname dscacheutil -flushcache find and replace</description>
     </item>
     

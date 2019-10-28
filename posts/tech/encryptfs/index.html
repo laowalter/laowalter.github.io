@@ -11,7 +11,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.efb631bfd6d06f69412228c8e8394e1b0993664013282ad6d79b7aba11a9efd0.css">
+    <link rel="stylesheet" href="/sass/main.min.cf87833c8cd6c406030556aca5d4815ff3b9a77d78fc86455d12f542cc2401f4.css">
 
     <link rel="preload" as="font" href="/fonts/AdobeKaiStd-Regular.otf" crossorigin="anonymous">
     <link rel="preload" as="font" href="/fonts/AdobeHeitiStd-Regular.otf" crossorigin="anonymous">
@@ -28,7 +28,7 @@
     
     
         
-        <link href="http://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+        <link href="https://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
     
 </head>
 
@@ -117,25 +117,21 @@
  $ sudo losetup -d /dev/loop0</code></pre></div>
 <h3 id="建立两个batch文件">建立两个batch文件</h3>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>~/.bin/loadEncryptFilesystem.sh</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#080;background-color:#0f140f;font-style:italic">#!/bin/sh</span>
+<div class="file" ><div class="filename"> Filename: <b>~/.bin/loadEncryptFilesystem.sh</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#080;background-color:#0f140f;font-style:italic">#!/bin/sh</span>
  
  sudo losetup /dev/loop0 /data/encryptimg/secret.img
  sudo cryptsetup create encryptfs /dev/loop0
- sudo mount /dev/mapper/encryptfs /home/walter/encryptfs</code></pre></div>
-</div>
+ sudo mount /dev/mapper/encryptfs /home/walter/encryptfs</code></pre></div> </div>
 
 <p><br></p>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>~/.bin/unloadEncryptFilesystem.sh</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#!/bin/bash
+<div class="file" ><div class="filename"> Filename: <b>~/.bin/unloadEncryptFilesystem.sh</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#!/bin/bash
 </span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic"></span>
 sudo umount /home/walter/encryptfs
 sudo cryptsetup remove encryptfs
-sudo losetup -d /dev/loop0</code></pre></div>
-</div>
+sudo losetup -d /dev/loop0</code></pre></div> </div>
 
 <h3 id="权限设置">权限设置</h3>
 
@@ -146,11 +142,9 @@ sudo losetup -d /dev/loop0</code></pre></div>
 /dev/mapper/encryptfs: <span style="color:#fb660a">UUID</span>=<span style="color:#0086d2">&#34;c086c30c-bea0-452f-8616-0a3a6d9f48b3&#34;</span> <span style="color:#fb660a">TYPE</span>=<span style="color:#0086d2">&#34;ext4&#34;</span></code></pre></div>
 <h3 id="etc-udev-rules-d-99-myencryptfs-rules">/etc/udev/rules.d/99-myencryptfs.rules</h3>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>/etc/udev/rules.d/99-myencryptfs.rules</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fb660a">KERNEL</span>==<span style="color:#0086d2">&#34;loop0&#34;</span> ENV{ID_FS_UUID}==<span style="color:#0086d2">&#34;c086c30c-bea0-452f-8616-0afa9848b3&#34;</span> <span style="color:#fb660a">MODE</span>=<span style="color:#0086d2">&#34;0600&#34;</span> <span style="color:#fb660a">OWNER</span>=<span style="color:#0086d2">&#34;user&#34;</span> <span style="color:#fb660a">GROUP</span>=<span style="color:#0086d2">&#34;group&#34;</span>
-<span style="color:#080;background-color:#0f140f;font-style:italic">#KERNEL==&#34;loop5&#34; MODE=&#34;0600&#34; OWNER=&#34;MyUser&#34; GROUP=&#34;MyGroupUser&#34; ENV{UDISKS_IGNORE}=&#34;1&#34; ENV{UDISKS_PRESENTATION_HIDE}=&#34;1&#34; ENV{ID_DRIVE_EJECTABLE}=&#34;0&#34;</span></code></pre></div>
-</div>
+<div class="file" ><div class="filename"> Filename: <b>/etc/udev/rules.d/99-myencryptfs.rules</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fb660a">KERNEL</span>==<span style="color:#0086d2">&#34;loop0&#34;</span> ENV{ID_FS_UUID}==<span style="color:#0086d2">&#34;c086c30c-bea0-452f-8616-0afa9848b3&#34;</span> <span style="color:#fb660a">MODE</span>=<span style="color:#0086d2">&#34;0600&#34;</span> <span style="color:#fb660a">OWNER</span>=<span style="color:#0086d2">&#34;user&#34;</span> <span style="color:#fb660a">GROUP</span>=<span style="color:#0086d2">&#34;group&#34;</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">#KERNEL==&#34;loop5&#34; MODE=&#34;0600&#34; OWNER=&#34;MyUser&#34; GROUP=&#34;MyGroupUser&#34; ENV{UDISKS_IGNORE}=&#34;1&#34; ENV{UDISKS_PRESENTATION_HIDE}=&#34;1&#34; ENV{ID_DRIVE_EJECTABLE}=&#34;0&#34;</span></code></pre></div> </div>
 
 </article>
 

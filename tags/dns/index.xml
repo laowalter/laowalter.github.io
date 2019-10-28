@@ -1,31 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dns on Just a Memo</title>
-    <link>http://laowalter.github.io/tags/dns/</link>
+    <link>https://laowalter.github.io/tags/dns/</link>
     <description>Recent content in dns on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 Mar 2019 11:29:42 +0000</lastBuildDate>
     
-	<atom:link href="http://laowalter.github.io/tags/dns/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://laowalter.github.io/tags/dns/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>DNS Server List</title>
-      <link>http://laowalter.github.io/posts/tech/dns_server_list/</link>
+      <link>https://laowalter.github.io/posts/tech/dns_server_list/</link>
       <pubDate>Sun, 24 Mar 2019 11:29:42 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/dns_server_list/</guid>
+      <guid>https://laowalter.github.io/posts/tech/dns_server_list/</guid>
       <description>DNS Server Provider Server1 Server2 Cloudflare 1.1.1.1 1.0.0.1 Google 8.8.8.8 8.8.4.4 Quad9 9.9.9.9 149.112.112.112 OpenDNS Home 208.67.222.222 208.67.220.220 Comodo Secure 8.26.56.26 8.20.247.20 CleanBrowsing 185.228.168.9 185.228.169.9 Verisign 64.6.64.6 64.6.65.6 Alternate 198.101.242.72 23.253.163.53 AdGuard 176.103.130.130 176.103.130.131 新加坡 DNS Server https://public-dns.info/nameserver/sg.html</description>
     </item>
     
     <item>
       <title>DNS_Server Config</title>
-      <link>http://laowalter.github.io/posts/tech/dns_server_config/</link>
+      <link>https://laowalter.github.io/posts/tech/dns_server_config/</link>
       <pubDate>Fri, 09 Mar 2018 18:30:08 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/dns_server_config/</guid>
+      <guid>https://laowalter.github.io/posts/tech/dns_server_config/</guid>
       <description>Install emerge -aqv bind bind-tools Config /* * Refer to the named.conf(5) and named(8) man pages, and the documentation * in /usr/share/doc/bind-* for more details. * Online versions of the documentation can be found here: * https://kb.isc.org/article/AA-01031 * * If you are going to set up an authoritative server, make sure you * understand the hairy details of how DNS works. Even with simple mistakes, * you can break connectivity</description>
     </item>
     

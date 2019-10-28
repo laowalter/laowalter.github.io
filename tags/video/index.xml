@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>video on Just a Memo</title>
-    <link>http://laowalter.github.io/tags/video/</link>
+    <link>https://laowalter.github.io/tags/video/</link>
     <description>Recent content in video on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 10 Feb 2018 13:55:13 +0000</lastBuildDate>
     
-	<atom:link href="http://laowalter.github.io/tags/video/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://laowalter.github.io/tags/video/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Video</title>
-      <link>http://laowalter.github.io/posts/tech/video/</link>
+      <link>https://laowalter.github.io/posts/tech/video/</link>
       <pubDate>Sat, 10 Feb 2018 13:55:13 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/video/</guid>
+      <guid>https://laowalter.github.io/posts/tech/video/</guid>
       <description>Video Combine Combine multiple flvs into one emerge -avq mplayer mencoder -forceidx -of lavf -oac pcm -ovc copy -o film.flv 1.flv 2.flv 3.flv 4.flv 5.flv 6.flv 7.flv 8.flv 9.flv Spit One mp4 into multiple mp4 ffmpeg -i 5大運動傷害搶先知.mp4 -c copy -map 0 -segment_time 00:01:30 -f segment -f segment output%03d.mp4 Split videos and music file into chunks * 可</description>
     </item>
     

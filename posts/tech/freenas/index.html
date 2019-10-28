@@ -11,7 +11,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.efb631bfd6d06f69412228c8e8394e1b0993664013282ad6d79b7aba11a9efd0.css">
+    <link rel="stylesheet" href="/sass/main.min.cf87833c8cd6c406030556aca5d4815ff3b9a77d78fc86455d12f542cc2401f4.css">
 
     <link rel="preload" as="font" href="/fonts/AdobeKaiStd-Regular.otf" crossorigin="anonymous">
     <link rel="preload" as="font" href="/fonts/AdobeHeitiStd-Regular.otf" crossorigin="anonymous">
@@ -28,7 +28,7 @@
     
     
         
-        <link href="http://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+        <link href="https://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
     
 </head>
 
@@ -83,12 +83,10 @@
 
 <h3 id="step-one">Step one</h3>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>~/.login_conf</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">me:<span style="color:#0086d2">\
+<div class="file" ><div class="filename"> Filename: <b>~/.login_conf</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">me:<span style="color:#0086d2">\
 </span><span style="color:#0086d2"></span>        :charset=UTF-8:<span style="color:#0086d2">\
-</span><span style="color:#0086d2"></span>        :lang=zh_CN.UTF-8:</code></pre></div>
-</div>
+</span><span style="color:#0086d2"></span>        :lang=zh_CN.UTF-8:</code></pre></div> </div>
 
 <h3 id="step-two">Step two</h3>
 <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd
@@ -122,16 +120,14 @@ port fetch</code></pre></div>
 
 <ul>
 <li><p>Config
-<div class="file" >
-<div class="filename"> Filename: <b>/usr/local/etc/php-fpm.d/www.conf</b></div>
-    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">;修改一下内容
+<div class="file" ><div class="filename"> Filename: <b>/usr/local/etc/php-fpm.d/www.conf</b></div>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">;修改一下内容
 <span style="color:#fb660a">user</span> = www
 <span style="color:#fb660a">group</span> = www
 <span style="color:#fb660a">listen</span> = /var/run/php72-fpm.sock
 listen.owner = www
 listen.group = www
-listen.mode = <span style="color:#0086f7;font-weight:bold">0660</span></code></pre></div>
-</div></p></li>
+listen.mode = <span style="color:#0086f7;font-weight:bold">0660</span></code></pre></div> </div></p></li>
 
 <li><p>Nginx</p>
 <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">server {
@@ -167,10 +163,8 @@ location ~ [^/]<span style="color:#0086d2">\.</span>php(/|$) {
 <li><p>Autostart</p></li>
 </ul>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>/etc/rc.conf</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fb660a">php_fpm_enable</span>=<span style="color:#0086d2">&#34;YES&#34;</span></code></pre></div>
-</div>
+<div class="file" ><div class="filename"> Filename: <b>/etc/rc.conf</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fb660a">php_fpm_enable</span>=<span style="color:#0086d2">&#34;YES&#34;</span></code></pre></div> </div>
  
 
 <h4 id="mysql-server">mysql server</h4>

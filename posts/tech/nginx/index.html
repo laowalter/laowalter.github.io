@@ -11,7 +11,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.efb631bfd6d06f69412228c8e8394e1b0993664013282ad6d79b7aba11a9efd0.css">
+    <link rel="stylesheet" href="/sass/main.min.cf87833c8cd6c406030556aca5d4815ff3b9a77d78fc86455d12f542cc2401f4.css">
 
     <link rel="preload" as="font" href="/fonts/AdobeKaiStd-Regular.otf" crossorigin="anonymous">
     <link rel="preload" as="font" href="/fonts/AdobeHeitiStd-Regular.otf" crossorigin="anonymous">
@@ -28,7 +28,7 @@
     
     
         
-        <link href="http://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+        <link href="https://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
     
 </head>
 
@@ -70,9 +70,8 @@
 
 <h2 id="nginx-on-gentoo">Nginx on Gentoo</h2>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>/etc/nginx/nginx.conf</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#fb660a;font-weight:bold">server</span> {
+<div class="file" ><div class="filename"> Filename: <b>/etc/nginx/nginx.conf</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#fb660a;font-weight:bold">server</span> {
     <span style="color:#fb660a;font-weight:bold">listen</span> 192.168.0.202:<span style="color:#0086f7;font-weight:bold">80</span>;
     <span style="color:#fb660a;font-weight:bold">server_name</span> <span style="color:#0086d2">gentoo</span>;
     <span style="color:#fb660a;font-weight:bold">charset</span> <span style="color:#0086d2">utf-8</span>;
@@ -112,8 +111,7 @@
             <span style="color:#fb660a;font-weight:bold">proxy_set_header</span> <span style="color:#0086d2">Host</span> <span style="color:#fb660a">$host:$server_port</span>;
             <span style="color:#fb660a;font-weight:bold">proxy_buffering</span> <span style="color:#0086d2">off</span>;
         }
-}</code></pre></div>
-</div>
+}</code></pre></div> </div>
 
 <h2 id="nginx-on-mac">Nginx on MAC</h2>
 
@@ -122,9 +120,8 @@
 sudo nginx</code></pre></div>
 <h3 id="configuration">Configuration</h3>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>/usr/local/etc/nginx/nginx.conf</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">server {
+<div class="file" ><div class="filename"> Filename: <b>/usr/local/etc/nginx/nginx.conf</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">server {
          listen       <span style="color:#0086f7;font-weight:bold">8000</span>;
          server_name  _;
 
@@ -134,8 +131,7 @@ sudo nginx</code></pre></div>
                  
         }
 
-}</code></pre></div>
-</div>
+}</code></pre></div> </div>
 
 <h3 id="unblock-firewall-for-nginx">Unblock firewall for nginx</h3>
 <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /usr/local/Cellar/nginx/1.10.3/bin/nginx

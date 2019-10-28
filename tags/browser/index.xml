@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>browser on Just a Memo</title>
-    <link>http://laowalter.github.io/tags/browser/</link>
+    <link>https://laowalter.github.io/tags/browser/</link>
     <description>Recent content in browser on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 04 Nov 2018 11:23:50 +0000</lastBuildDate>
     
-	<atom:link href="http://laowalter.github.io/tags/browser/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://laowalter.github.io/tags/browser/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Opera</title>
-      <link>http://laowalter.github.io/posts/tech/opera/</link>
+      <link>https://laowalter.github.io/posts/tech/opera/</link>
       <pubDate>Sun, 04 Nov 2018 11:23:50 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/opera/</guid>
+      <guid>https://laowalter.github.io/posts/tech/opera/</guid>
       <description>更改Opera的区域/更改缺省浏览器 在资源管理器的地址栏中键入%appData%在定位到&amp;rdquo;Roaming\Opera Software\Opera Stable&amp;rdquo; 找到文件</description>
     </item>
     

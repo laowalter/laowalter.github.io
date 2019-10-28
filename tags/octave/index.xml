@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>octave on Just a Memo</title>
+    <link>http://192.168.0.199:8000/tags/octave/</link>
+    <description>Recent content in octave on Just a Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 Oct 2019 02:20:05 +0000</lastBuildDate>
+    
+	<atom:link href="http://192.168.0.199:8000/tags/octave/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Octave</title>
+      <link>http://192.168.0.199:8000/posts/tech/octave/</link>
+      <pubDate>Thu, 24 Oct 2019 02:20:05 +0000</pubDate>
+      
+      <guid>http://192.168.0.199:8000/posts/tech/octave/</guid>
+      <description>安装pkg包 安装说明 简单命令 Data Type Built in Data Type &amp;quot;double&amp;quot; &amp;quot;single&amp;quot; &amp;quot;logical&amp;quot; &amp;quot;char&amp;quot; &amp;quot;int8&amp;quot; &amp;quot;int16&amp;quot; &amp;quot;int32&amp;quot; &amp;quot;int64&amp;quot; &amp;quot;uint8&amp;quot; &amp;quot;uint16&amp;quot; &amp;quot;uint32&amp;quot; &amp;quot;uint64&amp;quot; 定义检查数据类型： typeinfo, class 相关 isa 转换数据类型：case(val, &amp;quot;type&amp;quot;) 相关 typecase Missing Data: NA, NA(n),</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -11,7 +11,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.efb631bfd6d06f69412228c8e8394e1b0993664013282ad6d79b7aba11a9efd0.css">
+    <link rel="stylesheet" href="/sass/main.min.cf87833c8cd6c406030556aca5d4815ff3b9a77d78fc86455d12f542cc2401f4.css">
 
     <link rel="preload" as="font" href="/fonts/AdobeKaiStd-Regular.otf" crossorigin="anonymous">
     <link rel="preload" as="font" href="/fonts/AdobeHeitiStd-Regular.otf" crossorigin="anonymous">
@@ -28,7 +28,7 @@
     
     
         
-        <link href="http://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
+        <link href="https://laowalter.github.io/css/section_number/section_number.css" rel="stylesheet" type="text/css">
     
 </head>
 
@@ -91,14 +91,12 @@ mencoder -forceidx -of lavf -oac pcm -ovc copy -o film.flv <span style="color:#0
 <li>把当前的目录内<strong>所有的mov文件转换成MP4</strong></li>
 </ul>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>convert.sh</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#!/bin/bash
+<div class="file" ><div class="filename"> Filename: <b>convert.sh</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#!/bin/bash
 </span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic"></span>
 <span style="color:#fb660a;font-weight:bold">for</span> i in *.mov; <span style="color:#fb660a;font-weight:bold">do</span>
     ffmpeg -i <span style="color:#0086d2">&#34;</span><span style="color:#fb660a">$i</span><span style="color:#0086d2">&#34;</span> -vcodec copy -acodec copy <span style="color:#0086d2">&#34;</span><span style="color:#0086d2">${</span><span style="color:#fb660a">i</span>%.*<span style="color:#0086d2">}</span><span style="color:#0086d2">.mp4&#34;</span>k
-<span style="color:#fb660a;font-weight:bold">done</span></code></pre></div>
-</div>
+<span style="color:#fb660a;font-weight:bold">done</span></code></pre></div> </div>
 
 <h2 id="video-downloader">Video Downloader</h2>
 

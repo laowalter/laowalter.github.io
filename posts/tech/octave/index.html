@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" >
+
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    
+    
+    
+    <link rel="stylesheet" href="/sass/main.min.ae7591bcbf3790098e2ecdb4625aa6d5eb0617ca7491c610aaaeeb59e5a5472e.css">
+
+    <link rel="preload" as="font" href="/fonts/AdobeKaiStd-Regular.otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/AdobeHeitiStd-Regular.otf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/Lobster-Regular.ttf" crossorigin="anonymous">
+
+
+</head>
+
+    
+<head>
+    
+    
+
+    
+    
+</head>
+
+    <body width="device-width" >
+      <div class="homepage-header">
+          <div class="homepage-left">
+            <h1>Octave</h1> 
+            <p class="datetime">Thu, Oct 24, 2019</p>
+            <a class="tag tag--primary tag--small"   href="/"><font color="green">Home</font></a>
+
+            
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/octave">octave</a>
+                
+                    
+                    <a class="tag tag--primary tag--small" href="/tags/futures">futures</a>
+                
+            
+          </div>
+      </div>
+
+    <hr><br><article>
+    <h2 id="安装pkg包">安装pkg包</h2>
+
+<ul>
+<li><a href="https://octave.sourceforge.io/">安装说明</a></li>
+</ul>
+
+<h2 id="简单命令">简单命令</h2>
+
+<h3 id="data-type">Data Type</h3>
+
+<ul>
+<li><p>Built in Data Type</p>
+
+<ul>
+<li>&quot;double&quot; &quot;single&quot; &quot;logical&quot; &quot;char&quot; &quot;int8&quot; &quot;int16&quot; &quot;int32&quot; &quot;int64&quot; &quot;uint8&quot; &quot;uint16&quot; &quot;uint32&quot; &quot;uint64&quot;</li>
+<li>定义检查数据类型： typeinfo, class 相关 isa</li>
+<li>转换数据类型：case(val, &quot;type&quot;) 相关 typecase</li>
+<li>Missing Data: NA, NA(n), NA(n,m,k,...), NA(..,class), isna(x)</li>
+</ul></li>
+
+<li><p>Object Sizes;</p>
+
+<ul>
+<li>ndims(a), columns(a), rows(a), numel(a), numel(a, idx1, ide2, ...)</li>
+<li>length(a0)</li>
+</ul></li>
+</ul>
+
+<h2 id="图形">图形</h2>
+
+<ul>
+<li><p>设置坐标精度，例如：小数点后两位（2 demical)</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-octave" data-lang="octave"><span style="color:#fb660a;font-weight:bold">set</span> (gca, <span style="color:#0086d2">&#34;yticklabel&#34;</span>, cellstr (num2str (<span style="color:#fb660a;font-weight:bold">get</span> (gca, <span style="color:#0086d2">&#34;ytick&#34;</span>)(:), <span style="color:#0086d2">&#34;%.2f&#34;</span>))) <span style="color:#080;background-color:#0f140f;font-style:italic">% 坐标精度小数点后两位（2 demical)</span>
+
+xticks = [<span style="color:#fb660a;font-weight:bold">get</span>(gca,<span style="color:#0086d2">&#39;xtick&#39;</span>)]&#39;; <span style="color:#080;background-color:#0f140f;font-style:italic">% Gets the axis tick labels.</span>
+yticks = [<span style="color:#fb660a;font-weight:bold">get</span>(gca,<span style="color:#0086d2">&#39;ytick&#39;</span>)]&#39;; <span style="color:#080;background-color:#0f140f;font-style:italic">% There is a transpose operation here.</span>
+zticks = [<span style="color:#fb660a;font-weight:bold">get</span>(gca,<span style="color:#0086d2">&#39;ztick&#39;</span>)]&#39;; <span style="color:#080;background-color:#0f140f;font-style:italic">%</span>
+percentsx = repmat(<span style="color:#0086d2">&#39;%&#39;</span>, length(xticks),<span style="color:#0086f7;font-weight:bold">1</span>);  <span style="color:#080;background-color:#0f140f;font-style:italic">%  makes a matrix</span>
+percentsy = repmat(<span style="color:#0086d2">&#39;%&#39;</span>, length(yticks),<span style="color:#0086f7;font-weight:bold">1</span>);  <span style="color:#080;background-color:#0f140f;font-style:italic">%  equal to the size</span>
+percentsz = repmat(<span style="color:#0086d2">&#39;%&#39;</span>, length(zticks),<span style="color:#0086f7;font-weight:bold">1</span>);  <span style="color:#080;background-color:#0f140f;font-style:italic">%  of the number of ticks</span>
+xticklabel = [num2str(xticks) percentsx];
+yticklabel = [num2str(yticks) percentsy]; <span style="color:#080;background-color:#0f140f;font-style:italic">% concatenates the tick labels</span>
+zticklabel = [num2str(zticks) percentsz]; <span style="color:#080;background-color:#0f140f;font-style:italic">%with percentages</span>
+<span style="color:#fb660a;font-weight:bold">set</span>(gca,<span style="color:#0086d2">&#39;xticklabel&#39;</span>,xticklabel);
+<span style="color:#fb660a;font-weight:bold">set</span>(gca,<span style="color:#0086d2">&#39;yticklabel&#39;</span>,yticklabel); <span style="color:#080;background-color:#0f140f;font-style:italic">% Sets tick labels back on the Axis</span>
+<span style="color:#fb660a;font-weight:bold">set</span>(gca,<span style="color:#0086d2">&#39;zticklabel&#39;</span>,zticklabel);</code></pre></div></li>
+</ul>
+
+</article>
+
+    <hr><br>
+<p class="center">ONLY FOR MY PERSONAL USE. <br> ALL RIGHTS RESERVED. </p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    </body>
+</html>

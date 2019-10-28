@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>php on Just a Memo</title>
-    <link>http://laowalter.github.io/tags/php/</link>
+    <link>https://laowalter.github.io/tags/php/</link>
     <description>Recent content in php on Just a Memo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 02 Dec 2018 11:45:29 +0000</lastBuildDate>
     
-	<atom:link href="http://laowalter.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://laowalter.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Php-fpm</title>
-      <link>http://laowalter.github.io/posts/tech/php-fpm/</link>
+      <link>https://laowalter.github.io/posts/tech/php-fpm/</link>
       <pubDate>Sun, 02 Dec 2018 11:45:29 +0000</pubDate>
       
-      <guid>http://laowalter.github.io/posts/tech/php-fpm/</guid>
+      <guid>https://laowalter.github.io/posts/tech/php-fpm/</guid>
       <description>Install /Upgrade php-fpm Config /etc/php/fpm-php7.2/fpm.d/www.conf Filename: /etc/php/fpm-php7.2/fpm.d/www.conf listen = /run/php-fpm.socket listen.owner = nginx listen.group = nginx listen.mode = 0660 Adjust upload limited Filename: /etc/php/fpm-php7.2/php.ini upload_tmp_dir = /tmp upload_max_filesize = 20M /etc/ngnix/nginx.conf Filename: /etc/ngnix/nginx.conf client_max_body_size 20M; client_body_buffer_size 128k; Add php-fpm to default service # sudo /etc/init.d/php-fpm start # rc-update add php-fpm default Setup php-fpm in nginx 简单的只用一个nginx.co</description>
     </item>
     
