@@ -11,7 +11,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.ae7591bcbf3790098e2ecdb4625aa6d5eb0617ca7491c610aaaeeb59e5a5472e.css">
+    <link rel="stylesheet" href="/sass/main.min.0e15d3c8aefb6497df5bd6fce5c14f3b4745d67e8c23052169ddc7ae4ac0307e.css">
 
     <link rel="preload" as="font" href="/fonts/AdobeKaiStd-Regular.otf" crossorigin="anonymous">
     <link rel="preload" as="font" href="/fonts/AdobeHeitiStd-Regular.otf" crossorigin="anonymous">
@@ -94,9 +94,8 @@ go build
 sudo cp meek-client /usr/bin/</code></pre></div>
 <h2 id="config">Config</h2>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>/etc/tor/torrc</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">User tor
+<div class="file" ><div class="filename"> Filename: <b>/etc/tor/torrc</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">User tor
 PIDFile /var/run/tor/tor.pid
 DataDirectory   /var/lib/tor/data
 Log warn syslog
@@ -121,8 +120,7 @@ HiddenServicePort <span style="color:#0086f7;font-weight:bold">4444</span> <span
 UseBridges <span style="color:#0086f7;font-weight:bold">1</span>
 ClientTransportPlugin meek exec  /usr/bin/meek-client
 Bridge meek <span style="color:#0086f7;font-weight:bold">0</span>.0.2.0:1 <span style="color:#fb660a">url</span>=https://meek.azureedge.net/ <span style="color:#fb660a">front</span>=ajax.aspnetcdn.com
-Bridge meek <span style="color:#0086f7;font-weight:bold">0</span>.0.2.0:2 <span style="color:#fb660a">url</span>=https://d2cly7j4zqgua7.cloudfront.net/ <span style="color:#fb660a">front</span>=a0.awsstatic.com</code></pre></div>
-</div>
+Bridge meek <span style="color:#0086f7;font-weight:bold">0</span>.0.2.0:2 <span style="color:#fb660a">url</span>=https://d2cly7j4zqgua7.cloudfront.net/ <span style="color:#fb660a">front</span>=a0.awsstatic.com</code></pre></div> </div>
 
 <h2 id="generate-tor-hash-password">Generate tor hash password</h2>
 
@@ -150,13 +148,11 @@ with Controller.from_port(<span style="color:#fb660a">port</span> = <span style=
 
 <h3 id="关于配置文件">关于配置文件</h3>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>/etc/tor/torrc</b></div>
-        <pre><code>meek 0.0.2.0:1 url=https://meek-reflect.appspot.com/ front=www.google.com
+<div class="file" ><div class="filename"> Filename: <b>/etc/tor/torrc</b></div>
+    <pre><code>meek 0.0.2.0:1 url=https://meek-reflect.appspot.com/ front=www.google.com
 meek 0.0.2.0:2 url=https://d2zfqthxsdq309.cloudfront.net/ front=a0.awsstatic.com
 meek 0.0.2.0:3 url=https://az668014.vo.msecnd.net/ front=ajax.aspnetcdn.com
-</code></pre>
-</div>
+</code></pre> </div>
 
 <ol>
 <li>meek表示传输名，不能省略也不能改动；后面的0.0.2.0:1可以修改为任何值（除了0.0.0.x之外，因为这是Tor内部默认使用的地址）；</li>
@@ -189,11 +185,9 @@ grep -ri <span style="color:#0086f7;font-weight:bold">0</span>.0.2.0 *</code></p
 <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">emerge -avq net-proxy/privoxy</code></pre></div>
 <h3 id="config-1">Config</h3>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>/etc/privoxy/config</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">listen-address  <span style="color:#0086f7;font-weight:bold">192</span>.168.0.199:9051
-forward-socks5t   /               <span style="color:#0086f7;font-weight:bold">192</span>.168.0.199:9050 .</code></pre></div>
-</div>
+<div class="file" ><div class="filename"> Filename: <b>/etc/privoxy/config</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">listen-address  <span style="color:#0086f7;font-weight:bold">192</span>.168.0.199:9051
+forward-socks5t   /               <span style="color:#0086f7;font-weight:bold">192</span>.168.0.199:9050 .</code></pre></div> </div>
 
 </article>
 

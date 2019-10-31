@@ -11,7 +11,7 @@
     
     
     
-    <link rel="stylesheet" href="/sass/main.min.ae7591bcbf3790098e2ecdb4625aa6d5eb0617ca7491c610aaaeeb59e5a5472e.css">
+    <link rel="stylesheet" href="/sass/main.min.0e15d3c8aefb6497df5bd6fce5c14f3b4745d67e8c23052169ddc7ae4ac0307e.css">
 
     <link rel="preload" as="font" href="/fonts/AdobeKaiStd-Regular.otf" crossorigin="anonymous">
     <link rel="preload" as="font" href="/fonts/AdobeHeitiStd-Regular.otf" crossorigin="anonymous">
@@ -57,9 +57,8 @@
 
 <h4 id="mongodb-配置">Mongodb 配置</h4>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>/etc/mongodb.conf</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mongodb" data-lang="mongodb">storage:
+<div class="file" ><div class="filename"> Filename: <b>/etc/mongodb.conf</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mongodb" data-lang="mongodb">storage:
     dbPath: &#34;/var/lib/mongodb&#34;
     #engine: wiredTiger
 
@@ -80,8 +79,7 @@ processManagement:
 
 replication:
     replSetName: rs01
-    oplogSizeMB: 128</code></pre></div>
-</div>
+    oplogSizeMB: 128</code></pre></div> </div>
 
 <h4 id="rocketchat">Rocket.Chat</h4>
 <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-baah" data-lang="baah"> $ curl -L https://releases.rocket.chat/latest/download -o /tmp/rocket.chat.tgz
@@ -110,9 +108,8 @@ export <span style="color:#fb660a">PORT</span>=<span style="color:#0086f7;font-w
 
 <p>采用 <a href="https://github.com/RocketChat/Rocket.Chat中的docker-compose.yml注释掉hubbot部分">https://github.com/RocketChat/Rocket.Chat中的docker-compose.yml注释掉hubbot部分</a></p>
 
-<div class="file" >
-    <div class="filename"> Filename: <b>docker-compose.yml</b></div>
-        <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-docker-compose" data-lang="docker-compose">version: &#39;2&#39;
+<div class="file" ><div class="filename"> Filename: <b>docker-compose.yml</b></div>
+    <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-docker-compose" data-lang="docker-compose">version: &#39;2&#39;
 
 services:
   rocketchat:
@@ -170,8 +167,7 @@ services:
           sleep 5;
         done; (exit $$s)&#34;
     depends_on:
-      - mongo</code></pre></div>
-</div>
+      - mongo</code></pre></div> </div>
 
 <ol start="2">
 <li>安装：
